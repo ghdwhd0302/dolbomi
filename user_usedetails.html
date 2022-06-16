@@ -36,18 +36,18 @@
         
         <div class="common_content_wrap">
             <div class="form_sub_tab column">
-                <ul>
+                <ul class="tab">
                     <!-- <li id="all" >전체</li> -->
                     <li id="match" class="current"><span>배정요청</span><em>1</em></li>
                     <li id="reserv"><span>예약</span><em>0</em></li>
                     <li id="proc"><span>서비스중</span><em>0</em></li>
-                    <li id="pay"><span>결제요청</span><em>0</em></li>
                     <li id="end"><span>종료</span><em>0</em></li>
                 </ul>
             </div>
-        
-            <div class="com_accordion">
+            <!-- 배정요청 -->
+            <div class="com_accordion assignment">
                 <ul>
+                    <!-- 매니저 배정 전... -->
                     <li class="history">	
                         <div class="ac_title">		
                             <input type="hidden" name="hManagerSysId" value="">		
@@ -98,31 +98,360 @@
                                         <span class="msg">매니저 배정 요청중입니다.</span>   			
                                         <a class="tell" href="tel:"></a>   		
                                     </p>   	
-                                </div>   
                             </div>   
-                            <!-- <div class="ac_detail" style="overflow: hidden; display: none;">   	
+                        </div>   
+                    </li>
+                    <!-- 매니저 배정 후 선택 -->
+                    <li class="history assigned">	
+                        <div class="ac_title">		
+                            <input type="hidden" name="hManagerSysId" value="">		
+                            <input type="hidden" name="hMemberSysId" value="U_202206120006">		
+                            <input type="hidden" name="hUserSysId" value="R_202206150003">		
+                            <input type="hidden" name="hUserGenderCd" value="M">		
+                            <input type="hidden" name="hServiceNm" value="돌봄서비스">		
+                            <input type="hidden" name="hServiceCd" value="SV10">		
+                            <input type="hidden" name="hServiceSeq" value="1">		
+                            <input type="hidden" name="hMatchSeq" value="1">		
+                            <input type="hidden" name="hServiceStartDate" value="2022-06-27">		
+                            <input type="hidden" name="hServiceStartTime" value="13:00">		
+                            <input type="hidden" name="hDepartAdmCd" value="4127310200">		
+                            <input type="hidden" name="hDestAdmCd" value="4127310100">		
+                            <input type="hidden" name="hServiceCarYn" value="">		
+                            <p class="service_b">돌봄서비스</p>			
+                            <div class="left_con">			
+                                <p>				
+                                    <span class="title">매니저 이름</span>				
+                                    <span>이름입력</span>			
+                                </p>		  
+                                <p>       		
+                                    <span class="title">성별</span>       		
+                                    <span>남</span>       		
+                                </p>     		
+                                <p>       		
+                                    <span class="title">연락처</span>       		
+                                    <span>010-1234-1234<br></span>     		
+                                </p>     		
+                                <p>       		
+                                    <span class="title">운전 가능 여부</span>       		
+                                    <span>가능<br></span>     		
+                                </p>     		
+                                <p>       		
+                                    <span class="title">활동 지역</span>       		
+                                    <span>서울</span>     		
+                                </p>   	
+                            </div>
+                            <div>   	
+                                <div class="right_con assigned">   		
+                                    <p class="photo">   		
+                        
+                                    </p>   		
+                                    <p>   			
+                                        <span class="name">				
+                        
+                                        </span>   			
+                                        <span class="msg" style="color: #ff0071;">매니저가 배정되었습니다.</span>   			
+                                        <a class="tell" href="tel:"></a>   		
+                                    </p>
+                                </div>   
+                                <div class="button_wrap">
+                                    <a class="accept">수락</a>
+                                    <a class="refuse">거절</a>
+                                </div>
+                            </div>   	
+                        </div> 
+                            <div class="ac_detail servicelist" style="overflow: hidden; display: none;">   	
                                 <div class="detail_wrap">			
                                     <div class="left_con">   			
-                                        <p>       			
-                                            <span class="title">기본이용요금</span>       			
-                                            <span>40,000 원</span>   			
-                                        </p>				
-                                        <p class="total">					
-                                            <span class="title">총금액</span>					
-                                            <span><strong>40,000</strong> 원</span>				
-                                        </p>   		
+                                        <p>       		
+                                            <span class="title">이용일시</span>       		
+                                            <span>2022-06-27</span>       		
+                                            <span>13:00 ~ 15:00</span>     		
+                                        </p>     		
+                                        <p>       		
+                                            <span class="title">출발지</span>       		
+                                            <span>주소입력<br></span>     		
+                                        </p>     		
+                                        <p>       		
+                                            <span class="title">목적지</span>       		
+                                            <span>주소입력<br></span>     		
+                                        </p>     		
+                                        <p>       		
+                                            <span class="title">총 이용요금</span>       		
+                                            <span>40,000 원</span>     		
+                                        </p> 		
                                     </div>   	
                                 </div>   
-                            </div> -->
+                            </div>  
                         </li>
                     </ul>
             </div>
-    
-            <!-- button_wrap -->
-            <div class="button_wrap">
-                <a class="more" href="javascript:void(0);">더보기</a>
+            <!-- 예약 -->
+            <div class="com_accordion reservation" style="display: none;">
+                <ul>
+                    <li class="history">	
+                        <div class="ac_title">		
+                            <input type="hidden" name="hManagerSysId" value="">		
+                            <input type="hidden" name="hMemberSysId" value="U_202206120006">		
+                            <input type="hidden" name="hUserSysId" value="R_202206150003">		
+                            <input type="hidden" name="hUserGenderCd" value="M">		
+                            <input type="hidden" name="hServiceNm" value="동행서비스">		
+                            <input type="hidden" name="hServiceCd" value="SV10">		
+                            <input type="hidden" name="hServiceSeq" value="1">		
+                            <input type="hidden" name="hMatchSeq" value="1">		
+                            <input type="hidden" name="hServiceStartDate" value="2022-06-27">		
+                            <input type="hidden" name="hServiceStartTime" value="13:00">		
+                            <input type="hidden" name="hDepartAdmCd" value="4127310200">		
+                            <input type="hidden" name="hDestAdmCd" value="4127310100">		
+                            <input type="hidden" name="hServiceCarYn" value="">		
+                            <p class="service_a">동행서비스</p>		
+                            <div class="left_con">			
+                                <p>				
+                                    <span class="title">이용자</span>				
+                                    <span>이름입력</span>			
+                                </p>		  
+                                	<p>       		
+                                        <span class="title">이용일시</span>       		
+                                        <span>2022-06-27</span>       		
+                                        <span>13:00 ~ 15:00</span>     		
+                                    </p>     		
+                                    <p>       		
+                                        <span class="title">출발지</span>       		
+                                        <span>주소입력<br></span>     		
+                                    </p>     		
+                                    <p>       		
+                                        <span class="title">목적지</span>       		
+                                        <span>주소입력<br></span>     		
+                                    </p>     		
+                                    <p>       		
+                                        <span class="title">총 이용요금</span>       		
+                                        <span>40,000 원</span>     		
+                                    </p>   	
+                                </div>   	
+                                <div class="left_con">   		
+                                    <p>				
+                                        <span class="title">매니저 이름</span>				
+                                        <span>이름입력</span>			
+                                    </p>		  
+                                    <p>       		
+                                        <span class="title">성별</span>       		
+                                        <span>남</span>       		
+                                    </p>     		
+                                    <p>       		
+                                        <span class="title">연락처</span>       		
+                                        <span>010-1234-1234<br></span>     		
+                                    </p>     		
+                                    <p>       		
+                                        <span class="title">운전 가능 여부</span>       		
+                                        <span>가능<br></span>     		
+                                    </p>     		
+                                    <p>       		
+                                        <span class="title">활동 지역</span>       		
+                                        <span>서울</span>     		
+                                    </p>   	
+                                </div>
+                                <div class="button_wrap cancelreservation">
+                                    <a class="refuse">예약 취소</a>
+                                </div>   
+                            </div>   
+                        </li>
+                    </ul>
             </div>
-            <!-- //button_wrap -->
+            <!-- 서비스중 -->
+            <div class="com_accordion servicing" style="display: none;">
+                <ul>
+                    <li class="history">	
+                        <div class="ac_title">		
+                            <input type="hidden" name="hManagerSysId" value="">		
+                            <input type="hidden" name="hMemberSysId" value="U_202206120006">		
+                            <input type="hidden" name="hUserSysId" value="R_202206150003">		
+                            <input type="hidden" name="hUserGenderCd" value="M">		
+                            <input type="hidden" name="hServiceNm" value="동행서비스">		
+                            <input type="hidden" name="hServiceCd" value="SV10">		
+                            <input type="hidden" name="hServiceSeq" value="1">		
+                            <input type="hidden" name="hMatchSeq" value="1">		
+                            <input type="hidden" name="hServiceStartDate" value="2022-06-27">		
+                            <input type="hidden" name="hServiceStartTime" value="13:00">		
+                            <input type="hidden" name="hDepartAdmCd" value="4127310200">		
+                            <input type="hidden" name="hDestAdmCd" value="4127310100">		
+                            <input type="hidden" name="hServiceCarYn" value="">		
+                            <p class="service_a">동행서비스</p>		
+                            <div class="left_con">			
+                                <p>				
+                                    <span class="title">이용자</span>				
+                                    <span>이름입력</span>			
+                                </p>		  
+                                	<p>       		
+                                        <span class="title">이용일시</span>       		
+                                        <span>2022-06-27</span>       		
+                                        <span>13:00 ~ 15:00</span>     		
+                                    </p>     		
+                                    <p>       		
+                                        <span class="title">출발지</span>       		
+                                        <span>주소입력<br></span>     		
+                                    </p>     		
+                                    <p>       		
+                                        <span class="title">목적지</span>       		
+                                        <span>주소입력<br></span>     		
+                                    </p>     		
+                                    <p>       		
+                                        <span class="title">총 이용요금</span>       		
+                                        <span>40,000 원</span>     		
+                                    </p>   	
+                                </div>   	
+                                <div class="left_con">   		
+                                    <p>				
+                                        <span class="title">매니저 이름</span>				
+                                        <span>이름입력</span>			
+                                    </p>		  
+                                    <p>       		
+                                        <span class="title">성별</span>       		
+                                        <span>남</span>       		
+                                    </p>     		
+                                    <p>       		
+                                        <span class="title">연락처</span>       		
+                                        <span>010-1234-1234<br></span>     		
+                                    </p>     		
+                                    <p>       		
+                                        <span class="title">운전 가능 여부</span>       		
+                                        <span>가능<br></span>     		
+                                    </p>     		
+                                    <p>       		
+                                        <span class="title">활동 지역</span>       		
+                                        <span>서울</span>     		
+                                    </p>   	
+                                </div>   
+                            </div>   
+                        </li>
+                    </ul>
+            </div>
+            <!-- 종료 -->
+            <div class="com_accordion serviceEnd" style="display: none;">
+                <ul>
+                    <li class="history">	
+                        <div class="ac_title">		
+                            <input type="hidden" name="hManagerSysId" value="">		
+                            <input type="hidden" name="hMemberSysId" value="U_202206120006">		
+                            <input type="hidden" name="hUserSysId" value="R_202206150003">		
+                            <input type="hidden" name="hUserGenderCd" value="M">		
+                            <input type="hidden" name="hServiceNm" value="동행서비스">		
+                            <input type="hidden" name="hServiceCd" value="SV10">		
+                            <input type="hidden" name="hServiceSeq" value="1">		
+                            <input type="hidden" name="hMatchSeq" value="1">		
+                            <input type="hidden" name="hServiceStartDate" value="2022-06-27">		
+                            <input type="hidden" name="hServiceStartTime" value="13:00">		
+                            <input type="hidden" name="hDepartAdmCd" value="4127310200">		
+                            <input type="hidden" name="hDestAdmCd" value="4127310100">		
+                            <input type="hidden" name="hServiceCarYn" value="">		
+                            <p class="service_a">동행서비스</p>		
+                            <div class="left_con">			
+                                <p>				
+                                    <span class="title">이용자</span>				
+                                    <span>이름입력</span>			
+                                </p>		  
+                                	<p>       		
+                                        <span class="title">이용일시</span>       		
+                                        <span>2022-06-27</span>       		
+                                        <span>13:00 ~ 15:00</span>     		
+                                    </p>     		
+                                </div>   	
+                                <p class="photo">   		
+                                </p>   		
+                                <div class="left_con endmanager">
+                                    <p>				
+                                        <span class="title">매니저 이름</span>				
+                                        <span>이름입력</span>			
+                                    </p>		  
+                                    <p>       		
+                                        <span class="title">연락처</span>       		
+                                        <span>010-1234-1234<br></span>     		
+                                    </p>     		
+                                </div>   
+                            </div>   
+                        </li>
+                    <li class="history">	
+                        <div class="ac_title">		
+                            <input type="hidden" name="hManagerSysId" value="">		
+                            <input type="hidden" name="hMemberSysId" value="U_202206120006">		
+                            <input type="hidden" name="hUserSysId" value="R_202206150003">		
+                            <input type="hidden" name="hUserGenderCd" value="M">		
+                            <input type="hidden" name="hServiceNm" value="동행서비스">		
+                            <input type="hidden" name="hServiceCd" value="SV10">		
+                            <input type="hidden" name="hServiceSeq" value="1">		
+                            <input type="hidden" name="hMatchSeq" value="1">		
+                            <input type="hidden" name="hServiceStartDate" value="2022-06-27">		
+                            <input type="hidden" name="hServiceStartTime" value="13:00">		
+                            <input type="hidden" name="hDepartAdmCd" value="4127310200">		
+                            <input type="hidden" name="hDestAdmCd" value="4127310100">		
+                            <input type="hidden" name="hServiceCarYn" value="">		
+                            <p class="service_a">동행서비스</p>		
+                            <div class="left_con">			
+                                <p>				
+                                    <span class="title">이용자</span>				
+                                    <span>이름입력</span>			
+                                </p>		  
+                                	<p>       		
+                                        <span class="title">이용일시</span>       		
+                                        <span>2022-06-27</span>       		
+                                        <span>13:00 ~ 15:00</span>     		
+                                    </p>     		
+                                </div>   	
+                                <p class="photo">   		
+                                </p>   		
+                                <div class="left_con endmanager">
+                                    <p>				
+                                        <span class="title">매니저 이름</span>				
+                                        <span>이름입력</span>			
+                                    </p>		  
+                                    <p>       		
+                                        <span class="title">연락처</span>       		
+                                        <span>010-1234-1234<br></span>     		
+                                    </p>     		
+                                </div>   
+                            </div>   
+                        </li>
+                    <li class="history">	
+                        <div class="ac_title">		
+                            <input type="hidden" name="hManagerSysId" value="">		
+                            <input type="hidden" name="hMemberSysId" value="U_202206120006">		
+                            <input type="hidden" name="hUserSysId" value="R_202206150003">		
+                            <input type="hidden" name="hUserGenderCd" value="M">		
+                            <input type="hidden" name="hServiceNm" value="돌봄서비스">		
+                            <input type="hidden" name="hServiceCd" value="SV10">		
+                            <input type="hidden" name="hServiceSeq" value="1">		
+                            <input type="hidden" name="hMatchSeq" value="1">		
+                            <input type="hidden" name="hServiceStartDate" value="2022-06-27">		
+                            <input type="hidden" name="hServiceStartTime" value="13:00">		
+                            <input type="hidden" name="hDepartAdmCd" value="4127310200">		
+                            <input type="hidden" name="hDestAdmCd" value="4127310100">		
+                            <input type="hidden" name="hServiceCarYn" value="">		
+                            <p class="service_b">돌봄서비스</p>		
+                            <div class="left_con">			
+                                <p>				
+                                    <span class="title">이용자</span>				
+                                    <span>이름입력</span>			
+                                </p>		  
+                                	<p>       		
+                                        <span class="title">이용일시</span>       		
+                                        <span>2022-06-27</span>       		
+                                        <span>13:00 ~ 15:00</span>     		
+                                    </p>     		
+                                </div>   	
+                                <p class="photo">   		
+                                </p>   		
+                                <div class="left_con endmanager">
+                                    <p>				
+                                        <span class="title">매니저 이름</span>				
+                                        <span>이름입력</span>			
+                                    </p>		  
+                                    <p>       		
+                                        <span class="title">연락처</span>       		
+                                        <span>010-1234-1234<br></span>     		
+                                    </p>     		
+                                </div>   
+                            </div>   
+                        </li>
+                    </ul>
+            </div>
     
         </div>
     </div>
@@ -140,32 +469,46 @@
             $(this).addClass('current');
         }
         
-        getUseHistory(0, procCallback);
-        
+        switch(page){
+            case "match" : 
+                                    $(".assignment").css('display', 'block');
+                                    $(".reservation").css('display', 'none');
+                                    $(".servicing").css('display', 'none');
+                                    $(".serviceEnd").css('display', 'none');
+                break;
+
+            case "reserv" : 
+                                    $(".assignment").css('display', 'none');
+                                    $(".reservation").css('display', 'block');
+                                    $(".servicing").css('display', 'none');
+                                    $(".serviceEnd").css('display', 'none');
+                break;
+
+            case "proc" :      
+                                    $(".assignment").css('display', 'none');
+                                    $(".reservation").css('display', 'none');
+                                    $(".servicing").css('display', 'block');
+                                    $(".serviceEnd").css('display', 'none');
+                break;
+
+            case "end" : 
+                                    $(".assignment").css('display', 'none');
+                                    $(".reservation").css('display', 'none');
+                                    $(".servicing").css('display', 'none');
+                                    $(".serviceEnd").css('display', 'block');
+                break;
+        }
+
     });
 
 
-
-    /* $("#detailslist>li").click(function(){
-        $("#detailslist>li").removeClass('current');
-        $(this).addClass('current');
-        if($(this).attr('id').match('match')){
-            $(".com_accordion").css('visible', 'hidden');
-            $(".match").css('visible', 'visible');
-        }else if($(this).attr('id').match('reserv')){
-            console.log('reserv');
-            
-        }else if($(this).attr('id').match('proc')){
-            console.log('proc');
-            
-        }else if($(this).attr('id').match('pay')){
-            console.log('pay');
-            
-        }else if($(this).attr('id').match('end')){
-            console.log('end');
-
-        }      
-    }); */
+    $("div.assigned").click(function(){
+        if($(".servicelist").css('display') != 'block'){
+            $(".servicelist").css('display', 'block');
+        }else{
+            $(".servicelist").css('display', 'none');
+        }
+    });
 
 </script>
 </html>

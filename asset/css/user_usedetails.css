@@ -186,6 +186,10 @@ em, address {
     z-index: 1;
 }
 
+.com_accordion ul li + li{
+    margin-top: 20px;
+}
+
 input, textarea, select, button, table {
     font-size: 12px;
     font-weight: 300;
@@ -209,6 +213,20 @@ input[type="hidden"] + input {
     justify-content: center;
     align-items: center;
     background: #f7579f;
+    color: #fff;
+    border-radius: 50%;
+    font-weight: 400;
+}
+
+.com_accordion ul li .ac_title .service_b {
+    display: flex;
+    flex: none;
+    width: 80px;
+    height: 80px;
+    margin: 20px;
+    justify-content: center;
+    align-items: center;
+    background: #3d7ed8;
     color: #fff;
     border-radius: 50%;
     font-weight: 400;
@@ -285,12 +303,27 @@ input[type="hidden"] + input {
     flex-wrap: wrap;
 }
 
+.com_accordion ul li .assigned {
+    position: relative;
+    top: 9px;    
+}
+
 .com_accordion ul li p {
     display: flex;
     position: relative;
 }
 
 .com_accordion ul li .right_con .photo {
+    position: relative;
+    flex: none;
+    width: 80px;
+    height: 80px;
+    background: rgba(0,0,0,0.4) url("https://www.mosimi.co.kr/resource/images/common/ico_face.svg") center center;
+    background-size: 140px;
+    border-radius: 50%;
+}
+
+.com_accordion ul li .photo {
     position: relative;
     flex: none;
     width: 80px;
@@ -408,16 +441,24 @@ a {
     justify-content: center;
     align-items: center;
     flex-direction: row;
+    position: relative;
+    left: -28px;
+    top: 10px;
+}
+
+.cancelreservation {
+    top: 55px;
+    left: -55px;
 }
 
 .button_wrap a {
     position: relative;
     display: flex;
-    height: 100%;
+    height: 50%;
     justify-content: center;
     align-items: center;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 300;
     color: #555555;
     background: #ffffff;
     cursor: pointer;
@@ -426,20 +467,27 @@ a {
     border-radius: 6px;
     white-space: nowrap;
     transition: all .2s ease-in-out;
+    width: 10px;
+}
+.button_wrap a + a {
+    margin-left: 10px;
 }
 
-.button_wrap a.more {
-    background: url("https://www.mosimi.co.kr/resource/images/common/ico_add.svg") no-repeat left 100px center;
-    background-size: 24px;
-    padding: 0 110px 0 140px!important;
+.button_wrap a.accept{
+    color: #ffffff;
+    background: #1f6cd5;
+    border: none;
 }
 
+.button_wrap a.refuse{
+    color: #ffffff;
+    background: #ff0071;
+    border: none;
+}
 
-
-
-
-
-
+.endmanager{
+    margin-left: 20px;
+}
 
 
 

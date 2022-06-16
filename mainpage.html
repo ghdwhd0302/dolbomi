@@ -131,7 +131,7 @@
             </div>
         </div>
      </div>
-        <button class="flickity-button flickity-prev-next-button previous" type="button" aria-label="Previous" disabled="">
+        <button class="flickity-button flickity-prev-next-button previous" type="button" aria-label="Previous" >
             <svg class="flickity-button-icon" viewBox="0 0 100 100">
                 <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"></path>
             </svg>
@@ -247,5 +247,110 @@
         location.href = '/cust/notice'
 
     })
+
+    $(".dot").click(function(){
+        if(!$(this).attr('class').match('is-selected')){
+            $(".dot").removeClass('is-selected');
+            $(this).addClass('is-selected');
+        }else{
+            $(this).removeClass('is-selected');
+        }
+    })
+
+    const banner = document.querySelector("div.flickity-slider");
+    let count = 0;
+    //이전버튼, 다음버튼 기능구현
+    const arrows = document.querySelectorAll("button.flickity-prev-next-button");
+    const btns = document.querySelectorAll("li.dot");
+
+
+    btns.forEach(function(btn, i, ar){
+        //각 버튼에 클릭 이벤트 적용
+        ar[i].addEventListener("click", function(){
+            // 해당 버튼 번호(i)로 count변경
+            count = i;
+            banner.style.transform = "translate(-" + count * 100 + "%)";
+            
+        })
+    })
+
+    arrows.forEach((v)=>{
+        v.addEventListener("click", function(){
+            let arrowType = v.classList[2];
+            console.log(arrowType)
+            if(arrowType == 'previous'){
+                count --;
+                if(count == -1){
+                    count = 3;
+                }
+            }else{
+                count ++;
+                if(count == 4){
+                    count = 0;
+                }
+            }
+
+            switch(count){
+            case 0: 
+                            btns[1].classList.remove('is-selected');
+                            btns[2].classList.remove('is-selected');
+                            btns[3].classList.remove('is-selected');
+                            btns[count].classList.add("is-selected");
+                break; 
+            case 1: 
+                            btns[0].classList.remove('is-selected');
+                            btns[2].classList.remove('is-selected');
+                            btns[3].classList.remove('is-selected');
+                            btns[count].classList.add("is-selected");
+                break; 
+            case 2:
+                            btns[1].classList.remove('is-selected');
+                            btns[0].classList.remove('is-selected');
+                            btns[3].classList.remove('is-selected');
+                            btns[count].classList.add("is-selected");
+                break; 
+            case 3:
+                            btns[1].classList.remove('is-selected');
+                            btns[2].classList.remove('is-selected');
+                            btns[0].classList.remove('is-selected');
+                            btns[count].classList.add("is-selected");
+                break; 
+        }
+            banner.style.transform = "translate(-" + count * 100 + "%)";
+        })
+    });
+
+    setInterval(function(){
+        count++;
+        count = count == 4 ? 0 : count;
+        banner.style.transform = "translate(-" + count * 100 + "%)";
+        
+        switch(count){
+            case 0: 
+                            btns[1].classList.remove('is-selected');
+                            btns[2].classList.remove('is-selected');
+                            btns[3].classList.remove('is-selected');
+                            btns[count].classList.add("is-selected");
+                break; 
+            case 1: 
+                            btns[0].classList.remove('is-selected');
+                            btns[2].classList.remove('is-selected');
+                            btns[3].classList.remove('is-selected');
+                            btns[count].classList.add("is-selected");
+                break; 
+            case 2:
+                            btns[1].classList.remove('is-selected');
+                            btns[0].classList.remove('is-selected');
+                            btns[3].classList.remove('is-selected');
+                            btns[count].classList.add("is-selected");
+                break; 
+            case 3:
+                            btns[1].classList.remove('is-selected');
+                            btns[2].classList.remove('is-selected');
+                            btns[0].classList.remove('is-selected');
+                            btns[count].classList.add("is-selected");
+                break; 
+        }
+   }, 3000);
 </script>
 </html>
