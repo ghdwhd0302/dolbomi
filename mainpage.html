@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/dolbomi/asset/css/mainpage.css">
+        <title>Document</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(function(){
+            $("#header").load("header.html"); 
+            });
+        </script>
+        <script>
+            $(function(){
+            $("#footer").load("footer.html"); 
+            });
+        </script>
+        <style type="text/css">
+            .banner{background: url('/resource/images/main/banner.png') no-repeat;
+                    background-size:100%;
+                    width:500px;
+                    height:500px;
+                    position : fixed; 
+                    top: calc(50% - 250px);
+                    left: 50px; 
+                    z-index:999;}
+            .banner_bg{width: 100%;height: 100%; cursor: pointer;}
+            .banner_btn{color: #fff; position: absolute; top: 10px; right: 15px; font-size: 30px; cursor: pointer;}
+            .banner_btn:hover{color: :#000;}
+            
+            @media screen and (max-width:980px){
+                .banner{width: 275px;
+            height: 275px;
+            background-size: 100%;
+            top: 75px;
+            left: 22.5%;}
+            }
+        </style>
+    </head>
+<body>
+    <header id="header"></header>
+    <div class="carousel flickity-enabled is-draggable" data-flickity="{ &quot;autoPlay&quot;: 6000, &quot;pauseAutoPlayOnHover&quot;: true }" tabindex="0">
+        <div class="flickity-viewport" style="height: 460px; touch-action: pan-y;">
+            <div class="flickity-slider" style="left: 0px; transform: translateX(0%);">
+                <div class="carousel-cell bg_summer is-selected" style="position: absolute; left: 0px; transform: translateX(0%);">
+                <div class="main_noti_com">
+                    <div class="content_wrap summer">
+                        <h3>
+                            <span>돌보미 여름 준비 이벤트</span>
+                        </h3>
+                        <h4>
+                            <span>동행/돌봄 서비스가 필요한</span>
+                            <span>가족을 위해 모시미 서비스 이용 시</span>
+                              <strong>포인트 3% 적립</strong>
+                        </h4>
+                        <h5>
+                            <span>~ 22년 6월 30일까지</span>
+                        </h5>
+                    </div>
+                    <div class="button_wrap">
+                        
+                        <a href="/use/useService">서비스 이용하기</a>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-cell bg_pink" style="position: absolute; left: 0px; transform: translateX(100%);" aria-hidden="true">
+                <div class="main_noti_01">
+                    <div class="content_wrap">
+                        <h3>
+                            <span>내 가족과 같은 마음으로</span>
+                            <span>동행/돌봄을 해드립니다.</span> 
+                        </h3>
+                        <h4>돌보미란?</h4>
+                        <h5>
+                            <span>고령화, 1인 가구, 맞벌이 가족들이 많은 시대에 맞춰</span>
+                            <span>AI, 빅데이터, 위치정보 등 다양한 IT 기술을 활용하여</span>
+                            <span>동행/돌봄 서비스를 제공하는 온라인 매칭 플랫폼입니다. </span>
+                        </h5>
+                    </div>
+                    <div class="button_wrap">
+                        <a href="/introduce">돌보미 알아보기</a>
+                        
+                            <a href="/use/useService">서비스 이용하기</a>
+                        
+                    </div>
+                </div>
+            </div><div class="carousel-cell bg_blue" style="position: absolute; left: 0px; transform: translateX(200%);" aria-hidden="true">
+                <div class="main_noti_02">
+                    <div class="content_wrap">
+                        <h3>
+                            <span>돌보미와 가족처럼 함께 하실</span>
+                            <span>매니저를 모십니다.</span>
+                        </h3>
+                        <h4>돌보미 매니저가 할일은?</h4>
+                        <h5>
+                            <span>병원 동행/돌봄, 집앞 산책, 행정업무, 이동 동행, 식사 도움,</span>
+                            <span>약 복용 도움, 일상 생활 활동 보조 등 돌봄/동행 관련 전반적인</span>
+                            <span>업무를 진행하게 됩니다.</span>
+                        </h5>
+                    </div>
+                    <div class="button_wrap">
+                        <a href="javascript:void(0)" onclick="urlLocation(this)" data-name="seq" data-value="4" data-url="/cust/notice">자세히 알아보기</a>
+                        
+                            <a href="/signup/signupManager">매니저 지원하기</a>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-cell bg_yellow" style="position: absolute; left: 0px; transform: translateX(300%);" aria-hidden="true">
+                <div class="main_noti_03">
+                    <div class="content_wrap">
+                        <h3>
+                            <span>돌보미 가입 이벤트</span>
+                            <span>웰컴 포인트 적립</span>
+                        </h3>
+                        <h4><strong>2000</strong>Point</h4>
+                        <h5>
+                            <span>&nbsp;</span>
+                        </h5>
+                    </div>
+                    <div class="button_wrap">
+                        <a href="/signup/signupMember">신규 가입하기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+        <button class="flickity-button flickity-prev-next-button previous" type="button" aria-label="Previous" disabled="">
+            <svg class="flickity-button-icon" viewBox="0 0 100 100">
+                <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"></path>
+            </svg>
+        </button>
+        <button class="flickity-button flickity-prev-next-button next" type="button" aria-label="Next">
+            <svg class="flickity-button-icon" viewBox="0 0 100 100">
+                <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow" transform="translate(100, 100) rotate(180) "></path>
+            </svg>
+        </button>
+        <ol class="flickity-page-dots">
+            <li class="dot is-selected" aria-label="Page dot 1" aria-current="step"></li>
+            <li class="dot" aria-label="Page dot 2"></li>
+            <li class="dot" aria-label="Page dot 3"></li>
+            <li class="dot" aria-label="Page dot 4"></li>
+        </ol>
+    </div>
+    <div class="main_content_wrap">
+
+        <!-- main_service -->
+        <div class="main_service">
+            <ul>
+                <li>
+                    <div>
+                        <h4>병원동행</h4>
+                        <p>
+                            <span>갑작스런 일이 생겨 부모님의</span>
+                            <span>병원 동행이 필요할 때</span>
+                        </p>
+                        <p>
+                            <span>복잡한 진료 접수 및 수납, </span>
+                            <span>약국업무 등이 어려울 때</span>
+                        </p>
+                        
+                            <a href="/use/useService">이용하기</a>
+                        
+                    </div>
+                </li>
+                <li>
+                    <div>           
+                        <h4>업무동행</h4>
+                        <p>
+                            <span>자녀 집 등 지정장소로</span>
+                            <span>혼자 이동이 어려울 때</span>
+                        </p>
+                        <p>
+                            <span>복잡한 행정 업무, 은행 업무</span>
+                            <span>등의 이용이 어려울 때</span>
+                        </p>
+                        
+                            <a href="/use/useService">이용하기</a>
+                        
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <h4>병원돌봄</h4>
+                        <p>
+                            <span>어르신, 우리아이 등</span>
+                            <span>병원 돌봄이 필요할 때</span>
+                        </p>
+                        <p>
+                            <span>보호자 혼자</span>
+                            <span>돌봄이 어려울 때</span>
+                        </p>
+                        
+                            <a href="/use/useService">이용하기</a>
+                        
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <h4>가정돌봄</h4>
+                        <p>
+                            <span>어르신, 우리아이 등</span>
+                            <span>가정 돌봄이 필요할 때</span>
+                        </p>
+                        <p>
+                            <span>주변정돈, 산책/운동, </span>
+                            <span>식사 도움 등이 필요할 때</span>
+                        </p>
+                        
+                            <a href="/use/useService">이용하기</a>
+                        
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- //main_service -->
+
+        <!-- main_help -->
+        <div class="main_help">
+            <h3>무엇이 궁금하세요?</h3>
+            <ul>
+                <li onclick="urlLocation(this)" data-name="faq" data-value="A" data-url="/cust/faq">동행</li>
+                <li onclick="urlLocation(this)" data-name="faq" data-value="B" data-url="/cust/faq">돌봄</li>
+                <li onclick="urlLocation(this)" data-name="faq" data-value="C" data-url="/cust/faq">결제</li>
+                <li onclick="urlLocation(this)" data-name="faq" data-value="D" data-url="/cust/faq">기타</li>
+            </ul>
+        </div>
+        <!-- //main_help -->
+
+    </div>
+    <footer id="footer"></footer>
+</body>
+<script>
+    $(document).on('click','.banner_btn',function(){
+    $('.banner').hide()
+    
+
+    })
+    
+    $(document).on('click','.banner_bg',function(){
+        location.href = '/cust/notice'
+
+    })
+</script>
+</html>
