@@ -459,17 +459,6 @@ label{
 }
 
 
-.iKMJbd .inner-container .register-form .form button {
-    width: 100%;
-    height: 46px;
-    margin-top: 4px;
-    margin-bottom: 16px;
-    font-size: 14px;
-    font-weight: bold;
-    letter-spacing: -0.2px;
-    text-align: center;
-    color: rgb(255, 255, 255);
-}
 button, html [type=button] {
     -webkit-appearance: button;
 }
@@ -595,6 +584,7 @@ button {
     letter-spacing: -0.2px;
     text-align: center;
     color: rgb(255, 255, 255);
+    width: 240px;
 }
 
 .bqHxwH.ant-select:not(.ant-select-customize-input) .ant-select-selector {
