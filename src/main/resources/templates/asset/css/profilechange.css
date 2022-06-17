@@ -1,0 +1,410 @@
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 12px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background: #ffffff;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+body, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, legend, input, textarea, button, select {
+    margin: 0;
+    padding: 0;
+}
+
+.sub_page_wrap {
+    margin: 0;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #ffffff;
+    padding-bottom: 100px;
+}
+
+.sub_title_wrap {
+    display: flex;
+    flex: none;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sub_title_wrap.title_only {
+    height: auto;
+    margin-bottom: 40px;
+}
+
+.sub_title {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 160px;
+}
+
+.sub_title p {
+    display: flex;
+    flex: none;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 60px;
+    color: #313131;
+    text-align: center;
+}
+
+input, textarea, select, button, table {
+    font-size: 12px;
+    font-weight: 200;
+}
+
+input[type="hidden"] + input {
+    margin-left: 0;
+}
+
+.form_wrap {
+    display: flex;
+    flex: none;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.border_wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-radius: 10px;
+    box-shadow: 0 14px 24px rgb(0 0 0 / 6%);
+    border: 1px solid rgba(0, 0, 0, 0.09);
+    padding: 40px;
+    margin: 20px;
+}
+
+.dp_result {
+    width: 800px;
+    display: flex;
+}
+
+
+.dp_result .column {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.dp_result .column {
+    margin-right: 5px;
+}
+
+.form_wrap .photo {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    background: rgba(0, 0, 0, 0.4) url("https://www.mosimi.co.kr/resource/images/common/ico_face.svg") center center;
+    background-size: 140px;
+    border-radius: 50%;
+    margin: 0 auto 20px auto;
+}
+
+.form_wrap .photo a.delete {
+    position: absolute;
+    top: -10px;
+    right: -20px;
+    width: 30px;
+    height: 30px;
+    background: #ffffff url("https://www.mosimi.co.kr/resource/images/common/ico_delete.svg") center center;
+    background-size: 30px;
+    border-radius: 50%;
+    color: rgba(0, 0, 0, 0);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0;
+}
+
+img, fieldset {
+    border: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+.form_wrap .photo img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+}
+
+.button_wrap {
+    display: flex;
+    flex: none;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.form_wrap .button_wrap {
+    margin-top: 15px;
+}
+
+.button_wrap a {
+    position: relative;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 300;
+    color: #555555;
+    background: #ffffff;
+    cursor: pointer;
+    padding: 4px 50px 8px 50px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    white-space: nowrap;
+    transition: all .2s ease-in-out;
+}
+
+input, textarea, select, button, table {
+    font-size: 12px;
+    font-weight: 200;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input[type="number"], input[type="text"], input[type="password"], input[type="search"], input[type="date"], input[type="file"] {
+    font-family: 'Roboto', 'NotoSansKR', sans-serif;
+    font-weight: 400px;
+    border: none;
+    background: rgba(0, 0, 0, 0.06);
+    height: 30px;
+    padding: 2px 4px 5px 2px;
+    width: 100%;
+}
+
+input[type="file"] {
+    padding: 0 0 0 0;
+    width: 100%;
+    min-height: 30px;
+    margin-bottom: 0;
+    font-size: 12px;
+}
+
+.form_wrap input[type="file"] {
+    width: 100%;
+    height: 60px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #282828;
+    border-radius: 6px;
+    padding-left: 14px;
+}
+
+.dp_result + .dp_result {
+    margin-top: 10px;
+}
+
+.dp_result .column {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.dp_result .column {
+    margin-right: 5px;
+}
+
+.dp_result + .dp_result p {
+    margin-top: 10px;
+}
+
+.dp_result .column p {
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.dp_flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+.dp_result .column p + .dp_flex {
+    margin-top: 10px;
+}
+
+.dp_flex *:first-child {
+    margin-left: 0;
+}
+
+.form_wrap input[type="text"] {
+    width: 100%;
+    height: 60px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #282828;
+    border-radius: 6px;
+    padding-left: 14px;
+}
+
+.dp_result .column + .column {
+    margin-right: 0;
+    margin-left: 5px;
+}
+
+.form_wrap .date {
+    width: 400px;
+}
+
+select {
+    display: inline-block;
+    height: 30px;
+    width: 100%;
+    margin: 0;
+    vertical-align: top;
+    border: none;
+    font-family: 'Roboto', 'NotoSansKR', sans-serif !important;
+    padding: 2px 26px 4px 4px !important;
+    overflow: hidden;
+    appearance: none;
+    -webkit-appearance: none;
+    background: rgba(0, 0, 0, 0.06) url("	https://www.mosimi.co.kr/resource/images/common/ico_select.svg") no-repeat;
+    background-size: 40px;
+    background-position: right 4px center;
+}
+
+.dp_flex * {
+    margin-left: 10px;
+}
+
+.form_wrap select {
+    width: 100%;
+    height: 60px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #282828;
+    border-radius: 6px;
+    padding-left: 10px !important;
+}
+
+.form_wrap .date select:nth-child(1) {
+    width: 140px;
+    flex: none;
+}
+
+.dp_result .column select + select {
+    margin-top: 10px;
+}
+
+.dp_result .column .dp_flex select + select {
+    margin-top: 0;
+}
+
+.dp_flex.multi {
+    flex-wrap: wrap;
+}
+
+.dp_flex .fx_full {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+.form_wrap input[type="number"] {
+    width: 100%;
+    height: 60px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #282828;
+    border-radius: 6px;
+    padding-left: 14px;
+}
+
+.dp_flex .button_wrap {
+    margin-top: 0;
+}
+
+.dp_flex a {
+    position: relative;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 400;
+    color: #555555;
+    background-color: #ffffff;
+    cursor: pointer;
+    padding: 6px 20px;
+    border-radius: 10px;
+    white-space: nowrap;
+    transition: all .2s ease-in-out;
+}
+
+.form_wrap h4 {
+    display: flex;
+    flex: none;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 200;
+    color: #3a3a3a;
+    margin: 10px 0 30px 0;
+    white-space: nowrap;
+    flex-wrap: wrap;
+}
+
+.border_wrap .dp_result + h4 {
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 40px;
+}
+
+.button_wrap a + a {
+    margin-left: 10px;
+}
+
+.button_wrap a.primary {
+    color: #ffffff;
+    background: #1f6cd5;
+    border: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
