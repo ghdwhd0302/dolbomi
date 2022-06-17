@@ -9,12 +9,12 @@ body {
     font-weight: 500;
 }
 
-body, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, legend, input, textarea, button, select{
+body, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, legend, input, textarea, button, select {
     margin: 0;
     padding: 0;
 }
 
-*{
+* {
     box-sizing: border-box;
 }
 
@@ -43,7 +43,7 @@ body, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fi
     transition: all 0.3s ease;
 }
 
-.header .logo{
+.header .logo {
     display: flex;
     flex: none;
     position: relative;
@@ -56,7 +56,7 @@ body, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fi
     margin-top: -4px;
 }
 
-.header .nav{
+.header .nav {
     display: flex;
     flex: 1;
     align-items: center;
@@ -64,17 +64,17 @@ body, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fi
     transition: all 0.1s ease;
 }
 
-ul, ol{
+ul, ol {
     list-style: none;
 }
 
-.header .nav .nav_list{
+.header .nav .nav_list {
     display: flex;
     align-items: center;
     justify-content: flex-start;
 }
 
-.header .nav .nav_list > .nav_item{
+.header .nav .nav_list > .nav_item {
     position: relative;
     display: flex;
     align-items: center;
@@ -88,20 +88,20 @@ a {
 }
 
 
-.header .nav .nav_list .nav_item .nav_item_link{
+.header .nav .nav_list .nav_item .nav_item_link {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 60px;
-    padding: 0 24px 4px 24px!important;
+    padding: 0 24px 4px 24px !important;
     font-size: 18px;
     font-weight: 500;
     color: #222;
     transition: all .2s ease-in-out;
 }
 
-.header .nav .nav_list .nav_item .nav_item_link:after{
+.header .nav .nav_list .nav_item .nav_item_link:after {
     content: '';
     position: absolute;
     left: 24px;
@@ -114,13 +114,13 @@ a {
     opacity: 0;
 }
 
-.header .fnc_menu_wrap{
+.header .fnc_menu_wrap {
     display: flex;
     height: 80px;
     align-items: center;
 }
 
-.header .fnc_notice{
+.header .fnc_notice {
     position: relative;
     display: flex;
     justify-content: center;
@@ -132,7 +132,7 @@ a {
     transition: all .2s ease-in-out;
 }
 
-.header .fnc_alram{
+.header .fnc_alram {
     position: relative;
     display: flex;
     justify-content: center;
@@ -144,7 +144,7 @@ a {
     transition: all .2s ease-in-out;
 }
 
-.header .fnc_user{
+.header .fnc_user {
     position: relative;
     display: flex;
     justify-content: center;
@@ -157,13 +157,13 @@ a {
     transition: all .2s ease-in-out;
 }
 
-.header .fnc_menu_wrap .fnc_user_wrap{
+.header .fnc_menu_wrap .fnc_user_wrap {
     position: absolute;
     width: 200px;
     top: 90px;
     right: -10px;
     padding: 30px 20px;
-    background: rgba(0,0,0,0.8);
+    background: rgba(0, 0, 0, 0.8);
     border-radius: 6px;
     display: none;
     justify-content: center;
@@ -172,14 +172,14 @@ a {
     z-index: 9999;
 }
 
-.header .fnc_menu_wrap .fnc_user_wrap a{
+.header .fnc_menu_wrap .fnc_user_wrap a {
     color: #ffffff;
     font-size: 14px;
     cursor: pointer;
     text-align: center;
 }
 
-.header .fnc_menu_wrap .fnc_user_wrap a + a{
+.header .fnc_menu_wrap .fnc_user_wrap a + a {
     margin-top: 16px;
 }
 

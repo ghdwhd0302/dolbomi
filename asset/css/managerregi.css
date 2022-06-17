@@ -78,16 +78,17 @@ p {
 label {
     touch-action: manipulation;
 }
+
 .ant-checkbox {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    color: rgba(0,0,0,.85);
+    color: rgba(0, 0, 0, .85);
     font-size: 14px;
     font-variant: tabular-nums;
     line-height: 1.5715;
     list-style: none;
-    font-feature-settings: "tnum","tnum";
+    font-feature-settings: "tnum", "tnum";
     position: relative;
     top: 0.2em;
     line-height: 1;
@@ -95,13 +96,16 @@ label {
     outline: none;
     cursor: pointer;
 }
-input[type=checkbox]{
+
+input[type=checkbox] {
     box-sizing: border-box;
     padding: 0;
 }
+
 input:not([type=range]) {
     touch-action: manipulation;
 }
+
 /* .ant-checkbox-input {
     position: absolute;
     top: 0;
@@ -114,13 +118,14 @@ input:not([type=range]) {
     cursor: pointer;
     opacity: 0;
 } */
-input{
+input {
     margin: 0;
     color: inherit;
     font-size: inherit;
     font-family: inherit;
     line-height: inherit;
 }
+
 /* .ant-checkbox-inner {
     position: relative;
     top: 0;
@@ -135,63 +140,72 @@ input{
     border-collapse: separate;
     transition: all .3s;
 } */
-span{
+span {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 :after {
     box-sizing: border-box;
 }
 
-.ant-checkbox+span {
+.ant-checkbox + span {
     padding-right: 8px;
     padding-left: 8px;
 }
-.ant-checkbox-wrapper+.ant-checkbox-wrapper {
+
+.ant-checkbox-wrapper + .ant-checkbox-wrapper {
     margin-left: 8px;
 }
+
 .cOGJco {
     font-size: 14px;
     margin-bottom: 8px;
 }
+
 .ant-input:placeholder-shown {
     text-overflow: ellipsis;
 }
+
 textarea.ant-input {
     max-width: 100%;
     height: auto;
     min-height: 32px;
     line-height: 1.5715;
     vertical-align: bottom;
-    transition: all .3s,height 0s;
+    transition: all .3s, height 0s;
     resize: none;
 }
+
 .bBQEgI {
     font-size: 14px;
 }
+
 .ant-input {
     box-sizing: border-box;
     margin: 0;
     font-variant: tabular-nums;
     list-style: none;
-    font-feature-settings: "tnum","tnum";
+    font-feature-settings: "tnum", "tnum";
     position: relative;
     display: inline-block;
     width: 100%;
     min-width: 0;
     padding: 4px 11px;
-    color: rgba(0,0,0,.85);
+    color: rgba(0, 0, 0, .85);
     background-color: #fff;
     background-image: none;
     border: 1px solid #d9d9d9;
     border-radius: 2px;
 }
+
 textarea {
     overflow: auto;
     resize: vertical;
 }
- textarea {
+
+textarea {
     touch-action: manipulation;
     -webkit-appearance: none;
     writing-mode: horizontal-tb !important;
@@ -211,6 +225,7 @@ textarea {
 .cOGJco > span {
     font-size: 12px;
 }
+
 .kfNMrX {
     padding: 10px 16px;
     background-color: rgb(59, 193, 255);

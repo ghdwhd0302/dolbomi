@@ -1,11 +1,11 @@
 * {
     font-family: 'Roboto', sans-serif;
-    box-sizing :border-box;
+    box-sizing: border-box;
 
 }
 
 body {
-    font-family: 'Roboto', sans-serif!important;
+    font-family: 'Roboto', sans-serif !important;
     font-size: 12px;
     color: #000;
     margin: 0;
@@ -95,7 +95,7 @@ ul, ol {
     align-items: center;
     justify-content: center;
     height: 60px;
-    padding: 0 24px 4px 24px!important;
+    padding: 0 24px 4px 24px !important;
     font-size: 18px;
     font-weight: 400;
     color: #222;
@@ -149,7 +149,7 @@ a {
     align-items: center;
     width: 40px;
     height: 40px;
-   /*  background: url(../images/common/ico_alram.svg) no-repeat center center; */
+    /*  background: url(../images/common/ico_alram.svg) no-repeat center center; */
     cursor: pointer;
     transition: all .2s ease-in-out;
 }
@@ -173,7 +173,7 @@ a {
     top: 90px;
     right: -10px;
     padding: 30px 20px;
-    background: rgba(0,0,0,0.8);
+    background: rgba(0, 0, 0, 0.8);
     border-radius: 6px;
     display: none;
     justify-content: center;
@@ -357,6 +357,7 @@ button {
     right: 0;
     top: -50%;
 }
+
 .dZclmO {
     padding-top: 32px;
     padding-bottom: 32px;
@@ -592,16 +593,16 @@ img {
     color: rgba(0, 0, 0, 0.7);
 }
 
-.ant-picker-input>input:placeholder-shown {
+.ant-picker-input > input:placeholder-shown {
     text-overflow: ellipsis;
 }
 
-.ant-picker-input>input {
+.ant-picker-input > input {
     position: relative;
     display: inline-block;
     width: 100%;
     min-width: 0;
-    color: rgba(0,0,0,.85);
+    color: rgba(0, 0, 0, .85);
     font-size: 14px;
     line-height: 1.5715;
     background-color: #fff;
@@ -613,18 +614,19 @@ img {
     min-width: 1px;
     height: auto;
     padding: 0;
-    background: rgba(0,0,0,0);
+    background: rgba(0, 0, 0, 0);
     border: 0;
 }
+
 .ant-picker-suffix {
     align-self: center;
     margin-left: 4px;
-    color: rgba(0,0,0,.25);
+    color: rgba(0, 0, 0, .25);
     line-height: 1;
     pointer-events: none;
 }
 
-.ant-picker-suffix>* {
+.ant-picker-suffix > * {
     vertical-align: top;
 }
 
@@ -737,7 +739,7 @@ img {
 .ant-select:not(.ant-select-customize-input) .ant-select-selector .ant-select-selection-search-input {
     margin: 0;
     padding: 0;
-    background: rgba(0,0,0,0);
+    background: rgba(0, 0, 0, 0);
     border: none;
     outline: none;
     -webkit-appearance: none;
@@ -752,6 +754,7 @@ img {
 .bqHxwH.ant-select-single .ant-select-selector .ant-select-selection-item, .bqHxwH.ant-select-single .ant-select-selector .ant-select-selection-placeholder {
     line-height: 43px;
 }
+
 .ant-select-single .ant-select-selector .ant-select-selection-item:after, .ant-select-single .ant-select-selector .ant-select-selection-placeholder:after, .ant-select-single .ant-select-selector:after {
     display: inline-block;
     width: 0;
@@ -779,7 +782,7 @@ img {
     width: 12px;
     height: 12px;
     margin-top: -6px;
-    color: rgba(0,0,0,.25);
+    color: rgba(0, 0, 0, .25);
     font-size: 12px;
     line-height: 1;
     text-align: center;
@@ -792,10 +795,10 @@ img {
     -webkit-transition: -webkit-transform .3s;
     transition: -webkit-transform .3s;
     transition: transform .3s;
-    transition: transform .3s,-webkit-transform .3s;
+    transition: transform .3s, -webkit-transform .3s;
 }
 
-.ant-select-arrow>* {
+.ant-select-arrow > * {
     line-height: 1;
 }
 
@@ -812,7 +815,7 @@ img {
     -moz-osx-font-smoothing: grayscale;
 }
 
-.ant-select-arrow .anticon>svg {
+.ant-select-arrow .anticon > svg {
     vertical-align: top;
 }
 
@@ -833,12 +836,12 @@ img {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    color: rgba(0,0,0,.85);
+    color: rgba(0, 0, 0, .85);
     font-size: 14px;
     font-variant: tabular-nums;
     line-height: 1.5715;
     list-style: none;
-    font-feature-settings: "tnum","tnum";
+    font-feature-settings: "tnum", "tnum";
     display: inline-flex;
     align-items: baseline;
     line-height: unset;
@@ -849,12 +852,12 @@ img {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    color: rgba(0,0,0,.85);
+    color: rgba(0, 0, 0, .85);
     font-size: 14px;
     font-variant: tabular-nums;
     line-height: 1.5715;
     list-style: none;
-    font-feature-settings: "tnum","tnum";
+    font-feature-settings: "tnum", "tnum";
     position: relative;
     top: 0.2em;
     line-height: 1;
@@ -894,15 +897,15 @@ input[type=checkbox], input[type=radio] {
     border: 2px solid #fff;
     border-top: 0;
     border-left: 0;
-    -webkit-transform: rotate(45deg) scale(0) translate(-50%,-50%);
-    transform: rotate(45deg) scale(0) translate(-50%,-50%);
+    -webkit-transform: rotate(45deg) scale(0) translate(-50%, -50%);
+    transform: rotate(45deg) scale(0) translate(-50%, -50%);
     opacity: 0;
-    -webkit-transition: all .1s cubic-bezier(.71,-.46,.88,.6),opacity .1s;
-    transition: all .1s cubic-bezier(.71,-.46,.88,.6),opacity .1s;
+    -webkit-transition: all .1s cubic-bezier(.71, -.46, .88, .6), opacity .1s;
+    transition: all .1s cubic-bezier(.71, -.46, .88, .6), opacity .1s;
     content: " ";
 }
 
-.ant-checkbox+span {
+.ant-checkbox + span {
     padding-right: 8px;
     padding-left: 8px;
 }

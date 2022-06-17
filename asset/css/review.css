@@ -281,7 +281,7 @@ svg:not(:root).svg-inline--fa {
     padding-left: 0
 }
 
-.fa-ul>li {
+.fa-ul > li {
     position: relative
 }
 
@@ -503,8 +503,8 @@ svg:not(:root).svg-inline--fa {
     font-weight: 700
 }
 
-@media all and (-ms-high-contrast:none),
-(-ms-high-contrast:active) {
+@media all and (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
     .swal2-popup.swal2-toast .swal2-icon .swal2-icon-content {
         font-size: .25em
     }
@@ -695,22 +695,22 @@ svg:not(:root).svg-inline--fa {
     justify-content: flex-end
 }
 
-.swal2-container.swal2-bottom-end>:first-child,
-.swal2-container.swal2-bottom-left>:first-child,
-.swal2-container.swal2-bottom-right>:first-child,
-.swal2-container.swal2-bottom-start>:first-child,
-.swal2-container.swal2-bottom>:first-child {
+.swal2-container.swal2-bottom-end > :first-child,
+.swal2-container.swal2-bottom-left > :first-child,
+.swal2-container.swal2-bottom-right > :first-child,
+.swal2-container.swal2-bottom-start > :first-child,
+.swal2-container.swal2-bottom > :first-child {
     margin-top: auto
 }
 
-.swal2-container.swal2-grow-fullscreen>.swal2-modal {
+.swal2-container.swal2-grow-fullscreen > .swal2-modal {
     display: flex !important;
     flex: 1;
     align-self: stretch;
     justify-content: center
 }
 
-.swal2-container.swal2-grow-row>.swal2-modal {
+.swal2-container.swal2-grow-row > .swal2-modal {
     display: flex !important;
     flex: 1;
     align-content: center;
@@ -746,7 +746,7 @@ svg:not(:root).svg-inline--fa {
     align-items: flex-end
 }
 
-.swal2-container.swal2-grow-column>.swal2-modal {
+.swal2-container.swal2-grow-column > .swal2-modal {
     display: flex !important;
     flex: 1;
     align-content: center;
@@ -757,12 +757,12 @@ svg:not(:root).svg-inline--fa {
     transition: none !important
 }
 
-.swal2-container:not(.swal2-top):not(.swal2-top-start):not(.swal2-top-end):not(.swal2-top-left):not(.swal2-top-right):not(.swal2-center-start):not(.swal2-center-end):not(.swal2-center-left):not(.swal2-center-right):not(.swal2-bottom):not(.swal2-bottom-start):not(.swal2-bottom-end):not(.swal2-bottom-left):not(.swal2-bottom-right):not(.swal2-grow-fullscreen)>.swal2-modal {
+.swal2-container:not(.swal2-top):not(.swal2-top-start):not(.swal2-top-end):not(.swal2-top-left):not(.swal2-top-right):not(.swal2-center-start):not(.swal2-center-end):not(.swal2-center-left):not(.swal2-center-right):not(.swal2-bottom):not(.swal2-bottom-start):not(.swal2-bottom-end):not(.swal2-bottom-left):not(.swal2-bottom-right):not(.swal2-grow-fullscreen) > .swal2-modal {
     margin: auto
 }
 
-@media all and (-ms-high-contrast:none),
-(-ms-high-contrast:active) {
+@media all and (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
     .swal2-container .swal2-modal {
         margin: 0 !important
     }
@@ -1339,12 +1339,12 @@ svg:not(:root).svg-inline--fa {
     background: #2778c4
 }
 
-.swal2-progress-steps .swal2-progress-step.swal2-active-progress-step~.swal2-progress-step {
+.swal2-progress-steps .swal2-progress-step.swal2-active-progress-step ~ .swal2-progress-step {
     background: #add8e6;
     color: #fff
 }
 
-.swal2-progress-steps .swal2-progress-step.swal2-active-progress-step~.swal2-progress-step-line {
+.swal2-progress-steps .swal2-progress-step.swal2-active-progress-step ~ .swal2-progress-step-line {
     background: #add8e6
 }
 
@@ -1403,8 +1403,8 @@ svg:not(:root).svg-inline--fa {
     }
 }
 
-@media all and (-ms-high-contrast:none),
-(-ms-high-contrast:active) {
+@media all and (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
     .swal2-range input {
         width: 100% !important
     }
@@ -1903,7 +1903,7 @@ body.swal2-no-backdrop .swal2-container {
     background-color: transparent !important
 }
 
-body.swal2-no-backdrop .swal2-container>.swal2-modal {
+body.swal2-no-backdrop .swal2-container > .swal2-modal {
     box-shadow: 0 0 10px rgba(0, 0, 0, .4)
 }
 
@@ -1968,7 +1968,7 @@ body.swal2-no-backdrop .swal2-container.swal2-bottom-right {
         overflow-y: scroll !important
     }
 
-    body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown)>[aria-hidden=true] {
+    body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) > [aria-hidden=true] {
         display: none
     }
 

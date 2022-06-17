@@ -10,11 +10,11 @@ body {
 }
 
 
-*{
+* {
     box-sizing: border-box;
 }
 
-body, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, legend, input, textarea, button, select{
+body, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, legend, input, textarea, button, select {
     margin: 0;
     padding: 0;
 }
@@ -101,7 +101,7 @@ ul, ol {
 
 .form_tab ul li.current {
     position: relative;
-    border: 1px solid #1f6cd5; 
+    border: 1px solid #1f6cd5;
     border-bottom: 1px solid #fff;
     background: #1f6cd5;
     color: #fff;
@@ -153,7 +153,7 @@ input[type="number"], input[type="text"], input[type="password"], input[type="se
     font-family: 'NotoSansKR', sans-serif;
     font-weight: 500px;
     border: none;
-    background: rgba(0,0,0,0.06);
+    background: rgba(0, 0, 0, 0.06);
     height: 30px;
     padding: 2px 4px 5px 2px;
     width: 100%;
@@ -264,7 +264,7 @@ label input {
     background: #ffffff;
     cursor: pointer;
     padding: 4px 50px 8px 50px;
-    border: 1px solid rgba(0,0,0,0.2);
+    border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 6px;
     white-space: nowrap;
     transition: all .2s ease-in-out;

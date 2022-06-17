@@ -10,11 +10,11 @@ body {
 }
 
 
-*{
+* {
     box-sizing: border-box;
 }
 
-body, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, legend, input, textarea, button, select{
+body, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, legend, input, textarea, button, select {
     margin: 0;
     padding: 0;
 }
@@ -232,20 +232,20 @@ a {
     background: #ffffff;
     cursor: pointer;
     padding: 4px 50px 8px 50px;
-    border: 1px solid rgba(0,0,0,0.2);
+    border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 6px;
     white-space: nowrap;
     transition: all .2s ease-in-out;
 }
 
 .main_noti_com .button_wrap a {
-    flex: none!important;
-    height: auto!important;
-    background: rgba(255, 255, 255, 0)!important;
+    flex: none !important;
+    height: auto !important;
+    background: rgba(255, 255, 255, 0) !important;
     border: 1px solid rgba(255, 255, 255, 0.3);
     padding: 20px 40px 24px 40px;
     color: #ffffff;
-    font-weight: 300!important;
+    font-weight: 300 !important;
 }
 
 .carousel-cell {
@@ -373,15 +373,15 @@ a {
 }
 
 .main_noti_01 .button_wrap a {
-    flex: none!important;
-    height: auto!important;
-    background: rgba(255, 255, 255, 0)!important;
+    flex: none !important;
+    height: auto !important;
+    background: rgba(255, 255, 255, 0) !important;
     border: 1px solid rgba(255, 255, 255, 0.3);
     padding: 20px 40px 24px 40px;
     color: #ffffff;
-    font-weight: 300!important;
+    font-weight: 300 !important;
 }
- 
+
 .button_wrap a + a {
     margin-left: 10px;
 }
@@ -526,13 +526,13 @@ a {
 }
 
 .main_noti_02 .button_wrap a {
-    flex: none!important;
-    height: auto!important;
-    background: rgba(255, 255, 255, 0)!important;
+    flex: none !important;
+    height: auto !important;
+    background: rgba(255, 255, 255, 0) !important;
     border: 1px solid rgba(255, 255, 255, 0.3);
     padding: 20px 40px 24px 40px;
     color: #ffffff;
-    font-weight: 300!important;
+    font-weight: 300 !important;
 }
 
 .main_noti_02 .button_wrap a + a {
@@ -655,13 +655,13 @@ a {
 }
 
 .main_noti_03 .button_wrap a {
-    flex: none!important;
-    height: auto!important;
-    background: rgba(255, 255, 255, 0)!important;
+    flex: none !important;
+    height: auto !important;
+    background: rgba(255, 255, 255, 0) !important;
     border: 1px solid rgba(255, 255, 255, 0.3);
     padding: 20px 40px 24px 40px;
     color: #ffffff;
-    font-weight: 300!important;
+    font-weight: 300 !important;
 }
 
 input, textarea, select, button, table {

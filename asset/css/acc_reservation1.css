@@ -1,11 +1,11 @@
 * {
     font-family: 'Roboto', sans-serif;
-    box-sizing :border-box;
+    box-sizing: border-box;
 
 }
 
 body {
-    font-family: 'Roboto', sans-serif!important;
+    font-family: 'Roboto', sans-serif !important;
     font-size: 12px;
     color: #000;
     margin: 0;
@@ -95,7 +95,7 @@ ul, ol {
     align-items: center;
     justify-content: center;
     height: 60px;
-    padding: 0 24px 4px 24px!important;
+    padding: 0 24px 4px 24px !important;
     font-size: 18px;
     font-weight: 400;
     color: #222;
@@ -149,7 +149,7 @@ a {
     align-items: center;
     width: 40px;
     height: 40px;
-   /*  background: url(../images/common/ico_alram.svg) no-repeat center center; */
+    /*  background: url(../images/common/ico_alram.svg) no-repeat center center; */
     cursor: pointer;
     transition: all .2s ease-in-out;
 }
@@ -173,7 +173,7 @@ a {
     top: 90px;
     right: -10px;
     padding: 30px 20px;
-    background: rgba(0,0,0,0.8);
+    background: rgba(0, 0, 0, 0.8);
     border-radius: 6px;
     display: none;
     justify-content: center;
@@ -575,7 +575,7 @@ img {
     width: 100%;
     min-width: 0;
     padding: 4px 11px;
-    color: rgba(0,0,0,.85);
+    color: rgba(0, 0, 0, .85);
     font-size: 14px;
     line-height: 1.5715;
     background-color: #fff;
@@ -665,12 +665,12 @@ img {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    color: rgba(0,0,0,.85);
+    color: rgba(0, 0, 0, .85);
     font-size: 14px;
     font-variant: tabular-nums;
     line-height: 1.5715;
     list-style: none;
-    font-feature-settings: "tnum","tnum";
+    font-feature-settings: "tnum", "tnum";
     position: relative;
     display: inline-block;
     cursor: pointer;
@@ -769,7 +769,7 @@ img {
     font-weight: 400;
     color: #282828;
     border-radius: 6px;
-    padding-left: 10px!important;
+    padding-left: 10px !important;
 }
 
 .ant-input-affix-wrapper:before {
@@ -811,19 +811,19 @@ img {
 
 .ant-input:hover {
     border-color: #63d3ff;
-    border-right-width: 1px!important;
+    border-right-width: 1px !important;
 }
 
 .ant-input-affix-wrapper-focused {
     border-color: #63d3ff;
-    box-shadow: 0 0 0 2px rgb(59  193  255/ 20%);
+    box-shadow: 0 0 0 2px rgb(59 193 255/ 20%);
 }
 
 
 .ant-select:not(.ant-select-customize-input) .ant-select-selector .ant-select-selection-search-input {
     margin: 0;
     padding: 0;
-    background: rgba(0,0,0,0);
+    background: rgba(0, 0, 0, 0);
     border: none;
     outline: none;
     -webkit-appearance: none;
@@ -883,6 +883,7 @@ img {
     border-radius: 10px 0 0 10px;
     border-right: none;
 }
+
 .form_wrap input[type="text"] {
     width: 100%;
     height: 60px;
@@ -897,7 +898,7 @@ img {
     margin-left: 0;
 }
 
-input[type="text"]{
+input[type="text"] {
     border: none;
     height: 30px;
     padding: 2px 4px 5px 2px;
@@ -931,13 +932,13 @@ input[type="text"]{
     width: 60px;
     height: 60px;
     margin-left: -1px;
-    background-color: rgba(0,0,0,0.06);
+    background-color: rgba(0, 0, 0, 0.06);
     border-radius: 0 10px 10px 0;
 }
 
 .form_wrap .autocomplete_layer {
     position: absolute;
-    background: rgb(0,0,0,0.9);
+    background: rgb(0, 0, 0, 0.9);
     top: 100%;
     left: 0;
     right: 0;

@@ -4,6 +4,7 @@
     background-color: rgb(128, 171, 255);
     margin-top: 93px
 }
+
 .fiFDYG {
     max-width: 1080px;
     margin: 0px auto;
@@ -22,7 +23,8 @@
     text-align: left;
     color: rgba(0, 0, 0, 0.7);
 }
-p{
+
+p {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -39,6 +41,7 @@ p{
     text-align: left;
     color: rgba(0, 0, 0, 0.7);
 }
+
 .fDYseZ {
     font-size: 13px;
     font-weight: normal;
@@ -50,11 +53,13 @@ p{
     color: rgba(0, 0, 0, 0.6);
     word-break: keep-all;
 }
-div{
+
+div {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 .gzZSJ {
     padding: 14px 28px;
     background-color: rgb(59, 193, 255);
@@ -73,10 +78,12 @@ div{
     margin-top: 42px;
     cursor: pointer;
 }
-span{
+
+span {
     margin: 0;
     box-sizing: border-box;
 }
+
 .fiFDYG img.bg {
     width: auto;
     height: 100%;
@@ -84,10 +91,12 @@ span{
     top: 0px;
     right: 0px;
 }
+
 .llEpYH {
     width: 100%;
     background-color: white;
 }
+
 .fiFDYG {
     max-width: 1080px;
     margin: 0px auto;
@@ -98,10 +107,12 @@ span{
 .cQYdGh {
     display: flex;
 }
+
 .cQYdGh > div {
     flex: 1 1 0%;
     margin-bottom: 32px;
 }
+
 .eNodVi {
     margin-bottom: 24px;
     font-size: 22px;
@@ -112,6 +123,7 @@ span{
     letter-spacing: -0.5px;
     text-align: left;
 }
+
 .iIDnif {
     display: inline-block;
     font-size: 16px;
@@ -121,6 +133,7 @@ span{
     border-bottom: 0.5px solid rgb(22, 22, 22);
     margin-bottom: 20px;
 }
+
 .cJQyLY {
     margin-bottom: 8px;
     font-weight: bold;
@@ -133,15 +146,18 @@ span{
     color: rgb(22, 22, 22);
     font-size: 12px;
 }
+
 .cQYdGh > div {
     flex: 1 1 0%;
     margin-bottom: 32px;
 }
-br{
+
+br {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 .jxqoZj {
     display: inline-block;
     margin-bottom: 8px;
@@ -150,6 +166,7 @@ br{
     font-weight: bold;
     text-decoration: underline;
 }
+
 .jxqoZj {
     display: inline-block;
     margin-bottom: 8px;

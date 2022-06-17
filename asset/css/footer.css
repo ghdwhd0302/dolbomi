@@ -9,11 +9,11 @@ body {
 }
 
 
-*{
+* {
     box-sizing: border-box;
 }
 
-body, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, legend, input, textarea, button, select{
+body, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, legend, input, textarea, button, select {
     margin: 0;
     padding: 0;
 }
@@ -24,10 +24,10 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-top: 1px solid rgba(0,0,0,0.1);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-footer .footer_wrap{
+footer .footer_wrap {
     width: 1240px;
     flex: none;
     display: flex;
@@ -35,7 +35,7 @@ footer .footer_wrap{
     align-items: flex-start;
 }
 
-footer .footer_wrap p{
+footer .footer_wrap p {
     display: flex;
     flex: none;
     justify-content: flex-start;
@@ -55,35 +55,35 @@ footer .footer_wrap p span {
 }
 
 
-footer .footer_wrap p span + span{
+footer .footer_wrap p span + span {
     margin-top: 6px;
 }
 
-footer .footer_wrap p span > span{
+footer .footer_wrap p span > span {
     margin-top: 0;
 }
 
-footer .footer_wrap p span > span + span{
+footer .footer_wrap p span > span + span {
     margin-top: 0;
     margin-left: 20px;
 }
 
-footer .footer_wrap p span > span + span:before{
+footer .footer_wrap p span > span + span:before {
     position: absolute;
     content: '';
     top: 3px;
     left: -10px;
     width: 1px;
     height: 11px;
-    background: rgba(0,0,0,0.2);
+    background: rgba(0, 0, 0, 0.2);
 }
 
-footer .footer_wrap p .company{
+footer .footer_wrap p .company {
     font-weight: 500;
     font-size: 16px;
 }
 
-footer .footer_wrap p + p{
+footer .footer_wrap p + p {
     display: flex;
     flex: 1;
     justify-content: flex-start;
@@ -91,7 +91,7 @@ footer .footer_wrap p + p{
     flex-direction: column;
 }
 
-footer .footer_wrap p .tell{
+footer .footer_wrap p .tell {
     margin: 0 4px;
 }
 
