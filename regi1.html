@@ -7,12 +7,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="asset/css/regi.css">
+    <link rel="stylesheet" href="asset/css/header.css">
+    <link rel="stylesheet" href="asset/css/footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
 </head>
 
 <body data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N4PK2PR" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript><noscript>You need to enable JavaScript to run
-        this app.</noscript>
+    <header id="header" class="header">
+	    <div class="header_wrap">
+		    <h1 class="logo" onclick=""></h1>
+		    <nav class="nav">
+		        <ul class="nav_list">
+		            <li class="nav_item menu01">
+		                <a id="btnIntroduce" class="nav_item_link">돌보미 소개</a>
+		            </li>
+		            
+			        <li class="nav_item menu02">
+			            <a id="btnUseService" class="nav_item_link">서비스 이용</a>
+			        </li>
+
+			        <li class="nav_item menu02">
+			            <a id="btnUseService" class="nav_item_link">서비스 신청 목록</a>
+			        </li>
+			        
+					<li class="nav_item menu03">
+						<a class="nav_item_link">매니저 지원</a>
+					</li>
+			        
+		            <li class="nav_item menu04">
+		                <a id="btnQuestion" class="nav_item_link" >자주묻는 질문</a>
+		            </li>
+
+		            <!-- <li class="nav_item menu04">
+                        <a href="javascript:void(0)" class="nav_item_link">인재채용</a>
+                    </li> -->
+		        </ul>
+		        <!--<div class="navsub_bg"></div>-->
+		    </nav>
+		    <div class="fnc_menu_wrap">
+				<a href="" class="fnc_home" title="메인화면"></a>
+		    	<a href="" class="fnc_notice" onclick=""></a>
+		    	
+		    		<a class="fnc_alram" href="" title="알리미"></a>
+		    	
+			    <a class="fnc_user" id="btnLogin" title="로그인">
+			    	
+			    	이름입력 님
+			    </a>
+			    <div class="fnc_user_wrap" tabindex="1">
+			        <a title="프로필수정">프로필수정</a>
+			        <a title="이용내역">이용내역</a>
+			        <a title="비밀번호변경">비밀번호변경</a>
+			        <a class="logout" title="로그아웃">로그아웃</a>
+			    </div>
+		    </div>
+	    </div>
+		<div class="navsub_bg"></div>	    
+    </header>
     <div id="root">
         <div id="app-container" class="app-container">
 
@@ -36,22 +90,24 @@
                                         <div class="sc-VigVT dUXpIL"></div><label>생년월일</label><input type="text"
                                             maxlength="8" placeholder="숫자만 입력해주세요 (ex. 19880320)"
                                             class="ant-input sc-jzJRlG iaafvp" value="">
-                                        <div class="sc-VigVT ffyjKW"></div><label>연락처</label><input type="text"
-                                            maxlength="11" placeholder="숫자만 입력해주세요.(ex. 01014231324)"
-                                            class="ant-input sc-jzJRlG iaafvp" value="">
+                                        <div class="form fst"><label>이메일</label>
+                                                <div><input type="email" required="" placeholder="ex) example@mail.com"
+                                                        class="ant-input sc-jzJRlG iaafvp" value=""
+                                                        style="width: 100%;">
+                                                </div>
+                                        </div>
+                                        
                                         <div class="sc-VigVT ffyjKW"></div>
-                                        <div class="sc-cooIXK fRCQoH"><label class="ant-checkbox-wrapper"><span
-                                                    class="ant-checkbox"><input type="checkbox"
-                                                        class="ant-checkbox-input" value="false"><span
-                                                        class="ant-checkbox-inner"></span></span><span>서비스 이용 약관 및 개인 정보
-                                                    처리 방침 동의</span></label><span class="point">&gt;</span></div>
+                                        <div class="sc-cooIXK fRCQoH">
+                                           <input type="checkbox"> <label>&nbsp;&nbsp; 서비스 이용 약관 및 개인 정보 처리 방침 동의</label>
+                                        </div>
                                         <p class="sc-gmeYpB bwhqaA">이용약관 확인하기</p>
                                         <p class="sc-gmeYpB bwhqaA">개인정보 처리방침 확인하기</p>
                                         <div class="sc-VigVT dUXpIL"></div><button type="button"
                                             class="ant-btn ant-btn-primary"
                                             style="background-color: rgb(230, 230, 230); border: 0px; cursor: not-allowed;"><span>계속하기</span></button>
-                                        <div class="link-wrapper"><span class="text">메이트 신청을 희망하시나요? </span><span
-                                                class="link">메이트 신청하기</span></div>
+                                        <div class="link-wrapper"><span class="text">매니저 신청을 희망하시나요? </span><span
+                                                class="link" onclick="location.href='managerapply.html'">매니저 신청하기</span></div>
                                         <div class="link-wrapper"><span class="text">이미 계정이 있으신가요? </span><span
                                                 class="link">로그인</span></div>
                                     </div>
@@ -64,6 +120,51 @@
 
         </div>
     </div>
+    <footer>
+        <div class="footer_wrap">
+	        <p>
+		        <span class="company">(주)아이티브릿지</span>
+	            <span>서울시 금천구 디지털로 121, 에이스가산타워 311호</span>
+		        <span>
+		            <span class="mo_fx_row">
+			            <span>대표자 : 이승용</span>
+			            <span>사업자등록번호 : 894-87-00949</span>
+			        </span>
+		            <span class="mo_fx_row2">통신판매업신고 : 2021-서울금천-2992</span>
+		            
+	            </span> 
+	        </p>
+	        <p>
+	           <span> 
+	               <!-- <span><a href="tel:1533-3145" title="전화하기">고객센터 : 1533-3145(유료)</a></span> -->
+	               <span>고객센터 : <a class="" href="" title="전화하기">1533-3145</a> (유료)</span>
+	               <span>이메일 : help@mosimi.co.kr</span>
+               </span>
+               <span class="full">
+                   <span>(점심시간 11:30~13:00, 토·일·공휴일 휴무)</span>
+               </span>
+               <span> 
+                   <span><a href="" onclick="">이용약관</a></span> 
+                   <span><a href="" onclick="">개인정보처리방침</a></span>
+               </span>
+	        </p>
+        </div>
+    </footer>
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+	$("#btnLogin").click(function(){
+		if(!$(this).attr('class').match('on')){
+			$(this).addClass('on');
+			$(".fnc_user_wrap").addClass('on');
+		}else{
+			$(this).removeClass('on');
+			$(".fnc_user_wrap").removeClass('on');
+		}
+	})
 
+
+
+
+</script>
 </html>
