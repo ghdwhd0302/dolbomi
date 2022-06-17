@@ -83,7 +83,6 @@
 			</plugin>
 		</plugins>
 	</build>
-=======
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
@@ -167,6 +166,5 @@
             </plugin>
         </plugins>
     </build>
->>>>>>> 624f493c4f168018675c58e53ec22e3f22de258e
 
 </project>
