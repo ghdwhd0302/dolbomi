@@ -479,7 +479,7 @@ a {
     border: none;
 }
 
-.button_wrap a.refuse{
+.button_wrap a.refuse, .button_wrap a.cancel{
     color: #ffffff;
     background: #ff0071;
     border: none;

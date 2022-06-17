@@ -250,7 +250,7 @@
                                     </p>   	
                                 </div>
                                 <div class="button_wrap cancelreservation">
-                                    <a class="refuse">예약 취소</a>
+                                    <a class="cancel">예약 취소</a>
                                 </div>   
                             </div>   
                         </li>
@@ -501,14 +501,38 @@
 
     });
 
-
-    $("div.assigned").click(function(){
-        if($(".servicelist").css('display') != 'block'){
-            $(".servicelist").css('display', 'block');
+    /* 배정상세페이지 열기 */
+    $("div.ac_title").click(function(){
+        if($(this).siblings(".ac_detail").css('display') != 'block'){
+            $(this).siblings(".ac_detail").css('display', 'block');
         }else{
-            $(".servicelist").css('display', 'none');
+            $(this).siblings(".ac_detail").css('display', 'none');
         }
     });
+
+    /* 수락버튼 클릭 */
+    $(".accept").click(function(){
+        alert('서비스가 예약되었습니다.');
+        $(this).parent().parent().parent().parent('li').css('display', 'none');
+        $(".assignment").css('display', 'none');
+        $(".reservation").css('display', 'block');
+        $("#match").removeClass('current');
+        $("#reserv").addClass('current');
+    })
+
+    /* 거절버튼 클릭 */
+    $(".refuse").click(function(){
+        alert('매니저 배정을 취소합니다.');
+        $(this).parents("li.history").css('display', 'none');
+
+    })
+
+    /* 예약취소버튼 클릭 */
+    $(".cancel").click(function(){
+        alert("예약이 취소되었습니다.")
+        $(this).parents("li.history").css('display', 'none');
+    })
+
 
 </script>
 </html>
