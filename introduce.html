@@ -9,9 +9,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="asset/css/introduce.css">
     <title>돌보미</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(function(){
+		$("#header").load("header.html"); 
+		});
+	</script>
+	<script>
+		$(function(){
+		$("#footer").load("footer.html"); 
+		});
+	</script>
 </head>
 <body>
     <!-- header -->
+	<header id="header"></header>
 
     <!-- main -->
     <div id="divMosimiCounsel" style="display:none"></div>
@@ -245,10 +257,10 @@
 						<span class="step_icon"></span>
 						<span class="step_label">서비스<br>종료</span>
 					</li>
-					<li class="step">
+					<!-- <li class="step">
 						<span class="step_icon"></span>
 						<span class="step_label">추가금액<br>결제</span>
-					</li>
+					</li> -->
 					<li class="step">
 						<span class="step_icon"></span>
 						<span class="step_label">이용 완료</span>
@@ -404,6 +416,8 @@
 		</div>
     </div>
     <!-- footer -->
+	<a href="#" class="go_top">Go Top</a>
+	<footer id="footer"></footer>
 
 
 </body>
