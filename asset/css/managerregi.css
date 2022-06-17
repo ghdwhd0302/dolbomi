@@ -165,6 +165,7 @@ textarea.ant-input {
     line-height: 1.5715;
     vertical-align: bottom;
     transition: all .3s,height 0s;
+    resize: none;
 }
 .bBQEgI {
     font-size: 14px;
