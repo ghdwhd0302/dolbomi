@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="asset/css/manager_rev.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h3 style="     font-size: 35px;
+    background-color: #2fb8e7;
+    height: 122px;
+    margin-bottom: 20px;
+    padding: 32px 155px;
+    color: white;
+    ">매니저 서비스 신청</h3>
+    <section class="subcontents" id="content" style="margin: 0% 10% 0% 10%">
+        <div class="content">
+            <div style="width:100%; clear:both;"></div>
+            <div class="detail_search">
+
+                <style>
+                .detail_search { border:0; }
+                .common_search { width:100%; border-top:2px solid #CCCCCC; }
+                .common_search .search_area { width:100%; overflow:hidden; box-sizing:border-box; border-left:1px solid #CCCCCC; border-right:1px solid #CCCCCC; }
+                .common_search .search_area .tit { width:100px;float:left; padding:12px 0 8px 10px; box-sizing:border-box; }
+                .common_search .search_area .choice { width:calc( 100% - 100px ); float:left;  padding:7px 0 3px 0; box-sizing:border-box; font-size:16px;}
+                .common_search .search_area .choice .choice_text { margin:4px 0 0 0; letter-spacing:0;}
+                .common_search .search_area .choice .choice_text .none_choice { display:none; }
+                
+                .common_search .search_area .contents { width:100%; padding:10px; box-sizing:border-box; }
+                .common_search .search_area .contents .table_sido { width:100%; table-layout:fixed; border-collapse:collapse; }
+                .common_search .search_area .contents .table_sido td { border:1px solid #E4E4E4; text-align:center; padding:7px 5px 7px 5px; font-size:16px; }
+                .common_search .search_area .contents .table_sido td.on { background-color:#2fb8e7; font-weight:bold; }
+                .table_sido td.on a:hover, .table_sido td.on a:active, .table_sido td.on a:link, .table_sido td.on a:visited { color:#FFFFFF }
+                .common_search .search_area .contents .table_sido td.td_gugun {  padding:0; border-bottom:0; }
+                
+                .common_search .search_area .choice ul li { width:18%;  text-align:left; margin:0 5px 5px 0; padding:4px 0 6px 10px; box-sizing:border-box; background-color:#2fb8e7; border:1px solid #2fb8e7; border-radius:5px; color:#FFF; display:inline-block; position:relative; letter-spacing:-0.15em }
+                .common_search .search_area .choice ul li .delete { position:absolute; right:5px; margin:0 0 0 0; color:#FFF; }
+            
+                .common_search .search_area .list_area_gugun { display:none; padding:10px 10px 0 10px; border-bottom:1px solid #E4E4E4 }
+                .common_search .search_area .list_area_gugun ul { margin:0 0 0 0; overflow:hidden; }
+                .common_search .search_area .list_area_gugun li { width:12.5%; float:left; text-align:center; margin:0 0 10px 0;  }
+                
+                .common_search .search_area .list_area_gugun ul li input[type=button] { font-size:15px; width:94%; padding:7px 0 7px 0; border-radius:3px; background-color:#f4f4f4; height:36px; outline:none; border-color: #f4eded;}
+                .common_search .search_area .list_area_gugun ul li input[type=button].on { background-color:#2fb8e7 !important; color:#FFFFFF !important; border:1px solid #2fb8e7 !important }
+                .common_search .search_area .list_area_gugun ul li input[type=button].list_area_all { background-color:#FFFFFF; border:1px solid #2fb8e7; color:#2fb8e7; }
+                .common_search .search_area .list_area_gugun ul li input[type=button].list_sub_all { background-color:#FFFFFF; border:1px solid #FE586D; color:#FE586D; width:18%; margin:0 3px 0 0; }
+            
+                
+                .common_search .search_shape { width:100%; overflow:hidden; box-sizing:border-box; border-left:1px solid #CCCCCC; border-right:1px solid #CCCCCC; border-top:1px dashed #CCCCCC; }
+                .common_search .search_shape .tit { width:100px;float:left; padding:16px 0 8px 10px; box-sizing:border-box; }
+                .common_search .search_shape .contents { width:calc( 100% - 100px ); float:left;  padding:10px 0 3px 0; box-sizing:border-box; }
+                
+                .common_search .search_shape .contents ul { margin:0 0 0 0; overflow:hidden; }
+                .common_search .search_shape .contents ul li { width:12%; float:left; text-align:center; margin:0 0 10px 0;  }
+                .common_search .search_shape .contents ul li input[type=button] { font-size:11px; width:94%; padding:7px 0 7px 0; border-radius:3px; background-color:#f4f4f4; height:31px; }
+                .common_search .search_shape .contents ul li input[type=button].on { background-color:#FE586D !important; color:#FFFFFF !important; border:1px solid #FE586D !important; }
+                .common_search .search_shape .contents p.close { width:40px; position:absolute; right:5px; font-size:12px; font-weight:bold; letter-spacing:-0.15em; }
+                .common_search .search_shape .contents ul li input[type=button].list_area_all { background-color:#FFFFFF; border:1px solid #FE586D; color:#FE586D; }
+                .common_search .search_shape .contents ul li input[type=button].list_sub_all { background-color:#FFFFFF; border:1px solid #FE586D; color:#FE586D; width:18%; margin:0 3px 0 0; }
+            
+                
+                .common_search .search_sphere { width:100%; overflow:hidden; box-sizing:border-box; border-left:1px solid #CCCCCC; border-right:1px solid #CCCCCC; border-top:1px dashed #CCCCCC; }
+                .common_search .search_sphere .tit { width:100px;float:left; padding:10px 0 8px 10px; box-sizing:border-box; }
+                .common_search .search_sphere .contents { width:calc( 100% - 100px ); float:left;  padding:10px 0 3px 0; box-sizing:border-box; font-size:12px;}
+                
+                .common_search .search_sphere .contents ul { margin:0 0 0 0; overflow:hidden; }
+                .common_search .search_sphere .contents ul li { width:12%; float:left; text-align:center; margin:0 0 10px 0;  }
+                .common_search .search_sphere .contents ul li input[type=button] { font-size:11px; width:94%; padding:7px 0 7px 0; border-radius:3px; background-color:#f4f4f4; height:31px; }
+                .common_search .search_sphere .contents ul li input[type=button].on { background-color:#FE586D !important; color:#FFFFFF !important; border:1px solid #FE586D !important; }
+                .common_search .search_sphere .contents p.close { width:40px; position:absolute; right:5px; font-size:12px; font-weight:bold; letter-spacing:-0.15em; }
+                .common_search .search_sphere .contents ul li input[type=button].list_area_all { background-color:#FFFFFF; border:1px solid #FE586D; color:#FE586D; }
+                .common_search .search_sphere .contents ul li input[type=button].list_sub_all { background-color:#FFFFFF; border:1px solid #FE586D; color:#FE586D; width:18%; margin:0 3px 0 0; }
+            
+                
+                .common_search .search_newname { width:100%; overflow:hidden; box-sizing:border-box; border-left:1px solid #CCCCCC; border-right:1px solid #CCCCCC; border-top:1px dashed #CCCCCC; }
+                .common_search .search_newname .tit { width:100px;float:left; padding:10px 0 8px 10px; box-sizing:border-box; }
+                .common_search .search_newname .contents { width:calc( 100% - 100px ); float:left;  padding:10px 0 3px 0; box-sizing:border-box; font-size:12px;}
+                
+                .common_search .search_newname .contents ul { margin:0 0 0 0; overflow:hidden; }
+                .common_search .search_newname .contents ul li { width:12%; float:left; text-align:center; margin:0 0 10px 0;  }
+                .common_search .search_newname .contents ul li input[type=button] { font-size:11px; width:94%; padding:7px 0 7px 0; border-radius:3px; background-color:#f4f4f4; height:31px; }
+                .common_search .search_newname .contents ul li input[type=button].on { background-color:#FE586D !important; color:#FFFFFF !important; border:1px solid #FE586D !important; }
+                .common_search .search_newname .contents p.close { width:40px; position:absolute; right:5px; font-size:12px; font-weight:bold; letter-spacing:-0.15em; }
+                .common_search .search_newname .contents ul li input[type=button].list_area_all { background-color:#FFFFFF; border:1px solid #FE586D; color:#FE586D; }
+                .common_search .search_newname .contents ul li input[type=button].list_sub_all { background-color:#FFFFFF; border:1px solid #FE586D; color:#FE586D; width:18%; margin:0 3px 0 0; }
+            
+            
+                
+                .common_search .search_career { width:100%; overflow:hidden; box-sizing:border-box; border-left:1px solid #CCCCCC; border-right:1px solid #CCCCCC; border-top:1px dashed #CCCCCC; }
+                .common_search .search_career .tit { width:100px;float:left; padding:10px 0 8px 10px; box-sizing:border-box; }
+                .common_search .search_career .contents { width:calc( 100% - 100px ); float:left;  padding:10px 0 3px 0; box-sizing:border-box; font-size:12px;}
+                
+                .common_search .search_career .contents ul { margin:0 0 0 0; overflow:hidden; }
+                .common_search .search_career .contents ul li { width:12%; float:left; text-align:center; margin:0 0 10px 0;  }
+                .common_search .search_career .contents ul li input[type=button] { font-size:11px; width:94%; padding:7px 0 7px 0; border-radius:3px; background-color:#f4f4f4; height:31px; }
+                .common_search .search_career .contents ul li input[type=button].on { background-color:#FE586D !important; color:#FFFFFF !important; border:1px solid #FE586D !important; }
+                .common_search .search_career .contents p.close { width:40px; position:absolute; right:5px; font-size:12px; font-weight:bold; letter-spacing:-0.15em; }
+                .common_search .search_career .contents ul li input[type=button].list_area_all { background-color:#FFFFFF; border:1px solid #FE586D; color:#FE586D; }
+                .common_search .search_career .contents ul li input[type=button].list_sub_all { background-color:#FFFFFF; border:1px solid #FE586D; color:#FE586D; width:18%; margin:0 3px 0 0; }
+            
+                
+                .common_search .search_nationality { width:100%; overflow:hidden; box-sizing:border-box; border-left:1px solid #CCCCCC; border-right:1px solid #CCCCCC; border-top:1px dashed #CCCCCC; }
+                .common_search .search_nationality .tit { width:100px;float:left; padding:10px 0 8px 10px; box-sizing:border-box; }
+                .common_search .search_nationality .contents { width:calc( 100% - 100px ); float:left;  padding:10px 0 3px 0; box-sizing:border-box; font-size:12px;}
+            
+                
+                .common_search .search_nationality .contents ul { margin:0 0 0 0; overflow:hidden; }
+                .common_search .search_nationality .contents ul li { width:12%; float:left; text-align:center; margin:0 0 10px 0;  }
+                .common_search .search_nationality .contents ul li input[type=button] { font-size:11px; width:94%; padding:7px 0 7px 0; border-radius:3px; background-color:#f4f4f4; height:31px; }
+                .common_search .search_nationality .contents ul li input[type=button].on { background-color:#FE586D !important; color:#FFFFFF !important; border:1px solid #FE586D !important; }
+                .common_search .search_nationality .contents p.close { width:40px; position:absolute; right:5px; font-size:12px; font-weight:bold; letter-spacing:-0.15em; }
+                .common_search .search_nationality .contents ul li input[type=button].list_area_all { background-color:#FFFFFF; border:1px solid #FE586D; color:#FE586D; }
+                .common_search .search_nationality .contents ul li input[type=button].list_sub_all { background-color:#FFFFFF; border:1px solid #FE586D; color:#FE586D; width:18%; margin:0 3px 0 0; }
+                
+                .common_search .search_sex { width:100%; overflow:hidden; box-sizing:border-box; border-left:1px solid #CCCCCC; border-right:1px solid #CCCCCC; border-top:1px dashed #CCCCCC; }
+                .common_search .search_sex .tit { width:100px;float:left; padding:10px 0 8px 10px; box-sizing:border-box; }
+                .common_search .search_sex .contents { width:calc( 100% - 100px ); float:left;  padding:10px 0 3px 0; box-sizing:border-box; font-size:12px;}
+            
+                .common_search .search_sex .contents ul { margin:0 0 0 0; overflow:hidden; }
+                .common_search .search_sex .contents ul li { width:12%; float:left; text-align:center; margin:0 0 10px 0;  }
+                .common_search .search_sex .contents ul li input[type=button] { font-size:11px; width:94%; padding:7px 0 7px 0; border-radius:3px; background-color:#f4f4f4; height:31px; }
+                .common_search .search_sex .contents ul li input[type=button].on { background-color:#FE586D !important; color:#FFFFFF !important; border:1px solid #FE586D !important; }
+                .common_search .search_sex .contents p.close { width:40px; position:absolute; right:5px; font-size:12px; font-weight:bold; letter-spacing:-0.15em; }
+                .common_search .search_sex .contents ul li input[type=button].list_area_all { background-color:#FFFFFF; border:1px solid #FE586D; color:#FE586D; }
+                .common_search .search_sex .contents ul li input[type=button].list_sub_all { background-color:#FFFFFF; border:1px solid #FE586D; color:#FE586D; width:18%; margin:0 3px 0 0; }
+                
+                
+                .common_search .search_vaccine { width:100%; overflow:hidden; box-sizing:border-box; border-left:1px solid #CCCCCC; border-right:1px solid #CCCCCC; border-top:1px dashed #CCCCCC; }
+                .common_search .search_vaccine .tit { width:100px;float:left; padding:10px 0 8px 10px; box-sizing:border-box; }
+                .common_search .search_vaccine .contents { width:calc( 100% - 100px ); float:left;  padding:10px 0 3px 0; box-sizing:border-box; font-size:12px;}
+            
+                .common_search .search_vaccine .contents ul { margin:0 0 0 0; overflow:hidden; }
+                .common_search .search_vaccine .contents ul li { width:12%; float:left; text-align:center; margin:0 0 10px 0;  }
+                .common_search .search_vaccine .contents ul li input[type=button] { font-size:11px; width:94%; padding:7px 0 7px 0; border-radius:3px; background-color:#f4f4f4; height:31px; }
+                .common_search .search_vaccine .contents ul li input[type=button].on { background-color:#FE586D !important; color:#FFFFFF !important; border:1px solid #FE586D !important; }
+                .common_search .search_vaccine .contents p.close { width:40px; position:absolute; right:5px; font-size:12px; font-weight:bold; letter-spacing:-0.15em; }
+                .common_search .search_vaccine .contents ul li input[type=button].list_area_all { background-color:#FFFFFF; border:1px solid #FE586D; color:#FE586D; }
+                .common_search .search_vaccine .contents ul li input[type=button].list_sub_all { background-color:#FFFFFF; border:1px solid #FE586D; color:#FE586D; width:18%; margin:0 3px 0 0; }
+            
+            
+                
+                .common_search .search_ganbyeong { width:100%; overflow:hidden; box-sizing:border-box; border-left:1px solid #CCCCCC; border-right:1px solid #CCCCCC; border-top:1px dashed #CCCCCC; }
+                .common_search .search_ganbyeong .tit { width:100px;float:left; padding:10px 0 8px 10px; box-sizing:border-box; }
+                .common_search .search_ganbyeong .contents { width:calc( 100% - 100px ); float:left;  padding:6px 0 3px 0; box-sizing:border-box; font-size:12px;}
+                .common_search .search_ganbyeong .contents .text01 { display:block; font-size:1em; font-weight:500; padding:0 0 5px 0; line-height:1.5em;}
+            
+                .common_search .search_ganbyeong .contents ul { margin:0 0 0 0; overflow:hidden; }
+                .common_search .search_ganbyeong .contents ul li { width:12%; float:left; text-align:center; margin:0 0 10px 0;  }
+                .common_search .search_ganbyeong .contents ul li input[type=button] { font-size:11px; width:94%; padding:7px 0 7px 0; border-radius:3px; background-color:#f4f4f4; height:31px; }
+                .common_search .search_ganbyeong .contents ul li input[type=button].on { background-color:#FE586D !important; color:#FFFFFF !important; border:1px solid #FE586D !important; }
+                .common_search .search_ganbyeong .contents p.close { width:40px; position:absolute; right:5px; font-size:12px; font-weight:bold; letter-spacing:-0.15em; }
+                .common_search .search_ganbyeong .contents ul li input[type=button].list_area_all { background-color:#FFFFFF; border:1px solid #FE586D; color:#FE586D; }
+                .common_search .search_ganbyeong .contents ul li input[type=button].list_sub_all { background-color:#FFFFFF; border:1px solid #FE586D; color:#FE586D; width:18%; margin:0 3px 0 0; }
+            
+            
+                .search_btn { position:relative; padding:15px 0 15px 0;text-align:center;border:1px solid #CCCCCC !important; background-color:#FAFAFA;}
+                .hide {display:none;}
+            
+                .detail { position:absolute; top:0; right:0; width:140px; background-color:#FFFFFF; }
+            
+                #detail_btn { cursor:pointer; display:block; text-align:left; padding:10px 20px 8px 20px; width:100%; border-left:1px solid #D6D6D6; border-bottom:1px solid #D6D6D6; color:#F65A87; }
+                .detail span.on { background:url('/new/images/sub/sub_icon_moreon.gif') 110px 13px no-repeat;  }
+                .detail span.off { background:url('/new/images/sub/sub_icon_moreoff.gif') 110px 13px no-repeat; }
+                #css_offer {display:none;}
+            
+            
+                </style>
+                <form name="search_box" method="get" action="/html/s01.html">
+            
+                <input type="hidden" name="newname" value="">
+                <input type="hidden" name="shape" value="">
+                <input type="hidden" name="nationality" value="">
+                <input type="hidden" name="career" value="">
+                <input type="hidden" name="sort" value="">
+                <input type="hidden" name="sex" value="">
+                <input type="hidden" name="vaccine" value="">
+                <input type="hidden" name="yoyang" value="">
+                <input type="hidden" name="ganbyeong_corona" value="">
+                <input type="hidden" name="area1_all" value="서울"><!-- //2018-04-06 지역선택 시 검색되도록 설정하여 지속적으로 추가 안되도록 해당값은 선택시에만 적용되도록설정 -->
+            
+                <input type="hidden" name="sphere[]" value="">
+                <input type="hidden" name="sphere[]" value="">
+                <input type="hidden" name="sphere[]" value="">
+                <input type="hidden" name="sphere[]" value="">
+                <input type="hidden" name="sphere[]" value="">
+            
+                <input type="hidden" name="area1[]" value="">
+                <input type="hidden" name="area2[]" data-val="" value="">
+            
+                <input type="hidden" name="area1[]" value="">
+                <input type="hidden" name="area2[]" data-val="" value="">
+            
+                <input type="hidden" name="area1[]" value="">
+                <input type="hidden" name="area2[]" data-val="" value="">
+            
+                <input type="hidden" name="area1[]" value="">
+                <input type="hidden" name="area2[]" data-val="" value="">
+            
+                <input type="hidden" name="area1[]" value="">
+                <input type="hidden" name="area2[]" data-val="" value="">
+                <div class="common_search">
+                    <div class="search_area">
+                        <h3 class="tit">지역</h3>
+                        <div class="choice">
+                            <div class="choice_text"><div class="none_choice" style="display: block;">※ 시/도를 선택 후 희망하시는 구/군을 최대 5개까지 선택해주세요!</div>
+                            <ul></ul>
+                            </div>
+                        </div>
+                        <div class="contents">
+                        <table width="100%" cellpadding="0" cellspacing="0" border="0" class="table_sido">
+                        <tbody><tr>
+                            <td class="td_sido"><a href="javascript:search_area_view('', '', '');">전체</a></td>
+                                                <td class="td_sido on" id="area1_0101"><a href="javascript:search_area_view('0101', '서울', '');">서울</a></td>
+                                                                    <td class="td_sido" id="area1_0102"><a href="javascript:search_area_view('0102', '경기', '');">경기</a></td>
+                                                                    <td class="td_sido" id="area1_0103"><a href="javascript:search_area_view('0103', '인천', '');">인천</a></td>
+                                                                    <td class="td_sido" id="area1_0104"><a href="javascript:search_area_view('0104', '부산', '');">부산</a></td>
+                                                                    <td class="td_sido" id="area1_0105"><a href="javascript:search_area_view('0105', '대구', '');">대구</a></td>
+                                                                    <td class="td_sido" id="area1_0106"><a href="javascript:search_area_view('0106', '대전', '');">대전</a></td>
+                                                                    <td class="td_sido" id="area1_0107"><a href="javascript:search_area_view('0107', '세종', '');">세종</a></td>
+                                                                    <td class="td_sido" id="area1_0108"><a href="javascript:search_area_view('0108', '광주', '');">광주</a></td>
+                                                                    <td class="td_sido" id="area1_0109"><a href="javascript:search_area_view('0109', '울산', '');">울산</a></td>
+                                                                    <td class="td_sido" id="area1_010A"><a href="javascript:search_area_view('010A', '강원', '');">강원</a></td>
+                                                                    <td class="td_sido" id="area1_010B"><a href="javascript:search_area_view('010B', '경남', '');">경남</a></td>
+                                                                    <td class="td_sido" id="area1_010C"><a href="javascript:search_area_view('010C', '경북', '');">경북</a></td>
+                                                                    <td class="td_sido" id="area1_010D"><a href="javascript:search_area_view('010D', '전남', '');">전남</a></td>
+                                                                    <td class="td_sido" id="area1_010E"><a href="javascript:search_area_view('010E', '전북', '');">전북</a></td>
+                                                                    <td class="td_sido" id="area1_010F"><a href="javascript:search_area_view('010F', '충남', '');">충남</a></td>
+                                                                    <td class="td_sido" id="area1_0110"><a href="javascript:search_area_view('0110', '충북', '');">충북</a></td>
+                                                                    <td class="td_sido" id="area1_0111"><a href="javascript:search_area_view('0111', '제주', '');">제주</a></td>
+                                                                    <td class="td_sido" id="area1_0112"><a href="javascript:search_area_view('0112', '해외', '');">해외</a></td>
+                                                                            </tr>
+                        <tr>
+                            <td colspan="19" class="td_gugun">
+                            <div class="list_area_gugun" style="display: block;">
+                                                    <ul class="list_area_0101" >
+                                    <li><input type="button" value="전체" onclick="search_form_submit('area', '서울', '전체', '0101');" class="list_area_all"></li>
+                                                            <li><input type="button" id="area2_010102" data-val="010102" value="강남구" onclick="search_form_submit('area', '서울', '강남구', '010102');"></li>
+                                                            <li><input type="button" id="area2_010101" data-val="010101" value="강동구" onclick="search_form_submit('area', '서울', '강동구', '010101');"></li>
+                                                            <li><input type="button" id="area2_010103" data-val="010103" value="강북구" onclick="search_form_submit('area', '서울', '강북구', '010103');"></li>
+                                                            <li><input type="button" id="area2_010104" data-val="010104" value="강서구" onclick="search_form_submit('area', '서울', '강서구', '010104');"></li>
+                                                            <li><input type="button" id="area2_010105" data-val="010105" value="관악구" onclick="search_form_submit('area', '서울', '관악구', '010105');"></li>
+                                                            <li><input type="button" id="area2_010106" data-val="010106" value="광진구" onclick="search_form_submit('area', '서울', '광진구', '010106');"></li>
+                                                            <li><input type="button" id="area2_010107" data-val="010107" value="구로구" onclick="search_form_submit('area', '서울', '구로구', '010107');"></li>
+                                                            <li><input type="button" id="area2_010108" data-val="010108" value="금천구" onclick="search_form_submit('area', '서울', '금천구', '010108');"></li>
+                                                            <li><input type="button" id="area2_010109" data-val="010109" value="노원구" onclick="search_form_submit('area', '서울', '노원구', '010109');"></li>
+                                                            <li><input type="button" id="area2_01010A" data-val="01010A" value="도봉구" onclick="search_form_submit('area', '서울', '도봉구', '01010A');"></li>
+                                                            <li><input type="button" id="area2_01010B" data-val="01010B" value="동대문구" onclick="search_form_submit('area', '서울', '동대문구', '01010B');"></li>
+                                                            <li><input type="button" id="area2_01010C" data-val="01010C" value="동작구" onclick="search_form_submit('area', '서울', '동작구', '01010C');"></li>
+                                                            <li><input type="button" id="area2_01010D" data-val="01010D" value="마포구" onclick="search_form_submit('area', '서울', '마포구', '01010D');"></li>
+                                                            <li><input type="button" id="area2_01010E" data-val="01010E" value="서대문구" onclick="search_form_submit('area', '서울', '서대문구', '01010E');"></li>
+                                                            <li><input type="button" id="area2_01010F" data-val="01010F" value="서초구" onclick="search_form_submit('area', '서울', '서초구', '01010F');"></li>
+                                                            <li><input type="button" id="area2_010110" data-val="010110" value="성동구" onclick="search_form_submit('area', '서울', '성동구', '010110');"></li>
+                                                            <li><input type="button" id="area2_010111" data-val="010111" value="성북구" onclick="search_form_submit('area', '서울', '성북구', '010111');"></li>
+                                                            <li><input type="button" id="area2_010112" data-val="010112" value="송파구" onclick="search_form_submit('area', '서울', '송파구', '010112');"></li>
+                                                            <li><input type="button" id="area2_010113" data-val="010113" value="양천구" onclick="search_form_submit('area', '서울', '양천구', '010113');"></li>
+                                                            <li><input type="button" id="area2_010114" data-val="010114" value="영등포구" onclick="search_form_submit('area', '서울', '영등포구', '010114');"></li>
+                                                            <li><input type="button" id="area2_010115" data-val="010115" value="용산구" onclick="search_form_submit('area', '서울', '용산구', '010115');"></li>
+                                                            <li><input type="button" id="area2_010116" data-val="010116" value="은평구" onclick="search_form_submit('area', '서울', '은평구', '010116');"></li>
+                                                            <li><input type="button" id="area2_010117" data-val="010117" value="종로구" onclick="search_form_submit('area', '서울', '종로구', '010117');"></li>
+                                                            <li><input type="button" id="area2_010118" data-val="010118" value="중구" onclick="search_form_submit('area', '서울', '중구', '010118');"></li>
+                                                            <li><input type="button" id="area2_010119" data-val="010119" value="중랑구" onclick="search_form_submit('area', '서울', '중랑구', '010119');"></li>
+                                                        </ul>
+                                                    <ul class="list_area_0102" style="display:none">
+                                    <li><input type="button" value="전체" onclick="search_form_submit('area', '경기', '전체', '0102');" class="list_area_all"></li>
+                                                            <li><input type="button" id="area2_010201" data-val="010201" value="가평군" onclick="search_form_submit('area', '경기', '가평군', '010201');"></li>
+                                                            <li><input type="button" id="area2_010202" data-val="010202" value="고양시 덕양구" onclick="search_form_submit('area', '경기', '고양시 덕양구', '010202');"></li>
+                                                            <li><input type="button" id="area2_010203" data-val="010203" value="고양시 일산서구" onclick="search_form_submit('area', '경기', '고양시 일산서구', '010203');"></li>
+                                                            <li><input type="button" id="area2_010204" data-val="010204" value="고양시 일산동구" onclick="search_form_submit('area', '경기', '고양시 일산동구', '010204');"></li>
+                                                            <li><input type="button" id="area2_010205" data-val="010205" value="과천시" onclick="search_form_submit('area', '경기', '과천시', '010205');"></li>
+                                                            <li><input type="button" id="area2_010206" data-val="010206" value="광명시" onclick="search_form_submit('area', '경기', '광명시', '010206');"></li>
+                                                            <li><input type="button" id="area2_010207" data-val="010207" value="광주시" onclick="search_form_submit('area', '경기', '광주시', '010207');"></li>
+                                                            <li><input type="button" id="area2_010208" data-val="010208" value="구리시" onclick="search_form_submit('area', '경기', '구리시', '010208');"></li>
+                                                            <li><input type="button" id="area2_010209" data-val="010209" value="군포시" onclick="search_form_submit('area', '경기', '군포시', '010209');"></li>
+                                                            <li><input type="button" id="area2_010210" data-val="010210" value="김포시" onclick="search_form_submit('area', '경기', '김포시', '010210');"></li>
+                                                            <li><input type="button" id="area2_010211" data-val="010211" value="남양주시" onclick="search_form_submit('area', '경기', '남양주시', '010211');"></li>
+                                                            <li><input type="button" id="area2_010212" data-val="010212" value="동두천시" onclick="search_form_submit('area', '경기', '동두천시', '010212');"></li>
+                                                            <li><input type="button" id="area2_010213" data-val="010213" value="부천시" onclick="search_form_submit('area', '경기', '부천시', '010213');"></li>
+                                                            <li><input type="button" id="area2_010216" data-val="010216" value="성남시 분당구" onclick="search_form_submit('area', '경기', '성남시 분당구', '010216');"></li>
+                                                            <li><input type="button" id="area2_010217" data-val="010217" value="성남시 수정구" onclick="search_form_submit('area', '경기', '성남시 수정구', '010217');"></li>
+                                                            <li><input type="button" id="area2_010218" data-val="010218" value="성남시 중원구" onclick="search_form_submit('area', '경기', '성남시 중원구', '010218');"></li>
+                                                            <li><input type="button" id="area2_010219" data-val="010219" value="수원시 권선구" onclick="search_form_submit('area', '경기', '수원시 권선구', '010219');"></li>
+                                                            <li><input type="button" id="area2_010220" data-val="010220" value="수원시 장안구" onclick="search_form_submit('area', '경기', '수원시 장안구', '010220');"></li>
+                                                            <li><input type="button" id="area2_010221" data-val="010221" value="수원시 영통구" onclick="search_form_submit('area', '경기', '수원시 영통구', '010221');"></li>
+                                                            <li><input type="button" id="area2_010222" data-val="010222" value="수원시 팔달구" onclick="search_form_submit('area', '경기', '수원시 팔달구', '010222');"></li>
+                                                            <li><input type="button" id="area2_010223" data-val="010223" value="시흥시" onclick="search_form_submit('area', '경기', '시흥시', '010223');"></li>
+                                                            <li><input type="button" id="area2_010245" data-val="010245" value="안산시 상록구" onclick="search_form_submit('area', '경기', '안산시 상록구', '010245');"></li>
+                                                            <li><input type="button" id="area2_010246" data-val="010246" value="안산시 단원구" onclick="search_form_submit('area', '경기', '안산시 단원구', '010246');"></li>
+                                                            <li><input type="button" id="area2_010225" data-val="010225" value="안성시" onclick="search_form_submit('area', '경기', '안성시', '010225');"></li>
+                                                            <li><input type="button" id="area2_010226" data-val="010226" value="안양시 동안구" onclick="search_form_submit('area', '경기', '안양시 동안구', '010226');"></li>
+                                                            <li><input type="button" id="area2_010227" data-val="010227" value="안양시 만안구" onclick="search_form_submit('area', '경기', '안양시 만안구', '010227');"></li>
+                                                            <li><input type="button" id="area2_010228" data-val="010228" value="양주시" onclick="search_form_submit('area', '경기', '양주시', '010228');"></li>
+                                                            <li><input type="button" id="area2_010229" data-val="010229" value="양평군" onclick="search_form_submit('area', '경기', '양평군', '010229');"></li>
+                                                            <li><input type="button" id="area2_010230" data-val="010230" value="여주시" onclick="search_form_submit('area', '경기', '여주시', '010230');"></li>
+                                                            <li><input type="button" id="area2_010231" data-val="010231" value="연천군" onclick="search_form_submit('area', '경기', '연천군', '010231');"></li>
+                                                            <li><input type="button" id="area2_010232" data-val="010232" value="오산시" onclick="search_form_submit('area', '경기', '오산시', '010232');"></li>
+                                                            <li><input type="button" id="area2_010233" data-val="010233" value="용인시 기흥구" onclick="search_form_submit('area', '경기', '용인시 기흥구', '010233');"></li>
+                                                            <li><input type="button" id="area2_010234" data-val="010234" value="용인시 수지구" onclick="search_form_submit('area', '경기', '용인시 수지구', '010234');"></li>
+                                                            <li><input type="button" id="area2_010235" data-val="010235" value="용인시 처인구" onclick="search_form_submit('area', '경기', '용인시 처인구', '010235');"></li>
+                                                            <li><input type="button" id="area2_010236" data-val="010236" value="의왕시" onclick="search_form_submit('area', '경기', '의왕시', '010236');"></li>
+                                                            <li><input type="button" id="area2_010237" data-val="010237" value="의정부시" onclick="search_form_submit('area', '경기', '의정부시', '010237');"></li>
+                                                            <li><input type="button" id="area2_010238" data-val="010238" value="이천시" onclick="search_form_submit('area', '경기', '이천시', '010238');"></li>
+                                                            <li><input type="button" id="area2_010239" data-val="010239" value="파주시" onclick="search_form_submit('area', '경기', '파주시', '010239');"></li>
+                                                            <li><input type="button" id="area2_010240" data-val="010240" value="평택시" onclick="search_form_submit('area', '경기', '평택시', '010240');"></li>
+                                                            <li><input type="button" id="area2_010241" data-val="010241" value="포천시" onclick="search_form_submit('area', '경기', '포천시', '010241');"></li>
+                                                            <li><input type="button" id="area2_010242" data-val="010242" value="하남시" onclick="search_form_submit('area', '경기', '하남시', '010242');"></li>
+                                                            <li><input type="button" id="area2_010243" data-val="010243" value="화성시" onclick="search_form_submit('area', '경기', '화성시', '010243');"></li>
+                                                        </ul>
+                                                    <ul class="list_area_0103" style="display:none">
+                                    <li><input type="button" value="전체" onclick="search_form_submit('area', '인천', '전체', '0103');" class="list_area_all"></li>
+                                                            <li><input type="button" id="area2_010301" data-val="010301" value="강화군" onclick="search_form_submit('area', '인천', '강화군', '010301');"></li>
+                                                            <li><input type="button" id="area2_010302" data-val="010302" value="계양구" onclick="search_form_submit('area', '인천', '계양구', '010302');"></li>
+                                                            <li><input type="button" id="area2_010303" data-val="010303" value="미추홀구" onclick="search_form_submit('area', '인천', '미추홀구', '010303');"></li>
+                                                            <li><input type="button" id="area2_010304" data-val="010304" value="남동구" onclick="search_form_submit('area', '인천', '남동구', '010304');"></li>
+                                                            <li><input type="button" id="area2_010305" data-val="010305" value="동구" onclick="search_form_submit('area', '인천', '동구', '010305');"></li>
+                                                            <li><input type="button" id="area2_010306" data-val="010306" value="부평구" onclick="search_form_submit('area', '인천', '부평구', '010306');"></li>
+                                                            <li><input type="button" id="area2_010307" data-val="010307" value="서구" onclick="search_form_submit('area', '인천', '서구', '010307');"></li>
+                                                            <li><input type="button" id="area2_010308" data-val="010308" value="연수구" onclick="search_form_submit('area', '인천', '연수구', '010308');"></li>
+                                                            <li><input type="button" id="area2_010309" data-val="010309" value="옹진군" onclick="search_form_submit('area', '인천', '옹진군', '010309');"></li>
+                                                            <li><input type="button" id="area2_010310" data-val="010310" value="중구" onclick="search_form_submit('area', '인천', '중구', '010310');"></li>
+                                                        </ul>
+                                                    <ul class="list_area_0104" style="display:none">
+                                    <li><input type="button" value="전체" onclick="search_form_submit('area', '부산', '전체', '0104');" class="list_area_all"></li>
+                                                            <li><input type="button" id="area2_010401" data-val="010401" value="강서구" onclick="search_form_submit('area', '부산', '강서구', '010401');"></li>
+                                                            <li><input type="button" id="area2_010402" data-val="010402" value="금정구" onclick="search_form_submit('area', '부산', '금정구', '010402');"></li>
+                                                            <li><input type="button" id="area2_010403" data-val="010403" value="기장군" onclick="search_form_submit('area', '부산', '기장군', '010403');"></li>
+                                                            <li><input type="button" id="area2_010404" data-val="010404" value="남구" onclick="search_form_submit('area', '부산', '남구', '010404');"></li>
+                                                            <li><input type="button" id="area2_010405" data-val="010405" value="동구" onclick="search_form_submit('area', '부산', '동구', '010405');"></li>
+                                                            <li><input type="button" id="area2_010406" data-val="010406" value="동래구" onclick="search_form_submit('area', '부산', '동래구', '010406');"></li>
+                                                            <li><input type="button" id="area2_010407" data-val="010407" value="부산진구" onclick="search_form_submit('area', '부산', '부산진구', '010407');"></li>
+                                                            <li><input type="button" id="area2_010408" data-val="010408" value="북구" onclick="search_form_submit('area', '부산', '북구', '010408');"></li>
+                                                            <li><input type="button" id="area2_010409" data-val="010409" value="사상구" onclick="search_form_submit('area', '부산', '사상구', '010409');"></li>
+                                                            <li><input type="button" id="area2_010410" data-val="010410" value="사하구" onclick="search_form_submit('area', '부산', '사하구', '010410');"></li>
+                                                            <li><input type="button" id="area2_010411" data-val="010411" value="서구" onclick="search_form_submit('area', '부산', '서구', '010411');"></li>
+                                                            <li><input type="button" id="area2_010412" data-val="010412" value="수영구" onclick="search_form_submit('area', '부산', '수영구', '010412');"></li>
+                                                            <li><input type="button" id="area2_010413" data-val="010413" value="연제구" onclick="search_form_submit('area', '부산', '연제구', '010413');"></li>
+                                                            <li><input type="button" id="area2_010414" data-val="010414" value="영도구" onclick="search_form_submit('area', '부산', '영도구', '010414');"></li>
+                                                            <li><input type="button" id="area2_010415" data-val="010415" value="중구" onclick="search_form_submit('area', '부산', '중구', '010415');"></li>
+                                                            <li><input type="button" id="area2_010416" data-val="010416" value="해운대구" onclick="search_form_submit('area', '부산', '해운대구', '010416');"></li>
+                                                        </ul>
+                                                    <ul class="list_area_0105" style="display:none">
+                                    <li><input type="button" value="전체" onclick="search_form_submit('area', '대구', '전체', '0105');" class="list_area_all"></li>
+                                                            <li><input type="button" id="area2_010501" data-val="010501" value="남구" onclick="search_form_submit('area', '대구', '남구', '010501');"></li>
+                                                            <li><input type="button" id="area2_010502" data-val="010502" value="달서구" onclick="search_form_submit('area', '대구', '달서구', '010502');"></li>
+                                                            <li><input type="button" id="area2_010503" data-val="010503" value="달성군" onclick="search_form_submit('area', '대구', '달성군', '010503');"></li>
+                                                            <li><input type="button" id="area2_010504" data-val="010504" value="동구" onclick="search_form_submit('area', '대구', '동구', '010504');"></li>
+                                                            <li><input type="button" id="area2_010505" data-val="010505" value="북구" onclick="search_form_submit('area', '대구', '북구', '010505');"></li>
+                                                            <li><input type="button" id="area2_010506" data-val="010506" value="서구" onclick="search_form_submit('area', '대구', '서구', '010506');"></li>
+                                                            <li><input type="button" id="area2_010507" data-val="010507" value="수성구" onclick="search_form_submit('area', '대구', '수성구', '010507');"></li>
+                                                            <li><input type="button" id="area2_010508" data-val="010508" value="중구" onclick="search_form_submit('area', '대구', '중구', '010508');"></li>
+                                                        </ul>
+                                                    <ul class="list_area_0106" style="display:none">
+                                    <li><input type="button" value="전체" onclick="search_form_submit('area', '대전', '전체', '0106');" class="list_area_all"></li>
+                                                            <li><input type="button" id="area2_010601" data-val="010601" value="대덕구" onclick="search_form_submit('area', '대전', '대덕구', '010601');"></li>
+                                                            <li><input type="button" id="area2_010602" data-val="010602" value="동구" onclick="search_form_submit('area', '대전', '동구', '010602');"></li>
+                                                            <li><input type="button" id="area2_010603" data-val="010603" value="서구" onclick="search_form_submit('area', '대전', '서구', '010603');"></li>
+                                                            <li><input type="button" id="area2_010604" data-val="010604" value="유성구" onclick="search_form_submit('area', '대전', '유성구', '010604');"></li>
+                                                            <li><input type="button" id="area2_010605" data-val="010605" value="중구" onclick="search_form_submit('area', '대전', '중구', '010605');"></li>
+                                                        </ul>
+                                                    <ul class="list_area_0107" style="display:none">
+                                    <li><input type="button" value="전체" onclick="search_form_submit('area', '세종', '전체', '0107');" class="list_area_all"></li>
+                                                            <li><input type="button" id="area2_010701" data-val="010701" value="반곡동" onclick="search_form_submit('area', '세종', '반곡동', '010701');"></li>
+                                                            <li><input type="button" id="area2_010702" data-val="010702" value="소담동" onclick="search_form_submit('area', '세종', '소담동', '010702');"></li>
+                                                            <li><input type="button" id="area2_010703" data-val="010703" value="보람동" onclick="search_form_submit('area', '세종', '보람동', '010703');"></li>
+                                                            <li><input type="button" id="area2_010704" data-val="010704" value="대평동" onclick="search_form_submit('area', '세종', '대평동', '010704');"></li>
+                                                            <li><input type="button" id="area2_010705" data-val="010705" value="가람동" onclick="search_form_submit('area', '세종', '가람동', '010705');"></li>
+                                                            <li><input type="button" id="area2_010706" data-val="010706" value="한솔동" onclick="search_form_submit('area', '세종', '한솔동', '010706');"></li>
+                                                            <li><input type="button" id="area2_010707" data-val="010707" value="나성동" onclick="search_form_submit('area', '세종', '나성동', '010707');"></li>
+                                                            <li><input type="button" id="area2_010708" data-val="010708" value="새롬동" onclick="search_form_submit('area', '세종', '새롬동', '010708');"></li>
+                                                            <li><input type="button" id="area2_010709" data-val="010709" value="다정동" onclick="search_form_submit('area', '세종', '다정동', '010709');"></li>
+                                                            <li><input type="button" id="area2_010710" data-val="010710" value="어진동" onclick="search_form_submit('area', '세종', '어진동', '010710');"></li>
+                                                            <li><input type="button" id="area2_010711" data-val="010711" value="종촌동" onclick="search_form_submit('area', '세종', '종촌동', '010711');"></li>
+                                                            <li><input type="button" id="area2_010712" data-val="010712" value="아름동" onclick="search_form_submit('area', '세종', '아름동', '010712');"></li>
+                                                            <li><input type="button" id="area2_010713" data-val="010713" value="고운동" onclick="search_form_submit('area', '세종', '고운동', '010713');"></li>
+                                                            <li><input type="button" id="area2_010714" data-val="010714" value="도담동" onclick="search_form_submit('area', '세종', '도담동', '010714');"></li>
+                                                            <li><input type="button" id="area2_010715" data-val="010715" value="조치원읍" onclick="search_form_submit('area', '세종', '조치원읍', '010715');"></li>
+                                                            <li><input type="button" id="area2_010716" data-val="010716" value="연기면" onclick="search_form_submit('area', '세종', '연기면', '010716');"></li>
+                                                            <li><input type="button" id="area2_010717" data-val="010717" value="연동면" onclick="search_form_submit('area', '세종', '연동면', '010717');"></li>
+                                                            <li><input type="button" id="area2_010718" data-val="010718" value="부강면" onclick="search_form_submit('area', '세종', '부강면', '010718');"></li>
+                                                            <li><input type="button" id="area2_010719" data-val="010719" value="금남면" onclick="search_form_submit('area', '세종', '금남면', '010719');"></li>
+                                                            <li><input type="button" id="area2_010720" data-val="010720" value="장군면" onclick="search_form_submit('area', '세종', '장군면', '010720');"></li>
+                                                            <li><input type="button" id="area2_010721" data-val="010721" value="연서면" onclick="search_form_submit('area', '세종', '연서면', '010721');"></li>
+                                                            <li><input type="button" id="area2_010722" data-val="010722" value="전의면" onclick="search_form_submit('area', '세종', '전의면', '010722');"></li>
+                                                            <li><input type="button" id="area2_010723" data-val="010723" value="전동면" onclick="search_form_submit('area', '세종', '전동면', '010723');"></li>
+                                                            <li><input type="button" id="area2_010724" data-val="010724" value="소정면" onclick="search_form_submit('area', '세종', '소정면', '010724');"></li>
+                                                            <li><input type="button" id="area2_010727" data-val="010727" value="집현동" onclick="search_form_submit('area', '세종', '집현동', '010727');"></li>
+                                                            <li><input type="button" id="area2_010728" data-val="010728" value="산울동" onclick="search_form_submit('area', '세종', '산울동', '010728');"></li>
+                                                            <li><input type="button" id="area2_010729" data-val="010729" value="해밀동" onclick="search_form_submit('area', '세종', '해밀동', '010729');"></li>
+                                                            <li><input type="button" id="area2_01072A" data-val="01072A" value="합강동" onclick="search_form_submit('area', '세종', '합강동', '01072A');"></li>
+                                                        </ul>
+                                                    <ul class="list_area_0108" style="display:none">
+                                    <li><input type="button" value="전체" onclick="search_form_submit('area', '광주', '전체', '0108');" class="list_area_all"></li>
+                                                            <li><input type="button" id="area2_010801" data-val="010801" value="광산구" onclick="search_form_submit('area', '광주', '광산구', '010801');"></li>
+                                                            <li><input type="button" id="area2_010802" data-val="010802" value="남구" onclick="search_form_submit('area', '광주', '남구', '010802');"></li>
+                                                            <li><input type="button" id="area2_010803" data-val="010803" value="동구" onclick="search_form_submit('area', '광주', '동구', '010803');"></li>
+                                                            <li><input type="button" id="area2_010804" data-val="010804" value="북구" onclick="search_form_submit('area', '광주', '북구', '010804');"></li>
+                                                            <li><input type="button" id="area2_010805" data-val="010805" value="서구" onclick="search_form_submit('area', '광주', '서구', '010805');"></li>
+                                                        </ul>
+                                                    <ul class="list_area_0109" style="display:none">
+                                    <li><input type="button" value="전체" onclick="search_form_submit('area', '울산', '전체', '0109');" class="list_area_all"></li>
+                                                            <li><input type="button" id="area2_010901" data-val="010901" value="남구" onclick="search_form_submit('area', '울산', '남구', '010901');"></li>
+                                                            <li><input type="button" id="area2_010902" data-val="010902" value="동구" onclick="search_form_submit('area', '울산', '동구', '010902');"></li>
+                                                            <li><input type="button" id="area2_010903" data-val="010903" value="북구" onclick="search_form_submit('area', '울산', '북구', '010903');"></li>
+                                                            <li><input type="button" id="area2_010904" data-val="010904" value="울주군" onclick="search_form_submit('area', '울산', '울주군', '010904');"></li>
+                                                            <li><input type="button" id="area2_010905" data-val="010905" value="중구" onclick="search_form_submit('area', '울산', '중구', '010905');"></li>
+                                                        </ul>
+                                                    <ul class="list_area_010A" style="display:none">
+                                    <li><input type="button" value="전체" onclick="search_form_submit('area', '강원', '전체', '010A');" class="list_area_all"></li>
+                                                            <li><input type="button" id="area2_010A01" data-val="010A01" value="강릉시" onclick="search_form_submit('area', '강원', '강릉시', '010A01');"></li>
+                                                            <li><input type="button" id="area2_010A02" data-val="010A02" value="고성군" onclick="search_form_submit('area', '강원', '고성군', '010A02');"></li>
+                                                            <li><input type="button" id="area2_010A03" data-val="010A03" value="동해시" onclick="search_form_submit('area', '강원', '동해시', '010A03');"></li>
+                                                            <li><input type="button" id="area2_010A04" data-val="010A04" value="삼척시" onclick="search_form_submit('area', '강원', '삼척시', '010A04');"></li>
+                                                            <li><input type="button" id="area2_010A05" data-val="010A05" value="속초시" onclick="search_form_submit('area', '강원', '속초시', '010A05');"></li>
+                                                            <li><input type="button" id="area2_010A06" data-val="010A06" value="양구군" onclick="search_form_submit('area', '강원', '양구군', '010A06');"></li>
+                                                            <li><input type="button" id="area2_010A07" data-val="010A07" value="양양군" onclick="search_form_submit('area', '강원', '양양군', '010A07');"></li>
+                                                            <li><input type="button" id="area2_010A08" data-val="010A08" value="영월군" onclick="search_form_submit('area', '강원', '영월군', '010A08');"></li>
+                                                            <li><input type="button" id="area2_010A09" data-val="010A09" value="원주시" onclick="search_form_submit('area', '강원', '원주시', '010A09');"></li>
+                                                            <li><input type="button" id="area2_010A10" data-val="010A10" value="인제군" onclick="search_form_submit('area', '강원', '인제군', '010A10');"></li>
+                                                            <li><input type="button" id="area2_010A11" data-val="010A11" value="정선군" onclick="search_form_submit('area', '강원', '정선군', '010A11');"></li>
+                                                            <li><input type="button" id="area2_010A12" data-val="010A12" value="철원군" onclick="search_form_submit('area', '강원', '철원군', '010A12');"></li>
+                                                            <li><input type="button" id="area2_010A13" data-val="010A13" value="춘천시" onclick="search_form_submit('area', '강원', '춘천시', '010A13');"></li>
+                                                            <li><input type="button" id="area2_010A14" data-val="010A14" value="태백시" onclick="search_form_submit('area', '강원', '태백시', '010A14');"></li>
+                                                            <li><input type="button" id="area2_010A15" data-val="010A15" value="평창군" onclick="search_form_submit('area', '강원', '평창군', '010A15');"></li>
+                                                            <li><input type="button" id="area2_010A16" data-val="010A16" value="홍천군" onclick="search_form_submit('area', '강원', '홍천군', '010A16');"></li>
+                                                            <li><input type="button" id="area2_010A17" data-val="010A17" value="화천군" onclick="search_form_submit('area', '강원', '화천군', '010A17');"></li>
+                                                            <li><input type="button" id="area2_010A18" data-val="010A18" value="횡성군" onclick="search_form_submit('area', '강원', '횡성군', '010A18');"></li>
+                                                        </ul>
+                                                    <ul class="list_area_010B" style="display:none">
+                                    <li><input type="button" value="전체" onclick="search_form_submit('area', '경남', '전체', '010B');" class="list_area_all"></li>
+                                                            <li><input type="button" id="area2_010B01" data-val="010B01" value="거제시" onclick="search_form_submit('area', '경남', '거제시', '010B01');"></li>
+                                                            <li><input type="button" id="area2_010B02" data-val="010B02" value="거창군" onclick="search_form_submit('area', '경남', '거창군', '010B02');"></li>
+                                                            <li><input type="button" id="area2_010B03" data-val="010B03" value="고성군" onclick="search_form_submit('area', '경남', '고성군', '010B03');"></li>
+                                                            <li><input type="button" id="area2_010B04" data-val="010B04" value="김해시" onclick="search_form_submit('area', '경남', '김해시', '010B04');"></li>
+                                                            <li><input type="button" id="area2_010B05" data-val="010B05" value="남해군" onclick="search_form_submit('area', '경남', '남해군', '010B05');"></li>
+                                                            <li><input type="button" id="area2_010B07" data-val="010B07" value="밀양시" onclick="search_form_submit('area', '경남', '밀양시', '010B07');"></li>
+                                                            <li><input type="button" id="area2_010B08" data-val="010B08" value="사천시" onclick="search_form_submit('area', '경남', '사천시', '010B08');"></li>
+                                                            <li><input type="button" id="area2_010B09" data-val="010B09" value="산청군" onclick="search_form_submit('area', '경남', '산청군', '010B09');"></li>
+                                                            <li><input type="button" id="area2_010B10" data-val="010B10" value="양산시" onclick="search_form_submit('area', '경남', '양산시', '010B10');"></li>
+                                                            <li><input type="button" id="area2_010B11" data-val="010B11" value="의령군" onclick="search_form_submit('area', '경남', '의령군', '010B11');"></li>
+                                                            <li><input type="button" id="area2_010B12" data-val="010B12" value="진주시" onclick="search_form_submit('area', '경남', '진주시', '010B12');"></li>
+                                                            <li><input type="button" id="area2_010B13" data-val="010B13" value="창녕군" onclick="search_form_submit('area', '경남', '창녕군', '010B13');"></li>
+                                                            <li><input type="button" id="area2_010B14" data-val="010B14" value="창원시 마산합포" onclick="search_form_submit('area', '경남', '창원시 마산합포구', '010B14');"></li>
+                                                            <li><input type="button" id="area2_010B15" data-val="010B15" value="창원시 마산회원" onclick="search_form_submit('area', '경남', '창원시 마산회원구', '010B15');"></li>
+                                                            <li><input type="button" id="area2_010B16" data-val="010B16" value="창원시 성산구" onclick="search_form_submit('area', '경남', '창원시 성산구', '010B16');"></li>
+                                                            <li><input type="button" id="area2_010B17" data-val="010B17" value="창원시 의창구" onclick="search_form_submit('area', '경남', '창원시 의창구', '010B17');"></li>
+                                                            <li><input type="button" id="area2_010B18" data-val="010B18" value="창원시 진해구" onclick="search_form_submit('area', '경남', '창원시 진해구', '010B18');"></li>
+                                                            <li><input type="button" id="area2_010B19" data-val="010B19" value="통영시" onclick="search_form_submit('area', '경남', '통영시', '010B19');"></li>
+                                                            <li><input type="button" id="area2_010B20" data-val="010B20" value="하동군" onclick="search_form_submit('area', '경남', '하동군', '010B20');"></li>
+                                                            <li><input type="button" id="area2_010B21" data-val="010B21" value="함안군" onclick="search_form_submit('area', '경남', '함안군', '010B21');"></li>
+                                                            <li><input type="button" id="area2_010B22" data-val="010B22" value="함양군" onclick="search_form_submit('area', '경남', '함양군', '010B22');"></li>
+                                                            <li><input type="button" id="area2_010B23" data-val="010B23" value="합천군" onclick="search_form_submit('area', '경남', '합천군', '010B23');"></li>
+                                                        </ul>
+                                                    <ul class="list_area_010C" style="display:none">
+                                    <li><input type="button" value="전체" onclick="search_form_submit('area', '경북', '전체', '010C');" class="list_area_all"></li>
+                                                            <li><input type="button" id="area2_010C01" data-val="010C01" value="경산시" onclick="search_form_submit('area', '경북', '경산시', '010C01');"></li>
+                                                            <li><input type="button" id="area2_010C02" data-val="010C02" value="경주시" onclick="search_form_submit('area', '경북', '경주시', '010C02');"></li>
+                                                            <li><input type="button" id="area2_010C03" data-val="010C03" value="고령군" onclick="search_form_submit('area', '경북', '고령군', '010C03');"></li>
+                                                            <li><input type="button" id="area2_010C04" data-val="010C04" value="구미시" onclick="search_form_submit('area', '경북', '구미시', '010C04');"></li>
+                                                            <li><input type="button" id="area2_010C05" data-val="010C05" value="군위군" onclick="search_form_submit('area', '경북', '군위군', '010C05');"></li>
+                                                            <li><input type="button" id="area2_010C06" data-val="010C06" value="김천시" onclick="search_form_submit('area', '경북', '김천시', '010C06');"></li>
+                                                            <li><input type="button" id="area2_010C07" data-val="010C07" value="문경시" onclick="search_form_submit('area', '경북', '문경시', '010C07');"></li>
+                                                            <li><input type="button" id="area2_010C08" data-val="010C08" value="봉화군" onclick="search_form_submit('area', '경북', '봉화군', '010C08');"></li>
+                                                            <li><input type="button" id="area2_010C09" data-val="010C09" value="상주시" onclick="search_form_submit('area', '경북', '상주시', '010C09');"></li>
+                                                            <li><input type="button" id="area2_010C10" data-val="010C10" value="성주군" onclick="search_form_submit('area', '경북', '성주군', '010C10');"></li>
+                                                            <li><input type="button" id="area2_010C11" data-val="010C11" value="안동시" onclick="search_form_submit('area', '경북', '안동시', '010C11');"></li>
+                                                            <li><input type="button" id="area2_010C12" data-val="010C12" value="영덕군" onclick="search_form_submit('area', '경북', '영덕군', '010C12');"></li>
+                                                            <li><input type="button" id="area2_010C13" data-val="010C13" value="영양군" onclick="search_form_submit('area', '경북', '영양군', '010C13');"></li>
+                                                            <li><input type="button" id="area2_010C14" data-val="010C14" value="영주시" onclick="search_form_submit('area', '경북', '영주시', '010C14');"></li>
+                                                            <li><input type="button" id="area2_010C15" data-val="010C15" value="영천시" onclick="search_form_submit('area', '경북', '영천시', '010C15');"></li>
+                                                            <li><input type="button" id="area2_010C16" data-val="010C16" value="예천군" onclick="search_form_submit('area', '경북', '예천군', '010C16');"></li>
+                                                            <li><input type="button" id="area2_010C17" data-val="010C17" value="울릉군" onclick="search_form_submit('area', '경북', '울릉군', '010C17');"></li>
+                                                            <li><input type="button" id="area2_010C18" data-val="010C18" value="울진군" onclick="search_form_submit('area', '경북', '울진군', '010C18');"></li>
+                                                            <li><input type="button" id="area2_010C19" data-val="010C19" value="의성군" onclick="search_form_submit('area', '경북', '의성군', '010C19');"></li>
+                                                            <li><input type="button" id="area2_010C20" data-val="010C20" value="청도군" onclick="search_form_submit('area', '경북', '청도군', '010C20');"></li>
+                                                            <li><input type="button" id="area2_010C21" data-val="010C21" value="청송군" onclick="search_form_submit('area', '경북', '청송군', '010C21');"></li>
+                                                            <li><input type="button" id="area2_010C22" data-val="010C22" value="칠곡군" onclick="search_form_submit('area', '경북', '칠곡군', '010C22');"></li>
+                                                            <li><input type="button" id="area2_010C23" data-val="010C23" value="포항시 남구" onclick="search_form_submit('area', '경북', '포항시 남구', '010C23');"></li>
+                                                            <li><input type="button" id="area2_010C24" data-val="010C24" value="포항시 북구" onclick="search_form_submit('area', '경북', '포항시 북구', '010C24');"></li>
+                                                        </ul>
+                                                    <ul class="list_area_010D" style="display:none">
+                                    <li><input type="button" value="전체" onclick="search_form_submit('area', '전남', '전체', '010D');" class="list_area_all"></li>
+                                                            <li><input type="button" id="area2_010D01" data-val="010D01" value="강진군" onclick="search_form_submit('area', '전남', '강진군', '010D01');"></li>
+                                                            <li><input type="button" id="area2_010D02" data-val="010D02" value="고흥군" onclick="search_form_submit('area', '전남', '고흥군', '010D02');"></li>
+                                                            <li><input type="button" id="area2_010D03" data-val="010D03" value="곡성군" onclick="search_form_submit('area', '전남', '곡성군', '010D03');"></li>
+                                                            <li><input type="button" id="area2_010D04" data-val="010D04" value="광양시" onclick="search_form_submit('area', '전남', '광양시', '010D04');"></li>
+                                                            <li><input type="button" id="area2_010D05" data-val="010D05" value="구례군" onclick="search_form_submit('area', '전남', '구례군', '010D05');"></li>
+                                                            <li><input type="button" id="area2_010D06" data-val="010D06" value="나주시" onclick="search_form_submit('area', '전남', '나주시', '010D06');"></li>
+                                                            <li><input type="button" id="area2_010D07" data-val="010D07" value="담양군" onclick="search_form_submit('area', '전남', '담양군', '010D07');"></li>
+                                                            <li><input type="button" id="area2_010D08" data-val="010D08" value="목포시" onclick="search_form_submit('area', '전남', '목포시', '010D08');"></li>
+                                                            <li><input type="button" id="area2_010D09" data-val="010D09" value="무안군" onclick="search_form_submit('area', '전남', '무안군', '010D09');"></li>
+                                                            <li><input type="button" id="area2_010D10" data-val="010D10" value="보성군" onclick="search_form_submit('area', '전남', '보성군', '010D10');"></li>
+                                                            <li><input type="button" id="area2_010D11" data-val="010D11" value="순천시" onclick="search_form_submit('area', '전남', '순천시', '010D11');"></li>
+                                                            <li><input type="button" id="area2_010D12" data-val="010D12" value="신안군" onclick="search_form_submit('area', '전남', '신안군', '010D12');"></li>
+                                                            <li><input type="button" id="area2_010D13" data-val="010D13" value="여수시" onclick="search_form_submit('area', '전남', '여수시', '010D13');"></li>
+                                                            <li><input type="button" id="area2_010D14" data-val="010D14" value="영광군" onclick="search_form_submit('area', '전남', '영광군', '010D14');"></li>
+                                                            <li><input type="button" id="area2_010D15" data-val="010D15" value="영암군" onclick="search_form_submit('area', '전남', '영암군', '010D15');"></li>
+                                                            <li><input type="button" id="area2_010D16" data-val="010D16" value="완도군" onclick="search_form_submit('area', '전남', '완도군', '010D16');"></li>
+                                                            <li><input type="button" id="area2_010D17" data-val="010D17" value="장성군" onclick="search_form_submit('area', '전남', '장성군', '010D17');"></li>
+                                                            <li><input type="button" id="area2_010D18" data-val="010D18" value="장흥군" onclick="search_form_submit('area', '전남', '장흥군', '010D18');"></li>
+                                                            <li><input type="button" id="area2_010D19" data-val="010D19" value="진도군" onclick="search_form_submit('area', '전남', '진도군', '010D19');"></li>
+                                                            <li><input type="button" id="area2_010D20" data-val="010D20" value="함평군" onclick="search_form_submit('area', '전남', '함평군', '010D20');"></li>
+                                                            <li><input type="button" id="area2_010D21" data-val="010D21" value="해남군" onclick="search_form_submit('area', '전남', '해남군', '010D21');"></li>
+                                                            <li><input type="button" id="area2_010D22" data-val="010D22" value="화순군" onclick="search_form_submit('area', '전남', '화순군', '010D22');"></li>
+                                                        </ul>
+                                                    <ul class="list_area_010E" style="display:none">
+                                    <li><input type="button" value="전체" onclick="search_form_submit('area', '전북', '전체', '010E');" class="list_area_all"></li>
+                                                            <li><input type="button" id="area2_010E01" data-val="010E01" value="고창군" onclick="search_form_submit('area', '전북', '고창군', '010E01');"></li>
+                                                            <li><input type="button" id="area2_010E02" data-val="010E02" value="군산시" onclick="search_form_submit('area', '전북', '군산시', '010E02');"></li>
+                                                            <li><input type="button" id="area2_010E03" data-val="010E03" value="김제시" onclick="search_form_submit('area', '전북', '김제시', '010E03');"></li>
+                                                            <li><input type="button" id="area2_010E04" data-val="010E04" value="남원시" onclick="search_form_submit('area', '전북', '남원시', '010E04');"></li>
+                                                            <li><input type="button" id="area2_010E05" data-val="010E05" value="무주군" onclick="search_form_submit('area', '전북', '무주군', '010E05');"></li>
+                                                            <li><input type="button" id="area2_010E06" data-val="010E06" value="부안군" onclick="search_form_submit('area', '전북', '부안군', '010E06');"></li>
+                                                            <li><input type="button" id="area2_010E07" data-val="010E07" value="순창군" onclick="search_form_submit('area', '전북', '순창군', '010E07');"></li>
+                                                            <li><input type="button" id="area2_010E08" data-val="010E08" value="완주군" onclick="search_form_submit('area', '전북', '완주군', '010E08');"></li>
+                                                            <li><input type="button" id="area2_010E09" data-val="010E09" value="익산시" onclick="search_form_submit('area', '전북', '익산시', '010E09');"></li>
+                                                            <li><input type="button" id="area2_010E10" data-val="010E10" value="임실군" onclick="search_form_submit('area', '전북', '임실군', '010E10');"></li>
+                                                            <li><input type="button" id="area2_010E11" data-val="010E11" value="장수군" onclick="search_form_submit('area', '전북', '장수군', '010E11');"></li>
+                                                            <li><input type="button" id="area2_010E12" data-val="010E12" value="전주시 덕진구" onclick="search_form_submit('area', '전북', '전주시 덕진구', '010E12');"></li>
+                                                            <li><input type="button" id="area2_010E13" data-val="010E13" value="전주시 완산구" onclick="search_form_submit('area', '전북', '전주시 완산구', '010E13');"></li>
+                                                            <li><input type="button" id="area2_010E14" data-val="010E14" value="정읍시" onclick="search_form_submit('area', '전북', '정읍시', '010E14');"></li>
+                                                            <li><input type="button" id="area2_010E15" data-val="010E15" value="진안군" onclick="search_form_submit('area', '전북', '진안군', '010E15');"></li>
+                                                        </ul>
+                                                    <ul class="list_area_010F" style="display:none">
+                                    <li><input type="button" value="전체" onclick="search_form_submit('area', '충남', '전체', '010F');" class="list_area_all"></li>
+                                                            <li><input type="button" id="area2_010F01" data-val="010F01" value="공주시" onclick="search_form_submit('area', '충남', '공주시', '010F01');"></li>
+                                                            <li><input type="button" id="area2_010F02" data-val="010F02" value="금산군" onclick="search_form_submit('area', '충남', '금산군', '010F02');"></li>
+                                                            <li><input type="button" id="area2_010F03" data-val="010F03" value="논산시" onclick="search_form_submit('area', '충남', '논산시', '010F03');"></li>
+                                                            <li><input type="button" id="area2_010F04" data-val="010F04" value="당진시" onclick="search_form_submit('area', '충남', '당진시', '010F04');"></li>
+                                                            <li><input type="button" id="area2_010F05" data-val="010F05" value="보령시" onclick="search_form_submit('area', '충남', '보령시', '010F05');"></li>
+                                                            <li><input type="button" id="area2_010F06" data-val="010F06" value="부여군" onclick="search_form_submit('area', '충남', '부여군', '010F06');"></li>
+                                                            <li><input type="button" id="area2_010F07" data-val="010F07" value="서산시" onclick="search_form_submit('area', '충남', '서산시', '010F07');"></li>
+                                                            <li><input type="button" id="area2_010F08" data-val="010F08" value="서천군" onclick="search_form_submit('area', '충남', '서천군', '010F08');"></li>
+                                                            <li><input type="button" id="area2_010F09" data-val="010F09" value="아산시" onclick="search_form_submit('area', '충남', '아산시', '010F09');"></li>
+                                                            <li><input type="button" id="area2_010F10" data-val="010F10" value="연기군" onclick="search_form_submit('area', '충남', '연기군', '010F10');"></li>
+                                                            <li><input type="button" id="area2_010F11" data-val="010F11" value="예산군" onclick="search_form_submit('area', '충남', '예산군', '010F11');"></li>
+                                                            <li><input type="button" id="area2_010F12" data-val="010F12" value="천안시 동남구" onclick="search_form_submit('area', '충남', '천안시 동남구', '010F12');"></li>
+                                                            <li><input type="button" id="area2_010F13" data-val="010F13" value="천안시 서북구" onclick="search_form_submit('area', '충남', '천안시 서북구', '010F13');"></li>
+                                                            <li><input type="button" id="area2_010F14" data-val="010F14" value="청양군" onclick="search_form_submit('area', '충남', '청양군', '010F14');"></li>
+                                                            <li><input type="button" id="area2_010F15" data-val="010F15" value="태안군" onclick="search_form_submit('area', '충남', '태안군', '010F15');"></li>
+                                                            <li><input type="button" id="area2_010F16" data-val="010F16" value="홍성군" onclick="search_form_submit('area', '충남', '홍성군', '010F16');"></li>
+                                                            <li><input type="button" id="area2_010F17" data-val="010F17" value="계룡시" onclick="search_form_submit('area', '충남', '계룡시', '010F17');"></li>
+                                                        </ul>
+                                                    <ul class="list_area_0110" style="display:none">
+                                    <li><input type="button" value="전체" onclick="search_form_submit('area', '충북', '전체', '0110');" class="list_area_all"></li>
+                                                            <li><input type="button" id="area2_011001" data-val="011001" value="괴산군" onclick="search_form_submit('area', '충북', '괴산군', '011001');"></li>
+                                                            <li><input type="button" id="area2_011002" data-val="011002" value="단양군" onclick="search_form_submit('area', '충북', '단양군', '011002');"></li>
+                                                            <li><input type="button" id="area2_011003" data-val="011003" value="보은군" onclick="search_form_submit('area', '충북', '보은군', '011003');"></li>
+                                                            <li><input type="button" id="area2_011004" data-val="011004" value="영동군" onclick="search_form_submit('area', '충북', '영동군', '011004');"></li>
+                                                            <li><input type="button" id="area2_011005" data-val="011005" value="옥천군" onclick="search_form_submit('area', '충북', '옥천군', '011005');"></li>
+                                                            <li><input type="button" id="area2_011006" data-val="011006" value="음성군" onclick="search_form_submit('area', '충북', '음성군', '011006');"></li>
+                                                            <li><input type="button" id="area2_011007" data-val="011007" value="제천시" onclick="search_form_submit('area', '충북', '제천시', '011007');"></li>
+                                                            <li><input type="button" id="area2_011008" data-val="011008" value="진천군" onclick="search_form_submit('area', '충북', '진천군', '011008');"></li>
+                                                            <li><input type="button" id="area2_011009" data-val="011009" value="청주시 서원구" onclick="search_form_submit('area', '충북', '청주시 서원구', '011009');"></li>
+                                                            <li><input type="button" id="area2_01100A" data-val="01100A" value="청주시 청원구" onclick="search_form_submit('area', '충북', '청주시 청원구', '01100A');"></li>
+                                                            <li><input type="button" id="area2_01100B" data-val="01100B" value="청주시 상당구" onclick="search_form_submit('area', '충북', '청주시 상당구', '01100B');"></li>
+                                                            <li><input type="button" id="area2_01100C" data-val="01100C" value="청주시 흥덕구" onclick="search_form_submit('area', '충북', '청주시 흥덕구', '01100C');"></li>
+                                                            <li><input type="button" id="area2_01100D" data-val="01100D" value="충주시" onclick="search_form_submit('area', '충북', '충주시', '01100D');"></li>
+                                                            <li><input type="button" id="area2_01100E" data-val="01100E" value="증평군" onclick="search_form_submit('area', '충북', '증평군', '01100E');"></li>
+                                                        </ul>
+                                                    <ul class="list_area_0111" style="display:none">
+                                    <li><input type="button" value="전체" onclick="search_form_submit('area', '제주', '전체', '0111');" class="list_area_all"></li>
+                                                            <li><input type="button" id="area2_011101" data-val="011101" value="남제주군" onclick="search_form_submit('area', '제주', '남제주군', '011101');"></li>
+                                                            <li><input type="button" id="area2_011102" data-val="011102" value="북제주군" onclick="search_form_submit('area', '제주', '북제주군', '011102');"></li>
+                                                            <li><input type="button" id="area2_011103" data-val="011103" value="서귀포시" onclick="search_form_submit('area', '제주', '서귀포시', '011103');"></li>
+                                                            <li><input type="button" id="area2_011104" data-val="011104" value="제주시" onclick="search_form_submit('area', '제주', '제주시', '011104');"></li>
+                                                        </ul>
+                                                    <ul class="list_area_0112" style="display:none">
+                                    <li><input type="button" value="전체" onclick="search_form_submit('area', '해외', '전체', '0112');" class="list_area_all"></li>
+                                                            <li><input type="button" id="area2_011202" data-val="011202" value="중국,홍콩" onclick="search_form_submit('area', '해외', '중국,홍콩', '011202');"></li>
+                                                            <li><input type="button" id="area2_011201" data-val="011201" value="미국" onclick="search_form_submit('area', '해외', '미국', '011201');"></li>
+                                                            <li><input type="button" id="area2_011203" data-val="011203" value="일본" onclick="search_form_submit('area', '해외', '일본', '011203');"></li>
+                                                            <li><input type="button" id="area2_011212" data-val="011212" value="아시아,중동" onclick="search_form_submit('area', '해외', '아시아,중동', '011212');"></li>
+                                                            <li><input type="button" id="area2_011213" data-val="011213" value="북아메리카" onclick="search_form_submit('area', '해외', '북아메리카', '011213');"></li>
+                                                            <li><input type="button" id="area2_011214" data-val="011214" value="남아메리카" onclick="search_form_submit('area', '해외', '남아메리카', '011214');"></li>
+                                                            <li><input type="button" id="area2_011215" data-val="011215" value="유럽" onclick="search_form_submit('area', '해외', '유럽', '011215');"></li>
+                                                            <li><input type="button" id="area2_011216" data-val="011216" value="아프리카" onclick="search_form_submit('area', '해외', '아프리카', '011216');"></li>
+                                                            <li><input type="button" id="area2_011217" data-val="011217" value="오세아니아" onclick="search_form_submit('area', '해외', '오세아니아', '011217');"></li>
+                                                            <li><input type="button" id="area2_011210" data-val="011210" value="그외" onclick="search_form_submit('area', '해외', '그외', '011210');"></li>
+                                                        </ul>
+                                                    <ul class="list_area_0113" style="display:none">
+                                    <li><input type="button" value="전체" onclick="search_form_submit('area', '전국', '전체', '0113');" class="list_area_all"></li>
+                                                            <li><input type="button" id="area2_011301" data-val="011301" value="전국전체" onclick="search_form_submit('area', '전국', '전국전체', '011301');"></li>
+                                                        </ul>
+                                                </div>
+                            </td>
+                        </tr>
+                        </tbody></table>
+                        </div>
+                        <div class="area_banner">
+                        
+                            <style>
+                            .banner_woori { cursor:pointer; width:650px; height:76px; line-height:1.5em; font-size:16px; background:url('/new/images/sub/sub_bg_searchbanner_04.png') no-repeat; color:#FFFFFF; margin:0 0 0 0; text-align:left; }
+                            .banner_woori .banner_text01 { display:block; padding:13px 0 0 0; width:100%; text-indent:20px; font-size:21px; font-family:'Nanum Gothic', sans-serif; color:#FFFFFF;  }
+                            .banner_woori .banner_text02 { display:block; padding:8px 0 0 0; float:left; width:330px; text-indent:75px; font-size:16px; font-family:'Nanum Gothic', sans-serif; color:#FFFFFF;  }
+                            .banner_woori .banner_text03 { display:block; padding:10px 0 0 20px; float:left; width:200px; font-family:'Dotum'; font-size:12px; color:#000000;  }
+                            
+                            .banner_woori .banner_text03_2 { display:block; padding:8px 0 0 20px; float:left; width:300px; font-family:'Dotum'; font-size:12px; color:#000000;  }
+                            
+                            .banner_woori_coop { cursor:pointer; width:650px; height:76px; line-height:1.5em; font-size:16px; background:url('/new/images/sub/sub_bg_searchbanner02.gif') no-repeat; color:#FFFFFF; margin:0 0 0 0; text-align:left; }
+                            .banner_woori_coop .banner_text01 { display:block; padding:13px 0 0 0; width:100%; text-indent:20px; font-size:21px; font-family:'Nanum Gothic', sans-serif; color:#FFFFFF;  }
+                            .banner_woori_coop .banner_text02 { display:block; padding:8px 0 0 0; float:left; width:330px; text-indent:75px; font-size:16px; font-family:'Nanum Gothic', sans-serif; color:#FFFFFF;  }
+                            .banner_woori_coop .banner_text03 { display:block; padding:10px 0 0 20px; float:left; width:200px; font-family:'Dotum'; font-size:12px; color:#000000;  }
+                            .banner_woori_coop .banner_text01_2 { display:block; padding:13px 0 0 0; width:100%; text-indent:20px; font-size:21px; font-family:'Nanum Gothic', sans-serif; color:#000000;  }
+                            .banner_woori_coop .banner_text04 { display:block; padding:8px 0 0 0; float:left; text-indent:75px; font-size:16px; font-family:'Nanum Gothic', sans-serif; color:#444444;  }
+                            
+                            .banner_woori_coop .banner_text03_2 { display:block; padding:8px 0 0 20px; float:left; width:300px; font-family:'Dotum'; font-size:12px; color:#000000;  }
+                            
+                            .banner_agency { cursor:pointer; width:650px; height:76px; line-height:1.5em; font-size:16px; background:url('/new/images/sub/sub_bg_searchbanner_upche.gif') no-repeat; color:#FFFFFF; margin:0 0 0 0; text-align:left; }
+                            
+                            .banner_agency .banner_text01 { display:block; padding:13px 0 0 0; width:100%; text-indent:20px; font-size:21px; font-family:'Nanum Gothic', sans-serif; color:#FFFFFF;  }
+                            .banner_agency .banner_text02 { display:block; padding:8px 0 0 0; float:left; width:330px; text-indent:75px; font-size:16px; font-family:'Nanum Gothic', sans-serif; color:#FFFFFF;  }
+                            .banner_agency .banner_text03 { display:block; padding:10px 0 0 20px; float:left; width:200px; font-family:'Dotum'; font-size:12px; color:#000000;  }
+                            
+                            .banner_agency .banner_text03_2 { display:block; padding:8px 0 0 20px; float:left; width:250px; font-family:'Dotum'; font-size:12px; color:#000000;  }
+            
+                            
+                            .banner_homepage { cursor:pointer; width:650px; height:76px; line-height:1.5em; font-size:16px; background:url('/new/images/sub/sub_bg_searchbanner_homepage.gif') no-repeat; color:#FFFFFF; margin:0 0 0 0; text-align:left; }
+                            
+                            .banner_homepage .banner_text01 { display:block; padding:13px 0 0 0; width:100%; text-indent:20px; font-size:21px; font-family:'Nanum Gothic', sans-serif; color:#FFFFFF;  }
+                            .banner_homepage .banner_text02 { display:block; padding:8px 0 0 0; float:left; width:330px; text-indent:75px; font-size:16px; font-family:'Nanum Gothic', sans-serif; color:#FFFFFF;  }
+                            .banner_homepage .banner_text03 { display:block; padding:10px 0 0 20px; float:left; width:200px; font-family:'Dotum'; font-size:12px; color:#000000;  }
+                            
+                            .banner_homepage .banner_text03_2 { display:block; padding:8px 0 0 20px; float:left; width:250px; font-family:'Dotum'; font-size:12px; color:#000000;  }
+            
+                            .search_slide { position:relative; width:650px; height:76px; overflow:hidden; margin:0 auto;}
+                            .search_slide ul { width:100%; float:left; }
+                            .search_slide ul li { width:100%; float:left; }
+                            
+                            .banner_slide { position:relative; width:100%; margin:10px 0 10px 0; overflow:hidden;}
+                            .banner_slide ul { width:100%; float:left; }
+                            .banner_slide ul li { width:100%; float:left; text-align:center; }
+                            </style>
+                                                                                            </div>
+                    </div>
+                </div>
+                <div class="search_btn">
+                    <input type="button" alt="검색하기" value="검색" style="border: 1px #2fb8e7;
+                    width: 151px;
+                    height: 49px;
+                    background-color: #2fb8e7;
+                    color: white;
+                    cursor: pointer;
+                    font-size: 17px;
+                    font-weight: 600;">
+                    <!-- <div class="detail">
+                    <span id="detail_btn" class="off" src="">상세검색 닫기</span>
+                    </div> -->
+                </div>
+            </form>
+            <div style="height:20px;"></div>
+        </div>
+        <div style="width:100%; margin:20px 0 0 0;" class="r_nor">
+            <style>
+                .table_box .table tbody tr td .icon_special { color:#FFFFFF; font-size: 0.75em; padding: 3px 8px 3px 8px; letter-spacing: 0; background-color: #00C73C; border-radius: 10px; color: #FFFFFF; font-weight: bold; }
+
+                .table_box .table tr .on { background-color:#FAFAFA; }
+                .table_box .table tbody tr.view_chk { opacity:0.5; }
+
+
+                a.chk, a.chk:hover, a.chk:focus, a.chk:active, a.chk:visited {color:#A4A4A4 !important;}
+                .chk { color:#A4A4A4 }
+                .thumb_bg1 { position:absolute; margin:-1px 0 0 -1px;width:240px; height:47px; background-color:#FFFFFF; zoom:1; filter:alpha(opacity=60); opacity:0.6; }
+                .ticket_view_icon {display:inline-block; padding:3px 3px 5px 3px;border-radius:2px; margin-bottom:0; font-size:0.78em; background-color:#ed4c61; color:#FFFFFF; vertical-align: top; }
+                .ticket_view_icon2 {display:inline-block; padding:3px 3px 5px 3px;border-radius:2px; margin-bottom:0; font-size:0.78em; background-color:orange; color:white;  }
+                span.memo { color:red; margin:0 0 0 10px; font-weight:bold; }
+                .memo_area { display:none; }
+                .cr_yoil { margin:8px 0 0 0; display:inline-block;  }
+                .cr_yoil a:link, .cr_yoil a:visited { color:#797979; font-size:12px; letter-spacing:-0.1em;  } 
+
+                .ad0 { border:1px solid #fd7d6a; font-size:11px; display:inline-block; margin:8px 0 0 0 ; padding:2px; color:#fd7d6a; }
+                .ad1 { border:1px solid #7d8acb; font-size:11px; display:inline-block; margin:8px 0 0 0 ; padding:2px; color:#7d8acb; }
+                .ad2 { border:1px solid #7d8acb; font-size:11px; display:inline-block; margin:8px 0 0 0 ; padding:2px; color:#7d8acb; }
+            </style>
+            <!-- <div class="table_box">
+               <table class="table">
+                    <colgroup>
+                        <col width="">
+                        <col width="">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col" class="border_left">성명</th>
+                            <th scope="col">채용제목</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="3824bbe9ba on " style="background-color: rgb(250, 250, 250);">
+                            <td class="table_e">
+                                <a href="/html/s01_v.html?idx=674305" class="td_a">
+                                <span class="icon_newname1">개인</span>											
+                                    <strong class="table_strong cr_normal">
+                                         조○○								
+                                    </strong>
+                                    <span class="table_span">입주형</span>	
+                                </a>
+                            </td>
+                           
+                            <td class="icon_box">
+                                <p class="table_t cr_normal">
+                                     <a href="/html/s01_v.html?idx=674305" class="">펫시터: 착하신분 </a>
+                                </p>
+                                <p class="table_c">
+                                    <a href="/html/s01_v.html?idx=674305">
+                                        <span class="cr_sphere">펫시터 / 입주가사도우미 / 병원동행인</span>
+                                    </a>
+                                </p>
+                                <p class="cr_sphere">
+                                    <a href="/html/s01_v.html?idx=674305">월급 350~400 만원 / 협의 후 결정</a>
+                                </p>
+                                
+                            </td>
+                            
+                        </tr>
+                    </tbody>
+               </table> 
+               
+            </div> -->
+        </div>
+    </div>
+</section>
+<div class="com_accordion" >
+    <ul style="margin: 0% 10% 0% 10%;">
+    <li class="history">	
+        <div class="ac_title">		
+            <input type="hidden" name="hManagerSysId" value="">		
+            <input type="hidden" name="hMemberSysId" value="">		
+            <input type="hidden" name="hUserSysId" value="">		
+            <input type="hidden" name="hUserGenderCd" value="">		
+            <input type="hidden" name="hServiceNm" value="">		
+            <input type="hidden" name="hServiceCd" value="">		
+            <input type="hidden" name="hServiceSeq" value="">		
+            <input type="hidden" name="hMatchSeq" value="">		
+            <input type="hidden" name="hServiceStartDate" value="">		
+            <input type="hidden" name="hServiceStartTime" value="">		
+            <input type="hidden" name="hDepartAdmCd" value="">		
+            <input type="hidden" name="hDestAdmCd" value="">		
+            <input type="hidden" name="hServiceCarYn" value="">		
+            <p class="service_a">동행</p>		
+            <div class="left_con" style="padding-right:37px">			
+                <p>				
+                    <span class="title">이용자</span>				
+                    <span></span>			
+                </p>		  	
+                <p>       		
+                    <span class="title">동행일정 및 방문시간</span>       		
+                    <span></span>       		
+                    <span></span>     		
+                </p>     		
+                <p>       		
+                    <span class="title">이용시간</span>       		
+                    <span></span>     		
+                </p>     		
+                <p>       		
+                    <span class="title">출발지</span>       		
+                    <span></span>     		
+                </p>     		
+                <p>       		
+                    <span class="title">목적지</span>       		
+                    <span><br></span>     		
+                </p>     		
+                <hr style="border : 0px; width: 100%;
+                    border-top: 2px solid #e8e6e7;
+                    width: 100%;
+                    margin: 20px 0 20px 0;"/>
+                <button id="test01" style="color: #2fb8e7;
+                font-weight: 900;
+                cursor: pointer;
+                align-self: center;
+                margin-right: 115px;
+                background-color: white;
+                font-size: 18px;
+            ">상세보기</button>	  	
+            </div>  
+            <button class="openPopup" style=" background-color: #2fb8e7;
+    color: white;
+    padding: 16px 26px 16px 26px;
+    font-size: 18px;
+    font-weight: 700;
+    position: absolute;
+    right: 15px;
+    border-radius: 30px;
+    margin-right: 20px;
+    bottom: 80px;
+">
+    신청
+</button>
+        </div>   
+        </li>
+    </ul>
+</div>
+<div class="com_accordion" id="test02"  style="display:none;">
+    <ul style="margin: 0% 10% 0% 10%;">
+    <li class="history">	
+        <div class="ac_title">		
+            <input type="hidden" name="hManagerSysId" value="">		
+            <input type="hidden" name="hMemberSysId" value="">		
+            <input type="hidden" name="hUserSysId" value="">		
+            <input type="hidden" name="hUserGenderCd" value="">		
+            <input type="hidden" name="hServiceNm" value="">		
+            <input type="hidden" name="hServiceCd" value="">		
+            <input type="hidden" name="hServiceSeq" value="">		
+            <input type="hidden" name="hMatchSeq" value="">		
+            <input type="hidden" name="hServiceStartDate" value="">		
+            <input type="hidden" name="hServiceStartTime" value="">		
+            <input type="hidden" name="hDepartAdmCd" value="">		
+            <input type="hidden" name="hDestAdmCd" value="">		
+            <input type="hidden" name="hServiceCarYn" value="">		
+            <p class="service_a" style="display: none;">동행서비스</p>		
+            <div class="left_con" style="margin-left: 30px; padding-right:37px;">			
+                <p>				
+                    <span class="title">동행서비스</span>
+                    <!-- 동행서비스종류나타냄 -->				
+                    <span></span>			
+                </p>		  	
+                <p>				
+                    <span class="title">이용자</span>				
+                    <span></span>			
+                </p>		  	
+                <p>				
+                    <span class="title">이용자 나이</span>				
+                    <span></span>			
+                </p>		  	
+                <p>				
+                    <span class="title">이용자 성별</span>				
+                    <span></span>			
+                </p>		  	
+                <p>				
+                    <span class="title">이용자 휴대폰</span>				
+                    <span></span>			
+                </p>		  	
+                <p>       		
+                    <span class="title">동행일정 및 방문시간</span>       		
+                    <span></span>       		
+                    <span></span>     		
+                </p>     		
+                <p>       		
+                    <span class="title">이용시간</span>       		
+                    <span></span>     		
+                </p>     		
+                <p>       		
+                    <span class="title">출발지</span>       		
+                    <span></span>     		
+                </p>     		
+                <p>       		
+                    <span class="title">목적지</span>       		
+                    <span><br></span>     		
+                </p>     		
+                <p>       		
+                    <span class="title">총 이용요금</span>       		
+                    <span></span>     		
+                </p> 
+                <hr style="border : 0px; width: 100%;
+                    border-top: 2px solid #e8e6e7;
+                    width: 100%;
+                    margin: 20px 0 20px 0;"/>
+                <button id="test03" style="color: #2fb8e7;
+                font-weight: 900;
+                cursor: pointer;
+                align-self: center;
+                margin-right: 17px;
+                background-color: white;
+                font-size: 18px;
+            ">닫기</button>	 	
+            </div>  
+        </div>   
+        </li>
+    </ul>
+</div>
+<div class="com_accordion" >
+    <ul style="margin: 0% 10% 0% 10%;">
+    <li class="history">	
+        <div class="ac_title">		
+            <input type="hidden" name="hManagerSysId" value="">		
+            <input type="hidden" name="hMemberSysId" value="">		
+            <input type="hidden" name="hUserSysId" value="">		
+            <input type="hidden" name="hUserGenderCd" value="">		
+            <input type="hidden" name="hServiceNm" value="">		
+            <input type="hidden" name="hServiceCd" value="">		
+            <input type="hidden" name="hServiceSeq" value="">		
+            <input type="hidden" name="hMatchSeq" value="">		
+            <input type="hidden" name="hServiceStartDate" value="">		
+            <input type="hidden" name="hServiceStartTime" value="">		
+            <input type="hidden" name="hDepartAdmCd" value="">		
+            <input type="hidden" name="hDestAdmCd" value="">		
+            <input type="hidden" name="hServiceCarYn" value="">		
+            <p class="service_a">돌봄</p>		
+            <div class="left_con" style="padding-right: 37px;">			
+                <p>				
+                    <span class="title">이용자</span>				
+                    <span></span>			
+                </p>		  	
+                <p>       		
+                    <span class="title">돌봄일정 및 방문시간</span>       		
+                    <span></span>       		
+                    <span></span>     		
+                </p>     		
+                <p>       		
+                    <span class="title">이용시간</span>       		
+                    <span></span>     		
+                </p>     		
+                <!-- <p>       		
+                    <span class="title">출발지</span>       		
+                    <span></span>     		
+                </p>   -->   		
+                <p>       		
+                    <span class="title">목적지</span>       		
+                    <span><br></span>     		
+                </p>     		
+                <hr style="border : 0px; width: 100%;
+                    border-top: 2px solid #e8e6e7;
+                    width: 100%;
+                    margin: 20px 0 20px 0;"/>
+                <button id="test04" style="color: #2fb8e7;
+                font-weight: 900;
+                cursor: pointer;
+                align-self: center;
+                margin-right: 115px;
+                background-color: white;
+                font-size: 18px;
+            ">상세보기</button>	  	
+            </div>  
+            <button class="openPopup" style=" background-color: #2fb8e7;
+    color: white;
+    padding: 16px 26px 16px 26px;
+    font-size: 18px;
+    font-weight: 700;
+    position: absolute;
+    right: 15px;
+    border-radius: 30px;
+    margin-right: 20px
+">
+    신청
+</button>
+        </div>   
+        </li>
+    </ul>
+</div>
+<div class="com_accordion" id="test05"  style="display:none;">
+    <ul style="margin: 0% 10% 0% 10%;">
+    <li class="history">	
+        <div class="ac_title">		
+            <input type="hidden" name="hManagerSysId" value="">		
+            <input type="hidden" name="hMemberSysId" value="">		
+            <input type="hidden" name="hUserSysId" value="">		
+            <input type="hidden" name="hUserGenderCd" value="">		
+            <input type="hidden" name="hServiceNm" value="">		
+            <input type="hidden" name="hServiceCd" value="">		
+            <input type="hidden" name="hServiceSeq" value="">		
+            <input type="hidden" name="hMatchSeq" value="">		
+            <input type="hidden" name="hServiceStartDate" value="">		
+            <input type="hidden" name="hServiceStartTime" value="">		
+            <input type="hidden" name="hDepartAdmCd" value="">		
+            <input type="hidden" name="hDestAdmCd" value="">		
+            <input type="hidden" name="hServiceCarYn" value="">		
+            <p class="service_a" style="display: none;">동행서비스</p>		
+            <div class="left_con" style="margin-left: 30px; padding-right: 37px;">			
+                <p>				
+                    <span class="title">돌봄서비스</span>
+                    <!-- 동행서비스종류나타냄 -->				
+                    <span></span>			
+                </p>		  	
+                <p>				
+                    <span class="title">이용자</span>				
+                    <span></span>			
+                </p>		  	
+                <p>				
+                    <span class="title">이용자 나이</span>				
+                    <span></span>			
+                </p>		  	
+                <p>				
+                    <span class="title">이용자 성별</span>				
+                    <span></span>			
+                </p>		  	
+                <p>				
+                    <span class="title">이용자 휴대폰</span>				
+                    <span></span>			
+                </p>		  	
+                <p>       		
+                    <span class="title">돌봄일정 및 방문시간</span>       		
+                    <span></span>       		
+                    <span></span>     		
+                </p>     		
+                <p>       		
+                    <span class="title">이용시간</span>       		
+                    <span></span>     		
+                </p>     		
+                <!-- <p>       		
+                    <span class="title">출발지</span>       		
+                    <span></span>     		
+                </p>   -->   		
+                <p>       		
+                    <span class="title">목적지</span>       		
+                    <span><br></span>     		
+                </p>     		
+                <p>       		
+                    <span class="title">총 이용요금</span>       		
+                    <span></span>     		
+                </p> 
+                <hr style="border : 0px; width: 100%;
+                    border-top: 2px solid #e8e6e7;
+                    width: 100%;
+                    margin: 20px 0 20px 0;"/>
+                <button id="test06" style="color: #2fb8e7;
+                font-weight: 900;
+                cursor: pointer;
+                align-self: center;
+                margin-right: 17px;
+                background-color: white;
+                font-size: 18px;
+            ">닫기</button>	 	
+            </div>  
+        </div>   
+        </li>
+    </ul>
+</div>
+<button style="margin: 61px 45% 61px 46%; background-color: #2fb8e7;
+color: white;
+padding: 14px;
+font-size: 18px;
+font-weight: 700;
+">
+    마이페이지 가기
+</button>
+<div id="popup01">
+    <div class="close">닫기</div>
+    <div style="font-size: 32px;
+    text-align: center;
+    margin-top: 110px;
+    margin-bottom: 110px;
+    color: #767070;">매칭하시겠습니까?</div>
+    <button class="confirm" onclick="location.href='manager.html'">매칭 확정</button>
+</div>
+
+</body>
+<script src="asset/js/manager.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$("#test01").click(function(){
+	$('#test02').toggle();
+});
+
+$("#test03").click(function(){
+	$('#test02').hide();
+});
+
+$("#test04").click(function(){
+	$('#test05').toggle();
+});
+
+$("#test06").click(function(){
+	$('#test05').hide();
+});
+
+$(document).ready(function( $ ){
+    $(".openPopup").on("click", function(event) { 
+    $("#popup01").show();  
+    $("body").append('<div class="backon"></div>');
+    });
+    
+    $("body").on("click", function(event) { 
+        if(event.target.className == 'close' || event.target.className == 'backon'){
+            $("#popup01").hide();
+      	    $(".backon").hide();
+        }
+      });
+  });
+
+
+/* $("#test01").click(function(){
+	$('#test02').hide();
+}); */
+
+</script>
+</html>

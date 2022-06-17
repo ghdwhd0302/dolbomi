@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="asset/css/care_reservation1.css">
+    <link rel="stylesheet" href="asset/css/header.css">
+    <link rel="stylesheet" href="asset/css/footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header id="header" class="header">
+	    <div class="header_wrap">
+		    <h1 class="logo" onclick=""></h1>
+		    <nav class="nav">
+		        <ul class="nav_list">
+		            <li class="nav_item menu01">
+		                <a id="btnIntroduce" class="nav_item_link">돌보미 소개</a>
+		            </li>
+		            
+			        <li class="nav_item menu02">
+			            <a id="btnUseService" class="nav_item_link">서비스 이용</a>
+			        </li>
+
+			        <li class="nav_item menu02">
+			            <a id="btnUseService" class="nav_item_link">서비스 신청 목록</a>
+			        </li>
+			        
+					<li class="nav_item menu03">
+						<a class="nav_item_link">매니저 지원</a>
+					</li>
+			        
+		            <li class="nav_item menu04">
+		                <a id="btnQuestion" class="nav_item_link" >자주묻는 질문</a>
+		            </li>
+
+		            <!-- <li class="nav_item menu04">
+                        <a href="javascript:void(0)" class="nav_item_link">인재채용</a>
+                    </li> -->
+		        </ul>
+		        <!--<div class="navsub_bg"></div>-->
+		    </nav>
+		    <div class="fnc_menu_wrap">
+				<a href="" class="fnc_home" title="메인화면"></a>
+		    	<a href="" class="fnc_notice" onclick=""></a>
+		    	
+		    		<a class="fnc_alram" href="" title="알리미"></a>
+		    	
+			    <a class="fnc_user" id="btnLogin" title="로그인">
+			    	
+			    	이름입력 님
+			    </a>
+			    <div class="fnc_user_wrap" tabindex="1">
+			        <a title="프로필수정">프로필수정</a>
+			        <a title="이용내역">이용내역</a>
+			        <a title="비밀번호변경">비밀번호변경</a>
+			        <a class="logout" title="로그아웃">로그아웃</a>
+			    </div>
+		    </div>
+	    </div>
+		<div class="navsub_bg"></div>	    
+    </header>
+    <div class="sub_page_wrap">
+        <div class="sub_title_wrap sub_bg02">
+            <!-- sub_title -->
+            <div class="sub_title">
+                <p>지금 바로<br>모시미를 이용하세요!</p>
+                <p>항상 최선을 다하겠습니다.</p>
+                <br>
+                <br>
+                <div class="img_bg02"><img src="https://www.mosimi.co.kr/resource/images/common/img_sub02.svg"></div>
+                <div class="heart_bg"></div>
+            </div>
+            <hr style="border : 0px; width: 100%;
+            border-top: 2px solid #e8e6e7;"/>
+        </div>
+        <div class="sc-RbTVP dZclmO">
+            <div class="sc-jUpvKA jQyKPd">
+                <div class="sc-hMrMfs hjxjIk">
+                    <button class="sc-drlKqa eWwIcG">
+                        기본 정보 입력
+                    </button>
+                    <img src="https://www.withmate.kr/assets/images/stepper.png" alt="화살표" class="sc-jxGEyO cvJJsZ">
+                    <button class="sc-drlKqa kAufHg">
+                        서비스 신청 정보 입력
+                    </button>
+                    <img src="https://www.withmate.kr/assets/images/stepper.png" alt="화살표" class="sc-jxGEyO cvJJsZ">
+                    <button class="sc-drlKqa kAufHg">
+                        매칭 신청 확인
+                    </button><img src="https://www.withmate.kr/assets/images/stepper.png" alt="화살표" class="sc-jxGEyO cvJJsZ">
+                    <button class="sc-drlKqa kAufHg">
+                        신청 완료
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="sc-bhlBdH bCJAMY">
+            <div class="sc-AnqlK ctKjik">
+                <h3 class="sc-keFjpB gbVVya">
+                    매칭 신청을 시작해볼까요?
+                </h3>
+                <div class="sc-VigVT lafcRZ">
+
+                </div>
+                <div class="sc-fjdhpX hoWkSp">
+                     돌봄 서비스 선택하기
+                     <br>
+                     <br>
+                     <select id="serviceDtlCd" name="serviceDtlCd" style=" width: 100%;
+                     height: 53px;
+                     font-size: 16px;
+                     font-weight: 700;
+                     color: #282828;
+                     border-radius: 6px;
+                     padding-left: 10px!important;
+                     border-color: rgb(233, 233, 233);
+                 ">
+                         <option data-high-code="SV20" value="SD40">아이 돌봄</option>
+                         <option data-high-code="SV20" value="SD45">성인 돌봄</option>
+                         <option data-high-code="SV20" value="SD50">어르신 돌봄</option>
+                         <option data-high-code="SV20" value="SD70">One Day</option>
+                         <option data-high-code="SV20" value="SD90">기타동행</option>
+                    </select>
+                </div>
+                <div class="sc-VigVT lafcRZ">
+
+                </div>
+                <div class="sc-dxgOiQ ifseQn" style="justify-content: space-between;">
+                    <span class="sc-crNyjn hEIVhP" style="margin-top: 0px; margin-bottom: 0px;">
+                         정보 입력
+                    </span>
+                </div>
+                <div class="sc-VigVT ffyjKW">
+
+                </div>
+                <div class="sc-dxgOiQ iQRFrD">
+                    <div style="flex: 1 1 0%;">
+                        <div class="sc-fjdhpX hoWkSp">
+                            <span>* </span>
+                            성함
+                        </div>
+                        <input type="text" placeholder="홍길동" maxlength="24" name="patient" class="ant-input sc-jzJRlG iaafvp" value="" style="padding: 0px 11px;">
+                    </div>
+                    <div style="flex: 1 1 0%;">
+                        <div class="sc-fjdhpX hoWkSp">
+                            <span>* </span>
+                            나이
+                        </div>
+                        <span class="ant-input-affix-wrapper sc-jzJRlG iaafvp">
+                            <input type="text" maxlength="2" placeholder="50" name="age" class="ant-input" value="">
+                            <span class="ant-input-suffix" style="font-size: 18px;
+                            padding-top: 4px;">세</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="sc-VigVT lafcRZ"></div>
+                <div class="sc-dxgOiQ iQRFrD">
+                    <div style="flex: 1 1 0%;">
+                        <div class="sc-fjdhpX hoWkSp">
+                            <span>* </span>
+                            연락처
+                        </div>
+                        <input type="text" style="padding: 0px 11px;" maxlength="11" placeholder="ex) 01029791234" name="contact" class="ant-input sc-jzJRlG iaafvp" value=""></div><div style="flex: 1 1 0%;">
+                            <div class="sc-fjdhpX hoWkSp">
+                                <span>* </span>
+                                성별
+                            </div>
+                            <div class="sc-ekkqgF dxikPE">
+                                <span class="inactive">남성</span>
+                                <span class="inactive">여성</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sc-VigVT lafcRZ"></div>
+                    <div class="sc-dxgOiQ iQRFrD">
+                        <div style="flex: 1 1 0%;">
+                            <div class="sc-fjdhpX hoWkSp">
+                                <span>* </span>
+                                보호자 연락처
+                            </div>
+                            <input type="text" style="padding: 0px 11px;" maxlength="11" placeholder="ex) 01029791234" name="guardContact" class="ant-input sc-jzJRlG iaafvp" value="">
+                        </div>
+                        <div style="flex: 1 1 0%;">
+                            <div class="sc-fjdhpX hoWkSp">
+                                <span>* </span>
+                                신청자와의 관계
+                            </div>
+                            <div class="ant-select sc-kGXeez bqHxwH ant-select-single ant-select-show-arrow">
+                                <div class="">
+                                    <span class="ant-select-selection-search">
+                                       <!--  <input autocomplete="off" type="search" class="ant-select-selection-search-input" role="combobox" aria-haspopup="listbox" aria-owns="rc_select_4_list" aria-autocomplete="list" aria-controls="rc_select_4_list" aria-activedescendant="rc_select_4_list_0" readonly="" unselectable="on" value="" style="opacity: 0;" id="rc_select_4"> -->
+                                        <select id="serviceDtlCd" name="serviceDtlCd" style="     width: 100%;
+                                        height: 53px;
+                                        line-height: 44px;
+                                        margin-bottom: 0px;
+                                        color: rgb(22, 22, 22);
+                                        font-size: 18px;
+                                        font-weight: normal;
+                                        border-radius: 4px;
+                                        background-color: rgb(255, 255, 255);
+                                        border: 1px solid rgb(233, 233, 233) !important;
+                                        padding: 0px 11px;">
+                                            <option data-high-code="SV20" value="SD40">본인</option>
+                                            <option data-high-code="SV20" value="SD45">자매</option>
+                                            <option data-high-code="SV20" value="SD50">지인</option>
+                                            <option data-high-code="SV20" value="SD70">친구</option>
+                                            <option data-high-code="SV20" value="SD90">기타</option>
+                                       </select>
+                                    </span>
+                                    <!-- <span class="ant-select-selection-placeholder">본인</span> -->
+                                </div>
+                                <!-- <span class="ant-select-arrow" unselectable="on" aria-hidden="true" style="user-select: none;">
+                                    <span role="img" aria-label="down" class="anticon anticon-down ant-select-suffix">
+                                        <svg viewBox="64 64 896 896" focusable="false" data-icon="down" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                            <path d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"></path>
+                                        </svg>
+                                    </span>
+                                </span> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sc-VigVT lafcRZ"></div>
+                    <div class="sc-fjdhpX hoWkSp">
+                        <span>* </span>
+                        목적지 주소
+                    </div>
+                    <div class="form_wrap" id="divDsetination">
+                        <div class="dp_flex search adress">
+                            <input type="text" id="sample5_address"  name="destAddr" placeholder="주소 검색" maxlength="30" autocomplete="new-password" style="background: rgba(0,0,0,0.06);">
+                            <a href="javascript:void(0);" class="ico_search" id="btnDestAddr" onclick="sample5_execDaumPostcode()"></a>
+                            <div class="autocomplete_layer" id="divDestAddr" style="display: none;" ></div>            
+                        </div>
+                        <div class="dp_flex adress">
+                            <input type="text" id="destAddrDtl" name="destAddrDtl" placeholder="상세주소" maxlength="30" autocomplete="new-password" style="background: rgba(0,0,0,0.06);">
+                        </div>
+                    </div>
+                   
+                    <!-- <div class="sc-dxgOiQ sc-ckVGcZ iFwUke">
+                        <input id="sample5_address" type="text" placeholder="ex) 서울특별시 강남 을지병원" name="destination" disabled="" class="ant-input ant-input-disabled sc-jzJRlG iaafvp" value="">
+                        <input type="button" onclick="sample5_execDaumPostcode()" value="검색" style="    border: none;
+                        background-color: white;
+                        padding: 14px;
+                        font-size: 11px;
+                        font-weight: normal;
+                        color: rgb(166, 166, 166);
+                        cursor: pointer;
+                    "><br>
+                    </div> -->
+                    <!-- <div class="sc-VigVT lafcRZ"></div> -->
+                    <!-- <div class="sc-fjdhpX hoWkSp">
+                        <span>* </span>
+                        출발지 주소
+                    </div>
+                    <div class="sc-dxgOiQ sc-ckVGcZ iFwUke">
+                        <input type="text" placeholder="ex) 서울특별시 서초대로  30, ABC아파트" name="starting" disabled="" class="ant-input ant-input-disabled sc-jzJRlG iaafvp" value="">
+                        <input type="button" onclick="sample5_execDaumPostcode()" value="검색" style="    border: none;
+                        background-color: white;
+                        padding: 14px;
+                        font-size: 11px;
+                        font-weight: normal;
+                        color: rgb(166, 166, 166);
+                        cursor: pointer;
+                    "><br>
+                    </div> -->
+                    <!-- <div class="sc-VigVT lafcRZ"></div> -->
+                    <div class="sc-gleUXh ccaDJS">
+                        <img src="" alt="스텝이미지">
+                    </div>
+                </div>
+                <div class="sc-brqgnP sc-jgVwMx dtbczn">
+                    <a class="sc-hSdWYo sc-cvbbAY sc-jWBwVP pYUPR" onclick="location.href='option_reservation.html'">이전으로</a>
+                    <a class="sc-hSdWYo sc-cvbbAY sc-jWBwVP kiStqG" onclick="location.href='care_reservation2.html'">다음 단계로가기</a>
+                </div>
+            </div>
+    </div>
+    <footer>
+        <div class="footer_wrap">
+	        <p>
+		        <span class="company">(주)아이티브릿지</span>
+	            <span>서울시 금천구 디지털로 121, 에이스가산타워 311호</span>
+		        <span>
+		            <span class="mo_fx_row">
+			            <span>대표자 : 이승용</span>
+			            <span>사업자등록번호 : 894-87-00949</span>
+			        </span>
+		            <span class="mo_fx_row2">통신판매업신고 : 2021-서울금천-2992</span>
+		            
+	            </span> 
+	        </p>
+	        <p>
+	           <span> 
+	               <!-- <span><a href="tel:1533-3145" title="전화하기">고객센터 : 1533-3145(유료)</a></span> -->
+	               <span>고객센터 : <a class="" href="" title="전화하기">1533-3145</a> (유료)</span>
+	               <span>이메일 : help@mosimi.co.kr</span>
+               </span>
+               <span class="full">
+                   <span>(점심시간 11:30~13:00, 토·일·공휴일 휴무)</span>
+               </span>
+               <span> 
+                   <span><a href="" onclick="">이용약관</a></span> 
+                   <span><a href="" onclick="">개인정보처리방침</a></span>
+               </span>
+	        </p>
+        </div>
+    </footer>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=발급받은 API KEY를 사용하세요&libraries=services"></script>
+<script>
+    var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+        mapOption = {
+            center: new daum.maps.LatLng(37.537187, 127.005476), // 지도의 중심좌표
+            level: 5 // 지도의 확대 레벨
+        };
+
+    //지도를 미리 생성
+    var map = new daum.maps.Map(mapContainer, mapOption);
+    //주소-좌표 변환 객체를 생성
+    var geocoder = new daum.maps.services.Geocoder();
+    //마커를 미리 생성
+    var marker = new daum.maps.Marker({
+        position: new daum.maps.LatLng(37.537187, 127.005476),
+        map: map
+    });
+
+
+    function sample5_execDaumPostcode() {
+        new daum.Postcode({
+            oncomplete: function(data) {
+                var addr = data.address; // 최종 주소 변수
+
+                // 주소 정보를 해당 필드에 넣는다.
+                document.getElementById("sample5_address").value = addr;
+                // 주소로 상세 정보를 검색
+                geocoder.addressSearch(data.address, function(results, status) {
+                    // 정상적으로 검색이 완료됐으면
+                    if (status === daum.maps.services.Status.OK) {
+
+                        var result = results[0]; //첫번째 결과의 값을 활용
+
+                        // 해당 주소에 대한 좌표를 받아서
+                        var coords = new daum.maps.LatLng(result.y, result.x);
+                        // 지도를 보여준다.
+                        mapContainer.style.display = "block";
+                        map.relayout();
+                        // 지도 중심을 변경한다.
+                        map.setCenter(coords);
+                        // 마커를 결과값으로 받은 위치로 옮긴다.
+                        marker.setPosition(coords)
+                    }
+                });
+            }
+        }).open();
+    }
+</script>
+<script>
+	$("#btnLogin").click(function(){
+		if(!$(this).attr('class').match('on')){
+			$(this).addClass('on');
+			$(".fnc_user_wrap").addClass('on');
+		}else{
+			$(this).removeClass('on');
+			$(".fnc_user_wrap").removeClass('on');
+		}
+	})
+
+</script>
+</html>
+
+
+
+
+
+
+
