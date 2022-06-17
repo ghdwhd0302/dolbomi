@@ -173,6 +173,66 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="/asset/js/regi.js"></script>
+<script>
+	$("#btnLogin").click(function(){
+		if(!$(this).attr('class').match('on')){
+			$(this).addClass('on');
+			$(".fnc_user_wrap").addClass('on');
+		}else{
+			$(this).removeClass('on');
+			$(".fnc_user_wrap").removeClass('on');
+		}
+	})
 
+
+
+
+</script>
+<script>
+    window.onload=()=>{
+    document.querySelector('.dropbtn_click').onclick = ()=>{
+      dropdown();
+    }
+    document.getElementsByClassName('path').onclick = ()=>{
+      showMenu(value);
+    };
+    dropdown = () => {
+      var v = document.querySelector('.dropdown-content');
+      var dropbtn = document.querySelector('.dropbtn')
+      v.classList.toggle('show');
+      dropbtn.style.borderColor = 'rgb(94, 94, 94)';
+    }
+
+    showMenu=(value)=>{
+      var dropbtn_icon = document.querySelector('.dropbtn_icon');
+      var dropbtn_content = document.querySelector('.dropbtn_content');
+      var dropbtn_click = document.querySelector('.dropbtn_click');
+      var dropbtn = document.querySelector('.dropbtn');
+
+      dropbtn_icon.innerText = '';
+      dropbtn_content.innerText = value;
+      dropbtn_content.style.color = '#252525';
+      dropbtn.style.borderColor = '#3992a8';
+    }
+  }
+  window.onclick= (e)=>{
+    if(!e.target.matches('.dropbtn_click')){
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+
+      var dropbtn_icon = document.querySelector('.dropbtn_icon');
+      var dropbtn_content = document.querySelector('.dropbtn_content');
+      var dropbtn_click = document.querySelector('.dropbtn_click');
+      var dropbtn = document.querySelector('.dropbtn');
+
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
+</script>
 
 </html>
