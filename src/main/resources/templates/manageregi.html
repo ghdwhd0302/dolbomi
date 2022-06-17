@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>매니저 회원가입 페이지</title>
+    <link rel="stylesheet" href="../../../../asset/css/managerregi.css">
+    <link rel="stylesheet" href="../../../../asset/css/header.css">
+    <link rel="stylesheet" href="../../../../asset/css/footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<body>
+<header id="header" class="header">
+    <div class="header_wrap">
+        <h1 class="logo" onclick=""></h1>
+        <nav class="nav">
+            <ul class="nav_list">
+                <li class="nav_item menu01">
+                    <a id="btnIntroduce" class="nav_item_link">돌보미 소개</a>
+                </li>
+
+                <li class="nav_item menu02">
+                    <a id="btnUseService" class="nav_item_link">서비스 이용</a>
+                </li>
+
+                <li class="nav_item menu02">
+                    <a id="btnUseService" class="nav_item_link">서비스 신청 목록</a>
+                </li>
+
+                <li class="nav_item menu03">
+                    <a class="nav_item_link">매니저 지원</a>
+                </li>
+
+                <li class="nav_item menu04">
+                    <a id="btnQuestion" class="nav_item_link">자주묻는 질문</a>
+                </li>
+
+                <!-- <li class="nav_item menu04">
+                    <a href="javascript:void(0)" class="nav_item_link">인재채용</a>
+                </li> -->
+            </ul>
+            <!--<div class="navsub_bg"></div>-->
+        </nav>
+        <div class="fnc_menu_wrap">
+            <a href="" class="fnc_home" title="메인화면"></a>
+            <a href="" class="fnc_notice" onclick=""></a>
+
+            <a class="fnc_alram" href="" title="알리미"></a>
+
+            <a class="fnc_user" id="btnLogin" title="로그인">
+
+                이름입력 님
+            </a>
+            <div class="fnc_user_wrap" tabindex="1">
+                <a title="프로필수정">프로필수정</a>
+                <a title="이용내역">이용내역</a>
+                <a title="비밀번호변경">비밀번호변경</a>
+                <a class="logout" title="로그아웃">로그아웃</a>
+            </div>
+        </div>
+    </div>
+    <div class="navsub_bg"></div>
+</header>
+<div id="root">
+    <div id="app-container" class="app-container">
+
+        <div class="main-area">
+            <div class="sc-bYTsla bDUjTg">
+                <form action="" mehod="post">
+                    <div class="sc-dlyikq lknGZg">
+                        <p class="sc-glUWqk uvQxd" style="color: rgb(22, 22, 22); margin-bottom: 20px;">매니저 지원하기</p>
+                        <div class="sc-fFTYTi bkIEuU">
+                            <div class="sc-bTiqRo cOGJco">치매관련 간병 경력</div>
+                            <label class="ant-checkbox-wrapper">
+                                    <span class="ant-checkbox">
+                                        <input type="radio" class="ant-checkbox-input" value="" name="term">
+                                    </span>
+                                <span>없어요</span>
+                            </label>
+                            <label class="ant-checkbox-wrapper"><span class="ant-checkbox">
+                                    <input type="radio" class="ant-checkbox-input" value="" name="term"></span>
+                                <span>1년 미만</span>
+                            </label>
+                            <label class="ant-checkbox-wrapper"><span class="ant-checkbox"><input type="radio"
+                                                                                                  class="ant-checkbox-input"
+                                                                                                  value="" name="term"></span><span>2 ~ 3년</span>
+                            </label>
+                            <label class="ant-checkbox-wrapper"><span class="ant-checkbox"><input type="radio"
+                                                                                                  class="ant-checkbox-input"
+                                                                                                  value="" name="term"></span><span>3년이상</span>
+                            </label>
+                        </div>
+                        <div class="sc-fFTYTi bkIEuU">
+                            <div class="sc-bTiqRo cOGJco">성함을 입력해주세요</div>
+                            <textarea placeholder="ex) 홍길동"
+                                      class="ant-input sc-bEufUU bBQEgI"></textarea>
+                        </div>
+                        <div class="sc-fFTYTi bkIEuU">
+                            <div class="sc-bTiqRo cOGJco">생년월일을 입력해주세요</div>
+                            <textarea
+                                    placeholder="만 19세 이상의 성인만 매니저 활동이 가능합니다. ex) 19960405"
+                                    class="ant-input sc-bEufUU bBQEgI"></textarea>
+                        </div>
+                        <div class="sc-fFTYTi bkIEuU">
+                            <div class="sc-bTiqRo cOGJco">개인 이메일 주소를 입력해주세요</div>
+                            <textarea
+                                    placeholder="기입해주신 이메일로 프리랜서 근로 계약 문서가 전송되고 온라인 계약 체결이 진행됩니다."
+                                    class="ant-input sc-bEufUU bBQEgI"></textarea>
+                        </div>
+                        <div class="sc-fFTYTi bkIEuU">
+                            <div class="sc-bTiqRo cOGJco">자택 주소를 입력해주세요</div>
+                            <textarea
+                                    placeholder="ex) 서울특별시 송파구 방이동 (XX동 XXX호 등의 상세 주소 기입 불필요)"
+                                    class="ant-input sc-bEufUU bBQEgI"></textarea>
+                        </div>
+                        <div class="sc-fFTYTi bkIEuU">
+                            <div class="sc-bTiqRo cOGJco">성별을 알려주세요</div>
+                            <textarea placeholder="ex) 남자"
+                                      class="ant-input sc-bEufUU bBQEgI"></textarea>
+                        </div>
+                        <div class="sc-fFTYTi bkIEuU">
+                            <div class="sc-bTiqRo cOGJco">운전 가능 여부를 선택해주세요</div>
+                            <textarea
+                                    placeholder="예/아니오로 대답해주세요" class="ant-input sc-bEufUU bBQEgI"></textarea>
+                        </div>
+                        <div class="sc-fFTYTi bkIEuU">
+                            <div class="sc-bTiqRo cOGJco">개인의 간병 경력 사항을 입력해주세요 <span>(0/500)</span></div>
+                            <textarea
+                                    placeholder="매니저 활동을 위해 도움이 되는 자신의 간병 경력을 500자 이내로 자유롭게 남겨주세요 (요양보호사 자격증 보유 &amp; XX요양병원 3년 근무 등 / 간병 이외의 경력도 기재 가능)"
+                                    class="ant-input sc-bEufUU bBQEgI"></textarea>
+                        </div>
+                        <div class="sc-fFTYTi bkIEuU">
+                            <div class="sc-bTiqRo cOGJco">삼성화재 전문인 배상 책임 보험 가입 동의</div>
+                            <textarea
+                                    placeholder="보험 가입 심사를 위해 설계 동의를 진행해주세요. 돌보미는 매니저 서비스 이행 중 안전한 보호를 위해 회사가 부담하는 보험 가입 절차를 도와드리고 있습니다. 보험 가입에 대한 의사를 체크해주세요. 해당 절차는 보험 가입 심사 동의를 위한 것이며, 동의를 하는것 만으로 보험에 가입이 되는 것은 아닙니다. 보험 가입은 매니저 심사 합격 후 실제 서비스가 매칭된 인원에 한하여 본사와 전화 상담 후 진행됩니다. 예/아니오로 대답해주세요"
+                                    class="ant-input sc-bEufUU bBQEgI"></textarea>
+                        </div>
+                        <div class="sc-fFTYTi bkIEuU">
+                            <div class="sc-bTiqRo cOGJco">개인정보 수집 및 이용 동의</div>
+                            <textarea
+                                    placeholder="돌보미는 본 지원서를 통해 수집한 개인정보를 매니저 심사, 서비스 교육 안내, 동행 서비스 중개를 제외한 타 목적으로 이용하지 않습니다. 지원자는 본 개인정보 수집 및 이용에 동의하지 않을 권리가 있습니다. 단, 동의하지 않을 경우 매니저 심사 및 모집에 제한이 있을 수 있습니다. 돌보미의 개인정보 수집 및 이용 동의 여부를 예/아니오로 입력해주세요."
+                                    class="ant-input sc-bEufUU bBQEgI"></textarea>
+                        </div>
+                        <div class="sc-fFTYTi bkIEuU">
+                            <div class="sc-bTiqRo cOGJco">돌보미 가입 경로 (선택 사항)</div>
+                            <textarea
+                                    placeholder="돌보미 가입 경로에 대해 알려주세요 (상상우리 뉴스타트, 여성 새로 일하기 센터, 구직 사이트, 직접 검색, 뉴스 기사 등)"
+                                    class="ant-input sc-bEufUU bBQEgI"></textarea>
+                        </div>
+                        <div class="sc-fFTYTi bkIEuU">
+                            <div class="sc-bTiqRo cOGJco">개인 연락처를 입력해주세요(-를 제외하고 입력해주세요 &gt; 01011111111)</div>
+                            <textarea placeholder="기입해주신 연락처로 합격/불합격 여부 알림, 그리고 임시 아이디와 비밀번호가 전송됩니다."
+                                      class="ant-input sc-bEufUU bBQEgI"></textarea>
+                        </div>
+                        <div class="sc-fFTYTi bkIEuU">
+                            <div class="sc-bTiqRo cOGJco">매니저 활동 가능 지역을 알려주세요</div>
+                            <textarea
+                                    placeholder="본인이 선호 또는 활동 가능한 서비스 지역과 병원을 알려주세요 (마포구 일대, 종로구 일대, 세브란스 병원, 서울대 병원, 아산 병원 등)"
+                                    class="ant-input sc-bEufUU bBQEgI"></textarea>
+                        </div>
+                        <div class="sc-fFTYTi bkIEuU">
+                            <div class="sc-bTiqRo cOGJco">프로필 사진</div>
+                            <input type="file"
+                                   accept="image/x-png,image/gif,image/jpeg">
+                        </div>
+                        <div style="text-align: center;"><span class="sc-gFXMyG kfNMrX">지원하기</span></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+<footer>
+    <div class="footer_wrap">
+        <p>
+            <span class="company">(주)아이티브릿지</span>
+            <span>서울시 금천구 디지털로 121, 에이스가산타워 311호</span>
+            <span>
+                    <span class="mo_fx_row">
+                        <span>대표자 : 이승용</span>
+                        <span>사업자등록번호 : 894-87-00949</span>
+                    </span>
+                    <span class="mo_fx_row2">통신판매업신고 : 2021-서울금천-2992</span>
+
+                </span>
+        </p>
+        <p>
+                <span>
+                    <!-- <span><a href="tel:1533-3145" title="전화하기">고객센터 : 1533-3145(유료)</a></span> -->
+                    <span>고객센터 : <a class="" href="" title="전화하기">1533-3145</a> (유료)</span>
+                    <span>이메일 : help@mosimi.co.kr</span>
+                </span>
+            <span class="full">
+                    <span>(점심시간 11:30~13:00, 토·일·공휴일 휴무)</span>
+                </span>
+            <span>
+                    <span><a href="" onclick="">이용약관</a></span>
+                    <span><a href="" onclick="">개인정보처리방침</a></span>
+                </span>
+        </p>
+    </div>
+</footer>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $("#btnLogin").click(function () {
+        if (!$(this).attr('class').match('on')) {
+            $(this).addClass('on');
+            $(".fnc_user_wrap").addClass('on');
+        } else {
+            $(this).removeClass('on');
+            $(".fnc_user_wrap").removeClass('on');
+        }
+    })
+
+
+</script>
+
+</html>

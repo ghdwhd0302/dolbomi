@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../../asset/css/regi.css">
+    <link rel="stylesheet" href="../../../../asset/css/header.css">
+    <link rel="stylesheet" href="../../../../asset/css/footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<body>
+<header id="header" class="header">
+    <div class="header_wrap">
+        <h1 class="logo" onclick=""></h1>
+        <nav class="nav">
+            <ul class="nav_list">
+                <li class="nav_item menu01">
+                    <a id="btnIntroduce" class="nav_item_link">돌보미 소개</a>
+                </li>
+
+                <li class="nav_item menu02">
+                    <a id="btnUseService" class="nav_item_link">서비스 이용</a>
+                </li>
+
+                <li class="nav_item menu02">
+                    <a id="btnUseService" class="nav_item_link">서비스 신청 목록</a>
+                </li>
+
+                <li class="nav_item menu03">
+                    <a class="nav_item_link">매니저 지원</a>
+                </li>
+
+                <li class="nav_item menu04">
+                    <a id="btnQuestion" class="nav_item_link">자주묻는 질문</a>
+                </li>
+
+                <!-- <li class="nav_item menu04">
+                    <a href="javascript:void(0)" class="nav_item_link">인재채용</a>
+                </li> -->
+            </ul>
+            <!--<div class="navsub_bg"></div>-->
+        </nav>
+        <div class="fnc_menu_wrap">
+            <a href="" class="fnc_home" title="메인화면"></a>
+            <a href="" class="fnc_notice" onclick=""></a>
+
+            <a class="fnc_alram" href="" title="알리미"></a>
+
+            <a class="fnc_user" id="btnLogin" title="로그인">
+
+                이름입력 님
+            </a>
+            <div class="fnc_user_wrap" tabindex="1">
+                <a title="프로필수정">프로필수정</a>
+                <a title="이용내역">이용내역</a>
+                <a title="비밀번호변경">비밀번호변경</a>
+                <a class="logout" title="로그아웃">로그아웃</a>
+            </div>
+        </div>
+    </div>
+    <div class="navsub_bg"></div>
+</header>
+<div id="root">
+    <div id="app-container" class="app-container">
+
+        <div class="main-area">
+            <div class="sc-dRCTWM bvYJlY">
+                <div class="sc-hzNEM iKMJbd">
+                    <div class="register-container">
+                        <div class="inner-container">
+                            <div class="register-form">
+                                <div class="title-wrapper">
+                                    <span>2/2</span>
+                                    <p>회원가입</p>
+                                </div>
+                                <div class="form fst">
+                                    <div class="sc-VigVT ffyjKW"></div>
+                                    <label>연락처</label><input type="text"
+                                                             maxlength="11" placeholder="숫자만 입력해주세요.(ex. 01014231324)"
+                                                             class="ant-input sc-jzJRlG iaafvp" value="">
+                                    <button
+                                            style="width: 90px; height: 44px;  background-color: rgb(59, 193, 255); border: 0px; outline: 0px; border-radius: 3px;">
+                                        인증하기
+                                    </button>
+                                    <input type="text" maxlength="6" placeholder="인증번호를 입력해주세요."
+                                           class="ant-input sc-jzJRlG iaafvp" value="" style="width: 203px;">
+                                    <div class="sc-VigVT dUXpIL"></div>
+                                    <label
+                                            style="display: block;">비밀번호</label><input password="true" type="password"
+                                                                                       placeholder="10자리 이상 비밀번호를 입력해주세요."
+                                                                                       class="ant-input sc-jzJRlG iaafvp">
+                                    <div class="sc-VigVT dUXpIL"></div>
+                                    <label style="display: block;">비밀번호
+                                        확인</label><input type="password" password="true" placeholder="비밀번호를 확인해주세요."
+                                                         class="ant-input sc-jzJRlG iaafvp">
+                                    <div class="sc-VigVT dUXpIL"></div>
+                                    <label style="display: block;">돌보미를 어떻게 알고
+                                        오셨나요?</label>
+
+                                    <div class="dropdown">
+                                        <button class="dropbtn">
+
+                                            <span class="dropbtn_content">유입경로를 선택해주세요</span>
+                                            <span class="dropbtn_click"
+                                                  style="font-family: Material Icons; font-size : 16px; color : #3b3b3b; float:right;"
+                                                  onclick="dropdown()">arrow_drop_down</span>
+                                        </button>
+                                        <div class="dropdown-content">
+                                            <div class="path" onclick="showMenu(this.innerText)">검색</div>
+                                            <div class="path" onclick="showMenu(this.innerText)">언론기사</div>
+                                            <div class="path" onclick="showMenu(this.innerText)">광고</div>
+                                            <div class="path" onclick="showMenu(this.innerText)">지인추천</div>
+
+                                        </div>
+                                    </div>
+                                    <div class="sc-VigVT dUXpIL"></div>
+                                    <label>본인인가요 ? 보호자인가요 ?</label>
+                                    <div class="type-button-wrapper">
+                                        <div class="type-button active">본인</div>
+                                        <div class="type-button ">보호자</div>
+                                    </div>
+                                    <div class="sc-VigVT dUXpIL"></div>
+                                    <div class="sc-cooIXK fRCQoH"><input type="checkbox" class="ant-checkbox-input"
+                                                                         value=""><label>&nbsp;&nbsp;개인정보 마케팅 활용 동의
+                                        (선택)</label></div>
+
+                                    <div class="sc-VigVT dUXpIL"></div>
+                                    <button type="button"
+                                            class="ant-btn ant-btn-primary"
+                                            style="background-color: rgb(230, 230, 230); border: 0px; cursor: not-allowed;">
+                                        <span>가입하기</span></button>
+                                    <div class="link-wrapper"><span class="text">이미 계정이 있으신가요? </span><a
+                                            class="link">로그인</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<footer>
+    <div class="footer_wrap">
+        <p>
+            <span class="company">(주)아이티브릿지</span>
+            <span>서울시 금천구 디지털로 121, 에이스가산타워 311호</span>
+            <span>
+                    <span class="mo_fx_row">
+                        <span>대표자 : 이승용</span>
+                        <span>사업자등록번호 : 894-87-00949</span>
+                    </span>
+                    <span class="mo_fx_row2">통신판매업신고 : 2021-서울금천-2992</span>
+
+                </span>
+        </p>
+        <p>
+                <span>
+                    <!-- <span><a href="tel:1533-3145" title="전화하기">고객센터 : 1533-3145(유료)</a></span> -->
+                    <span>고객센터 : <a class="" href="" title="전화하기">1533-3145</a> (유료)</span>
+                    <span>이메일 : help@mosimi.co.kr</span>
+                </span>
+            <span class="full">
+                    <span>(점심시간 11:30~13:00, 토·일·공휴일 휴무)</span>
+                </span>
+            <span>
+                    <span><a href="" onclick="">이용약관</a></span>
+                    <span><a href="" onclick="">개인정보처리방침</a></span>
+                </span>
+        </p>
+    </div>
+</footer>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/asset/js/regi.js"></script>
+<script>
+    $("#btnLogin").click(function () {
+        if (!$(this).attr('class').match('on')) {
+            $(this).addClass('on');
+            $(".fnc_user_wrap").addClass('on');
+        } else {
+            $(this).removeClass('on');
+            $(".fnc_user_wrap").removeClass('on');
+        }
+    })
+
+
+</script>
+<script>
+    window.onload = () => {
+        document.querySelector('.dropbtn_click').onclick = () => {
+            dropdown();
+        }
+        document.getElementsByClassName('path').onclick = () => {
+            showMenu(value);
+        };
+        dropdown = () => {
+            var v = document.querySelector('.dropdown-content');
+            var dropbtn = document.querySelector('.dropbtn')
+            v.classList.toggle('show');
+            dropbtn.style.borderColor = 'rgb(94, 94, 94)';
+        }
+
+        showMenu = (value) => {
+            var dropbtn_icon = document.querySelector('.dropbtn_icon');
+            var dropbtn_content = document.querySelector('.dropbtn_content');
+            var dropbtn_click = document.querySelector('.dropbtn_click');
+            var dropbtn = document.querySelector('.dropbtn');
+
+            dropbtn_icon.innerText = '';
+            dropbtn_content.innerText = value;
+            dropbtn_content.style.color = '#252525';
+            dropbtn.style.borderColor = '#3992a8';
+        }
+    }
+    window.onclick = (e) => {
+        if (!e.target.matches('.dropbtn_click')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+
+            var dropbtn_icon = document.querySelector('.dropbtn_icon');
+            var dropbtn_content = document.querySelector('.dropbtn_content');
+            var dropbtn_click = document.querySelector('.dropbtn_click');
+            var dropbtn = document.querySelector('.dropbtn');
+
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+</script>
+
+</html>
