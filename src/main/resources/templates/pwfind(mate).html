@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>비밀번호찾기</title>
+    <link rel="stylesheet" href="../../../../asset/css/pwfind.css">
+    <link rel="stylesheet" href="../../../../asset/css/header.css">
+    <link rel="stylesheet" href="../../../../asset/css/footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<body>
+<header id="header" class="header">
+    <div class="header_wrap">
+        <h1 class="logo" onclick=""></h1>
+        <nav class="nav">
+            <ul class="nav_list">
+                <li class="nav_item menu01">
+                    <a id="btnIntroduce" class="nav_item_link">돌보미 소개</a>
+                </li>
+
+                <li class="nav_item menu02">
+                    <a id="btnUseService" class="nav_item_link">서비스 이용</a>
+                </li>
+
+                <li class="nav_item menu02">
+                    <a id="btnUseService" class="nav_item_link">서비스 신청 목록</a>
+                </li>
+
+                <li class="nav_item menu03">
+                    <a class="nav_item_link">매니저 지원</a>
+                </li>
+
+                <li class="nav_item menu04">
+                    <a id="btnQuestion" class="nav_item_link">자주묻는 질문</a>
+                </li>
+
+                <!-- <li class="nav_item menu04">
+                    <a href="javascript:void(0)" class="nav_item_link">인재채용</a>
+                </li> -->
+            </ul>
+            <!--<div class="navsub_bg"></div>-->
+        </nav>
+        <div class="fnc_menu_wrap">
+            <a href="" class="fnc_home" title="메인화면"></a>
+            <a href="" class="fnc_notice" onclick=""></a>
+
+            <a class="fnc_alram" href="" title="알리미"></a>
+
+            <a class="fnc_user" id="btnLogin" title="로그인">
+
+                이름입력 님
+            </a>
+            <div class="fnc_user_wrap" tabindex="1">
+                <a title="프로필수정">프로필수정</a>
+                <a title="이용내역">이용내역</a>
+                <a title="비밀번호변경">비밀번호변경</a>
+                <a class="logout" title="로그아웃">로그아웃</a>
+            </div>
+        </div>
+    </div>
+    <div class="navsub_bg"></div>
+</header>
+<div id="root">
+    <div id="app-container" class="app-container">
+
+        <div class="main-area">
+            <div class="sc-dRCTWM bvYJlY">
+                <div class="sc-kZmsYB mrONj">
+                    <div class="find-container">
+                        <div class="inner-container">
+                            <div class="login-form">
+                                <div class="login-title">
+                                    <p>비밀번호 찾기</p>
+                                </div>
+                                <div class="form-user-type">
+                                    <div class="type undefined" onclick="location.href='pwfind.html'">
+                                        <p>일반</p>
+                                    </div>
+                                    <div class="type active" onclick="location.href='pwfind(mate).html'">
+                                        <p>매니저</p>
+                                    </div>
+                                </div>
+                                <div class="form">
+                                    <label>이름</label><input type="text"
+                                                            placeholder="ex) 홍길동" class="ant-input" value="">
+                                    <label>휴대전화</label><input type="text"
+                                                              placeholder="ex) 01012341111" class="ant-input" value="">
+                                    <label>생년월일</label><input type="text"
+                                                              placeholder="ex) 20001022" class="ant-input" value="">
+                                    <label>이메일</label><input type="email"
+                                                             placeholder="ex) korea@mail.com" class="ant-input"
+                                                             value="">
+                                    <button type="button" class="ant-btn ant-btn-primary"><span>확인하기</span></button>
+
+                                    <div class="link-wrapper"><span class="link">로그인</span><span
+                                            class="link" style="border-right: 1px solid rgb(230, 230, 230);
+                                                padding-right: 16px;">회원가입</span><span class="link"
+                                                                                       onclick="location.href='idfind.html'">아이디찾기</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<footer>
+    <div class="footer_wrap">
+        <p>
+            <span class="company">(주)아이티브릿지</span>
+            <span>서울시 금천구 디지털로 121, 에이스가산타워 311호</span>
+            <span>
+		            <span class="mo_fx_row">
+			            <span>대표자 : 이승용</span>
+			            <span>사업자등록번호 : 894-87-00949</span>
+			        </span>
+		            <span class="mo_fx_row2">통신판매업신고 : 2021-서울금천-2992</span>
+		            
+	            </span>
+        </p>
+        <p>
+	           <span> 
+	               <!-- <span><a href="tel:1533-3145" title="전화하기">고객센터 : 1533-3145(유료)</a></span> -->
+	               <span>고객센터 : <a class="" href="" title="전화하기">1533-3145</a> (유료)</span>
+	               <span>이메일 : help@mosimi.co.kr</span>
+               </span>
+            <span class="full">
+                   <span>(점심시간 11:30~13:00, 토·일·공휴일 휴무)</span>
+               </span>
+            <span>
+                   <span><a href="" onclick="">이용약관</a></span> 
+                   <span><a href="" onclick="">개인정보처리방침</a></span>
+               </span>
+        </p>
+    </div>
+</footer>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $("#btnLogin").click(function () {
+        if (!$(this).attr('class').match('on')) {
+            $(this).addClass('on');
+            $(".fnc_user_wrap").addClass('on');
+        } else {
+            $(this).removeClass('on');
+            $(".fnc_user_wrap").removeClass('on');
+        }
+    })
+
+
+</script>
+</html>
