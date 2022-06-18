@@ -5,70 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../../../../asset/css/acc_reservation2.css">
-    <link rel="stylesheet" href="../../../../asset/css/header.css">
-    <link rel="stylesheet" href="../../../../asset/css/footer.css">
+    <link rel="stylesheet" href="../static/asset/css/acc_reservation2.css">
+    <link rel="stylesheet" href="../static/asset/css/header.css">
+    <link rel="stylesheet" href="../static/asset/css/footer.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            $("#header").load("header.html");
+        });
+    </script>
+    <script>
+        $(function () {
+            $("#footer").load("footer.html");
+        });
+    </script>
 </head>
 <body>
-<header id="header" class="header">
-    <div class="header_wrap">
-        <h1 class="logo" onclick=""></h1>
-        <nav class="nav">
-            <ul class="nav_list">
-                <li class="nav_item menu01">
-                    <a id="btnIntroduce" class="nav_item_link">돌보미 소개</a>
-                </li>
-
-                <li class="nav_item menu02">
-                    <a id="btnUseService" class="nav_item_link">서비스 이용</a>
-                </li>
-
-                <li class="nav_item menu02">
-                    <a id="btnUseService" class="nav_item_link">서비스 신청 목록</a>
-                </li>
-
-                <li class="nav_item menu03">
-                    <a class="nav_item_link">매니저 지원</a>
-                </li>
-
-                <li class="nav_item menu04">
-                    <a id="btnQuestion" class="nav_item_link">자주묻는 질문</a>
-                </li>
-
-                <!-- <li class="nav_item menu04">
-                    <a href="javascript:void(0)" class="nav_item_link">인재채용</a>
-                </li> -->
-            </ul>
-            <!--<div class="navsub_bg"></div>-->
-        </nav>
-        <div class="fnc_menu_wrap">
-            <a href="" class="fnc_home" title="메인화면"></a>
-            <a href="" class="fnc_notice" onclick=""></a>
-
-            <a class="fnc_alram" href="" title="알리미"></a>
-
-            <a class="fnc_user" id="btnLogin" title="로그인">
-
-                이름입력 님
-            </a>
-            <div class="fnc_user_wrap" tabindex="1">
-                <a title="프로필수정">프로필수정</a>
-                <a title="이용내역">이용내역</a>
-                <a title="비밀번호변경">비밀번호변경</a>
-                <a class="logout" title="로그아웃">로그아웃</a>
-            </div>
-        </div>
-    </div>
-    <div class="navsub_bg"></div>
-</header>
+<header id="header"></header>
 <div class="sub_page_wrap">
     <div class="sub_title_wrap sub_bg02">
         <!-- sub_title -->
         <div class="sub_title">
-            <p>지금 바로<br>모시미를 이용하세요!</p>
+            <p>지금 바로<br>돌보미를 이용하세요!</p>
             <p>항상 최선을 다하겠습니다.</p>
             <br>
             <br>
@@ -227,36 +188,7 @@
         </div>
     </div>
 </div>
-<footer>
-    <div class="footer_wrap">
-        <p>
-            <span class="company">(주)아이티브릿지</span>
-            <span>서울시 금천구 디지털로 121, 에이스가산타워 311호</span>
-            <span>
-		            <span class="mo_fx_row">
-			            <span>대표자 : 이승용</span>
-			            <span>사업자등록번호 : 894-87-00949</span>
-			        </span>
-		            <span class="mo_fx_row2">통신판매업신고 : 2021-서울금천-2992</span>
-		            
-	            </span>
-        </p>
-        <p>
-	           <span> 
-	               <!-- <span><a href="tel:1533-3145" title="전화하기">고객센터 : 1533-3145(유료)</a></span> -->
-	               <span>고객센터 : <a class="" href="" title="전화하기">1533-3145</a> (유료)</span>
-	               <span>이메일 : help@mosimi.co.kr</span>
-               </span>
-            <span class="full">
-                   <span>(점심시간 11:30~13:00, 토·일·공휴일 휴무)</span>
-               </span>
-            <span>
-                   <span><a href="" onclick="">이용약관</a></span> 
-                   <span><a href="" onclick="">개인정보처리방침</a></span>
-               </span>
-        </p>
-    </div>
-</footer>
+<footer id="footer"></footer>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>

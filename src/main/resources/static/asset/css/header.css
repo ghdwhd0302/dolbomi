@@ -1,5 +1,5 @@
 body {
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif!important;
     font-size: 12px;
     color: #000;
     margin: 0;
@@ -50,7 +50,7 @@ body, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fi
     top: -8px;
     width: 180px;
     height: 61px;
-    background: url("/dolbomi/asset/img/003.png");
+    background: url("../img/003.png");
     background-size: 166px 59px;
     cursor: pointer;
     margin-top: -4px;
