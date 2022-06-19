@@ -1,0 +1,193 @@
+body {
+    font-family: 'Noto Sans KR', sans-serif!important;
+    font-size: 12px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background: #ffffff;
+    font-weight: 500;
+}
+
+body, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, legend, input, textarea, button, select {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 80px;
+    z-index: 999;
+    background: #ffffff;
+}
+
+.header .header_wrap {
+    position: relative;
+    flex: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    min-width: 945px;
+    height: 120px;
+    height: 120px;
+    transition: all 0.3s ease;
+}
+
+.header .logo {
+    display: flex;
+    flex: none;
+    position: relative;
+    top: -8px;
+    width: 180px;
+    height: 61px;
+    background: url("../img/003.png");
+    background-size: 166px 59px;
+    cursor: pointer;
+    margin-top: -4px;
+}
+
+.header .nav {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    height: 60px;
+    transition: all 0.1s ease;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+.header .nav .nav_list {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.header .nav .nav_list > .nav_item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+a {
+    color: #3c3c3c;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.header .nav .nav_list .nav_item .nav_item_link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    padding: 0 24px 4px 24px !important;
+    font-size: 18px;
+    font-weight: 500;
+    color: #222;
+    transition: all .2s ease-in-out;
+}
+
+.header .nav .nav_list .nav_item .nav_item_link:after {
+    content: '';
+    position: absolute;
+    left: 24px;
+    bottom: 6px;
+    right: 24px;
+    height: 2px;
+    background: #1f6cd5;
+    transition: all .2s ease-in-out;
+    z-index: -1;
+    opacity: 0;
+}
+
+.header .fnc_menu_wrap {
+    display: flex;
+    height: 80px;
+    align-items: center;
+}
+
+.header .fnc_notice {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: url("https://www.mosimi.co.kr/resource/images/common/ico_notice.svg") no-repeat center center;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+.header .fnc_alram {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: url("https://www.mosimi.co.kr/resource/images/common/ico_alram.svg") no-repeat center center;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+.header .fnc_user {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    background: url("https://www.mosimi.co.kr/resource/images/common/ico_user.svg") no-repeat right center;
+    cursor: pointer;
+    padding-right: 34px;
+    padding-left: 15px;
+    transition: all .2s ease-in-out;
+}
+
+.header .fnc_menu_wrap .fnc_user_wrap {
+    position: absolute;
+    width: 200px;
+    top: 90px;
+    right: -10px;
+    padding: 30px 20px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 6px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    z-index: 9999;
+}
+
+.header .fnc_menu_wrap .fnc_user_wrap a {
+    color: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.header .fnc_menu_wrap .fnc_user_wrap a + a {
+    margin-top: 16px;
+}
+
+.header .fnc_user.on {
+    margin: 0;
+}
+
+.header .fnc_menu_wrap .fnc_user_wrap.on {
+    display: flex;
+}
+

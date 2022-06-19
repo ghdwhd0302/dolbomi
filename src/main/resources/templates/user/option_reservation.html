@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../static/asset/css/option_reservation.css">
+    <link rel="stylesheet" href="../../static/asset/css/header.css">
+    <link rel="stylesheet" href="../../static/asset/css/footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            $("#header").load("header.html");
+        });
+    </script>
+    <script>
+        $(function () {
+            $("#footer").load("footer.html");
+        });
+    </script>
+</head>
+<body>
+<header id="header"></header>
+<div class="sub_page_wrap">
+    <div class="sub_title_wrap sub_bg02">
+        <!-- sub_title -->
+        <div class="sub_title">
+            <p>지금 바로<br>돌보미를 이용하세요!</p>
+            <p>항상 최선을 다하겠습니다.</p>
+            <br>
+            <br>
+            <div class="img_bg02"><img src="https://www.mosimi.co.kr/resource/images/common/img_sub02.svg"></div>
+            <div class="heart_bg"></div>
+        </div>
+        <hr style="border : 0px; width: 100%;
+            border-top: 2px solid #e8e6e7;"/>
+        <!-- //sub_title -->
+        <!-- process_wrap -->
+        <div id="second-step" class="sc-gacfCG filBkf">
+            <h4 color="rgba(0,0,0,0.7)" class="sc-cqPOvA htzYgu">
+                원하시는 서비스 타입을 선택하세요!
+            </h4>
+            <img src="https://www.withmate.kr/assets/images/arrowDown.png" alt="아래로" class="sc-fjhmcy dHfuMj">
+        </div>
+        <div class="sc-gGCbJM eKOCWs">
+            <div class="sc-lcpuFF blHnvF">
+                <div class="sc-bqjOQT jWmgWE select" onclick="selected">
+                    <img src="https://www.withmate.kr/assets/images/art_pro.png" alt="type" class="sc-jkCMRl bWczVx">
+                    <span class="sc-crNyjn hEIVhP">
+                            돌봄
+                        </span>
+                    <div class="sc-cpHetk hdmujX">
+                        돌봄이 필요한 상황에 가족이 직접 돌봄을 하기 어려운 상황이 발생했을 때, 가족을 대신해 매니저가 돌봄을 하는 서비스입니다.
+                    </div>
+                    <div class="sc-kEmuub cCeyDW " onmouseover="over(this)" onmouseout="out(this)"
+                         onclick="location.href='care_reservation1.html'">
+                        선택
+                    </div>
+                </div>
+                <div class="sc-bqjOQT dbZRgp select" onclick="selected">
+                    <img src="	https://www.withmate.kr/assets/images/art_basic.png" alt="type"
+                         class="sc-jkCMRl bWczVx">
+                    <span class="sc-crNyjn hEIVhP">
+                            동행
+                        </span>
+                    <div class="sc-cpHetk hdmujX">
+                        보호자 동행이 필요한 상황이 발생했을 때 동행이 어려운 가족을 대신해 매니저가 대신 동행을 하는 서비스입니다.
+                        <br>
+                        <br>
+                    </div>
+                    <div class="sc-kEmuub cCeyDW" onmouseover="over(this)" onmouseout="out(this)"
+                         onclick="location.href='acc_reservation1.html'">
+                        선택
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer id="footer"></footer>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    function over(div) {
+        div.style.background = "rgb(59, 193, 255)"
+        div.style.color = "white"
+    }
+
+    function out(div) {
+        div.style.background = "white"
+        div.style.color = "rgb(59, 193, 255)"
+    }
+</script>
+<script>
+    $("#btnLogin").click(function () {
+        if (!$(this).attr('class').match('on')) {
+            $(this).addClass('on');
+            $(".fnc_user_wrap").addClass('on');
+        } else {
+            $(this).removeClass('on');
+            $(".fnc_user_wrap").removeClass('on');
+        }
+    })
+
+
+</script>
+</html>
