@@ -14,14 +14,20 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(function () {
-            $("#header").load("header.html");
+            $("#header").load("../header.html");
         });
     </script>
     <script>
         $(function () {
-            $("#footer").load("footer.html");
+            $("#footer").load("../footer.html");
         });
     </script>
+    <style>
+        /*서비스 이용, 매니저 지원 네비게이션*/
+        .menu02, .menu04{
+            display: none!important;
+        }
+    </style>
 </head>
 <body>
 <header id="header"></header>

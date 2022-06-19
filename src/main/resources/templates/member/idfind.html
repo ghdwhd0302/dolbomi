@@ -1,27 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>id찾기</title>
-    <link rel="stylesheet" href="../static/asset/css/pwfind.css">
+    <title>IdFind</title>
+    <link rel="stylesheet" href="../../static/asset/css/pwfind.css">
+    <link rel="stylesheet" href="../../static/asset/css/header.css">
+    <link rel="stylesheet" href="../../static/asset/css/footer.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
           rel="stylesheet">
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(function () {
-            $("#header").load("header.html");
+            $("#header").load("../header.html");
         });
     </script>
     <script>
         $(function () {
-            $("#footer").load("footer.html");
+            $("#footer").load("../footer.html");
         });
     </script>
+    <style>
+        /*서비스 신청 목록 네비게이션*/
+        .menu03{
+            display: none!important;
+        }
+    </style>
 </head>
+
 <body>
 <header id="header"></header>
 <div id="root">
@@ -37,10 +48,10 @@
                                     <p>아이디 찾기</p>
                                 </div>
                                 <div class="form-user-type">
-                                    <div class="type undefined" onclick="location.href='idfind.html'">
+                                    <div class="type active" onclick="location.href='idfind.html'">
                                         <p>일반</p>
                                     </div>
-                                    <div class="type active" onclick="location.href='idfind_manager.html'">
+                                    <div class="type undefined" onclick="location.href='idfind_manager.html'">
                                         <p>매니저</p>
                                     </div>
                                 </div>
@@ -65,11 +76,11 @@
                     </div>
                 </div>
             </div>
-        </div>
 
+        </div>
     </div>
-</div>
-<footer id="footer"></footer>
+
+    <footer id="footer"></footer>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>

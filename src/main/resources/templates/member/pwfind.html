@@ -5,26 +5,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IdFind</title>
-    <link rel="stylesheet" href="../static/asset/css/pwfind.css">
-    <link rel="stylesheet" href="../static/asset/css/header.css">
-    <link rel="stylesheet" href="../static/asset/css/footer.css">
+    <title>비밀번호찾기</title>
+    <link rel="stylesheet" href="../../static/asset/css/pwfind.css">
+    <link rel="stylesheet" href="../../static/asset/css/header.css">
+    <link rel="stylesheet" href="../../static/asset/css/footer.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
           rel="stylesheet">
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(function () {
-            $("#header").load("header.html");
+            $("#header").load("../header.html");
         });
     </script>
     <script>
         $(function () {
-            $("#footer").load("footer.html");
+            $("#footer").load("../footer.html");
         });
     </script>
+    <style>
+        /*서비스 신청 목록 네비게이션*/
+        .menu03{
+            display: none!important;
+        }
+    </style>
 </head>
 
 <body>
@@ -39,13 +44,13 @@
                         <div class="inner-container">
                             <div class="login-form">
                                 <div class="login-title">
-                                    <p>아이디 찾기</p>
+                                    <p>비밀번호 찾기</p>
                                 </div>
                                 <div class="form-user-type">
-                                    <div class="type active" onclick="location.href='idfind.html'">
+                                    <div class="type active" onclick="location.href='pwfind.html'">
                                         <p>일반</p>
                                     </div>
-                                    <div class="type undefined" onclick="location.href='idfind_manager.html'">
+                                    <div class="type undefined" onclick="location.href='pwfind_manager.html'">
                                         <p>매니저</p>
                                     </div>
                                 </div>
@@ -56,13 +61,15 @@
                                                               placeholder="ex) 01012341111" class="ant-input" value="">
                                     <label>생년월일</label><input type="text"
                                                               placeholder="ex) 20001022" class="ant-input" value="">
-
+                                    <label>이메일</label><input type="email"
+                                                             placeholder="ex) korea@mail.com" class="ant-input"
+                                                             value="">
                                     <button type="button" class="ant-btn ant-btn-primary"><span>확인하기</span></button>
 
                                     <div class="link-wrapper"><span class="link">로그인</span><span
                                             class="link" style="border-right: 1px solid rgb(230, 230, 230);
                                                 padding-right: 16px;">회원가입</span><span class="link"
-                                                                                       onclick="location.href='pwfind.html'">비밀번호찾기</span>
+                                                                                       onclick="location.href='idfind.html'">아이디찾기</span>
                                     </div>
                                 </div>
                             </div>
@@ -70,11 +77,11 @@
                     </div>
                 </div>
             </div>
-
         </div>
-    </div>
 
-    <footer id="footer"></footer>
+    </div>
+</div>
+<footer id="footer"></footer>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
