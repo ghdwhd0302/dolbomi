@@ -5,23 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../../static/asset/css/manager.css">
-    <link rel="stylesheet" href="../../static/asset/css/header.css">
-    <link rel="stylesheet" href="../../static/asset/css/footer.css">
+    <link rel="stylesheet" href="/asset/css/manager.css">
+    <link rel="stylesheet" href="/asset/css/header.css">
+    <link rel="stylesheet" href="/asset/css/footer.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(function () {
-            $("#header").load("../header.html");
-        });
-    </script>
-    <script>
-        $(function () {
-            $("#footer").load("../footer.html");
-        });
-    </script>
     <style>
         /*서비스 이용, 매니저 지원 네비게이션*/
         .menu02, .menu04{
@@ -30,7 +19,7 @@
     </style>
 </head>
 <body>
-<header id="header"></header>
+<header th:replace="header.html"></header>
 <div class="sub_page_wrap">
     <div class="sub_title_wrap title_only">
 
@@ -417,9 +406,9 @@
     color: #767070;">매칭을<br>최소하시겠습니까?</div>
     <button class="confirm" onclick="location.href=''">취소하기</button>
 </div>
-<footer id="footer"></footer>
+<footer th:replace="footer.html"></footer>
 </body>
-<script src="../../static/asset/js/manager.js"></script>
+<script src="/asset/js/manager.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $("#btnLogin").click(function(){
