@@ -11,21 +11,11 @@
     <link rel="stylesheet" href="/asset/css/header.css">
     <link rel="stylesheet" href="/asset/css/footer.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(function () {
-            $("#header").load("../header.html");
-        });
-    </script>
-    <script>
-        $(function () {
-            $("#footer").load("../footer.html");
-        });
-    </script>
 </head>
 
 <body>
 <!-- header -->
-<header id="header"></header>
+<header th:replace="header.html"></header>
 
 <!-- main -->
 <div id="root">

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @Slf4j
 @RequiredArgsConstructor
-@RequestMapping("/service/*")
+@RequestMapping("/user/*")
 public class UserController {
     private final UserService userService;
 
@@ -104,22 +104,22 @@ public class UserController {
     }
 
 //    예약 내역 조회
-    @GetMapping("user_userdetails")
-    public void reservationList(){
-
-    }
-    @GetMapping("user_userdetails2")
-    public void reservationList2(){
-
-    }
-    @GetMapping("user_userdetails3")
-    public void reservationList3(){
-
-    }
-    @GetMapping("user_userdetails4")
-    public void reservationList4(){
-
-    }
+//    @GetMapping("user_userdetails")
+//    public void reservationList(){
+//
+//    }
+//    @GetMapping("user_userdetails2")
+//    public void reservationList2(){
+//
+//    }
+//    @GetMapping("user_userdetails3")
+//    public void reservationList3(){
+//
+//    }
+//    @GetMapping("user_userdetails4")
+//    public void reservationList4(){
+//
+//    }
 
 //    서비스 상태 변경(배정취소)
     @GetMapping("matchingCancel")
@@ -225,22 +225,6 @@ public class UserController {
 
     @GetMapping("review2")
     public void review2(){
-    }
-
-    @GetMapping("user_userdetails")
-    public void user_userdetails(){
-    }
-
-    @GetMapping("user_userdetails2")
-    public void user_userdetails2(){
-    }
-
-    @GetMapping("user_userdetails3")
-    public void user_userdetails3(){
-    }
-
-    @GetMapping("user_userdetails4")
-    public void user_userdetails4(){
     }
 
 }
