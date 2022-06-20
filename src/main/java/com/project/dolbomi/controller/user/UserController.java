@@ -181,50 +181,56 @@ public class UserController {
 
 //    페이지 이동
     @GetMapping("acc_reservation1")
-    public void acc_reservation1(){
-    }
+    public void acc_reservation1(){}
 
     @GetMapping("acc_reservation2")
-    public void acc_reservation2(){
-    }
+    public void acc_reservation2(){}
 
     @GetMapping("acc_reservation3")
-    public void acc_reservation3(){
-    }
+    public void acc_reservation3(){}
+
     @GetMapping("acc_confirmation")
-    public void acc_confirmation(){
-    }
+    public void acc_confirmation(){}
 
     @GetMapping("care_reservation1")
-    public void care_reservation1(){
-    }
+    public void care_reservation1(){}
 
     @GetMapping("care_reservation2")
-    public void care_reservation2(){
-    }
+    public void care_reservation2(){}
 
     @GetMapping("care_reservation3")
-    public void care_reservation3(){
-    }
+    public void care_reservation3(){}
 
     @GetMapping("care_confirmation")
-    public void care_confirmation(){
-    }
+    public void care_confirmation(){}
+
+    @GetMapping("option_reservation")
+    public void option_reservation(){}
 
     @GetMapping("regi1")
-    public void regi1(){
-    }
+    public void regi1(){}
 
     @GetMapping("regi2")
-    public void regi2(){
-    }
+    public void regi2(){}
 
     @GetMapping("review")
-    public void review(){
-    }
+    public void review(){}
 
     @GetMapping("review2")
-    public void review2(){
-    }
+    public void review2(){}
+
+    @GetMapping("user_userdetails")
+    public void user_userdetails(){}
+
+    @GetMapping("user_userdetails2")
+    public void user_userdetails2(){}
+
+    @GetMapping("user_userdetails3")
+    public void user_userdetails3(){}
+
+    @GetMapping("user_userdetails4")
+    public void user_userdetails4(){}
+
+
 
 }

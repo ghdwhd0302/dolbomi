@@ -136,48 +136,40 @@ public class MemberController {
 
 //    페이지 이동
     @GetMapping("introduce")
-    public void introduce(){
-    }
+    public void introduce(){}
 
     @GetMapping("idfind")
-    public void idfind(){
-    }
+    public void idfind(){}
 
     @GetMapping("idfind_manager")
-    public void idfind_manager(){
-    }
+    public void idfind_manager(){}
 
     @GetMapping("mainpage")
-    public void mainpage(){
-    }
+    public void mainpage(){}
 
     @GetMapping("userlogin")
-    public void userlogin(){
-    }
+    public void userlogin(){}
 
     @GetMapping("managerlogin")
-    public void managerlogin(){
-    }
+    public void managerlogin(){}
 
     @GetMapping("faq")
-    public void faq(){
-    }
+    public void faq(){}
 
     @GetMapping("managerapply")
-    public void managerapply(){
-    }
+    public void managerapply(){}
 
     @GetMapping("profilechange")
-    public void profilechange(){
-    }
+    public void profilechange(){}
 
     @GetMapping("pwfind")
-    public void pwfind(){
-    }
+    public void pwfind(){}
 
     @GetMapping("pwfind_manager")
-    public void pwfind_manager(){
-    }
+    public void pwfind_manager(){}
+
+    @GetMapping("passwordchange")
+    public void passwordchange(){}
 
 
 
