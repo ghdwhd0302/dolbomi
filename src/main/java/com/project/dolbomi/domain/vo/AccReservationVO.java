@@ -6,19 +6,19 @@ import org.springframework.stereotype.Component;
 @Component
 @Data
 public class AccReservationVO {
-    private Long accreservationNum;
-    private String accreservationType;
-    private String accreservationName;
-    private String accreservationAge;
-    private String accreservationPhoneNum;
-    private String accreservationGender;
-    private String accreservationAddPhoneNum;
-    private String accreservationRelation;
-    private String accreservationHopeGender;
-    private String accreservationAddress;
-    private String accreservationDate;
-    private String accreservationTime;
-    private String accreservationAddRequire;
-    private String accreservationPrice;
+    private Long accReservationNum;
+    private String accReservationType;
+    private String accReservationName;
+    private String accReservationAge;
+    private String accReservationPhoneNum;
+    private String accReservationGender;
+    private String accReservationAddPhoneNum;
+    private String accReservationRelation;
+    private String accReservationHopeGender;
+    private String accReservationAddress;
+    private String accReservationDate;
+    private String accReservationTime;
+    private String accReservationAddRequire;
+    private String accReservationPrice;
     private String userEmail;
 }
