@@ -14,31 +14,31 @@
 <body>
 <header id="header" class="header">
     <div class="header_wrap">
-        <h1 class="logo" onclick=""></h1>
+        <h1 class="logo" onclick="location.href='/member/mainpage'"></h1>
         <nav class="nav">
             <ul class="nav_list">
                 <li class="nav_item menu01">
-                    <a id="btnIntroduce" class="nav_item_link">돌보미 소개</a>
+                    <a href="/member/introduce" id="btnIntroduce" class="nav_item_link">돌보미 소개</a>
                 </li>
 
                 <li class="nav_item menu02">
-                    <a id="btnUseService" class="nav_item_link">서비스 이용</a>
+                    <a href="/user/option_reservation" id="btnUseService" class="nav_item_link">서비스 이용</a>
                 </li>
 
                 <li class="nav_item menu03">
-                    <a id="btnUseService" class="nav_item_link">서비스 신청 목록</a>
+                    <a href="/manager/manager_rev" id="btnUseService" class="nav_item_link">서비스 신청 목록</a>
                 </li>
 
                 <li class="nav_item menu04">
-                    <a class="nav_item_link">매니저 지원</a>
+                    <a href="/member/managerapply" class="nav_item_link">매니저 지원</a>
                 </li>
 
                 <li class="nav_item menu05">
-                    <a id="btnQuestion" class="nav_item_link">자주묻는 질문</a>
+                    <a href="/member/faq" id="btnQuestion" class="nav_item_link">자주묻는 질문</a>
                 </li>
 
                 <li class="nav_item menu06">
-                    <a id="btnReview" class="nav_item_link">이용후기</a>
+                    <a href="/user/review" id="btnReview" class="nav_item_link">이용후기</a>
                 </li>
 
                 <!-- <li class="nav_item menu04">
@@ -48,19 +48,22 @@
             <!--<div class="navsub_bg"></div>-->
         </nav>
         <div class="fnc_menu_wrap">
-            <a href="" class="fnc_home" title="메인화면"></a>
-            <a href="" class="fnc_notice" onclick=""></a>
+            <a href="/member/mainpage" class="fnc_home" title="메인화면"></a>
+            <a href="/member/faq" class="fnc_notice"></a>
 
-
-            <a class="fnc_user" id="btnLogin" title="로그인">
+                <!--로그인 안된상태에서 클릭하면 로그인 페이지로 이동-->
+            <a class="fnc_user" id="btnLogin" title="로그인"> <!--href="/member/userlogin" 추가 해야됨-->
 
                 이름입력 님
             </a>
             <div class="fnc_user_wrap" tabindex="1">
-                <a title="프로필수정">프로필수정</a>
+                <a href="/member/profilechange" title="프로필수정">프로필수정</a>
+                <!--매니저일 경우, 회원일 경우 다르게-->
+                <!--매니저 로그인 시 href="/manager/manager"-->
+                <!--회원 로그인 시 href="/user/user_userdetails"-->
                 <a title="이용내역">이용내역</a>
-                <a title="비밀번호변경">비밀번호변경</a>
-                <a class="logout" title="로그아웃">로그아웃</a>
+                <a href="/member/passwordchange" title="비밀번호변경">비밀번호변경</a>
+                <a href="/member/mainpage" class="logout" title="로그아웃">로그아웃</a>
             </div>
         </div>
     </div>
@@ -70,13 +73,12 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
       $("#btnLogin").click(function () {
-        if (!$(this).attr('class').match('on')) {
-            $(this).addClass('on');
+          if (!$(".fnc_user_wrap").attr('class').match('on')){
             $(".fnc_user_wrap").addClass('on');
         } else {
-            $(this).removeClass('on');
             $(".fnc_user_wrap").removeClass('on');
         }
+
     })
 
 
