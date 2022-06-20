@@ -16,102 +16,203 @@ public class MemberController {
     private final MemberService memberService;
 
 //    일반 아이디 찾기
-//    @GetMapping("idfind")
+//    @GetMapping("userIdF")
 //    public void idFind(){
 //
 //    }
 
-    @PostMapping("idfind")
+    @PostMapping("userIdF")
     public String idFind(){
-        return "/member/idfind";
+        return "/member/userIdF";
     }
 
 //    일반 비밀번호 찾기
-//    @GetMapping("pwfind")
+//    @GetMapping("userPwF")
 //    public void pwFind(){
 //
 //    }
 
-    @PostMapping("pwfind")
+    @PostMapping("userPwF")
     public String pwFind(){
-        return "/member/pwfind";
+        return "/member/userPwF";
     }
 
 //    매니저 아이디 찾기
-//    @GetMapping("idfind_manager")
+//    @GetMapping("managerIdF")
 //    public void idFindManager(){
 //
 //    }
 
-    @PostMapping("idfind_manager")
+    @PostMapping("managerIdF")
     public String idFindManager(){
-        return "/member/idfind_manager";
+        return "/member/managerIdF";
     }
 
 //    매니저 비밀번호 찾기
-//    @GetMapping("pwfind_manager")
+//    @GetMapping("managerPwF")
 //    public void pwFindManager(){
 //
 //    }
 
-    @PostMapping("pwfind_manager")
+    @PostMapping("managerPwF")
     public String pwFindManager(){
-        return "/member/pwfind_manager";
+        return "/member/managerPwF";
     }
 
 //    일반 로그인
-//    @GetMapping("userlogin")
+//    @GetMapping("loginU")
 //    public void userLogin(){
-//
 //    }
 
-    @PostMapping("userlogin")
+    @PostMapping("loginU")
     public String userLogin(){
+    return "/member/mainpage";
+}
+
+//    일반 회원 탈퇴
+//    @GetMapping("exitU")
+//    public void userExit(){
+//    }
+
+    @PostMapping("exitU")
+    public String userExit(){
         return "/member/mainpage";
     }
 
 //    매니저 로그인
-//    @GetMapping("managerlogin")
+//    @GetMapping("loginM")
 //    public void managerLogin(){
 //
 //    }
 
-    @PostMapping("managerlogin")
+    @PostMapping("loginM")
     public String managerLogin(){
         return "/member/mainpage";
     }
 
+//   매니저 회원 탈퇴
+//    @GetMapping("exitM")
+//    public void managerExit(){
+//
+//    }
+
+    @PostMapping("exitM")
+    public String managerExit(){
+        return "/member/mainpage";
+    }
+
 //    회원정보 변경
-//    @GetMapping("profilechange")
+//    @GetMapping("updateInfor")
 //    public void profileChange(){
 //
 //    }
 
-    @PostMapping("profilchange")
+    @PostMapping("updateInfor")
     public String profileChange(){
-        return "/member/profilechange";
+        return "/member/updateInfor";
     }
 
 //    비밀번호 변경
-//    @GetMapping("passwordchange")
+//    @GetMapping("updatePW")
 //    public void pwChange(){
 //
 //    }
 
-    @PostMapping("passwordchange")
+    @PostMapping("updatePW")
     public String pwChange(){
-        return "/member/passwordchange";
+        return "/member/updatePW";
     }
 
 //    비밀번호 조회
-//    @GetMapping("passwordchange")
+//    @GetMapping("checkPw")
 //    public void pwInquiry(){
 //
 //    }
 
-    @PostMapping("passwordchange")
+    @PostMapping("checkPw")
     public String pwInquiry(){
-        return "/member/passwordchange";
+        return "/member/checkPw";
     }
+
+//    페이지 이동
+    @GetMapping("introduce")
+    public void introduce(){
+
+    }
+
+    @GetMapping("userlogin")
+    public void userlogin(){
+
+    }
+
+    @GetMapping("managerlogin")
+    public void managerlogin(){
+
+    }
+
+    @GetMapping("faq")
+    public void faq(){
+
+    }
+
+    @GetMapping("managerapply")
+    public void managerapply(){
+
+    }
+
+    @GetMapping("profilechange")
+    public void profilechange(){
+
+    }
+
+    @GetMapping("acc_reservation1")
+    public String acc_reservation1(){
+        return "/user/acc_reservation2";
+    }
+
+    @GetMapping("acc_reservation2")
+    public String acc_reservation2(){
+        return "/user/acc_reservation3";
+    }
+
+    @GetMapping("acc_reservation3")
+    public String acc_reservation3(){
+        return "/user/comfirmation";
+    }
+
+    @GetMapping("care_reservation1")
+    public String care_reservation1(){
+        return "/user/care_reservation2";
+
+    }
+    @GetMapping("care_reservation2")
+    public String care_reservation2(){
+        return "/user/care_reservation3";
+
+    }
+    @GetMapping("care_reservation3")
+    public String care_reservation3(){
+        return "/user/care_confirmation";
+
+    }
+
+    @GetMapping("user_userdetails")
+    public void user_userdetails(){
+
+    }
+
+    @GetMapping("review")
+    public void review(){
+
+    }
+
+    @GetMapping("manager")
+    public void manager(){
+
+    }
+
+
+
+
 
 }

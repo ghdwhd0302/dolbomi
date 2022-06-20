@@ -24,8 +24,4 @@
         WHERE USER_EMAIL = #{userEmail}
     </delete>
 
-
-
-
-
 </mapper>

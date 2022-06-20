@@ -16,63 +16,65 @@ public class ManagerController {
     private final ManagerService managerService;
 
 //    서비스 신청 목록
-    @GetMapping("manager_rev")
+    @GetMapping("matchList")
     public void serviceList(){
 
     }
 
 //    매칭 확정
-//    @GetMapping("manager_rev")
+//    @GetMapping("reservOk")
 //    public void machingConfirm(){
 //
 //    }
 
-    @PostMapping("manager_rev")
+    @PostMapping("reservOk")
     public String machingConfirm(){
         return "/manager/manager";
     }
 
 //    예약 내역 조회
-    @GetMapping("manager")
+    @GetMapping("managerdetails")
     public void reservationList(){
 
     }
 
-    @GetMapping("manager2")
+    @GetMapping("managerdetails2")
     public void reservationList2(){
 
     }
 
-    @GetMapping("manager")
+    @GetMapping("managerdetails3")
     public void reservationList3(){
 
     }
 
 //    서비스 상태 변경(시작)
-    @GetMapping("manager")
+    @GetMapping("startService")
     public String serviceStart(){
         return "/manager/manager2";
     }
 
 //    서비스 상태 변경(취소)
-    @GetMapping("manager")
+    @GetMapping("cancelService")
     public void serviceCancel(){
     }
 
 //    서비스 상태 변경(종료)
-    @GetMapping("manager2")
+    @GetMapping("endService")
     public String serviceEnd(){
         return "/manager/manager3";
     }
 
 //    매니저 회원가입
-//    @GetMapping("manageregi")
+//    @GetMapping("mjoin")
 //    public void managerJoin(){
 //    }
 
-    @PostMapping("manageregi")
+    @PostMapping("mjoin")
     public String managerJoin(){
         return "/member/mainpage";
     }
+
+
 
 }
