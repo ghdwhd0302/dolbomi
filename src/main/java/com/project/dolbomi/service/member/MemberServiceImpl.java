@@ -1,4 +1,4 @@
-package com.project.dolbomi.member.service;
+package com.project.dolbomi.service.member;
 
 import com.project.dolbomi.domain.vo.AccReservationVO;
 import com.project.dolbomi.domain.vo.CareReservationVO;

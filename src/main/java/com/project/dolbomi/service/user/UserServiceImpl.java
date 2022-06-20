@@ -1,10 +1,10 @@
-package com.project.dolbomi.user.service;
+package com.project.dolbomi.service.user;
 
 import com.project.dolbomi.domain.vo.UserVO;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
     @Override
     public void careApprove(long careReservationNum) {
 

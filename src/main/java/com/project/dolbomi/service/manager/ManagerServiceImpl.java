@@ -1,4 +1,4 @@
-package com.project.dolbomi.manager.service;
+package com.project.dolbomi.service.manager;
 
 import org.springframework.stereotype.Service;
 

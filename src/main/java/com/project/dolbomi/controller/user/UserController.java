@@ -1,6 +1,6 @@
-package com.project.dolbomi.user.controller;
+package com.project.dolbomi.controller.user;
 
-import com.project.dolbomi.user.service.UserService;
+import com.project.dolbomi.service.user.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @Slf4j
 @RequiredArgsConstructor
-@RequestMapping("/user/*")
+@RequestMapping("/service/*")
 public class UserController {
     private final UserService userService;
 
@@ -177,6 +177,70 @@ public class UserController {
     @GetMapping("delReview")
     public void reviewDelete(){
 
+    }
+
+//    페이지 이동
+    @GetMapping("acc_reservation1")
+    public void acc_reservation1(){
+    }
+
+    @GetMapping("acc_reservation2")
+    public void acc_reservation2(){
+    }
+
+    @GetMapping("acc_reservation3")
+    public void acc_reservation3(){
+    }
+    @GetMapping("acc_confirmation")
+    public void acc_confirmation(){
+    }
+
+    @GetMapping("care_reservation1")
+    public void care_reservation1(){
+    }
+
+    @GetMapping("care_reservation2")
+    public void care_reservation2(){
+    }
+
+    @GetMapping("care_reservation3")
+    public void care_reservation3(){
+    }
+
+    @GetMapping("care_confirmation")
+    public void care_confirmation(){
+    }
+
+    @GetMapping("regi1")
+    public void regi1(){
+    }
+
+    @GetMapping("regi2")
+    public void regi2(){
+    }
+
+    @GetMapping("review")
+    public void review(){
+    }
+
+    @GetMapping("review2")
+    public void review2(){
+    }
+
+    @GetMapping("user_userdetails")
+    public void user_userdetails(){
+    }
+
+    @GetMapping("user_userdetails2")
+    public void user_userdetails2(){
+    }
+
+    @GetMapping("user_userdetails3")
+    public void user_userdetails3(){
+    }
+
+    @GetMapping("user_userdetails4")
+    public void user_userdetails4(){
     }
 
 }
