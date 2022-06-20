@@ -1,6 +1,6 @@
 * {
     font-family: 'Noto Sans KR', sans-serif;
-    box-sizing: border-box;
+    box-sizing :border-box;
 
 }
 
@@ -95,7 +95,7 @@ ul, ol {
     align-items: center;
     justify-content: center;
     height: 60px;
-    padding: 0 24px 4px 24px !important;
+    padding: 0 24px 4px 24px!important;
     font-size: 18px;
     font-weight: 400;
     color: #222;
@@ -173,7 +173,7 @@ a {
     top: 90px;
     right: -10px;
     padding: 30px 20px;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0,0,0,0.8);
     border-radius: 6px;
     display: none;
     justify-content: center;
@@ -298,7 +298,7 @@ button {
     width: 100%;
     align-items: center;
     justify-content: center;
-    font-size: 56px;
+    font-size: 44px;
     font-weight: 400;
     line-height: 60px;
     color: #313131;
@@ -307,10 +307,11 @@ button {
 
 .sub_title p + p {
     margin-top: 0;
-    font-size: 31px;
+    font-size: 25px;
     color: #666666;
     font-weight: 200;
 }
+
 
 .sub_title_wrap.sub_bg02 .sub_title .img_bg02 {
     position: absolute;
@@ -357,7 +358,6 @@ button {
     right: 0;
     top: -50%;
 }
-
 .dZclmO {
     padding-top: 32px;
     padding-bottom: 32px;
@@ -381,15 +381,15 @@ button {
 }
 
 .eWwIcG {
-    width: 230px;
-    height: 73px;
+    width: 192px;
+    height: 60px;
     line-height: 64px;
     border: 0px;
     outline: none;
     border-radius: 50vh;
     cursor: not-allowed;
     text-align: center;
-    font-size: 21px;
+    font-size: 17px;
     letter-spacing: -0.1px;
     background-color: rgb(59, 193, 255);
     color: rgb(255, 255, 255);
@@ -409,15 +409,15 @@ img {
 }
 
 .kAufHg {
-    width: 230px;
-    height: 73px;
+    width: 192px;
+    height: 60px;
     line-height: 64px;
     border: 0px;
     outline: none;
     border-radius: 50vh;
     cursor: not-allowed;
     text-align: center;
-    font-size: 21px;
+    font-size: 17px;
     letter-spacing: -0.1px;
     background-color: rgb(230, 230, 230);
     color: rgb(175, 176, 178);
@@ -451,7 +451,7 @@ img {
 }
 
 .ctKjik {
-    width: 770px;
+    width: 670px;
     margin: 0px auto 64px;
     background-color: rgb(255, 255, 255);
     border: 1px solid rgb(230, 230, 230);
@@ -468,7 +468,7 @@ img {
 }
 
 .gbVVya {
-    font-size: 34px;
+    font-size: 27px;
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
@@ -491,7 +491,7 @@ img {
 }
 
 .hoWkSp {
-    font-size: 18px;
+    font-size: 14px;
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
@@ -517,15 +517,16 @@ img {
     display: inline-block;
     cursor: pointer;
     flex: 1 1 0%;
-    height: 100%;
+    height: 37px;
     border-radius: 4px;
     border: 1px solid rgb(233, 233, 233);
     text-align: center;
-    color: rgba(0, 0, 0, 0.7);
-    font-size: 18px;
+    /* color: rgba(0, 0, 0, 0.7); */
+    font-size: 14px;
     padding-top: 4px;
     letter-spacing: -0.2px;
     margin-right: 8px;
+    line-height: 25px;
 }
 
 .dxikPE > span:last-child {
@@ -533,6 +534,11 @@ img {
 }
 
 .dxikPE > span.active {
+    background-color: rgb(59, 193, 255);
+    color: white;
+}
+
+.clicked{
     background-color: rgb(59, 193, 255);
     color: white;
 }
@@ -593,16 +599,16 @@ img {
     color: rgba(0, 0, 0, 0.7);
 }
 
-.ant-picker-input > input:placeholder-shown {
+.ant-picker-input>input:placeholder-shown {
     text-overflow: ellipsis;
 }
 
-.ant-picker-input > input {
+.ant-picker-input>input {
     position: relative;
     display: inline-block;
     width: 100%;
     min-width: 0;
-    color: rgba(0, 0, 0, .85);
+    color: rgba(0,0,0,.85);
     font-size: 14px;
     line-height: 1.5715;
     background-color: #fff;
@@ -614,19 +620,18 @@ img {
     min-width: 1px;
     height: auto;
     padding: 0;
-    background: rgba(0, 0, 0, 0);
+    background: rgba(0,0,0,0);
     border: 0;
 }
-
 .ant-picker-suffix {
     align-self: center;
     margin-left: 4px;
-    color: rgba(0, 0, 0, .25);
+    color: rgba(0,0,0,.25);
     line-height: 1;
     pointer-events: none;
 }
 
-.ant-picker-suffix > * {
+.ant-picker-suffix>* {
     vertical-align: top;
 }
 
@@ -739,7 +744,7 @@ img {
 .ant-select:not(.ant-select-customize-input) .ant-select-selector .ant-select-selection-search-input {
     margin: 0;
     padding: 0;
-    background: rgba(0, 0, 0, 0);
+    background: rgba(0,0,0,0);
     border: none;
     outline: none;
     -webkit-appearance: none;
@@ -754,7 +759,6 @@ img {
 .bqHxwH.ant-select-single .ant-select-selector .ant-select-selection-item, .bqHxwH.ant-select-single .ant-select-selector .ant-select-selection-placeholder {
     line-height: 43px;
 }
-
 .ant-select-single .ant-select-selector .ant-select-selection-item:after, .ant-select-single .ant-select-selector .ant-select-selection-placeholder:after, .ant-select-single .ant-select-selector:after {
     display: inline-block;
     width: 0;
@@ -782,7 +786,7 @@ img {
     width: 12px;
     height: 12px;
     margin-top: -6px;
-    color: rgba(0, 0, 0, .25);
+    color: rgba(0,0,0,.25);
     font-size: 12px;
     line-height: 1;
     text-align: center;
@@ -795,10 +799,10 @@ img {
     -webkit-transition: -webkit-transform .3s;
     transition: -webkit-transform .3s;
     transition: transform .3s;
-    transition: transform .3s, -webkit-transform .3s;
+    transition: transform .3s,-webkit-transform .3s;
 }
 
-.ant-select-arrow > * {
+.ant-select-arrow>* {
     line-height: 1;
 }
 
@@ -815,7 +819,7 @@ img {
     -moz-osx-font-smoothing: grayscale;
 }
 
-.ant-select-arrow .anticon > svg {
+.ant-select-arrow .anticon>svg {
     vertical-align: top;
 }
 
@@ -836,12 +840,12 @@ img {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    color: rgba(0, 0, 0, .85);
+    color: rgba(0,0,0,.85);
     font-size: 14px;
     font-variant: tabular-nums;
     line-height: 1.5715;
     list-style: none;
-    font-feature-settings: "tnum", "tnum";
+    font-feature-settings: "tnum","tnum";
     display: inline-flex;
     align-items: baseline;
     line-height: unset;
@@ -852,12 +856,12 @@ img {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    color: rgba(0, 0, 0, .85);
+    color: rgba(0,0,0,.85);
     font-size: 14px;
     font-variant: tabular-nums;
     line-height: 1.5715;
     list-style: none;
-    font-feature-settings: "tnum", "tnum";
+    font-feature-settings: "tnum","tnum";
     position: relative;
     top: 0.2em;
     line-height: 1;
@@ -897,15 +901,15 @@ input[type=checkbox], input[type=radio] {
     border: 2px solid #fff;
     border-top: 0;
     border-left: 0;
-    -webkit-transform: rotate(45deg) scale(0) translate(-50%, -50%);
-    transform: rotate(45deg) scale(0) translate(-50%, -50%);
+    -webkit-transform: rotate(45deg) scale(0) translate(-50%,-50%);
+    transform: rotate(45deg) scale(0) translate(-50%,-50%);
     opacity: 0;
-    -webkit-transition: all .1s cubic-bezier(.71, -.46, .88, .6), opacity .1s;
-    transition: all .1s cubic-bezier(.71, -.46, .88, .6), opacity .1s;
+    -webkit-transition: all .1s cubic-bezier(.71,-.46,.88,.6),opacity .1s;
+    transition: all .1s cubic-bezier(.71,-.46,.88,.6),opacity .1s;
     content: " ";
 }
 
-.ant-checkbox + span {
+.ant-checkbox+span {
     padding-right: 8px;
     padding-left: 8px;
 }
@@ -917,11 +921,11 @@ input[type=checkbox], input[type=radio] {
 
 .jdYHBr.ant-input {
     width: 100%;
-    height: 240px;
+    height: 183px;
     /* min-height: 110px;
     max-height: 110px; */
     color: rgb(22, 22, 22);
-    font-size: 18px;
+    font-size: 13px;
     font-weight: normal;
     border-radius: 4px;
     background-color: rgb(255, 255, 255);
@@ -953,7 +957,7 @@ img {
     display: flex;
     -webkit-box-align: center;
     align-items: center;
-    max-width: 640px;
+    max-width: 395px;
     margin: 0px auto;
 }
 
@@ -964,10 +968,10 @@ img {
     text-align: center;
     background-color: rgb(206, 207, 208);
     color: rgb(255, 255, 255);
-    height: 72px;
-    line-height: 72px;
+    height: 58px;
+    line-height: 63px;
     border-radius: 50vh;
-    font-size: 22px;
+    font-size: 19px;
     font-weight: bold;
     letter-spacing: -0.5px;
     max-width: calc(50% - 4px);
@@ -981,10 +985,10 @@ img {
     text-align: center;
     background-color: rgb(59, 193, 255);
     color: rgb(255, 255, 255);
-    height: 72px;
-    line-height: 72px;
+    height: 58px;
+    line-height: 63px;
     border-radius: 50vh;
-    font-size: 22px;
+    font-size: 19px;
     font-weight: bold;
     letter-spacing: -0.5px;
     max-width: calc(50% - 4px);
@@ -994,7 +998,7 @@ img {
 .hEIVhP {
     margin-top: 11px;
     margin-bottom: 8px;
-    font-size: 24px;
+    font-size: 18px;
     font-weight: bold;
     text-align: center;
     letter-spacing: -0.5px;
