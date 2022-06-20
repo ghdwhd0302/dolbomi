@@ -22,4 +22,6 @@ public interface ManagerMapper {
 
     //    매니저 탈퇴
     public String delete(String userEmail);
+
+
 }
