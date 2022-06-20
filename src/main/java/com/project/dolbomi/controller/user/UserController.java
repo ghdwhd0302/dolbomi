@@ -1,6 +1,6 @@
-package com.project.dolbomi.user.controller;
+package com.project.dolbomi.controller.user;
 
-import com.project.dolbomi.user.service.UserService;
+import com.project.dolbomi.service.user.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -11,95 +11,96 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @Slf4j
 @RequiredArgsConstructor
-@RequestMapping("/user/*")
+@RequestMapping("/service/*")
 public class UserController {
     private final UserService userService;
 
 //    회원가입1
-//    @GetMapping("regi1")
+//    @GetMapping("ujoin1")
 //    public void join1(){
 //
 //    }
 
-    @PostMapping("regi1")
+    @PostMapping("ujoin1")
     public String join1(){
         return "/user/regi2";
     }
 
 //    이메일 중복검사
-//    @GetMapping("regi1")
+//    @GetMapping("emailcheck")
 //    public void emailCheck(){
 //
 //    }
 
-    @PostMapping("regi1")
+    @PostMapping("emailcheck")
     public String emailCheck(){
-        return "/user/regi1";
+        return "/user/emailcheck";
     }
 
 //    회원가입2
-//    @GetMapping("regi2")
+//    @GetMapping("ujoin2")
 //    public void join2(){
 //
 //    }
 
-    @PostMapping("regi2")
+    @PostMapping("ujoin2")
     public String join2(){
         return "/member/mainpage";
     }
 
 //    휴대폰 인증번호 발송
-//    @GetMapping("regi2")
+//    @GetMapping("sendcode")
 //    public void phoneCerti(){
 //
 //    }
 
-    @PostMapping("regi2")
+    @PostMapping("sendcode")
     public String phoneCerti(){
-        return "/user/regi2";
+        return "/user/sendcode";
     }
 
 //    동행 서비스 예약
-//    @GetMapping("acc_reservation3")
+//    @GetMapping("reservAcc")
 //    public void accReservation(){
 //
 //    }
 
-    @PostMapping("acc_reservation3")
+    @PostMapping("reservAcc")
     public String accReservation(){
         return "/user/user_userdetails";
     }
+
 //    돌봄 서비스 예약
-//    @GetMapping("care_reservation3")
+//    @GetMapping("reservCare")
 //    public void careReservation(){
 //
 //    }
 
-    @PostMapping("care_reservation3")
+    @PostMapping("reservCare")
     public String careReservation(){
         return "/user/user_userdetails";
     }
 
 //    동행 서비스 결제
-//    @GetMapping("acc_reservation3")
+//    @GetMapping("payAcc")
 //    public void accPayment(){
 //
 //    }
 
-    @PostMapping("acc_reservation3")
+    @PostMapping("payAcc")
     public String accPayment(){
         return "/user/user_userdetails";
     }
 
 //    돌봄 서비스 결제
-//    @GetMapping("care_reservation3")
+//    @GetMapping("payCare")
 //    public void carePayment(){
 //
 //    }
 
-    @PostMapping("care_reservation3")
+    @PostMapping("payCare")
     public String carePayment(){
-        return "/user/user_usedetail";
+        return "/user/user_usedetails";
     }
 
 //    예약 내역 조회
@@ -121,58 +122,125 @@ public class UserController {
     }
 
 //    서비스 상태 변경(배정취소)
-    @GetMapping("user_userdetails")
+    @GetMapping("matchingCancel")
     public void allocationCancel(){
 
     }
+
 //    서비스 상태 변경(배정수락)
-    @GetMapping("user_userdetails")
+    @GetMapping("matchingAccept")
     public String allocationAccept(){
         return "/user/user_details2";
     }
+
 //    서비스 상태 변경(예약취소)
-    @GetMapping("user_userdetails2")
+    @GetMapping("reservCancel")
     public void reservationCancel(){
 
     }
 
 //    전체 목록 조회
-    @GetMapping("review")
+    @GetMapping("allReview")
     public void reviewList(){
 
     }
 
 //    리뷰 작성
-//    @GetMapping("review")
+//    @GetMapping("writeReview")
 //    public void reviewWrite(){
 //
 //    }
 
-    @PostMapping("review")
+    @PostMapping("writeReview")
     public String reviewWrite(){
-        return "/user/review";
+        return "/user/writeReview";
     }
 
 //    리뷰 조회
-    @GetMapping("review")
+    @GetMapping("viewReview")
     public void reviewRead(){
 
     }
 
 //    리뷰 수정
-//    @GetMapping("review")
+//    @GetMapping("modifyReview")
 //    public void reviewUpdate(){
 //
 //    }
 
-    @PostMapping("review")
+    @PostMapping("modifyReview")
     public String reviewUpdate(){
-        return "/user/review";
+        return "/user/modifyReview";
     }
+
 //    리뷰 삭제
-    @GetMapping("review")
+    @GetMapping("delReview")
     public void reviewDelete(){
 
+    }
+
+//    페이지 이동
+    @GetMapping("acc_reservation1")
+    public void acc_reservation1(){
+    }
+
+    @GetMapping("acc_reservation2")
+    public void acc_reservation2(){
+    }
+
+    @GetMapping("acc_reservation3")
+    public void acc_reservation3(){
+    }
+    @GetMapping("acc_confirmation")
+    public void acc_confirmation(){
+    }
+
+    @GetMapping("care_reservation1")
+    public void care_reservation1(){
+    }
+
+    @GetMapping("care_reservation2")
+    public void care_reservation2(){
+    }
+
+    @GetMapping("care_reservation3")
+    public void care_reservation3(){
+    }
+
+    @GetMapping("care_confirmation")
+    public void care_confirmation(){
+    }
+
+    @GetMapping("regi1")
+    public void regi1(){
+    }
+
+    @GetMapping("regi2")
+    public void regi2(){
+    }
+
+    @GetMapping("review")
+    public void review(){
+    }
+
+    @GetMapping("review2")
+    public void review2(){
+    }
+
+    @GetMapping("user_userdetails")
+    public void user_userdetails(){
+    }
+
+    @GetMapping("user_userdetails2")
+    public void user_userdetails2(){
+    }
+
+    @GetMapping("user_userdetails3")
+    public void user_userdetails3(){
+    }
+
+    @GetMapping("user_userdetails4")
+    public void user_userdetails4(){
     }
 
 }

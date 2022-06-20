@@ -1,27 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../../static/asset/css/care_reservation1.css">
-    <link rel="stylesheet" href="../../static/asset/css/header.css">
-    <link rel="stylesheet" href="../../static/asset/css/footer.css">
+    <link rel="stylesheet" href="/asset/css/care_reservation1.css">
+    <link rel="stylesheet" href="/asset/css/header.css">
+    <link rel="stylesheet" href="/asset/css/footer.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(function () {
-            $("#header").load("../header.html");
-        });
-    </script>
-    <script>
-        $(function () {
-            $("#footer").load("../footer.html");
-        });
-    </script>
     <style>
         /*서비스 신청 목록 네비게이션*/
         .menu03, .menu04{
@@ -30,7 +20,7 @@
     </style>
 </head>
 <body>
-<header id="header"></header>
+<header th:replace="header.html"></header>
 <div class="sub_page_wrap">
     <div class="sub_title_wrap sub_bg02">
         <!-- sub_title -->
@@ -58,8 +48,7 @@
                 <img src="https://www.withmate.kr/assets/images/stepper.png" alt="화살표" class="sc-jxGEyO cvJJsZ">
                 <button class="sc-drlKqa kAufHg">
                     매칭 신청 확인
-                </button>
-                <img src="https://www.withmate.kr/assets/images/stepper.png" alt="화살표" class="sc-jxGEyO cvJJsZ">
+                </button><img src="https://www.withmate.kr/assets/images/stepper.png" alt="화살표" class="sc-jxGEyO cvJJsZ">
                 <button class="sc-drlKqa kAufHg">
                     신청 완료
                 </button>
@@ -80,7 +69,7 @@
                 <br>
                 <select id="serviceDtlCd" name="serviceDtlCd" style=" width: 100%;
                      height: 53px;
-                     font-size: 16px;
+                     font-size: 13px;
                      font-weight: 700;
                      color: #282828;
                      border-radius: 6px;
@@ -111,8 +100,7 @@
                         <span>* </span>
                         성함
                     </div>
-                    <input type="text" placeholder="홍길동" maxlength="24" name="patient"
-                           class="ant-input sc-jzJRlG iaafvp" value="" style="padding: 0px 11px;">
+                    <input type="text" placeholder="홍길동" maxlength="24" name="patient" class="ant-input sc-jzJRlG iaafvp" value="" style="padding: 0px 11px;">
                 </div>
                 <div style="flex: 1 1 0%;">
                     <div class="sc-fjdhpX hoWkSp">
@@ -121,7 +109,7 @@
                     </div>
                     <span class="ant-input-affix-wrapper sc-jzJRlG iaafvp">
                             <input type="text" maxlength="2" placeholder="50" name="age" class="ant-input" value="">
-                            <span class="ant-input-suffix" style="font-size: 18px;
+                            <span class="ant-input-suffix" style="font-size: 13px;
                             padding-top: 4px;">세</span>
                         </span>
                 </div>
@@ -133,18 +121,16 @@
                         <span>* </span>
                         연락처
                     </div>
-                    <input type="text" style="padding: 0px 11px;" maxlength="11" placeholder="ex) 01029791234"
-                           name="contact" class="ant-input sc-jzJRlG iaafvp" value=""></div>
-                <div style="flex: 1 1 0%;">
-                    <div class="sc-fjdhpX hoWkSp">
-                        <span>* </span>
-                        성별
-                    </div>
-                    <div class="sc-ekkqgF dxikPE">
-                        <span class="inactive">남성</span>
-                        <span class="inactive">여성</span>
-                    </div>
+                    <input type="text" style="padding: 0px 11px;" maxlength="11" placeholder="ex) 01029791234" name="contact" class="ant-input sc-jzJRlG iaafvp" value=""></div><div style="flex: 1 1 0%;">
+                <div class="sc-fjdhpX hoWkSp">
+                    <span>* </span>
+                    성별
                 </div>
+                <div class="sc-ekkqgF dxikPE div1">
+                    <span class="inactive div2">남성</span>
+                    <span class="inactive div2">여성</span>
+                </div>
+            </div>
             </div>
             <div class="sc-VigVT lafcRZ"></div>
             <div class="sc-dxgOiQ iQRFrD">
@@ -153,8 +139,7 @@
                         <span>* </span>
                         보호자 연락처
                     </div>
-                    <input type="text" style="padding: 0px 11px;" maxlength="11" placeholder="ex) 01029791234"
-                           name="guardContact" class="ant-input sc-jzJRlG iaafvp" value="">
+                    <input type="text" style="padding: 0px 11px;" maxlength="11" placeholder="ex) 01029791234" name="guardContact" class="ant-input sc-jzJRlG iaafvp" value="">
                 </div>
                 <div style="flex: 1 1 0%;">
                     <div class="sc-fjdhpX hoWkSp">
@@ -166,11 +151,11 @@
                                     <span class="ant-select-selection-search">
                                        <!--  <input autocomplete="off" type="search" class="ant-select-selection-search-input" role="combobox" aria-haspopup="listbox" aria-owns="rc_select_4_list" aria-autocomplete="list" aria-controls="rc_select_4_list" aria-activedescendant="rc_select_4_list_0" readonly="" unselectable="on" value="" style="opacity: 0;" id="rc_select_4"> -->
                                         <select id="serviceDtlCd" name="serviceDtlCd" style="     width: 100%;
-                                        height: 53px;
+                                        height: 40px;
                                         line-height: 44px;
                                         margin-bottom: 0px;
                                         color: rgb(22, 22, 22);
-                                        font-size: 18px;
+                                        font-size: 13px;
                                         font-weight: normal;
                                         border-radius: 4px;
                                         background-color: rgb(255, 255, 255);
@@ -202,15 +187,12 @@
             </div>
             <div class="form_wrap" id="divDsetination">
                 <div class="dp_flex search adress">
-                    <input type="text" id="sample5_address" name="destAddr" placeholder="주소 검색" maxlength="30"
-                           autocomplete="new-password" style="background: rgba(0,0,0,0.06);">
-                    <a href="javascript:void(0);" class="ico_search" id="btnDestAddr"
-                       onclick="sample5_execDaumPostcode()"></a>
-                    <div class="autocomplete_layer" id="divDestAddr" style="display: none;"></div>
+                    <input type="text" id="sample5_address"  name="destAddr" placeholder="주소 검색" maxlength="30" autocomplete="new-password" style="background: rgba(0,0,0,0.06);">
+                    <a href="javascript:void(0);" class="ico_search" id="btnDestAddr" onclick="sample5_execDaumPostcode()"></a>
+                    <div class="autocomplete_layer" id="divDestAddr" style="display: none;" ></div>
                 </div>
                 <div class="dp_flex adress">
-                    <input type="text" id="destAddrDtl" name="destAddrDtl" placeholder="상세주소" maxlength="30"
-                           autocomplete="new-password" style="background: rgba(0,0,0,0.06);">
+                    <input type="text" id="destAddrDtl" name="destAddrDtl" placeholder="상세주소" maxlength="30" autocomplete="new-password" style="background: rgba(0,0,0,0.06);">
                 </div>
             </div>
 
@@ -248,12 +230,11 @@
         </div>
         <div class="sc-brqgnP sc-jgVwMx dtbczn">
             <a class="sc-hSdWYo sc-cvbbAY sc-jWBwVP pYUPR" onclick="location.href='option_reservation.html'">이전으로</a>
-            <a class="sc-hSdWYo sc-cvbbAY sc-jWBwVP kiStqG" onclick="location.href='care_reservation2.html'">다음
-                단계로가기</a>
+            <a class="sc-hSdWYo sc-cvbbAY sc-jWBwVP kiStqG" onclick="location.href='care_reservation2.html'">다음 단계로가기</a>
         </div>
     </div>
 </div>
-<footer id="footer"></footer>
+<footer th:replace="footer.html"></footer>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
@@ -278,13 +259,13 @@
 
     function sample5_execDaumPostcode() {
         new daum.Postcode({
-            oncomplete: function (data) {
+            oncomplete: function(data) {
                 var addr = data.address; // 최종 주소 변수
 
                 // 주소 정보를 해당 필드에 넣는다.
                 document.getElementById("sample5_address").value = addr;
                 // 주소로 상세 정보를 검색
-                geocoder.addressSearch(data.address, function (results, status) {
+                geocoder.addressSearch(data.address, function(results, status) {
                     // 정상적으로 검색이 완료됐으면
                     if (status === daum.maps.services.Status.OK) {
 
@@ -306,16 +287,45 @@
     }
 </script>
 <script>
-    $("#btnLogin").click(function () {
-        if (!$(this).attr('class').match('on')) {
+    $("#btnLogin").click(function(){
+        if(!$(this).attr('class').match('on')){
             $(this).addClass('on');
             $(".fnc_user_wrap").addClass('on');
-        } else {
+        }else{
             $(this).removeClass('on');
             $(".fnc_user_wrap").removeClass('on');
         }
     })
 
+</script>
+<script>
+    var div2 = document.getElementsByClassName("div2");
+
+    function handleClick(event) {
+        console.log(event.target);
+        // console.log(this);
+        // 콘솔창을 보면 둘다 동일한 값이 나온다
+
+        console.log(event.target.classList);
+
+        if (event.target.classList[1] === "clicked") {
+            event.target.classList.remove("clicked");
+        } else {
+            for (var i = 0; i < div2.length; i++) {
+                div2[i].classList.remove("clicked");
+            }
+
+            event.target.classList.add("clicked");
+        }
+    }
+
+    function init() {
+        for (var i = 0; i < div2.length; i++) {
+            div2[i].addEventListener("click", handleClick);
+        }
+    }
+
+    init();
 </script>
 </html>
 

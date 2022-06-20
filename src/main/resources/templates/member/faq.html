@@ -1,28 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../static/asset/css/faq.css">
-    <link rel="stylesheet" href="../../static/asset/css/header.css">
-    <link rel="stylesheet" href="../../static/asset/css/footer.css">
+    <link rel="stylesheet" href="/asset/css/faq.css">
+    <link rel="stylesheet" href="/asset/css/header.css">
+    <link rel="stylesheet" href="/asset/css/footer.css">
     <title>돌보미</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(function () {
-            $("#header").load("../header.html");
-        });
-    </script>
-    <script>
-        $(function () {
-            $("#footer").load("../footer.html");
-        });
-    </script>
 </head>
 <body>
 <!-- header -->
-<header id="header"></header>
+<header th:replace="header.html"></header>
 
 <!-- main -->
 <div id="divMosimiCounsel" style="display:none"></div>
@@ -143,7 +132,7 @@
                             </div>
 
                             <br/>
-                            <img src="../../static/asset/img/faq_img.png">
+                            <img src="/asset/img/faq_img.png">
 
                         </div>
                     </div>
@@ -198,7 +187,7 @@
 
 <a href="#" class="go_top">Go Top</a>
 <!-- footer -->
-<footer id="footer"></footer>
+<footer th:replace="footer.html"></footer>
 
 <!-- 공통 적용 스크립트 , 모든 페이지에 노출되도록 설치. 단 전환페이지 설정값보다 항상 하단에 위치해야함 -->
 <script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>

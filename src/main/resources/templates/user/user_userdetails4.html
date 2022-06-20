@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,30 +8,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap"
           rel="stylesheet">
-    <link rel="stylesheet" href="../../static/asset/css/user_usedetails.css">
-    <link rel="stylesheet" href="../../static/asset/css/header.css">
-    <link rel="stylesheet" href="../../static/asset/css/footer.css">
+    <link rel="stylesheet" href="/asset/css/user_usedetails.css">
+    <link rel="stylesheet" href="/asset/css/header.css">
+    <link rel="stylesheet" href="/asset/css/footer.css">
     <title>Document</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(function () {
-            $("#header").load("../header.html");
-        });
-    </script>
-    <script>
-        $(function () {
-            $("#footer").load("../footer.html");
-        });
-    </script>
+
     <style>
         /*서비스 신청 목록 네비게이션*/
         .menu03, .menu04{
             display: none!important;
-        }
     </style>
 </head>
 <body>
-<header id="header"></header>
+<header th:replace="header.html"></header>
 <div class="sub_page_wrap">
     <!-- sub_title_wrap -->
     <div class="sub_title_wrap title_only">
@@ -184,6 +174,6 @@
 
     </div>
 </div>
-<footer id="footer"></footer>
+<footer th:replace="footer.html"></footer>
 </body>
 </html>
