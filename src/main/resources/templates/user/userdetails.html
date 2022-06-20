@@ -47,10 +47,10 @@
         <div class="form_sub_tab column">
             <ul class="tab">
                 <!-- <li id="all" >전체</li> -->
-                <li id="match" class="current" onclick="location.href='user_usedetails.html'"><span>배정요청</span><em>1</em></li>
-                <li id="reserv" onclick="location.href='user_usedetails2.html'"><span>예약</span><em>0</em></li>
-                <li id="proc" onclick="location.href='user_usedetails3.html'"><span>서비스중</span><em>0</em></li>
-                <li id="end" onclick="location.href='user_usedetails4.html'"><span>종료</span><em>0</em></li>
+                <li id="match" class="current" onclick="location.href='userdetails.html'"><span>배정요청</span><em>1</em></li>
+                <li id="reserv" onclick="location.href='userdetails2.html'"><span>예약</span><em>0</em></li>
+                <li id="proc" onclick="location.href='userdetails3.html'"><span>서비스중</span><em>0</em></li>
+                <li id="end" onclick="location.href='userdetails4.html'"><span>종료</span><em>0</em></li>
             </ul>
         </div>
         <!-- 배정요청 -->
@@ -218,7 +218,7 @@
         $(this).parent().parent().parent().parent('li').css('display', 'none');
         $(".assignment").css('display', 'none');
         $(".reservation").css('display', 'block');
-        location.href="user_usedetails2.html";
+        location.href="userdetails2.html";
     })
 
     /* 거절버튼 클릭 */
