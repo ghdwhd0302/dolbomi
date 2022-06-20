@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../static/asset/css/manager.css">
+    <link rel="stylesheet" href="../../static/asset/css/header.css">
+    <link rel="stylesheet" href="../../static/asset/css/footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            $("#header").load("../header.html");
+        });
+    </script>
+    <script>
+        $(function () {
+            $("#footer").load("../footer.html");
+        });
+    </script>
+    <style>
+        /*서비스 이용, 매니저 지원 네비게이션*/
+        .menu02, .menu04{
+            display: none!important;
+        }
+    </style>
+</head>
+<body>
+<header id="header"></header>
+<div class="sub_page_wrap">
+    <div class="sub_title_wrap title_only">
+
+        <div class="sub_title">
+            <p>서비스 내역</p>
+            <p>매니저님의 이용 내역입니다.</p>
+        </div>
+    </div>
+</div>
+<div class="common_content_wrap" style="margin-left: 27%;">
+    <div class="form_sub_tab column">
+        <ul>
+            <!-- <li id="all" >전체</li> -->
+            <!-- <li id="match" class="current"><span>배정요청</span><em>0</em></li> -->
+            <li id="reserv" class="current"><span>예약</span><em>0</em></li>
+            <li id="proc" class="" onclick="location.href='manager2.html'"><span>서비스중</span><em>0</em></li>
+            <!-- <li id="pay" class=""><span>결제요청</span><em>0</em></li> -->
+            <li id="end" class="" onclick="location.href='manager3.html'"><span>종료</span><em>0</em></li>
+        </ul>
+    </div>
+</div>
+<!-- 목록시작 -->
+
+<div class="com_accordion">
+    <ul style="margin: 0% 10% 0% 10%;">
+        <li class="history">
+            <div class="ac_title">
+                <input type="hidden" name="hManagerSysId" value="">
+                <input type="hidden" name="hMemberSysId" value="">
+                <input type="hidden" name="hUserSysId" value="">
+                <input type="hidden" name="hUserGenderCd" value="">
+                <input type="hidden" name="hServiceNm" value="">
+                <input type="hidden" name="hServiceCd" value="">
+                <input type="hidden" name="hServiceSeq" value="">
+                <input type="hidden" name="hMatchSeq" value="">
+                <input type="hidden" name="hServiceStartDate" value="">
+                <input type="hidden" name="hServiceStartTime" value="">
+                <input type="hidden" name="hDepartAdmCd" value="">
+                <input type="hidden" name="hDestAdmCd" value="">
+                <input type="hidden" name="hServiceCarYn" value="">
+                <p class="service_a">돌봄</p>
+                <div class="left_con" style="padding-right:37px; ">
+                    <p>
+                        <span class="title">이용자</span>
+                        <span></span>
+                    </p>
+                    <p>
+                        <span class="title">돌봄일정 및 방문시간</span>
+                        <span></span>
+                        <span></span>
+                    </p>
+                    <p>
+                        <span class="title">이용시간</span>
+                        <span></span>
+                    </p>
+                    <!-- <p>
+                        <span class="title">출발지</span>
+                        <span></span>
+                    </p>   -->
+                    <p>
+                        <span class="title">목적지</span>
+                        <span><br></span>
+                    </p>
+                    <hr style="border : 0px; width: 100%;
+                                border-top: 2px solid #e8e6e7;
+                                width: 100%;
+                                margin: 20px 0 20px 0;"/>
+                    <button id="test04" style="color: #f7579f;
+                            font-weight: 900;
+                            cursor: pointer;
+                            align-self: center;
+                            margin-right: 115px;
+                            background-color: white;
+                            font-size: 18px;
+                        ">상세보기
+                    </button>
+                </div>
+                <button class="openPopup1" style=" background-color: #f7579f;
+                color: white;
+                padding: 15px 26px 15px 26px;
+                font-size: 18px;
+                font-weight: 700;
+                position: absolute;
+                right: 105px;
+                border-radius: 30px;
+                margin-right: 20px;
+                bottom: 80px;
+
+            ">
+                    시작
+                </button>
+                <button class="openPopup2" style=" background-color: #f7579f;
+                color: white;
+                padding: 15px 26px 15px 26px;
+                font-size: 18px;
+                font-weight: 700;
+                position: absolute;
+                right: 15px;
+                border-radius: 30px;
+                margin-right: 20px;
+                bottom: 80px;
+            ">
+                    취소
+                </button>
+            </div>
+        </li>
+    </ul>
+</div>
+<div class="com_accordion" id="test05" style="display:none;">
+    <ul style="margin: 0% 10% 0% 10%;">
+        <li class="history">
+            <div class="ac_title">
+                <input type="hidden" name="hManagerSysId" value="">
+                <input type="hidden" name="hMemberSysId" value="">
+                <input type="hidden" name="hUserSysId" value="">
+                <input type="hidden" name="hUserGenderCd" value="">
+                <input type="hidden" name="hServiceNm" value="">
+                <input type="hidden" name="hServiceCd" value="">
+                <input type="hidden" name="hServiceSeq" value="">
+                <input type="hidden" name="hMatchSeq" value="">
+                <input type="hidden" name="hServiceStartDate" value="">
+                <input type="hidden" name="hServiceStartTime" value="">
+                <input type="hidden" name="hDepartAdmCd" value="">
+                <input type="hidden" name="hDestAdmCd" value="">
+                <input type="hidden" name="hServiceCarYn" value="">
+                <p class="service_a" style="display: none;">동행서비스</p>
+                <div class="left_con" style="margin-left: 30px; padding-right:37px;">
+                    <p>
+                        <span class="title">돌봄서비스</span>
+                        <!-- 동행서비스종류나타냄 -->
+                        <span></span>
+                    </p>
+                    <p>
+                        <span class="title">이용자</span>
+                        <span></span>
+                    </p>
+                    <p>
+                        <span class="title">이용자 나이</span>
+                        <span></span>
+                    </p>
+                    <p>
+                        <span class="title">이용자 성별</span>
+                        <span></span>
+                    </p>
+                    <p>
+                        <span class="title">이용자 휴대폰</span>
+                        <span></span>
+                    </p>
+                    <p>
+                        <span class="title">돌봄일정 및 방문시간</span>
+                        <span></span>
+                        <span></span>
+                    </p>
+                    <p>
+                        <span class="title">이용시간</span>
+                        <span></span>
+                    </p>
+                    <!-- <p>
+                        <span class="title">출발지</span>
+                        <span></span>
+                    </p>   -->
+                    <p>
+                        <span class="title">목적지</span>
+                        <span><br></span>
+                    </p>
+                    <p>
+                        <span class="title">총 이용요금</span>
+                        <span></span>
+                    </p>
+                    <hr style="border : 0px; width: 100%;
+                                border-top: 2px solid #e8e6e7;
+                                width: 100%;
+                                margin: 20px 0 20px 0;"/>
+                    <button id="test06" style="color: #f7579f;
+                            font-weight: 900;
+                            cursor: pointer;
+                            align-self: center;
+                            margin-right: 17px;
+                            background-color: white;
+                            font-size: 18px;
+                        ">닫기
+                    </button>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+<div class="com_accordion">
+    <ul style="margin: 0% 10% 0% 10%;">
+        <li class="history">
+            <div class="ac_title">
+                <input type="hidden" name="hManagerSysId" value="">
+                <input type="hidden" name="hMemberSysId" value="">
+                <input type="hidden" name="hUserSysId" value="">
+                <input type="hidden" name="hUserGenderCd" value="">
+                <input type="hidden" name="hServiceNm" value="">
+                <input type="hidden" name="hServiceCd" value="">
+                <input type="hidden" name="hServiceSeq" value="">
+                <input type="hidden" name="hMatchSeq" value="">
+                <input type="hidden" name="hServiceStartDate" value="">
+                <input type="hidden" name="hServiceStartTime" value="">
+                <input type="hidden" name="hDepartAdmCd" value="">
+                <input type="hidden" name="hDestAdmCd" value="">
+                <input type="hidden" name="hServiceCarYn" value="">
+                <p class="service_a">동행</p>
+                <div class="left_con" style="padding-right:37px;">
+                    <p>
+                        <span class="title">이용자</span>
+                        <span></span>
+                    </p>
+                    <p>
+                        <span class="title">동행일정 및 방문시간</span>
+                        <span></span>
+                        <span></span>
+                    </p>
+                    <p>
+                        <span class="title">이용시간</span>
+                        <span></span>
+                    </p>
+                    <p>
+                        <span class="title">출발지</span>
+                        <span></span>
+                    </p>
+                    <p>
+                        <span class="title">목적지</span>
+                        <span><br></span>
+                    </p>
+                    <hr style="border : 0px; width: 100%;
+                                border-top: 2px solid #e8e6e7;
+                                width: 100%;
+                                margin: 20px 0 20px 0;"/>
+                    <button id="test01" style="color: #f7579f;
+                            font-weight: 900;
+                            cursor: pointer;
+                            align-self: center;
+                            margin-right: 115px;
+                            background-color: white;
+                            font-size: 18px;
+                        ">상세보기
+                    </button>
+                </div>
+                <button class="openPopup1" style=" background-color: #f7579f;
+                color: white;
+                padding: 15px 26px 15px 26px;
+                font-size: 18px;
+                font-weight: 700;
+                position: absolute;
+                right: 105px;
+                border-radius: 30px;
+                margin-right: 20px
+            ">
+                    시작
+                </button>
+                <button class="openPopup2" style=" background-color: #f7579f;
+                color: white;
+                padding: 15px 26px 15px 26px;
+                font-size: 18px;
+                font-weight: 700;
+                position: absolute;
+                right: 15px;
+                border-radius: 30px;
+                margin-right: 20px
+            ">
+                    취소
+                </button>
+            </div>
+        </li>
+    </ul>
+</div>
+<div class="com_accordion" id="test02" style="display:none;">
+    <ul style="margin: 0% 10% 0% 10%;">
+        <li class="history">
+            <div class="ac_title">
+                <input type="hidden" name="hManagerSysId" value="">
+                <input type="hidden" name="hMemberSysId" value="">
+                <input type="hidden" name="hUserSysId" value="">
+                <input type="hidden" name="hUserGenderCd" value="">
+                <input type="hidden" name="hServiceNm" value="">
+                <input type="hidden" name="hServiceCd" value="">
+                <input type="hidden" name="hServiceSeq" value="">
+                <input type="hidden" name="hMatchSeq" value="">
+                <input type="hidden" name="hServiceStartDate" value="">
+                <input type="hidden" name="hServiceStartTime" value="">
+                <input type="hidden" name="hDepartAdmCd" value="">
+                <input type="hidden" name="hDestAdmCd" value="">
+                <input type="hidden" name="hServiceCarYn" value="">
+                <p class="service_a" style="display: none;">동행서비스</p>
+                <div class="left_con" style="margin-left: 30px; padding-right:37px;">
+                    <p>
+                        <span class="title">동행서비스</span>
+                        <!-- 동행서비스종류나타냄 -->
+                        <span></span>
+                    </p>
+                    <p>
+                        <span class="title">이용자</span>
+                        <span></span>
+                    </p>
+                    <p>
+                        <span class="title">이용자 나이</span>
+                        <span></span>
+                    </p>
+                    <p>
+                        <span class="title">이용자 성별</span>
+                        <span></span>
+                    </p>
+                    <p>
+                        <span class="title">이용자 휴대폰</span>
+                        <span></span>
+                    </p>
+                    <p>
+                        <span class="title">동행일정 및 방문시간</span>
+                        <span></span>
+                        <span></span>
+                    </p>
+                    <p>
+                        <span class="title">이용시간</span>
+                        <span></span>
+                    </p>
+                    <p>
+                        <span class="title">출발지</span>
+                        <span></span>
+                    </p>
+                    <p>
+                        <span class="title">목적지</span>
+                        <span><br></span>
+                    </p>
+                    <p>
+                        <span class="title">총 이용요금</span>
+                        <span></span>
+                    </p>
+                    <hr style="border : 0px; width: 100%;
+                                border-top: 2px solid #e8e6e7;
+                                width: 100%;
+                                margin: 20px 0 20px 0;"/>
+                    <button id="test03" style="color: #f7579f;
+                            font-weight: 900;
+                            cursor: pointer;
+                            align-self: center;
+                            margin-right: 17px;
+                            background-color: white;
+                            font-size: 18px;
+                        ">닫기
+                    </button>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+<button style="margin: 61px 45% 61px 46%;
+            background-color: #f7579f;
+            color: white;
+            padding: 20px;
+            font-size: 18px;
+            font-weight: 700;
+">
+    목록으로 가기
+</button>
+<div id="popup01">
+    <div class="close">닫기</div>
+    <div style="font-size: 32px;
+    text-align: center;
+    margin-top: 110px;
+    margin-bottom: 110px;
+    color: #767070;">현재시간부터 서비스를 <br> 진행하시겠습니까?
+    </div>
+    <button class="confirm" onclick="location.href='manager2.html'">서비스 진행</button>
+</div>
+
+<div id="popup02">
+    <div class="close">닫기</div>
+    <div style="font-size: 32px;
+    text-align: center;
+    margin-top: 110px;
+    margin-bottom: 110px;
+    color: #767070;">매칭을<br>최소하시겠습니까?
+    </div>
+    <button class="confirm" onclick="location.href=''">취소하기</button>
+</div>
+<footer id="footer"></footer>
+</body>
+<script src="../../static/asset/js/manager.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $("#btnLogin").click(function () {
+        if (!$(this).attr('class').match('on')) {
+            $(this).addClass('on');
+            $(".fnc_user_wrap").addClass('on');
+        } else {
+            $(this).removeClass('on');
+            $(".fnc_user_wrap").removeClass('on');
+        }
+    })
+
+
+</script>
+<script>
+    $("#test01").click(function () {
+        $('#test02').toggle();
+    });
+
+    $("#test03").click(function () {
+        $('#test02').hide();
+    });
+
+    $("#test04").click(function () {
+        $('#test05').toggle();
+    });
+
+    $("#test06").click(function () {
+        $('#test05').hide();
+    });
+
+    $(document).ready(function ($) {
+        $(".openPopup1").on("click", function (event) {
+            $("#popup01").show();
+            $("body").append('<div class="backon"></div>');
+        });
+
+        $("body").on("click", function (event) {
+            if (event.target.className == 'close' || event.target.className == 'backon') {
+                $("#popup01").hide();
+                $(".backon").hide();
+            }
+        });
+    });
+
+    $(document).ready(function ($) {
+        $(".openPopup2").on("click", function (event) {
+            $("#popup02").show();
+            $("body").append('<div class="backon"></div>');
+        });
+
+        $("body").on("click", function (event) {
+            if (event.target.className == 'close' || event.target.className == 'backon') {
+                $("#popup02").hide();
+                $(".backon").hide();
+            }
+        });
+    });
+
+</script>
+
+</html>

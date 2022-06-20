@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../static/asset/css/care_confirmation.css">
+    <link rel="stylesheet" href="../../static/asset/css/header.css">
+    <link rel="stylesheet" href="../../static/asset/css/footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            $("#header").load("../header.html");
+        });
+    </script>
+    <script>
+        $(function () {
+            $("#footer").load("../footer.html");
+        });
+    </script>
+    <style>
+        /*서비스 신청 목록 네비게이션*/
+        .menu03, .menu04{
+            display: none!important;
+        }
+    </style>
+</head>
+<body>
+<header id="header"></header>
+<div class="sub_page_wrap">
+    <div class="sub_title_wrap sub_bg02">
+        <!-- sub_title -->
+        <div class="sub_title">
+            <p>지금 바로<br>돌보미를 이용하세요!</p>
+            <p>항상 최선을 다하겠습니다.</p>
+            <br>
+            <br>
+            <div class="img_bg02"><img src="https://www.mosimi.co.kr/resource/images/common/img_sub02.svg"></div>
+            <div class="heart_bg"></div>
+        </div>
+        <hr style="border : 0px; width: 100%;
+            border-top: 2px solid #e8e6e7;"/>
+    </div>
+    <div class="sc-RbTVP dZclmO">
+        <div class="sc-jUpvKA jQyKPd">
+            <div class="sc-hMrMfs hjxjIk">
+                <button class="sc-drlKqa kAufHg">
+                    기본 정보 입력
+                </button>
+                <img src="https://www.withmate.kr/assets/images/stepper.png" alt="화살표" class="sc-jxGEyO cvJJsZ">
+                <button class="sc-drlKqa kAufHg">
+                    서비스 신청 정보 입력
+                </button>
+                <img src="https://www.withmate.kr/assets/images/stepper.png" alt="화살표" class="sc-jxGEyO cvJJsZ">
+                <button class="sc-drlKqa kAufHg">
+                    매칭 신청 확인
+                </button>
+                <img src="https://www.withmate.kr/assets/images/stepper.png" alt="화살표" class="sc-jxGEyO cvJJsZ">
+                <button class="sc-drlKqa eWwIcG">
+                    신청 완료
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="sc-bhlBdH bCJAMY">
+        <div class="sc-fkyLDJ jaeJQl">
+            <div id="second-step" class="sc-gacfCG filBkf">
+                <div class="sc-VigVT lafcRZ"></div>
+                <div class="sc-VigVT lafcRZ"></div>
+
+                <h4 color="rgba(0,0,0,0.7)" class="sc-cqPOvA htzYgu">
+                    배정 신청이 완료되었습니다!
+                </h4>
+                <!-- <img src="https://www.withmate.kr/assets/images/arrowDown.png" alt="아래로" class="sc-fjhmcy dHfuMj"> -->
+            </div>
+            <div class="sc-VigVT lafcRZ"></div>
+            <div class="sc-VigVT lafcRZ"></div>
+            <div class="sc-VigVT lafcRZ"></div>
+            <div class="sc-VigVT lafcRZ"></div>
+            <div class="sc-brqgnP sc-jgVwMx dtbczn">
+                <a class="sc-hSdWYo sc-cvbbAY sc-jWBwVP pYUPR">이전으로</a>
+                <a class="sc-hSdWYo sc-cvbbAY sc-jWBwVP kiStqG" onclick="location.href=''">확인</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<footer id="footer"></footer>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $("#btnLogin").click(function () {
+        if (!$(this).attr('class').match('on')) {
+            $(this).addClass('on');
+            $(".fnc_user_wrap").addClass('on');
+        } else {
+            $(this).removeClass('on');
+            $(".fnc_user_wrap").removeClass('on');
+        }
+    })
+
+</script>
+</html>
