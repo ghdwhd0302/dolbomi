@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0/EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+        <typeAlias type="com.project.dolbomi.domain.vo.ReviewVO" alias="reviewVO"/>
+        <typeAlias type="com.project.dolbomi.domain.vo.CareReservationVO" alias="carereservationVO"/>
+        <typeAlias type="com.project.dolbomi.domain.vo.ManagerVO" alias="managerVO"/>
+        <typeAlias type="com.project.dolbomi.domain.vo.AccReservationVO" alias="accreservationVO"/>
+        <typeAlias type="com.project.dolbomi.domain.vo.UserVO" alias="userVO"/>
+    </typeAliases>
+
+
+</configuration>

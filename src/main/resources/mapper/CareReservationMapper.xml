@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.dolbomi.mapper.CareReservationMapper">
+    <select id="getList" resultType="carereservationVO">
+        SELECT CARE_RESERVATION_NAME,CARE_RESERVATION_TYPE,CARE_RESERVATION_ADDRESS
+        FROM TBL_CARE_RESERVATION a,TBL_USER b
+        WHERE a.USER_EMAIL = b.USER_EMAIL
+    </select>
+
+    <insert id="insert">
+        INSERT INTO TBL_ACC_RESERVATION (ACC_RESERVATION_NAME,ACC_RESERVATION_TYPE ,ACC_RESERVATION_AGE, ACC_RESERVATION_PHONE_NUM, ACC_RESERVATION_GENDER,ACC_RESERVATION_ADD_PHONE_NUM,ACC_RESERVATION_RELATION,ACC_RESERVATION_END_ADDRESS,ACC_RESERVATION_START_ADDRESS,ACC_RESERVATION_HOPE_GENDER,ACC_RESERVATION_DATE,ACC_RESERVATION_TIME,ACC_RESERVATION_ADD_REQUIRE,ACC_RESERVATION_PRICE)
+        VALUES (#{carereservationName}, #{carereservationType},#{carereservationAge},#{carereservationPhoneNum},#{carereservationGender},#{carereservationAddPhoneNum},#{carereservationRelation},#{carereservationEndAddress},#{carereservationStartAddress},#{carereservationHopeGender},#{carereservationDate},#{carereservationTime},#{carereservationAddRequire},#{carereservationPrice})
+        WHERE USER_EMAIL = #{userEmail}
+    </insert>
+
+    <select id="select" resultType="carereservationVO">
+        SELECT ACC_RESERVATION_NAME, ACC_RESERVATION_AGE, ACC_RESERVATION_PHONE_NUM, ACC_RESERVATION_GENDER,ACC_RESERVATION_ADD_PHONE_NUM,ACC_RESERVATION_RELATION,ACC_RESERVATION_END_ADDRESS,ACC_RESERVATION_START_ADDRESS,ACC_RESERVATION_HOPE_GENDER,ACC_RESERVATION_DATE,ACC_RESERVATION_TIME,ACC_RESERVATION_ADD_REQUIRE,ACC_RESERVATION_PRICE
+        FROM TBL_CARE_RESERVATION
+        WHERE CARE_RESERVATION_NUM = #{carereservationNum}
+    </select>
+
+    <delete id="delete">
+        DELETE FROM TBL_CARE_RESERVATION
+        WHERE CARE_RESERVATION_NUM = #{carereservationNum}
+    </delete>
+
+
+
+</mapper>
