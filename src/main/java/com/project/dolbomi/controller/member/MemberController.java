@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @Slf4j
 @RequiredArgsConstructor
-@RequestMapping("/service/*")
+@RequestMapping("/member/*")
 public class MemberController {
     private final MemberService memberService;
 
@@ -169,10 +169,6 @@ public class MemberController {
 
     @GetMapping("profilechange")
     public void profilechange(){
-    }
-
-    @GetMapping("manager")
-    public void manager(){
     }
 
     @GetMapping("pwfind")

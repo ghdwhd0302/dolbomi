@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @Slf4j
 @RequiredArgsConstructor
-@RequestMapping("/service/*")
+@RequestMapping("/manager/*")
 public class ManagerController {
     private final ManagerService managerService;
 
