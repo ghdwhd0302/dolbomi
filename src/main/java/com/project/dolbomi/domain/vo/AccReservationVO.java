@@ -20,5 +20,6 @@ public class AccReservationVO {
     private String accReservationTime;
     private String accReservationAddRequire;
     private String accReservationPrice;
+    private String accReservationStatus;
     private String userEmail;
 }

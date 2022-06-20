@@ -1,6 +1,6 @@
 package com.project.dolbomi.mapper;
 
-import com.project.dolbomi.domain.vo.ReviewVO;
+
 import com.project.dolbomi.domain.vo.UserVO;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -31,5 +31,6 @@ public interface UserMapper {
     public int update(UserVO userVO);
 
     //카드 등록?
+
 
 }
