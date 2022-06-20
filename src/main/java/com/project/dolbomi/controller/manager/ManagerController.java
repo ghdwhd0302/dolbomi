@@ -1,6 +1,6 @@
-package com.project.dolbomi.manager.controller;
+package com.project.dolbomi.controller.manager;
 
-import com.project.dolbomi.manager.service.ManagerService;
+import com.project.dolbomi.service.manager.ManagerService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @Slf4j
 @RequiredArgsConstructor
-@RequestMapping("/manager/*")
+@RequestMapping("/service/*")
 public class ManagerController {
     private final ManagerService managerService;
 
@@ -75,6 +75,24 @@ public class ManagerController {
         return "/member/mainpage";
     }
 
+//  페이지 이동
+    @GetMapping("manager")
+    public void manager(){
+    }
 
+    @GetMapping("manager2")
+    public void manager2(){
+    }
+
+    @GetMapping("manager3")
+    public void manager3(){
+    }
+
+    @GetMapping("manager_rev")
+    public void manager_rev(){
+    }
+    @GetMapping("manageregi")
+    public void manageregi(){
+    }
 
 }

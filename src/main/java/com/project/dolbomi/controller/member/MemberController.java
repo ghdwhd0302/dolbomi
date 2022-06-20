@@ -1,6 +1,6 @@
-package com.project.dolbomi.member.controller;
+package com.project.dolbomi.controller.member;
 
-import com.project.dolbomi.member.service.MemberService;
+import com.project.dolbomi.service.member.MemberService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @Slf4j
 @RequiredArgsConstructor
-@RequestMapping("/member/*")
+@RequestMapping("/service/*")
 public class MemberController {
     private final MemberService memberService;
 
@@ -137,78 +137,50 @@ public class MemberController {
 //    페이지 이동
     @GetMapping("introduce")
     public void introduce(){
+    }
 
+    @GetMapping("idfind")
+    public void idfind(){
+    }
+
+    @GetMapping("idfind_manager")
+    public void idfind_manager(){
+    }
+
+    @GetMapping("mainpage")
+    public void mainpage(){
     }
 
     @GetMapping("userlogin")
     public void userlogin(){
-
     }
 
     @GetMapping("managerlogin")
     public void managerlogin(){
-
     }
 
     @GetMapping("faq")
     public void faq(){
-
     }
 
     @GetMapping("managerapply")
     public void managerapply(){
-
     }
 
     @GetMapping("profilechange")
     public void profilechange(){
-
-    }
-
-    @GetMapping("acc_reservation1")
-    public String acc_reservation1(){
-        return "/user/acc_reservation2";
-    }
-
-    @GetMapping("acc_reservation2")
-    public String acc_reservation2(){
-        return "/user/acc_reservation3";
-    }
-
-    @GetMapping("acc_reservation3")
-    public String acc_reservation3(){
-        return "/user/comfirmation";
-    }
-
-    @GetMapping("care_reservation1")
-    public String care_reservation1(){
-        return "/user/care_reservation2";
-
-    }
-    @GetMapping("care_reservation2")
-    public String care_reservation2(){
-        return "/user/care_reservation3";
-
-    }
-    @GetMapping("care_reservation3")
-    public String care_reservation3(){
-        return "/user/care_confirmation";
-
-    }
-
-    @GetMapping("user_userdetails")
-    public void user_userdetails(){
-
-    }
-
-    @GetMapping("review")
-    public void review(){
-
     }
 
     @GetMapping("manager")
     public void manager(){
+    }
 
+    @GetMapping("pwfind")
+    public void pwfind(){
+    }
+
+    @GetMapping("pwfind_manager")
+    public void pwfind_manager(){
     }
 
 

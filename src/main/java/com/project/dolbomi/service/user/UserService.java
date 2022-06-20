@@ -1,4 +1,4 @@
-package com.project.dolbomi.user.service;
+package com.project.dolbomi.service.user;
 
 import com.project.dolbomi.domain.vo.UserVO;
 import org.springframework.stereotype.Service;
