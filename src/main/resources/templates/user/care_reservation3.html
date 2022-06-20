@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -35,7 +35,7 @@
     <div class="sub_title_wrap sub_bg02">
         <!-- sub_title -->
         <div class="sub_title">
-            <p>지금 바로<br>모시미를 이용하세요!</p>
+            <p>지금 바로<br>돌보미를 이용하세요!</p>
             <p>항상 최선을 다하겠습니다.</p>
             <br>
             <br>
@@ -58,8 +58,7 @@
                 <img src="https://www.withmate.kr/assets/images/stepper.png" alt="화살표" class="sc-jxGEyO cvJJsZ">
                 <button class="sc-drlKqa eWwIcG">
                     매칭 신청 확인
-                </button>
-                <img src="https://www.withmate.kr/assets/images/stepper.png" alt="화살표" class="sc-jxGEyO cvJJsZ">
+                </button><img src="https://www.withmate.kr/assets/images/stepper.png" alt="화살표" class="sc-jxGEyO cvJJsZ">
                 <button class="sc-drlKqa kAufHg">
                     신청 완료
                 </button>
@@ -80,16 +79,14 @@
                         <div class="sc-fjdhpX hoWkSp">
                             <span>* </span>신청자 성함
                         </div>
-                        <input type="text" placeholder="" maxlength="24" name="patient" disabled=""
-                               class="ant-input ant-input-disabled sc-jzJRlG iaafvp" value="">
+                        <input type="text" placeholder="" maxlength="24" name="patient" disabled="" class="ant-input ant-input-disabled sc-jzJRlG iaafvp" value="">
                     </div>
                     <div style="flex: 1 1 0%;">
                         <div class="sc-fjdhpX hoWkSp">
                             <span>* </span>신청자 나이
                         </div>
                         <span class="ant-input-affix-wrapper ant-input-affix-wrapper-disabled sc-jzJRlG iaafvp">
-                                <input type="text" maxlength="2" placeholder="" name="age" disabled=""
-                                       class="ant-input ant-input-disabled" value="">
+                                <input type="text" maxlength="2" placeholder="" name="age" disabled="" class="ant-input ant-input-disabled" value="">
                                 <span class="ant-input-suffix">세</span>
                             </span>
                     </div>
@@ -100,8 +97,7 @@
                         <div class="sc-fjdhpX hoWkSp">
                             <span>* </span>신청자 연락처
                         </div>
-                        <input type="text" placeholder="" maxlength="11" name="contact" disabled=""
-                               class="ant-input ant-input-disabled sc-jzJRlG iaafvp" value="">
+                        <input type="text" placeholder="" maxlength="11" name="contact" disabled="" class="ant-input ant-input-disabled sc-jzJRlG iaafvp" value="">
                     </div>
                 </div>
                 <div class="sc-VigVT lafcRZ"></div>
@@ -110,15 +106,13 @@
                         <div class="sc-fjdhpX hoWkSp">
                             <span>* </span>보호자 연락처
                         </div>
-                        <input type="text" placeholder="" maxlength="11" name="guardContact" disabled=""
-                               class="ant-input ant-input-disabled sc-jzJRlG iaafvp" value="">
+                        <input type="text" placeholder="" maxlength="11" name="guardContact" disabled="" class="ant-input ant-input-disabled sc-jzJRlG iaafvp" value="">
                     </div>
                     <div style="flex: 1 1 0%;">
                         <div class="sc-fjdhpX hoWkSp">
                             <span>* </span>신청자와의 관계
                         </div>
-                        <input type="text" placeholder="" name="relate" disabled=""
-                               class="ant-input ant-input-disabled sc-jzJRlG iaafvp" value="">
+                        <input type="text" placeholder="" name="relate" disabled="" class="ant-input ant-input-disabled sc-jzJRlG iaafvp" value="">
                     </div>
                 </div>
                 <div class="sc-VigVT lafcRZ"></div>
@@ -127,29 +121,25 @@
                         <div class="sc-fjdhpX hoWkSp">
                             <span>* </span>신청자 성별
                         </div>
-                        <input type="text" placeholder="" name="sex" disabled=""
-                               class="ant-input ant-input-disabled sc-jzJRlG iaafvp" value="">
+                        <input type="text" placeholder="" name="sex" disabled="" class="ant-input ant-input-disabled sc-jzJRlG iaafvp" value="">
                     </div>
                     <div style="flex: 1 1 0%;">
                         <div class="sc-fjdhpX hoWkSp">
                             <span>* </span>매니저 희망 성별
                         </div>
-                        <input type="text" placeholder="" name="mateGender" disabled=""
-                               class="ant-input ant-input-disabled sc-jzJRlG iaafvp" value="">
+                        <input type="text" placeholder="" name="mateGender" disabled="" class="ant-input ant-input-disabled sc-jzJRlG iaafvp" value="">
                     </div>
                 </div>
                 <div class="sc-VigVT lafcRZ"></div>
                 <div class="sc-fjdhpX hoWkSp">
                     <span>* </span>목적지 주소
                 </div>
-                <input type="text" placeholder="" name="destination" disabled=""
-                       class="ant-input ant-input-disabled sc-jzJRlG iaafvp" value="">
+                <input type="text" placeholder="" name="destination" disabled="" class="ant-input ant-input-disabled sc-jzJRlG iaafvp" value="">
                 <div class="sc-VigVT lafcRZ"></div>
                 <div class="sc-fjdhpX hoWkSp">
                     <span>* </span>돌봄 일정 및 방문시간
                 </div>
-                <input type="text" placeholder="" maxlength="24" name="reserveDate" disabled=""
-                       class="ant-input ant-input-disabled sc-jzJRlG iaafvp" value="">
+                <input type="text" placeholder="" maxlength="24" name="reserveDate" disabled="" class="ant-input ant-input-disabled sc-jzJRlG iaafvp" value="">
                 <!-- <div class="sc-VigVT lafcRZ"></div>
                 <div class="sc-fjdhpX hoWkSp">
                     <span>* </span>매니저의 도착 희망 시간
@@ -160,8 +150,10 @@
                 <div class="sc-fjdhpX hoWkSp">
                     <span>* </span>기타 요청 및 전달 사항
                 </div>
-                <textarea type="text" placeholder="" name="comment" disabled=""
-                          class="ant-input sc-kgoBCf bRJVVz ant-input-disabled"></textarea>
+                <textarea type="text" placeholder="" name="comment" disabled="" class="ant-input sc-kgoBCf bRJVVz ant-input-disabled" style="width: 558px;
+                    height: 160px;
+                    resize: none;
+                "></textarea>
             </div>
             <div class="sc-AnqlK sc-jvEmr fSUfMk">
                 <h3 class="sc-keFjpB gbVVya">결제 내역</h3>
@@ -183,15 +175,15 @@
                 </div>
                 <div class="sc-VigVT lafcRZ"></div>
                 <div class="sc-VigVT lafcRZ"></div>
-                <button style="width: 100%;
-                    height: 70px;
-                    font-size: 23px;
-                    background-color:rgb(59, 193, 255);
+                <button style="    width: 100%;
+                    height: 55px;
+                    font-size: 19px;
+                    background-color: rgb(59, 193, 255);
                     color: white;
-                    border-color:rgb(59, 193, 255);
+                    border-color: rgb(59, 193, 255);
                     font-weight: 600;
-                    border-radius: 10px;"> 결제하기
-                </button>
+                    border-radius: 10px;
+                    margin-top: 37px;"> 결제하기</button>
                 <!-- <div class="sc-VigVT lafcRZ"></div>
                 <span class="sc-crNyjn hEIVhP" style="margin-top: 0px; margin-bottom: 0px;">서비스 안내 사항</span>
                 <div class="sc-VigVT ffyjKW"></div>

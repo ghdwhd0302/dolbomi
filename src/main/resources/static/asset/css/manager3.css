@@ -1,6 +1,6 @@
 * {
     font-family: 'Noto Sans KR', sans-serif;
-    box-sizing: border-box;
+    box-sizing :border-box;
 
 }
 
@@ -95,7 +95,7 @@ ul, ol {
     align-items: center;
     justify-content: center;
     height: 60px;
-    padding: 0 24px 4px 24px !important;
+    padding: 0 24px 4px 24px!important;
     font-size: 18px;
     font-weight: 400;
     color: #222;
@@ -173,7 +173,7 @@ a {
     top: 90px;
     right: -10px;
     padding: 30px 20px;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0,0,0,0.8);
     border-radius: 6px;
     display: none;
     justify-content: center;
@@ -302,20 +302,19 @@ button {
 .common_content_wrap {
     display: flex;
     flex: none;
-    width: 900px;
+
     justify-content: center;
     align-items: center;
     flex-direction: column;
     padding-top: 40px;
 }
 
-.form_sub_tab {
+/* .form_sub_tab {
     position: relative;
     width: 100%;
-}
+} */
 
 .form_sub_tab ul {
-    position: relative;
     display: flex;
     margin-bottom: 20px;
     overflow: hidden;
@@ -331,7 +330,7 @@ button {
     flex: 1;
     margin-left: -1px;
     padding: 16px 0 18px 0;
-    font-size: 21px;
+    font-size: 17px;
     align-items: center;
     justify-content: center;
     border: 1px solid #dae1e6;
@@ -342,7 +341,7 @@ button {
 
 .form_sub_tab ul li.current {
     position: relative;
-    border: 2px solid #f7579f;
+    border: 2px solid #060606;
     background: #fff;
     color: #313131;
     cursor: default;
@@ -407,7 +406,7 @@ button {
     align-items: flex-start;
     margin: 0 20px 20px 0;
     padding: 20px 0 0 120px;
-    border-top: 1px dotted rgba(0, 0, 0, 0.2);
+    border-top: 1px dotted rgba(0,0,0,0.2);
 }
 
 .com_accordion ul li .ac_detail .detail_wrap .left_con {
@@ -422,8 +421,8 @@ button {
     flex-direction: column;
     min-height: 80px;
     padding: 20px 0;
-    font-size: 18px;
-    font-weight: 400;
+    font-size: 15px;
+    font-weight: 700;
     justify-content: center;
     align-items: flex-start;
 }
@@ -431,7 +430,7 @@ button {
 .com_accordion ul li p span.title {
     flex: none;
     width: 90px;
-    color: rgba(0, 0, 0, 0.5);
+    color: rgba(0,0,0,0.5);
 }
 
 .com_accordion ul li p span + span {
@@ -445,7 +444,7 @@ button {
 .com_accordion ul li p span.title {
     flex: none;
     width: 90px;
-    color: rgba(0, 0, 0, 0.5);
+    color: rgba(0,0,0,0.5);
 }
 
 .com_accordion ul li .ac_title .service_a {
@@ -472,4 +471,8 @@ button {
     height: auto;
     background: rgba(0, 0, 0, 0);
     font-weight: 300;
+}
+
+div > p {
+    margin: 4px 0 4px 0;
 }

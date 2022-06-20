@@ -1,6 +1,6 @@
 * {
     font-family: 'Noto Sans KR', sans-serif;
-    box-sizing: border-box;
+    box-sizing :border-box;
 
 }
 
@@ -95,7 +95,7 @@ ul, ol {
     align-items: center;
     justify-content: center;
     height: 60px;
-    padding: 0 24px 4px 24px !important;
+    padding: 0 24px 4px 24px!important;
     font-size: 18px;
     font-weight: 400;
     color: #222;
@@ -173,7 +173,7 @@ a {
     top: 90px;
     right: -10px;
     padding: 30px 20px;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0,0,0,0.8);
     border-radius: 6px;
     display: none;
     justify-content: center;
@@ -298,7 +298,7 @@ button {
     width: 100%;
     align-items: center;
     justify-content: center;
-    font-size: 56px;
+    font-size: 44px;
     font-weight: 400;
     line-height: 60px;
     color: #313131;
@@ -307,10 +307,11 @@ button {
 
 .sub_title p + p {
     margin-top: 0;
-    font-size: 31px;
+    font-size: 25px;
     color: #666666;
     font-weight: 200;
 }
+
 
 .sub_title_wrap.sub_bg02 .sub_title .img_bg02 {
     position: absolute;
@@ -357,7 +358,6 @@ button {
     right: 0;
     top: -50%;
 }
-
 .dZclmO {
     padding-top: 32px;
     padding-bottom: 32px;
@@ -381,15 +381,15 @@ button {
 }
 
 .eWwIcG {
-    width: 230px;
-    height: 73px;
+    width: 192px;
+    height: 60px;
     line-height: 64px;
     border: 0px;
     outline: none;
     border-radius: 50vh;
     cursor: not-allowed;
     text-align: center;
-    font-size: 21px;
+    font-size: 17px;
     letter-spacing: -0.1px;
     background-color: rgb(59, 193, 255);
     color: rgb(255, 255, 255);
@@ -409,15 +409,15 @@ img {
 }
 
 .kAufHg {
-    width: 230px;
-    height: 73px;
+    width: 192px;
+    height: 60px;
     line-height: 64px;
     border: 0px;
     outline: none;
     border-radius: 50vh;
     cursor: not-allowed;
     text-align: center;
-    font-size: 21px;
+    font-size: 17px;
     letter-spacing: -0.1px;
     background-color: rgb(230, 230, 230);
     color: rgb(175, 176, 178);
@@ -425,15 +425,16 @@ img {
 
 .kiStqG {
     display: block;
-    width: 100%;
+    background-color: rgb(59, 193, 255);
+    font-weight: bold;
+    width: 200px;
     cursor: pointer;
     text-align: center;
-    background-color: rgb(59, 193, 255);
     color: rgb(255, 255, 255);
-    height: 72px;
-    line-height: 72px;
+    height: 58px;
+    line-height: 63px;
     border-radius: 50vh;
-    font-size: 22px;
+    font-size: 19px;
     font-weight: bold;
     letter-spacing: -0.5px;
     max-width: calc(50% - 4px);
@@ -445,7 +446,7 @@ img {
     display: flex;
     -webkit-box-align: center;
     align-items: center;
-    max-width: 640px;
+    max-width: 395px;
     margin: 0px auto;
 }
 
@@ -462,7 +463,6 @@ img {
 
 .filBkf {
     width: 100%;
-    padding-top: 56px;
     padding-bottom: 42px;
     text-align: center;
     display: flex;
@@ -472,9 +472,8 @@ img {
 }
 
 .htzYgu {
-    margin-top: 24px;
     margin-bottom: 16px;
-    font-size: 43px;
+    font-size: 35px;
     line-height: 48px;
     color: rgba(0, 0, 0, 0.7);
     letter-spacing: -0.7px;
@@ -484,15 +483,15 @@ img {
 
 .pYUPR {
     display: block;
-    width: 100%;
+    width: 200px;
     cursor: pointer;
     text-align: center;
     background-color: rgb(206, 207, 208);
     color: rgb(255, 255, 255);
-    height: 72px;
-    line-height: 72px;
+    height: 58px;
+    line-height: 63px;
     border-radius: 50vh;
-    font-size: 22px;
+    font-size: 19px;
     font-weight: bold;
     letter-spacing: -0.5px;
     max-width: calc(50% - 4px);
