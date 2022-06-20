@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -58,8 +58,7 @@
                 <img src="https://www.withmate.kr/assets/images/stepper.png" alt="화살표" class="sc-jxGEyO cvJJsZ">
                 <button class="sc-drlKqa kAufHg">
                     매칭 신청 확인
-                </button>
-                <img src="https://www.withmate.kr/assets/images/stepper.png" alt="화살표" class="sc-jxGEyO cvJJsZ">
+                </button><img src="https://www.withmate.kr/assets/images/stepper.png" alt="화살표" class="sc-jxGEyO cvJJsZ">
                 <button class="sc-drlKqa kAufHg">
                     신청 완료
                 </button>
@@ -78,10 +77,10 @@
                 <span>* </span>
                 동행 인력 희망 성별
             </div>
-            <div class="sc-ekkqgF dxikPE">
-                <span class="active">상관없음</span>
-                <span class="inactive">남성</span>
-                <span class="inactive">여성</span>
+            <div class="sc-ekkqgF dxikPE div2">
+                <span class="inactive div2">상관없음</span>
+                <span class="inactive div2">남성</span>
+                <span class="inactive div2">여성</span>
             </div>
             <div class="sc-VigVT lafcRZ"></div>
             <div class="sc-fjdhpX hoWkSp">
@@ -89,14 +88,13 @@
                 희망 예약일 및 방문 시간
             </div>
             <div class="ant-picker sc-hMqMXs cWomFl">
-                <input type="datetime-local" id="date" name="scheduleDate" min="09:00" max="17:00" step="900" required
-                       style="width: 100%;
-                    height: 53px;
+                <input type="datetime-local" id="date" name="scheduleDate" min="09:00" max="17:00" step="900" required style="width: 100%;
+                    height: 37px;
                     line-height: 43px;
                     border: 1px solid rgb(233, 233, 233);
                     padding: 0px 11px;
                     border-radius: 4px;
-                    font-size: 18px;">
+                    font-size: 13px;" >
                 <!-- <div class="ant-picker-input">
                     <input readonly="" placeholder="진료 예약일을 설정해주세요." title="" size="12" name="reserveDate" autocomplete="off" value="">
                     <span class="ant-picker-suffix">
@@ -136,13 +134,13 @@
                             예상 소요 시간을 선택해주세요.
                     </span> -->
                     <select id="serviceDtlCd" name="serviceDtlCd" style=" width: 100%;
-                        height: 53px;
+                        height: 37px;
                         line-height: 43px;
                         border: 1px solid rgb(233, 233, 233);
                         padding: 0px 11px;
                         border-radius: 4px;
-                        font-size: 18px;
-                    
+                        font-size: 13px;
+
                     ">
                         <option data-high-code="SV20" value="SD40">1시간</option>
                         <option data-high-code="SV20" value="SD45">2시간</option>
@@ -157,8 +155,7 @@
                 </div>
                 <span class="ant-select-arrow" unselectable="on" aria-hidden="true" style="user-select: none;">
                             <span role="img" aria-label="down" class="anticon anticon-down ant-select-suffix">
-                                <svg viewBox="64 64 896 896" focusable="false" data-icon="down" width="1em" height="1em"
-                                     fill="currentColor" aria-hidden="true">
+                                <svg viewBox="64 64 896 896" focusable="false" data-icon="down" width="1em" height="1em" fill="currentColor" aria-hidden="true">
                                     <path d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"></path>
                                 </svg>
                             </span>
@@ -181,8 +178,7 @@
             <div class="sc-fjdhpX hoWkSp">
                 기타 요청 및 전달 사항
             </div>
-            <textarea type="text" middle="true" placeholder="메니저님께 요청 및 전달하는 사항을 입력해주세요." name="comment"
-                      class="ant-input sc-kgoBCf jdYHBr"></textarea>
+            <textarea type="text" middle="true" placeholder="메니저님께 요청 및 전달하는 사항을 입력해주세요." style="resize: none;" name="comment" class="ant-input sc-kgoBCf jdYHBr"></textarea>
             <div class="sc-VigVT ffyjKW"></div>
             <div class="sc-gleUXh ccaDJS">
                 <img src="	https://www.withmate.kr/assets/images/art_basic.png" alt="스텝이미지">
@@ -197,16 +193,19 @@
 <footer id="footer"></footer>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="../../static/asset/js/reservation.js"></script>
 <script>
-    $("#btnLogin").click(function () {
-        if (!$(this).attr('class').match('on')) {
+    $("#btnLogin").click(function(){
+        if(!$(this).attr('class').match('on')){
             $(this).addClass('on');
             $(".fnc_user_wrap").addClass('on');
-        } else {
+        }else{
             $(this).removeClass('on');
             $(".fnc_user_wrap").removeClass('on');
         }
     })
+
+
 
 
 </script>
