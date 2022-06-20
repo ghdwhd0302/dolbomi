@@ -5,23 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../../static/asset/css/option_reservation.css">
-    <link rel="stylesheet" href="../../static/asset/css/header.css">
-    <link rel="stylesheet" href="../../static/asset/css/footer.css">
+    <link rel="stylesheet" href="/asset/css/option_reservation.css">
+    <link rel="stylesheet" href="/asset/css/header.css">
+    <link rel="stylesheet" href="/asset/css/footer.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(function () {
-            $("#header").load("../header.html");
-        });
-    </script>
-    <script>
-        $(function () {
-            $("#footer").load("../footer.html");
-        });
-    </script>
+
     <style>
         /*서비스 신청 목록 네비게이션*/
         .menu03, .menu04{
@@ -30,7 +21,7 @@
     </style>
 </head>
 <body>
-<header id="header"></header>
+<header th:replace="header.html"></header>
 <div class="sub_page_wrap">
     <div class="sub_title_wrap sub_bg02">
         <!-- sub_title -->
@@ -87,7 +78,7 @@
         </div>
     </div>
 </div>
-<footer id="footer"></footer>
+<footer th:replace="footer.html"></footer>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>

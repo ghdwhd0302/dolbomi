@@ -6,25 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IdFind</title>
-    <link rel="stylesheet" href="../../static/asset/css/pwfind.css">
-    <link rel="stylesheet" href="../../static/asset/css/header.css">
-    <link rel="stylesheet" href="../../static/asset/css/footer.css">
+    <link rel="stylesheet" href="/asset/css/pwfind.css">
+    <link rel="stylesheet" href="/asset/css/header.css">
+    <link rel="stylesheet" href="/asset/css/footer.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
           rel="stylesheet">
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(function () {
-            $("#header").load("../header.html");
-        });
-    </script>
-    <script>
-        $(function () {
-            $("#footer").load("../footer.html");
-        });
-    </script>
     <style>
         /*서비스 신청 목록 네비게이션*/
         .menu03{
@@ -34,7 +22,7 @@
 </head>
 
 <body>
-<header id="header"></header>
+<header th:replace="header.html"></header>
 <div id="root">
     <div id="app-container" class="app-container">
 
@@ -80,7 +68,7 @@
         </div>
     </div>
 
-    <footer id="footer"></footer>
+    <link rel="stylesheet" th:href="@{/asset/css/footer.css}">
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
