@@ -20,5 +20,6 @@ public class CareReservationVO {
     private String careReservationTime;
     private String careReservationAddRequire;
     private String careReservationPrice;
+    private String careReservationStatus;
     private String userEmail;
 }
