@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -40,12 +40,12 @@
         </div>
     </div>
 </div>
-<div class="common_content_wrap" style="margin-left: 27%;">
+<div class="common_content_wrap"  >
     <div class="form_sub_tab column">
         <ul>
             <!-- <li id="all" >전체</li> -->
             <!-- <li id="match" class="current"><span>배정요청</span><em>0</em></li> -->
-            <li id="reserv" class="" onclick="location.href='manager.html'"><span>예약</span><em>0</em></li>
+            <li id="reserv" class="" onclick="location.href='manager.html'" style="    width: 684px;"><span>예약</span><em>0</em></li>
             <li id="proc" class="" onclick="location.href='manager2.html'"><span>서비스중</span><em>0</em></li>
             <!-- <li id="pay" class=""><span>결제요청</span><em>0</em></li> -->
             <li id="end" class="current" onclick="location.href='manager3.html'"><span>종료</span><em>0</em></li>
@@ -54,8 +54,8 @@
 </div>
 <!-- 목록시작 -->
 
-<div class="com_accordion">
-    <ul style="margin: 0% 10% 0% 10%;">
+<div class="com_accordion" >
+    <ul style="    margin: 0% 17% 0% 17%;">
         <li class="history">
             <div class="ac_title">
                 <input type="hidden" name="hManagerSysId" value="">
@@ -71,8 +71,8 @@
                 <input type="hidden" name="hDepartAdmCd" value="">
                 <input type="hidden" name="hDestAdmCd" value="">
                 <input type="hidden" name="hServiceCarYn" value="">
-                <p class="service_a">돌봄</p>
-                <div class="left_con">
+                <p class="service_a" style="background: #3d7ed8;">돌봄</p>
+                <div class="left_con" >
                     <p>
                         <span class="title">이용자</span>
                         <span></span>
@@ -110,16 +110,16 @@
     ">
         시작
     </button> -->
-                <button style=" background-color: #f7579f;
+                <button style=" background-color: #3d7ed8;
             color: white;
             padding: 12px 20px 12px 20px;
-            font-size: 18px;
+            font-size: 15px;
             font-weight: 700;
             position: absolute;
             right: 15px;
-            border-radius: 30px;
+
             margin-right: 20px;
-            bottom: 39px;
+            bottom: 12px;
         ">
                     서비스 완료
                 </button>
@@ -129,8 +129,8 @@
     </ul>
 </div>
 
-<div class="com_accordion">
-    <ul style="margin: 0% 10% 0% 10%;">
+<div class="com_accordion" >
+    <ul style="    margin: 0% 17% 0% 17%;">
         <li class="history">
             <div class="ac_title">
                 <input type="hidden" name="hManagerSysId" value="">
@@ -147,7 +147,7 @@
                 <input type="hidden" name="hDestAdmCd" value="">
                 <input type="hidden" name="hServiceCarYn" value="">
                 <p class="service_a">동행</p>
-                <div class="left_con">
+                <div class="left_con" >
                     <p>
                         <span class="title">이용자</span>
                         <span></span>
@@ -185,12 +185,12 @@
                 <button style=" background-color: #f7579f;
                 color: white;
                 padding: 12px 20px 12px 20px;
-                font-size: 18px;
+                font-size: 15px;
                 font-weight: 700;
                 position: absolute;
                 right: 15px;
-                border-radius: 30px;
-                margin-right: 20px
+                margin-right: 20px;
+                bottom: 12px;
             ">
                     서비스 완료
                 </button>
@@ -201,10 +201,9 @@
 <button style="margin: 61px 45% 61px 46%;
             background-color: #f7579f;
             color: white;
-            padding: 20px;
-            font-size: 18px;
-            font-weight: 700;
-">
+            padding: 11px;
+            font-size: 15px;
+            font-weight: 700;">
     목록으로 가기
 </button>
 <footer id="footer"></footer>
@@ -212,7 +211,7 @@
 <script src="../../static/asset/js/manager.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-    $("#test01").click(function () {
+    $("#test01").click(function(){
         $('#test02').toggle();
     });
 
@@ -220,7 +219,7 @@
         $('#test02').hide();
     }); */
 
-    $("#test04").click(function () {
+    $("#test04").click(function(){
         $('#test05').toggle();
     });
 
@@ -230,15 +229,17 @@
 
 </script>
 <script>
-    $("#btnLogin").click(function () {
-        if (!$(this).attr('class').match('on')) {
+    $("#btnLogin").click(function(){
+        if(!$(this).attr('class').match('on')){
             $(this).addClass('on');
             $(".fnc_user_wrap").addClass('on');
-        } else {
+        }else{
             $(this).removeClass('on');
             $(".fnc_user_wrap").removeClass('on');
         }
     })
+
+
 
 
 </script>

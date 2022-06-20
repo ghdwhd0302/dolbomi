@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>돌보미|이용후기</title>
+    <link rel="stylesheet" href="../../static/asset/css/review2.css">
+    <link rel="stylesheet" href="../../static/asset/css/review.css">
+    <link rel="stylesheet" href="../../static/asset/js/review.js">
+    <link rel="stylesheet" href="../../static/asset/css/header.css">
+    <link rel="stylesheet" href="../../static/asset/css/footer.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            $("#header").load("../header.html");
+        });
+    </script>
+    <script>
+        $(function () {
+            $("#footer").load("../footer.html");
+        });
+    </script>
+</head>
+
+<body>
+<!-- header -->
+<header id="header"></header>
+
+<!-- main -->
+<div id="root">
+    <div id="app-container" class="app-container">
+        <div class="main-area">
+            <div class="sc-kqlzXE kHAYKm">
+                <div>
+                    <div class="sc-dHIava juTLHf">
+                        <div class="sc-jhaWeW dUOvas inner-container" style="padding: 100px 0 0;">
+                            <div class="sc-bSbAYC grytNP">
+                                <div class="sc-guztPN eszqMv">이용 후기</div>
+                                <div class="sc-cFlXAS cqDVA">
+                                    <p>고객님의 소중한 후기를 통해 더욱 발전하는</p>
+                                    <p>돌보미가 되겠습니다.</p>
+                                </div>
+                                <div class="sc-OxbzP jqycvF">후기 작성하기</div>
+                            </div>
+                            <div class="sc-bSbAYC grytNP img-cover">
+                                <div class="sc-hcnlBt dkbIiH">
+                                    <div src="https://www.withmate.kr/assets/images/w_main_crop.png" class="sc-hkbPbT bIzfXR"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 글쓰기 -->
+                    <div class="bh_mgb35" style="max-width: 1120px;
+                        margin: 0 auto;
+                        padding: 22px 0;">
+                        <h5 class="tit_h5" style="padding-bottom: 25px;
+                            font-size: 28px;">이용후기 작성</h5>
+
+
+                        <form action="customervoice_reg.do" enctype="multipart/form-data" name="editForm" method="post">
+                            <input type="hidden" name="" value="">
+                            <input type="hidden" name="" value="">
+                            <input type="hidden" name="" value="">
+                            <input type="hidden" name="" value="">
+                            <input type="hidden" name="" value="">
+                            <input type="hidden" name="" value="">
+                            <input type="hidden" name="" value="">
+
+                            <fieldset>
+                                <table class="table_type2 bh_mgb25">
+                                    <colgroup>
+                                        <col width="13%">
+                                        <col width="10%">
+                                        <col width="19%">
+                                        <col width="10%">
+                                        <col width="19%">
+                                        <col width="10%">
+                                        <col width="19%">
+                                    </colgroup>
+                                    <tbody>
+                                    <tr>
+                                        <th>아이디</th>
+                                        <td colspan="6">아이디</td>
+                                    </tr>
+                                    <tr>
+                                        <th>이용자</th>
+                                        <td colspan="6">이름</td>
+                                    </tr>
+                                    <tr>
+
+                                        <select id="serviceDtlCd" name="serviceDtlCd" style=" width: 100%;
+                                            height: 53px;
+                                            font-size: 20px;
+                                            font-weight: 700;
+                                            color: #282828;
+                                            border-radius: 6px;
+                                            padding-left: 10px!important;
+                                            border-color: rgb(233, 233, 233);
+                                            border: 0px;     ">
+                                            <option data-high-code="SV20" value="SD40">돌봄서비스</option>
+                                            <option data-high-code="SV20" value="SD45">동행서비스</option>
+
+                                        </select>
+
+                                    </tr>
+                                    <tr>
+                                        <th><label for="input_title_bh">제목</label> <p><span class="imp" style="font-size:10px;"></span></p></th>
+                                        <td colspan="6"><input name="title" class="bh_input_text5" id="input_title_bh" type="text" value="" style="width:90%;     height: 32px;" maxlength="100"></td>
+                                    </tr>
+
+                                    <tr>
+                                        <th><label for="input_conts_bh">내용</label> <p><span class="imp" style="font-size:13px; "></span></p></th>
+                                        <td colspan="6"><textarea name="quest_cont" id="input_conts_bh" class="textarea_txt" style="resize: none;     width: 90%;
+                                        height: 166px;"></textarea></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </fieldset>
+                            <div class="sc-OxbzP jqycvF" style="    margin-left: 87%;
+                              width: 147px;
+                              margin-top: 20px;">작성완료</div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+<!-- footer -->
+<footer id="footer"></footer>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $("#btnLogin").click(function(){
+        if(!$(this).attr('class').match('on')){
+            $(this).addClass('on');
+            $(".fnc_user_wrap").addClass('on');
+        }else{
+            $(this).removeClass('on');
+            $(".fnc_user_wrap").removeClass('on');
+        }
+    })
+
+    $(".header1").click(function(){
+        $('.box1').toggle();
+    });
+    $(".header2").click(function(){
+        $('.box2').toggle();
+    });
+    $(".header3").click(function(){
+        $('.box3').toggle();
+    });
+
+
+</script>
+</html>
