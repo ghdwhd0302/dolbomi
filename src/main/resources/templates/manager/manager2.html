@@ -34,10 +34,10 @@
         <ul>
             <!-- <li id="all" >전체</li> -->
             <!-- <li id="match" class="current"><span>배정요청</span><em>0</em></li> -->
-            <li id="reserv" class="" onclick="location.href='manager.html'" style="    width: 684px;"><span>예약</span><em>0</em></li>
-            <li id="proc" class="current" onclick="location.href='manager2.html'"><span>서비스중</span><em>0</em></li>
+            <li id="reserv" class="" onclick="location.href='/manager/manager'" style="    width: 684px;"><span>예약</span><em>0</em></li>
+            <li id="proc" class="current" onclick="location.href='/manager/manager2'"><span>서비스중</span><em>0</em></li>
             <!-- <li id="pay" class=""><span>결제요청</span><em>0</em></li> -->
-            <li id="end" class="" onclick="location.href='manager3.html'"><span>종료</span><em>0</em></li>
+            <li id="end" class="" onclick="location.href='/manager/manager3'"><span>종료</span><em>0</em></li>
         </ul>
     </div>
 </div>
@@ -117,7 +117,7 @@
             font-weight: 700;
             position: absolute;
             right: 15px;
-
+            border-radius: 6px;
             margin-right: 20px;
             bottom: 73px
         ">
@@ -174,11 +174,11 @@
                 font-weight: 700;
                 position: absolute;
                 bottom: 26px;
-
+                border-radius: 6px;
                 margin-right: 20px;
     right: 21px;
             ">
-        서비스 완료
+        서비스 종료
     </button>
 </div>
 <div class="com_accordion" >
@@ -254,6 +254,7 @@
                 position: absolute;
                 right: 15px;
                 bottom: 73px;
+                border-radius: 6px;
                 margin-right: 20px
             ">
                     서비스중
@@ -306,11 +307,11 @@
                 font-weight: 700;
                 position: absolute;
                 bottom: 26px;
-
+                border-radius: 6px;
                 margin-right: 20px;
     right: 21px;
             ">
-        서비스 완료
+        서비스 종료
     </button>
 </div>
 
@@ -333,7 +334,7 @@
     margin-bottom: 110px;
     color: #767070;">업무완료 하시겠습니까?
     </div>
-    <button class="confirm" onclick="location.href='manager3.html'">완료</button>
+    <button class="confirm" onclick="location.href='/manager/endService'">완료</button>
 </div>
 </body>
 <script src="/asset/js/manager.js"></script>

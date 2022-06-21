@@ -548,7 +548,7 @@ button {
 
 .button_wrap a.accept {
     color: #ffffff;
-    background: #1f6cd5;
+    background: #3d7ed8;
     border: none;
     margin-right: 5px;
 
@@ -556,7 +556,7 @@ button {
 
 .button_wrap a.refuse, .button_wrap a.cancel {
     color: #ffffff;
-    background: #ff0071;
+    background: #f7579f;
     border: none;
 }
 
@@ -566,8 +566,8 @@ button {
     height: 50%;
     justify-content: center;
     align-items: center;
-    font-size: 16px;
-    font-weight: 300;
+    font-size: 15px;
+    font-weight: 700;
     color: #555555;
     background: #ffffff;
     cursor: pointer;

@@ -44,7 +44,7 @@
                                                              maxlength="11" placeholder="숫자만 입력해주세요.(ex. 01014231324)"
                                                              class="ant-input sc-jzJRlG iaafvp" value="">
                                     <button
-                                            style="width: 90px; height: 44px;  background-color: rgb(59, 193, 255); border: 0px; outline: 0px; border-radius: 3px;">
+                                            style="width: 90px; height: 44px;  background-color: rgb(59, 193, 255); border: 0px; outline: 0px; border-radius: 3px;" onclick="location.href='/user/sendcode'">
                                         인증하기
                                     </button>
                                     <input type="text" maxlength="6" placeholder="인증번호를 입력해주세요."
@@ -92,10 +92,11 @@
                                     <div class="sc-VigVT dUXpIL"></div>
                                     <button type="button"
                                             class="ant-btn ant-btn-primary"
-                                            style="background-color: rgb(230, 230, 230); border: 0px; cursor: not-allowed;">
-                                        <span>가입하기</span></button>
+                                            style="background-color: rgb(230, 230, 230); border: 0px; cursor: not-allowed;" onclick="regi2Confirm()">
+                                        <span>가입하기</span>
+                                    </button>
                                     <div class="link-wrapper"><span class="text">이미 계정이 있으신가요? </span><a
-                                            class="link">로그인</a></div>
+                                            class="link" onclick="location.href='/member/userlogin'">로그인</a></div>
                                 </div>
                             </div>
                         </div>
@@ -112,6 +113,13 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
+
+    function regi2Confirm(){
+        /*유효성 검사 작성부분*/
+
+        location.href="/user/ujoin2"
+    }
+
     $("#btnLogin").click(function () {
         if (!$(this).attr('class').match('on')) {
             $(this).addClass('on');

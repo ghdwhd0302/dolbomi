@@ -34,10 +34,10 @@
         <ul>
             <!-- <li id="all" >전체</li> -->
             <!-- <li id="match" class="current"><span>배정요청</span><em>0</em></li> -->
-            <li id="reserv" class="current" style="width: 684px;"><span>예약</span><em>0</em></li>
-            <li id="proc" class="" onclick="location.href='manager2.html'"><span>서비스중</span><em>0</em></li>
+            <li id="reserv" class="current" style="width: 684px;" onclick="location.href='/manager/manager'"><span>예약</span><em>0</em></li>
+            <li id="proc" class="" onclick="location.href='/manager/manager2'"><span>서비스중</span><em>0</em></li>
             <!-- <li id="pay" class=""><span>결제요청</span><em>0</em></li> -->
-            <li id="end" class="" onclick="location.href='manager3.html'"><span>종료</span><em>0</em></li>
+            <li id="end" class="" onclick="location.href='/manager/manager3'"><span>종료</span><em>0</em></li>
         </ul>
     </div>
 </div>
@@ -394,7 +394,7 @@
     margin-top: 110px;
     margin-bottom: 110px;
     color: #767070;">현재시간부터 서비스를 <br> 진행하시겠습니까?</div>
-    <button class="confirm" onclick="location.href='manager2.html'">서비스 진행</button>
+    <button class="confirm" onclick="location.href='/manager/startService'">서비스 진행</button>
 </div>
 
 <div id="popup02">
@@ -404,7 +404,7 @@
     margin-top: 110px;
     margin-bottom: 110px;
     color: #767070;">매칭을<br>최소하시겠습니까?</div>
-    <button class="confirm" onclick="location.href=''">취소하기</button>
+    <button class="confirm" onclick="location.href='/manager/cancelService'">취소하기</button>
 </div>
 <footer th:replace="footer.html"></footer>
 </body>
@@ -524,29 +524,17 @@
         }
     });
 
-    /* 수락버튼 클릭 */
+    /* 시작버튼 클릭 */
     $(".accept").click(function(){
         alert('서비스 시작하겠습니다.');
-        $(this).parent().parent().parent().parent('li').css('display', 'none');
-        $(".assignment").css('display', 'none');
-        $(".reservation").css('display', 'block');
-        $("#match").removeClass('current');
-        $("#reserv").addClass('current');
+        location.href="/manager/startService"
     })
 
-    /* 거절버튼 클릭 */
+    /* 취소버튼 클릭 */
     $(".refuse").click(function(){
-        alert('배정을 취소합니다.');
-        $(this).parents("li.history").css('display', 'none');
-
+        alert('서비스 예약을 취소합니다.');
+        location.href="/manager/cancelService"
     })
-
-    /* 예약취소버튼 클릭 */
-    $(".cancel").click(function(){
-        alert("예약이 취소되었습니다.")
-        $(this).parents("li.history").css('display', 'none');
-    })
-
 
 </script>
 
