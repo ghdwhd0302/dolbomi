@@ -290,9 +290,12 @@
     <!-- //form_wrap -->
     <!-- button_wrap -->
     <div class="button_wrap form_wrap">
-        <a href="" id="withdraw">회원탈퇴</a>
-        <a href="">취소</a>
-        <a href="" id="confirm" class="primary">저장</a>
+        <!--매니저일 때 href="/member/exitM"-->
+        <!--회원일 때 href="/member/exitU"-->
+        <a href="?" id="withdraw">회원탈퇴</a>
+        <a href="/member/mainpage">취소</a>
+
+        <a href="/member/updateInfor" id="confirm" class="primary">저장</a>
     </div>
     <!-- //button_wrap -->
 </div>

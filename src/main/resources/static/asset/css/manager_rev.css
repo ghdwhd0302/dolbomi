@@ -452,7 +452,22 @@ input[type="hidden"] + input {
     margin: 20px 20px 82px 20px;
     justify-content: center;
     align-items: center;
-    background: #2fb8e7;
+    background: #3d7ed8;
+    color: #fff;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.com_accordion ul li .ac_title .service_b {
+    display: flex;
+    flex: none;
+    width: 80px;
+    height: 80px;
+    margin: 20px 20px 82px 20px;
+    justify-content: center;
+    align-items: center;
+    background: #f7579f;
     color: #fff;
     border-radius: 50%;
     font-weight: 700;
