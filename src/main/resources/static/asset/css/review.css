@@ -47,7 +47,7 @@
 
 .jqycvF {
     cursor: pointer;
-    width: 265px;
+    width: 220px;
     height: 60px;
     line-height: 60px;
     font-size: 16px;
@@ -61,6 +61,29 @@
     margin-bottom: 90px;
     border-radius: 4px;
     background-color: rgb(59, 193, 255);
+}
+
+.jqycvM {
+    cursor: pointer;
+    width: 220px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 16px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: -0.2px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    margin-top: 40px;
+    margin-bottom: 90px;
+    margin-left: 10px;
+    border-radius: 4px;
+    background-color: #f7579f;
+}
+
+.sc-OxbzP{
+    display: inline-block;
 }
 
 .grytNP.img-cover {
