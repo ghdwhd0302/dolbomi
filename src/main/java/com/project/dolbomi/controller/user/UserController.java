@@ -216,6 +216,9 @@ public class UserController {
     @GetMapping("myReview")
     public void myReview(){}
 
+    @GetMapping("modifyReview")
+    public void modifyReview(){}
+
     @GetMapping("readReview")
     public void readReview(){}
 
