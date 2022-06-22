@@ -1010,7 +1010,6 @@ input[type="submit"], input[type="reset"], input[type="button"], button, .button
     font-weight: 700;
     height: 3.25rem;
     line-height: 3.25rem;
-    padding: 0 2.25rem;
     text-align: center;
     text-decoration: none;
     white-space: nowrap;
@@ -1030,6 +1029,7 @@ input[type="submit"], input[type="reset"], input[type="button"], button, .button
     top: 22px;
     left: 399px;
     font-size: 16px;
+    text-align: center;
 }
 
 ul.actions.special {
