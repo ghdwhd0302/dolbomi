@@ -15,5 +15,6 @@ public class ManagerVO {
     private String managerAddress;
     private String managerCareer;
     private String managerPw;
+    private String managerStatus;
 }
 

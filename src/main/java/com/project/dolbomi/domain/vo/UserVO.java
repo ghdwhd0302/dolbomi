@@ -11,5 +11,7 @@ public class UserVO {
     private String userBirth;
     private String userEmail;
     private String userPhoneNum;
+    private String userAddress;
     private String userPw;
+    private Integer userStatus;
 }
