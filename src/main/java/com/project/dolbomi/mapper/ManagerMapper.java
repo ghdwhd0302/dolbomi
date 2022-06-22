@@ -24,4 +24,5 @@ public interface ManagerMapper {
     public String delete(String userEmail);
 
 
+    public int getTotal();
 }

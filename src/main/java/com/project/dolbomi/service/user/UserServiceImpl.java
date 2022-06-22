@@ -1,10 +1,19 @@
 package com.project.dolbomi.service.user;
 
+import com.project.dolbomi.domain.dao.UserDAO;
+import com.project.dolbomi.domain.vo.Criteria;
 import com.project.dolbomi.domain.vo.UserVO;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
+@RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
+    private final UserDAO userDAO;
+
+
     @Override
     public void careApprove(long careReservationNum) {
 
@@ -43,5 +52,16 @@ public class UserServiceImpl implements UserService {
     @Override
     public void modify(UserVO userVO) {
 
+    }
+
+    @Override
+    public List<UserVO> getList(Criteria criteria) {
+        return null;
+    }
+
+
+    @Override
+    public int getTotal() {
+        return userDAO.getTotal();
     }
 }

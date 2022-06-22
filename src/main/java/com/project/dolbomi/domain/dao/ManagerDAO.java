@@ -31,5 +31,9 @@ public class ManagerDAO {
     public void withdrawal(String userEmail){
 
     }
+
+    public int getTotal(){
+        return managerMapper.getTotal();
+    }
 }
 

@@ -32,5 +32,5 @@ public interface UserMapper {
 
     //카드 등록?
 
-
+    public int getTotal();
 }

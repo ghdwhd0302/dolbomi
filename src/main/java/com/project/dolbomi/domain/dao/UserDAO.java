@@ -50,4 +50,8 @@ public class UserDAO {
     public void modify(UserVO userVO){
 
     }
+
+    public int getTotal(){
+        return userMapper.getTotal();
+    }
 }

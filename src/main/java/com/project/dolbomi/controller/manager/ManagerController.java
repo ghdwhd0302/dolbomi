@@ -1,9 +1,12 @@
 package com.project.dolbomi.controller.manager;
 
+import com.project.dolbomi.domain.vo.Criteria;
+import com.project.dolbomi.domain.vo.PageDTO;
 import com.project.dolbomi.service.manager.ManagerService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -83,12 +86,18 @@ public class ManagerController {
     public void manager2(){}
 
     @GetMapping("manager3")
-    public void manager3(){}
+    public String manager3(Criteria criteria, Model model){
+        model.addAttribute("historyList", managerService.getList(criteria));
+        model.addAttribute("pageDTO", new PageDTO(criteria, managerService.getTotal()));
+        return "/manager/manager3";
+    }
 
     @GetMapping("manager_rev")
     public void manager_rev(){}
 
     @GetMapping("manageregi")
     public void manageregi(){}
+
+
 
 }

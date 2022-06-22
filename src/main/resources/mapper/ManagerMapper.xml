@@ -17,7 +17,9 @@
         WHERE MANAGER_EMAIL = #{managerEmail}
     </delete>
 
-
+    <select id="getTotal" resultType="_int">
+        SELECT COUNT(MANAGER_STATUS) FROM TBL_MANAGER
+    </select>
 
 
 </mapper>
