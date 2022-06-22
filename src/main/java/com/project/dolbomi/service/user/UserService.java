@@ -1,7 +1,11 @@
 package com.project.dolbomi.service.user;
 
+import com.project.dolbomi.domain.vo.Criteria;
+import com.project.dolbomi.domain.vo.ManagerVO;
 import com.project.dolbomi.domain.vo.UserVO;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public interface UserService {
@@ -30,4 +34,7 @@ public interface UserService {
     //프로필 수정
     public void modify(UserVO userVO);
 
+    public List<UserVO> getList(Criteria criteria);
+
+    public int getTotal();
 }

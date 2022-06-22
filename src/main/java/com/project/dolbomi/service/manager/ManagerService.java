@@ -1,6 +1,10 @@
 package com.project.dolbomi.service.manager;
 
+import com.project.dolbomi.domain.vo.Criteria;
+import com.project.dolbomi.domain.vo.ManagerVO;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public interface ManagerService {
@@ -19,5 +23,9 @@ public interface ManagerService {
 
     //    매니저 탈퇴
     public void withdrawal(String userEmail);
+
+    public List<ManagerVO> getList(Criteria criteria);
+
+    public int getTotal();
 
 }

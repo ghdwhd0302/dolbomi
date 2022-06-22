@@ -24,4 +24,7 @@
         WHERE USER_EMAIL = #{userEmail}
     </delete>
 
+    <select id="getTotal" resultType="_int">
+        SELECT COUNT(USER_STATUS) FROM TBL_USER
+    </select>
 </mapper>
