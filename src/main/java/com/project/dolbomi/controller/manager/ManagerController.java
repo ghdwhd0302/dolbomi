@@ -77,22 +77,18 @@ public class ManagerController {
 
 //  페이지 이동
     @GetMapping("manager")
-    public void manager(){
-    }
+    public void manager(){}
 
     @GetMapping("manager2")
-    public void manager2(){
-    }
+    public void manager2(){}
 
     @GetMapping("manager3")
-    public void manager3(){
-    }
+    public void manager3(){}
 
     @GetMapping("manager_rev")
-    public void manager_rev(){
-    }
+    public void manager_rev(){}
+
     @GetMapping("manageregi")
-    public void manageregi(){
-    }
+    public void manageregi(){}
 
 }

@@ -78,8 +78,8 @@
                         </h5>
                     </div>
                     <div class="button_wrap">
-
-                        <a href="/use/useService">서비스 이용하기</a>
+                        <!--비회원일때는 로그인 페이지로 이동-->
+                        <a href="/user/option_reservation">서비스 이용하기</a>
 
                     </div>
                 </div>
@@ -100,9 +100,9 @@
                         </h5>
                     </div>
                     <div class="button_wrap">
-                        <a href="/introduce">돌보미 알아보기</a>
-
-                        <a href="/use/useService">서비스 이용하기</a>
+                        <a href="/member/introduce">돌보미 알아보기</a>
+                        <!--비회원일때는 로그인 페이지로 이동-->
+                        <a href="/user/option_reservation">서비스 이용하기</a>
 
                     </div>
                 </div>
@@ -123,10 +123,8 @@
                         </h5>
                     </div>
                     <div class="button_wrap">
-                        <a href="javascript:void(0)" onclick="urlLocation(this)" data-name="seq" data-value="4"
-                           data-url="/cust/notice">자세히 알아보기</a>
 
-                        <a href="/signup/signupManager">매니저 지원하기</a>
+                        <a href="/member/managerapply">매니저 지원하기</a>
 
                     </div>
                 </div>
@@ -145,7 +143,7 @@
                         </h5>
                     </div>
                     <div class="button_wrap">
-                        <a href="/signup/signupMember">신규 가입하기</a>
+                        <a href="/user/regi1">신규 가입하기</a>
                     </div>
                 </div>
             </div>
@@ -185,8 +183,8 @@
                         <span>복잡한 진료 접수 및 수납, </span>
                         <span>약국업무 등이 어려울 때</span>
                     </p>
-
-                    <a href="/use/useService">이용하기</a>
+                    <!--비회원일때는 로그인 페이지로 이동-->
+                    <a href="/user/acc_reservation1">이용하기</a>
 
                 </div>
             </li>
@@ -201,8 +199,8 @@
                         <span>복잡한 행정 업무, 은행 업무</span>
                         <span>등의 이용이 어려울 때</span>
                     </p>
-
-                    <a href="/use/useService">이용하기</a>
+                    <!--비회원일때는 로그인 페이지로 이동-->
+                    <a href="/user/acc_reservation1">이용하기</a>
 
                 </div>
             </li>
@@ -217,8 +215,8 @@
                         <span>보호자 혼자</span>
                         <span>돌봄이 어려울 때</span>
                     </p>
-
-                    <a href="/use/useService">이용하기</a>
+                    <!--비회원일때는 로그인 페이지로 이동-->
+                    <a href="/user/care_reservation1">이용하기</a>
 
                 </div>
             </li>
@@ -233,8 +231,8 @@
                         <span>주변정돈, 산책/운동, </span>
                         <span>식사 도움 등이 필요할 때</span>
                     </p>
-
-                    <a href="/use/useService">이용하기</a>
+                    <!--비회원일때는 로그인 페이지로 이동-->
+                    <a href="/user/care_reservation1">이용하기</a>
 
                 </div>
             </li>
@@ -246,10 +244,10 @@
     <div class="main_help">
         <h3>무엇이 궁금하세요?</h3>
         <ul>
-            <li onclick="urlLocation(this)" data-name="faq" data-value="A" data-url="/cust/faq">동행</li>
-            <li onclick="urlLocation(this)" data-name="faq" data-value="B" data-url="/cust/faq">돌봄</li>
-            <li onclick="urlLocation(this)" data-name="faq" data-value="C" data-url="/cust/faq">결제</li>
-            <li onclick="urlLocation(this)" data-name="faq" data-value="D" data-url="/cust/faq">기타</li>
+            <li onclick="location.href='/member/faq'" data-name="faq" data-value="A" data-url="/cust/faq">동행</li>
+            <li onclick="location.href='/member/faq'" data-name="faq" data-value="B" data-url="/cust/faq">돌봄</li>
+            <li onclick="location.href='/member/faq'" data-name="faq" data-value="C" data-url="/cust/faq">결제</li>
+            <li onclick="location.href='/member/faq'" data-name="faq" data-value="D" data-url="/cust/faq">기타</li>
         </ul>
     </div>
     <!-- //main_help -->
