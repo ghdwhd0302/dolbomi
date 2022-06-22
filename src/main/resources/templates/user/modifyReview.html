@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>돌보미|내가 쓴 후기</title>
+    <link rel="stylesheet" href="/asset/css/modifyReview.css">
+    <link rel="stylesheet" href="/asset/js/review.js">
+    <link rel="stylesheet" href="/asset/css/header.css">
+    <link rel="stylesheet" href="/asset/css/footer.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+<!-- header -->
+<header th:replace="header.html"></header>
+
+<!-- main -->
+    <div id="root">
+        <div id="app-container" class="app-container">
+            <div class="main-area">
+                <div class="sc-kqlzXE kHAYKm">
+                    <div>
+                        <div class="sc-dHIava juTLHf">
+                            <div class="sc-jhaWeW dUOvas inner-container" style="padding: 100px 0 0;">
+                                <div class="sc-bSbAYC grytNP">
+                                    <div class="sc-guztPN eszqMv">후기 수정하기</div>
+                                    <div class="sc-cFlXAS cqDVA">
+                                        <p>고객님의 소중한 후기를 통해 더욱 발전하는</p>
+                                        <p style="margin-bottom: 190px;"> 돌보미가 되겠습니다.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="back"><a href="/user/myReview" class="button small">목록 보기</a></h3>
+                        <div class="sc-fvLVrH kYHgeC inner-container" style="padding: 22px 0;">
+                            <div class="form">
+                                <form method="post" action="/">
+                                    <div class="fields" >
+                                        <div class="field">
+                                            <h4>번호</h4>
+                                            <input type="text"  readonly/>
+                                        </div>
+                                        <div class="field">
+                                            <h4>*제목</h4>
+                                            <input type="text" />
+                                        </div>
+                                        <div class="field">
+                                            <h4>*내용</h4>
+                                            <textarea rows="6" style="resize:none" ></textarea>
+                                        </div>
+                                        <div class="field">
+                                            <h4>작성자</h4>
+                                            <input type="text"  readonly/>
+                                        </div>
+                                    </div>
+                                    <ul class="actions special">
+                                        <li>
+                                            <input type="submit" class="button" value="수정 완료"/>
+                                        </li>
+                                    </ul>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+<!-- footer -->
+<footer th:replace="footer.html"></footer>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    /*$(document).ready(function () {
+        //헤더 체크
+        $('.menu06').addClass('active');
+
+        //메인에서 링크로 접근
+        if (null != null) {
+            $('.form_sub_tab ul li').removeClass()
+            $('#null').addClass('current')
+            let tp = $('.current').attr('id')
+            dataLoad(tp)
+        }
+
+
+    })*/
+
+
+
+
+</script>
+</html>
