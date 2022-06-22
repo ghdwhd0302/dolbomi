@@ -1,5 +1,7 @@
 package com.project.dolbomi.controller.user;
 
+import com.project.dolbomi.domain.vo.Criteria;
+import com.project.dolbomi.domain.vo.PageDTO;
 import com.project.dolbomi.service.user.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -241,9 +243,13 @@ public class UserController {
     @GetMapping("user_userdetails3")
     public void user_userdetails3(){}
 
-    @GetMapping("user_userdetails4")
-    public void user_userdetails4(){}
 
+    @GetMapping("user_userdetails4")
+    public String user_userdetails4(Criteria criteria, Model model){
+        model.addAttribute("histoyryList", userService.getList(criteria));
+        model.addAttribute("pageDTO", new PageDTO(criteria, userService.getTotal()));
+        return "/user/user_userdetails4";
+    }
 
 
 
