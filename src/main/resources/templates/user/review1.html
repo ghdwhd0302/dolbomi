@@ -1,0 +1,108 @@
+<!DOCTYPE html >
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/asset/css/footer.css">
+    <link rel="stylesheet" href="/asset/css/header.css">
+    <link rel="stylesheet" href="/asset/css/review_m.css">
+
+    <title>이용 내역 선택</title>
+</head>
+<body>
+<header th:replace="header.html"></header>
+<div class="sc-jHXLhC dbTkfC">
+    <div>
+        <div class="sc-dHIava juTLHf" style="    margin-top: 128px;">
+            <div class="sc-jhaWeW dUOvas inner-container" style="padding: 0;">
+                <div class="sc-bSbAYC grytNP">
+                    <div class="sc-guztPN eszqMv">이용 후기 쓰기</div>
+                    <div class="sc-cFlXAS cqDVA">
+                        <!-- <p>후기 작성 시 서비스 요금 2,000원</p>
+                        <p> 할인이 적용됩니다.</p> -->
+                    </div>
+                    <div class="sc-iFUGim cJwrVV" style="padding-top: 145px;"></div>
+                </div>
+                <div class="sc-bSbAYC grytNP img-cover">
+                    <div class="sc-hcnlBt dkbIiH">
+                        <div src="https://www.withmate.kr/assets/images/w_main_crop.png" class="sc-hkbPbT bIzfXR"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sc-bOCYYb kQnPFW">
+            <div class="sc-cNQqM ihiUrc inner-container">
+                <div class="sc-clBsIJ hdKPHT">
+                    <p class="sc-eMRERa egSEER">이용 내역 선택</p>
+                    <p class="sc-eqPNPO kPkShx">후기를 작성하실 이용 내역을 선택해주세요</p>
+                </div>
+                <div class="sc-jotlie fYfqmW">
+                    <table>
+                        <thead>
+                        <tr class="tHead">
+                            <th class="boardNumber">서비스</th>
+                            <th class="boardTitle">이용자이름</th>
+                            <th class="boardTitle">매니저이름</th>
+                            <th class="boardWriter">예약시간</th>
+                            <th class="boardRegisterDate">신청날짜</th>
+                            <th class="boardUpdateDate">진행현황</th>
+                        </tr>
+                        </thead>
+                        <!-- <tbody>
+                        <th:block th:each="board:${boardList}">
+                            <tr class="tBody" th:object="${board}">
+                                <td class="boardNumber" th:text="*{boardNumber}"></td>
+                                <td class="boardTitle"><a th:text="*{boardTitle}" th:href="@{/board/read(boardNumber=*{boardNumber})}"></a></td>
+                                <td class="boardWriter" th:text="*{boardWriter}"></td>
+                                <td class="boardRegisterDate" th:text="*{boardRegisterDate}"></td>
+                                <td class="boardUpdateDate" th:text="*{boardUpdateDate}"></td>
+                            </tr>
+                        </th:block>
+                        </tbody> -->
+                        <tbody>
+                        <th:block th:each="board:${boardList}">
+                            <tr class="tBody" th:object="${board}">
+                                <td class="boardNumber" th:text="*{boardNumber}">동행서비스</td>
+                                <td class="boardTitle"><a th:text="*{boardTitle}" th:href="@{/board/read(boardNumber=*{boardNumber})}">홍길동</a></td>
+                                <td class="boardWriter" th:text="*{boardWriter}">홍길동</td>
+                                <td class="boardWriter" th:text="*{boardWriter}">3시간</td>
+                                <td class="boardRegisterDate" th:text="*{boardRegisterDate}">2022-06-21</td>
+                                <td class="boardUpdateDate" th:text="*{boardUpdateDate}">완료</td>
+                            </tr>
+                        </th:block>
+                        </tbody>
+                        <tbody>
+                        <th:block th:each="board:${boardList}">
+                            <tr class="tBody" th:object="${board}">
+                                <td class="boardNumber" th:text="*{boardNumber}">돌봄서비스</td>
+                                <td class="boardTitle"><a th:text="*{boardTitle}" th:href="@{/board/read(boardNumber=*{boardNumber})}">이순신</a></td>
+                                <td class="boardWriter" th:text="*{boardWriter}">이순신</td>
+                                <td class="boardWriter" th:text="*{boardWriter}">3시간</td>
+                                <td class="boardRegisterDate" th:text="*{boardRegisterDate}">2022-06-11</td>
+                                <td class="boardUpdateDate" th:text="*{boardUpdateDate}">완료</td>
+                                <td style="padding: 0.75rem 0.75rem; width: 7px;"><input value="선택" style="    width: 55px;
+                                        text-align: center;
+                                        font-size: inherit;
+                                        border: 1px solid #1f6cd5;
+                                        background-color: #1f6cd5;
+                                        color: white;
+                                        font-weight: 700;
+                                        cursor: pointer;"></td>
+                            </tr>
+                        </th:block>
+                        </tbody>
+                    </table>
+                    <!-- <div class="sc-dPPMrM fCtKbG">
+                         <img src="/assets/images/main_logo.png" alt="logo" class="sc-jWxkHr bLIbyr">
+                        <span class="sc-imDfJI hpzllv">후기를 작성가능한 이용내역이 없습니다.</span>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer th:replace="footer.html"></footer>
+</body>
+</html>

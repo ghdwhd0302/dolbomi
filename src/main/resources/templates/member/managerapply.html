@@ -58,10 +58,8 @@
                             </div>
                             <div>
                                 <p class="sc-iLVFha iIDnif">안내사항</p><br><a
-                                    href="https://www.notion.so/FAQ-cfe01db37c67472086b414a044ed6370"
-                                    target="_blank" class="sc-blIhvV jxqoZj">매니저 가이드</a><br><a
-                                    href="https://www.notion.so/01a7a20704d14289a4f6b93de6c56a04?v=b137c8389c66455eb89361fc99291539"
-                                    target="_blank" class="sc-blIhvV jxqoZj">매니저 FAQ</a>
+                                    href="/member/faq"
+                                    target="_blank" class="sc-blIhvV jxqoZj">FAQ</a>
                             </div>
                         </div>
                     </div>
@@ -76,6 +74,21 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
+    /*$(document).ready(function () {
+        //헤더 체크
+        $('.menu04').addClass('active');
+
+        //메인에서 링크로 접근
+        if (null != null) {
+            $('.form_sub_tab ul li').removeClass()
+            $('#null').addClass('current')
+            let tp = $('.current').attr('id')
+            dataLoad(tp)
+        }
+
+
+    })*/
+
     $("#btnLogin").click(function () {
         if (!$(this).attr('class').match('on')) {
             $(this).addClass('on');

@@ -143,7 +143,7 @@ public class UserController {
     }
 
 //    전체 목록 조회
-    @GetMapping("allReview")
+    @GetMapping("review")
     public void reviewList(){
 
     }
@@ -216,8 +216,20 @@ public class UserController {
     @GetMapping("regi2")
     public void regi2(){}
 
-    @GetMapping("review")
-    public void review(){}
+    @GetMapping("myReview")
+    public void myReview(){}
+
+    @GetMapping("modifyReview")
+    public void modifyReview(){}
+
+    @GetMapping("readReview")
+    public void readReview(){}
+
+/*    @GetMapping("review")
+    public void review(){}*/
+
+    @GetMapping("review1")
+    public void review1(){}
 
     @GetMapping("review2")
     public void review2(){}

@@ -280,7 +280,7 @@
                 <div class="dp_result">
                     <div class="column">
                         <div class="button_wrap">
-                            <a href="" id="regCard" class="primary">카드등록</a>
+                            <a  id="regCard" class="primary">카드등록</a>
                         </div>
                     </div>
                 </div>
@@ -300,5 +300,76 @@
     <!-- //button_wrap -->
 </div>
 <footer th:replace="footer.html"></footer>
+<div class="form_wrap">
+    <div id="card_info" class="popup_layer" style="display:none">
+        <div class="layer_wrap card_info">
+            <div class="layer_title">
+                <p>카드정보</p>
+                <a class="layer_close" href="#none" onclick="close_layer('card_info');"></a>
+            </div>
+            <div class="layer_contents">
+                <div class="form_wrap">
+                    <div class="dp_result full">
+                        <div class="column">
+                            <p>카드번호</p>
+                            <div class="dp_flex">
+                                <input type="number" id="cardNo1" maxlength="4" oninput="gfn_maxLengthCheck(this)" placeholder="0000">
+                                <label>-</label>
+                                <input type="number" id="cardNo2" maxlength="4" oninput="gfn_maxLengthCheck(this)" placeholder="0000">
+                                <label>-</label>
+                                <input type="password" id="cardNo3" maxlength="4" oninput="gfn_maxLengthCheck(this)" placeholder="****">
+                                <label>-</label>
+                                <input type="number" id="cardNo4" maxlength="4" oninput="gfn_maxLengthCheck(this)" placeholder="0000">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dp_result full">
+                        <div class="column">
+                            <p>유효기간</p>
+                            <div class="dp_flex">
+                                <input type="number" id="cardExpMonth" maxlength="2" oninput="gfn_maxLengthCheck(this)" placeholder="MM">
+                                <label>/</label>
+                                <input type="number" id="cardExpYear" maxlength="2" oninput="gfn_maxLengthCheck(this)" placeholder="YY">
+                            </div>
+                        </div>
+                        <div class="column">
+                            <p>CVC</p>
+                            <div class="dp_flex">
+                                <input type="number" id="cardCvc" maxlength="3" oninput="gfn_maxLengthCheck(this)" placeholder="카드뒷면 3자리 숫자">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dp_result full">
+                        <div class="column">
+                            <p>카드비밀번호</p>
+                            <div class="dp_flex">
+                                <input type="number" id="cardPw" maxlength="2" oninput="gfn_maxLengthCheck(this)" placeholder="비밀번호 앞 2자리 숫자">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- button_wrap -->
+                <div class="button_wrap">
+                    <a href="javascript:void(0);" id="regist-card" class="btn_page">등록</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
+<script>
+
+    $('#regCard').click(function (){
+        window.scrollTo(0,0);
+        $("body").css("overflow-y", "hidden");
+        $(".popup_layer").css("display", "flex");
+    });
+
+
+    $(".layer_close").on('click', function(){
+        $("body").css("overflow-y", "visible");
+        $(".popup_layer").css("display", "none");
+    })
+</script>
 </html>
