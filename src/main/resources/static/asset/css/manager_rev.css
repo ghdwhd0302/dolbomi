@@ -656,5 +656,7 @@ input[type="hidden"] + input {
     font-weight: 600;
 }
 
-
+footer{
+    margin-top: 120px!important;
+}
 

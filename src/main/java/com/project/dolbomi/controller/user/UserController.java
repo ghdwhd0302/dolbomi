@@ -140,7 +140,7 @@ public class UserController {
     }
 
 //    전체 목록 조회
-    @GetMapping("allReview")
+    @GetMapping("review")
     public void reviewList(){
 
     }
@@ -213,8 +213,8 @@ public class UserController {
     @GetMapping("regi2")
     public void regi2(){}
 
-    @GetMapping("review")
-    public void review(){}
+/*    @GetMapping("review")
+    public void review(){}*/
 
     @GetMapping("review2")
     public void review2(){}
