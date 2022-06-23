@@ -16,7 +16,7 @@ public class AccReservationDAO {
     }
     //    동행서비스 예약하기
     public void accReservation(AccReservationVO accReservationVO){
-
+        accReservationMapper.insert(accReservationVO);
     }
     //    동행서비스 예약정보확인
     public void accReservationInfo(Long accReservationNum){

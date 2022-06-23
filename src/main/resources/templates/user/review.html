@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:div="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -31,7 +31,7 @@
                                     <p>고객님의 소중한 후기를 통해 더욱 발전하는</p>
                                     <p> 돌보미가 되겠습니다.</p>
                                 </div>
-                                <div class="sc-OxbzP jqycvF" onclick="location.href='/user/review1'">후기 작성하기</div>
+                                <div class="sc-OxbzP jqycvF" onclick="location.href='/user/review2'">후기 작성하기</div>
                                 <div class="sc-OxbzP jqycvM" onclick="location.href='/user/myReview'">내가 쓴 후기</div>
                             </div>
                             <div class="sc-bSbAYC grytNP img-cover">
@@ -42,8 +42,8 @@
                         </div>
                     </div>
                     <div class="sc-fvLVrH kYHgeC inner-container" style="padding: 22px 0;">
-                        <div class="sc-hvvHee gWkDAg"><span>123</span>건</div>
-                        <div class="sc-eSePXt kAYtzd">
+                        <div class="sc-hvvHee gWkDAg"><span></span>건</div>
+                        <div class="sc-eSePXt kAYtzd tHead">
                             <div class="sc-dXfzlN fFlvkp" style="width: 40px;">번호</div>
                             <div class="sc-dXfzlN fFlvkp" style="flex: 1 1 0%;">서비스</div>
                             <div class="sc-dXfzlN fFlvkp" style="flex: 1 1 0%;">제목</div>
@@ -51,219 +51,31 @@
                             <!-- <div class="sc-dXfzlN sc-aewfc QKal" style="width: 120px;">별점</div> -->
                             <div class="sc-dXfzlN sc-aewfc QKal" style="width: 152px;">작성일</div>
                         </div>
-                        <div class="ant-collapse ant-collapse-borderless ant-collapse-icon-position-right" style="border: 0;">
-                            <div class="ant-collapse-item ant-collapse-item-active"
-                                 style="background-color: rgb(255, 255, 255); border-color: rgb(230, 230, 230);">
+                        <div class="ant-collapse ant-collapse-borderless ant-collapse-icon-position-right" style="border: 0; background-color: white">
+                            <div:block th:each="review:${reviewList}" class="ant-collapse-item ant-collapse-item-active"
+                                       style="background-color: rgb(255, 255, 255); border-color: rgb(230, 230, 230);">
                                 <div class="ant-collapse-header header1" role="button" tabindex="0" aria-expanded="true">
-                                    <div class="sc-iIHjhz mRfGE">
-                                        <div class="sc-jHZirH djaPsR" style="width: 40px;">123</div>
-                                        <div class="sc-jHZirH SOOpQ" style="width: 80px;">Basic</div>
-                                        <div class="sc-jHZirH bvbmoW title" style="flex: 1 1 0%;">두번째이며, 잘다녀왔습니다.
+                                    <div class="sc-iIHjhz mRfGE tBody" th:object="${review}">
+                                        <div class="sc-jHZirH djaPsR reviewNum" th:text="*{reviewNum}" style="width: 40px;"></div>
+                                        <div class="sc-jHZirH SOOpQ reviewType" th:text="*{reviewType}" style="width: 80px;"></div>
+                                        <div class="sc-jHZirH bvbmoW reviewTitle" th:text="*{reviewTitle}" style="flex: 1 1 0%;">
                                         </div>
-                                        <div class="sc-jHZirH fIWREi" style="width: 80px;">이근홍</div>
-                                        <!-- <div class="sc-jHZirH cNrcOz" style="width: 120px;"><img
-                                                src="asset/img/icon_active_star.png" alt="active-star"
-                                                class="sc-isBZXS eEfpLi"><img
-                                                src="asset/img/icon_active_star.png" alt="active-star"
-                                                class="sc-isBZXS eEfpLi"><img
-                                                src="asset/img/icon_active_star.png" alt="active-star"
-                                                class="sc-isBZXS eEfpLi"><img
-                                                src="asset/img/icon_active_star.png" alt="active-star"
-                                                class="sc-isBZXS eEfpLi"><img
-                                                src="asset/img/icon_active_star.png" alt="active-star"
-                                                class="sc-isBZXS eEfpLi"></div> -->
-                                        <div class="sc-jHZirH iGzNxi" style="width: 152px;">2022-06-09</div>
+                                        <div class="sc-jHZirH fIWREi reviewWriter" th:text="*{reviewWriter}" style="width: 80px;"></div>
+                                        <div class="sc-jHZirH iGzNxi reviewDate" th:text="*{reviewDate}" style="width: 152px;"></div>
                                     </div>
                                 </div>
                                 <div class="ant-collapse-content ant-collapse-content-active box1" style="display:none">
                                     <div class="ant-collapse-content-box ">
-                                        <div class="sc-dKEPtC jwEkpD">
-                                            <div class="sc-dwztqd duNrVg"><!-- <span
-                                                        class="sc-fgrSAo hLKnoJ">이근홍</span><span
-                                                        style="margin-right: 18px;"><img
-                                                            src="asset/img/icon_active_star.png" alt="active-star"
-                                                            class="sc-isBZXS eEfpLi"><img
-                                                            src="asset/img/icon_active_star.png" alt="active-star"
-                                                            class="sc-isBZXS eEfpLi"><img
-                                                            src="asset/img/icon_active_star.png" alt="active-star"
-                                                            class="sc-isBZXS eEfpLi"><img
-                                                            src="asset/img/icon_active_star.png" alt="active-star"
-                                                            class="sc-isBZXS eEfpLi"><img
-                                                            src="asset/img/icon_active_star.png" alt="active-star"
-                                                            class="sc-isBZXS eEfpLi"></span> --><span
-                                                    class="sc-fgrSAo hLKnoJ">2022-06-09</span></div>
-                                            <p class="sc-dBAPYN heEFhe"><span>두번째 후기입니다.<br></span><span>정확히 약속시간에
-                                                        도착해주셨습니다.<br></span><span>리포트에서 혹여나 놓친점도 기록해주셔서 좋습니다.<br></span>
+                                        <div class="sc-dKEPtC jwEkpD" th:object="${review}">
+
+                                            <p class="sc-dBAPYN heEFhe reviewContent" th:text="*{reviewContent}"><span><br></span><span>
+                                                        <br></span><span><br></span>
                                             </p>
-                                            <p class="sc-dBAPYN heEFhe" style="margin-top: 8px;">(담당 메이트: 김상철)</p>
+                                            <p class="sc-dBAPYN heEFhe manager_name" style="margin-top: 8px;"></p>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="ant-collapse-item ant-collapse-item-active"
-                                 style="background-color: rgb(255, 255, 255); border-color: rgb(230, 230, 230);">
-                                <div class="ant-collapse-header header2" role="button" tabindex="0" aria-expanded="true">
-                                    <div class="sc-iIHjhz mRfGE">
-                                        <div class="sc-jHZirH djaPsR" style="width: 40px;">122</div>
-                                        <div class="sc-jHZirH SOOpQ" style="width: 80px;">Basic</div>
-                                        <div class="sc-jHZirH bvbmoW title" style="flex: 1 1 0%;">감사합니다 </div>
-                                        <div class="sc-jHZirH fIWREi" style="width: 80px;">이은경 </div>
-                                        <!-- <div class="sc-jHZirH cNrcOz" style="width: 120px;"><img
-                                                src="asset/img/icon_active_star.png" alt="active-star"
-                                                class="sc-isBZXS eEfpLi"><img
-                                                src="asset/img/icon_active_star.png" alt="active-star"
-                                                class="sc-isBZXS eEfpLi"><img
-                                                src="asset/img/icon_active_star.png" alt="active-star"
-                                                class="sc-isBZXS eEfpLi"><img
-                                                src="asset/img/icon_active_star.png" alt="active-star"
-                                                class="sc-isBZXS eEfpLi"><img
-                                                src="asset/img/icon_active_star.png" alt="active-star"
-                                                class="sc-isBZXS eEfpLi"></ div>-->
-                                        <div class="sc-jHZirH iGzNxi" style="width: 152px;">2022-05-17</div>
-                                    </div>
-                                </div>
-                                <div class="ant-collapse-content ant-collapse-content-active box2" style="display:none">
-                                    <div class="ant-collapse-content-box ">
-                                        <div class="sc-dKEPtC jwEkpD">
-                                            <div class="sc-dwztqd duNrVg"><span class="sc-fgrSAo hLKnoJ">이은경
-                                                    </span><!-- <span style="margin-right: 18px;"><img
-                                                            src="asset/img/icon_active_star.png" alt="active-star"
-                                                            class="sc-isBZXS eEfpLi"><img
-                                                            src="asset/img/icon_active_star.png" alt="active-star"
-                                                            class="sc-isBZXS eEfpLi"><img
-                                                            src="asset/img/icon_active_star.png" alt="active-star"
-                                                            class="sc-isBZXS eEfpLi"><img
-                                                            src="asset/img/icon_active_star.png" alt="active-star"
-                                                            class="sc-isBZXS eEfpLi"><img
-                                                            src="asset/img/icon_active_star.png" alt="active-star"
-                                                            class="sc-isBZXS eEfpLi"></span> --><span
-                                                    class="sc-fgrSAo hLKnoJ">2022-05-17</span></div>
-                                            <p class="sc-dBAPYN heEFhe"><span>친절한 메이트님과 중간 중간 문자로 상황 알려주셔서 매우
-                                                        만족합니다.<br></span></p>
-                                            <p class="sc-dBAPYN heEFhe" style="margin-top: 8px;">(담당 메이트: 윤지연)</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="ant-collapse-item ant-collapse-item-active"
-                                 style="background-color: rgb(255, 255, 255); border-color: rgb(230, 230, 230);">
-                                <div class="ant-collapse-header header3" role="button" tabindex="0" aria-expanded="true">
-                                    <div class="sc-iIHjhz mRfGE">
-                                        <div class="sc-jHZirH djaPsR" style="width: 40px;">121</div>
-                                        <div class="sc-jHZirH SOOpQ" style="width: 80px;">Basic</div>
-                                        <div class="sc-jHZirH bvbmoW title" style="flex: 1 1 0%;">선생님 정말 감사했습니다
-                                        </div>
-                                        <div class="sc-jHZirH fIWREi" style="width: 80px;">김선형</div>
-                                        <!-- <div class="sc-jHZirH cNrcOz" style="width: 120px;"><img
-                                                src="asset/img/icon_active_star.png" alt="active-star"
-                                                class="sc-isBZXS eEfpLi"><img
-                                                src="asset/img/icon_active_star.png" alt="active-star"
-                                                class="sc-isBZXS eEfpLi"><img
-                                                src="asset/img/icon_active_star.png" alt="active-star"
-                                                class="sc-isBZXS eEfpLi"><img
-                                                src="asset/img/icon_active_star.png" alt="active-star"
-                                                class="sc-isBZXS eEfpLi"><img
-                                                src="asset/img/icon_active_star.png" alt="active-star"
-                                                class="sc-isBZXS eEfpLi"></div> -->
-                                        <div class="sc-jHZirH iGzNxi" style="width: 152px;">2022-05-10</div>
-                                    </div>
-                                </div>
-                                <div class="ant-collapse-content ant-collapse-content-active box3" style="display:none">
-                                    <div class="ant-collapse-content-box ">
-                                        <div class="sc-dKEPtC jwEkpD">
-                                            <div class="sc-dwztqd duNrVg"><span
-                                                    class="sc-fgrSAo hLKnoJ">김선형</span><!-- <span
-                                                        style="margin-right: 18px;"><img
-                                                            src="asset/img/icon_active_star.png" alt="active-star"
-                                                            class="sc-isBZXS eEfpLi"><img
-                                                            src="asset/img/icon_active_star.png" alt="active-star"
-                                                            class="sc-isBZXS eEfpLi"><img
-                                                            src="asset/img/icon_active_star.png" alt="active-star"
-                                                            class="sc-isBZXS eEfpLi"><img
-                                                            src="asset/img/icon_active_star.png" alt="active-star"
-                                                            class="sc-isBZXS eEfpLi"><img
-                                                            src="asset/img/icon_active_star.png" alt="active-star"
-                                                            class="sc-isBZXS eEfpLi"></span> --><span
-                                                    class="sc-fgrSAo hLKnoJ">2022-05-10</span></div>
-                                            <p class="sc-dBAPYN heEFhe"><span>급히 부탁드렸는데 동행해주시기로 해서 정말 다행이었어요. 따뜻하고
-                                                        차분한 음성을 들으니 안심이 되었고요<br></span><span>제가 걱정이 많아 여러가지 부탁을 드렸는데도 다
-                                                        챙겨 질문해주시고 진료 받은 내용 세심하게 설명해주시고 약처방까지 도움주셔서 무척 감사했습니다 다음에도 병원 가실
-                                                        때 동행 부탁드리고 싶습니다<br></span></p>
-                                            <p class="sc-dBAPYN heEFhe" style="margin-top: 8px;">(담당 메이트: 김미숙)</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="ant-collapse-item"
-                                 style="background-color: rgb(255, 255, 255); border-color: rgb(230, 230, 230);">
-                                <div class="ant-collapse-header" role="button" tabindex="0" aria-expanded="false">
-                                    <div class="sc-iIHjhz mRfGE">
-                                        <div class="sc-jHZirH djaPsR" style="width: 40px;">120</div>
-                                        <div class="sc-jHZirH SOOpQ" style="width: 80px;">Basic</div>
-                                        <div class="sc-jHZirH bvbmoW title" style="flex: 1 1 0%;">병원 내 동행서비스</div>
-                                        <div class="sc-jHZirH fIWREi" style="width: 80px;">송창근</div>
-                                        <!-- div class="sc-jHZirH cNrcOz" style="width: 120px;"><img
-                                                src="asset/img/icon_active_star.png" alt="active-star"
-                                                class="sc-isBZXS eEfpLi"><img
-                                                src="asset/img/icon_active_star.png" alt="active-star"
-                                                class="sc-isBZXS eEfpLi"><img
-                                                src="asset/img/icon_active_star.png" alt="active-star"
-                                                class="sc-isBZXS eEfpLi"><img
-                                                src="asset/img/icon_active_star.png" alt="active-star"
-                                                class="sc-isBZXS eEfpLi"><img
-                                                src="asset/img/icon_active_star.png" alt="active-star"
-                                                class="sc-isBZXS eEfpLi"></div> -->
-                                        <div class="sc-jHZirH iGzNxi" style="width: 152px;">2022-05-09</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="ant-collapse-item"
-                                 style="background-color: rgb(255, 255, 255); border-color: rgb(230, 230, 230);">
-                                <div class="ant-collapse-header" role="button" tabindex="0" aria-expanded="false">
-                                    <div class="sc-iIHjhz mRfGE">
-                                        <div class="sc-jHZirH djaPsR" style="width: 40px;">119</div>
-                                        <div class="sc-jHZirH SOOpQ" style="width: 80px;">Basic</div>
-                                        <div class="sc-jHZirH bvbmoW title" style="flex: 1 1 0%;">서비스가 훌륭해요</div>
-                                        <div class="sc-jHZirH fIWREi" style="width: 80px;">김영주</div>
-                                        <!-- <div class="sc-jHZirH cNrcOz" style="width: 120px;"><img
-                                                src="asset/img/icon_active_star.png" alt="active-star"
-                                                class="sc-isBZXS eEfpLi"><img
-                                                src="asset/img/icon_active_star.png" alt="active-star"
-                                                class="sc-isBZXS eEfpLi"><img
-                                                src="asset/img/icon_active_star.png" alt="active-star"
-                                                class="sc-isBZXS eEfpLi"><img
-                                                src="asset/img/icon_active_star.png" alt="active-star"
-                                                class="sc-isBZXS eEfpLi"><img
-                                                src="asset/img/icon_active_star.png" alt="active-star"
-                                                class="sc-isBZXS eEfpLi"></div> -->
-                                        <div class="sc-jHZirH iGzNxi" style="width: 152px;">2022-05-09</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="ant-collapse-item"
-                                 style="background-color: rgb(255, 255, 255); border-color: rgb(230, 230, 230);">
-                                <div class="ant-collapse-header" role="button" tabindex="0" aria-expanded="false">
-                                    <div class="sc-iIHjhz mRfGE">
-                                        <div class="sc-jHZirH djaPsR" style="width: 40px;">118</div>
-                                        <div class="sc-jHZirH SOOpQ" style="width: 80px;">Pro</div>
-                                        <div class="sc-jHZirH bvbmoW title" style="flex: 1 1 0%;">위드메이트 처음 이용 후기입니다.
-                                        </div>
-                                        <div class="sc-jHZirH fIWREi" style="width: 80px;">최문정</div>
-                                        <!-- <div class="sc-jHZirH cNrcOz" style="width: 120px;"><img
-                                                src="asset/img/icon_active_star.png" alt="active-star"
-                                                class="sc-isBZXS eEfpLi"><img
-                                                src="asset/img/icon_active_star.png" alt="active-star"
-                                                class="sc-isBZXS eEfpLi"><img
-                                                src="asset/img/icon_active_star.png" alt="active-star"
-                                                class="sc-isBZXS eEfpLi"><img
-                                                src="asset/img/icon_active_star.png" alt="active-star"
-                                                class="sc-isBZXS eEfpLi"><img
-                                                src="asset/img/icon_active_star.png" alt="active-star"
-                                                class="sc-isBZXS eEfpLi"></div> -->
-                                        <div class="sc-jHZirH iGzNxi" style="width: 152px;">2022-04-29</div>
-                                    </div>
-                                </div>
-                            </div>
+                            </div:block>
                             <ul class="ant-pagination" unselectable="unselectable">
                                 <li title="Previous Page" class="ant-pagination-prev ant-pagination-disabled"
                                     aria-disabled="true"><button class="ant-pagination-item-link" type="button"

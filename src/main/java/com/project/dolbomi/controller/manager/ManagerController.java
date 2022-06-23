@@ -93,7 +93,11 @@ public class ManagerController {
     }
 
     @GetMapping("manager_rev")
-    public void manager_rev(){}
+    public String manager_rev(Criteria criteria, Model model){
+        model.addAttribute("applyList", managerService.getList(criteria));
+        model.addAttribute("pageDTO", new PageDTO(criteria, managerService.getTotal()));
+        return "/manager/manager_rev";
+    }
 
     @GetMapping("manageregi")
     public void manageregi(){}

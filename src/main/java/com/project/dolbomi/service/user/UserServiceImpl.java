@@ -1,7 +1,9 @@
 package com.project.dolbomi.service.user;
 
+import com.project.dolbomi.domain.dao.ReviewDAO;
 import com.project.dolbomi.domain.dao.UserDAO;
 import com.project.dolbomi.domain.vo.Criteria;
+import com.project.dolbomi.domain.vo.ReviewVO;
 import com.project.dolbomi.domain.vo.UserVO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -12,6 +14,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
     private final UserDAO userDAO;
+    private final ReviewDAO reviewDAO;
 
 
     @Override
@@ -63,5 +66,37 @@ public class UserServiceImpl implements UserService {
     @Override
     public int getTotal() {
         return userDAO.getTotal();
+    }
+
+    /*ReviewDAO*/
+    @Override
+    public List<ReviewVO> reviewGetList() {return reviewDAO.reviewGetList();}
+
+    @Override
+    public void register(ReviewVO reviewVO) {reviewDAO.register(reviewVO);}
+
+    @Override
+    public ReviewVO get(Long reviewNum) {
+        return reviewDAO.findByReviewNum(reviewNum);
+    }
+
+    //@Override
+    //public ReviewVO findByReviewNum(Long reviewNum) {
+    //    return reviewDAO.findByReviewNum(reviewNum);
+    //}
+
+    @Override
+    public boolean modify(ReviewVO reviewVO) {
+        return reviewDAO.modify(reviewVO);
+    }
+
+    @Override
+    public boolean reviewRemove(Long reviewNum) {
+        return reviewDAO.reviewRemove(reviewNum);
+    }
+
+    @Override
+    public int reviewGetTotal() {
+        return reviewDAO.reviewGetTotal();
     }
 }
