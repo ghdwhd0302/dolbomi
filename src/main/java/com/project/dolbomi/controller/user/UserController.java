@@ -1,7 +1,13 @@
 package com.project.dolbomi.controller.user;
 
+
+import com.project.dolbomi.domain.vo.AccReservationVO;
+import com.project.dolbomi.domain.vo.CareReservationVO;
+import com.project.dolbomi.service.member.MemberService;
+
 import com.project.dolbomi.domain.vo.Criteria;
 import com.project.dolbomi.domain.vo.PageDTO;
+
 import com.project.dolbomi.service.user.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -10,13 +16,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.servlet.view.RedirectView;
 
 @Controller
 @Slf4j
 @RequiredArgsConstructor
 @RequestMapping("/user/*")
 public class UserController {
-    private final UserService userService;
+    private final MemberService memberService;
 
 //    회원가입1
 //    @GetMapping("ujoin1")
@@ -69,8 +77,11 @@ public class UserController {
 //    }
 
     @PostMapping("reservAcc")
-    public String accReservation(){
-        return "/user/user_userdetails";
+    public RedirectView accReservation(AccReservationVO accReservationVO){
+
+        memberService.accReservation(accReservationVO);
+
+        return new RedirectView("/user/acc_confirmation");
     }
 
 //    돌봄 서비스 예약
@@ -80,8 +91,11 @@ public class UserController {
 //    }
 
     @PostMapping("reservCare")
-    public String careReservation(){
-        return "/user/user_userdetails";
+    public RedirectView careReservation(CareReservationVO careReservationVO) {
+
+        memberService.careReservation(careReservationVO);
+
+        return new RedirectView("/user/care_confirmation");
     }
 
 //    동행 서비스 결제
