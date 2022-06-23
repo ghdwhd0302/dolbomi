@@ -1,6 +1,7 @@
 package com.project.dolbomi.controller.member;
 
 import com.project.dolbomi.service.member.MemberService;
+import com.project.dolbomi.service.user.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/member/*")
 public class MemberController {
     private final MemberService memberService;
+    private final UserService userService;
 
 //    일반 아이디 찾기
 //    @GetMapping("userIdF")

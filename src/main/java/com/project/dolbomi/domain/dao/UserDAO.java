@@ -36,6 +36,11 @@ public class UserDAO {
         userMapper.insert(userVO);
     }
 
+    // 회원 로그인
+    public void login(UserVO userVO){
+
+    }
+
     //회원 탈퇴
     public void withdrawal(String userEmail){
 

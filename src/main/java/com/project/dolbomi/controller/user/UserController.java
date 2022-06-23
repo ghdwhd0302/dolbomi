@@ -1,21 +1,12 @@
 package com.project.dolbomi.controller.user;
-
-<<<<<<< HEAD
 import com.project.dolbomi.domain.vo.UserVO;
-=======
-
 import com.project.dolbomi.domain.vo.AccReservationVO;
 import com.project.dolbomi.domain.vo.CareReservationVO;
 import com.project.dolbomi.service.member.MemberService;
-
 import com.project.dolbomi.domain.vo.Criteria;
 import com.project.dolbomi.domain.vo.PageDTO;
-
 import com.project.dolbomi.domain.vo.ReviewVO;
 
-
-
->>>>>>> 972063606fcd921391a58d1f679df3916541c97a
 import com.project.dolbomi.service.user.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -24,17 +15,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-<<<<<<< HEAD
 import org.springframework.web.servlet.view.RedirectView;
-=======
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
-
-
 import javax.servlet.http.HttpServletRequest;
 
-
->>>>>>> 972063606fcd921391a58d1f679df3916541c97a
 
 @Controller
 @Slf4j
@@ -42,6 +27,7 @@ import javax.servlet.http.HttpServletRequest;
 @RequestMapping("/user/*")
 public class UserController {
     private final MemberService memberService;
+    private final UserService userService;
 
 //    회원가입1
 //    @GetMapping("ujoin1")
@@ -217,9 +203,6 @@ public class UserController {
     @GetMapping("regi2")
     public void regi2(){}
 
-
-
-
     @GetMapping("user_userdetails")
     public void user_userdetails(){}
 
@@ -228,7 +211,6 @@ public class UserController {
 
     @GetMapping("user_userdetails3")
     public void user_userdetails3(){}
-
 
     @GetMapping("user_userdetails4")
     public String user_userdetails4(Criteria criteria, Model model){

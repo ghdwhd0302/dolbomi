@@ -12,8 +12,11 @@ public interface AccReservationMapper {
     //    동행서비스 예약하기
     public void insert(AccReservationVO accReservationVO);
     //    동행서비스 예약정보확인
-    public AccReservationVO select(Long accreservationNum);
-    //    동행서비스 예약삭제
-    public int delete(Long accreservationNum);
+    public AccReservationVO select(Long accReservationNum);
+//    동행서비스 일반 예약 상태 변경
+public void userAccReservationStatus(Long accReservationNum);
+    //    동행서비스 매니저 예약 상태 변경
+    public void managerAccReservationStatus(Long accReservationNum);
+
 
 }

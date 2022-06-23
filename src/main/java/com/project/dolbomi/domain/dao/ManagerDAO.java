@@ -1,5 +1,6 @@
 package com.project.dolbomi.domain.dao;
 
+import com.project.dolbomi.domain.vo.ManagerVO;
 import com.project.dolbomi.mapper.ManagerMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
@@ -26,6 +27,14 @@ public class ManagerDAO {
     public void careApply(long careReservationNum){
 
     }
+
+    // 매니저 회원가입
+    public void join(ManagerVO managerVO){
+
+    }
+
+    // 매니저 로그인
+    public void login(ManagerVO managerVO){}
 
     //    매니저 탈퇴
     public void withdrawal(String userEmail){

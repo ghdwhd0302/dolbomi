@@ -58,34 +58,7 @@ public class MemberServiceImpl implements MemberService {
     }
 
 //    --------------------------------------------------------------------
-    /*ReviewDAO*/
-    @Override
-    public void reviewGetList() {
 
-    }
 
-    @Override
-    public void register(ReviewVO reviewVO) {
 
-    }
-
-    @Override
-    public void findByReviewNum(Long reviewNum) {
-
-    }
-
-    @Override
-    public void modify(ReviewVO reviewVO) {
-
-    }
-
-    @Override
-    public void reviewRemove(Long reviewNum) {
-
-    }
-
-    @Override
-    public void getTotal() {
-
-    }
 }
