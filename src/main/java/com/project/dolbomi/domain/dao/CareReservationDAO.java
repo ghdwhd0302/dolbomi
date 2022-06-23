@@ -16,7 +16,7 @@ public class CareReservationDAO {
     }
     //    돌봄서비스 예약하기
     public void careReservation(CareReservationVO careReservationVO){
-
+            careReservationMapper.insert(careReservationVO);
     }
     //    돌봄서비스 예약정보
     public void careReservationInfo(Long careReservationNum){
