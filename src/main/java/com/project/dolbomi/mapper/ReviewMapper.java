@@ -8,7 +8,7 @@ import java.util.List;
 @Mapper
 public interface ReviewMapper {
     //    게시글 목록
-    public List<ReviewVO> getList();
+    public List<ReviewVO> reviewGetList();
     //    게시글 추가
     public void insert(ReviewVO reviewVO);
     //    게시글 한 개 가져오기
@@ -18,5 +18,5 @@ public interface ReviewMapper {
     //    게시글 삭제
     public int delete(Long reviewNum);
     //    게시글 전체 개수
-    public int getTotal();
+    public int reviewGetTotal();
 }

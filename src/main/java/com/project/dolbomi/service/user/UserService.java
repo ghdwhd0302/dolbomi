@@ -2,6 +2,7 @@ package com.project.dolbomi.service.user;
 
 import com.project.dolbomi.domain.vo.Criteria;
 import com.project.dolbomi.domain.vo.ManagerVO;
+import com.project.dolbomi.domain.vo.ReviewVO;
 import com.project.dolbomi.domain.vo.UserVO;
 import org.springframework.stereotype.Service;
 
@@ -37,4 +38,26 @@ public interface UserService {
     public List<UserVO> getList(Criteria criteria);
 
     public int getTotal();
+
+    /*ReviewDAO*/
+    //    게시글 목록
+    public List<ReviewVO> reviewGetList();
+
+    //    게시글 추가
+    public void register(ReviewVO reviewVO);
+
+    //    게시글 한 개 가져오기
+    // dao에서는 이름 findByReviewNum
+    public ReviewVO get(Long reviewNum);
+
+    //    게시글 수정
+    public boolean modify(ReviewVO reviewVO);
+
+    //    게시글 삭제
+    public boolean reviewRemove(Long reviewNum);
+
+    //    게시글 전체 개수
+    public int reviewGetTotal();
+
+
 }
