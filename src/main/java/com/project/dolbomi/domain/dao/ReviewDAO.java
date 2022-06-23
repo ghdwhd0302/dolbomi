@@ -5,34 +5,39 @@ import com.project.dolbomi.mapper.ReviewMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 @RequiredArgsConstructor
 public class ReviewDAO {
     private final ReviewMapper reviewMapper;
 
     //    게시글 목록
-    public void reviewGetList(){
-
+    public List<ReviewVO> reviewGetList(){
+        return reviewMapper.reviewGetList();
     }
+
     //    게시글 추가
     public void register(ReviewVO reviewVO){
-
+        reviewMapper.insert(reviewVO);
     }
-    //    게시글 한 개 가져오기
-    public void findByReviewNum(Long reviewNum){
 
+    //    게시글 한 개 가져오기
+    public ReviewVO findByReviewNum(Long reviewNum){
+        return reviewMapper.select(reviewNum);
     }
     //    게시글 수정
-    public void modify(ReviewVO reviewVO){
-
+    public boolean modify(ReviewVO reviewVO){
+        return reviewMapper.update(reviewVO) == 1;
     }
     //    게시글 삭제
-    public void reviewRemove(Long reviewNum){
-
+    public boolean reviewRemove(Long reviewNum){
+        return reviewMapper.delete(reviewNum) == 1;
     }
     //    게시글 전체 개수
-    public void getTotal(){
-
+    public int reviewGetTotal(){
+        return reviewMapper.reviewGetTotal();
     }
+
 
 }

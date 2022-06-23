@@ -8,6 +8,10 @@ import com.project.dolbomi.service.member.MemberService;
 import com.project.dolbomi.domain.vo.Criteria;
 import com.project.dolbomi.domain.vo.PageDTO;
 
+import com.project.dolbomi.domain.vo.ReviewVO;
+
+
+
 import com.project.dolbomi.service.user.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -18,6 +22,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
+
+
+import javax.servlet.http.HttpServletRequest;
+
+
 
 @Controller
 @Slf4j
@@ -156,46 +165,6 @@ public class UserController {
 
     }
 
-//    전체 목록 조회
-    @GetMapping("review")
-    public void reviewList(){
-
-    }
-
-//    리뷰 작성
-//    @GetMapping("writeReview")
-//    public void reviewWrite(){
-//
-//    }
-
-    @PostMapping("writeReview")
-    public String reviewWrite(){
-        return "/user/writeReview";
-    }
-
-//    리뷰 조회
-    @GetMapping("viewReview")
-    public void reviewRead(){
-
-    }
-
-//    리뷰 수정
-//    @GetMapping("modifyReview")
-//    public void reviewUpdate(){
-//
-//    }
-
-    @PostMapping("modifyReview")
-    public String reviewUpdate(){
-        return "/user/modifyReview";
-    }
-
-//    리뷰 삭제
-    @GetMapping("delReview")
-    public void reviewDelete(){
-
-    }
-
 //    페이지 이동
     @GetMapping("acc_reservation1")
     public void acc_reservation1(){}
@@ -230,23 +199,8 @@ public class UserController {
     @GetMapping("regi2")
     public void regi2(){}
 
-    @GetMapping("myReview")
-    public void myReview(){}
 
-    @GetMapping("modifyReview")
-    public void modifyReview(){}
 
-    @GetMapping("readReview")
-    public void readReview(){}
-
-/*    @GetMapping("review")
-    public void review(){}*/
-
-    @GetMapping("review1")
-    public void review1(){}
-
-    @GetMapping("review2")
-    public void review2(){}
 
     @GetMapping("user_userdetails")
     public void user_userdetails(){}
@@ -265,6 +219,65 @@ public class UserController {
         return "/user/user_userdetails4";
     }
 
+    @GetMapping("review2")
+    public void register(){}
 
+    @GetMapping("myReview")
+    public void myReview(){}
+
+    @GetMapping("review")
+    public String reviewGetList(Model model){
+        log.info("---------------------");
+        log.info("reviewGetList--------");
+        log.info("---------------------");
+
+        model.addAttribute("reviewList", userService.reviewGetList());
+        return "/user/review";
+    }
+
+    // 게시글 추가
+    @PostMapping("review2")
+    public RedirectView register(ReviewVO reviewVO, RedirectAttributes rttr){
+        log.info("----------------------------");
+        log.info("register............. : " + reviewVO);
+        log.info("----------------------------");
+
+        userService.register(reviewVO);
+        rttr.addFlashAttribute("boardNumber", reviewVO.getReviewNum());
+        return new RedirectView("/user/myReview");
+    }
+
+    //    게시글 상세보기
+    @GetMapping({"readReview", "modifyreview"})
+    public void readReview(Long reviewNum, HttpServletRequest req, Model model){
+        log.info("----------------------------");
+        log.info(req.getRequestURI() + "............. : " + reviewNum);
+        log.info("----------------------------");
+        model.addAttribute("reviewNum", userService.get(reviewNum));
+    }
+
+    // 수정
+    @PostMapping("modifyReview")
+    public RedirectView modifyReview(ReviewVO reviewVO, RedirectAttributes rttr) {
+        log.info("----------------------------");
+        log.info("modifyReview............. : " + reviewVO);
+        log.info("----------------------------");
+        userService.modify(reviewVO);
+        rttr.addAttribute("reviewNum", reviewVO.getReviewNum());
+        return new RedirectView("/board/readReview");
+
+
+    }
+
+
+    @GetMapping("reviewRemove")
+    public String reviewRemove(Long reviewNum, Model model){
+        log.info("----------------------------");
+        log.info("reviewRemove............. : " + reviewNum);
+        log.info("----------------------------");
+
+        userService.reviewRemove(reviewNum);
+        return reviewGetList(model);
+    }
 
 }
