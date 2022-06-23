@@ -22,9 +22,10 @@ public class AccReservationDAO {
     public void accReservationInfo(Long accReservationNum){
 
     }
-    //    동행서비스 예약삭제
-    public void accRemove(Long accReservationNum){
 
-    }
+    //    동행서비스 일반 예약 상태 변경
+    public void userAccReservationStatus(Long accReservationNum){}
+    //    동행서비스 매니저 예약 상태 변경
+    public void managerAccReservationStatus(Long accReservationNum){}
 
 }

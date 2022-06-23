@@ -36,23 +36,6 @@ public interface MemberService {
     public void careRemove(Long careReservationNum);
 
 //    ----------------------------------------------------------------------
-    /*ReviewDAO*/
-    //    게시글 목록
-    public void reviewGetList();
 
-    //    게시글 추가
-    public void register(ReviewVO reviewVO);
-
-    //    게시글 한 개 가져오기
-    public void findByReviewNum(Long reviewNum);
-
-    //    게시글 수정
-    public void modify(ReviewVO reviewVO);
-
-    //    게시글 삭제
-    public void reviewRemove(Long reviewNum);
-
-    //    게시글 전체 개수
-    public void getTotal();
 
 }

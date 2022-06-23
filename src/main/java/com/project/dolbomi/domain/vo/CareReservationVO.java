@@ -22,4 +22,5 @@ public class CareReservationVO {
     private String careReservationPrice; /*가격*/
     private String careReservationStatus; /*예약상태*/
     private String userEmail; /*사용자 이메일*/
+    private String managerEmail; /*매니저 이메일*/
 }

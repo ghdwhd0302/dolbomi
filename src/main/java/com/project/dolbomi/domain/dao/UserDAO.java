@@ -33,6 +33,11 @@ public class UserDAO {
 
     // 회원 가입
     public void join(UserVO userVO){
+        userMapper.insert(userVO);
+    }
+
+    // 회원 로그인
+    public void login(UserVO userVO){
 
     }
 

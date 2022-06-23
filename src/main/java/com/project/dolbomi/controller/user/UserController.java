@@ -1,16 +1,11 @@
 package com.project.dolbomi.controller.user;
-
-
+import com.project.dolbomi.domain.vo.UserVO;
 import com.project.dolbomi.domain.vo.AccReservationVO;
 import com.project.dolbomi.domain.vo.CareReservationVO;
 import com.project.dolbomi.service.member.MemberService;
-
 import com.project.dolbomi.domain.vo.Criteria;
 import com.project.dolbomi.domain.vo.PageDTO;
-
 import com.project.dolbomi.domain.vo.ReviewVO;
-
-
 
 import com.project.dolbomi.service.user.UserService;
 import lombok.RequiredArgsConstructor;
@@ -20,12 +15,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.view.RedirectView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
-
-
 import javax.servlet.http.HttpServletRequest;
-
 
 
 @Controller
@@ -34,6 +27,7 @@ import javax.servlet.http.HttpServletRequest;
 @RequestMapping("/user/*")
 public class UserController {
     private final MemberService memberService;
+    private final UserService userService;
 
 //    회원가입1
 //    @GetMapping("ujoin1")
@@ -41,8 +35,13 @@ public class UserController {
 //
 //    }
 
-    @PostMapping("ujoin1")
-    public String join1(){
+    @PostMapping("regi1")
+    public String join1(UserVO userVO){
+        log.info("---------------------------------------");
+        log.info("join1............. : " + userVO);
+        log.info("---------------------------------------");
+
+        userService.join(userVO);
         return "/user/regi2";
     }
 
@@ -63,8 +62,13 @@ public class UserController {
 //
 //    }
 
-    @PostMapping("ujoin2")
-    public String join2(){
+    @PostMapping("regi2")
+    public String join2(UserVO userVO){
+        log.info("---------------------------------------");
+        log.info("join1............. : " + userVO);
+        log.info("---------------------------------------");
+
+        userService.join(userVO);
         return "/member/mainpage";
     }
 
@@ -199,9 +203,6 @@ public class UserController {
     @GetMapping("regi2")
     public void regi2(){}
 
-
-
-
     @GetMapping("user_userdetails")
     public void user_userdetails(){}
 
@@ -210,7 +211,6 @@ public class UserController {
 
     @GetMapping("user_userdetails3")
     public void user_userdetails3(){}
-
 
     @GetMapping("user_userdetails4")
     public String user_userdetails4(Criteria criteria, Model model){

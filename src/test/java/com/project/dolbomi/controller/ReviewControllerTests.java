@@ -2,9 +2,11 @@ package com.project.dolbomi.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
@@ -21,10 +23,10 @@ public class ReviewControllerTests {
         mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
     }
 
-//    @Test
-//    public void getListTest() throws Exception {      // 가져온다의 get이 아니라 매서드 이름이 get
-//        log.info(mockMvc.perform(MockMvcRequestBuilders.get("/user/review")).andReturn().getModelAndView().getModelMap().toString());
-//    }   //                                                                         -> enter의 key event를 자바에서는 return
+    @Test
+    public void getListTest() throws Exception {      // 가져온다의 get이 아니라 매서드 이름이 get
+        log.info(mockMvc.perform(MockMvcRequestBuilders.get("/user/review")).andReturn().getModelAndView().getModelMap().toString());
+    }   //                                                                         -> enter의 key event를 자바에서는 return
 
 //    @Test
 //    public void registerTest() throws Exception {

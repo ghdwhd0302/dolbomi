@@ -39,7 +39,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void join(UserVO userVO) {
-
+        userDAO.join(userVO);
     }
 
     @Override

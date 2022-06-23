@@ -23,4 +23,5 @@ public class AccReservationVO {
     private String accReservationPrice; /*가격*/
     private String accReservationStatus; /*예약 상태*/
     private String userEmail; /*사용자 이메일*/
+    private String managerEmail; /*매니저 이메일*/
 }
