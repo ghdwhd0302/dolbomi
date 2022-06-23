@@ -1,5 +1,6 @@
 package com.project.dolbomi.controller.user;
 
+import com.project.dolbomi.domain.vo.UserVO;
 import com.project.dolbomi.service.user.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -8,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.view.RedirectView;
 
 @Controller
 @Slf4j
@@ -22,8 +24,13 @@ public class UserController {
 //
 //    }
 
-    @PostMapping("ujoin1")
-    public String join1(){
+    @PostMapping("regi1")
+    public String join1(UserVO userVO){
+        log.info("---------------------------------------");
+        log.info("join1............. : " + userVO);
+        log.info("---------------------------------------");
+
+        userService.join(userVO);
         return "/user/regi2";
     }
 
@@ -44,8 +51,13 @@ public class UserController {
 //
 //    }
 
-    @PostMapping("ujoin2")
-    public String join2(){
+    @PostMapping("regi2")
+    public String join2(UserVO userVO){
+        log.info("---------------------------------------");
+        log.info("join1............. : " + userVO);
+        log.info("---------------------------------------");
+
+        userService.join(userVO);
         return "/member/mainpage";
     }
 

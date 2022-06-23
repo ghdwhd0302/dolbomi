@@ -33,7 +33,7 @@ public class UserDAO {
 
     // 회원 가입
     public void join(UserVO userVO){
-
+        userMapper.insert(userVO);
     }
 
     //회원 탈퇴

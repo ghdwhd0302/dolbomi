@@ -7,16 +7,16 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface UserMapper {
     // 돌봄서비스 수락
-    public int careapprove(long carereservationNum);
+    public int careApprove(long careReservationNum);
 
     // 돌봄서비스 거절
-    public int carerefuse(long carereservationNum);
+    public int careRefuse(long careReservationNum);
 
     // 동행서비스 수락
-    public int accapprove(long accreservationNum);
+    public int accApprove(long accReservationNum);
 
     // 동행서비스 거절
-    public int accrefuse(long accreservationNum);
+    public int accRefuse(long accReservationNum);
 
     // 회원 가입
     public void insert(UserVO userVO);
