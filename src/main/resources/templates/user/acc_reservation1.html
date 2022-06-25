@@ -57,17 +57,21 @@
     </div>
     <div class="sc-bhlBdH bCJAMY">
         <div class="sc-AnqlK ctKjik">
+           <form method="post" action="/user/acc_reservation2" name="accForm1" style="position: relative">
+               <input type="hidden" name="userEmail">   
+               <input type="hidden" name="accReservationType">
+               <input type="hidden" name="accReservationGender">
+               <input type="hidden" name="accReservationEndAddress">
+               <input type="hidden" name="accReservationStartAddress">
+               <input type="hidden" name="accReservationRelation">
             <h3 class="sc-keFjpB gbVVya">
                 매칭 신청을 시작해볼까요?
             </h3>
-            <div class="sc-VigVT lafcRZ">
-
-            </div>
             <div class="sc-fjdhpX hoWkSp">
                 동행 서비스 선택하기
                 <br>
                 <br>
-                <select id="serviceDtlCd" name="serviceDtlCd" style=" width: 100%;
+                <select id="accReservationType" name="accReservationTypeSelect" style=" width: 100%;
                      height: 37px;
                      font-size: 13px;
                      font-weight: 700;
@@ -76,23 +80,18 @@
                      padding-left: 10px!important;
                      border-color: rgb(233, 233, 233);
                  ">
-                    <option data-high-code="SV20" value="SD40">외래진료</option>
-                    <option data-high-code="SV20" value="SD45">정기검진</option>
-                    <option data-high-code="SV20" value="SD50">투석전용</option>
-                    <option data-high-code="SV20" value="SD70">One Day</option>
-                    <option data-high-code="SV20" value="SD90">기타동행</option>
+                    <option data-high-code="SV20" value="">선택</option>
+                    <option data-high-code="SV20" value="외래진료">외래진료</option>
+                    <option data-high-code="SV20" value="정기검진">정기검진</option>
+                    <option data-high-code="SV20" value="투석전용">투석전용</option>
+                    <option data-high-code="SV20" value="One Day">One Day</option>
+                    <option data-high-code="SV20" value="기타동행">기타동행</option>
                 </select>
-            </div>
-            <div class="sc-VigVT lafcRZ">
-
             </div>
             <div class="sc-dxgOiQ ifseQn" style="justify-content: space-between;">
                     <span class="sc-crNyjn hEIVhP" style="margin-top: 0px; margin-bottom: 0px;">
                          정보 입력
                     </span>
-            </div>
-            <div class="sc-VigVT ffyjKW">
-
             </div>
             <div class="sc-dxgOiQ iQRFrD">
                 <div style="flex: 1 1 0%;">
@@ -100,7 +99,7 @@
                         <span>* </span>
                         성함
                     </div>
-                    <input type="text" placeholder="홍길동" maxlength="24" name="patient" class="ant-input sc-jzJRlG iaafvp" value="" style="padding: 0px 11px;">
+                    <input type="text" placeholder="이름 입력" maxlength="24" name="accReservationName" class="ant-input sc-jzJRlG iaafvp" value="" style="padding: 0px 11px;">
                 </div>
                 <div style="flex: 1 1 0%;">
                     <div class="sc-fjdhpX hoWkSp">
@@ -108,7 +107,7 @@
                         나이
                     </div>
                     <span class="ant-input-affix-wrapper sc-jzJRlG iaafvp">
-                            <input type="text" maxlength="2" placeholder="50" name="age" class="ant-input" value="">
+                            <input type="text" maxlength="2" placeholder="50" name="accReservationAge" class="ant-input" value="">
                             <span class="ant-input-suffix" style="font-size: 13px;">세</span>
                         </span>
                 </div>
@@ -120,14 +119,14 @@
                         <span>* </span>
                         연락처
                     </div>
-                    <input type="text" style="padding: 0px 11px;" maxlength="11" placeholder="ex) 01029791234" name="contact" class="ant-input sc-jzJRlG iaafvp" value=""></div><div style="flex: 1 1 0%;">
+                    <input type="text" style="padding: 0px 11px;" maxlength="11" placeholder="ex) 01012341234" name="accReservationPhoneNum" class="ant-input sc-jzJRlG iaafvp" value=""></div><div style="flex: 1 1 0%;">
                 <div class="sc-fjdhpX hoWkSp">
                     <span>* </span>
                     성별
                 </div>
                 <div class="sc-ekkqgF dxikPE div1" >
-                    <span class="inactive div2">남성</span>
-                    <span class="inactive div2">여성</span>
+                    <span class="inactive div2" id="M">남성</span>
+                    <span class="inactive div2" id="W">여성</span>
                 </div>
             </div>
             </div>
@@ -138,7 +137,7 @@
                         <span>* </span>
                         보호자 연락처
                     </div>
-                    <input type="text" style="padding: 0px 11px;" maxlength="11" placeholder="ex) 01029791234" name="guardContact" class="ant-input sc-jzJRlG iaafvp" value="">
+                    <input type="text" style="padding: 0px 11px;" maxlength="11" placeholder="ex) 01012341234" name="accReservationAddPhoneNum" class="ant-input sc-jzJRlG iaafvp" value="">
                 </div>
                 <div style="flex: 1 1 0%;">
                     <div class="sc-fjdhpX hoWkSp">
@@ -149,7 +148,7 @@
                         <div class="">
                                     <span class="ant-select-selection-search">
                                        <!--  <input autocomplete="off" type="search" class="ant-select-selection-search-input" role="combobox" aria-haspopup="listbox" aria-owns="rc_select_4_list" aria-autocomplete="list" aria-controls="rc_select_4_list" aria-activedescendant="rc_select_4_list_0" readonly="" unselectable="on" value="" style="opacity: 0;" id="rc_select_4"> -->
-                                        <select id="serviceDtlCd" name="serviceDtlCd" style="     width: 100%;
+                                        <select id="serviceDtlCd" name="accReservationRelationSelect" style="     width: 100%;
                                         height: 40px;
                                         line-height: 44px;
                                         margin-bottom: 0px;
@@ -160,22 +159,15 @@
                                         background-color: rgb(255, 255, 255);
                                         border: 1px solid rgb(233, 233, 233) !important;
                                         padding: 0px 11px;">
-                                            <option data-high-code="SV20" value="SD40">본인</option>
-                                            <option data-high-code="SV20" value="SD45">자매</option>
-                                            <option data-high-code="SV20" value="SD50">지인</option>
-                                            <option data-high-code="SV20" value="SD70">친구</option>
-                                            <option data-high-code="SV20" value="SD90">기타</option>
+                                            <option data-high-code="SV20" value="">선택</option>
+                                            <option data-high-code="SV20" value="본인">본인</option>
+                                            <option data-high-code="SV20" value="자매">자매</option>
+                                            <option data-high-code="SV20" value="지인">지인</option>
+                                            <option data-high-code="SV20" value="친구">친구</option>
+                                            <option data-high-code="SV20" value="기타">기타</option>
                                        </select>
                                     </span>
-                            <!-- <span class="ant-select-selection-placeholder">본인</span> -->
                         </div>
-                        <!-- <span class="ant-select-arrow" unselectable="on" aria-hidden="true" style="user-select: none;">
-                            <span role="img" aria-label="down" class="anticon anticon-down ant-select-suffix">
-                                <svg viewBox="64 64 896 896" focusable="false" data-icon="down" width="1em" height="1em" fill="currentColor" aria-hidden="true">
-                                    <path d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"></path>
-                                </svg>
-                            </span>
-                        </span> -->
                     </div>
                 </div>
             </div>
@@ -186,12 +178,14 @@
             </div>
             <div class="form_wrap" id="divDsetination">
                 <div class="dp_flex search adress">
-                    <input type="text" id="sample5_address"  name="destAddr" placeholder="주소 검색" maxlength="30" autocomplete="new-password" style="background: rgba(0,0,0,0.06);">
-                    <a href="javascript:void(0);" class="ico_search" id="btnDestAddr" onclick="sample5_execDaumPostcode()"></a>
-                    <div class="autocomplete_layer" id="divDestAddr" style="display: none;" ></div>
+                    <input type="text" id="sample3_address"  name="destAddr" placeholder="주소 검색" maxlength="30" autocomplete="new-password" style="background: rgba(0,0,0,0.06);">
+                    <a class="ico_search" id="btnDestAddr" onclick="sample3_execDaumPostcode()"></a>
+                    <div id="wrap3" style="display:none;border: 1px solid;width: 500px;height: 466px;margin: 5px 0px;position: absolute;z-index: 1;top: 56px;left: 98px;">
+                        <img src="//t1.daumcdn.net/postcode/resource/images/close.png" id="btnFoldWrap3" style="cursor:pointer;position:absolute;right:0px;top:-1px;z-index:1" onclick="foldDaumPostcode()" alt="접기 버튼">
+                    </div>
                 </div>
                 <div class="dp_flex adress">
-                    <input type="text" id="destAddrDtl" name="destAddrDtl" placeholder="상세주소" maxlength="30" autocomplete="new-password" style="background: rgba(0,0,0,0.06);">
+                    <input type="text" id="sample3_detailAddress" name="destAddrDtl" placeholder="상세주소" maxlength="30" autocomplete="new-password" style="background: rgba(0,0,0,0.06);">
                 </div>
             </div>
 
@@ -202,50 +196,24 @@
             </div>
             <div class="form_wrap" id="divDsetination">
                 <div class="dp_flex search adress">
-                    <input type="text" id="sample5_address"  name="destAddr" placeholder="주소 검색" maxlength="30" autocomplete="new-password" style="background: rgba(0,0,0,0.06);">
-                    <a href="javascript:void(0);" class="ico_search" id="btnDestAddr" onclick="sample5_execDaumPostcode()"></a>
-                    <div class="autocomplete_layer" id="divDestAddr" style="display: none;" ></div>
+                    <input type="text" id="sample4_address"  name="destAddr" placeholder="주소 검색" maxlength="30" autocomplete="new-password" style="background: rgba(0,0,0,0.06);">
+                    <a class="ico_search" id="btnDestAddr" onclick="sample4_execDaumPostcode()"></a>
+                    <div id="wrap4" style="display:none;border: 1px solid;width: 500px;height: 466px;margin: 5px 0px;position: absolute;z-index: 1;top: 56px;left: 98px;">
+                    <img src="//t1.daumcdn.net/postcode/resource/images/close.png" id="btnFoldWrap4" style="cursor:pointer;position:absolute;right:0px;top:-1px;z-index:1" onclick="foldDaumPostcode1()" alt="접기 버튼">
+                </div>
                 </div>
                 <div class="dp_flex adress">
-                    <input type="text" id="destAddrDtl" name="destAddrDtl" placeholder="상세주소" maxlength="30" autocomplete="new-password" style="background: rgba(0,0,0,0.06);">
+                    <input type="text" id="sample4_detailAddress" name="destAddrDtl" placeholder="상세주소" maxlength="30" autocomplete="new-password" style="background: rgba(0,0,0,0.06);">
                 </div>
             </div>
-
-            <!-- <div class="sc-dxgOiQ sc-ckVGcZ iFwUke">
-                <input id="sample5_address" type="text" placeholder="ex) 서울특별시 강남 을지병원" name="destination" disabled="" class="ant-input ant-input-disabled sc-jzJRlG iaafvp" value="">
-                <input type="button" onclick="sample5_execDaumPostcode()" value="검색" style="    border: none;
-                background-color: white;
-                padding: 14px;
-                font-size: 11px;
-                font-weight: normal;
-                color: rgb(166, 166, 166);
-                cursor: pointer;
-            "><br>
-            </div> -->
-            <!-- <div class="sc-VigVT lafcRZ"></div> -->
-            <!-- <div class="sc-fjdhpX hoWkSp">
-                <span>* </span>
-                출발지 주소
-            </div>
-            <div class="sc-dxgOiQ sc-ckVGcZ iFwUke">
-                <input type="text" placeholder="ex) 서울특별시 서초대로  30, ABC아파트" name="starting" disabled="" class="ant-input ant-input-disabled sc-jzJRlG iaafvp" value="">
-                <input type="button" onclick="sample5_execDaumPostcode()" value="검색" style="    border: none;
-                background-color: white;
-                padding: 14px;
-                font-size: 11px;
-                font-weight: normal;
-                color: rgb(166, 166, 166);
-                cursor: pointer;
-            "><br>
-            </div> -->
-            <!-- <div class="sc-VigVT lafcRZ"></div> -->
             <div class="sc-gleUXh ccaDJS">
                 <img src="" alt="스텝이미지">
             </div>
+           </form>
         </div>
         <div class="sc-brqgnP sc-jgVwMx dtbczn">
-            <a class="sc-hSdWYo sc-cvbbAY sc-jWBwVP pYUPR" onclick="location.href='/user/option_reservation'">이전으로</a>
-            <a class="sc-hSdWYo sc-cvbbAY sc-jWBwVP kiStqG" onclick="location.href='/user/acc_reservation2'">다음 단계로가기</a>
+            <a class="sc-hSdWYo sc-cvbbAY sc-jWBwVP pYUPR" onclick="history.back()">이전으로</a>
+            <a class="sc-hSdWYo sc-cvbbAY sc-jWBwVP kiStqG" onclick="nextForm();">다음 단계로가기</a>
         </div>
     </div>
 </div>
@@ -253,53 +221,184 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=발급받은 API KEY를 사용하세요&libraries=services"></script>
 <script>
-    var mapContainer = document.getElementById('map'), // 지도를 표시할 div
-        mapOption = {
-            center: new daum.maps.LatLng(37.537187, 127.005476), // 지도의 중심좌표
-            level: 5 // 지도의 확대 레벨
-        };
+    let $accForm1 = $(accForm1);
+    let $accReservationType = $("input[name='accReservationType']");
+    let $accReservationName = $("input[name='accReservationName']");
+    let $accReservationAge = $("input[name='accReservationAge']");
+    let $accReservationPhoneNum = $("input[name='accReservationPhoneNum']");
+    let $accReservationGender = $("input[name='accReservationGender']");
+    let $accReservationAddPhoneNum = $("input[name='accReservationAddPhoneNum']");
+    let $accReservationRelation = $("input[name='accReservationRelation']");
+    let $accReservationEndAddress = $("input[name='accReservationEndAddress']");
+    let $accReservationStartAddress = $("input[name='accReservationStartAddress']");
 
-    //지도를 미리 생성
-    var map = new daum.maps.Map(mapContainer, mapOption);
-    //주소-좌표 변환 객체를 생성
-    var geocoder = new daum.maps.services.Geocoder();
-    //마커를 미리 생성
-    var marker = new daum.maps.Marker({
-        position: new daum.maps.LatLng(37.537187, 127.005476),
-        map: map
+    /*타입선택*/
+    $("select[name='accReservationTypeSelect']").change(function(){
+        $accReservationType.val($(this).val());
+    });
+    /*관계선택*/
+    $("select[name='accReservationRelationSelect']").change(function(){
+        $accReservationRelation.val($(this).val());
     });
 
+    function nextForm() {
 
-    function sample5_execDaumPostcode() {
+        $accReservationEndAddress.val($("#sample3_address").val() + " " + $("#sample3_detailAddress").val());
+        $accReservationStartAddress.val($("#sample4_address").val() + " "+ $("#sample4_detailAddress").val());
+        console.log($accReservationType.val());
+        console.log($accReservationName.val());
+        console.log($accReservationAge.val());
+        console.log($accReservationPhoneNum.val());
+        console.log($accReservationGender.val());
+        console.log($accReservationAddPhoneNum.val());
+        console.log($accReservationRelation.val());
+        console.log($accReservationEndAddress.val());
+
+        console.log($accReservationStartAddress.val());
+        if(!$accReservationType.val()){
+            alert("서비스 종류를 선택해주세요.");
+            return
+        }
+        if(!$accReservationName.val()){
+           alert("이름을 입력해주세요.");
+           return
+       }
+        if(!$accReservationAge.val()){
+           alert("나이를 입력해주세요.");
+           return
+       }
+        if(!$accReservationPhoneNum.val()){
+           alert("핸드폰 번호를 입력해주세요.");
+           return
+       }
+        if(!$accReservationGender.val()){
+           alert("성별을 선택해주세요.");
+           return
+       }
+        if(!$accReservationAddPhoneNum.val()){
+           alert("보호자 연락처를 선택해주세요.");
+           return
+       }
+        if(!$accReservationRelation.val()){
+           alert("신청자와의 관계를 선택해주세요.");
+           return
+
+       }
+        if(!$("#sample3_address").val() || !$("#sample3_detailAddress").val()){
+           alert("목적지를 입력해주세요.");
+           return
+       }
+        if(!$("#sample4_address").val() || !$("#sample4_detailAddress").val()){
+           alert("출발지를 입력해주세요.");
+           return
+
+       }
+        $accForm1.submit();
+    }
+
+    /*목적지*/
+
+    // 우편번호 찾기 찾기 화면을 넣을 element
+    var element_wrap = document.getElementById('wrap3');
+    function foldDaumPostcode() {
+
+        // iframe을 넣은 element를 안보이게 한다.
+        element_wrap.style.display = 'none';
+    }
+
+    function sample3_execDaumPostcode() {
+        // 현재 scroll 위치를 저장해놓는다.
+        var currentScroll = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
         new daum.Postcode({
             oncomplete: function(data) {
-                var addr = data.address; // 최종 주소 변수
+                // 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
 
-                // 주소 정보를 해당 필드에 넣는다.
-                document.getElementById("sample5_address").value = addr;
-                // 주소로 상세 정보를 검색
-                geocoder.addressSearch(data.address, function(results, status) {
-                    // 정상적으로 검색이 완료됐으면
-                    if (status === daum.maps.services.Status.OK) {
+                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                var addr = ''; // 주소 변수
 
-                        var result = results[0]; //첫번째 결과의 값을 활용
+                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                    addr = data.roadAddress;
+                } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                    addr = data.jibunAddress;
+                }
 
-                        // 해당 주소에 대한 좌표를 받아서
-                        var coords = new daum.maps.LatLng(result.y, result.x);
-                        // 지도를 보여준다.
-                        mapContainer.style.display = "block";
-                        map.relayout();
-                        // 지도 중심을 변경한다.
-                        map.setCenter(coords);
-                        // 마커를 결과값으로 받은 위치로 옮긴다.
-                        marker.setPosition(coords)
-                    }
-                });
-            }
-        }).open();
+                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                document.getElementById("sample3_address").value = addr;
+                $("#wrap3").css('display', 'none');
+                // iframe을 넣은 element를 안보이게 한다.
+                // (autoClose:false 기능을 이용한다면, 아래 코드를 제거해야 화면에서 사라지지 않는다.)
+                // element_wrap.style.display = 'none';
+
+                // 우편번호 찾기 화면이 보이기 이전으로 scroll 위치를 되돌린다.
+                document.body.scrollTop = currentScroll;
+            },
+            // 우편번호 찾기 화면 크기가 조정되었을때 실행할 코드를 작성하는 부분. iframe을 넣은 element의 높이값을 조정한다.
+            onresize : function(size) {
+                console.log(size);
+                element_wrap.style.height = '466px';
+            },
+            width : '100%',
+            height : '100%'
+        }).embed(element_wrap);
+
+        // iframe을 넣은 element를 보이게 한다.
+        element_wrap.style.display = 'block';
     }
+
+    /*출발지*/
+
+    // 우편번호 찾기 찾기 화면을 넣을 element
+    var element_wrap1 = document.getElementById('wrap4');
+    function foldDaumPostcode1() {
+
+        // iframe을 넣은 element를 안보이게 한다.
+        element_wrap1.style.display = 'none';
+    }
+
+    function sample4_execDaumPostcode() {
+        // 현재 scroll 위치를 저장해놓는다.
+        var currentScroll = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
+        new daum.Postcode({
+            oncomplete: function(data) {
+                // 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                var addr1 = ''; // 주소 변수
+
+                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                    addr1 = data.roadAddress;
+                } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                    addr1 = data.jibunAddress;
+                }
+
+                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                document.getElementById("sample4_address").value = addr1;
+                $("#wrap4").css('display', 'none');
+                // iframe을 넣은 element를 안보이게 한다.
+                // (autoClose:false 기능을 이용한다면, 아래 코드를 제거해야 화면에서 사라지지 않는다.)
+                // element_wrap.style.display = 'none';
+
+                // 우편번호 찾기 화면이 보이기 이전으로 scroll 위치를 되돌린다.
+                document.body.scrollTop = currentScroll;
+            },
+            // 우편번호 찾기 화면 크기가 조정되었을때 실행할 코드를 작성하는 부분. iframe을 넣은 element의 높이값을 조정한다.
+            onresize : function(size) {
+                element_wrap1.style.height = '466px';
+            },
+            width : '100%',
+            height : '100%'
+        }).embed(element_wrap1);
+
+        // iframe을 넣은 element를 보이게 한다.
+        element_wrap1.style.display = 'block';
+    }
+
+
 
     $("#btnLogin").click(function(){
         if(!$(this).attr('class').match('on')){
@@ -315,11 +414,8 @@
     var div2 = document.getElementsByClassName("div2");
 
     function handleClick(event) {
-        console.log(event.target);
         // console.log(this);
         // 콘솔창을 보면 둘다 동일한 값이 나온다
-
-        console.log(event.target.classList);
 
         if (event.target.classList[1] === "clicked") {
             event.target.classList.remove("clicked");
@@ -329,6 +425,7 @@
             }
 
             event.target.classList.add("clicked");
+            $accReservationGender.val(event.target.id);
         }
     }
 
@@ -339,5 +436,7 @@
     }
 
     init();
+
+
 </script>
 </html>

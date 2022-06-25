@@ -89,9 +89,28 @@ public class UserController {
 //
 //    }
 
+//    동행 서비스 예약 1단계
+    @PostMapping("acc_reservation2")
+    public void acc_reserv1(AccReservationVO accReservationVO, Model model){
+
+        log.info("accReservationVO..........." + accReservationVO);
+
+        model.addAttribute("accReservationVO", accReservationVO);
+    };
+
+//    동행 서비스 예약 2단계
+    @PostMapping("acc_reservation3")
+    public void acc_reserv2(AccReservationVO accReservationVO, Model model){
+        log.info("accReservationVO..........." + accReservationVO);
+
+        model.addAttribute("accReservationVO", accReservationVO);
+    }
+
+//    동행 서비스 예약 완료단계
     @PostMapping("reservAcc")
     public RedirectView accReservation(AccReservationVO accReservationVO){
-
+        accReservationVO.setUserEmail("APPLE");
+        log.info("accReservationVO..........." + accReservationVO);
         memberService.accReservation(accReservationVO);
 
         return new RedirectView("/user/acc_confirmation");
@@ -103,9 +122,28 @@ public class UserController {
 //
 //    }
 
+    //    돌봄 서비스 예약 1단계
+    @PostMapping("care_reservation2")
+    public void care_reserv1(CareReservationVO careReservationVO, Model model){
+
+        log.info("careReservationVO..........." + careReservationVO);
+
+        model.addAttribute("careReservationVO", careReservationVO);
+    };
+
+    //    돌봄 서비스 예약 2단계
+    @PostMapping("care_reservation3")
+    public void care_reserv2(CareReservationVO careReservationVO, Model model){
+        log.info("careReservationVO..........." + careReservationVO);
+
+        model.addAttribute("careReservationVO", careReservationVO);
+    }
+
+    //    돌봄 서비스 예약 완료단계
     @PostMapping("reservCare")
     public RedirectView careReservation(CareReservationVO careReservationVO) {
-
+        careReservationVO.setUserEmail("APPLE");
+        log.info("careReservationVO..........." + careReservationVO);
         memberService.careReservation(careReservationVO);
 
         return new RedirectView("/user/care_confirmation");

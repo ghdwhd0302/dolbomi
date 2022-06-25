@@ -57,21 +57,34 @@
         </div>
     </div>
     <div class="sc-bhlBdH bCJAMY">
-        <div class="sc-AnqlK ctKjik">
+        <div class="sc-AnqlK ctKjik" th:object="${accReservationVO}">
+           <form method="post" action="/user/acc_reservation3" name="accForm2" style="position: relative">
+               <input type="hidden" th:field="*{userEmail}">
+               <input type="hidden" th:field="*{accReservationType}">
+               <input type="hidden" th:field="*{accReservationGender}">
+               <input type="hidden" th:field="*{accReservationEndAddress}">
+               <input type="hidden" th:field="*{accReservationStartAddress}">
+               <input type="hidden" th:field="*{accReservationName}">
+               <input type="hidden" th:field="*{accReservationAge}">
+               <input type="hidden" th:field="*{accReservationPhoneNum}">
+               <input type="hidden" th:field="*{accReservationAddPhoneNum}">
+               <input type="hidden" th:field="*{accReservationRelation}">
+               <input type="hidden" name="accReservationPrice">
             <h3 class="sc-keFjpB gbVVya">이것만 하면 매칭 신청이 끝나요!</h3>
-            <div class="sc-VigVT fBAfGH"></div>
-            <span class="sc-crNyjn hEIVhP" style="margin-top: 0px; margin-bottom: 0px;">
+               <div class="sc-VigVT fBAfGH"></div>
+               <span class="sc-crNyjn hEIVhP" style="margin-top: 0px; margin-bottom: 0px;">
                     예약 정보 입력
                 </span>
-            <div class="sc-VigVT ffyjKW"></div>
-            <div class="sc-fjdhpX hoWkSp">
-                <span>* </span>
-                동행 인력 희망 성별
-            </div>
-            <div class="sc-ekkqgF dxikPE div2">
-                <span class="inactive div2">상관없음</span>
-                <span class="inactive div2">남성</span>
-                <span class="inactive div2">여성</span>
+               <div class="sc-VigVT ffyjKW"></div>
+               <div class="sc-fjdhpX hoWkSp">
+                   <span>* </span>
+                   동행 인력 희망 성별
+               </div>
+               <input type="hidden" name="accReservationHopeGender" value="">
+               <div class="sc-ekkqgF dxikPE div2">
+                <span class="inactive div2" id="N">상관없음</span>
+                <span class="inactive div2" id="M">남성</span>
+                <span class="inactive div2" id="W">여성</span>
             </div>
             <div class="sc-VigVT lafcRZ"></div>
             <div class="sc-fjdhpX hoWkSp">
@@ -79,52 +92,25 @@
                 희망 예약일 및 방문 시간
             </div>
             <div class="ant-picker sc-hMqMXs cWomFl">
-                <input type="datetime-local" id="date" name="scheduleDate" min="09:00" max="17:00" step="900" required style="width: 100%;
+                <input type="datetime-local" id="date" name="accReservationDate" min="09:00" max="17:00" step="900" required style="width: 100%;
                     height: 37px;
                     line-height: 43px;
                     border: 1px solid rgb(233, 233, 233);
                     padding: 0px 11px;
                     border-radius: 4px;
-                    font-size: 13px;" >
-                <!-- <div class="ant-picker-input">
-                    <input readonly="" placeholder="진료 예약일을 설정해주세요." title="" size="12" name="reserveDate" autocomplete="off" value="">
-                    <span class="ant-picker-suffix">
-                        <!-- <span role="img" aria-label="calendar" class="anticon anticon-calendar">
-                            <svg viewBox="64 64 896 896" focusable="false" data-icon="calendar" width="1em" height="1em" fill="currentColor" aria-hidden="true">
-                                <path d="M880 184H712v-64c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v64H384v-64c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v64H144c-17.7 0-32 14.3-32 32v664c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V216c0-17.7-14.3-32-32-32zm-40 656H184V460h656v380zM184 392V256h128v48c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-48h256v48c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-48h128v136H184z"></path>
-                            </svg>
-                        </span>
-                    </span>
-                </div> -->
+                    font-size: 13px;" value="">
+
             </div>
-            <!-- <div class="sc-VigVT lafcRZ"></div>
-            <div class="sc-fjdhpX hoWkSp">
-                <span>* </span>
-                매니저의 목적지 도착 희망 시간
-                <!-- <span class="sc-iBmynh dIIDbD">(진료 병원, 입원 병원 등)</span>
-            </div>
-            <div class="sc-dxgOiQ iQRFrD">
-                <div style="flex: 1 1 0%;">
-                    <input placeholder="13" name="meetTime" maxlength="2" class="ant-input sc-jzJRlG iaafvp" type="text" value="">
-                </div>
-                <div style="flex: 1 1 0%;">
-                    <input placeholder="30" name="meetMinute" maxlength="2" class="ant-input sc-jzJRlG iaafvp" type="text" value="">
-                </div>
-            </div> -->
+
             <div class="sc-VigVT lafcRZ"></div>
             <div class="sc-fjdhpX hoWkSp">
                 <span>* </span>
                 예상 소요 시간
             </div>
             <div class="ant-select sc-kGXeez bqHxwH ant-select-single ant-select-show-arrow">
-                <div class="ant-select-selector">
-                    <!-- <span class="ant-select-selection-search">
-                        <input autocomplete="off" type="search" class="ant-select-selection-search-input" role="combobox" aria-haspopup="listbox" aria-owns="rc_select_1_list" aria-autocomplete="list" aria-controls="rc_select_1_list" aria-activedescendant="rc_select_1_list_0" readonly="" unselectable="on" value="" style="opacity: 0;" id="rc_select_1">
-                    </span> -->
-                    <!-- <span class="ant-select-selection-placeholder">
-                            예상 소요 시간을 선택해주세요.
-                    </span> -->
-                    <select id="serviceDtlCd" name="serviceDtlCd" style=" width: 100%;
+                <div class="ant-select-selector" th:if="*{accReservationType.toString().equals('One Day')}">
+                    <input type="hidden" name="accReservationTime">
+                    <select id="serviceDtlCd" name="accReservationTimeSelect" style=" width: 100%;
                         height: 37px;
                         line-height: 43px;
                         border: 1px solid rgb(233, 233, 233);
@@ -133,51 +119,46 @@
                         font-size: 13px;
 
                     ">
-                        <option data-high-code="SV20" value="SD40">1시간</option>
-                        <option data-high-code="SV20" value="SD45">2시간</option>
-                        <option data-high-code="SV20" value="SD50">3시간</option>
-                        <option data-high-code="SV20" value="SD70">4시간</option>
-                        <option data-high-code="SV20" value="SD90">5시간</option>
-                        <option data-high-code="SV20" value="SD100">6시간</option>
-                        <option data-high-code="SV20" value="SD110">7시간</option>
-                        <option data-high-code="SV20" value="SD120">8시간</option>
-                        <option data-high-code="SV20" value="SD130">9시간</option>
+                        <option data-high-code="SV20" value="">선택</option>
+                        <option data-high-code="SV20" value="9">9시간</option>
                     </select>
                 </div>
-                <span class="ant-select-arrow" unselectable="on" aria-hidden="true" style="user-select: none;">
-                            <span role="img" aria-label="down" class="anticon anticon-down ant-select-suffix">
-                                <svg viewBox="64 64 896 896" focusable="false" data-icon="down" width="1em" height="1em" fill="currentColor" aria-hidden="true">
-                                    <path d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"></path>
-                                </svg>
-                            </span>
-                        </span>
+                <div class="ant-select-selector" th:unless="*{accReservationType.toString().equals('One Day')}">
+                    <input type="hidden" name="accReservationTime">
+                    <select id="serviceDtlCd" name="accReservationTimeSelect" style=" width: 100%;
+                        height: 37px;
+                        line-height: 43px;
+                        border: 1px solid rgb(233, 233, 233);
+                        padding: 0px 11px;
+                        border-radius: 4px;
+                        font-size: 13px;">
+                        <option data-high-code="SV20" value="">선택</option>
+                        <option data-high-code="SV20" value="1">1시간</option>
+                        <option data-high-code="SV20" value="2">2시간</option>
+                        <option data-high-code="SV20" value="3">3시간</option>
+                        <option data-high-code="SV20" value="4">4시간</option>
+                        <option data-high-code="SV20" value="5">5시간</option>
+                        <option data-high-code="SV20" value="6">6시간</option>
+                        <option data-high-code="SV20" value="7">7시간</option>
+                        <option data-high-code="SV20" value="8">8시간</option>
+                        <option data-high-code="SV20" value="9">9시간</option>
+                    </select>
+                </div>
             </div>
-            <!-- <div class="sc-VigVT lafcRZ"></div>
-            <div class="sc-fjdhpX hoWkSp">
-                <span>* </span>
-                매니저가 주의해야 할 점이 있을까요?
-            </div>
-            <input type="text" placeholder="동행시 주의사항을 입력하세요." class="ant-input sc-jzJRlG iaafvp" value="">
-            <label class="ant-checkbox-wrapper">
-                <span class="ant-checkbox">
-                    <input type="checkbox" class="ant-checkbox-input" value="">
-                    <span class="ant-checkbox-inner"></span>
-                </span>
-                <span>없어요</span>
-            </label> -->
-            <div class="sc-VigVT ffyjKW"></div>
-            <div class="sc-fjdhpX hoWkSp">
+               <div class="sc-VigVT ffyjKW"></div>
+               <div class="sc-fjdhpX hoWkSp">
                 기타 요청 및 전달 사항
             </div>
-            <textarea type="text" middle="true" placeholder="메니저님께 요청 및 전달하는 사항을 입력해주세요." style="resize: none;" name="comment" class="ant-input sc-kgoBCf jdYHBr"></textarea>
-            <div class="sc-VigVT ffyjKW"></div>
-            <div class="sc-gleUXh ccaDJS">
+               <textarea type="text" middle="true" placeholder="메니저님께 요청 및 전달하는 사항을 입력해주세요." style="resize: none;" name="accReservationAddRequire" class="ant-input sc-kgoBCf jdYHBr"></textarea>
+               <div class="sc-VigVT ffyjKW"></div>
+               <div class="sc-gleUXh ccaDJS">
                 <img src="	https://www.withmate.kr/assets/images/art_basic.png" alt="스텝이미지">
             </div>
+           </form>
         </div>
         <div class="sc-brqgnP sc-jgVwMx dtbczn">
-            <a class="sc-hSdWYo sc-cvbbAY sc-jWBwVP pYUPR" onclick="location.href='/user/acc_reservation1'">이전으로</a>
-            <a class="sc-hSdWYo sc-cvbbAY sc-jWBwVP kiStqG" onclick="location.href='/user/acc_reservation3'">다음 단계로가기</a>
+            <a class="sc-hSdWYo sc-cvbbAY sc-jWBwVP pYUPR" onclick="history.back()">이전으로</a>
+            <a class="sc-hSdWYo sc-cvbbAY sc-jWBwVP kiStqG" onclick="nextForm()">다음 단계로가기</a>
         </div>
     </div>
 </div>
@@ -186,6 +167,38 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="/asset/js/reservation.js"></script>
 <script>
+    let $accForm2 = $(accForm2);
+    let $accReservationDate = $("input[name='accReservationDate']");
+    let $accReservationHopeGender = $("input[name='accReservationHopeGender']");
+    let $accReservationAddRequire = $("textarea[name='accReservationAddRequire']");
+    let $accReservationTime = $("input[name='accReservationTime']");
+
+    /*이용시간 선택*/
+    $("select[name='accReservationTimeSelect']").change(function(){
+        $accReservationTime.val($(this).val());
+        $("input[name='accReservationPrice']").val($(this).val() + "0000");
+
+    });
+    function nextForm() {
+
+        if(!$accReservationHopeGender.val()){
+            alert("희망하는 매니저의 성별을 골라주세요.")
+            return;
+        }
+
+        if(!$accReservationDate.val()){
+            alert("예약날짜를 정해주세요.")
+            return;
+        }
+
+        if(!$accReservationTime.val()){
+            alert("이용시간을 정해주세요.")
+            return;
+        }
+
+        $accForm2.submit();
+    }
+
     $("#btnLogin").click(function(){
         if(!$(this).attr('class').match('on')){
             $(this).addClass('on');
@@ -195,10 +208,33 @@
             $(".fnc_user_wrap").removeClass('on');
         }
     })
+</script>
+<script>
+    var div2 = document.getElementsByClassName("div2");
 
+    function handleClick(event) {
+        // console.log(this);
+        // 콘솔창을 보면 둘다 동일한 값이 나온다
 
+        if (event.target.classList[1] === "clicked") {
+            event.target.classList.remove("clicked");
+        } else {
+            for (var i = 0; i < div2.length; i++) {
+                div2[i].classList.remove("clicked");
+            }
 
+            event.target.classList.add("clicked");
+            $accReservationHopeGender.val(event.target.id);
+        }
+    }
+
+    function init() {
+        for (var i = 0; i < div2.length; i++) {
+            div2[i].addEventListener("click", handleClick);
+        }
+    }
+
+    init();
 
 </script>
-
 </html>
