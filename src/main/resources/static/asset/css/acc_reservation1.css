@@ -945,3 +945,27 @@ input[type="text"]{
     position: relative;
     width: 600px;
 }
+
+div#wrap3{
+    display: none;
+    border: 1px solid;
+    width: 500px;
+    height: 466px;
+    margin: 5px 0px;
+    position: absolute;
+    z-index: 1;
+    top: 56px;
+    left: 98px;
+}
+
+div#wrap4{
+    display: none;
+    border: 1px solid;
+    width: 500px;
+    height: 466px;
+    margin: 5px 0px;
+    position: absolute;
+    z-index: 1;
+    top: 56px;
+    left: 98px;
+}

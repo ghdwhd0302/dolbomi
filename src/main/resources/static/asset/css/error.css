@@ -1,0 +1,13 @@
+    * {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    body {
+    padding: 0;
+    margin: 0;
+    }
+
+.404error{
+        background: url("/asset/img/221779-P19CIV-393.jpg");
+    }
