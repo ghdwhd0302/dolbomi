@@ -29,6 +29,7 @@ public class UserController {
     private final MemberService memberService;
     private final UserService userService;
 
+
 //    회원가입1
 //    @GetMapping("ujoin1")
 //    public void join1(){
@@ -117,10 +118,12 @@ public class UserController {
 //
 //    }
 
+/*
     @PostMapping("payAcc")
     public String accPayment(){
         return "/user/user_userdetails";
     }
+*/
 
 //    돌봄 서비스 결제
 //    @GetMapping("payCare")
@@ -128,48 +131,34 @@ public class UserController {
 //
 //    }
 
+
     @PostMapping("payCare")
     public String carePayment(){
         return "/user/user_usedetails";
     }
 
-//    예약 내역 조회
-//    @GetMapping("user_userdetails")
-//    public void reservationList(){
-//
-//    }
-//    @GetMapping("user_userdetails2")
-//    public void reservationList2(){
-//
-//    }
-//    @GetMapping("user_userdetails3")
-//    public void reservationList3(){
-//
-//    }
-//    @GetMapping("user_userdetails4")
-//    public void reservationList4(){
-//
-//    }
 
-//    서비스 상태 변경(배정취소)
+
+    //    서비스 상태 변경(배정취소)
     @GetMapping("matchingCancel")
     public void allocationCancel(){
 
     }
 
-//    서비스 상태 변경(배정수락)
+    //    서비스 상태 변경(배정수락)
     @GetMapping("matchingAccept")
     public String allocationAccept(){
         return "/user/user_details2";
     }
 
-//    서비스 상태 변경(예약취소)
+    //    서비스 상태 변경(예약취소)
     @GetMapping("reservCancel")
     public void reservationCancel(){
 
     }
 
-//    페이지 이동
+
+    //    페이지 이동
     @GetMapping("acc_reservation1")
     public void acc_reservation1(){}
 
@@ -204,8 +193,31 @@ public class UserController {
     public void regi2(){}
 
     @GetMapping("user_userdetails")
-    public void user_userdetails(){}
+    public void user_userdetails(Long accReservationNum,Long careReservationNum,HttpServletRequest req, Model model){
+        log.info("----------------------------");
+        log.info(req.getRequestURI() + "............. : " + careReservationNum);
+        log.info(req.getRequestURI() + "............. : " + accReservationNum);
+        log.info("----------------------------");
 
+        model.addAttribute("carereservationlist", memberService.CareGetList(careReservationNum));
+        model.addAttribute("accreservationlist", memberService.AccGetList(accReservationNum));
+    }
+    /* user_userdetails 의  매니저 수락*/
+    @PostMapping("accet")
+    public void accet(){
+        log.info("----------------------------");
+        log.info("----------------------------");
+
+
+    }
+    /* user_userdetails 의  매니저 거절*/
+    @PostMapping("managerrefuse")
+    public void managerrefuse(){
+        log.info("----------------------------");
+        log.info("----------------------------");
+
+
+    }
     @GetMapping("user_userdetails2")
     public void user_userdetails2(){}
 
