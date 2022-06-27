@@ -76,7 +76,9 @@
                     </div>
                     <div class="button_wrap">
                         <!--비회원일때는 로그인 페이지로 이동-->
-                        <a href="/user/option_reservation">서비스 이용하기</a>
+                        <a th:if="${session.userVO != null}" href="/user/option_reservation">서비스 이용하기</a>
+                        <a th:if="${session.managerVO != null}" onclick="managerCant();">서비스 이용하기</a>
+                        <a th:if="${session.managerVO == null && session.userVO == null}" href="/member/userlogin">서비스 이용하기</a>
 
                     </div>
                 </div>
@@ -99,7 +101,9 @@
                     <div class="button_wrap">
                         <a href="/member/introduce">돌보미 알아보기</a>
                         <!--비회원일때는 로그인 페이지로 이동-->
-                        <a href="/user/option_reservation">서비스 이용하기</a>
+                        <a th:if="${session.userVO != null}" href="/user/option_reservation">서비스 이용하기</a>
+                        <a th:if="${session.managerVO != null}" onclick="managerCant();">서비스 이용하기</a>
+                        <a th:if="${session.managerVO == null && session.userVO == null}" href="/member/userlogin">서비스 이용하기</a>
 
                     </div>
                 </div>
@@ -121,7 +125,9 @@
                     </div>
                     <div class="button_wrap">
 
-                        <a href="/member/managerapply">매니저 지원하기</a>
+                        <a th:if="${session.userVO != null}" onclick="logOut();">매니저 지원</a>
+                        <a th:if="${session.managerVO != null}" onclick="logOut();">매니저 지원</a>
+                        <a th:if="${session.managerVO == null && session.userVO == null}" href="/member/managerapply">매니저 지원</a>
 
                     </div>
                 </div>
@@ -180,7 +186,9 @@
                         <span>약국업무 등이 어려울 때</span>
                     </p>
                     <!--비회원일때는 로그인 페이지로 이동-->
-                    <a href="/user/acc_reservation1">이용하기</a>
+                    <a th:if="${session.userVO != null}" href="/user/acc_reservation1">이용하기</a>
+                    <a th:if="${session.managerVO != null}" href="/user/manager_rev">서비스 찾기</a>
+                    <a th:if="${session.managerVO == null && session.userVO == null}" href="/member/userlogin">이용하기</a>
 
                 </div>
             </li>
@@ -196,7 +204,9 @@
                         <span>등의 이용이 어려울 때</span>
                     </p>
                     <!--비회원일때는 로그인 페이지로 이동-->
-                    <a href="/user/acc_reservation1">이용하기</a>
+                    <a th:if="${session.userVO != null}" href="/user/acc_reservation1">이용하기</a>
+                    <a th:if="${session.managerVO != null}" href="/user/manager_rev">서비스 찾기</a>
+                    <a th:if="${session.managerVO == null && session.userVO == null}" href="/member/userlogin">이용하기</a>
 
                 </div>
             </li>
@@ -212,7 +222,9 @@
                         <span>돌봄이 어려울 때</span>
                     </p>
                     <!--비회원일때는 로그인 페이지로 이동-->
-                    <a href="/user/care_reservation1">이용하기</a>
+                    <a th:if="${session.userVO != null}" href="/user/care_reservation1">이용하기</a>
+                    <a th:if="${session.managerVO != null}" href="/user/manager_rev">서비스 찾기</a>
+                    <a th:if="${session.managerVO == null && session.userVO == null}" href="/member/userlogin">이용하기</a>
 
                 </div>
             </li>
@@ -228,7 +240,9 @@
                         <span>식사 도움 등이 필요할 때</span>
                     </p>
                     <!--비회원일때는 로그인 페이지로 이동-->
-                    <a href="/user/care_reservation1">이용하기</a>
+                    <a th:if="${session.userVO != null}" href="/user/care_reservation1">이용하기</a>
+                    <a th:if="${session.managerVO != null}" href="/user/manager_rev">서비스 찾기</a>
+                    <a th:if="${session.managerVO == null && session.userVO == null}" href="/member/userlogin">이용하기</a>
 
                 </div>
             </li>
@@ -367,5 +381,18 @@
                 break;
         }
     }, 3000);
+
+    function managerCant(){
+        alert("일반회원만 접근 가능합니다.");
+    }
+
+    function logOut() {
+        let check = confirm("로그아웃 하시겠습니까?")
+        if(!check){
+            return
+        }else{
+            location.href="/member/logout";
+        }
+    }
 </script>
 </html>
