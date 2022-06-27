@@ -72,14 +72,30 @@ public class MemberController {
     }
 
 //    일반 로그인
-//    @GetMapping("loginU")
-//    public void userLogin(){
-//    }
+    @PostMapping("userlogin")
+    public String userLogIn(String userEmail, String userPw, HttpServletRequest request ){
+        boolean check;
+        check = userService.userLogIn(userEmail, userPw);
 
-    @PostMapping("loginU")
-    public String userLogin(){
+        if(check){//로그인 성공
+            HttpSession httpSession = request.getSession();
+            httpSession.setAttribute("userVO", userService.profile(userEmail));
+
+            return "/member/mainpage";
+        }
+
+        //로그인 실패
+        return "/member/userlogin";
+    }
+
+//    로그 아웃
+    @GetMapping("logout")
+    public String logOut(HttpServletRequest request){
+        HttpSession httpSession = request.getSession();
+        httpSession.invalidate();
         return "/member/mainpage";
     }
+
 
 //    일반 회원 탈퇴
 //    @GetMapping("exitU")
@@ -98,8 +114,19 @@ public class MemberController {
 //    }
 
     @PostMapping("loginM")
-    public String managerLogin(){
-        return "/member/mainpage";
+    public String managerLogin(String managerEmail, String managerPw, HttpServletRequest request){
+        boolean check;
+        check = managerService.managerLogIn(managerEmail, managerPw);
+
+        if(check){//로그인 성공
+            HttpSession httpSession = request.getSession();
+            httpSession.setAttribute("managerVO", managerService.managerInfo(managerEmail));
+
+            return "/member/mainpage";
+        }
+
+        //로그인 실패
+       return "/member/managerlogin";
     }
 
 //   매니저 회원 탈퇴

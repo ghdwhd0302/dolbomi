@@ -21,5 +21,15 @@
         SELECT COUNT(MANAGER_STATUS) FROM TBL_MANAGER
     </select>
 
+    <select id="managerLogIn" resultType="_int">
+        SELECT COUNT(MANAGER_EMAIL)
+        FROM TBL_MANAGER
+        WHERE MANAGER_EMAIL = #{managerEmail} AND MANAGER_PW = #{managerPw}
+    </select>
 
+    <select id="managerInfo" resultType="managerVO">
+        SELECT MANAGER_NAME, MANAGER_BIRTH, MANAGER_EMAIL, MANAGER_GENDER, MANAGER_DRIVEOK, MANAGER_PHONE_NUM, MANAGER_REGION, MANAGER_ADDRESS, MANAGER_CAREER, MANAGER_PW, MANAGER_STATUS
+        FROM TBL_MANAGER
+        WHERE MANAGER_EMAIL = #{managerEmail}
+    </select>
 </mapper>

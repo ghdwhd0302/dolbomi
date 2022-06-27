@@ -16,7 +16,7 @@
     <div class="header_wrap">
         <h1 class="logo" onclick="location.href='/member/mainpage'"></h1>
         <nav class="nav">
-            <ul class="nav_list">
+            <ul class="nav_list" th:if="${session.userVO != null}">
                 <li class="nav_item menu01">
                     <a href="/member/introduce" id="btnIntroduce" class="nav_item_link">돌보미 소개</a>
                 </li>
@@ -25,8 +25,38 @@
                     <a href="/user/option_reservation" id="btnUseService" class="nav_item_link">서비스 이용</a>
                 </li>
 
+                <li class="nav_item menu05">
+                    <a href="/member/faq" id="btnQuestion" class="nav_item_link">자주묻는 질문</a>
+                </li>
+
+                <li class="nav_item menu06">
+                    <a href="/user/review" id="btnReview" class="nav_item_link">이용후기</a>
+                </li>
+            </ul>
+            <ul class="nav_list" th:if="${session.managerVO != null}">
+                <li class="nav_item menu01">
+                    <a href="/member/introduce" id="btnIntroduce" class="nav_item_link">돌보미 소개</a>
+                </li>
+
                 <li class="nav_item menu03">
                     <a href="/manager/manager_rev" id="btnUseService" class="nav_item_link">서비스 신청 목록</a>
+                </li>
+
+                <li class="nav_item menu05">
+                    <a href="/member/faq" id="btnQuestion" class="nav_item_link">자주묻는 질문</a>
+                </li>
+
+                <li class="nav_item menu06">
+                    <a href="/user/review" id="btnReview" class="nav_item_link">이용후기</a>
+                </li>
+            </ul>
+            <ul class="nav_list" th:if="${session.userVO == null && session.managerVO == null}">
+                <li class="nav_item menu01">
+                    <a href="/member/introduce" id="btnIntroduce" class="nav_item_link">돌보미 소개</a>
+                </li>
+
+                <li class="nav_item menu02">
+                    <a href="/member/userlogin" id="btnUseService" class="nav_item_link">서비스 이용</a>
                 </li>
 
                 <li class="nav_item menu04">
@@ -40,30 +70,25 @@
                 <li class="nav_item menu06">
                     <a href="/user/review" id="btnReview" class="nav_item_link">이용후기</a>
                 </li>
-
-                <!-- <li class="nav_item menu04">
-                    <a href="javascript:void(0)" class="nav_item_link">인재채용</a>
-                </li> -->
             </ul>
-            <!--<div class="navsub_bg"></div>-->
         </nav>
         <div class="fnc_menu_wrap">
             <a href="/member/mainpage" class="fnc_home" title="메인화면"></a>
             <a href="/member/faq" class="fnc_notice"></a>
 
                 <!--로그인 안된상태에서 클릭하면 로그인 페이지로 이동-->
-            <a class="fnc_user" id="btnLogin" title="로그인"> <!--href="/member/userlogin" 추가 해야됨-->
-
-                이름입력 님
-            </a>
+            <a class="fnc_user" id="btnLogin" title="로그인" th:if="${session.userVO != null}" th:text="${session.userVO.userName + '님'}"> <!--href="/member/userlogin" 추가 해야됨--></a>
+            <a class="fnc_user" id="btnLogin" title="로그인" th:if="${session.managerVO != null}" th:text="${session.managerVO.managerName + '님'}"> <!--href="/member/userlogin" 추가 해야됨--></a>
+            <a class="fnc_user" id="goLogin" title="로그인" th:if="${session.userVO == null && session.managerVO == null}" onclick="location.href='/member/userlogin'">로그인</a>
             <div class="fnc_user_wrap" tabindex="1">
                 <a href="/member/profilechange" title="프로필수정">프로필수정</a>
                 <!--매니저일 경우, 회원일 경우 다르게-->
                 <!--매니저 로그인 시 href="/manager/manager"-->
                 <!--회원 로그인 시 href="/user/user_userdetails"-->
-                <a title="이용내역">이용내역</a>
+                <a title="이용내역" th:if="${session.userVO != null}" href="/user/user_userdetails">이용내역</a>
+                <a title="이용내역" th:if="${session.managerVO != null}" href="/manager/manager">이용내역</a>
                 <a href="/member/passwordchange" title="비밀번호변경">비밀번호변경</a>
-                <a href="/member/mainpage" class="logout" title="로그아웃">로그아웃</a>
+                <a href="/member/logout" class="logout" title="로그아웃">로그아웃</a>
             </div>
         </div>
     </div>

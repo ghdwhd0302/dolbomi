@@ -22,7 +22,7 @@
 </head>
 <body>
 <header th:replace="header.html"></header>
-<form action="/login" method="post" id="managerForm">
+<form action="/member/loginM" method="post" id="managerForm" name="managerForm">
     <input type="hidden" id="loginTp" name="loginTp" value="manager">
     <input type="hidden" id="userId" name="userId">
 
@@ -41,10 +41,10 @@
             <div class="form_wrap">
                 <span class="w_msg tc"></span>
                 <div class="dp_flex">
-                    <input type="text" id="txtUserId" name="txtUserId" value="" placeholder="아이디">
+                    <input type="text" id="txtUserId" name="managerEmail" placeholder="아이디">
                 </div>
                 <div class="dp_flex">
-                    <input type="password" id="password" name="password" value="" placeholder="비밀번호">
+                    <input type="password" id="password" name="managerPw" placeholder="비밀번호">
                 </div>
             </div>
             <!-- //form_wrap -->
@@ -58,7 +58,7 @@
 
             <!-- button_wrap -->
             <div class="button_wrap">
-                <a href="/member/loginM" class="primary">로그인</a>
+                <a onclick="loginCheck();" class="primary">로그인</a>
             </div>
             <div class="button_text_wrap">
                 <a href="/member/idfind_manager">아이디 찾기</a>
@@ -81,5 +81,25 @@
     $(".toggle_check").children('span').mouseout(function () {
         $(this).css('color', '#000');
     })
+
+    let $managerForm = $(managerForm);
+    let $managerEmail = $("input[name='managerEmail']");
+    let $managerPw = $("input[name='managerPw']");
+
+    function loginCheck() {
+        console.log($managerEmail.val());
+        console.log($managerPw.val());
+
+        if(!$managerEmail.val()){
+            alert("아이디를 입력해주세요.");
+            return;
+        }
+        if(!$managerPw.val()){
+            alert("비밀번호를 입력해주세요.");
+            return;
+        }
+
+        $managerForm.submit();
+    }
 </script>
 </html>

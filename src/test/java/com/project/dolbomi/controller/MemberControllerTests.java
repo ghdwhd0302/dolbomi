@@ -44,19 +44,34 @@ public class MemberControllerTests {
     }
 */
 
-
     @Test
-    public void removeTest() throws Exception {
-        log.info(mockMvc.perform(MockMvcRequestBuilders.get("/member/delete").param("userEMail", "APPLE")).andReturn().getModelAndView().getViewName());
-
-
+    public void loginTests() throws Exception{
+        log.info(mockMvc.perform(MockMvcRequestBuilders.post("/member/loginM")
+                .param("managerEmail", "apple")
+                .param("managerPw", "1234"))
+                .andReturn().getModelAndView().toString()
+        );
     }
 
-    @Test
-    public void modifyTest() throws Exception {
-        log.info(mockMvc.perform(MockMvcRequestBuilders.post("/member/profileupdate")
-                .param("userName", "감기")
-                .param("userBirth", "10221111")).andReturn().getModelAndView().getModelMap().toString());
-    }
+
+
+//    @Test
+//    public void userLoginTest(){
+//        mockMvc.perform(MockMvcReques
+//    }tBuilders.get)
+
+
+//    @Test
+//    public void removeTest() throws Exception {
+//        log.info(mockMvc.perform(MockMvcRequestBuilders.get("/member/delete").param("userEMail", "APPLE")).andReturn().getModelAndView().getViewName());
+//
+//    }
+
+//    @Test
+//    public void modifyTest() throws Exception {
+//        log.info(mockMvc.perform(MockMvcRequestBuilders.post("/member/profileupdate")
+//                .param("userName", "감기")
+//                .param("userBirth", "10221111")).andReturn().getModelAndView().getModelMap().toString());
+//    }
 
 }

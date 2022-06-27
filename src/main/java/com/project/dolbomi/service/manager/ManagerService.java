@@ -31,4 +31,7 @@ public interface ManagerService {
 
     public ManagerVO getManagerPro(String userEmail);
 
+    public boolean managerLogIn(String managerEmail, String managerPw);
+
+    public ManagerVO managerInfo(String managerEmail);
 }
