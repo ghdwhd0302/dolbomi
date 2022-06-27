@@ -37,8 +37,8 @@ public class UserDAO {
     }
 
     // 회원 로그인
-    public void login(UserVO userVO){
-
+    public boolean userLogIn(String userEmail, String userPw){
+        return userMapper.userLogIn(userEmail, userPw) == 1 ;
     }
 
     //회원 탈퇴

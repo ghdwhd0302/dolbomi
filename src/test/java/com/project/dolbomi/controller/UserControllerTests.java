@@ -63,8 +63,8 @@ public class UserControllerTests {
 
 
 
-    @Test
-    public void getListTests() throws Exception{
-        log.info(mockMvc.perform(MockMvcRequestBuilders.get("/user/user_userdetails").param("careReservationNum", "7")).andReturn().getModelAndView().getViewName());
-    }
+//    @Test
+//    public void getListTests() throws Exception{
+//        log.info(mockMvc.perform(MockMvcRequestBuilders.get("/user/user_userdetails").param("careReservationNum", "7")).andReturn().getModelAndView().getViewName());
+//    }
 }

@@ -74,6 +74,7 @@ public class UserController {
         return "/user/sendcode";
     }
 
+
 //    동행 서비스 예약
 //    @GetMapping("reservAcc")
 //    public void accReservation(){

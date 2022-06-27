@@ -37,6 +37,9 @@ public interface UserService {
     //회원 탈퇴
     public boolean withdrawal(String userEmail);
 
+    //로그 인
+    public boolean userLogIn(String userEmail, String userPw);
+
     //프로필 페이지
     public UserVO profile(String userEmail);
 

@@ -46,4 +46,10 @@
         WHERE USER_EMAIL = #{userEmail, jdbcType=VARCHAR}
     </select>
 
+    <select id="userLogIn" resultType="_int">
+        SELECT COUNT(USER_EMAIL)
+        FROM TBL_USER
+        WHERE USER_EMAIL = #{userEmail} AND USER_PW = #{userPw}
+    </select>
+
 </mapper>

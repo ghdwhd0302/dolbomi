@@ -20,6 +20,9 @@ public interface UserMapper {
     //프로필 수정
     public int update(UserVO userVO);
 
+    //로그 인
+    public int userLogIn(String userEmail, String userPw);
+
 
     public int getTotal();
 
