@@ -1,17 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.project.dolbomi.mapper.ReviewMapper">
+
     <select id="getList" resultType="reviewVO">
         SELECT REVIEW_NUM,REVIEW_TYPE, REVIEW_TITLE, REVIEW_CONTENT, REVIEW_WRITER,REVIEW_SCORE, REVIEW_DATE, REVIEW_UPDATE_DATE
         FROM TBL_REVIEW
+
+    <!--  전체목록가져오기   -->
+    <select id="reviewGetList" resultType="reviewVO">
+        <![CDATA[
+            SELECT RN, REVIEW_NUM,REVIEW_TYPE, REVIEW_TITLE, REVIEW_CONTENT, REVIEW_WRITER, REVIEW_DATE, REVIEW_UPDATE_DATE
+            FROM
+            (
+                SELECT /*+ INDEX_DESC(TBL_REVIEW PK_REVIEW) */
+                ROWNUM RN, REVIEW_NUM, REVIEW_TYPE, REVIEW_TITLE, REVIEW_CONTENT, REVIEW_WRITER, REVIEW_DATE, REVIEW_UPDATE_DATE
+                FROM TBL_REVIEW
+                WHERE ROWNUM <= #{pageNum} * #{amount}
+            )
+            WHERE RN > (#{pageNum} - 1) * #{amount}
+        ]]>
+
     </select>
 
     <insert id="insert">
         <selectKey keyProperty="reviewNum" order="BEFORE" resultType="long">
             SELECT SEQ_REVIEW.NEXTVAL FROM DUAL
         </selectKey>
-        INSERT INTO TBL_REVIEW (REVIEW_NUM, REVIEW_TITLE, REVIEW_CONTENT, REVIEW_WRITER)
-        VALUES (#{reviewNum}, #{reviewTitle}, #{reviewContent}, #{reviewWriter})
+        INSERT INTO TBL_REVIEW (REVIEW_NUM, REVIEW_TYPE, REVIEW_TITLE, REVIEW_WRITER, REVIEW_CONTENT)
+        VALUES (#{reviewNum}, #{reviewType}, #{reviewTitle}, #{reviewWriter}, #{reviewContent})
     </insert>
 
     <select id="select" resultType="reviewVO">

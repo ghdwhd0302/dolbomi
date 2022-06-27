@@ -51,7 +51,7 @@
 
     <insert id="insert">
         INSERT INTO TBL_CARE_RESERVATION (CARE_RESERVATION_NUM, CARE_RESERVATION_NAME,CARE_RESERVATION_TYPE ,CARE_RESERVATION_AGE, CARE_RESERVATION_PHONE_NUM, CARE_RESERVATION_GENDER,CARE_RESERVATION_ADD_PHONE_NUM,CARE_RESERVATION_RELATION,CARE_RESERVATION_ADDRESS,CARE_RESERVATION_HOPE_GENDER,CARE_RESERVATION_DATE,CARE_RESERVATION_TIME,CARE_RESERVATION_ADD_REQUIRE,CARE_RESERVATION_PRICE, USER_EMAIL)
-        VALUES (SEQ_CARE_RESERVATION.NEXTVAL, #{careReservationName}, #{careReservationType},#{careReservationAge},#{careReservationPhoneNum},#{careReservationGender},#{careReservationAddPhoneNum},#{careReservationRelation},#{careReservationAddress},#{careReservationHopeGender},#{careReservationDate},#{careReservationTime},#{careReservationAddRequire},#{careReservationPrice}, #{userEmail})
+        VALUES (SEQ_RESERVATION.NEXTVAL, #{careReservationName}, #{careReservationType},#{careReservationAge},#{careReservationPhoneNum},#{careReservationGender},#{careReservationAddPhoneNum},#{careReservationRelation},#{careReservationAddress},#{careReservationHopeGender},#{careReservationDate},#{careReservationTime},#{careReservationAddRequire},#{careReservationPrice}, #{userEmail})
     </insert>
 
     <select id="select" resultType="carereservationVO">
