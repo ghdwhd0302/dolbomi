@@ -209,41 +209,54 @@ public class UserController {
         return "/user/user_userdetails4";
     }
 
-    @GetMapping("review2")
-    public void register(){}
-
     @GetMapping("myReview")
-    public void myReview(){}
+    public String myReview(Criteria criteria, Model model){
+        log.info("---------------------");
+        log.info("myReview--------");
+        log.info("---------------------");
+
+        model.addAttribute("reviewList", userService.reviewGetList(criteria));
+        model.addAttribute("pageDTO", new PageDTO(criteria, userService.reviewGetTotal(criteria)));
+
+        return "/user/myReview";
+    }
+
+    @GetMapping("review2")
+    public void review2(){}
+
 
     @GetMapping("review")
-    public String reviewGetList(Model model){
+    public String reviewGetList( Criteria criteria, Model model  ){
         log.info("---------------------");
         log.info("reviewGetList--------");
         log.info("---------------------");
 
-        model.addAttribute("reviewList", userService.reviewGetList());
+        model.addAttribute("reviewList", userService.reviewGetList(criteria));
+        model.addAttribute("pageDTO", new PageDTO(criteria, userService.reviewGetTotal(criteria)));
+
         return "/user/review";
     }
 
+
     // 게시글 추가
     @PostMapping("review2")
-    public RedirectView register(ReviewVO reviewVO, RedirectAttributes rttr){
+    public RedirectView register( ReviewVO reviewVO, RedirectAttributes rttr){
         log.info("----------------------------");
         log.info("register............. : " + reviewVO);
         log.info("----------------------------");
 
         userService.register(reviewVO);
-        rttr.addFlashAttribute("boardNumber", reviewVO.getReviewNum());
-        return new RedirectView("/user/myReview");
+        rttr.addFlashAttribute("reviewNum", reviewVO.getReviewNum());
+        return new RedirectView("/user/review");
     }
 
     //    게시글 상세보기
-    @GetMapping({"readReview", "modifyreview"})
+    @GetMapping({"readReview", "modifyReview"})
     public void readReview(Long reviewNum, HttpServletRequest req, Model model){
         log.info("----------------------------");
         log.info(req.getRequestURI() + "............. : " + reviewNum);
         log.info("----------------------------");
-        model.addAttribute("reviewNum", userService.get(reviewNum));
+        model.addAttribute("review", userService.get(reviewNum));
     }
 
     // 수정
@@ -254,20 +267,20 @@ public class UserController {
         log.info("----------------------------");
         userService.modify(reviewVO);
         rttr.addAttribute("reviewNum", reviewVO.getReviewNum());
-        return new RedirectView("/board/readReview");
+        return new RedirectView("/user/readReview");
 
 
     }
 
-
-    @GetMapping("reviewRemove")
-    public String reviewRemove(Long reviewNum, Model model){
+    // 삭제
+    @PostMapping("reviewRemove")
+    public String reviewRemove(Long reviewNum, Criteria criteria, Model model){
         log.info("----------------------------");
         log.info("reviewRemove............. : " + reviewNum);
         log.info("----------------------------");
 
         userService.reviewRemove(reviewNum);
-        return reviewGetList(model);
+        return reviewGetList(criteria, model);
     }
 
 }
