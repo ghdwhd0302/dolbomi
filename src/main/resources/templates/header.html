@@ -52,8 +52,7 @@
             <a href="/member/faq" class="fnc_notice"></a>
 
                 <!--로그인 안된상태에서 클릭하면 로그인 페이지로 이동-->
-            <a class="fnc_user" id="btnLogin" title="로그인" th:if="${session.userVO != null}" th:text="${session.userVO.userName}"> <!--href="/member/userlogin" 추가 해야됨-->
-
+            <a class="fnc_user" id="btnLogin" title="로그인" th:if="${session.userVO != null}" th:text="${session.userVO.userName + '님'}"> <!--href="/member/userlogin" 추가 해야됨-->
             </a>
             <div class="fnc_user_wrap" tabindex="1">
                 <a href="/member/profilechange" title="프로필수정">프로필수정</a>
@@ -62,7 +61,7 @@
                 <!--회원 로그인 시 href="/user/user_userdetails"-->
                 <a title="이용내역">이용내역</a>
                 <a href="/member/passwordchange" title="비밀번호변경">비밀번호변경</a>
-                <a href="/member/mainpage" class="logout" title="로그아웃">로그아웃</a>
+                <a href="/member/logout" class="logout" title="로그아웃">로그아웃</a>
             </div>
         </div>
     </div>

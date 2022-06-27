@@ -22,7 +22,7 @@
 </head>
 <body>
 <header th:replace="header.html"></header>
-<form action="/login" method="post" id="userForm">
+<form action="/member/userlogin" method="post" id="userForm" name="userForm">
     <input type="hidden" id="loginTp" name="loginTp" value="usr">
     <input type="hidden" id="userId" name="userId">
 
@@ -33,7 +33,7 @@
                 <ul>
                     <li id="loginTpUsr" data-type="usr" class="current"><a onclick="location.href='/member/userlogin'"
                                                                            style="color: #fff;">개인회원</a></li>
-                    <li id="loginTpMgr" data-type="manager" class=""><a onclick="location.href='/member/managerlogin'">매니저</a></li>
+                    <li id="loginTpMgr" data-type="user" class=""><a onclick="location.href='/member/userlogin'">매니저</a></li>
                 </ul>
             </div>
 
@@ -41,10 +41,10 @@
             <div class="form_wrap">
                 <span class="w_msg tc"></span>
                 <div class="dp_flex">
-                    <input type="text" id="txtUserId" name="txtUserId" value="" placeholder="아이디">
+                    <input type="text" id="userEmail" name="userEmail" value="" placeholder="아이디">
                 </div>
                 <div class="dp_flex">
-                    <input type="password" id="password" name="password" value="" placeholder="비밀번호">
+                    <input type="password" id="userPw" name="userPw" value="" placeholder="비밀번호">
                 </div>
             </div>
             <!-- //form_wrap -->
@@ -58,7 +58,7 @@
 
             <!-- button_wrap -->
             <div class="button_wrap">
-                <a href="/member/loginU" class="primary">로그인</a>
+                <a onclick="loginCheck();" class="primary">로그인</a>
             </div>
             <div class="button_text_wrap">
                 <a href="/member/idfind">아이디 찾기</a>
@@ -81,5 +81,28 @@
     $(".toggle_check").children('span').mouseout(function () {
         $(this).css('color', '#000');
     })
+
+    //로그인 버튼 클릭 시
+    let $userForm = $(userForm);
+    let $userEmail = $("input[name='userEmail']");
+    let $userPw = $("input[name='userPw']");
+
+    function loginCheck() {
+        console.log($userEmail.val());
+        console.log($userPw.val());
+
+        if(!$userEmail.val()){
+            alert("아이디를 입력해주세요.");
+            return;
+        }
+        if(!$userPw.val()){
+            alert("비밀번호를 입력해주세요.");
+            return;
+        }
+
+        $userForm.submit();
+    }
+    
 </script>
+
 </html>

@@ -55,5 +55,23 @@ public class MemberControllerTests {
 
 
 
+//    @Test
+//    public void userLoginTest(){
+//        mockMvc.perform(MockMvcReques
+//    }tBuilders.get)
+
+
+//    @Test
+//    public void removeTest() throws Exception {
+//        log.info(mockMvc.perform(MockMvcRequestBuilders.get("/member/delete").param("userEMail", "APPLE")).andReturn().getModelAndView().getViewName());
+//
+//    }
+
+//    @Test
+//    public void modifyTest() throws Exception {
+//        log.info(mockMvc.perform(MockMvcRequestBuilders.post("/member/profileupdate")
+//                .param("userName", "감기")
+//                .param("userBirth", "10221111")).andReturn().getModelAndView().getModelMap().toString());
+//    }
 
 }

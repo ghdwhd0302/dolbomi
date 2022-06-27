@@ -81,6 +81,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public boolean userLogIn(String userEmail, String userPw) {
+        return userDAO.userLogIn(userEmail, userPw);
+    }
+
+    @Override
     public UserVO profile(String userEmail) {
         return userDAO.selectProfile(userEmail);
     }
