@@ -6,6 +6,12 @@
         INSERT INTO TBL_USER (USER_NAME, USER_GENDER, USER_BIRTH, USER_EMAIL,USER_PHONE_NUM,USER_ADDRESS,USER_PW)
         VALUES (#{userName}, #{userGender},#{userBirth},#{userEmail},#{userPhoneNum},#{userAddress},#{userPw})
     </insert>
+    <select id="selectprofile" resultType="userVO">
+        SELECT USER_NAME, USER_BIRTH, USER_EMAIL, USER_PHONE_NUM, USER_ADDRESS
+        FROM TBL_USER
+        WHERE USER_EMAIL = #{userEmail}
+    </select>
+
 
     <select id="select" resultType="reviewVO">
         SELECT REVIEW_NUM, REVIEW_TITLE, REVIEW_CONTENT, REVIEW_WRITER, REVIEW_SCORE,REVIEW_DATE, REVIEW_UPDATE_DATE
@@ -27,4 +33,17 @@
     <select id="getTotal" resultType="_int">
         SELECT COUNT(USER_STATUS) FROM TBL_USER
     </select>
+
+    <update id="updateProfile">
+        UPDATE TBL_USER
+        SET USER_NAME= #{userName}, USER_BIRTH= #{userBirth},USER_PW= #{userPw}
+        WHERE USER_EMAIL = #{userEmail}
+    </update>
+
+    <select id="selectProfile" resultType="userVO">
+        SELECT USER_NAME, USER_BIRTH, USER_EMAIL,USER_GENDER,USER_PHONE_NUM,USER_ADDRESS,USER_PW,USER_STATUS
+        FROM TBL_USER
+        WHERE USER_EMAIL = #{userEmail, jdbcType=VARCHAR}
+    </select>
+
 </mapper>
