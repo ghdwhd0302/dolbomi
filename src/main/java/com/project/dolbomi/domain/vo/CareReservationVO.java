@@ -12,7 +12,7 @@ public class CareReservationVO {
     private String careReservationAge;
     private String careReservationPhoneNum;
     private String careReservationGender;
-    private String careReservationAdd;
+    private String careReservationAddPhoneNum;
     private String careReservationRelation;
     private String careReservationAddress;
     private String careReservationHopeGender;

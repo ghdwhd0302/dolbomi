@@ -87,7 +87,7 @@ public class UserController {
         log.info("accReservationVO..........." + accReservationVO);
 
         model.addAttribute("accReservationVO", accReservationVO);
-    };
+    }
 
 //    동행 서비스 예약 2단계
     @PostMapping("acc_reservation3")
@@ -120,7 +120,7 @@ public class UserController {
         log.info("careReservationVO..........." + careReservationVO);
 
         model.addAttribute("careReservationVO", careReservationVO);
-    };
+    }
 
     //    돌봄 서비스 예약 2단계
     @PostMapping("care_reservation3")
