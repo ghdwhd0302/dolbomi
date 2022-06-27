@@ -44,8 +44,8 @@
                                     <div class="sc-VigVT dUXpIL"></div>
                                     <label>성별</label>
                                     <div class="type-button-wrapper">
-                                        <div class="type-button active">남자</div>
-                                        <div class="type-button ">여자</div>
+                                        <div id="M" class="type-button active">남자</div>
+                                        <div id="W" class="type-button ">여자</div>
                                     </div>
                                     <div class="sc-VigVT dUXpIL"></div>
                                     <label>생년월일</label><input type="text"
@@ -104,6 +104,19 @@
             $(".fnc_user_wrap").removeClass('on');
         }
     })
+/*성별확인*/
+    function change_btn(e) {
+        var btns = document.querySelectorAll(".type-button");
+        btns.forEach(function(btn, i) {
+            if(e.currentTarget == btn) {
+                btn.classList.add("active");
+            }
+            else {
+                btn.classList.remove("active");
+            }
+        });
+        console.log( e.currentTarget );
+    }
 
 
 </script>
