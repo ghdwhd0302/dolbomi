@@ -41,7 +41,7 @@ public interface UserService {
 
     /*ReviewDAO*/
     //    게시글 목록
-    public List<ReviewVO> reviewGetList();
+    public List<ReviewVO> reviewGetList(Criteria criteria);
 
     //    게시글 추가
     public void register(ReviewVO reviewVO);
@@ -57,7 +57,8 @@ public interface UserService {
     public boolean reviewRemove(Long reviewNum);
 
     //    게시글 전체 개수
-    public int reviewGetTotal();
+    public int reviewGetTotal(Criteria criteria);
+
 
 
 }

@@ -42,7 +42,11 @@
                         </div>
                     </div>
                     <div class="sc-fvLVrH kYHgeC inner-container" style="padding: 22px 0;">
-                        <div class="sc-hvvHee gWkDAg"><span></span>건</div>
+                        <div th:each="review:${pageDTO}">
+                            <div class="sc-hvvHee gWkDAg" th:object="${review}">
+                                <span th:text="*{total}"></span>건
+                            </div>
+                        </div>
                         <div class="sc-eSePXt kAYtzd tHead">
                             <div class="sc-dXfzlN fFlvkp" style="width: 40px;">번호</div>
                             <div class="sc-dXfzlN fFlvkp" style="flex: 1 1 0%;">서비스</div>
@@ -54,7 +58,7 @@
                         <div class="ant-collapse ant-collapse-borderless ant-collapse-icon-position-right" style="border: 0; background-color: white">
                             <div:block th:each="review:${reviewList}" class="ant-collapse-item ant-collapse-item-active"
                                        style="background-color: rgb(255, 255, 255); border-color: rgb(230, 230, 230);">
-                                <div class="ant-collapse-header header1" role="button" tabindex="0" aria-expanded="true">
+                                <div class="ant-collapse-header header1 B" role="button" tabindex="0" aria-expanded="true">
                                     <div class="sc-iIHjhz mRfGE tBody" th:object="${review}">
                                         <div class="sc-jHZirH djaPsR reviewNum" th:text="*{reviewNum}" style="width: 40px;"></div>
                                         <div class="sc-jHZirH SOOpQ reviewType" th:text="*{reviewType}" style="width: 80px;"></div>
@@ -64,7 +68,7 @@
                                         <div class="sc-jHZirH iGzNxi reviewDate" th:text="*{reviewDate}" style="width: 152px;"></div>
                                     </div>
                                 </div>
-                                <div class="ant-collapse-content ant-collapse-content-active box1" style="display:none">
+                                <div class="ant-collapse-content ant-collapse-content-active box1 C" style="display:none">
                                     <div class="ant-collapse-content-box ">
                                         <div class="sc-dKEPtC jwEkpD" th:object="${review}">
 
@@ -76,115 +80,53 @@
                                     </div>
                                 </div>
                             </div:block>
-                            <ul class="ant-pagination" unselectable="unselectable">
-                                <li title="Previous Page" class="ant-pagination-prev ant-pagination-disabled"
-                                    aria-disabled="true"><button class="ant-pagination-item-link" type="button"
-                                                                 tabindex="-1" disabled=""><span role="img" aria-label="left"
-                                                                                                 class="anticon anticon-left"><svg viewBox="64 64 896 896" focusable="false"
-                                                                                                                                   data-icon="left" width="1em" height="1em" fill="currentColor"
-                                                                                                                                   aria-hidden="true">
-                                                <path
-                                                        d="M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 000 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z">
-                                                </path>
-                                            </svg></span></button></li>
-                                <li title="1"
-                                    class="ant-pagination-item ant-pagination-item-1 ant-pagination-item-active"
-                                    tabindex="0"><a rel="nofollow">1</a></li>
-                                <li title="2" class="ant-pagination-item ant-pagination-item-2" tabindex="0"><a
-                                        rel="nofollow">2</a></li>
-                                <li title="3" class="ant-pagination-item ant-pagination-item-3" tabindex="0"><a
-                                        rel="nofollow">3</a></li>
-                                <li title="4" class="ant-pagination-item ant-pagination-item-4" tabindex="0"><a
-                                        rel="nofollow">4</a></li>
-                                <li title="5" class="ant-pagination-item ant-pagination-item-5" tabindex="0"><a
-                                        rel="nofollow">5</a></li>
-                                <li title="6" class="ant-pagination-item ant-pagination-item-6" tabindex="0"><a
-                                        rel="nofollow">6</a></li>
-                                <li title="7" class="ant-pagination-item ant-pagination-item-7" tabindex="0"><a
-                                        rel="nofollow">7</a></li>
-                                <li title="Next Page" class="ant-pagination-next" aria-disabled="false" tabindex="0">
-                                    <button class="ant-pagination-item-link" type="button" tabindex="-1"><span
-                                            role="img" aria-label="right" class="anticon anticon-right"><svg
-                                            viewBox="64 64 896 896" focusable="false" data-icon="right" width="1em"
-                                            height="1em" fill="currentColor" aria-hidden="true">
-                                                <path
-                                                        d="M765.7 486.8L314.9 134.7A7.97 7.97 0 00302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 000-50.4z">
-                                                </path>
-                                            </svg></span></button></li>
-                                <li class="ant-pagination-options">
-                                    <!-- <div
-                                        class="ant-select ant-pagination-options-size-changer ant-select-single ant-select-show-arrow">
-                                        <div class="ant-select-selector"><span
-                                                class="ant-select-selection-search"><input autocomplete="off"
-                                                    type="search" class="ant-select-selection-search-input"
-                                                    role="combobox" aria-haspopup="listbox" aria-owns="rc_select_3_list"
-                                                    aria-autocomplete="list" aria-controls="rc_select_3_list"
-                                                    aria-activedescendant="rc_select_3_list_0" readonly=""
-                                                    unselectable="on" value="" id="rc_select_3"
-                                                    style="opacity: 0;"></span><span class="ant-select-selection-item"
-                                                title="20 / page">20 / page</span></div><span class="ant-select-arrow"
-                                            unselectable="on" aria-hidden="true" style="user-select: none;"><span
-                                                role="img" aria-label="down"
-                                                class="anticon anticon-down ant-select-suffix"><svg
-                                                    viewBox="64 64 896 896" focusable="false" data-icon="down"
-                                                    width="1em" height="1em" fill="currentColor" aria-hidden="true">
-                                                    <path
-                                                        d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z">
-                                                    </path>
-                                                </svg></span></span>
-                                    </div> -->
-                                </li>
-                            </ul>
                         </div>
                     </div>
                 </div>
+                <div class="big-width" style="text-align: center; margin-bottom: 29px;" >
+                    <a class="changePage" th:if="${pageDTO.prev}" th:href="${pageDTO.startPage - 1}"><code>&lt;</code></a>
+                    <th:block th:each="num:${#numbers.sequence(pageDTO.startPage, pageDTO.endPage)}">
+                        <code th:text="${num}" th:if="${pageDTO.criteria.pageNum == num}"></code>
+                        <a class="changePage" th:unless="${pageDTO.criteria.pageNum == num}" th:href="${num}"><code th:text="${num}"></code></a>
+                    </th:block>
+                    <a class="changePage" th:if="${pageDTO.next}" th:href="${pageDTO.endPage + 1}"><code>&gt;</code></a>
+                </div>
+                <form action="/user/review" th:object="${criteria}" name="pageForm">
+                    <input type="hidden" th:field="*{pageNum}">
+                    <input type="hidden" th:field="*{amount}">
+                </form>
             </div>
         </div>
     </div>
 </div>
 
-</div>
 
 <!-- footer -->
 <footer th:replace="footer.html"></footer>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script th:inline="javascript">;
+let reviewNum = [[${reviewNum}]];
+let $pageForm = $(pageForm);
+
+if(reviewNum != null){
+    alert(reviewNum + "번 게시글이 등록되었습니다.");
+}
+
+$("a.changePage").on("click", function(e){
+    e.preventDefault();
+    $pageForm.find("input[name='pageNum']").val($(this).attr("href"));
+    $pageForm.submit();
+});
+
+
+
+</script>
 <script>
-    /*$(document).ready(function () {
-        //헤더 체크
-        $('.menu06').addClass('active');
-
-        //메인에서 링크로 접근
-        if (null != null) {
-            $('.form_sub_tab ul li').removeClass()
-            $('#null').addClass('current')
-            let tp = $('.current').attr('id')
-            dataLoad(tp)
-        }
-
-
-    })*/
-
-    $("#btnLogin").click(function(){
-        if(!$(this).attr('class').match('on')){
-            $(this).addClass('on');
-            $(".fnc_user_wrap").addClass('on');
-        }else{
-            $(this).removeClass('on');
-            $(".fnc_user_wrap").removeClass('on');
-        }
-    })
-
-    $(".header1").click(function(){
-        $('.box1').toggle();
+    $('.B').click(function () {
+        $(this).parent().find('.C').toggle('slow');
+        /*     $(this).siblings('.C').toggle('slow');
+            $(this).next('.C').toggle('slow'); */
     });
-    $(".header2").click(function(){
-        $('.box2').toggle();
-    });
-    $(".header3").click(function(){
-        $('.box3').toggle();
-    });
-
-
 </script>
 </html>

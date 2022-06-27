@@ -3,8 +3,17 @@
 <mapper namespace="com.project.dolbomi.mapper.ReviewMapper">
     <!--  전체목록가져오기   -->
     <select id="reviewGetList" resultType="reviewVO">
-        SELECT REVIEW_NUM,REVIEW_TYPE, REVIEW_TITLE, REVIEW_CONTENT, REVIEW_WRITER, REVIEW_DATE, REVIEW_UPDATE_DATE
-        FROM TBL_REVIEW
+        <![CDATA[
+            SELECT RN, REVIEW_NUM,REVIEW_TYPE, REVIEW_TITLE, REVIEW_CONTENT, REVIEW_WRITER, REVIEW_DATE, REVIEW_UPDATE_DATE
+            FROM
+            (
+                SELECT /*+ INDEX_DESC(TBL_REVIEW PK_REVIEW) */
+                ROWNUM RN, REVIEW_NUM, REVIEW_TYPE, REVIEW_TITLE, REVIEW_CONTENT, REVIEW_WRITER, REVIEW_DATE, REVIEW_UPDATE_DATE
+                FROM TBL_REVIEW
+                WHERE ROWNUM <= #{pageNum} * #{amount}
+            )
+            WHERE RN > (#{pageNum} - 1) * #{amount}
+        ]]>
     </select>
 
     <!--게시글 추가-->
@@ -12,8 +21,8 @@
         <selectKey keyProperty="reviewNum" order="BEFORE" resultType="long">
             SELECT SEQ_REVIEW.NEXTVAL FROM DUAL
         </selectKey>
-        INSERT INTO TBL_REVIEW (REVIEW_NUM, REVIEW_TITLE, REVIEW_CONTENT, REVIEW_WRITER)
-        VALUES (#{reviewNum}, #{reviewTitle}, #{reviewContent}, #{reviewWriter})
+        INSERT INTO TBL_REVIEW (REVIEW_NUM, REVIEW_TYPE, REVIEW_TITLE, REVIEW_WRITER, REVIEW_CONTENT)
+        VALUES (#{reviewNum}, #{reviewType}, #{reviewTitle}, #{reviewWriter}, #{reviewContent})
     </insert>
 
     <!--게시글 한 개 가져오기-->
