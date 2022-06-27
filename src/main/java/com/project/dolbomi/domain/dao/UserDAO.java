@@ -11,26 +11,26 @@ public class UserDAO {
     private final UserMapper userMapper;
 
 
-    // 돌봄서비스 수락
-    public void careApprove(long careReservationNum){
+    /*  // 돌봄서비스 수락
+      public int careApprove(long careReservationNum){
+          return userMapper.careApprove(careReservationNum);
+      }
 
-    }
+      // 돌봄서비스 거절
+      public int careRefuse(long careReservationNum){
+          return userMapper.careRefuse(careReservationNum);
+      }
 
-    // 돌봄서비스 거절
-    public void careRefuse(long careReservationNum){
+      // 동행서비스 수락
+      public void accApprove(long accReservationNum){
 
-    }
+      }
 
-    // 동행서비스 수락
-    public void accApprove(long accReservationNum){
+      // 동행서비스 거절
+      public void accRefuse(long accReservationNum){
 
-    }
-
-    // 동행서비스 거절
-    public void accRefuse(long accReservationNum){
-
-    }
-
+      }
+  */
     // 회원 가입
     public void join(UserVO userVO){
         userMapper.insert(userVO);
@@ -42,21 +42,24 @@ public class UserDAO {
     }
 
     //회원 탈퇴
-    public void withdrawal(String userEmail){
-
+    public boolean withdrawal(String userEmail){
+        return userMapper.delete(userEmail).equals(1) ;
     }
 
     //프로필 페이지
-    public void profile(String userEmail){
-
+    public UserVO selectProfile(String userEmail){
+        return userMapper.selectProfile(userEmail);
     }
 
     //프로필 수정
-    public void modify(UserVO userVO){
+    public boolean usermodify(UserVO userVO){
 
+        return userMapper.updateProfile(userVO).equals(1);
     }
 
     public int getTotal(){
         return userMapper.getTotal();
     }
 }
+
+

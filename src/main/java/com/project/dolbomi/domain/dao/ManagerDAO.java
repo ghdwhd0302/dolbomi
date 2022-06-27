@@ -1,6 +1,7 @@
 package com.project.dolbomi.domain.dao;
 
 import com.project.dolbomi.domain.vo.ManagerVO;
+import com.project.dolbomi.domain.vo.UserVO;
 import com.project.dolbomi.mapper.ManagerMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
@@ -40,7 +41,11 @@ public class ManagerDAO {
     public void withdrawal(String userEmail){
 
     }
+    /*//프로필 수정
+    public boolean managermodify(ManagerVO managerVO){
 
+        return managerMapper.updateProfile(managerVO) == 1;
+    }*/
     public int getTotal(){
         return managerMapper.getTotal();
     }
