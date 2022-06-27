@@ -34,26 +34,33 @@
                             </div>
                         </div>
                     </div>
-                    <h3 class="back"><a href="/user/myReview" class="button small">목록 보기</a></h3>
-                    <div class="sc-fvLVrH kYHgeC inner-container" style="padding: 22px 0;">
+                    <div>
+                        <a href="/user/myReview" style="border: 1px solid #1f6cd5;
+                        padding: 10px; margin-top: 20px;
+                        position: absolute;
+                        color: #1f6cd5;
+                        border-radius: 6px;" >
+                            목록 보기</a>
+                    </div>
+                    <div class="sc-fvLVrH kYHgeC inner-container" style="padding: 86px 0;">
                         <div class="form">
-                            <form action="" method="post">
-                                <div class="fields" >
+                            <form action="/user/reviewRemove" method="post">
+                                <div class="fields" th:object="${review}">
                                     <div class="field">
                                         <h4>번호</h4>
-                                        <input type="text"  readonly/>
+                                        <input type="text" th:field="*{reviewNum}" readonly/>
                                     </div>
                                     <div class="field">
                                         <h4>제목</h4>
-                                        <input type="text"  readonly/>
+                                        <input type="text" th:field="*{reviewTitle}" readonly/>
                                     </div>
                                     <div class="field">
                                         <h4>내용</h4>
-                                        <textarea rows="6" style="resize:none"  readonly></textarea>
+                                        <textarea rows="6" style="resize:none; padding: 14px 0px 0px 14px;" th:field="*{reviewContent}" readonly></textarea>
                                     </div>
                                     <div class="field">
                                         <h4>작성자</h4>
-                                        <input type="text"  readonly/>
+                                        <input type="text" th:field="*{reviewWriter}" readonly/>
                                     </div>
                                 </div>
                                 <ul class="actions special">
@@ -96,5 +103,11 @@
 
 
 
+</script>
+<script th:inline="javascript">
+    let reviewNum =[[${review.reviewNum}]]
+    function goUpdate() {
+        location.href = "/user/modifyReview?reviewNum=" + reviewNum;
+    }
 </script>
 </html>

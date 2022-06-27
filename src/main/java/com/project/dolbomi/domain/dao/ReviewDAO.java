@@ -1,5 +1,6 @@
 package com.project.dolbomi.domain.dao;
 
+import com.project.dolbomi.domain.vo.Criteria;
 import com.project.dolbomi.domain.vo.ReviewVO;
 import com.project.dolbomi.mapper.ReviewMapper;
 import lombok.RequiredArgsConstructor;
@@ -13,8 +14,8 @@ public class ReviewDAO {
     private final ReviewMapper reviewMapper;
 
     //    게시글 목록
-    public List<ReviewVO> reviewGetList(){
-        return reviewMapper.reviewGetList();
+    public List<ReviewVO> reviewGetList(Criteria criteria){
+        return reviewMapper.reviewGetList(criteria);
     }
 
     //    게시글 추가
@@ -35,8 +36,8 @@ public class ReviewDAO {
         return reviewMapper.delete(reviewNum) == 1;
     }
     //    게시글 전체 개수
-    public int reviewGetTotal(){
-        return reviewMapper.reviewGetTotal();
+    public int reviewGetTotal(Criteria criteria){
+        return reviewMapper.reviewGetTotal(criteria);
     }
 
 

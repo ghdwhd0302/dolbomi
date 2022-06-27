@@ -70,7 +70,7 @@ public class UserServiceImpl implements UserService {
 
     /*ReviewDAO*/
     @Override
-    public List<ReviewVO> reviewGetList() {return reviewDAO.reviewGetList();}
+    public List<ReviewVO> reviewGetList(Criteria criteria) {return reviewDAO.reviewGetList(criteria);}
 
     @Override
     public void register(ReviewVO reviewVO) {reviewDAO.register(reviewVO);}
@@ -96,7 +96,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public int reviewGetTotal() {
-        return reviewDAO.reviewGetTotal();
+    public int reviewGetTotal(Criteria criteria) {
+        return reviewDAO.reviewGetTotal(criteria);
     }
 }
