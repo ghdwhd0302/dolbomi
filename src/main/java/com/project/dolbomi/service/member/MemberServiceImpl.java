@@ -4,9 +4,10 @@ import com.project.dolbomi.domain.dao.AccReservationDAO;
 import com.project.dolbomi.domain.dao.CareReservationDAO;
 import com.project.dolbomi.domain.vo.AccReservationVO;
 import com.project.dolbomi.domain.vo.CareReservationVO;
-import com.project.dolbomi.domain.vo.ReviewVO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -15,9 +16,16 @@ public class MemberServiceImpl implements MemberService {
     private final CareReservationDAO careReservationDAO;
 
     /*AccReservationDAO*/
-    @Override
-    public void AccGetList() {
 
+
+    /*@Override
+    public void AccGetList(Long accReservationNum) {
+        return accReservationDAO.AccGetList();
+    }*/
+
+    @Override
+    public AccReservationVO AccGetList(Long accReservationNum) {
+        return null;
     }
 
     @Override
@@ -35,12 +43,15 @@ public class MemberServiceImpl implements MemberService {
 
     }
 
-//    -----------------------------------------------------------------
-    /*CareReservationDAO*/
     @Override
-    public void careGetList() {
-
+    public List<CareReservationVO> CareGetList(Long careReservationNum) {
+        return careReservationDAO.CareGetList(careReservationNum);
     }
+
+
+    //    -----------------------------------------------------------------
+    /*CareReservationDAO*/
+
 
     @Override
     public void careReservation(CareReservationVO careReservationVO) {

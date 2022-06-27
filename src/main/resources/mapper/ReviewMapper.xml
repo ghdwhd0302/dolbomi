@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.project.dolbomi.mapper.ReviewMapper">
+
+    <select id="getList" resultType="reviewVO">
+        SELECT REVIEW_NUM,REVIEW_TYPE, REVIEW_TITLE, REVIEW_CONTENT, REVIEW_WRITER,REVIEW_SCORE, REVIEW_DATE, REVIEW_UPDATE_DATE
+        FROM TBL_REVIEW
+
     <!--  전체목록가져오기   -->
     <select id="reviewGetList" resultType="reviewVO">
         <![CDATA[
@@ -14,9 +19,9 @@
             )
             WHERE RN > (#{pageNum} - 1) * #{amount}
         ]]>
+
     </select>
 
-    <!--게시글 추가-->
     <insert id="insert">
         <selectKey keyProperty="reviewNum" order="BEFORE" resultType="long">
             SELECT SEQ_REVIEW.NEXTVAL FROM DUAL
@@ -25,28 +30,24 @@
         VALUES (#{reviewNum}, #{reviewType}, #{reviewTitle}, #{reviewWriter}, #{reviewContent})
     </insert>
 
-    <!--게시글 한 개 가져오기-->
     <select id="select" resultType="reviewVO">
-        SELECT REVIEW_NUM, REVIEW_TYPE, REVIEW_TITLE, REVIEW_CONTENT, REVIEW_WRITER, REVIEW_DATE, REVIEW_UPDATE_DATE
+        SELECT REVIEW_NUM, REVIEW_TITLE, REVIEW_CONTENT, REVIEW_WRITER, REVIEW_SCORE,REVIEW_DATE, REVIEW_UPDATE_DATE
         FROM TBL_REVIEW
         WHERE REVIEW_NUM = #{reviewNum}
     </select>
 
-    <!--게시글 수정-->
     <update id="update">
         UPDATE TBL_REVIEW
-        SET REVIEW_TITLE = #{reviewTitle}, REVIEW_CONTENT = #{reviewContent}, REVIEW_UPDATE_DATE = SYSDATE
+        SET REVIEW_TITLE = #{reviewTitle}, REVIEW_CONTENT = #{reviewContent},REVIEW_SCORE= #{reviewScore}, REVIEW_UPDATE_DATE = SYSDATE
         WHERE REVIEW_NUM = #{reviewNum}
     </update>
 
-    <!--게시글 삭제-->
     <delete id="delete">
         DELETE FROM TBL_REVIEW
         WHERE REVIEW_NUM = #{reviewNum}
     </delete>
 
-    <!--게시글 전체 개수-->
-    <select id="reviewGetTotal" resultType="_int">
+    <select id="getTotal" resultType="_int">
         SELECT COUNT(REVIEW_NUM) FROM TBL_REVIEW
     </select>
 

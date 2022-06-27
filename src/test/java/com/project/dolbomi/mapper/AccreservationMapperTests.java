@@ -1,6 +1,5 @@
 package com.project.dolbomi.mapper;
 
-import com.project.dolbomi.domain.vo.AccReservationVO;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,10 +12,10 @@ public class AccreservationMapperTests {
     private AccReservationMapper accReservationMapper;
 
 
-//    @Test
-//    public void getListTest() {
-//        accReservationMapper.getList().stream().map(AccReservationVO::toString).forEach(log::info);
-//    }
+    /*@Test
+    public void getListTest() {
+        accReservationMapper.getList().stream().map(AccReservationVO::toString).forEach(log::info);
+    }*/
 
     /*@Test
     public void insertTests(){
@@ -42,15 +41,10 @@ public class AccreservationMapperTests {
     }*/
 
 
-
-
-
-
-
-    /*@Test
-    public AccReservationVO select(){
-        accReservationMapper.select();
+    @Test
+    public void select() {
+        log.info(accReservationMapper.AccGetList(9L).toString());
     }
-*/
+
 
 }

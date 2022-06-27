@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ManagerController {
     private final ManagerService managerService;
 
-//    서비스 신청 목록
+    //    서비스 신청 목록
     @GetMapping("matchList")
     public void serviceList(){
 
@@ -51,18 +51,18 @@ public class ManagerController {
 
     }
 
-//    서비스 상태 변경(시작)
+    //    서비스 상태 변경(시작)
     @GetMapping("startService")
     public String serviceStart(){
         return "/manager/manager2";
     }
 
-//    서비스 상태 변경(취소)
+    //    서비스 상태 변경(취소)
     @GetMapping("cancelService")
     public void serviceCancel(){
     }
 
-//    서비스 상태 변경(종료)
+    //    서비스 상태 변경(종료)
     @GetMapping("endService")
     public String serviceEnd(){
         return "/manager/manager3";
@@ -78,7 +78,7 @@ public class ManagerController {
         return "/member/mainpage";
     }
 
-//  페이지 이동
+    //  페이지 이동
     @GetMapping("manager")
     public void manager(){}
 

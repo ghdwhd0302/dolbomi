@@ -1,9 +1,12 @@
 package com.project.dolbomi.domain.dao;
 
 import com.project.dolbomi.domain.vo.AccReservationVO;
+import com.project.dolbomi.domain.vo.CareReservationVO;
 import com.project.dolbomi.mapper.AccReservationMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 @RequiredArgsConstructor
@@ -11,8 +14,8 @@ public class AccReservationDAO {
     private final AccReservationMapper accReservationMapper;
 
     //    동행서비스 예약리스트
-    public void AccGetList(){
-
+    public List<AccReservationVO> AccGetList(Long accReservationNum){
+        return accReservationMapper.AccGetList(accReservationNum)  ;
     }
     //    동행서비스 예약하기
     public void accReservation(AccReservationVO accReservationVO){
@@ -23,9 +26,23 @@ public class AccReservationDAO {
 
     }
 
-    //    동행서비스 일반 예약 상태 변경
-    public void userAccReservationStatus(Long accReservationNum){}
-    //    동행서비스 매니저 예약 상태 변경
-    public void managerAccReservationStatus(Long accReservationNum){}
+
+    // 동행서비스 매니저 배정 수락 user_userdetails페이지
+    public boolean accmanager(AccReservationVO accReservationVO){
+        return accReservationMapper.Accupdate(accReservationVO) == 1;
+    }
+    // 동행서비스 매니저 배정 거절 user_userdetails페이지
+    public boolean accRefuseupdate(AccReservationVO accReservationVO){
+        return accReservationMapper.AccRefuseupdate(accReservationVO) == 1;
+    }
+    // 동행서비스 매니저가  예약 거절 manager페이지
+    public boolean accManagerRefuse(AccReservationVO accReservationVO){
+        return accReservationMapper.AccManagerRefuse(accReservationVO) == 1;
+    }
+
+    // 동행서비스고객이 예약취소,user_userdetails2 페이지의 동행예약 취소
+    public boolean accDelte(Long accReservationNum){
+        return accReservationMapper.delete(accReservationNum) == 1;
+    }
 
 }

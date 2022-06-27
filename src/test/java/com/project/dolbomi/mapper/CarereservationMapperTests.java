@@ -3,7 +3,6 @@ package com.project.dolbomi.mapper;
 
 
 
-import com.project.dolbomi.domain.vo.CareReservationVO;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,10 +15,10 @@ public class CarereservationMapperTests {
     private CareReservationMapper careReservationMapper;
 
 
-//    @Test
-//    public void getListTest() {
-//        careReservationMapper.getList().stream().map(CareReservationVO::toString).forEach(log::info);
-//    }
+    /*@Test
+    public void getListTest() {
+        careReservationMapper.CareGetList().stream().map(CareReservationVO::toString).forEach(log::info);
+    }*/
 
     /*@Test
     public void insertTest(){
@@ -42,6 +41,19 @@ public class CarereservationMapperTests {
 
         careReservationMapper.insert(careReservationVO);
     }*/
+
+
+/*
+    @Test
+    public void selectTest(){
+        log.info(careReservationMapper.CareGetList(7L).toString());
+    }
+*/
+    @Test
+    public void delete(){
+        log.info(String.valueOf(careReservationMapper.delete(3L)));
+    }
+
 
 
 }
