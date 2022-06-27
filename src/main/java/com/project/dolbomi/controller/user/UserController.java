@@ -30,11 +30,6 @@ public class UserController {
     private final UserService userService;
 
 //    회원가입1
-//    @GetMapping("ujoin1")
-//    public void join1(){
-//
-//    }
-
     @PostMapping("regi1")
     public String join1(UserVO userVO){
         log.info("---------------------------------------");
@@ -57,15 +52,10 @@ public class UserController {
     }
 
 //    회원가입2
-//    @GetMapping("ujoin2")
-//    public void join2(){
-//
-//    }
-
     @PostMapping("regi2")
     public String join2(UserVO userVO){
         log.info("---------------------------------------");
-        log.info("join1............. : " + userVO);
+        log.info("join2............. : " + userVO);
         log.info("---------------------------------------");
 
         userService.join(userVO);

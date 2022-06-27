@@ -40,7 +40,9 @@
                                 </div>
                                 <div class="form fst">
                                     <div class="sc-VigVT ffyjKW"></div>
-                                    <label>연락처</label><input type="text"
+                                    <div class="form">
+                                        <form method="post" action="/user/regi2"id="joinForm2">
+                                    <label>연락처</label><input name="userPhoneNum" type="text"
                                                              maxlength="11" placeholder="숫자만 입력해주세요.(ex. 01014231324)"
                                                              class="ant-input sc-jzJRlG iaafvp" value="">
                                     <button
@@ -51,7 +53,7 @@
                                            class="ant-input sc-jzJRlG iaafvp" value="" style="width: 203px;">
                                     <div class="sc-VigVT dUXpIL"></div>
                                     <label
-                                            style="display: block;">비밀번호</label><input password="true" type="password"
+                                            style="display: block;">비밀번호</label><input name="userPw" password="true" type="password"
                                                                                        placeholder="10자리 이상 비밀번호를 입력해주세요."
                                                                                        class="ant-input sc-jzJRlG iaafvp">
                                     <div class="sc-VigVT dUXpIL"></div>
@@ -59,7 +61,7 @@
                                         확인</label><input type="password" password="true" placeholder="비밀번호를 확인해주세요."
                                                          class="ant-input sc-jzJRlG iaafvp">
                                     <div class="sc-VigVT dUXpIL"></div>
-                                    <label style="display: block;">돌보미를 어떻게 알고
+                                    <!--<label style="display: block;">돌보미를 어떻게 알고
                                         오셨나요?</label>
 
                                     <div class="dropdown">
@@ -77,24 +79,22 @@
                                             <div class="path" onclick="showMenu(this.innerText)">지인추천</div>
 
                                         </div>
-                                    </div>
+                                    </div>-->
                                     <div class="sc-VigVT dUXpIL"></div>
-                                    <label>본인인가요 ? 보호자인가요 ?</label>
+                                    <!--<label>본인인가요 ? 보호자인가요 ?</label>
                                     <div class="type-button-wrapper">
                                         <div class="type-button active">본인</div>
                                         <div class="type-button ">보호자</div>
-                                    </div>
+                                    </div>-->
                                     <div class="sc-VigVT dUXpIL"></div>
-                                    <div class="sc-cooIXK fRCQoH"><input type="checkbox" class="ant-checkbox-input"
-                                                                         value=""><label>&nbsp;&nbsp;개인정보 마케팅 활용 동의
-                                        (선택)</label></div>
-
                                     <div class="sc-VigVT dUXpIL"></div>
                                     <button type="button"
                                             class="ant-btn ant-btn-primary"
-                                            style="background-color: rgb(230, 230, 230); border: 0px; cursor: not-allowed;" onclick="regi2Confirm()">
+                                            style="background-color: #3bc1ff; border: 0px; cursor: pointer;" onclick="regi2Confirm()">
                                         <span>가입하기</span>
                                     </button>
+                                    </form>
+                                    </div>
                                     <div class="link-wrapper"><span class="text">이미 계정이 있으신가요? </span><a
                                             class="link" onclick="location.href='/member/userlogin'">로그인</a></div>
                                 </div>
@@ -117,7 +117,7 @@
     function regi2Confirm(){
         /*유효성 검사 작성부분*/
 
-        location.href="/user/ujoin2"
+        location.href="/member/mainpage"
     }
 
     $("#btnLogin").click(function () {
