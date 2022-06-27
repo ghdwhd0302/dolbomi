@@ -13,22 +13,29 @@ public class UserServiceTests {
     @Autowired
     private UserService userService;
 
-    @Test
-    public void joinTest(){
-        UserVO userVO = new UserVO();
-        userVO.setUserName("새로운");
-        userVO.setUserBirth("20000101");
-        userVO.setUserGender("M");
-        userVO.setUserEmail("newman2@gmail.com");
-        userVO.setUserPw("1234");
-        userVO.setUserAddress("서울시 강남구");
-        userVO.setUserPhoneNum("010-1234-1234");
+//    @Test
+//    public void joinTest(){
+//        UserVO userVO = new UserVO();
+//        userVO.setUserName("새로운");
+//        userVO.setUserBirth("20000101");
+//        userVO.setUserGender("M");
+//        userVO.setUserEmail("newman2@gmail.com");
+//        userVO.setUserPw("1234");
+//        userVO.setUserAddress("서울시 강남구");
+//        userVO.setUserPhoneNum("010-1234-1234");
+//
+//        userService.join(userVO);
+//        log.info("추가된 userEmail : " + userVO.getUserEmail());
+//
+//    }
 
-        userService.join(userVO);
-        log.info("추가된 userEmail : " + userVO.getUserEmail());
+    @Test
+    public void loginTest(){
+        log.info(userService.userLogIn("gildong@naver.com", "1234") + "");
+        }
+
 
     }
 
 
 
-}
