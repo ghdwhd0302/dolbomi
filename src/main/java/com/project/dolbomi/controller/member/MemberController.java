@@ -98,8 +98,19 @@ public class MemberController {
 //    }
 
     @PostMapping("loginM")
-    public String managerLogin(){
-        return "/member/mainpage";
+    public String managerLogin(String managerEmail, String managerPw, HttpServletRequest request){
+        boolean check;
+        check = managerService.managerLogIn(managerEmail, managerPw);
+
+        if(check){//로그인 성공
+            HttpSession httpSession = request.getSession();
+            httpSession.setAttribute("managerVO", managerService.managerInfo(managerEmail));
+
+            return "/member/mainpage";
+        }
+
+        //로그인 실패
+       return "/member/managerlogin";
     }
 
 //   매니저 회원 탈퇴

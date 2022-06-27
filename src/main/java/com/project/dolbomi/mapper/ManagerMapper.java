@@ -25,4 +25,9 @@ public interface ManagerMapper {
 
 
     public int getTotal();
+
+    //매니저 로그인
+    public int managerLogIn(String managerEmail, String managerPw);
+
+    public ManagerVO managerInfo(String managerEmail);
 }

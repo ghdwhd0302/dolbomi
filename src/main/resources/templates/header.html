@@ -52,9 +52,8 @@
             <a href="/member/faq" class="fnc_notice"></a>
 
                 <!--로그인 안된상태에서 클릭하면 로그인 페이지로 이동-->
-            <a class="fnc_user" id="btnLogin" title="로그인"> <!--href="/member/userlogin" 추가 해야됨-->
+            <a class="fnc_user" id="btnLogin" title="로그인" th:if="${session.userVO != null}" th:text="${session.userVO.userName}"> <!--href="/member/userlogin" 추가 해야됨-->
 
-                이름입력 님
             </a>
             <div class="fnc_user_wrap" tabindex="1">
                 <a href="/member/profilechange" title="프로필수정">프로필수정</a>
