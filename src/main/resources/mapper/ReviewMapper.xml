@@ -2,11 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.project.dolbomi.mapper.ReviewMapper">
 
+<<<<<<< HEAD
     <select id="getList" resultType="reviewVO">
         SELECT REVIEW_NUM,REVIEW_TYPE, REVIEW_TITLE, REVIEW_CONTENT, REVIEW_WRITER,REVIEW_SCORE, REVIEW_DATE, REVIEW_UPDATE_DATE
         FROM TBL_REVIEW
     </select>
 
+=======
+>>>>>>> da25a7e43cebf2b2dbb66527acad34be503b617a
     <!--  전체목록가져오기   -->
     <select id="reviewGetList" resultType="reviewVO">
         <![CDATA[

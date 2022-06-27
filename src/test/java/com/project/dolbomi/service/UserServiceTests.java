@@ -13,7 +13,11 @@ public class UserServiceTests {
     @Autowired
     private UserService userService;
 
+<<<<<<< HEAD
    /* @Test
+=======
+    @Test
+>>>>>>> da25a7e43cebf2b2dbb66527acad34be503b617a
     public void joinTest(){
         UserVO userVO = new UserVO();
         userVO.setUserName("새로운");
@@ -28,7 +32,14 @@ public class UserServiceTests {
         log.info("추가된 userEmail : " + userVO.getUserEmail());
 
     }
+<<<<<<< HEAD
 */
 
 
 }
+=======
+
+
+
+}
+>>>>>>> da25a7e43cebf2b2dbb66527acad34be503b617a

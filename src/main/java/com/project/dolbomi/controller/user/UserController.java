@@ -31,11 +31,6 @@ public class UserController {
 
 
 //    회원가입1
-//    @GetMapping("ujoin1")
-//    public void join1(){
-//
-//    }
-
     @PostMapping("regi1")
     public String join1(UserVO userVO){
         log.info("---------------------------------------");
@@ -58,15 +53,10 @@ public class UserController {
     }
 
 //    회원가입2
-//    @GetMapping("ujoin2")
-//    public void join2(){
-//
-//    }
-
     @PostMapping("regi2")
     public String join2(UserVO userVO){
         log.info("---------------------------------------");
-        log.info("join1............. : " + userVO);
+        log.info("join2............. : " + userVO);
         log.info("---------------------------------------");
 
         userService.join(userVO);
@@ -97,7 +87,7 @@ public class UserController {
         log.info("accReservationVO..........." + accReservationVO);
 
         model.addAttribute("accReservationVO", accReservationVO);
-    };
+    }
 
 //    동행 서비스 예약 2단계
     @PostMapping("acc_reservation3")
@@ -130,7 +120,7 @@ public class UserController {
         log.info("careReservationVO..........." + careReservationVO);
 
         model.addAttribute("careReservationVO", careReservationVO);
-    };
+    }
 
     //    돌봄 서비스 예약 2단계
     @PostMapping("care_reservation3")
