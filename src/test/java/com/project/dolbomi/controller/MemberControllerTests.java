@@ -44,6 +44,17 @@ public class MemberControllerTests {
     }
 */
 
+    @Test
+    public void loginTests() throws Exception{
+        log.info(mockMvc.perform(MockMvcRequestBuilders.post("/member/loginM")
+                .param("managerEmail", "apple")
+                .param("managerPw", "1234"))
+                .andReturn().getModelAndView().toString()
+        );
+    }
+
+
+
 //    @Test
 //    public void userLoginTest(){
 //        mockMvc.perform(MockMvcReques

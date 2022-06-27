@@ -127,7 +127,7 @@
                 돌봄 서비스 선택하기
                 <br>
                 <br>
-                <select id="serviceDtlCd" name="careReservationTypeSelect" style=" width: 100%;
+                <select id="serviceDtlCd" name="careReservationTypeSelect" class="iaafvp" style=" width: 100%;
                      height: 53px;
                      font-size: 13px;
                      font-weight: 700;
@@ -162,7 +162,7 @@
                         <span>* </span>
                         나이
                     </div>
-                    <span class="ant-input-affix-wrapper sc-jzJRlG iaafvp">
+                    <span class="ant-input-affix-wrapper sc-jzJRlG">
                             <input type="text" maxlength="2" placeholder="50" name="careReservationAge" class="ant-input" value="">
                             <span class="ant-input-suffix" style="font-size: 13px;
                             padding-top: 4px;">세</span>
@@ -234,14 +234,14 @@
             </div>
             <div class="form_wrap" id="divDsetination">
                 <div class="dp_flex search adress">
-                    <input type="text" id="sample3_address"  name="destAddr" placeholder="주소 검색" maxlength="30" autocomplete="new-password" style="background: rgba(0,0,0,0.06);">
+                    <input type="text" id="sample3_address" class="iaafvp"  name="destAddr" placeholder="주소 검색" maxlength="30" autocomplete="new-password" style="background: rgba(0,0,0,0.06);">
                     <a class="ico_search" id="btnDestAddr" onclick="sample3_execDaumPostcode()"></a>
                     <div id="wrap3" style="display: none">
                         <img src="//t1.daumcdn.net/postcode/resource/images/close.png" id="btnFoldWrap3" style="cursor:pointer;position:absolute;right:0px;top:-1px;z-index:1" onclick="foldDaumPostcode()" alt="접기 버튼">
                     </div>
                 </div>
                 <div class="dp_flex adress">
-                    <input type="text" id="sample3_detailAddress" name="destAddrDtl" placeholder="상세주소" maxlength="30" autocomplete="new-password" style="background: rgba(0,0,0,0.06);">
+                    <input type="text" id="sample3_detailAddress" class="iaafvp" name="destAddrDtl" placeholder="상세주소" maxlength="30" autocomplete="new-password" style="background: rgba(0,0,0,0.06);">
                 </div>
             </div>
             <div class="sc-gleUXh ccaDJS">
@@ -422,6 +422,10 @@
     }
 
     init();
+
+    $("input[name='careReservationAge']").onfocus(function() {
+        $(".ant-input-affix-wrapper").css('border', '1px solid rgb(77, 171, 247)');
+    })
 </script>
 </html>
 

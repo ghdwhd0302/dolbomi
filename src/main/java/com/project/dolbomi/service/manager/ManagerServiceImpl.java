@@ -55,4 +55,14 @@ public class ManagerServiceImpl implements ManagerService {
     public ManagerVO getManagerPro(String userEmail) {
         return null;
     }
+
+    @Override
+    public boolean managerLogIn(String managerEmail, String managerPw) {
+        return managerDAO.managerLogIn(managerEmail, managerPw);
+    }
+
+    @Override
+    public ManagerVO managerInfo(String managerEmail) {
+        return managerDAO.managerInfo(managerEmail);
+    }
 }

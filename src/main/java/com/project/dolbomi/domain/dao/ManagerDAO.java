@@ -35,7 +35,7 @@ public class ManagerDAO {
     }
 
     // 매니저 로그인
-    public void login(ManagerVO managerVO){}
+    public boolean managerLogIn(String managerEmail, String managerPw){return managerMapper.managerLogIn(managerEmail, managerPw) == 1;}
 
     //    매니저 탈퇴
     public void withdrawal(String userEmail){
@@ -49,5 +49,8 @@ public class ManagerDAO {
     public int getTotal(){
         return managerMapper.getTotal();
     }
+
+    /*매니저 정보*/
+    public ManagerVO managerInfo(String managerEmail) {return managerMapper.managerInfo(managerEmail);}
 }
 
