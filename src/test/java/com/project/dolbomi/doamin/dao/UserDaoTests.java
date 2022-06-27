@@ -30,4 +30,11 @@ public class UserDaoTests {
     }
 
 
+    public UserVO selectProfile(String userEmail){
+        return userDAO.selectProfile(userEmail);
+    }
+    @Test
+    public void selectTest() throws Exception {
+        log.info(userDAO.selectProfile("APPLE").toString());
+    }
 }

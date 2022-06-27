@@ -50,4 +50,9 @@ public class ManagerServiceImpl implements ManagerService {
     public int getTotal() {
         return managerDAO.getTotal();
     }
+
+    @Override
+    public ManagerVO getManagerPro(String userEmail) {
+        return null;
+    }
 }

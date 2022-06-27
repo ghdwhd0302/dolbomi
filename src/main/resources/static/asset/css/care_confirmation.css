@@ -503,4 +503,22 @@ img {
     height: 32px;
 }
 
-
+.kiStqG {
+    display: block;
+    background-color: rgb(59, 193, 255);
+    font-weight: bold;
+    width: 200px;
+    cursor: pointer;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    height: 58px;
+    line-height: 63px;
+    border-radius: 50vh;
+    font-size: 19px;
+    font-weight: bold;
+    letter-spacing: -0.5px;
+    max-width: calc(50% - 4px);
+    margin-right: 8px;
+    position: relative;
+    left: 104px;
+}

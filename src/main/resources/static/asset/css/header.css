@@ -94,7 +94,7 @@ a {
     align-items: center;
     justify-content: center;
     height: 60px;
-    padding: 0 24px 4px 24px !important;
+    padding: 0 24px 4px 24px;
     font-size: 18px;
     font-weight: 500;
     color: #222;
@@ -202,4 +202,31 @@ a {
     background: url("https://www.mosimi.co.kr/resource/images/common/ico_home.svg") no-repeat center center;
     cursor: pointer;
     transition: all .2s ease-in-out;
+}
+
+@media(max-width: 918px) {
+
+    .header .nav .nav_list .nav_item .nav_item_link {
+        padding: 0 15px 4px 15px !important;
+        font-size: 14px !important;
+    }
+
+    .header .nav {
+        display: flex;
+        flex: 1;
+        align-items: center;
+        height: 60px;
+        justify-content: center;
+        text-align: center;
+        transition: all 0.1s ease;
+    }
+
+    header > * {
+        width: 100% !important;
+    }
+
+    .header .fnc_home{
+        left: -517px;
+        top: -4px;
+    }
 }
