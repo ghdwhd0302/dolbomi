@@ -5,12 +5,14 @@ import com.project.dolbomi.domain.vo.CareReservationVO;
 import com.project.dolbomi.domain.vo.ReviewVO;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public interface MemberService {
 
     /*AccReservationDAO*/
     //    동행서비스 예약리스트
-    public void AccGetList();
+    public AccReservationVO AccGetList(Long accReservationNum);
 
     //    동행서비스 예약하기
     public void accReservation(AccReservationVO accReservationVO);
@@ -21,10 +23,10 @@ public interface MemberService {
     //    동행서비스 예약삭제
     public void accRemove(Long accReservationNum);
 
-//    --------------------------------------------------------------------
+    //    --------------------------------------------------------------------
     /*CareReservationDAO*/
     //    돌봄서비스 예약리스트
-    public void careGetList();
+    public List<CareReservationVO> CareGetList(Long careReservationNum);
 
     //    돌봄서비스 예약하기
     public void careReservation(CareReservationVO careReservationVO);

@@ -95,7 +95,7 @@ ul, ol {
     align-items: center;
     justify-content: center;
     height: 60px;
-    padding: 0 24px 4px 24px !important;
+    padding: 0 24px 4px 24px;
     font-size: 18px;
     font-weight: 400;
     color: #222;
@@ -446,6 +446,7 @@ img {
     letter-spacing: -0.3px;
     margin-bottom: 16px;
     max-width: 204px;
+    height: 105px;
 }
 
 .cCeyDW {

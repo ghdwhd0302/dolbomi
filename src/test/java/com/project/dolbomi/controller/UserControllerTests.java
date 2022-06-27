@@ -59,4 +59,8 @@ public class UserControllerTests {
         .param("careReservationAddRequire", "잘부탁드립니다.")
         .param("careReservationPrice", "20000")).andReturn().toString();
     }*/
+    @Test
+    public void getListTests() throws Exception{
+        log.info(mockMvc.perform(MockMvcRequestBuilders.get("/user/user_userdetails").param("careReservationNum", "7")).andReturn().getModelAndView().getViewName());
+    }
 }

@@ -1,10 +1,7 @@
 package com.project.dolbomi.service;
 
-import com.project.dolbomi.domain.vo.AccReservationVO;
-import com.project.dolbomi.domain.vo.CareReservationVO;
 import com.project.dolbomi.service.member.MemberService;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 

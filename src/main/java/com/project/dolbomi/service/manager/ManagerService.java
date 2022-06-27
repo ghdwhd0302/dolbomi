@@ -2,6 +2,7 @@ package com.project.dolbomi.service.manager;
 
 import com.project.dolbomi.domain.vo.Criteria;
 import com.project.dolbomi.domain.vo.ManagerVO;
+import com.project.dolbomi.domain.vo.UserVO;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -27,5 +28,7 @@ public interface ManagerService {
     public List<ManagerVO> getList(Criteria criteria);
 
     public int getTotal();
+
+    public ManagerVO getManagerPro(String userEmail);
 
 }
