@@ -35,7 +35,7 @@ public class ManagerController {
         return "/manager/manager";
     }
 
-//    예약 내역 조회
+    //    예약 내역 조회
     @GetMapping("managerdetails")
     public void reservationList(){
 

@@ -5,6 +5,7 @@
     <select id="getList" resultType="reviewVO">
         SELECT REVIEW_NUM,REVIEW_TYPE, REVIEW_TITLE, REVIEW_CONTENT, REVIEW_WRITER,REVIEW_SCORE, REVIEW_DATE, REVIEW_UPDATE_DATE
         FROM TBL_REVIEW
+    </select>
 
     <!--  전체목록가져오기   -->
     <select id="reviewGetList" resultType="reviewVO">
