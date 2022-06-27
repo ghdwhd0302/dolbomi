@@ -22,25 +22,25 @@ public class UserControllerTests {
     @BeforeEach
     public void setUp(){ mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build(); }
 
-    /*@Test
-    public void insertTests() throws Exception{
-        mockMvc.perform(MockMvcRequestBuilders.post("/user/reservAcc")
-        .param("accReservationType", "아이동행")
-        .param("userEmail", "bpple")
-        .param("accReservationName", "이순신")
-        .param("accReservationAge", "8")
-        .param("accReservationPhoneNum", "01022222222")
-        .param("accReservationGender", "M")
-        .param("accReservationAddPhoneNum", "01022221111")
-        .param("accReservationRelation", "아버지")
-        .param("accReservationHopeGender", "W")
-        .param("accReservationEndAddress", "수원")
-        .param("accReservationStartAddress", "서울")
-        .param("accReservationDate", "2022-11-23-12-23")
-        .param("accReservationTime", "3")
-        .param("accReservationAddRequire", "잘부탁드립니다")
-        .param("accReservationPrice", "20000")).andReturn().toString();
-    }*/
+//    @Test
+//    public void insertTests() throws Exception{
+//        mockMvc.perform(MockMvcRequestBuilders.post("/user/reservAcc")
+//        .param("accReservationType", "아이동행")
+//        .param("userEmail", "bpple")
+//        .param("accReservationName", "이순신")
+//        .param("accReservationAge", "8")
+//        .param("accReservationPhoneNum", "01022222222")
+//        .param("accReservationGender", "M")
+//        .param("accReservationAddPhoneNum", "01022221111")
+//        .param("accReservationRelation", "아버지")
+//        .param("accReservationHopeGender", "W")
+//        .param("accReservationEndAddress", "수원")
+//        .param("accReservationStartAddress", "서울")
+//        .param("accReservationDate", "2022-11-23-12-23")
+//        .param("accReservationTime", "3")
+//        .param("accReservationAddRequire", "잘부탁드립니다")
+//        .param("accReservationPrice", "20000")).andReturn().toString();
+//    }
     /*@Test
     public void insertTests() throws Exception{
         mockMvc.perform(MockMvcRequestBuilders.post("/user/reservCare")
@@ -59,6 +59,10 @@ public class UserControllerTests {
         .param("careReservationAddRequire", "잘부탁드립니다.")
         .param("careReservationPrice", "20000")).andReturn().toString();
     }*/
+
+
+
+
     @Test
     public void getListTests() throws Exception{
         log.info(mockMvc.perform(MockMvcRequestBuilders.get("/user/user_userdetails").param("careReservationNum", "7")).andReturn().getModelAndView().getViewName());
