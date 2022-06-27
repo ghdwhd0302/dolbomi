@@ -46,13 +46,8 @@
                                     <div class="sc-VigVT dUXpIL"></div>
                                     <label>성별</label>
                                     <div class="type-button-wrapper">
-<<<<<<< HEAD
-                                        <div class="type-button active" name="userGender" onclick="change_btn(event)">남자</div>
-                                        <div class="type-button" name="userGender" onclick="change_btn(event)">여자</div>
-=======
-                                        <div id="M" class="type-button active">남자</div>
-                                        <div id="W" class="type-button ">여자</div>
->>>>>>> 32543481d51284f474d69e9bb2e60f306e6f9d96
+                                        <div id="M" class="type-button active" name="userGender" onclick="change_btn(event)">남자</div>
+                                        <div id="W" class="type-button" name="userGender" onclick="change_btn(event)">여자</div>
                                     </div>
                                     <div class="sc-VigVT dUXpIL"></div>
                                     <label>생년월일</label><input name="userBirth" type="text"
@@ -124,19 +119,6 @@
             $(".fnc_user_wrap").removeClass('on');
         }
     })
-/*성별확인*/
-    function change_btn(e) {
-        var btns = document.querySelectorAll(".type-button");
-        btns.forEach(function(btn, i) {
-            if(e.currentTarget == btn) {
-                btn.classList.add("active");
-            }
-            else {
-                btn.classList.remove("active");
-            }
-        });
-        console.log( e.currentTarget );
-    }
 
     /* 성별 버튼 클릭 */
     function change_btn(e) {
