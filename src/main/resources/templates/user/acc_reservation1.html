@@ -115,7 +115,7 @@
     <div class="sc-bhlBdH bCJAMY">
         <div class="sc-AnqlK ctKjik">
            <form method="post" action="/user/acc_reservation2" name="accForm1" style="position: relative">
-               <input type="hidden" name="userEmail">   
+               <input type="hidden" name="userEmail" th:value="${session.userVO.userEmail}">
                <input type="hidden" name="accReservationType">
                <input type="hidden" name="accReservationGender">
                <input type="hidden" name="accReservationEndAddress">
