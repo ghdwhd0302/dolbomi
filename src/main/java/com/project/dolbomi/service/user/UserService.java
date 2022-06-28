@@ -40,6 +40,9 @@ public interface UserService {
     //로그 인
     public boolean userLogIn(String userEmail, String userPw);
 
+    //이메일 중복체크
+    public int emailCheck(String userEmail);
+
     //프로필 페이지
     public UserVO profile(String userEmail);
 

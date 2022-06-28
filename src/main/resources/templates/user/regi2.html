@@ -41,7 +41,11 @@
                                 <div class="form fst">
                                     <div class="sc-VigVT ffyjKW"></div>
                                     <div class="form">
-                                        <form method="post" action="/user/regi2"id="joinForm2">
+                                        <form method="post" action="/user/regi2"id="joinForm2" th:object="${userVO}">
+                                            <input type="hidden" name="userName" th:field="*{userName}">
+                                            <input type="hidden" name="userGender" th:field="*{userGender}">
+                                            <input type="hidden" name="userBirth" th:field="*{userBirth}">
+                                            <input type="hidden" name="userEmail" th:field="*{userEmail}">
                                     <label>연락처</label><input name="userPhoneNum" type="text"
                                                              maxlength="11" placeholder="숫자만 입력해주세요.(ex. 01014231324)"
                                                              class="ant-input sc-jzJRlG iaafvp" value="">

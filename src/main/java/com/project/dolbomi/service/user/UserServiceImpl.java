@@ -86,6 +86,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public int emailCheck(String userEmail) {
+        int cnt = userDAO.emailCheck(userEmail);
+        return cnt;
+    }
+
+    @Override
     public UserVO profile(String userEmail) {
         return userDAO.selectProfile(userEmail);
     }
