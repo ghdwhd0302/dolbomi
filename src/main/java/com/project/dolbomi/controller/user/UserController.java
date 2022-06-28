@@ -96,7 +96,6 @@ public class UserController {
 //    동행 서비스 예약 완료단계
     @PostMapping("reservAcc")
     public RedirectView accReservation(AccReservationVO accReservationVO){
-        accReservationVO.setUserEmail("APPLE");
         log.info("accReservationVO..........." + accReservationVO);
         memberService.accReservation(accReservationVO);
 
@@ -129,7 +128,6 @@ public class UserController {
     //    돌봄 서비스 예약 완료단계
     @PostMapping("reservCare")
     public RedirectView careReservation(CareReservationVO careReservationVO) {
-        careReservationVO.setUserEmail("APPLE");
         log.info("careReservationVO..........." + careReservationVO);
         memberService.careReservation(careReservationVO);
 

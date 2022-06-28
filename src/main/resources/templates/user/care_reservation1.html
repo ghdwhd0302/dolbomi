@@ -112,7 +112,7 @@
     <div class="sc-bhlBdH bCJAMY">
         <div class="sc-AnqlK ctKjik">
           <form method="post" action="/user/care_reservation2"  name="careForm1" style="position: relative">
-              <input type="hidden" name="userEmail">
+              <input type="hidden" name="userEmail" th:value="${session.userVO.userEmail}">
               <input type="hidden" name="careReservationType">
               <input type="hidden" name="careReservationGender">
               <input type="hidden" name="careReservationAddress">
@@ -162,8 +162,8 @@
                         <span>* </span>
                         나이
                     </div>
-                    <span class="ant-input-affix-wrapper sc-jzJRlG">
-                            <input type="text" maxlength="2" placeholder="50" name="careReservationAge" class="ant-input" value="">
+                    <span class="ant-input-affix-wrapper sc-jzJRlG iaafvp">
+                            <input type="text" maxlength="2" placeholder="50" name="careReservationAge" class="ant-input nofocus" value="">
                             <span class="ant-input-suffix" style="font-size: 13px;
                             padding-top: 4px;">세</span>
                         </span>

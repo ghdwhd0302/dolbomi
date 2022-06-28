@@ -15,7 +15,8 @@ public class AccReservationVO {
     private String accReservationAddPhoneNum;
     private String accReservationRelation;
     private String accReservationHopeGender;
-    private String accReservationAddress;
+    private String accReservationEndAddress;
+    private String accReservationStartAddress;
     private String accReservationDate;
     private String accReservationTime;
     private String accReservationAddRequire;
