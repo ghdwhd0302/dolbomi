@@ -52,4 +52,10 @@
         WHERE USER_EMAIL = #{userEmail} AND USER_PW = #{userPw}
     </select>
 
+    <select id="emailCheck" parameterType="string" resultType="_int">
+        SELECT COUNT(userEmail)
+        FROM TBL_USER
+        WHERE USER_EMAIL = #{userEmail}
+    </select>
+
 </mapper>

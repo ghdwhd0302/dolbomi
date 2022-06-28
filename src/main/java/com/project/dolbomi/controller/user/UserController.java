@@ -12,9 +12,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
@@ -32,24 +30,21 @@ public class UserController {
 
 //    회원가입1
     @PostMapping("regi1")
-    public String join1(UserVO userVO){
+    public String join1(UserVO userVO, Model model){
         log.info("---------------------------------------");
         log.info("join1............. : " + userVO);
         log.info("---------------------------------------");
 
-        userService.join(userVO);
+        model.addAttribute("userVO", userVO);
         return "/user/regi2";
     }
 
 //    이메일 중복검사
-//    @GetMapping("emailcheck")
-//    public void emailCheck(){
-//
-//    }
-
     @PostMapping("emailcheck")
-    public String emailCheck(){
-        return "/user/emailcheck";
+    @ResponseBody
+    public int emailCheck(@RequestParam("userEmail") String userEmail){
+        int cnt = userService.emailCheck(userEmail);
+        return cnt;
     }
 
 //    회원가입2

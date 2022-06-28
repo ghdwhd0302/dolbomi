@@ -749,3 +749,13 @@ button {
     background-color: rgb(59, 193, 255);
     color: white !important;
 }
+
+.email_ok{
+    color:#008000;
+    display: none;
+}
+
+.email_already{
+    color:#e30606;
+    display: none;
+}

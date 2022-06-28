@@ -23,6 +23,8 @@ public interface UserMapper {
     //로그 인
     public int userLogIn(String userEmail, String userPw);
 
+    //이메일 중복체크
+    public int emailCheck(String userEmail);
 
     public int getTotal();
 
