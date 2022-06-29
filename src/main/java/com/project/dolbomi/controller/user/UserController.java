@@ -74,13 +74,8 @@ public class UserController {
     public String sendSMS(@RequestParam("phone") String userPhoneNum) { // 휴대폰 문자보내기
         int randomNum = (int)((Math.random()* (9999 - 1000 + 1)) + 1000);//난수 생성
 
-<<<<<<< HEAD
-        userService.phoneCerti(userPhoneNum, randomNum);
-
-=======
         userService.phoneCerti(userPhoneNum,randomNum);
         log.info(Integer.toString(randomNum));
->>>>>>> 53c848502eaa023b63daadfe96bcd295fd83c516
         return Integer.toString(randomNum);
     }
 
