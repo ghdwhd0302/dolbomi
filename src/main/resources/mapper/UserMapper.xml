@@ -3,8 +3,8 @@
 <mapper namespace="com.project.dolbomi.mapper.UserMapper">
 
     <insert id="insert">
-        INSERT INTO TBL_USER (USER_NAME, USER_GENDER, USER_BIRTH, USER_EMAIL,USER_PHONE_NUM,USER_ADDRESS,USER_PW)
-        VALUES (#{userName}, #{userGender},#{userBirth},#{userEmail},#{userPhoneNum},#{userAddress},#{userPw})
+        INSERT INTO TBL_USER (USER_NAME, USER_GENDER, USER_BIRTH, USER_EMAIL,USER_PHONE_NUM,USER_PW)
+        VALUES (#{userName}, #{userGender},#{userBirth},#{userEmail},#{userPhoneNum},#{userPw})
     </insert>
     <select id="selectprofile" resultType="userVO">
         SELECT USER_NAME, USER_BIRTH, USER_EMAIL, USER_PHONE_NUM, USER_ADDRESS
