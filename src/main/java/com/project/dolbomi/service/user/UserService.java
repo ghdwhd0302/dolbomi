@@ -43,6 +43,9 @@ public interface UserService {
     //이메일 중복체크
     public int emailCheck(String userEmail);
 
+    //휴대폰 인증번호
+    public void phoneCerti(String userPhomeNum, int randomNum);
+
     //프로필 페이지
     public UserVO profile(String userEmail);
 

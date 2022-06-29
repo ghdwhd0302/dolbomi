@@ -759,3 +759,18 @@ button {
     color:#e30606;
     display: none;
 }
+
+.email_not{
+    color:#e30606;
+    display: none;
+}
+
+.pw_style{
+    color:#e30606;
+    display: inline-block;
+}
+
+.pw_ok{
+    color:#e30606;
+    display: inline-block;
+}
