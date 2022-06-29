@@ -46,6 +46,46 @@
                                             <input type="hidden" name="userGender" th:field="*{userGender}">
                                             <input type="hidden" name="userBirth" th:field="*{userBirth}">
                                             <input type="hidden" name="userEmail" th:field="*{userEmail}">
+<<<<<<< HEAD
+                                            <label>휴대폰 번호</label><input id="userPhoneNum" name="userPhoneNum" type="text" required
+                                                                        maxlength="11" placeholder="숫자만 입력해주세요.(ex. 01014231324)"
+                                                                        class="ant-input sc-jzJRlG iaafvp" value="">
+                                            <button type="button" class="phoneChk" id="phoneChk"
+                                                    style="width: 90px; height: 44px;  background-color: rgb(59, 193, 255); border: 0px; outline: 0px; border-radius: 3px;" onclick="">
+                                                인증번호
+                                            </button>
+                                            <button type="button" class="phoneChk" id="phoneChk2"
+                                                    style="width: 90px; height: 44px;  background-color: rgb(59, 193, 255); border: 0px; outline: 0px; border-radius: 3px; display: none" onclick="">
+                                                확인
+                                            </button>
+                                            <input name="phoneNumCheck" id="phoneNumCheck" type="text" maxlength="6" placeholder="인증번호를 입력해주세요."
+                                                   class="ant-input sc-jzJRlG iaafvp" value="" style="width: 203px;">
+                                            <span class="point successPhoneChk">휴대폰 번호 입력후 인증번호 버튼을 눌러주세요.</span>
+                                            <input type="hidden" id="phoneDoubleChk" />
+                                            <div class="sc-VigVT dUXpIL"></div>
+                                            <label
+                                                    style="display: block;">비밀번호</label><input name="userPw" password="true" type="password"
+                                                                                               placeholder="숫자와 문자 포함 6~12자리 이내"
+                                                                                               class="ant-input sc-jzJRlG iaafvp">
+                                            <!--비밀번호 정규식-->
+                                            <span class="pw_style">비밀번호 형식에 맞춰주세요.</span>
+                                            <div class="sc-VigVT dUXpIL"></div>
+                                            <label style="display: block;">비밀번호
+                                                확인</label><input name="userPwCheck" type="password" password="true" placeholder="비밀번호를 확인해주세요."
+                                                                 class="ant-input sc-jzJRlG iaafvp">
+                                            <!--비밀번호 확인-->
+                                            <span class="pw_ok">비밀번호가 일치하지 않습니다.</span>
+                                            <div class="sc-VigVT dUXpIL"></div>
+                                            <div class="sc-VigVT dUXpIL"></div>
+                                            <div class="sc-VigVT dUXpIL"></div>
+                                            <div class="sc-VigVT dUXpIL"></div>
+                                            <button type="button"
+                                                    class="ant-btn ant-btn-primary"
+                                                    style="background-color: #3bc1ff; border: 0px; cursor: pointer;" onclick="regi2Confirm()">
+                                                <span>가입하기</span>
+                                            </button>
+                                        </form>
+=======
                                     <label>휴대폰 번호</label><input id="userPhoneNum" name="userPhoneNum" type="text" required
                                                              maxlength="11" placeholder="숫자만 입력해주세요.(ex. 01014231324)"
                                                              class="ant-input sc-jzJRlG iaafvp" value="">
@@ -87,6 +127,7 @@
                                         <span>가입하기</span>
                                     </button>
                                     </form>
+>>>>>>> 53c848502eaa023b63daadfe96bcd295fd83c516
                                     </div>
                                     <div class="link-wrapper"><span class="text">이미 계정이 있으신가요? </span><a
                                             class="link" onclick="location.href='/member/userlogin'">로그인</a></div>
@@ -111,6 +152,36 @@
     let $userPwCheck = $("input[name='userPwCheck']");
     let $joinForm2 = $(joinForm2);
     let check = false;
+<<<<<<< HEAD
+
+    function regi2Confirm(){
+        /*유효성 검사 */
+        console.log($userPhoneNum.val());
+        if(!$userPhoneNum.val()){
+            alert("휴대폰 번호를 입력해주세요")
+            $userPhoneNum.focus();
+            return false;
+        }
+
+        if(!check){
+            alert("휴대전화 인증을 해주세요")
+            return false;
+        }
+
+        if(!$userPw.val()){
+            alert("비밀번호를 입력해 주세요");
+            $userPw.focus();
+            return false;
+        }
+
+        if(!$userPwCheck.val()){
+            alert("비밀번호 확인을 입력해 주세요");
+            $userPwCheck.focus();
+            return false;
+        }
+
+        $joinForm2.submit();
+=======
     let userPwval = "";
     let userPwCheckval = "";
 
@@ -214,6 +285,7 @@
             $userPw.val(btoa($userPw.val()));
             console.log($userPw.val());
             $joinForm2.submit();
+>>>>>>> 53c848502eaa023b63daadfe96bcd295fd83c516
     }
 
     /*휴대폰 번호 인증*/

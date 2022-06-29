@@ -97,8 +97,13 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void phoneCerti(String userPhoneNum, int randomNum) {
+<<<<<<< HEAD
+        String api_key = "coolsms 본인 API키 입력";
+        String api_secret = "coolsms 본인 API_secret키 입력";
+=======
         String api_key = "NCSXDCGPLMOHCTXM";
         String api_secret = "QE2G9LQD0VVEUY44E4XSCQH4ABZGOIQC";
+>>>>>>> 53c848502eaa023b63daadfe96bcd295fd83c516
         Message coolsms = new Message(api_key, api_secret);
 
         // 4 params(to, from, type, text) are mandatory. must be filled
