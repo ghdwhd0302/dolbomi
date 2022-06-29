@@ -763,4 +763,18 @@ button {
 .email_not{
     color:#e30606;
     display: none;
+<<<<<<< HEAD
 }
+
+.pw_style{
+    color:#e30606;
+    display: inline-block;
+}
+
+.pw_ok{
+    color:#e30606;
+    display: inline-block;
+}
+=======
+}
+>>>>>>> fd32bc9aa1d7893084b6fe4b17cba9794601e2df

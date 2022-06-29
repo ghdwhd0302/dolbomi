@@ -16,9 +16,9 @@ public interface ManagerMapper {
     public List<ManagerVO> caregetList();
 
     //    동행서비스 신청
-    public int accapply(long accreservationNum);
+    public int accapply(long accReservationNum);
     //    돌봄서비스 신청
-    public int careapply(long carereservationNum);
+    public int careapply(long careReservationNum);
 
     //    매니저 탈퇴
     public String delete(String userEmail);

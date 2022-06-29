@@ -41,29 +41,35 @@
                                 <div class="form fst">
                                     <div class="sc-VigVT ffyjKW"></div>
                                     <div class="form">
-                                        <form method="post" action="/user/regi2"id="joinForm2" th:object="${userVO}">
+                                        <form method="post" action="/user/regi2"id="joinForm2" name="joinForm2" th:object="${userVO}">
                                             <input type="hidden" name="userName" th:field="*{userName}">
                                             <input type="hidden" name="userGender" th:field="*{userGender}">
                                             <input type="hidden" name="userBirth" th:field="*{userBirth}">
                                             <input type="hidden" name="userEmail" th:field="*{userEmail}">
-                                    <label>연락처</label><input name="userPhoneNum" type="text"
+                                    <label>휴대폰 번호</label><input id="userPhoneNum" name="userPhoneNum" type="text" required
                                                              maxlength="11" placeholder="숫자만 입력해주세요.(ex. 01014231324)"
                                                              class="ant-input sc-jzJRlG iaafvp" value="">
-                                    <button
-                                            style="width: 90px; height: 44px;  background-color: rgb(59, 193, 255); border: 0px; outline: 0px; border-radius: 3px;" onclick="location.href='/user/sendcode'">
-                                        인증하기
+                                    <button class="phoneChk" id="phoneChk"
+                                            style="width: 90px; height: 44px;  background-color: rgb(59, 193, 255); border: 0px; outline: 0px; border-radius: 3px;" onclick="">
+                                        인증번호
                                     </button>
-                                    <input type="text" maxlength="6" placeholder="인증번호를 입력해주세요."
+<!--                                    <span class="point successPhoneChk">휴대폰 번호 입력후 인증번호 버튼을 눌러주세요.</span>-->
+                                    <input name="phoneNumCheck" id="phoneNumCheck" type="text" maxlength="6" placeholder="인증번호를 입력해주세요."
                                            class="ant-input sc-jzJRlG iaafvp" value="" style="width: 203px;">
+                                    <input type="hidden" id="phoneDoubleChk" />
                                     <div class="sc-VigVT dUXpIL"></div>
                                     <label
                                             style="display: block;">비밀번호</label><input name="userPw" password="true" type="password"
-                                                                                       placeholder="10자리 이상 비밀번호를 입력해주세요."
+                                                                                       placeholder="숫자와 문자 포함 6~12자리 이내"
                                                                                        class="ant-input sc-jzJRlG iaafvp">
+                                    <!--비밀번호 정규식-->
+                                    <span class="pw_style">비밀번호 형식에 맞춰주세요.</span>
                                     <div class="sc-VigVT dUXpIL"></div>
                                     <label style="display: block;">비밀번호
-                                        확인</label><input type="password" password="true" placeholder="비밀번호를 확인해주세요."
+                                        확인</label><input name="userPwCheck" type="password" password="true" placeholder="비밀번호를 확인해주세요."
                                                          class="ant-input sc-jzJRlG iaafvp">
+                                    <!--비밀번호 확인-->
+                                    <span class="pw_ok">비밀번호가 일치하지 않습니다.</span>
                                     <div class="sc-VigVT dUXpIL"></div>
                                     <!--<label style="display: block;">돌보미를 어떻게 알고
                                         오셨나요?</label>
@@ -119,10 +125,70 @@
 <script>
 
     function regi2Confirm(){
-        /*유효성 검사 작성부분*/
+        /*유효성 검사 */
+            var $phoneNumCheck = $("input[name='phoneNumCheck']");
+            var $userPw = $("input[name='userPw']");
+            var $userPwCheck = $("input[name='userPwCheck']");
+            var $joinForm2 = $(joinForm2);
 
+            if(!$userPw.val()){
+                alert("비밀번호를 입력해 주세요");
+                $userName.focus();
+                return false;
+            }
+
+            if(!$userPwCheck.val()){
+                alert("비밀번호 확인을 입력해 주세요");
+                $userBirth.focus();
+                return false;
+            }
+
+            $joinForm2.submit();
+        }
         location.href="/member/mainpage"
     }
+
+    /*휴대폰 번호 인증*/
+    var code2 = "";
+    $("#phoneChk").click(function(){
+        alert("인증번호 발송이 완료되었습니다.\n휴대폰에서 인증번호 확인을 해주십시오.");
+        var phone = $("#userPhoneNum").val();
+        $.ajax({
+            type:"GET",
+            url:"phoneCheck?phone=" + phone,
+            cache : false,
+            success:function(data){
+                if(data == "error"){
+                    alert("휴대폰 번호가 올바르지 않습니다.")
+                    $(".successPhoneChk").text("유효한 번호를 입력해주세요.");
+                    $(".successPhoneChk").css("color","red");
+                    $("#userPhoneNum").attr("autofocus",true);
+                }else{
+                    $("#phoneNumCheck").attr("disabled",false);
+                    $("#phoneNumCheck").css("display","inline-block");
+                    $(".successPhoneChk").text("인증번호를 입력한 뒤 본인인증을 눌러주십시오.");
+                    $(".successPhoneChk").css("color","green");
+                    $("#userPhoneNum").attr("readonly",true);
+                    code2 = data;
+                }
+            }
+        });
+    });
+
+    /*휴대폰 인증번호 대조*/
+    $("#phoneChk2").click(function(){
+        if($("#phone2").val() == code2){
+            $(".successPhoneChk").text("인증번호가 일치합니다.");
+            $(".successPhoneChk").css("color","green");
+            $("#phoneDoubleChk").val("true");
+            $("#phone2").attr("disabled",true);
+        }else{
+            $(".successPhoneChk").text("인증번호가 일치하지 않습니다. 확인해주시기 바랍니다.");
+            $(".successPhoneChk").css("color","red");
+            $("#phoneDoubleChk").val("false");
+            $(this).attr("autofocus",true);
+        }
+    });
 
     $("#btnLogin").click(function () {
         if (!$(this).attr('class').match('on')) {
@@ -134,9 +200,6 @@
         }
     })
 
-
-</script>
-<script>
     window.onload = () => {
         document.querySelector('.dropbtn_click').onclick = () => {
             dropdown();
