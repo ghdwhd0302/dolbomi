@@ -55,7 +55,7 @@ public class UserController {
         log.info("---------------------------------------");
 
         userService.join(userVO);
-        return "/member/mainpage";
+        return "/member/userlogin";
     }
 
 //    휴대폰 인증번호 발송
@@ -71,12 +71,12 @@ public class UserController {
 
     @RequestMapping(value = "/phoneCheck", method = RequestMethod.GET)
     @ResponseBody
-    public String sendSMS(@RequestParam("phone") String userPhoneNumber) { // 휴대폰 문자보내기
-        int randomNumber = (int)((Math.random()* (9999 - 1000 + 1)) + 1000);//난수 생성
+    public String sendSMS(@RequestParam("phone") String userPhoneNum) { // 휴대폰 문자보내기
+        int randomNum = (int)((Math.random()* (9999 - 1000 + 1)) + 1000);//난수 생성
 
-        userService.phoneCerti(userPhoneNumber,randomNumber);
-
-        return Integer.toString(randomNumber);
+        userService.phoneCerti(userPhoneNum,randomNum);
+        log.info(Integer.toString(randomNum));
+        return Integer.toString(randomNum);
     }
 
 
@@ -336,5 +336,6 @@ public class UserController {
         userService.reviewRemove(reviewNum);
         return reviewGetList(criteria, model);
     }
+
 
 }
