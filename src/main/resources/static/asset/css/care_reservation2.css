@@ -1003,3 +1003,10 @@ img {
     letter-spacing: -0.5px;
     color: rgba(0, 0, 0, 0.7);
 }
+
+.iaafvp:focus {
+    transition: all 0.3s ease 0s;
+    box-shadow: none;
+    outline: 0px;
+    border: 1px solid rgb(77, 171, 247) !important;
+}

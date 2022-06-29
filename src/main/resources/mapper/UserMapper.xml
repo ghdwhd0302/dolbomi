@@ -53,7 +53,7 @@
     </select>
 
     <select id="emailCheck" parameterType="string" resultType="_int">
-        SELECT COUNT(userEmail)
+        SELECT COUNT(USER_EMAIL)
         FROM TBL_USER
         WHERE USER_EMAIL = #{userEmail}
     </select>
