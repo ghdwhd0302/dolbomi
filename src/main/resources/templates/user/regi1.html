@@ -185,6 +185,14 @@
 
     init();
 
+    /*/!*이메일 정규식*!/
+    var emailRule = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;//이메일 정규식
+
+    if(!emailRule.test($("input[id='emailCheck']").val())) {
+        //경고
+    }
+*/
+
     /*이메일 중복검사*/
     function check_email() {
         var email = $('#emailCheck').val();

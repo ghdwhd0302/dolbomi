@@ -533,7 +533,7 @@ img {
     font-weight: normal;
     border-radius: 4px;
     background-color: rgb(255, 255, 255);
-    border: 1px solid rgb(233, 233, 233) !important;
+    border: 1px solid rgb(233, 233, 233);
 }
 
 .iQRFrD > div:last-child {
@@ -549,6 +549,7 @@ img {
     height: 37px;
     line-height: 29px;
     padding: 0px 11px;
+    border-radius: 4px;
 }
 
 .iaafvp {
@@ -561,7 +562,7 @@ img {
     font-weight: normal;
     border-radius: 4px;
     background-color: rgb(255, 255, 255);
-    border: 1px solid rgb(233, 233, 233) !important;
+    border: 1px solid rgb(233, 233, 233) ;
 }
 
 .ant-input-affix-wrapper {
@@ -957,7 +958,6 @@ div#wrap3{
     font-size: 13px;
     font-weight: normal;
     width: 100% !important;
-    border: 0px !important;
 }
 
 .nofocus:focus{

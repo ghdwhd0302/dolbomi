@@ -127,15 +127,17 @@
                 돌봄 서비스 선택하기
                 <br>
                 <br>
-                <select id="serviceDtlCd" name="careReservationTypeSelect" class="iaafvp" style=" width: 100%;
-                     height: 53px;
-                     font-size: 13px;
-                     font-weight: 700;
-                     color: #282828;
-                     border-radius: 6px;
-                     padding-left: 10px!important;
-                     border-color: rgb(233, 233, 233);
-                 ">
+                <select id="serviceDtlCds" class="iaafvp" name="careReservationTypeSelect" style="width: 100%;
+                                        height: 40px;
+                                        line-height: 44px;
+                                        margin-bottom: 0px;
+                                        color: rgb(22, 22, 22);
+                                        font-size: 13px;
+                                        font-weight: normal;
+                                        border-radius: 4px;
+                                        background-color: rgb(255, 255, 255);
+                                        border: 1px solid rgb(233, 233, 233);
+                                        padding: 0px 11px;">
                     <option data-high-code="SV20" value="">선택</option>
                     <option data-high-code="SV20" value="아이 돌봄">아이 돌봄</option>
                     <option data-high-code="SV20" value="성인 돌봄">성인 돌봄</option>
@@ -163,7 +165,7 @@
                         나이
                     </div>
                     <span class="ant-input-affix-wrapper sc-jzJRlG iaafvp">
-                            <input type="text" maxlength="2" placeholder="50" name="careReservationAge" class="ant-input nofocus" value="">
+                            <input type="text" maxlength="2" placeholder="50" name="careReservationAge" class="ant-input" value="">
                             <span class="ant-input-suffix" style="font-size: 13px;
                             padding-top: 4px;">세</span>
                         </span>
@@ -204,7 +206,7 @@
                     <div class="ant-select sc-kGXeez bqHxwH ant-select-single ant-select-show-arrow">
                         <div class="">
                                     <span class="ant-select-selection-search">
-                                        <select id="serviceDtlCd" name="careReservationRelationSelect" style="     width: 100%;
+                                        <select id="serviceDtlCd" class="iaafvp" name="careReservationRelationSelect" style="width: 100%;
                                         height: 40px;
                                         line-height: 44px;
                                         margin-bottom: 0px;
@@ -213,7 +215,7 @@
                                         font-weight: normal;
                                         border-radius: 4px;
                                         background-color: rgb(255, 255, 255);
-                                        border: 1px solid rgb(233, 233, 233) !important;
+                                        border: 1px solid rgb(233, 233, 233);
                                         padding: 0px 11px;">
                                             <option data-high-code="SV20" value="">선택</option>
                                             <option data-high-code="SV20" value="본인">본인</option>
@@ -423,8 +425,12 @@
 
     init();
 
-    $("input[name='careReservationAge']").onfocus(function() {
-        $(".ant-input-affix-wrapper").css('border', '1px solid rgb(77, 171, 247)');
+    $("input[name='careReservationAge']").focus(function() {
+        $(".ant-input-affix-wrapper").css('border-color', 'rgb(77, 171, 247)');
+        $(this).css('outline', 'none');
+    })
+    $("input[name='careReservationAge']").focusout(function() {
+        $(".ant-input-affix-wrapper").css('border-color', 'rgb(233, 233, 233)');
     })
 </script>
 </html>
