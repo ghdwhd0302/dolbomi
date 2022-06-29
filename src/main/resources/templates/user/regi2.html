@@ -46,64 +46,44 @@
                                             <input type="hidden" name="userGender" th:field="*{userGender}">
                                             <input type="hidden" name="userBirth" th:field="*{userBirth}">
                                             <input type="hidden" name="userEmail" th:field="*{userEmail}">
-                                    <label>휴대폰 번호</label><input id="userPhoneNum" name="userPhoneNum" type="text" required
-                                                             maxlength="11" placeholder="숫자만 입력해주세요.(ex. 01014231324)"
-                                                             class="ant-input sc-jzJRlG iaafvp" value="">
-                                    <button class="phoneChk" id="phoneChk"
-                                            style="width: 90px; height: 44px;  background-color: rgb(59, 193, 255); border: 0px; outline: 0px; border-radius: 3px;" onclick="">
-                                        인증번호
-                                    </button>
-<!--                                    <span class="point successPhoneChk">휴대폰 번호 입력후 인증번호 버튼을 눌러주세요.</span>-->
-                                    <input name="phoneNumCheck" id="phoneNumCheck" type="text" maxlength="6" placeholder="인증번호를 입력해주세요."
-                                           class="ant-input sc-jzJRlG iaafvp" value="" style="width: 203px;">
-                                    <input type="hidden" id="phoneDoubleChk" />
-                                    <div class="sc-VigVT dUXpIL"></div>
-                                    <label
-                                            style="display: block;">비밀번호</label><input name="userPw" password="true" type="password"
-                                                                                       placeholder="숫자와 문자 포함 6~12자리 이내"
-                                                                                       class="ant-input sc-jzJRlG iaafvp">
-                                    <!--비밀번호 정규식-->
-                                    <span class="pw_style">비밀번호 형식에 맞춰주세요.</span>
-                                    <div class="sc-VigVT dUXpIL"></div>
-                                    <label style="display: block;">비밀번호
-                                        확인</label><input name="userPwCheck" type="password" password="true" placeholder="비밀번호를 확인해주세요."
-                                                         class="ant-input sc-jzJRlG iaafvp">
-                                    <!--비밀번호 확인-->
-                                    <span class="pw_ok">비밀번호가 일치하지 않습니다.</span>
-                                    <div class="sc-VigVT dUXpIL"></div>
-                                    <!--<label style="display: block;">돌보미를 어떻게 알고
-                                        오셨나요?</label>
-
-                                    <div class="dropdown">
-                                        <button class="dropbtn">
-
-                                            <span class="dropbtn_content">유입경로를 선택해주세요</span>
-                                            <span class="dropbtn_click"
-                                                  style="font-family: Material Icons; font-size : 16px; color : #3b3b3b; float:right;"
-                                                  onclick="dropdown()">arrow_drop_down</span>
-                                        </button>
-                                        <div class="dropdown-content">
-                                            <div class="path" onclick="showMenu(this.innerText)">검색</div>
-                                            <div class="path" onclick="showMenu(this.innerText)">언론기사</div>
-                                            <div class="path" onclick="showMenu(this.innerText)">광고</div>
-                                            <div class="path" onclick="showMenu(this.innerText)">지인추천</div>
-
-                                        </div>
-                                    </div>-->
-                                    <div class="sc-VigVT dUXpIL"></div>
-                                    <!--<label>본인인가요 ? 보호자인가요 ?</label>
-                                    <div class="type-button-wrapper">
-                                        <div class="type-button active">본인</div>
-                                        <div class="type-button ">보호자</div>
-                                    </div>-->
-                                    <div class="sc-VigVT dUXpIL"></div>
-                                    <div class="sc-VigVT dUXpIL"></div>
-                                    <button type="button"
-                                            class="ant-btn ant-btn-primary"
-                                            style="background-color: #3bc1ff; border: 0px; cursor: pointer;" onclick="regi2Confirm()">
-                                        <span>가입하기</span>
-                                    </button>
-                                    </form>
+                                            <label>휴대폰 번호</label><input id="userPhoneNum" name="userPhoneNum" type="text" required
+                                                                        maxlength="11" placeholder="숫자만 입력해주세요.(ex. 01014231324)"
+                                                                        class="ant-input sc-jzJRlG iaafvp" value="">
+                                            <button type="button" class="phoneChk" id="phoneChk"
+                                                    style="width: 90px; height: 44px;  background-color: rgb(59, 193, 255); border: 0px; outline: 0px; border-radius: 3px;" onclick="">
+                                                인증번호
+                                            </button>
+                                            <button type="button" class="phoneChk" id="phoneChk2"
+                                                    style="width: 90px; height: 44px;  background-color: rgb(59, 193, 255); border: 0px; outline: 0px; border-radius: 3px; display: none" onclick="">
+                                                확인
+                                            </button>
+                                            <input name="phoneNumCheck" id="phoneNumCheck" type="text" maxlength="6" placeholder="인증번호를 입력해주세요."
+                                                   class="ant-input sc-jzJRlG iaafvp" value="" style="width: 203px;">
+                                            <span class="point successPhoneChk">휴대폰 번호 입력후 인증번호 버튼을 눌러주세요.</span>
+                                            <input type="hidden" id="phoneDoubleChk" />
+                                            <div class="sc-VigVT dUXpIL"></div>
+                                            <label
+                                                    style="display: block;">비밀번호</label><input name="userPw" password="true" type="password"
+                                                                                               placeholder="숫자와 문자 포함 6~12자리 이내"
+                                                                                               class="ant-input sc-jzJRlG iaafvp">
+                                            <!--비밀번호 정규식-->
+                                            <span class="pw_style">비밀번호 형식에 맞춰주세요.</span>
+                                            <div class="sc-VigVT dUXpIL"></div>
+                                            <label style="display: block;">비밀번호
+                                                확인</label><input name="userPwCheck" type="password" password="true" placeholder="비밀번호를 확인해주세요."
+                                                                 class="ant-input sc-jzJRlG iaafvp">
+                                            <!--비밀번호 확인-->
+                                            <span class="pw_ok">비밀번호가 일치하지 않습니다.</span>
+                                            <div class="sc-VigVT dUXpIL"></div>
+                                            <div class="sc-VigVT dUXpIL"></div>
+                                            <div class="sc-VigVT dUXpIL"></div>
+                                            <div class="sc-VigVT dUXpIL"></div>
+                                            <button type="button"
+                                                    class="ant-btn ant-btn-primary"
+                                                    style="background-color: #3bc1ff; border: 0px; cursor: pointer;" onclick="regi2Confirm()">
+                                                <span>가입하기</span>
+                                            </button>
+                                        </form>
                                     </div>
                                     <div class="link-wrapper"><span class="text">이미 계정이 있으신가요? </span><a
                                             class="link" onclick="location.href='/member/userlogin'">로그인</a></div>
@@ -123,34 +103,54 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
+    let $userPhoneNum = $("input[name='userPhoneNum']");
+    let $userPw = $("input[name='userPw']");
+    let $userPwCheck = $("input[name='userPwCheck']");
+    let $joinForm2 = $(joinForm2);
+    let check = false;
 
     function regi2Confirm(){
         /*유효성 검사 */
-            var $phoneNumCheck = $("input[name='phoneNumCheck']");
-            var $userPw = $("input[name='userPw']");
-            var $userPwCheck = $("input[name='userPwCheck']");
-            var $joinForm2 = $(joinForm2);
-
-            if(!$userPw.val()){
-                alert("비밀번호를 입력해 주세요");
-                $userName.focus();
-                return false;
-            }
-
-            if(!$userPwCheck.val()){
-                alert("비밀번호 확인을 입력해 주세요");
-                $userBirth.focus();
-                return false;
-            }
-
-            $joinForm2.submit();
+        console.log($userPhoneNum.val());
+        if(!$userPhoneNum.val()){
+            alert("휴대폰 번호를 입력해주세요")
+            $userPhoneNum.focus();
+            return false;
         }
-        location.href="/member/mainpage"
+
+        if(!check){
+            alert("휴대전화 인증을 해주세요")
+            return false;
+        }
+
+        if(!$userPw.val()){
+            alert("비밀번호를 입력해 주세요");
+            $userPw.focus();
+            return false;
+        }
+
+        if(!$userPwCheck.val()){
+            alert("비밀번호 확인을 입력해 주세요");
+            $userPwCheck.focus();
+            return false;
+        }
+
+        $joinForm2.submit();
     }
 
     /*휴대폰 번호 인증*/
     var code2 = "";
     $("#phoneChk").click(function(){
+        var userPhoneNum = document.getElementById('userPhoneNum').value;
+        console.log(userPhoneNum);
+        var regPhone = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/;
+        if (!regPhone.test(userPhoneNum)) {
+            alert('올바른 휴대폰 번호가 아닙니다.');
+
+            return false;
+        }
+
+
         alert("인증번호 발송이 완료되었습니다.\n휴대폰에서 인증번호 확인을 해주십시오.");
         var phone = $("#userPhoneNum").val();
         $.ajax({
@@ -167,21 +167,24 @@
                     $("#phoneNumCheck").attr("disabled",false);
                     $("#phoneNumCheck").css("display","inline-block");
                     $(".successPhoneChk").text("인증번호를 입력한 뒤 본인인증을 눌러주십시오.");
+                    $("#phoneChk").css('display', "none");
+                    $("#phoneChk2").css('display', "inline-block");
                     $(".successPhoneChk").css("color","green");
                     $("#userPhoneNum").attr("readonly",true);
                     code2 = data;
                 }
-            }
+            },
         });
     });
 
     /*휴대폰 인증번호 대조*/
     $("#phoneChk2").click(function(){
-        if($("#phone2").val() == code2){
+        if($("#phoneNumCheck").val() == code2){
             $(".successPhoneChk").text("인증번호가 일치합니다.");
             $(".successPhoneChk").css("color","green");
             $("#phoneDoubleChk").val("true");
-            $("#phone2").attr("disabled",true);
+            $("#phoneNumCheck").attr("disabled",true);
+            check = true;
         }else{
             $(".successPhoneChk").text("인증번호가 일치하지 않습니다. 확인해주시기 바랍니다.");
             $(".successPhoneChk").css("color","red");
@@ -200,50 +203,6 @@
         }
     })
 
-    window.onload = () => {
-        document.querySelector('.dropbtn_click').onclick = () => {
-            dropdown();
-        }
-        document.getElementsByClassName('path').onclick = () => {
-            showMenu(value);
-        };
-        dropdown = () => {
-            var v = document.querySelector('.dropdown-content');
-            var dropbtn = document.querySelector('.dropbtn')
-            v.classList.toggle('show');
-            dropbtn.style.borderColor = 'rgb(94, 94, 94)';
-        }
-
-        showMenu = (value) => {
-            var dropbtn_icon = document.querySelector('.dropbtn_icon');
-            var dropbtn_content = document.querySelector('.dropbtn_content');
-            var dropbtn_click = document.querySelector('.dropbtn_click');
-            var dropbtn = document.querySelector('.dropbtn');
-
-            dropbtn_icon.innerText = '';
-            dropbtn_content.innerText = value;
-            dropbtn_content.style.color = '#252525';
-            dropbtn.style.borderColor = '#3992a8';
-        }
-    }
-    window.onclick = (e) => {
-        if (!e.target.matches('.dropbtn_click')) {
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-
-            var dropbtn_icon = document.querySelector('.dropbtn_icon');
-            var dropbtn_content = document.querySelector('.dropbtn_content');
-            var dropbtn_click = document.querySelector('.dropbtn_click');
-            var dropbtn = document.querySelector('.dropbtn');
-
-            var i;
-            for (i = 0; i < dropdowns.length; i++) {
-                var openDropdown = dropdowns[i];
-                if (openDropdown.classList.contains('show')) {
-                    openDropdown.classList.remove('show');
-                }
-            }
-        }
-    }
 </script>
 
 </html>
