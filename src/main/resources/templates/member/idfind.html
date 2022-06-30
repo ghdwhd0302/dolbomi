@@ -45,13 +45,13 @@
                                 </div>
                                 <div class="form">
                                     <label>이름</label><input type="text"
-                                                            placeholder="ex) 홍길동" class="ant-input" value="">
+                                                            placeholder="ex) 홍길동" class="ant-input" value="" name="userName">
                                     <label>휴대전화</label><input type="text"
-                                                              placeholder="ex) 01012341111" class="ant-input" value="">
+                                                              placeholder="ex) 01012341111" class="ant-input" value="" name="userPhoneNum">
                                     <label>생년월일</label><input type="text"
-                                                              placeholder="ex) 20001022" class="ant-input" value="">
+                                                              placeholder="ex) 20001022" class="ant-input" value="" name="userBirth">
 
-                                    <button type="button" class="ant-btn ant-btn-primary" onclick="location.href='/member/userIdF'"><span>확인하기</span></button>
+                                    <button type="button" class="ant-btn ant-btn-primary" onclick="idFind();"><span>확인하기</span></button>
 
                                     <div class="link-wrapper"><span class="link" onclick="location.href='/member/userlogin'">로그인</span><span
                                             class="link" style="border-right: 1px solid rgb(230, 230, 230);
@@ -67,8 +67,41 @@
 
         </div>
     </div>
+    <div class="form_wrap">
+        <div id="card_info" class="popup_layer" style="display: none;">
+            <div class="layer_wrap card_info">
+                <div class="layer_title">
+                    <p>검색된 이메일</p>
+                    <a class="layer_close"></a>
+                </div>
+                <div class="layer_contents">
+                    <div class="form_wrap">
+                        <div class="service_charge">
+                            <div class="fx_wrap">
+                                <div class="fx_block">
+                                    <div class="charge_table">
+                                        <dl>
+                                            <dt>이메일</dt>
+                                        </dl>
 
-    <link rel="stylesheet" th:href="@{/asset/css/footer.css}">
+                                        <dl>
+                                            <dd>APPLE</dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- button_wrap -->
+                    <div class="button_wrap">
+                        <div class="sc-OxbzP jqycvF" onclick="location.href='/member/userlogin'">로그인</div>
+                        <div class="sc-OxbzP jqycvM">확인</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer th:replace="footer.html"></footer>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
@@ -82,6 +115,39 @@
         }
     })
 
+    let $userName = $("input[name='userName']");
+    let $userBirth = $("input[name='userBirth']");
+    let $userPhoneNum = $("input[name='userPhoneNum']");
+
+    function idFind() {
+        if(!$userName.val()){
+            alert("이름을 입력해주세요");
+            return false;
+        }
+        if(!$userPhoneNum.val()){
+            alert("휴대폰 번호를 입력해주세요");
+            return false;
+        }
+        if(!$userBirth.val()){
+            alert("생년월일을 입력해주세요");
+            return false;
+        }
+
+        window.scrollTo(0,0);
+        $("body").css("overflow-y", "hidden");
+        $(".popup_layer").css("display", "flex");
+
+    }
+
+    $(".layer_close").on('click', function(){
+        $("body").css("overflow-y", "visible");
+        $(".popup_layer").css("display", "none");
+    })
+
+    $(".jqycvM").on('click', function(){
+        $("body").css("overflow-y", "visible");
+        $(".popup_layer").css("display", "none");
+    })
 
 </script>
 </html>
