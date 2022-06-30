@@ -66,17 +66,19 @@
                                     <tbody>
                                     <tr>
                                         <th>아이디</th>
-                                        <td name="Email" colspan="6">아이디</td>
+                                        <input name="userEmail" type="hidden" th:value="${session.userVO.userEmail}"/>
+                                        <td colspan="6"  th:text="${session.userVO.userEmail}"></td>
                                     </tr>
                                     <tr>
                                         <th>이용자</th>
-                                        <td colspan="6"><input name="reviewWriter" type="text" value=""></td>
+                                        <input name="reviewWriter" type="hidden" th:value="${session.userVO.userName}"/>
+                                        <td colspan="6"  th:text="${session.userVO.userName}"></td>
                                     </tr>
                                     <tr>
                                         <th>
                                             <label for="input_title_bh">서비스</label>
                                             <p>
-                                                <span class="imp" style="font-size:10px;"></span>
+                                                <span class="imp" style="font-size:10px;" ></span>
                                             </p>
                                         </th>
                                         <td colspan="6">

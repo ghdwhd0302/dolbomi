@@ -73,7 +73,14 @@ public interface UserService {
     //    게시글 전체 개수
     public int reviewGetTotal(Criteria criteria);
 
+    // 회원 게시글 목록
+    public List<UserReviewDTO> reviewGetListUser(Criteria criteria);
 
+    // acc reservation 목록
+    public List<AccReviewDTO> reviewGetListAcc();
+
+    // care reservation 목록
+    public List<CareReviewDTO> reviewGetListCare();
 
 
 }

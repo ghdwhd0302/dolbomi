@@ -1,7 +1,6 @@
 package com.project.dolbomi.domain.dao;
 
-import com.project.dolbomi.domain.vo.AccReservationVO;
-import com.project.dolbomi.domain.vo.CareReservationVO;
+import com.project.dolbomi.domain.vo.*;
 import com.project.dolbomi.mapper.AccReservationMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
@@ -43,6 +42,11 @@ public class AccReservationDAO {
     // 동행서비스고객이 예약취소,user_userdetails2 페이지의 동행예약 취소
     public boolean accDelte(Long accReservationNum){
         return accReservationMapper.delete(accReservationNum) == 1;
+    }
+
+    // accreservation review list
+    public List<AccReviewDTO> reviewGetListAcc() {
+        return accReservationMapper.reviewGetListAcc();
     }
 
 }

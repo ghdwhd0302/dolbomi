@@ -21,6 +21,7 @@ public class UserServiceImpl implements UserService {
     private final ReviewDAO reviewDAO;
     private final AccReservationDAO accReservationDAO;
     private final CareReservationDAO careReservationDAO;
+    private final UserReviewDTO userReviewDTO;
 
 
     // 돌봄서비스 매니저 배정 수락
@@ -142,6 +143,23 @@ public class UserServiceImpl implements UserService {
     @Override
     public int reviewGetTotal(Criteria criteria) {
         return reviewDAO.reviewGetTotal(criteria);
+    }
+
+    @Override
+    public List<UserReviewDTO> reviewGetListUser(Criteria criteria) {
+        return reviewDAO.reviewGetListUser(criteria);
+    }
+
+    // acc reservation review list
+    @Override
+    public List<AccReviewDTO> reviewGetListAcc(){
+        return accReservationDAO.reviewGetListAcc();
+    }
+
+    // care reservation review list
+    @Override
+    public List<CareReviewDTO> reviewGetListCare(){
+        return careReservationDAO.reviewGetListCare();
     }
 
 
