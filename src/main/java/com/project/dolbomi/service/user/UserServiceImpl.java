@@ -175,8 +175,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<UserReviewDTO> reviewGetListUser(Criteria criteria) {
-        return reviewDAO.reviewGetListUser(criteria);
+    public List<UserReviewDTO> reviewGetListUser(Criteria criteria, String userEmail) {
+        return reviewDAO.reviewGetListUser(criteria, userEmail);
     }
 
     // acc reservation review list
