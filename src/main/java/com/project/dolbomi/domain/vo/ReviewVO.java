@@ -14,4 +14,5 @@ public class ReviewVO {
     private String reviewScore;
     private String reviewDate;
     private String reviewUpdateDate;
+    private String userEmail;
 }

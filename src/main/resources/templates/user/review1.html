@@ -1,5 +1,5 @@
 <!DOCTYPE html >
-<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -45,9 +45,8 @@
                             <th class="boardNumber">서비스</th>
                             <th class="boardTitle">이용자이름</th>
                             <th class="boardTitle">매니저이름</th>
-                            <th class="boardWriter">예약시간</th>
-                            <th class="boardRegisterDate">신청날짜</th>
-                            <th class="boardUpdateDate">진행현황</th>
+                            <th class="boardRegisterDate">서비스신청날짜</th>
+                            <th class="boardUpdateDate"></th>
                         </tr>
                         </thead>
                         <!-- <tbody>
@@ -62,26 +61,34 @@
                         </th:block>
                         </tbody> -->
                         <tbody>
-                        <th:block th:each="board:${boardList}">
-                            <tr class="tBody" th:object="${board}">
-                                <td class="boardNumber" th:text="*{boardNumber}">동행서비스</td>
-                                <td class="boardTitle"><a th:text="*{boardTitle}" th:href="@{/board/read(boardNumber=*{boardNumber})}">홍길동</a></td>
-                                <td class="boardWriter" th:text="*{boardWriter}">홍길동</td>
-                                <td class="boardWriter" th:text="*{boardWriter}">3시간</td>
-                                <td class="boardRegisterDate" th:text="*{boardRegisterDate}">2022-06-21</td>
-                                <td class="boardUpdateDate" th:text="*{boardUpdateDate}">완료</td>
+                        <th:block th:each="care:${CareReviewDTO}">
+                            <tr class="tBody" th:object="${care}">
+                                <td class="careReservationType" th:text="*{careReservationType}"></td>
+                                <td class="userName"><a th:text="*{userName}">
+                                                          <!--th:href="@{/board/read(boardNumber=*{boardNumber})}">--></a>
+                                </td>
+                                <td class="managerName" th:text="*{managerName}"></td>
+                                <td class="careReservationDate" th:text="*{careReservationDate}"></td>
+                                <td style="padding: 0.75rem 0.75rem; width: 7px;"><input value="선택" style="    width: 55px;
+                                        text-align: center;
+                                        font-size: inherit;
+                                        border: 1px solid #1f6cd5;
+                                        background-color: #1f6cd5;
+                                        color: white;
+                                        font-weight: 700;
+                                        cursor: pointer;"></td>
                             </tr>
                         </th:block>
                         </tbody>
                         <tbody>
-                        <th:block th:each="board:${boardList}">
-                            <tr class="tBody" th:object="${board}">
-                                <td class="boardNumber" th:text="*{boardNumber}">돌봄서비스</td>
-                                <td class="boardTitle"><a th:text="*{boardTitle}" th:href="@{/board/read(boardNumber=*{boardNumber})}">이순신</a></td>
-                                <td class="boardWriter" th:text="*{boardWriter}">이순신</td>
-                                <td class="boardWriter" th:text="*{boardWriter}">3시간</td>
-                                <td class="boardRegisterDate" th:text="*{boardRegisterDate}">2022-06-11</td>
-                                <td class="boardUpdateDate" th:text="*{boardUpdateDate}">완료</td>
+                        <th:block th:each="acc:${AccReviewDTO}">
+                            <tr class="tBody" th:object="${acc}">
+                                <td class="accReservationType" th:text="*{accReservationType}"></td>
+                                <td class="userName"><a th:text="*{userName}">
+                                                          &lt;!&ndash;th:href="@{/board/read(boardNumber=*{boardNumber})}">&ndash;&gt;</a>
+                                </td>
+                                <td class="managerName" th:text="*{managerName}"></td>
+                                <td class="accReservationDate" th:text="*{accReservationDate}"></td>
                                 <td style="padding: 0.75rem 0.75rem; width: 7px;"><input value="선택" style="    width: 55px;
                                         text-align: center;
                                         font-size: inherit;

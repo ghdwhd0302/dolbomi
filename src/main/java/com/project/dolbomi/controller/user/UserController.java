@@ -1,11 +1,6 @@
 package com.project.dolbomi.controller.user;
-import com.project.dolbomi.domain.vo.UserVO;
-import com.project.dolbomi.domain.vo.AccReservationVO;
-import com.project.dolbomi.domain.vo.CareReservationVO;
+import com.project.dolbomi.domain.vo.*;
 import com.project.dolbomi.service.member.MemberService;
-import com.project.dolbomi.domain.vo.Criteria;
-import com.project.dolbomi.domain.vo.PageDTO;
-import com.project.dolbomi.domain.vo.ReviewVO;
 
 import com.project.dolbomi.service.user.UserService;
 import lombok.RequiredArgsConstructor;
@@ -264,23 +259,41 @@ public class UserController {
     }
 
     @GetMapping("myReview")
-    public String myReview(Criteria criteria, Model model){
+    public String myReview(Criteria criteria, Model model) {
         log.info("---------------------");
         log.info("myReview--------");
         log.info("---------------------");
 
-        model.addAttribute("reviewList", userService.reviewGetList(criteria));
+
+
+        model.addAttribute("UserReviewDTO", new UserReviewDTO(criteria, userService.reviewGetListUser(criteria)));
         model.addAttribute("pageDTO", new PageDTO(criteria, userService.reviewGetTotal(criteria)));
 
         return "/user/myReview";
     }
 
     @GetMapping("review2")
-    public void review2(){}
+    public void review2() {
+    }
+
+    @GetMapping("review1")
+    public String review1(Model model) {
+        log.info("---------------------");
+        log.info("review1--------");
+        log.info("---------------------");
+
+        model.addAttribute("careList", userService.reviewGetListAcc());
+        model.addAttribute("accList", userService.reviewGetListCare());
+
+        /*model.addAttribute("accReviewDTO", new AccReviewDTO(userService.reviewGetListAcc()));
+        model.addAttribute("careReviewDTO", new CareReviewDTO(userService.reviewGetListCare()));*/
+
+        return "/user/review1";
+    }
 
 
     @GetMapping("review")
-    public String reviewGetList( Criteria criteria, Model model  ){
+    public String reviewGetList(Criteria criteria, Model model) {
         log.info("---------------------");
         log.info("reviewGetList--------");
         log.info("---------------------");
@@ -294,19 +307,28 @@ public class UserController {
 
     // 게시글 추가
     @PostMapping("review2")
-    public RedirectView register( ReviewVO reviewVO, RedirectAttributes rttr){
+    public RedirectView register(ReviewVO reviewVO, RedirectAttributes rttr, HttpServletRequest req) {
         log.info("----------------------------");
         log.info("register............. : " + reviewVO);
         log.info("----------------------------");
 
         userService.register(reviewVO);
         rttr.addFlashAttribute("reviewNum", reviewVO.getReviewNum());
+
+    String userEmail = req.getParameter("userEmail");
+    log.info("----------------------------");
+    log.info("userEmail" + userEmail);
+        log.info("----------------------------");
+    String userName = req.getParameter("userName");
+        log.info("----------------------------");
+    log.info("userName" +userName);
+        log.info("----------------------------");
         return new RedirectView("/user/review");
     }
 
     //    게시글 상세보기
     @GetMapping({"readReview", "modifyReview"})
-    public void readReview(Long reviewNum, HttpServletRequest req, Model model){
+    public void readReview(Long reviewNum, HttpServletRequest req, Model model) {
         log.info("----------------------------");
         log.info(req.getRequestURI() + "............. : " + reviewNum);
         log.info("----------------------------");
@@ -328,7 +350,7 @@ public class UserController {
 
     // 삭제
     @PostMapping("reviewRemove")
-    public String reviewRemove(Long reviewNum, Criteria criteria, Model model){
+    public String reviewRemove(Long reviewNum, Criteria criteria, Model model) {
         log.info("----------------------------");
         log.info("reviewRemove............. : " + reviewNum);
         log.info("----------------------------");
