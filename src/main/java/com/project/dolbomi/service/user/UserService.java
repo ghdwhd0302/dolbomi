@@ -77,7 +77,7 @@ public interface UserService {
     public int reviewGetTotal(Criteria criteria);
 
     // 회원 게시글 목록
-    public List<UserReviewDTO> reviewGetListUser(Criteria criteria);
+    public List<UserReviewDTO> reviewGetListUser(Criteria criteria, String userEmail);
 
     // acc reservation 목록
     public List<AccReviewDTO> reviewGetListAcc();

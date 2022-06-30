@@ -50,7 +50,7 @@ public class UserController {
         log.info("---------------------------------------");
 
         userService.join(userVO);
-        return "/member/userlogin";
+        return "/member/mainpage";
     }
 
 //    휴대폰 인증번호 발송
@@ -62,16 +62,6 @@ public class UserController {
     @PostMapping("sendcode")
     public String phoneCerti(){
         return "/user/sendcode";
-    }
-
-    @RequestMapping(value = "/phoneCheck", method = RequestMethod.GET)
-    @ResponseBody
-    public String sendSMS(@RequestParam("phone") String userPhoneNum) { // 휴대폰 문자보내기
-        int randomNum = (int)((Math.random()* (9999 - 1000 + 1)) + 1000);//난수 생성
-
-        userService.phoneCerti(userPhoneNum,randomNum);
-        log.info(Integer.toString(randomNum));
-        return Integer.toString(randomNum);
     }
 
 
@@ -259,14 +249,18 @@ public class UserController {
     }
 
     @GetMapping("myReview")
-    public String myReview(Criteria criteria, Model model) {
+    public String myReview(Criteria criteria, Model model, @RequestParam String userEmail, @RequestParam String userName) {
         log.info("---------------------");
         log.info("myReview--------");
+        log.info("userEmail-------- " + userEmail);
+        log.info("userName--------" + userName);
+        log.info("criteria--------" + criteria);
+
         log.info("---------------------");
 
 
 
-        model.addAttribute("UserReviewDTO", new UserReviewDTO(criteria, userService.reviewGetListUser(criteria)));
+        model.addAttribute("UserReviewDTO", userService.reviewGetListUser(criteria, userEmail));
         model.addAttribute("pageDTO", new PageDTO(criteria, userService.reviewGetTotal(criteria)));
 
         return "/user/myReview";
@@ -315,13 +309,13 @@ public class UserController {
         userService.register(reviewVO);
         rttr.addFlashAttribute("reviewNum", reviewVO.getReviewNum());
 
-    String userEmail = req.getParameter("userEmail");
-    log.info("----------------------------");
-    log.info("userEmail" + userEmail);
+        String userEmail = req.getParameter("userEmail");
         log.info("----------------------------");
-    String userName = req.getParameter("userName");
+        log.info("userEmail" + userEmail);
         log.info("----------------------------");
-    log.info("userName" +userName);
+        String userName = req.getParameter("userName");
+        log.info("----------------------------");
+        log.info("userName" +userName);
         log.info("----------------------------");
         return new RedirectView("/user/review");
     }
@@ -358,6 +352,5 @@ public class UserController {
         userService.reviewRemove(reviewNum);
         return reviewGetList(criteria, model);
     }
-
 
 }

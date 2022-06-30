@@ -28,5 +28,5 @@ public interface ReviewMapper {
     public int reviewGetTotal(Criteria criteria);
 
     // 회원 게시글 목록
-    public List<UserReviewDTO> reviewGetListUser(Criteria criteria);
+    public List<UserReviewDTO> reviewGetListUser(Criteria criteria, String userEmail);
 }

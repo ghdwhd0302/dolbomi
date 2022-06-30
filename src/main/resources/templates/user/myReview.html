@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:div="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -51,29 +51,32 @@
                             <!-- <div class="sc-dXfzlN sc-aewfc QKal" style="width: 120px;">별점</div> -->
                             <div class="sc-dXfzlN sc-aewfc QKal" style="width: 152px;">작성일</div>
                         </div>
-                        <div class="ant-collapse ant-collapse-borderless ant-collapse-icon-position-right"
-                             style="border: 0; background-color: white">
-                            <div:block th:each="review:${UserReviewDTO}" class="ant-collapse-item ant-collapse-item-active"
-                                       style="background-color: rgb(255, 255, 255); border-color: rgb(230, 230, 230);">
-                                <div class="ant-collapse-header header1 B" role="button" tabindex="0"
-                                     aria-expanded="true">
-                                    <div class="sc-iIHjhz mRfGE tBody" th:object="${review}">
-                                        <div class="sc-jHZirH djaPsR reviewNum" th:text="*{reviewNum}"
-                                             style="width: 40px;"></div>
-                                        <div class="sc-jHZirH SOOpQ reviewType" th:text="*{reviewType}"
-                                             style="width: 80px;"></div>
-                                        <div class="sc-jHZirH bvbmoW reviewTitle" style="flex: 1 1 0%;">
-                                            <a th:text="*{reviewTitle}"
-                                               th:href="@{/user/readReview(reviewNum=*{reviewNum})}"></a>
+                        <th:block th:each="review:${UserReviewDTO}">
+                            <div class="ant-collapse ant-collapse-borderless ant-collapse-icon-position-right"
+                                 style="border: 0; background-color: white">
+
+                                <div class="ant-collapse-item ant-collapse-item-active"
+                                           style="background-color: rgb(255, 255, 255); border-color: rgb(230, 230, 230);">
+                                    <div class="ant-collapse-header header1 B" role="button" tabindex="0"
+                                         aria-expanded="true">
+                                        <div class="sc-iIHjhz mRfGE tBody" th:object="${review}">
+                                            <div class="sc-jHZirH djaPsR reviewNum" th:text="*{reviewNum}"
+                                                 style="width: 40px;"></div>
+                                            <div class="sc-jHZirH SOOpQ reviewType" th:text="*{reviewType}"
+                                                 style="width: 80px;"></div>
+                                            <div class="sc-jHZirH bvbmoW reviewTitle" style="flex: 1 1 0%;">
+                                                <a th:text="*{reviewTitle}"
+                                                   th:href="@{/user/readReview(reviewNum=*{reviewNum})}"></a>
+                                            </div>
+                                            <div class="sc-jHZirH fIWREi userName" th:text="*{userName}"
+                                                 style="width: 80px;"></div>
+                                            <div class="sc-jHZirH iGzNxi reviewDate" th:text="*{reviewDate}"
+                                                 style="width: 152px;"></div>
                                         </div>
-                                        <div class="sc-jHZirH fIWREi userName" th:text="*{userName}"
-                                             style="width: 80px;"></div>
-                                        <div class="sc-jHZirH iGzNxi reviewDate" th:text="*{reviewDate}"
-                                             style="width: 152px;"></div>
                                     </div>
                                 </div>
-                            </div:block>
-                        </div>
+                            </div>
+                        </th:block>
                     </div>
                 </div>
                 <div class="big-width" style="text-align: center; margin-bottom: 29px;">
