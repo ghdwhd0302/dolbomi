@@ -12,7 +12,6 @@
         WHERE USER_EMAIL = #{userEmail}
     </select>
 
-
     <select id="select" resultType="reviewVO">
         SELECT REVIEW_NUM, REVIEW_TITLE, REVIEW_CONTENT, REVIEW_WRITER, REVIEW_SCORE,REVIEW_DATE, REVIEW_UPDATE_DATE
         FROM TBL_REVIEW
