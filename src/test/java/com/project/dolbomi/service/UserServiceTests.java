@@ -42,7 +42,7 @@ public class UserServiceTests {
 //
 //    }
 
-    @Test
+   /* @Test
     public void loginTest(){
         log.info(userService.userLogIn("gildong@naver.com", "1234") + "");
         }
@@ -51,7 +51,7 @@ public class UserServiceTests {
 
 
 
-
+	}*/
 
 
 }
