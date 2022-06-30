@@ -28,7 +28,7 @@ public class UserController {
     private final UserService userService;
 
 
-//    회원가입1
+    //    회원가입1
     @PostMapping("regi1")
     public String join1(UserVO userVO, Model model){
         log.info("---------------------------------------");
@@ -39,7 +39,7 @@ public class UserController {
         return "/user/regi2";
     }
 
-//    이메일 중복검사
+    //    이메일 중복검사
     @PostMapping("emailcheck")
     @ResponseBody
     public int emailCheck(@RequestParam("userEmail") String userEmail){
@@ -47,7 +47,7 @@ public class UserController {
         return cnt;
     }
 
-//    회원가입2
+    //    회원가입2
     @PostMapping("regi2")
     public String join2(UserVO userVO){
         log.info("---------------------------------------");
@@ -59,6 +59,10 @@ public class UserController {
     }
 
 //    휴대폰 인증번호 발송
+//    @GetMapping("sendcode")
+//    public void phoneCerti(){
+//
+//    }
 
     @PostMapping("sendcode")
     public String phoneCerti(){
@@ -69,6 +73,7 @@ public class UserController {
     @ResponseBody
     public String sendSMS(@RequestParam("phone") String userPhoneNum) { // 휴대폰 문자보내기
         int randomNum = (int)((Math.random()* (9999 - 1000 + 1)) + 1000);//난수 생성
+
         userService.phoneCerti(userPhoneNum,randomNum);
         log.info(Integer.toString(randomNum));
         return Integer.toString(randomNum);
@@ -81,7 +86,7 @@ public class UserController {
 //
 //    }
 
-//    동행 서비스 예약 1단계
+    //    동행 서비스 예약 1단계
     @PostMapping("acc_reservation2")
     public void acc_reserv1(AccReservationVO accReservationVO, Model model){
 
@@ -90,7 +95,7 @@ public class UserController {
         model.addAttribute("accReservationVO", accReservationVO);
     }
 
-//    동행 서비스 예약 2단계
+    //    동행 서비스 예약 2단계
     @PostMapping("acc_reservation3")
     public void acc_reserv2(AccReservationVO accReservationVO, Model model){
         log.info("accReservationVO..........." + accReservationVO);
@@ -98,7 +103,7 @@ public class UserController {
         model.addAttribute("accReservationVO", accReservationVO);
     }
 
-//    동행 서비스 예약 완료단계
+    //    동행 서비스 예약 완료단계
     @PostMapping("reservAcc")
     public RedirectView accReservation(AccReservationVO accReservationVO){
         log.info("accReservationVO..........." + accReservationVO);

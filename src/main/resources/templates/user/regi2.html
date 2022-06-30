@@ -65,15 +65,18 @@
                                             <label
                                                     style="display: block;">비밀번호</label><input name="userPw" password="true" type="password"
                                                                                                placeholder="숫자와 문자 포함 6~12자리 이내"
-                                                                                               class="ant-input sc-jzJRlG iaafvp">
+                                                                                               class="ant-input sc-jzJRlG iaafvp password">
                                             <!--비밀번호 정규식-->
-                                            <span class="pw_style">비밀번호 형식에 맞춰주세요.</span>
+                                            <span class="pw_style" style="color: #e30606" id="not-pass">올바른 비밀번호 형식이 아닙니다</span>
+                                            <span class="pw_style" style="color: #008000" id="yes-pass">안전합니다(☆☆☆)</span>
                                             <div class="sc-VigVT dUXpIL"></div>
                                             <label style="display: block;">비밀번호
                                                 확인</label><input name="userPwCheck" type="password" password="true" placeholder="비밀번호를 확인해주세요."
-                                                                 class="ant-input sc-jzJRlG iaafvp">
+                                                                 class="ant-input sc-jzJRlG iaafvp password">
                                             <!--비밀번호 확인-->
-                                            <span class="pw_ok">비밀번호가 일치하지 않습니다.</span>
+                                            <div class="alert alert-success" style="color: #008000" id="alert-success" >비밀번호가 일치합니다.</div>
+                                            <div class="alert alert-danger" style="color: #e30606" id="alert-danger">비밀번호가 일치하지 않습니다.</div>
+                                            <!--<span class="pw_ok"></span>-->
                                             <div class="sc-VigVT dUXpIL"></div>
                                             <div class="sc-VigVT dUXpIL"></div>
                                             <div class="sc-VigVT dUXpIL"></div>
@@ -84,11 +87,7 @@
                                                 <span>가입하기</span>
                                             </button>
                                         </form>
-<<<<<<< HEAD
-=======
-=======
                                     </div>
->>>>>>> 8ee97ab8b223caab94ad3b57aab699ec75ce17ee
                                     <div class="link-wrapper"><span class="text">이미 계정이 있으신가요? </span><a
                                             class="link" onclick="location.href='/member/userlogin'">로그인</a></div>
                                 </div>
@@ -112,39 +111,38 @@
     let $userPwCheck = $("input[name='userPwCheck']");
     let $joinForm2 = $(joinForm2);
     let check = false;
-
-    function regi2Confirm(){
-        /*유효성 검사 */
-        console.log($userPhoneNum.val());
-        if(!$userPhoneNum.val()){
-            alert("휴대폰 번호를 입력해주세요")
-            $userPhoneNum.focus();
-            return false;
-        }
-
-        if(!check){
-            alert("휴대전화 인증을 해주세요")
-            return false;
-        }
-
-        if(!$userPw.val()){
-            alert("비밀번호를 입력해 주세요");
-            $userPw.focus();
-            return false;
-        }
-
-        if(!$userPwCheck.val()){
-            alert("비밀번호 확인을 입력해 주세요");
-            $userPwCheck.focus();
-            return false;
-        }
-
-        $joinForm2.submit();
     let userPwval = "";
     let userPwCheckval = "";
 
 
-    /*비밀번호 정규식 및 확인*/
+    /*$(function () {
+
+        $userPw.keyup(function () {
+            userPwval = $("input[name='userPw']").val();
+            $(".pw_ok").text("");
+            if(userPwval == userPwCheckval){
+                $(".pw_ok").text("비밀번호가 일치합니다.");
+                $(".pw_ok").css("color", "#008000");
+            }
+
+        })
+
+        $userPwCheck.keyup(function() {
+            userPwCheckval = $("input[name='userPwCheck']").val();
+
+            if(userPwval != "" ||  userPwCheckval != "") {
+                if (userPwval != userPwCheckval) {
+                    $(".pw_ok").text("비밀번호가 일치하지 않습니다");
+                    $(".pw_ok").css("color", "#e30606");
+                } else {
+                    $(".pw_ok").text("비밀번호가 일치합니다.");
+                    $(".pw_ok").css("color", "#008000");
+                }
+            }
+        })
+    });
+*/
+
 
     $(function(){
         $("#alert-success").hide();
@@ -154,12 +152,12 @@
 
         $userPw.keyup(function () {
             var passRule = /^[A-Za-z0-9]{6,12}$/;
-             if(!passRule.test($userPw.val())) {
-                 $("#not-pass").show();
-                 $("#yes-pass").hide();
+            if(!passRule.test($userPw.val())) {
+                $("#not-pass").show();
+                $("#yes-pass").hide();
             }else{
-                 $("#not-pass").hide();
-                 $("#yes-pass").show();
+                $("#not-pass").hide();
+                $("#yes-pass").show();
             }
         })
 
@@ -184,38 +182,38 @@
         var passRule = /^[A-Za-z0-9]{6,12}$/;//숫자와 문자 포함 형태의 6~12자리 이내의 암호 정규식 
 
 
-            console.log($userPhoneNum.val());
-            if(!$userPhoneNum.val()){
-                alert("휴대폰 번호를 입력해주세요")
-                $userPhoneNum.focus();
-                return false;
-            }
+        console.log($userPhoneNum.val());
+        if(!$userPhoneNum.val()){
+            alert("휴대폰 번호를 입력해주세요")
+            $userPhoneNum.focus();
+            return false;
+        }
 
-            if(!check){
-                alert("휴대전화 인증을 해주세요")
-                return false;
-            }
+        if(!check){
+            alert("휴대전화 인증을 해주세요")
+            return false;
+        }
 
-            if(!$userPw.val()){
-                alert("비밀번호를 입력해 주세요");
-                $userPw.focus();
-                return false;
-            }
+        if(!$userPw.val()){
+            alert("비밀번호를 입력해 주세요");
+            $userPw.focus();
+            return false;
+        }
 
-            if(!$userPwCheck.val()){
-                alert("비밀번호 확인을 입력해 주세요");
-                $userPwCheck.focus();
-                return false;
-            }
+        if(!$userPwCheck.val()){
+            alert("비밀번호 확인을 입력해 주세요");
+            $userPwCheck.focus();
+            return false;
+        }
 
-            if(!passRule.test($userPw.val())){
-                alert("비밀번호 형식에 맞게 입력해주세요");
-                return false;
-            }
-            //비밀번호 암호화
-            $userPw.val(btoa($userPw.val()));
-            console.log($userPw.val());
-            $joinForm2.submit();
+        if(!passRule.test($userPw.val())){
+            alert("비밀번호 형식에 맞게 입력해주세요");
+            return false;
+        }
+        //비밀번호 암호화
+        $userPw.val(btoa($userPw.val()));
+        console.log($userPw.val());
+        $joinForm2.submit();
     }
 
     /*휴대폰 번호 인증*/
@@ -281,7 +279,7 @@
             $(this).removeClass('on');
             $(".fnc_user_wrap").removeClass('on');
         }
-    });
+    })
 
 </script>
 
