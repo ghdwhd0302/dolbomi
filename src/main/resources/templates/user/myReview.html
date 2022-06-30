@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:div="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -29,22 +29,20 @@
                                 <div class="sc-guztPN eszqMv">이용 후기</div>
                                 <div class="sc-cFlXAS cqDVA">
                                     <p>고객님의 소중한 후기를 통해 더욱 발전하는</p>
-                                    <p style="margin-bottom: 190px;"> 돌보미가 되겠습니다.</p>
+                                    <p> 돌보미가 되겠습니다.</p>
                                 </div>
+                                <div class="sc-OxbzP jqycvF" onclick="location.href='/user/review'">메인으로 가기</div>
                             </div>
                             <div class="sc-bSbAYC grytNP img-cover">
                                 <div class="sc-hcnlBt dkbIiH">
-                                    <div src="https://www.withmate.kr/assets/images/w_main_crop.png" class="sc-hkbPbT bIzfXR"></div>
+                                    <div src="https://www.withmate.kr/assets/images/w_main_crop.png"
+                                         class="sc-hkbPbT bIzfXR"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="sc-fvLVrH kYHgeC inner-container" style="padding: 22px 0;">
-                        <div th:each="review:${pageDTO}">
-                            <div class="sc-hvvHee gWkDAg" th:object="${review}">
-                                <span th:text="*{total}"></span>건
-                            </div>
-                        </div>
+
                         <div class="sc-eSePXt kAYtzd tHead">
                             <div class="sc-dXfzlN fFlvkp" style="width: 40px;">번호</div>
                             <div class="sc-dXfzlN fFlvkp" style="flex: 1 1 0%;">서비스</div>
@@ -53,29 +51,41 @@
                             <!-- <div class="sc-dXfzlN sc-aewfc QKal" style="width: 120px;">별점</div> -->
                             <div class="sc-dXfzlN sc-aewfc QKal" style="width: 152px;">작성일</div>
                         </div>
-                        <div class="ant-collapse ant-collapse-borderless ant-collapse-icon-position-right" style="border: 0; background-color: white">
-                            <div:block th:each="review:${reviewList}" class="ant-collapse-item ant-collapse-item-active"
-                                       style="background-color: rgb(255, 255, 255); border-color: rgb(230, 230, 230);">
-                                <div class="ant-collapse-header header1 B" role="button" tabindex="0" aria-expanded="true">
-                                    <div class="sc-iIHjhz mRfGE tBody" th:object="${review}">
-                                        <div class="sc-jHZirH djaPsR reviewNum" th:text="*{reviewNum}" style="width: 40px;"></div>
-                                        <div class="sc-jHZirH SOOpQ reviewType" th:text="*{reviewType}" style="width: 80px;"></div>
-                                        <div class="sc-jHZirH bvbmoW reviewTitle"  style="flex: 1 1 0%;">
-                                            <a th:text="*{reviewTitle}" th:href="@{/user/readReview(reviewNum=*{reviewNum})}"></a>
+                        <th:block th:each="review:${UserReviewDTO}">
+                            <div class="ant-collapse ant-collapse-borderless ant-collapse-icon-position-right"
+                                 style="border: 0; background-color: white">
+
+                                <div class="ant-collapse-item ant-collapse-item-active"
+                                           style="background-color: rgb(255, 255, 255); border-color: rgb(230, 230, 230);">
+                                    <div class="ant-collapse-header header1 B" role="button" tabindex="0"
+                                         aria-expanded="true">
+                                        <div class="sc-iIHjhz mRfGE tBody" th:object="${review}">
+                                            <div class="sc-jHZirH djaPsR reviewNum" th:text="*{reviewNum}"
+                                                 style="width: 40px;"></div>
+                                            <div class="sc-jHZirH SOOpQ reviewType" th:text="*{reviewType}"
+                                                 style="width: 80px;"></div>
+                                            <div class="sc-jHZirH bvbmoW reviewTitle" style="flex: 1 1 0%;">
+                                                <a th:text="*{reviewTitle}"
+                                                   th:href="@{/user/readReview(reviewNum=*{reviewNum})}"></a>
+                                            </div>
+                                            <div class="sc-jHZirH fIWREi userName" th:text="*{userName}"
+                                                 style="width: 80px;"></div>
+                                            <div class="sc-jHZirH iGzNxi reviewDate" th:text="*{reviewDate}"
+                                                 style="width: 152px;"></div>
                                         </div>
-                                        <div class="sc-jHZirH fIWREi reviewWriter" th:text="*{reviewWriter}" style="width: 80px;"></div>
-                                        <div class="sc-jHZirH iGzNxi reviewDate" th:text="*{reviewDate}" style="width: 152px;"></div>
                                     </div>
                                 </div>
-                            </div:block>
-                        </div>
+                            </div>
+                        </th:block>
                     </div>
                 </div>
-                <div class="big-width" style="text-align: center; margin-bottom: 29px;" >
-                    <a class="changePage" th:if="${pageDTO.prev}" th:href="${pageDTO.startPage - 1}"><code>&lt;</code></a>
+                <div class="big-width" style="text-align: center; margin-bottom: 29px;">
+                    <a class="changePage" th:if="${pageDTO.prev}"
+                       th:href="${pageDTO.startPage - 1}"><code>&lt;</code></a>
                     <th:block th:each="num:${#numbers.sequence(pageDTO.startPage, pageDTO.endPage)}">
                         <code th:text="${num}" th:if="${pageDTO.criteria.pageNum == num}"></code>
-                        <a class="changePage" th:unless="${pageDTO.criteria.pageNum == num}" th:href="${num}"><code th:text="${num}"></code></a>
+                        <a class="changePage" th:unless="${pageDTO.criteria.pageNum == num}" th:href="${num}"><code
+                                th:text="${num}"></code></a>
                     </th:block>
                     <a class="changePage" th:if="${pageDTO.next}" th:href="${pageDTO.endPage + 1}"><code>&gt;</code></a>
                 </div>
@@ -97,16 +107,15 @@
 let reviewNum = [[${reviewNum}]];
 let $pageForm = $(pageForm);
 
-if(reviewNum != null){
+if (reviewNum != null) {
     alert(reviewNum + "번 게시글이 등록되었습니다.");
 }
 
-$("a.changePage").on("click", function(e){
+$("a.changePage").on("click", function (e) {
     e.preventDefault();
     $pageForm.find("input[name='pageNum']").val($(this).attr("href"));
     $pageForm.submit();
 });
-
 
 
 </script>
@@ -117,4 +126,5 @@ $("a.changePage").on("click", function(e){
             $(this).next('.C').toggle('slow'); */
     });
 </script>
+
 </html>

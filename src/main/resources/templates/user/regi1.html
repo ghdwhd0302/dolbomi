@@ -39,45 +39,48 @@
                                     <p>회원가입</p>
                                 </div>
                                 <div class="form">
-                                <form method="post" action="/user/regi1" id="joinForm1">
-                                <div class="form snd"><label>이름</label><input name="userName" type="text" placeholder="ex. 홍길동"
-                                                                              class="ant-input sc-jzJRlG iaafvp"
-                                                                              value="">
-                                    <div class="sc-VigVT dUXpIL"></div>
-                                    <label>성별</label>
-                                    <div class="type-button-wrapper">
-                                        <div id="M" class="type-button div2 clicked" name="userGender" >남자</div>
-                                        <div id="W" class="type-button div2" name="userGender" >여자</div>
-                                    </div>
-                                    <div class="sc-VigVT dUXpIL"></div>
-                                    <label>생년월일</label><input name="userBirth" type="text"
-                                                              maxlength="8" placeholder="숫자만 입력해주세요 (ex. 19880320)"
-                                                              class="ant-input sc-jzJRlG iaafvp" value="">
-                                    <div class="form fst"><label>이메일</label>
-                                        <div><input name="userEmail" type="email" required="" placeholder="ex) example@mail.com"
-                                                    class="ant-input sc-jzJRlG iaafvp" value=""
-                                                    style="width: 100%;">
-                                        </div>
-                                    </div>
-
-                                    <div class="sc-VigVT ffyjKW"></div>
-                                    <div class="sc-cooIXK fRCQoH">
-                                        <input type="checkbox"> <label>&nbsp;&nbsp; 서비스 이용 약관 및 개인 정보 처리 방침 동의</label>
-                                    </div>
-                                    <p class="sc-gmeYpB bwhqaA">이용약관 확인하기</p>
-                                    <p class="sc-gmeYpB bwhqaA">개인정보 처리방침 확인하기</p>
-                                    <div class="sc-VigVT dUXpIL"></div>
-                                    <button type="button"
-                                            class="ant-btn ant-btn-primary"
-                                            style="background-color: #3bc1ff; border: 0px; cursor: pointer;" onclick="location.href='/user/regi2'">
-                                        <span>계속하기</span></button>
-                                    <div class="link-wrapper"><span class="text">매니저 신청을 희망하시나요? </span><span
-                                            class="link" onclick="location.href='/member/managerapply'">매니저 신청하기</span>
-                                    </div>
-                                    <div class="link-wrapper"><span class="text">이미 계정이 있으신가요? </span><span
-                                            class="link" onclick="location.href='/member/userlogin'">로그인</span></div>
-                                </form>
-                                </div>
+                                    <form method="post" action="/user/regi1" id="joinForm1" name="joinForm1">
+                                        <div class="form snd"><label>이름</label><input name="userName" type="text" placeholder="ex. 홍길동"
+                                                                                      class="ant-input sc-jzJRlG iaafvp"
+                                                                                      value="">
+                                            <div class="sc-VigVT dUXpIL"></div>
+                                            <label>성별</label>
+                                            <div class="type-button-wrapper">
+                                                <div id="M" class="type-button div2 clicked" name="userGender" >남자</div>
+                                                <div id="W" class="type-button div2" name="userGender" >여자</div>
+                                                <input type="hidden" name="userGender">
+                                            </div>
+                                            <div class="sc-VigVT dUXpIL"></div>
+                                            <label>생년월일</label><input name="userBirth" type="text"
+                                                                      maxlength="8" placeholder="숫자만 입력해주세요 (ex. 19880320)"
+                                                                      class="ant-input sc-jzJRlG iaafvp" value="">
+                                            <div class="form fst"><label>이메일</label>
+                                                <div><input name="userEmail" type="email" id="emailCheck" required="" placeholder="ex) example@mail.com"
+                                                            class="ant-input sc-jzJRlG iaafvp" oninput="check_email()" value=""
+                                                            style="width: 100%">
+                                                </div>
+                                            </div>
+                                            <!--email 중복체크-->
+                                            <span class="email_ok">사용 가능한 이메일입니다.</span>
+                                            <span class="email_already">이미 가입한 이메일입니다.</span>
+                                            <span class="email_not">올바른 이메일 형식이 아닙니다.</span>
+                                            <div class="sc-VigVT ffyjKW"></div>
+                                            <div class="sc-cooIXK fRCQoH">
+                                                <input type="checkbox" id="join_check" name="join_check"> <label>&nbsp;&nbsp; 서비스 이용 약관 및 개인 정보 처리 방침 동의</label>
+                                            </div>
+                                            <p class="sc-gmeYpB bwhqaA">이용약관 확인하기</p>
+                                            <p class="sc-gmeYpB bwhqaA">개인정보 처리방침 확인하기</p>
+                                            <div class="sc-VigVT dUXpIL"></div>
+                                            <button type="button"
+                                                    class="ant-btn ant-btn-primary"
+                                                    style="background-color: #3bc1ff; border: 0px; cursor: pointer;" onclick="regi1Confirm()">
+                                                <span>계속하기</span></button>
+                                            <div class="link-wrapper"><span class="text">매니저 신청을 희망하시나요? </span><span
+                                                    class="link" onclick="location.href='/member/managerapply'">매니저 신청하기</span>
+                                            </div>
+                                            <div class="link-wrapper"><span class="text">이미 계정이 있으신가요? </span><span
+                                                    class="link" onclick="location.href='/member/userlogin'">로그인</span></div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -85,18 +88,48 @@
                 </div>
             </div>
         </div>
-
     </div>
+
+</div>
 </div>
 <footer th:replace="footer.html"></footer>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-
+    let $userGender = $("input[name='userGender']")
+    /*유효성 검사 */
     function regi1Confirm(){
-        /*유효성 검사 작성 부분*/
+        var $userName = $("input[name='userName']");
+        var $userBirth = $("input[name='userBirth']");
+        var $userEmail = $("input[name='userEmail']");
+        var $joinForm1 = $(joinForm1);
 
-        location.href='/user/ujoin1';
+        if(!$userName.val()){
+            alert("이름을 입력해 주세요");
+            $userName.focus();
+            console.log("들어옴")
+            return false;
+        }
+
+        if(!$userBirth.val()){
+            alert("생년월일을 입력해 주세요");
+            $userBirth.focus();
+            return false;
+        }
+
+        if(!$userEmail.val()){
+            alert("이메일을 입력해 주세요");
+            $userEmail.focus();
+            return false;
+        }
+
+        if (!join_check.checked) {
+            alert("서비스 이용약관 및 개인 정보 처리 방침에 동의해 주세요");
+            join_check.focus();
+            return false;
+        }
+        $joinForm1.submit();
+
     }
 
     $("#btnLogin").click(function () {
@@ -140,6 +173,7 @@
             }
 
             event.target.classList.add("clicked");
+            $userGender.val(event.target.id);
         }
     }
 
@@ -151,6 +185,46 @@
 
     init();
 
+    /*/!*이메일 정규식*!/
+    var emailRule = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;//이메일 정규식
+
+    if(!emailRule.test($("input[id='emailCheck']").val())) {
+        //경고
+    }
+*/
+
+    /*이메일 중복검사*/
+    function check_email() {
+        var email = $('#emailCheck').val();
+        var emailRule = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;//이메일 정규식
+
+        $.ajax({
+            url:'/user/emailcheck/',
+            type:'post',
+            data:{userEmail:email},
+            success:function (cnt) {
+                if(cnt == 0){
+                    if(!emailRule.test(email)) {
+                        //경고
+                        $('.email_not').css("display", "inline-block");
+                        $('.email_ok').css("display", "none");
+                        $('.email_already').css("display", "none");
+                    }else{
+                        $('.email_not').css("display", "none");
+                        $('.email_ok').css("display", "inline-block");
+                        $('.email_already').css("display", "none");
+                    }
+
+                }else{
+                    $('.email_already').css("display", "inline-block");
+                    $('.email_ok').css("display","none");
+                    $('.email_not').css("display", "none");
+                }
+            },
+            error:function () {
+            }
+        });
+    };
 
 
 

@@ -1,6 +1,9 @@
 package com.project.dolbomi.mapper;
 
 import com.project.dolbomi.domain.vo.AccReservationVO;
+import com.project.dolbomi.domain.vo.AccReviewDTO;
+import com.project.dolbomi.domain.vo.Criteria;
+import com.project.dolbomi.domain.vo.UserReviewDTO;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -25,4 +28,7 @@ public interface AccReservationMapper {
 
     // 고객이 예약취소,user_userdetails2 페이지의 동행예약 취소
     public int delete(Long accReservationNum);
+
+    // acc reservation 게시글 목록
+    public List<AccReviewDTO> reviewGetListAcc();
 }

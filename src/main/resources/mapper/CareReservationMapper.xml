@@ -60,6 +60,13 @@
         WHERE CARE_RESERVATION_NUM = #{carereservationNum}
     </select>
 
+    <!--돌봄 리스트 게시판에 가져오기-->
+    <select id="reviewGetListCare" resultType="carereservationVO">
+        SELECT a.CARE_RESERVATION_TYPE, c.MANAGER_NAME, a.CARE_RESERVATION_DATE, b.USER_NAME, a.USER_EMAIL, a.MANAGER_EMAIL
+        FROM TBL_CARE_RESERVATION a,TBL_USER b, TBL_MANAGER c
+        WHERE a.USER_EMAIL = b.USER_EMAIL AND a.MANAGER_EMAIL = c.MANAGER_EMAIL
+    </select>
+
 
 
 

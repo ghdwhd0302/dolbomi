@@ -40,6 +40,12 @@ public interface UserService {
     //로그 인
     public boolean userLogIn(String userEmail, String userPw);
 
+    //이메일 중복체크
+    public int emailCheck(String userEmail);
+
+    //휴대폰 인증번호
+    public void phoneCerti(String userPhoneNum, int randomNum);
+
     //프로필 페이지
     public UserVO profile(String userEmail);
 
@@ -70,7 +76,14 @@ public interface UserService {
     //    게시글 전체 개수
     public int reviewGetTotal(Criteria criteria);
 
+    // 회원 게시글 목록
+    public List<UserReviewDTO> reviewGetListUser(Criteria criteria, String userEmail);
 
+    // acc reservation 목록
+    public List<AccReviewDTO> reviewGetListAcc();
+
+    // care reservation 목록
+    public List<CareReviewDTO> reviewGetListCare();
 
 
 }

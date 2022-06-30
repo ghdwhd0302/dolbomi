@@ -533,7 +533,7 @@ img {
     font-weight: normal;
     border-radius: 4px;
     background-color: rgb(255, 255, 255);
-    border: 1px solid rgb(233, 233, 233) !important;
+    border: 1px solid rgb(233, 233, 233);
 }
 
 .iQRFrD > div:last-child {
@@ -547,8 +547,9 @@ img {
 
 .iaafvp.ant-input-affix-wrapper {
     height: 37px;
-    line-height: 43px;
+    line-height: 29px;
     padding: 0px 11px;
+    border-radius: 4px;
 }
 
 .iaafvp {
@@ -561,7 +562,7 @@ img {
     font-weight: normal;
     border-radius: 4px;
     background-color: rgb(255, 255, 255);
-    border: 1px solid rgb(233, 233, 233) !important;
+    border: 1px solid rgb(233, 233, 233) ;
 }
 
 .ant-input-affix-wrapper {
@@ -766,16 +767,6 @@ img {
     content: "\a0";
 }
 
-.iaafvp.ant-input-affix-wrapper .ant-input {
-    height: 100%;
-    line-height: 37px;
-    color: rgb(22, 22, 22);
-    font-size: 13px;
-    font-weight: normal;
-    width: 100% !important;
-    border: 0px !important;
-}
-
 ::selection {
     color: #fff;
     background: #3bc1ff;
@@ -960,5 +951,15 @@ div#wrap3{
     left: 98px;
 }
 
+.iaafvp.ant-input-affix-wrapper .ant-input {
+    height: 100%;
+    line-height: 37px;
+    color: rgb(22, 22, 22);
+    font-size: 13px;
+    font-weight: normal;
+    width: 100% !important;
+}
 
-
+.nofocus:focus{
+    border: none;
+}

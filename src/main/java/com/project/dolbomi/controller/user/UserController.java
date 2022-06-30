@@ -1,20 +1,13 @@
 package com.project.dolbomi.controller.user;
-import com.project.dolbomi.domain.vo.UserVO;
-import com.project.dolbomi.domain.vo.AccReservationVO;
-import com.project.dolbomi.domain.vo.CareReservationVO;
+import com.project.dolbomi.domain.vo.*;
 import com.project.dolbomi.service.member.MemberService;
-import com.project.dolbomi.domain.vo.Criteria;
-import com.project.dolbomi.domain.vo.PageDTO;
-import com.project.dolbomi.domain.vo.ReviewVO;
 
 import com.project.dolbomi.service.user.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
@@ -30,29 +23,26 @@ public class UserController {
     private final UserService userService;
 
 
-//    회원가입1
+    //    회원가입1
     @PostMapping("regi1")
-    public String join1(UserVO userVO){
+    public String join1(UserVO userVO, Model model){
         log.info("---------------------------------------");
         log.info("join1............. : " + userVO);
         log.info("---------------------------------------");
 
-        userService.join(userVO);
+        model.addAttribute("userVO", userVO);
         return "/user/regi2";
     }
 
-//    이메일 중복검사
-//    @GetMapping("emailcheck")
-//    public void emailCheck(){
-//
-//    }
-
+    //    이메일 중복검사
     @PostMapping("emailcheck")
-    public String emailCheck(){
-        return "/user/emailcheck";
+    @ResponseBody
+    public int emailCheck(@RequestParam("userEmail") String userEmail){
+        int cnt = userService.emailCheck(userEmail);
+        return cnt;
     }
 
-//    회원가입2
+    //    회원가입2
     @PostMapping("regi2")
     public String join2(UserVO userVO){
         log.info("---------------------------------------");
@@ -81,7 +71,7 @@ public class UserController {
 //
 //    }
 
-//    동행 서비스 예약 1단계
+    //    동행 서비스 예약 1단계
     @PostMapping("acc_reservation2")
     public void acc_reserv1(AccReservationVO accReservationVO, Model model){
 
@@ -90,7 +80,7 @@ public class UserController {
         model.addAttribute("accReservationVO", accReservationVO);
     }
 
-//    동행 서비스 예약 2단계
+    //    동행 서비스 예약 2단계
     @PostMapping("acc_reservation3")
     public void acc_reserv2(AccReservationVO accReservationVO, Model model){
         log.info("accReservationVO..........." + accReservationVO);
@@ -98,10 +88,9 @@ public class UserController {
         model.addAttribute("accReservationVO", accReservationVO);
     }
 
-//    동행 서비스 예약 완료단계
+    //    동행 서비스 예약 완료단계
     @PostMapping("reservAcc")
     public RedirectView accReservation(AccReservationVO accReservationVO){
-        accReservationVO.setUserEmail("APPLE");
         log.info("accReservationVO..........." + accReservationVO);
         memberService.accReservation(accReservationVO);
 
@@ -134,7 +123,6 @@ public class UserController {
     //    돌봄 서비스 예약 완료단계
     @PostMapping("reservCare")
     public RedirectView careReservation(CareReservationVO careReservationVO) {
-        careReservationVO.setUserEmail("APPLE");
         log.info("careReservationVO..........." + careReservationVO);
         memberService.careReservation(careReservationVO);
 
@@ -261,23 +249,45 @@ public class UserController {
     }
 
     @GetMapping("myReview")
-    public String myReview(Criteria criteria, Model model){
+    public String myReview(Criteria criteria, Model model, @RequestParam String userEmail, @RequestParam String userName) {
         log.info("---------------------");
         log.info("myReview--------");
+        log.info("userEmail-------- " + userEmail);
+        log.info("userName--------" + userName);
+        log.info("criteria--------" + criteria);
+
         log.info("---------------------");
 
-        model.addAttribute("reviewList", userService.reviewGetList(criteria));
+
+
+        model.addAttribute("UserReviewDTO", userService.reviewGetListUser(criteria, userEmail));
         model.addAttribute("pageDTO", new PageDTO(criteria, userService.reviewGetTotal(criteria)));
 
         return "/user/myReview";
     }
 
     @GetMapping("review2")
-    public void review2(){}
+    public void review2() {
+    }
+
+    @GetMapping("review1")
+    public String review1(Model model) {
+        log.info("---------------------");
+        log.info("review1--------");
+        log.info("---------------------");
+
+        model.addAttribute("careList", userService.reviewGetListAcc());
+        model.addAttribute("accList", userService.reviewGetListCare());
+
+        /*model.addAttribute("accReviewDTO", new AccReviewDTO(userService.reviewGetListAcc()));
+        model.addAttribute("careReviewDTO", new CareReviewDTO(userService.reviewGetListCare()));*/
+
+        return "/user/review1";
+    }
 
 
     @GetMapping("review")
-    public String reviewGetList( Criteria criteria, Model model  ){
+    public String reviewGetList(Criteria criteria, Model model) {
         log.info("---------------------");
         log.info("reviewGetList--------");
         log.info("---------------------");
@@ -291,19 +301,28 @@ public class UserController {
 
     // 게시글 추가
     @PostMapping("review2")
-    public RedirectView register( ReviewVO reviewVO, RedirectAttributes rttr){
+    public RedirectView register(ReviewVO reviewVO, RedirectAttributes rttr, HttpServletRequest req) {
         log.info("----------------------------");
         log.info("register............. : " + reviewVO);
         log.info("----------------------------");
 
         userService.register(reviewVO);
         rttr.addFlashAttribute("reviewNum", reviewVO.getReviewNum());
+
+        String userEmail = req.getParameter("userEmail");
+        log.info("----------------------------");
+        log.info("userEmail" + userEmail);
+        log.info("----------------------------");
+        String userName = req.getParameter("userName");
+        log.info("----------------------------");
+        log.info("userName" +userName);
+        log.info("----------------------------");
         return new RedirectView("/user/review");
     }
 
     //    게시글 상세보기
     @GetMapping({"readReview", "modifyReview"})
-    public void readReview(Long reviewNum, HttpServletRequest req, Model model){
+    public void readReview(Long reviewNum, HttpServletRequest req, Model model) {
         log.info("----------------------------");
         log.info(req.getRequestURI() + "............. : " + reviewNum);
         log.info("----------------------------");
@@ -325,7 +344,7 @@ public class UserController {
 
     // 삭제
     @PostMapping("reviewRemove")
-    public String reviewRemove(Long reviewNum, Criteria criteria, Model model){
+    public String reviewRemove(Long reviewNum, Criteria criteria, Model model) {
         log.info("----------------------------");
         log.info("reviewRemove............. : " + reviewNum);
         log.info("----------------------------");

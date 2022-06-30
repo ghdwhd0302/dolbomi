@@ -41,6 +41,11 @@ public class UserDAO {
         return userMapper.userLogIn(userEmail, userPw) == 1 ;
     }
 
+    //이메일 중복체크
+    public int emailCheck(String userEmail){
+        int cnt = userMapper.emailCheck(userEmail);
+        return cnt;
+    }
     //회원 탈퇴
     public boolean withdrawal(String userEmail){
         return userMapper.delete(userEmail).equals(1) ;

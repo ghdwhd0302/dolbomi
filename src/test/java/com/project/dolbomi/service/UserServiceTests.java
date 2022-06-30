@@ -1,5 +1,7 @@
 package com.project.dolbomi.service;
 
+import com.project.dolbomi.domain.vo.Criteria;
+import com.project.dolbomi.domain.vo.UserReviewDTO;
 import com.project.dolbomi.domain.vo.UserVO;
 import com.project.dolbomi.service.user.UserService;
 import lombok.extern.slf4j.Slf4j;
@@ -15,6 +17,7 @@ public class UserServiceTests {
 
 
 
+
     @Test
     public void joinTest(){
         UserVO userVO = new UserVO();
@@ -26,6 +29,7 @@ public class UserServiceTests {
         userVO.setUserAddress("서울시 강남구");
         userVO.setUserPhoneNum("010-1234-1234");
 }
+
 //    @Test
 //    public void joinTest(){
 //        UserVO userVO = new UserVO();
@@ -42,12 +46,17 @@ public class UserServiceTests {
 //
 //    }
 
-   /* @Test
+
     public void loginTest(){
         log.info(userService.userLogIn("gildong@naver.com", "1234") + "");
+        }*/
+
+        @Test
+    public void reviewListTests(){
+           userService.reviewGetListUser(new Criteria(1,10), "APPLE").stream().map(UserReviewDTO::toString).forEach(log::info);
         }
 
-
+    }
 
 
 

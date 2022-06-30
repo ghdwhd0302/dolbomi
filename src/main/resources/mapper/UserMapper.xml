@@ -3,15 +3,17 @@
 <mapper namespace="com.project.dolbomi.mapper.UserMapper">
 
     <insert id="insert">
-        INSERT INTO TBL_USER (USER_NAME, USER_GENDER, USER_BIRTH, USER_EMAIL,USER_PHONE_NUM,USER_ADDRESS,USER_PW)
-        VALUES (#{userName, jdbcType=VARCHAR}, #{userGender, jdbcType=VARCHAR},#{userBirth, jdbcType=VARCHAR},#{userEmail, jdbcType=VARCHAR},#{userPhoneNum, jdbcType=VARCHAR},#{userAddress, jdbcType=VARCHAR},#{userPw, jdbcType=VARCHAR})
+
+        
+        INSERT INTO TBL_USER (USER_NAME, USER_GENDER, USER_BIRTH, USER_EMAIL,USER_PHONE_NUM,USER_PW)
+        VALUES (#{userName}, #{userGender},#{userBirth},#{userEmail},#{userPhoneNum},#{userPw})
+
     </insert>
     <select id="selectprofile" resultType="userVO">
         SELECT USER_NAME, USER_BIRTH, USER_EMAIL, USER_PHONE_NUM, USER_ADDRESS
         FROM TBL_USER
         WHERE USER_EMAIL = #{userEmail, jdbcType=VARCHAR}
     </select>
-
 
     <select id="select" resultType="reviewVO">
         SELECT REVIEW_NUM, REVIEW_TITLE, REVIEW_CONTENT, REVIEW_WRITER, REVIEW_SCORE,REVIEW_DATE, REVIEW_UPDATE_DATE
@@ -50,6 +52,12 @@
         SELECT COUNT(USER_EMAIL)
         FROM TBL_USER
         WHERE USER_EMAIL = #{userEmail} AND USER_PW = #{userPw}
+    </select>
+
+    <select id="emailCheck" parameterType="string" resultType="_int">
+        SELECT COUNT(USER_EMAIL)
+        FROM TBL_USER
+        WHERE USER_EMAIL = #{userEmail}
     </select>
 
 </mapper>

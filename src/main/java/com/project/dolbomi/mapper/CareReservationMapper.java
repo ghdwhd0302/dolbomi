@@ -2,7 +2,9 @@ package com.project.dolbomi.mapper;
 
 
 import com.project.dolbomi.domain.vo.AccReservationVO;
+import com.project.dolbomi.domain.vo.AccReviewDTO;
 import com.project.dolbomi.domain.vo.CareReservationVO;
+import com.project.dolbomi.domain.vo.CareReviewDTO;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.beans.PropertyValues;
 
@@ -28,4 +30,7 @@ public interface CareReservationMapper {
 
     // 돌봄서비스고객이 예약취소,user_userdetails2 페이지의 돌봄예약 취소
     public int delete(Long careReservationNum);
+
+    //carereservation review list
+    public List<CareReviewDTO> reviewGetListCare();
 }

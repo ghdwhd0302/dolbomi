@@ -18,66 +18,65 @@
 <header th:replace="header.html"></header>
 
 <!-- main -->
-    <div id="root">
-        <div id="app-container" class="app-container">
-            <div class="main-area">
-                <div class="sc-kqlzXE kHAYKm">
-                    <div>
-                        <div class="sc-dHIava juTLHf">
-                            <div class="sc-jhaWeW dUOvas inner-container" style="padding: 100px 0 0;">
-                                <div class="sc-bSbAYC grytNP">
-                                    <div class="sc-guztPN eszqMv">후기 수정하기</div>
-                                    <div class="sc-cFlXAS cqDVA">
-                                        <p>고객님의 소중한 후기를 통해 더욱 발전하는</p>
-                                        <p style="margin-bottom: 190px;"> 돌보미가 되겠습니다.</p>
-                                    </div>
+<div id="root">
+    <div id="app-container" class="app-container">
+        <div class="main-area">
+            <div class="sc-kqlzXE kHAYKm">
+                <div>
+                    <div class="sc-dHIava juTLHf">
+                        <div class="sc-jhaWeW dUOvas inner-container" style="padding: 100px 0 0;">
+                            <div class="sc-bSbAYC grytNP">
+                                <div class="sc-guztPN eszqMv">후기 수정하기</div>
+                                <div class="sc-cFlXAS cqDVA">
+                                    <p>고객님의 소중한 후기를 통해 더욱 발전하는</p>
+                                    <p style="margin-bottom: 190px;"> 돌보미가 되겠습니다.</p>
                                 </div>
                             </div>
                         </div>
-                        <div>
-                            <a href="/user/myReview" style="border: 1px solid #1f6cd5;
+                    </div>
+                    <div>
+                        <a href="/user/myReview" style="border: 1px solid #1f6cd5;
                         padding: 10px; margin-top: 20px;
                         position: absolute;
                         color: #1f6cd5;
-                        border-radius: 6px;" >
-                                목록 보기</a>
-                        </div>
-                        <div class="sc-fvLVrH kYHgeC inner-container" style="padding: 22px 0;">
-                            <div class="form">
-                                <form method="post" action="/user/modifyReview">
-                                    <div class="fields" th:object="${review}">
-                                        <div class="field">
-                                            <h4>번호</h4>
-                                            <input type="text" th:field="*{reviewNum}"  readonly/>
-                                        </div>
-                                        <div class="field">
-                                            <h4>*제목</h4>
-                                            <input type="text" th:field="*{reviewTitle}" />
-                                        </div>
-                                        <div class="field">
-                                            <h4>*내용</h4>
-                                            <textarea rows="6" th:field="*{reviewContent}" style="resize:none; padding: 14px 0px 0px 14px;" ></textarea>
-                                        </div>
-                                        <div class="field">
-                                            <h4>작성자</h4>
-                                            <input type="text" th:field="*{reviewWriter}"  readonly/>
-                                        </div>
+                        border-radius: 6px;">
+                            목록 보기</a>
+                    </div>
+                    <div class="sc-fvLVrH kYHgeC inner-container" style="padding: 22px 0;">
+                        <div class="form">
+                            <form method="post" action="/user/modifyReview" style="margin-top: 64px;">
+                                <div class="fields" th:object="${review}">
+                                    <div class="field">
+                                        <h4>번호</h4>
+                                        <input type="text" th:field="*{reviewNum}" readonly/>
                                     </div>
-                                    <ul class="actions special">
-                                        <li>
-                                            <input type="submit" class="button" value="수정 완료"/>
-                                        </li>
-                                    </ul>
-                                </form>
-                            </div>
+                                    <div class="field">
+                                        <h4>*제목</h4>
+                                        <input type="text" th:field="*{reviewTitle}"/>
+                                    </div>
+                                    <div class="field">
+                                        <h4>*내용</h4>
+                                        <textarea rows="6" th:field="*{reviewContent}"
+                                                  style="resize:none; padding: 14px 0px 0px 14px;"></textarea>
+                                    </div>
+                                    <div class="field">
+                                        <h4>작성자</h4>
+                                        <input type="text" th:field="*{reviewWriter}" readonly/>
+                                    </div>
+                                </div>
+                                <ul class="actions special">
+                                    <li>
+                                        <input type="submit" class="button" value="수정 완료"/>
+                                    </li>
+                                </ul>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
+</div>
 
 
 <!-- footer -->
@@ -99,8 +98,6 @@
 
 
     })*/
-
-
 
 
 </script>

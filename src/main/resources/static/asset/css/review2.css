@@ -13,7 +13,10 @@
     border: 1px solid rgb(230 230 230);
     border-left: 0;
     line-height: 1.4;
+
+
 }
+
 
 .table_type2 td {
     border: 1px solid #c6ccd8;
@@ -44,6 +47,7 @@ img, fieldset, iframe {
     letter-spacing: -0.5px;
     color: #444;
 }
+
 ul, ol, li {
     list-style: none;
 }
@@ -51,6 +55,7 @@ ul, ol, li {
 ol, ul {
     list-style-type: none;
 }
+
 tr {
     display: table-row;
     vertical-align: inherit;
@@ -60,5 +65,17 @@ tr {
 table {
     border-collapse: collapse;
     border-spacing: 0;
+}
+
+.button {
+    background-color: rgb(59 193 255);
+    border: none;
+    padding: 11px 20px 11px 20px;
+    margin-top: 13px;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    margin-left: 1027px;
+    cursor: pointer;
 }
 

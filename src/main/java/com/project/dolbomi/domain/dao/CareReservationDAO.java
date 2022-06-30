@@ -1,7 +1,9 @@
 package com.project.dolbomi.domain.dao;
 
 import com.project.dolbomi.domain.vo.AccReservationVO;
+import com.project.dolbomi.domain.vo.AccReviewDTO;
 import com.project.dolbomi.domain.vo.CareReservationVO;
+import com.project.dolbomi.domain.vo.CareReviewDTO;
 import com.project.dolbomi.mapper.CareReservationMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
@@ -46,6 +48,10 @@ public class CareReservationDAO {
         return careReservationMapper.delete(careReservationNum) == 1;
     }
 
+    // carereservation review list
+    public List<CareReviewDTO> reviewGetListCare() {
+        return careReservationMapper.reviewGetListCare();
+    }
 }
 
 

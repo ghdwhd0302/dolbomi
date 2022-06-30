@@ -187,7 +187,7 @@
                     </p>
                     <!--비회원일때는 로그인 페이지로 이동-->
                     <a th:if="${session.userVO != null}" href="/user/acc_reservation1">이용하기</a>
-                    <a th:if="${session.managerVO != null}" href="/user/manager_rev">서비스 찾기</a>
+                    <a th:if="${session.managerVO != null}" href="/manager/manager_rev">서비스 찾기</a>
                     <a th:if="${session.managerVO == null && session.userVO == null}" href="/member/userlogin">이용하기</a>
 
                 </div>
@@ -205,7 +205,7 @@
                     </p>
                     <!--비회원일때는 로그인 페이지로 이동-->
                     <a th:if="${session.userVO != null}" href="/user/acc_reservation1">이용하기</a>
-                    <a th:if="${session.managerVO != null}" href="/user/manager_rev">서비스 찾기</a>
+                    <a th:if="${session.managerVO != null}" href="/manager/manager_rev">서비스 찾기</a>
                     <a th:if="${session.managerVO == null && session.userVO == null}" href="/member/userlogin">이용하기</a>
 
                 </div>
@@ -223,7 +223,7 @@
                     </p>
                     <!--비회원일때는 로그인 페이지로 이동-->
                     <a th:if="${session.userVO != null}" href="/user/care_reservation1">이용하기</a>
-                    <a th:if="${session.managerVO != null}" href="/user/manager_rev">서비스 찾기</a>
+                    <a th:if="${session.managerVO != null}" href="/manager/manager_rev">서비스 찾기</a>
                     <a th:if="${session.managerVO == null && session.userVO == null}" href="/member/userlogin">이용하기</a>
 
                 </div>
@@ -241,7 +241,7 @@
                     </p>
                     <!--비회원일때는 로그인 페이지로 이동-->
                     <a th:if="${session.userVO != null}" href="/user/care_reservation1">이용하기</a>
-                    <a th:if="${session.managerVO != null}" href="/user/manager_rev">서비스 찾기</a>
+                    <a th:if="${session.managerVO != null}" href="/manager/manager_rev">서비스 찾기</a>
                     <a th:if="${session.managerVO == null && session.userVO == null}" href="/member/userlogin">이용하기</a>
 
                 </div>
