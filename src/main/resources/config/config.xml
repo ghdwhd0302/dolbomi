@@ -7,6 +7,10 @@
         <typeAlias type="com.project.dolbomi.domain.vo.ManagerVO" alias="managerVO"/>
         <typeAlias type="com.project.dolbomi.domain.vo.AccReservationVO" alias="accreservationVO"/>
         <typeAlias type="com.project.dolbomi.domain.vo.UserVO" alias="userVO"/>
+        <typeAlias type="com.project.dolbomi.domain.vo.AccReviewDTO" alias="accReviewDTO"/>
+        <typeAlias type="com.project.dolbomi.domain.vo.CareReviewDTO" alias="careReviewDTO"/>
+        <typeAlias type="com.project.dolbomi.domain.vo.UserReviewDTO" alias="userReviewDTO"/>
+
     </typeAliases>
 
 

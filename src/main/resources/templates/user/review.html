@@ -32,11 +32,12 @@
                                     <p> 돌보미가 되겠습니다.</p>
                                 </div>
                                 <div class="sc-OxbzP jqycvF" onclick="location.href='/user/review2'">후기 작성하기</div>
-                                <div class="sc-OxbzP jqycvM" onclick="location.href='/user/myReview'">내가 쓴 후기</div>
+                                <div class="sc-OxbzP jqycvM" onclick="myreservation();">내가 쓴 후기</div>
                             </div>
                             <div class="sc-bSbAYC grytNP img-cover">
                                 <div class="sc-hcnlBt dkbIiH">
-                                    <div src="https://www.withmate.kr/assets/images/w_main_crop.png" class="sc-hkbPbT bIzfXR"></div>
+                                    <div src="https://www.withmate.kr/assets/images/w_main_crop.png"
+                                         class="sc-hkbPbT bIzfXR"></div>
                                 </div>
                             </div>
                         </div>
@@ -55,24 +56,33 @@
                             <!-- <div class="sc-dXfzlN sc-aewfc QKal" style="width: 120px;">별점</div> -->
                             <div class="sc-dXfzlN sc-aewfc QKal" style="width: 152px;">작성일</div>
                         </div>
-                        <div class="ant-collapse ant-collapse-borderless ant-collapse-icon-position-right" style="border: 0; background-color: white">
+                        <div class="ant-collapse ant-collapse-borderless ant-collapse-icon-position-right"
+                             style="border: 0; background-color: white">
                             <div:block th:each="review:${reviewList}" class="ant-collapse-item ant-collapse-item-active"
                                        style="background-color: rgb(255, 255, 255); border-color: rgb(230, 230, 230);">
-                                <div class="ant-collapse-header header1 B" role="button" tabindex="0" aria-expanded="true">
+                                <div class="ant-collapse-header header1 B" role="button" tabindex="0"
+                                     aria-expanded="true">
                                     <div class="sc-iIHjhz mRfGE tBody" th:object="${review}">
-                                        <div class="sc-jHZirH djaPsR reviewNum" th:text="*{reviewNum}" style="width: 40px;"></div>
-                                        <div class="sc-jHZirH SOOpQ reviewType" th:text="*{reviewType}" style="width: 80px;"></div>
-                                        <div class="sc-jHZirH bvbmoW reviewTitle" th:text="*{reviewTitle}" style="flex: 1 1 0%;">
+                                        <div class="sc-jHZirH djaPsR reviewNum" th:text="*{reviewNum}"
+                                             style="width: 40px;"></div>
+                                        <div class="sc-jHZirH SOOpQ reviewType" th:text="*{reviewType}"
+                                             style="width: 80px;"></div>
+                                        <div class="sc-jHZirH bvbmoW reviewTitle" th:text="*{reviewTitle}"
+                                             style="flex: 1 1 0%;">
                                         </div>
-                                        <div class="sc-jHZirH fIWREi reviewWriter" th:text="*{reviewWriter}" style="width: 80px;"></div>
-                                        <div class="sc-jHZirH iGzNxi reviewDate" th:text="*{reviewDate}" style="width: 152px;"></div>
+                                        <div class="sc-jHZirH fIWREi reviewWriter" th:text="*{reviewWriter}"
+                                             style="width: 80px;"></div>
+                                        <div class="sc-jHZirH iGzNxi reviewDate" th:text="*{reviewDate}"
+                                             style="width: 152px;"></div>
                                     </div>
                                 </div>
-                                <div class="ant-collapse-content ant-collapse-content-active box1 C" style="display:none">
+                                <div class="ant-collapse-content ant-collapse-content-active box1 C"
+                                     style="display:none">
                                     <div class="ant-collapse-content-box ">
                                         <div class="sc-dKEPtC jwEkpD" th:object="${review}">
 
-                                            <p class="sc-dBAPYN heEFhe reviewContent" th:text="*{reviewContent}"><span><br></span><span>
+                                            <p class="sc-dBAPYN heEFhe reviewContent" th:text="*{reviewContent}">
+                                                <span><br></span><span>
                                                         <br></span><span><br></span>
                                             </p>
                                             <p class="sc-dBAPYN heEFhe manager_name" style="margin-top: 8px;"></p>
@@ -83,11 +93,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="big-width" style="text-align: center; margin-bottom: 29px;" >
-                    <a class="changePage" th:if="${pageDTO.prev}" th:href="${pageDTO.startPage - 1}"><code>&lt;</code></a>
+                <div class="big-width" style="text-align: center; margin-bottom: 29px;">
+                    <a class="changePage" th:if="${pageDTO.prev}"
+                       th:href="${pageDTO.startPage - 1}"><code>&lt;</code></a>
                     <th:block th:each="num:${#numbers.sequence(pageDTO.startPage, pageDTO.endPage)}">
                         <code th:text="${num}" th:if="${pageDTO.criteria.pageNum == num}"></code>
-                        <a class="changePage" th:unless="${pageDTO.criteria.pageNum == num}" th:href="${num}"><code th:text="${num}"></code></a>
+                        <a class="changePage" th:unless="${pageDTO.criteria.pageNum == num}" th:href="${num}"><code
+                                th:text="${num}"></code></a>
                     </th:block>
                     <a class="changePage" th:if="${pageDTO.next}" th:href="${pageDTO.endPage + 1}"><code>&gt;</code></a>
                 </div>
@@ -109,16 +121,15 @@
 let reviewNum = [[${reviewNum}]];
 let $pageForm = $(pageForm);
 
-if(reviewNum != null){
+if (reviewNum != null) {
     alert(reviewNum + "번 게시글이 등록되었습니다.");
 }
 
-$("a.changePage").on("click", function(e){
+$("a.changePage").on("click", function (e) {
     e.preventDefault();
     $pageForm.find("input[name='pageNum']").val($(this).attr("href"));
     $pageForm.submit();
 });
-
 
 
 </script>
@@ -128,5 +139,18 @@ $("a.changePage").on("click", function(e){
         /*     $(this).siblings('.C').toggle('slow');
             $(this).next('.C').toggle('slow'); */
     });
+</script>
+<script th:inline="javascript">
+    let userEmail = [[${session.userVO.userEmail}]];
+    let userName = [[${session.userVO.userName}]];
+
+
+    function myreservation() {
+
+        console.log([[${session.userVO}]])
+        console.log(userEmail)
+        console.log(sessionStorage.getItem("userVO"))
+        location.href = "/user/myReview?userEmail=" + userEmail + "&userName=" + userName;
+    }
 </script>
 </html>
