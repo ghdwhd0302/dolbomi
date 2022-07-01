@@ -181,15 +181,17 @@ public class UserServiceImpl implements UserService {
 
     // acc reservation review list
     @Override
-    public List<AccReviewDTO> reviewGetListAcc(){
-        return accReservationDAO.reviewGetListAcc();
+    public List<AccReviewDTO> reviewGetListAcc(String userEmail){
+        return accReservationDAO.reviewGetListAcc(userEmail);
     }
 
     // care reservation review list
     @Override
-    public List<CareReviewDTO> reviewGetListCare(){
-        return careReservationDAO.reviewGetListCare();
+    public List<CareReviewDTO> reviewGetListCare(String userEmail){
+        return careReservationDAO.reviewGetListCare(userEmail);
     }
+
+
 
 
 }
