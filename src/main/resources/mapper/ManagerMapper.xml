@@ -32,4 +32,11 @@
         FROM TBL_MANAGER
         WHERE MANAGER_EMAIL = #{managerEmail}
     </select>
+
+    <insert id="insert">
+        INSERT INTO TBL_MANAGER
+        (MANAGER_NAME, MANAGER_BIRTH, MANAGER_EMAIL, MANAGER_GENDER, MANAGER_DRIVEOK, MANAGER_PHONE_NUM, MANAGER_REGION, MANAGER_ADDRESS, MANAGER_CAREER, MANAGER_PW)
+        VALUES(#{managerName}, #{managerBirth}, #{managerEmail}, #{managerGender}, #{managerDriveOk}, #{managerPhoneNum}, #{managerRegion}, #{managerAddress}, #{managerCareer}, #{managerPw});
+
+    </insert>
 </mapper>

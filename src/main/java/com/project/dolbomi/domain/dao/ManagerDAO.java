@@ -31,7 +31,7 @@ public class ManagerDAO {
 
     // 매니저 회원가입
     public void join(ManagerVO managerVO){
-
+        managerMapper.insert(managerVO);
     }
 
     // 매니저 로그인

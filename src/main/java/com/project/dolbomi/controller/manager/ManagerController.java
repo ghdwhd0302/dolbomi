@@ -1,6 +1,7 @@
 package com.project.dolbomi.controller.manager;
 
 import com.project.dolbomi.domain.vo.Criteria;
+import com.project.dolbomi.domain.vo.ManagerVO;
 import com.project.dolbomi.domain.vo.PageDTO;
 import com.project.dolbomi.service.manager.ManagerService;
 import lombok.RequiredArgsConstructor;
@@ -69,13 +70,14 @@ public class ManagerController {
     }
 
 //    매니저 회원가입
-//    @GetMapping("mjoin")
-//    public void managerJoin(){
-//    }
+    @PostMapping("manageregi")
+    public String managerJoin(ManagerVO managerVO, Model model){
+        log.info("---------------------------------------");
+        log.info("managerJoin............. : " + managerVO);
+        log.info("---------------------------------------");
 
-    @PostMapping("mjoin")
-    public String managerJoin(){
-        return "/member/mainpage";
+        model.addAttribute("managerVO", managerVO);
+        return "/member/managerlogin";
     }
 
     //  페이지 이동
