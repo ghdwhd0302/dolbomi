@@ -45,8 +45,8 @@ public class AccReservationDAO {
     }
 
     // accreservation review list
-    public List<AccReviewDTO> reviewGetListAcc() {
-        return accReservationMapper.reviewGetListAcc();
+    public List<AccReviewDTO> reviewGetListAcc(String userEmail) {
+        return accReservationMapper.reviewGetListAcc(userEmail);
     }
 
 }
