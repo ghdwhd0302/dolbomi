@@ -259,14 +259,18 @@ public class UserController {
     }
 
     @GetMapping("myReview")
-    public String myReview(Criteria criteria, Model model) {
+    public String myReview(Criteria criteria, Model model, @RequestParam String userEmail, @RequestParam String userName) {
         log.info("---------------------");
         log.info("myReview--------");
+        log.info("userEmail-------- " + userEmail);
+        log.info("userName--------" + userName);
+        log.info("criteria--------" + criteria);
+
         log.info("---------------------");
 
 
 
-        model.addAttribute("UserReviewDTO", new UserReviewDTO(criteria, userService.reviewGetListUser(criteria)));
+        model.addAttribute("UserReviewDTO", userService.reviewGetListUser(criteria, userEmail));
         model.addAttribute("pageDTO", new PageDTO(criteria, userService.reviewGetTotal(criteria)));
 
         return "/user/myReview";
@@ -277,13 +281,16 @@ public class UserController {
     }
 
     @GetMapping("review1")
-    public String review1(Model model) {
+    public String review1(Model model, @RequestParam String userEmail, @RequestParam String userName) {
         log.info("---------------------");
         log.info("review1--------");
+        log.info("myReview--------");
+        log.info("userEmail-------- " + userEmail);
+        log.info("userName--------" + userName);
         log.info("---------------------");
 
-        model.addAttribute("careList", userService.reviewGetListAcc());
-        model.addAttribute("accList", userService.reviewGetListCare());
+        model.addAttribute("careReviewDTO", userService.reviewGetListAcc(userEmail));
+        model.addAttribute("accReviewDTO", userService.reviewGetListCare(userEmail));
 
         /*model.addAttribute("accReviewDTO", new AccReviewDTO(userService.reviewGetListAcc()));
         model.addAttribute("careReviewDTO", new CareReviewDTO(userService.reviewGetListCare()));*/
@@ -315,14 +322,10 @@ public class UserController {
         userService.register(reviewVO);
         rttr.addFlashAttribute("reviewNum", reviewVO.getReviewNum());
 
-    String userEmail = req.getParameter("userEmail");
-    log.info("----------------------------");
-    log.info("userEmail" + userEmail);
-        log.info("----------------------------");
-    String userName = req.getParameter("userName");
-        log.info("----------------------------");
-    log.info("userName" +userName);
-        log.info("----------------------------");
+        String userEmail = req.getParameter("userEmail");
+        String userName = req.getParameter("userName");
+
+
         return new RedirectView("/user/review");
     }
 

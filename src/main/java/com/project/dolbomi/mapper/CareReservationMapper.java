@@ -32,5 +32,5 @@ public interface CareReservationMapper {
     public int delete(Long careReservationNum);
 
     //carereservation review list
-    public List<CareReviewDTO> reviewGetListCare();
+    public List<CareReviewDTO> reviewGetListCare(String userEmail);
 }

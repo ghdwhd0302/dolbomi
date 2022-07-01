@@ -45,8 +45,8 @@ public class ReviewDAO {
     }
 
     // 회원 게시글 목록
-    public List<UserReviewDTO> reviewGetListUser(Criteria criteria) {
-        return reviewMapper.reviewGetListUser(criteria);
+    public List<UserReviewDTO> reviewGetListUser(Criteria criteria, String userEmail) {
+        return reviewMapper.reviewGetListUser(criteria, userEmail);
     }
 
 }

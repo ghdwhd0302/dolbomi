@@ -1,9 +1,7 @@
 
-
 .main-area {
-    width: 100vw;
-    min-width: 1120px;
-    min-height: 100vh;
+    width: 1120px;
+    margin: 0 auto;
 }
 
 .juTLHf {
@@ -85,7 +83,7 @@
     background-color: #f7579f;
 }
 
-.sc-OxbzP{
+.sc-OxbzP {
     display: inline-block;
 }
 
@@ -178,25 +176,25 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    color: rgba(0,0,0,.85);
+    color: rgba(0, 0, 0, .85);
     font-size: 14px;
     font-variant: tabular-nums;
     line-height: 1.5715;
     list-style: none;
-    font-feature-settings: "tnum","tnum";
+    font-feature-settings: "tnum", "tnum";
     background-color: #fafafa;
     border: 1px solid #d9d9d9;
     border-bottom: 0;
     border-radius: 2px;
 }
 
-.ant-collapse-borderless>.ant-collapse-item {
+.ant-collapse-borderless > .ant-collapse-item {
     border-bottom: 1px solid #d9d9d9;
 }
 
 .ant-pagination {
-    margin-top: 32px!important;
-    text-align: center!important;
+    margin-top: 32px !important;
+    text-align: center !important;
 }
 
 .ant-pagination, .ant-pagination ol, .ant-pagination ul {
@@ -207,11 +205,11 @@
 
 .ant-pagination {
     box-sizing: border-box;
-    color: rgba(0,0,0,.85);
+    color: rgba(0, 0, 0, .85);
     font-size: 14px;
     font-variant: tabular-nums;
     line-height: 1.5715;
-    font-feature-settings: "tnum","tnum";
+    font-feature-settings: "tnum", "tnum";
 }
 
 .ant-pagination-disabled, .ant-pagination-disabled:focus-visible, .ant-pagination-disabled:hover {
@@ -222,7 +220,7 @@
     display: inline-block;
     min-width: 32px;
     height: 32px;
-    color: rgba(0,0,0,.85);
+    color: rgba(0, 0, 0, .85);
     line-height: 32px;
     text-align: center;
     vertical-align: middle;
@@ -238,7 +236,7 @@
 }
 
 .ant-pagination-disabled .ant-pagination-item-link, .ant-pagination-disabled:focus-visible .ant-pagination-item-link, .ant-pagination-disabled:hover .ant-pagination-item-link {
-    color: rgba(0,0,0,.25);
+    color: rgba(0, 0, 0, .25);
     border-color: #d9d9d9;
     cursor: not-allowed;
 }
@@ -259,7 +257,7 @@
 }
 
 .ant-pagination-next button, .ant-pagination-prev button {
-    color: rgba(0,0,0,.85);
+    color: rgba(0, 0, 0, .85);
     cursor: pointer;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -286,7 +284,6 @@ button, input, optgroup, select, textarea {
     font-family: inherit;
     line-height: inherit;
 }
-
 
 
 .anticon {
@@ -326,7 +323,7 @@ button, input, optgroup, select, textarea {
 .ant-pagination-item a {
     display: block;
     padding: 0 6px;
-    color: rgba(0,0,0,.85);
+    color: rgba(0, 0, 0, .85);
     -webkit-transition: none;
     transition: none;
 }
@@ -354,12 +351,12 @@ a {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    color: rgba(0,0,0,.85);
+    color: rgba(0, 0, 0, .85);
     font-size: 14px;
     font-variant: tabular-nums;
     line-height: 1.5715;
     list-style: none;
-    font-feature-settings: "tnum","tnum";
+    font-feature-settings: "tnum", "tnum";
     position: relative;
     display: inline-block;
     cursor: pointer;
@@ -370,8 +367,8 @@ a {
     background-color: #fff;
     border: 1px solid #d9d9d9;
     border-radius: 2px;
-    -webkit-transition: all .3s cubic-bezier(.645,.045,.355,1);
-    transition: all .3s cubic-bezier(.645,.045,.355,1);
+    -webkit-transition: all .3s cubic-bezier(.645, .045, .355, 1);
+    transition: all .3s cubic-bezier(.645, .045, .355, 1);
 }
 
 .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
@@ -399,7 +396,7 @@ a {
 .ant-select:not(.ant-select-customize-input) .ant-select-selector .ant-select-selection-search-input {
     margin: 0;
     padding: 0;
-    background: rgba(0,0,0,0);
+    background: rgba(0, 0, 0, 0);
     border: none;
     outline: none;
     -webkit-appearance: none;
@@ -439,7 +436,7 @@ a {
     width: 12px;
     height: 12px;
     margin-top: -6px;
-    color: rgba(0,0,0,.25);
+    color: rgba(0, 0, 0, .25);
     font-size: 12px;
     line-height: 1;
     text-align: center;
@@ -451,14 +448,14 @@ a {
     -webkit-transition: -webkit-transform .3s;
     transition: -webkit-transform .3s;
     transition: transform .3s;
-    transition: transform .3s,-webkit-transform .3s;
+    transition: transform .3s, -webkit-transform .3s;
 }
 
-.ant-select-arrow>* {
+.ant-select-arrow > * {
     line-height: 1;
 }
 
-.ant-select-arrow .anticon>svg {
+.ant-select-arrow .anticon > svg {
     vertical-align: top;
 }
 
@@ -475,21 +472,21 @@ a {
     padding-right: 0px;
 }
 
-.ant-collapse-icon-position-right>.ant-collapse-item>.ant-collapse-header {
+.ant-collapse-icon-position-right > .ant-collapse-item > .ant-collapse-header {
     padding: 12px 40px 12px 16px;
 }
 
-.ant-collapse>.ant-collapse-item>.ant-collapse-header {
+.ant-collapse > .ant-collapse-item > .ant-collapse-header {
     position: relative;
     padding: 12px 16px;
-    color: rgba(0,0,0,.85);
+    color: rgba(0, 0, 0, .85);
     line-height: 1.5715;
     cursor: pointer;
-    -webkit-transition: all .3s,visibility 0s;
-    transition: all .3s,visibility 0s;
+    -webkit-transition: all .3s, visibility 0s;
+    transition: all .3s, visibility 0s;
 }
 
-.ant-collapse>.ant-collapse-item>.ant-collapse-header:before {
+.ant-collapse > .ant-collapse-item > .ant-collapse-header:before {
     display: table;
     content: "";
 }
@@ -627,27 +624,27 @@ img {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    color: rgba(0,0,0,.85);
+    color: rgba(0, 0, 0, .85);
     font-size: 14px;
     font-variant: tabular-nums;
     line-height: 1.5715;
     list-style: none;
-    font-feature-settings: "tnum","tnum";
+    font-feature-settings: "tnum", "tnum";
     background-color: #fafafa;
     border: 1px solid #d9d9d9;
     border-bottom: 0;
     border-radius: 2px;
 }
 
-.ant-collapse-icon-position-right>.ant-collapse-item>.ant-collapse-header {
+.ant-collapse-icon-position-right > .ant-collapse-item > .ant-collapse-header {
     padding: 12px 40px 12px 16px;
 }
 
-.ant-collapse-borderless>.ant-collapse-item>.ant-collapse-content>.ant-collapse-content-box {
+.ant-collapse-borderless > .ant-collapse-item > .ant-collapse-content > .ant-collapse-content-box {
     padding-top: 4px;
 }
 
-.ant-collapse-content>.ant-collapse-content-box {
+.ant-collapse-content > .ant-collapse-content-box {
     padding-bottom: 16px;
 }
 
@@ -663,7 +660,7 @@ input, select, textarea {
     appearance: none;
 }
 
-.back{
+.back {
     max-width: 1120px;
     margin: 0 auto;
 }
@@ -686,7 +683,7 @@ input, select, textarea {
     transition: all .2s ease-in-out;
 }
 
-.small{
+.small {
     color: #ffffff;
     background: #1f6cd5;
     border: none;
@@ -731,7 +728,7 @@ form > .fields > .field.half {
 }
 
 form > .fields > .field.third {
-    width: calc(100%/3 - 0.5rem);
+    width: calc(100% / 3 - 0.5rem);
 }
 
 form > .fields > .field.quarter {
@@ -1021,10 +1018,11 @@ input[type="submit"].small, input[type="reset"].small, input[type="button"].smal
     line-height: 2.4375rem;
     padding: 0 1.5rem;
 }
+
 input[type="submit"], input[type="reset"], input[type="button"], button, .button {
     background-color: transparent;
     box-shadow: inset 0 0 0 1px #1f6cd5;
-    color: #1f6cd5!important;
+    color: #1f6cd5 !important;
     width: 100px;
     top: 22px;
     left: 399px;
@@ -1040,6 +1038,7 @@ ul.actions.special {
     margin-left: 0;
     width: 100%;
 }
+
 ul.actions {
     display: -moz-flex;
     display: -webkit-flex;
@@ -1054,8 +1053,9 @@ ul.actions {
 .field > h4 {
     font-size: 1rem;
 }
+
 .field > h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     line-height: 1.5;
-    margin: 0 0 1.5rem 0!important;
+    margin: 0 0 1.5rem 0 !important;
 }

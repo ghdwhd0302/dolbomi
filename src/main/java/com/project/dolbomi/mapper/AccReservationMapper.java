@@ -30,5 +30,5 @@ public interface AccReservationMapper {
     public int delete(Long accReservationNum);
 
     // acc reservation 게시글 목록
-    public List<AccReviewDTO> reviewGetListAcc();
+    public List<AccReviewDTO> reviewGetListAcc(String userEmail);
 }
