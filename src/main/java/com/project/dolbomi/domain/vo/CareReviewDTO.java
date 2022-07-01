@@ -4,12 +4,11 @@ import java.util.List;
 
 public class CareReviewDTO {
     private String careReservationType;
-    private String managerName;
     private String careReservationDate;
     private String userName;
     private String userEmail;
-    private String managerEmail;
+    private Long careReservationNum;
+    private Long userNum;
 
-   /* public CareReviewDTO(List<CareReviewDTO> reviewGetListCare) {
-    }*/
+
 }

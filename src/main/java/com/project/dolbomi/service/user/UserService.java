@@ -80,10 +80,10 @@ public interface UserService {
     public List<UserReviewDTO> reviewGetListUser(Criteria criteria, String userEmail);
 
     // acc reservation 목록
-    public List<AccReviewDTO> reviewGetListAcc();
+    public List<AccReviewDTO> reviewGetListAcc(String userEmail);
 
     // care reservation 목록
-    public List<CareReviewDTO> reviewGetListCare();
+    public List<CareReviewDTO> reviewGetListCare(String userEmail);
 
 
 }

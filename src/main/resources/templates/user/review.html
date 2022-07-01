@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:div="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -31,7 +31,7 @@
                                     <p>고객님의 소중한 후기를 통해 더욱 발전하는</p>
                                     <p> 돌보미가 되겠습니다.</p>
                                 </div>
-                                <div class="sc-OxbzP jqycvF" onclick="location.href='/user/review2'">후기 작성하기</div>
+                                <div class="sc-OxbzP jqycvF" onclick="selectreview();">후기 작성하기</div>
                                 <div class="sc-OxbzP jqycvM" onclick="myreservation();">내가 쓴 후기</div>
                             </div>
                             <div class="sc-bSbAYC grytNP img-cover">
@@ -56,9 +56,10 @@
                             <!-- <div class="sc-dXfzlN sc-aewfc QKal" style="width: 120px;">별점</div> -->
                             <div class="sc-dXfzlN sc-aewfc QKal" style="width: 152px;">작성일</div>
                         </div>
+                        <th:block th:each="review:${reviewList}">
                         <div class="ant-collapse ant-collapse-borderless ant-collapse-icon-position-right"
                              style="border: 0; background-color: white">
-                            <div:block th:each="review:${reviewList}" class="ant-collapse-item ant-collapse-item-active"
+                            <div class="ant-collapse-item ant-collapse-item-active"
                                        style="background-color: rgb(255, 255, 255); border-color: rgb(230, 230, 230);">
                                 <div class="ant-collapse-header header1 B" role="button" tabindex="0"
                                      aria-expanded="true">
@@ -89,9 +90,9 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div:block>
                         </div>
                     </div>
+                        </th:block>
                 </div>
                 <div class="big-width" style="text-align: center; margin-bottom: 29px;">
                     <a class="changePage" th:if="${pageDTO.prev}"
@@ -145,12 +146,17 @@ $("a.changePage").on("click", function (e) {
     let userName = [[${session.userVO.userName}]];
 
 
+
     function myreservation() {
 
         console.log([[${session.userVO}]])
         console.log(userEmail)
         console.log(sessionStorage.getItem("userVO"))
         location.href = "/user/myReview?userEmail=" + userEmail + "&userName=" + userName;
+    }
+
+    function selectreview() {
+        location.href="/user/review1?userEmail=" + userEmail + "&userName=" + userName;
     }
 </script>
 </html>

@@ -49,8 +49,8 @@ public class CareReservationDAO {
     }
 
     // carereservation review list
-    public List<CareReviewDTO> reviewGetListCare() {
-        return careReservationMapper.reviewGetListCare();
+    public List<CareReviewDTO> reviewGetListCare(String userEmail) {
+        return careReservationMapper.reviewGetListCare(userEmail);
     }
 }
 

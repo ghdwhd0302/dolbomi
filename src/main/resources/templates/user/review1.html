@@ -42,10 +42,10 @@
                     <table>
                         <thead>
                         <tr class="tHead">
-                            <th class="boardNumber">서비스</th>
-                            <th class="boardTitle">이용자이름</th>
-                            <th class="boardTitle">매니저이름</th>
-                            <th class="boardRegisterDate">서비스신청날짜</th>
+                            <th class="careReservationNum ">예약번호</th>
+                            <th class="careReservationType">서비스</th>
+                            <th class="userName">이용자이름</th>
+                            <th class="careReservationDate">서비스신청날짜</th>
                             <th class="boardUpdateDate"></th>
                         </tr>
                         </thead>
@@ -60,14 +60,13 @@
                             </tr>
                         </th:block>
                         </tbody> -->
+                        <th:block th:each="care:${careReviewDTO}">
                         <tbody>
-                        <th:block th:each="care:${CareReviewDTO}">
                             <tr class="tBody" th:object="${care}">
+                                <td class="careReservationNum" th:text="*{careReservationNum}"></td>
                                 <td class="careReservationType" th:text="*{careReservationType}"></td>
-                                <td class="userName"><a th:text="*{userName}">
-                                                          <!--th:href="@{/board/read(boardNumber=*{boardNumber})}">--></a>
-                                </td>
-                                <td class="managerName" th:text="*{managerName}"></td>
+                                <td class="userName" th:text="*{userName}"></td>
+                                <!--<td class="managerName" th:text="*{managerName}"></td>-->
                                 <td class="careReservationDate" th:text="*{careReservationDate}"></td>
                                 <td style="padding: 0.75rem 0.75rem; width: 7px;"><input value="선택" style="    width: 55px;
                                         text-align: center;
@@ -78,16 +77,15 @@
                                         font-weight: 700;
                                         cursor: pointer;"></td>
                             </tr>
-                        </th:block>
                         </tbody>
+                        </th:block>
+                        <th:block th:each="acc:${accReviewDTO}">
                         <tbody>
-                        <th:block th:each="acc:${AccReviewDTO}">
                             <tr class="tBody" th:object="${acc}">
+                                <td class="accReservationNum" th:text="*{accReservationNum}"></td>
                                 <td class="accReservationType" th:text="*{accReservationType}"></td>
-                                <td class="userName"><a th:text="*{userName}">
-                                                          &lt;!&ndash;th:href="@{/board/read(boardNumber=*{boardNumber})}">&ndash;&gt;</a>
-                                </td>
-                                <td class="managerName" th:text="*{managerName}"></td>
+                                <td class="userName" th:text="*{userName}"></td>
+                                <!--<td class="managerName" th:text="*{managerName}"></td>-->
                                 <td class="accReservationDate" th:text="*{accReservationDate}"></td>
                                 <td style="padding: 0.75rem 0.75rem; width: 7px;"><input value="선택" style="    width: 55px;
                                         text-align: center;
@@ -98,8 +96,8 @@
                                         font-weight: 700;
                                         cursor: pointer;"></td>
                             </tr>
-                        </th:block>
                         </tbody>
+                        </th:block>
                     </table>
                     <!-- <div class="sc-dPPMrM fCtKbG">
                          <img src="/assets/images/main_logo.png" alt="logo" class="sc-jWxkHr bLIbyr">
