@@ -28,7 +28,7 @@
 
         <div class="main-area">
             <div class="sc-bYTsla bDUjTg">
-                <form action="" mehod="post">
+                <form action="manager/manageregi" mehod="post" id="managereApplication" name="managereApplication">
                     <div class="sc-dlyikq lknGZg">
                         <p class="sc-glUWqk uvQxd" style="color: rgb(22, 22, 22); margin-bottom: 20px;">매니저 지원하기</p>
                         <div class="sc-fFTYTi bkIEuU">
@@ -54,40 +54,54 @@
                         </div>
                         <div class="sc-fFTYTi bkIEuU">
                             <div class="sc-bTiqRo cOGJco">성함을 입력해주세요</div>
-                            <textarea placeholder="ex) 홍길동"
+                            <textarea name="managerName" placeholder="ex) 홍길동"
                                       class="ant-input sc-bEufUU bBQEgI"></textarea>
                         </div>
                         <div class="sc-fFTYTi bkIEuU">
                             <div class="sc-bTiqRo cOGJco">생년월일을 입력해주세요</div>
-                            <textarea
+                            <textarea name="managerBirth"
                                     placeholder="만 19세 이상의 성인만 매니저 활동이 가능합니다. ex) 19960405"
                                     class="ant-input sc-bEufUU bBQEgI"></textarea>
                         </div>
                         <div class="sc-fFTYTi bkIEuU">
                             <div class="sc-bTiqRo cOGJco">개인 이메일 주소를 입력해주세요</div>
-                            <textarea
-                                    placeholder="기입해주신 이메일로 프리랜서 근로 계약 문서가 전송되고 온라인 계약 체결이 진행됩니다."
+                            <textarea name="managerEmail"
+                                    placeholder="기입해주신 이메일로 프리랜서 근로 계약 문서가 전송되고 온라인 계약 체결이 진행됩니다.                             로그인 시 아이디에 사용됩니다."
                                     class="ant-input sc-bEufUU bBQEgI"></textarea>
                         </div>
                         <div class="sc-fFTYTi bkIEuU">
+                            <label style="display: block;font-size: 14px;">비밀번호 입력</label><input name="managerPw" password="true" type="password"
+                                   placeholder="숫자와 문자 포함 6~12자리 이내" class="ant-input sc-jzJRlG iaafvp password">
+                            <!--비밀번호 정규식-->
+                            <span class="pw_style" style="color: #e30606" id="not-pass">올바른 비밀번호 형식이 아닙니다</span>
+                            <span class="pw_style" style="color: #008000" id="yes-pass">안전합니다(☆☆☆)</span>
+                        </div>
+                        <div class="sc-fFTYTi bkIEuU">
+                            <label style="display: block;font-size: 14px;">비밀번호 확인</label><input name="managerPwCheck" type="password" password="true" placeholder="비밀번호를 확인해주세요."
+                                   class="ant-input sc-jzJRlG iaafvp password">
+                            <!--비밀번호 확인-->
+                            <div class="alert alert-success" style="color: #008000" id="alert-success" >비밀번호가 일치합니다.</div>
+                            <div class="alert alert-danger" style="color: #e30606" id="alert-danger">비밀번호가 일치하지 않습니다.</div>
+                        </div>
+                        <div class="sc-fFTYTi bkIEuU">
                             <div class="sc-bTiqRo cOGJco">자택 주소를 입력해주세요</div>
-                            <textarea
+                            <textarea name="managerAddress"
                                     placeholder="ex) 서울특별시 송파구 방이동 (XX동 XXX호 등의 상세 주소 기입 불필요)"
                                     class="ant-input sc-bEufUU bBQEgI"></textarea>
                         </div>
                         <div class="sc-fFTYTi bkIEuU">
                             <div class="sc-bTiqRo cOGJco">성별을 알려주세요</div>
-                            <textarea placeholder="ex) 남자"
+                            <textarea name="managerGender" placeholder="ex) 남자/여자"
                                       class="ant-input sc-bEufUU bBQEgI"></textarea>
                         </div>
                         <div class="sc-fFTYTi bkIEuU">
                             <div class="sc-bTiqRo cOGJco">운전 가능 여부를 선택해주세요</div>
-                            <textarea
+                            <textarea name="managerDriveOk"
                                     placeholder="예/아니오로 대답해주세요" class="ant-input sc-bEufUU bBQEgI"></textarea>
                         </div>
                         <div class="sc-fFTYTi bkIEuU">
                             <div class="sc-bTiqRo cOGJco">개인의 간병 경력 사항을 입력해주세요 <span>(0/500)</span></div>
-                            <textarea
+                            <textarea name="managerCareer"
                                     placeholder="매니저 활동을 위해 도움이 되는 자신의 간병 경력을 500자 이내로 자유롭게 남겨주세요 (요양보호사 자격증 보유 &amp; XX요양병원 3년 근무 등 / 간병 이외의 경력도 기재 가능)"
                                     class="ant-input sc-bEufUU bBQEgI"></textarea>
                         </div>
@@ -111,12 +125,12 @@
                         </div>
                         <div class="sc-fFTYTi bkIEuU">
                             <div class="sc-bTiqRo cOGJco">개인 연락처를 입력해주세요(-를 제외하고 입력해주세요 &gt; 01011111111)</div>
-                            <textarea placeholder="기입해주신 연락처로 합격/불합격 여부 알려드립니다. 정확히 입력해주세요."
+                            <textarea name="managerPhoneNum" placeholder="기입해주신 연락처로 합격/불합격 여부 알려드립니다. 정확히 입력해주세요."
                                       class="ant-input sc-bEufUU bBQEgI"></textarea>
                         </div>
                         <div class="sc-fFTYTi bkIEuU">
                             <div class="sc-bTiqRo cOGJco">매니저 활동 가능 지역을 알려주세요</div>
-                            <textarea
+                            <textarea name="managerRegion"
                                     placeholder="본인이 선호 또는 활동 가능한 서비스 지역과 병원을 알려주세요 (마포구 일대, 종로구 일대, 세브란스 병원, 서울대 병원, 아산 병원 등)"
                                     class="ant-input sc-bEufUU bBQEgI"></textarea>
                         </div>
@@ -125,7 +139,7 @@
                             <input type="file"
                                    accept="image/x-png,image/gif,image/jpeg">
                         </div>
-                        <div style="text-align: center;" onclick="location.href='/manager/mjoin'"><span class="sc-gFXMyG kfNMrX">지원하기</span></div>
+                        <div style="text-align: center;" onclick="managerApplication()"><span class="sc-gFXMyG kfNMrX">지원하기</span></div>
                     </div>
                 </form>
             </div>
@@ -138,6 +152,9 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <script>
+    let $managerPw = $("input[name='managerPw']");
+    let $managerPwCheck = $("input[name='managerPwCheck']");
+
     $("#btnLogin").click(function () {
         if (!$(this).attr('class').match('on')) {
             $(this).addClass('on');
@@ -148,6 +165,113 @@
         }
     })
 
+    /*비밀번호 정규식*/
+    $(function(){
+        $("#alert-success").hide();
+        $("#alert-danger").hide();
+        $("#not-pass").hide();
+        $("#yes-pass").hide();
+
+        $managerPw.keyup(function () {
+            var passRule = /^[A-Za-z0-9]{6,12}$/;
+            if(!passRule.test($managerPw.val())) {
+                $("#not-pass").show();
+                $("#yes-pass").hide();
+            }else{
+                $("#not-pass").hide();
+                $("#yes-pass").show();
+            }
+        })
+
+        $("input[type='password']").keyup(function(){
+            var pwd1=$managerPw.val();
+            var pwd2=$managerPwCheck.val();
+            if(pwd1 != "" || pwd2 != ""){
+                if(pwd1 == pwd2){
+                    $("#alert-success").show();
+                    $("#alert-danger").hide();
+                }else{
+                    $("#alert-success").hide();
+                    $("#alert-danger").show();
+                }
+            }
+        });
+    });
+
+    /*유효성 검사*/
+    function managerApplication() {
+        var passRule = /^[A-Za-z0-9]{6,12}$/;//숫자와 문자 포함 형태의 6~12자리 이내의 암호 정규식 
+        let $managerName = $("textarea[name='managerName']");
+        let $managerBirth = $("textarea[name='managerBirth']");
+        let $managerEmail = $("textarea[name='managerEmail']");
+        let $managerAddress = $("textarea[name='managerAddress']");
+        let $managerGender = $("textarea[name='managerGender']");
+        let $managerDriveOk = $("textarea[name='managerDriveOk']");
+        let $managerCareer = $("textarea[name='managerCareer']");
+        let $managerPhoneNum = $("textarea[name='managerPhoneNum']");
+        let $managerRegion = $("textarea[name='managerRegion']");
+
+        if(!$managerName.val()){
+            alert("성함을 입력해주세요")
+            $managerName.focus();
+            return false;
+        }
+        if(!$managerBirth.val()){
+            alert("생년월일을 입력해주세요")
+            $managerBirth.focus();
+            return false;
+        }
+        if(!$managerEmail.val()){
+            alert("이메일 주소를 입력해주세요")
+            $managerEmail.focus();
+            return false;
+        }
+        if(!$managerPw.val()){
+            alert("비밀번호를 입력해주세요")
+            managerPw.focus();
+            return false;
+        }
+        if(!$managerPwCheck.val()){
+            alert("비밀번호 확인을 입력해주세요")
+            managerPwCheck.focus();
+            return false;
+        }
+        if(!$managerAddress.val()){
+            alert("자택 주소를 입력해주세요")
+            managerAddress.focus();
+            return false;
+        }
+        if(!$managerGender.val()){
+            alert("성별을 입력해주세요")
+            managerGender.focus();
+            return false;
+        }
+        if(!$managerDriveOk.val()){
+            alert("운전 가능 여부를 입력해주세요")
+            managerDriveOk.focus();
+            return false;
+        }
+        if(!$managerCareer.val()){
+            alert("간병 경력 사항을 입력해주세요")
+            managerCareer.focus();
+            return false;
+        }
+        if(!$managerPhoneNum.val()){
+            alert("연락처를 입력해주세요")
+            managerPhoneNum.focus();
+            return false;
+        }
+        if(!$managerRegion.val()){
+            alert("활동 가능 지역을 입력해주세요")
+            managerRegion.focus();
+            return false;
+        }
+        //비밀번호 암호화
+        $userPw.val(btoa($userPw.val()));
+        console.log($userPw.val());
+        $joinForm2.submit();
+
+    }
 
 </script>
 
