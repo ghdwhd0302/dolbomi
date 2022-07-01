@@ -12,9 +12,11 @@ public class ManagerVO {
     private String managerGender;
     private String managerDriveOk;
     private String managerPhoneNum;
+    private String managerRegion;
     private String managerAddress;
     private String managerCareer;
     private String managerPw;
     private String managerStatus;
+
 }
 

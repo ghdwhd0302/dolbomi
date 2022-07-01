@@ -241,3 +241,40 @@ textarea {
     margin-top: 40px;
     cursor: pointer;
 }
+.iKMJbd .inner-container .register-form .form input.ant-input {
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: -0.2px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.iaafvp.ant-input {
+    width: 100%;
+    margin-bottom: 0px;
+    font-weight: normal;
+    border-radius: 4px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(233, 233, 233) !important;
+}
+
+.ant-input:placeholder-shown {
+    text-overflow: ellipsis;
+}
+
+.ant-input {
+    box-sizing: border-box;
+    margin: 0;
+    font-variant: tabular-nums;
+    list-style: none;
+    font-feature-settings: "tnum", "tnum";
+    position: relative;
+    display: inline-block;
+    min-width: 0;
+    background-image: none;
+    transition: all .3s;
+}
+
+.pw_style{
+    color:#e30606;
+    display: inline-block;
+}
