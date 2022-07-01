@@ -60,7 +60,7 @@
     <!--동행 리스트 게시판에 가져오기-->
     <select id="reviewGetListAcc" resultType="accReviewDTO">
         SELECT
-        ROWNUM RN, a.ACC_RESERVATION_TYPE, a.ACC_RESERVATION_DATE, b.USER_NAME, a.USER_EMAIL
+        ROWNUM RN, a.ACC_RESERVATION_TYPE, a.ACC_RESERVATION_DATE, b.USER_NAME, a.USER_EMAIL, a.ACC_RESERVATION_NUM
         FROM TBL_ACC_RESERVATION a,TBL_USER b
         WHERE a.USER_EMAIL = b.USER_EMAIL  AND a.USER_EMAIL = #{userEmail}
     </select>
