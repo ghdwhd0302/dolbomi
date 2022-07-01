@@ -63,7 +63,7 @@
     <!--돌봄 리스트 게시판에 가져오기-->
     <select id="reviewGetListCare" resultType="careReviewDTO">
         SELECT
-        ROWNUM RN, a.CARE_RESERVATION_TYPE, a.CARE_RESERVATION_DATE, b.USER_NAME, a.USER_EMAIL
+        ROWNUM RN, a.CARE_RESERVATION_TYPE, a.CARE_RESERVATION_DATE, b.USER_NAME, a.USER_EMAIL, a.CARE_RESERVATION_NUM
         FROM TBL_CARE_RESERVATION a,TBL_USER b
         WHERE a.USER_EMAIL = b.USER_EMAIL AND a.USER_EMAIL = #{userEmail}
     </select>

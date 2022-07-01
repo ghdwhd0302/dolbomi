@@ -267,7 +267,10 @@ public class UserController {
     }
 
     @GetMapping("review2")
-    public void review2() {
+    public String review2(HttpServletRequest req, Model model) {
+
+
+        return "/user/review2";
     }
 
     @GetMapping("review1")
@@ -279,8 +282,8 @@ public class UserController {
         log.info("userName--------" + userName);
         log.info("---------------------");
 
-        model.addAttribute("careReviewDTO", userService.reviewGetListAcc(userEmail));
-        model.addAttribute("accReviewDTO", userService.reviewGetListCare(userEmail));
+        model.addAttribute("careReviewDTO", userService.reviewGetListCare(userEmail));
+        model.addAttribute("accReviewDTO", userService.reviewGetListAcc(userEmail));
 
         /*model.addAttribute("accReviewDTO", new AccReviewDTO(userService.reviewGetListAcc()));
         model.addAttribute("careReviewDTO", new CareReviewDTO(userService.reviewGetListCare()));*/

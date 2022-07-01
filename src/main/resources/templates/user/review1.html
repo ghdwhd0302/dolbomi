@@ -67,15 +67,15 @@
                                 <td class="careReservationType" th:text="*{careReservationType}"></td>
                                 <td class="userName" th:text="*{userName}"></td>
                                 <!--<td class="managerName" th:text="*{managerName}"></td>-->
-                                <td class="careReservationDate" th:text="*{careReservationDate}"></td>
-                                <td style="padding: 0.75rem 0.75rem; width: 7px;"><input value="선택" style="    width: 55px;
+                                <td class="careReservationDate" th:text="*{#strings.substring(careReservationDate,0,10)}"></td>
+                                <td style="padding: 0.75rem 0.75rem; width: 7px;"><input onclick="selectreviewcare();" type="button" value="선택" style="    width: 55px;
                                         text-align: center;
                                         font-size: inherit;
                                         border: 1px solid #1f6cd5;
                                         background-color: #1f6cd5;
                                         color: white;
                                         font-weight: 700;
-                                        cursor: pointer;"></td>
+                                        cursor: pointer;" ></td>
                             </tr>
                         </tbody>
                         </th:block>
@@ -86,7 +86,7 @@
                                 <td class="accReservationType" th:text="*{accReservationType}"></td>
                                 <td class="userName" th:text="*{userName}"></td>
                                 <!--<td class="managerName" th:text="*{managerName}"></td>-->
-                                <td class="accReservationDate" th:text="*{accReservationDate}"></td>
+                                <td class="accReservationDate" th:text="*{#strings.substring(accReservationDate,0,10)}"></td>
                                 <td style="padding: 0.75rem 0.75rem; width: 7px;"><input value="선택" style="    width: 55px;
                                         text-align: center;
                                         font-size: inherit;
@@ -94,7 +94,7 @@
                                         background-color: #1f6cd5;
                                         color: white;
                                         font-weight: 700;
-                                        cursor: pointer;"></td>
+                                        cursor: pointer;" th:href="@{/user/review2(accReservationNum=*{accReservationNum})}"></td>
                             </tr>
                         </tbody>
                         </th:block>
@@ -110,4 +110,9 @@
 </div>
 <footer th:replace="footer.html"></footer>
 </body>
+<script th:inline="javascript">
+    function selectreviewcare() {
+        location.href="/user/review2"
+    }
+</script>
 </html>
