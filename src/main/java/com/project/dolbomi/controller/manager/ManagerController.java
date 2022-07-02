@@ -12,6 +12,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 @Controller
 @Slf4j
 @RequiredArgsConstructor
@@ -96,6 +101,28 @@ public class ManagerController {
 
     @GetMapping("manager_rev")
     public String manager_rev(Criteria criteria, Model model){
+
+        model.addAttribute("applyList", managerService.getList(criteria));
+        model.addAttribute("pageDTO", new PageDTO(criteria, managerService.getTotal()));
+        return "/manager/manager_rev";
+    }
+
+    @PostMapping("manager_rev")
+    public String manager_rev(Criteria criteria, Model model, HttpServletRequest request){
+        String[] area = request.getParameterValues("area1[]");
+
+        log.info("area----------------------------");
+        for (String areas:area) {
+            log.info(areas);
+        }
+        log.info("----------------------------");
+
+        List<String> areaAr = new ArrayList();
+
+        Arrays.stream(area).filter(v -> !v.isEmpty()).forEach(v -> areaAr.add(v));
+
+        log.info("사이즈---------------" + areaAr.size());
+        areaAr.stream().forEach(log::info);
         model.addAttribute("applyList", managerService.getList(criteria));
         model.addAttribute("pageDTO", new PageDTO(criteria, managerService.getTotal()));
         return "/manager/manager_rev";

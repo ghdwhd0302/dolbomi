@@ -28,11 +28,13 @@ public class UserServiceImpl implements UserService {
     private final UserReviewDTO userReviewDTO;
 
 
+/*
      //    돌봄서비스 예약자 1명 정보
     @Override
     public CareReservationVO careSelect(Long accReservationNum) {
         return careReservationDAO.CareGet(accReservationNum);
     }
+*/
 
     // 돌봄서비스 매니저 배정 수락
     @Override
@@ -71,12 +73,12 @@ public class UserServiceImpl implements UserService {
     }
 
 
-    // 동행서비스 매니저 배정 수락 user_userdetails페이지
+/*    // 동행서비스 매니저 배정 수락 user_userdetails페이지
     @Override
     @Transactional(rollbackFor = Exception.class)
     public AccReservationVO accApprove(Long accReservationNum) {
         return accReservationDAO.accmanager(accReservationNum);
-    }
+    }*/
 
     // 동행서비스 매니저 배정 거절 user_userdetails페이지
     @Override
@@ -100,10 +102,12 @@ public class UserServiceImpl implements UserService {
         accReservationDAO.insertmanagerEmail(managerEmail);
     }
 
+/*
     @Override
     public List<AccReservationVO> AccResult(String accReservationName ) {
         return accReservationDAO.AccResult(accReservationName);
     }
+*/
 
 
 
@@ -223,7 +227,8 @@ public class UserServiceImpl implements UserService {
         return careReservationDAO.reviewGetListCare(userEmail);
     }
 
-
-
-
+    @Override
+    public int myReviewGetTotal(Criteria criteria, String userEmail) {
+        return reviewDAO.myReviewGetTotal(criteria, userEmail);
+    }
 }

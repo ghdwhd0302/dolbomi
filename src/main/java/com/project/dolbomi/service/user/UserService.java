@@ -25,8 +25,8 @@ public interface UserService {
     //    동행서비스 예약자 1명 정보
     public AccReservationVO accSelect(Long accReservationNum);
 
-    // 동행서비스 매니저 배정 수락 user_userdetails페이지
-    public AccReservationVO accApprove(Long accReservationNum);
+/*    // 동행서비스 매니저 배정 수락 user_userdetails페이지
+    public AccReservationVO accApprove(Long accReservationNum);*/
 
     // 동행서비스 매니저 배정 거절 user_userdetails페이지
     public boolean accRefuse(AccReservationVO accReservationVO);
@@ -40,8 +40,10 @@ public interface UserService {
     // 동행 vo 매니저 이메일 인서트
     public void insertmanagerEmail(String managerEmail);
 
+/*
     //    동행서비스 예약리스트
     public List<AccReservationVO> AccResult(String accReservationName);
+*/
 
     // 회원 가입
     public void join(UserVO userVO);
@@ -96,6 +98,9 @@ public interface UserService {
 
     // care reservation 목록
     public List<CareReviewDTO> reviewGetListCare(String userEmail);
+
+    //  내 게시글 전체 개수
+    public int myReviewGetTotal(Criteria criteria, String userEmail);
 
 
 }

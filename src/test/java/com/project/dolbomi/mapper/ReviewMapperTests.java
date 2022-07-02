@@ -1,8 +1,10 @@
 package com.project.dolbomi.mapper;
 
+import com.project.dolbomi.domain.vo.Criteria;
 import com.project.dolbomi.domain.vo.ReviewVO;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.jupiter.api.Test;
+import org.apache.ibatis.annotations.Param;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -35,14 +37,14 @@ public class ReviewMapperTests {
 //        log.info(reviewMapper.select(1L).toString());
 //    }
 
-    @Test
+ /*   @Test
     public void updateTest(){
         ReviewVO reviewVO = reviewMapper.select(1L);
         reviewVO.setReviewTitle("수정된 게시글 제목");
         reviewVO.setReviewContent("수정된 게시글 내용");
 
         log.info("UPDATE COUNT : " + reviewMapper.update(reviewVO));
-    }
+    }*/
 
 //    @Test
 //    public void deleteTest(){
@@ -54,6 +56,10 @@ public class ReviewMapperTests {
 //        log.info("총 게시글 : " + reviewMapper.getTotal());
 //    }
 
+    @Test
+    public void tests(){
+       reviewMapper.reviewGetListUser(new Criteria(), "APPLE");
+    }
 
 
 

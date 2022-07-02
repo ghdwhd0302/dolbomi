@@ -209,7 +209,7 @@ public class UserController {
     @GetMapping("regi2")
     public void regi2(){}
 
-    @GetMapping("user_userdetails")
+   /* @GetMapping("user_userdetails")
     public void user_userdetails(String Manageremail,Long accReservationNum,Long careReservationNum, Model model){
 
         accReservationNum=Long.valueOf(7);
@@ -223,7 +223,7 @@ public class UserController {
         model.addAttribute("managerInfo", managerService.managerInfo(Manageremail));
         model.addAttribute("carereservationlist", memberService.CareGetList(careReservationNum));
 
-    }
+    }*/
     /* user_userdetails 의  매니저 수락*/
     @PostMapping("matchingAccept")
     public String matchingAccept(AccReservationVO accReservationVO,String Manageremail,Long accReservationNum,Long careReservationNum,Model model){
@@ -255,7 +255,7 @@ public class UserController {
 
 
     }
-    @GetMapping("user_userdetails2")
+/*    @GetMapping("user_userdetails2")
     public void user_userdetails2(String Manageremail,Long accReservationNum,Long careReservationNum, Model model){
         accReservationNum=Long.valueOf(7);
         Manageremail="매니저1@naver.com";
@@ -270,7 +270,7 @@ public class UserController {
         model.addAttribute("accreservationlist", userService.accSelect(accReservationNum));
         model.addAttribute("managerInfo", managerService.managerInfo(Manageremail));
 
-    }
+    }*/
 
     @GetMapping("user_userdetails4")
     public String user_userdetails4(Criteria criteria, Model model){
@@ -290,16 +290,25 @@ public class UserController {
 
         log.info("---------------------");
 
-
-
         model.addAttribute("UserReviewDTO", userService.reviewGetListUser(criteria, userEmail));
-        model.addAttribute("pageDTO", new PageDTO(criteria, userService.reviewGetTotal(criteria)));
+        model.addAttribute("pageDTO", new PageDTO(criteria, userService.myReviewGetTotal(criteria, userEmail)));
 
         return "/user/myReview";
     }
 
     @GetMapping("review2")
     public String review2(HttpServletRequest req, Model model) {
+        String accType = req.getParameter("accReservationType");
+        String careType = req.getParameter("careReservationType");
+        log.info("careType---------------" + careType);
+        log.info("accType---------------" + accType);
+        if(accType.isEmpty() && !careType.isEmpty()){
+            log.info("careType---------------" + careType);
+            model.addAttribute("careReservationType", careType);
+        }else{
+            log.info("accType---------------" + accType);
+            model.addAttribute("accReservationType", accType);
+        }
 
 
         return "/user/review2";
@@ -328,6 +337,8 @@ public class UserController {
     public String reviewGetList(Criteria criteria, Model model) {
         log.info("---------------------");
         log.info("reviewGetList--------");
+        log.info("---------------------");
+        log.info("criteria-----" + criteria);
         log.info("---------------------");
 
         model.addAttribute("reviewList", userService.reviewGetList(criteria));

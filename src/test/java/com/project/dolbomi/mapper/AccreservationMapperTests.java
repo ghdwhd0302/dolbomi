@@ -41,10 +41,12 @@ public class AccreservationMapperTests {
     }*/
 
 
+/*
     @Test
     public void select() {
         log.info(accReservationMapper.AccGetList(9L).toString());
     }
+*/
 
 
 }
