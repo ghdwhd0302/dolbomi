@@ -1,5 +1,6 @@
 package com.project.dolbomi.controller.user;
 import com.project.dolbomi.domain.vo.*;
+import com.project.dolbomi.service.manager.ManagerService;
 import com.project.dolbomi.service.member.MemberService;
 
 import com.project.dolbomi.service.user.UserService;
@@ -21,6 +22,7 @@ import javax.servlet.http.HttpServletRequest;
 public class UserController {
     private final MemberService memberService;
     private final UserService userService;
+    private final ManagerService managerService;
 
 
     //    회원가입1
@@ -210,14 +212,18 @@ public class UserController {
     public void regi2(){}
 
     @GetMapping("user_userdetails")
-    public void user_userdetails(Long accReservationNum,Long careReservationNum,HttpServletRequest req, Model model){
+    public void user_userdetails(String Manageremail,Long accReservationNum,Long careReservationNum,HttpServletRequest req, Model model){
+        accReservationNum=Long.valueOf(26);
+        Manageremail="매니저1@naver.com";
         log.info("----------------------------");
         log.info(req.getRequestURI() + "............. : " + careReservationNum);
         log.info(req.getRequestURI() + "............. : " + accReservationNum);
         log.info("----------------------------");
 
-        model.addAttribute("carereservationlist", memberService.CareGetList(careReservationNum));
-        model.addAttribute("accreservationlist", memberService.AccGetList(accReservationNum));
+        /*model.addAttribute("carereservationlist", memberService.CareGetList(careReservationNum));
+        */
+        model.addAttribute("accreservationlist", userService.accSelect(accReservationNum));
+        model.addAttribute("managerInfo", managerService.managerInfo(Manageremail));
     }
     /* user_userdetails 의  매니저 수락*/
     @PostMapping("accet")

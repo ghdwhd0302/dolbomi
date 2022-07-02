@@ -49,4 +49,9 @@ public class AccReservationDAO {
         return accReservationMapper.reviewGetListAcc(userEmail);
     }
 
+    //    동행서비스 예약자 1명 정보
+    public AccReservationVO AccGet(Long accReservationNum){
+        return accReservationMapper.AccGet(accReservationNum)  ;
+    }
+
 }

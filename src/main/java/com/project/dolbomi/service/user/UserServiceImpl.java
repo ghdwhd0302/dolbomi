@@ -74,6 +74,13 @@ public class UserServiceImpl implements UserService {
         return  accReservationDAO.accManagerRefuse(accReservationVO);
     }
 
+    //    동행서비스 예약자 1명 정보
+    @Override
+    public AccReservationVO accSelect(Long accReservationNum) {
+        return accReservationDAO.AccGet(accReservationNum);
+    }
+
+
 
     @Override
     public void join(UserVO userVO) {

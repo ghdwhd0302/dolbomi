@@ -31,6 +31,9 @@ public interface UserService {
     // 동행서비스 매니저가  예약 거절 manager페이지
     public boolean accManagerRefuse(AccReservationVO accReservationVO);
 
+    //    동행서비스 예약자 1명 정보
+    public AccReservationVO accSelect(Long accReservationNum);
+
     // 회원 가입
     public void join(UserVO userVO);
 

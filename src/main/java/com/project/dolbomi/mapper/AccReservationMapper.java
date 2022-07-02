@@ -10,6 +10,9 @@ import java.util.List;
 
 @Mapper
 public interface AccReservationMapper {
+    // 동행서비스 예약자 1명 정보
+    public AccReservationVO AccGet(Long accReservationNum);
+
     //    동행서비스 예약리스트
     public List<AccReservationVO> AccGetList(Long accReservationNum);
     //    동행서비스 예약하기

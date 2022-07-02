@@ -49,18 +49,18 @@ public class UserServiceTests {
 
     public void loginTest(){
         log.info(userService.userLogIn("gildong@naver.com", "1234") + "");
-        }*/
+        }
 
         @Test
     public void reviewListTests(){
            userService.reviewGetListUser(new Criteria(1,10), "APPLE").stream().map(UserReviewDTO::toString).forEach(log::info);
         }
 
-    }
 
 
 
-	}*/
+
+
 
 
 }
