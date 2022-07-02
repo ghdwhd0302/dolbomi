@@ -224,14 +224,30 @@ public class UserController {
         */
         model.addAttribute("accreservationlist", userService.accSelect(accReservationNum));
         model.addAttribute("managerInfo", managerService.managerInfo(Manageremail));
+
     }
     /* user_userdetails 의  매니저 수락*/
-    @PostMapping("accet")
-    public void accet(){
+    @PostMapping("matchingAccept")
+    public String matchingAccept(AccReservationVO accReservationVO,String Manageremail,Long accReservationNum,Long careReservationNum,Model model){
+
+        /*accReservationNum=Long.valueOf(26);
+        Manageremail="매니저1@naver.com";*/
+
+        /*accReservationVO.setManagerEmail(Manageremail);
+        accReservationVO.setAccReservationStatus("2");*/
+        /*userService.accApprove(Long.valueOf(accReservationNum));*/
+        /*userService.accSelect(Long.valueOf(accReservationNum));*/
         log.info("----------------------------");
-        log.info("----------------------------");
+        log.info("accReservationNum............. : " + accReservationNum );
+        log.info("Manageremail............. : " + Manageremail );
+        log.info(userService.accSelect(Long.valueOf(accReservationNum)).toString());
 
 
+        log.info("----------------------------");
+        /*model.addAttribute("accreservationlist",userService.accApprove(accReservationVO));
+        log.info("............. : " + userService.accSelect(accReservationNum) );
+        log.info("----------------------------");*/
+        return "user/user_userdetails2";
     }
     /* user_userdetails 의  매니저 거절*/
     @PostMapping("managerrefuse")
@@ -242,14 +258,26 @@ public class UserController {
 
     }
     @GetMapping("user_userdetails2")
-    public void user_userdetails2(){}
+    public void user_userdetails2(String Manageremail,Long accReservationNum,Long careReservationNum, Model model){
+        accReservationNum=Long.valueOf(7);
+        Manageremail="매니저1@naver.com";
+        model.addAttribute("accreservationlist", userService.accSelect(accReservationNum));
+        model.addAttribute("managerInfo", managerService.managerInfo(Manageremail));
+    }
 
     @GetMapping("user_userdetails3")
-    public void user_userdetails3(){}
+    public void user_userdetails3(String Manageremail,Long accReservationNum,Long careReservationNum, Model model){
+        accReservationNum=Long.valueOf(7);
+        Manageremail="매니저1@naver.com";
+        model.addAttribute("accreservationlist", userService.accSelect(accReservationNum));
+        model.addAttribute("managerInfo", managerService.managerInfo(Manageremail));
+
+    }
 
     @GetMapping("user_userdetails4")
     public String user_userdetails4(Criteria criteria, Model model){
-        model.addAttribute("histoyryList", userService.getList(criteria));
+
+
         model.addAttribute("pageDTO", new PageDTO(criteria, userService.getTotal()));
         return "/user/user_userdetails4";
     }
@@ -273,7 +301,10 @@ public class UserController {
     }
 
     @GetMapping("review2")
-    public void review2() {
+    public String review2(HttpServletRequest req, Model model) {
+
+
+        return "/user/review2";
     }
 
     @GetMapping("review1")
@@ -285,8 +316,8 @@ public class UserController {
         log.info("userName--------" + userName);
         log.info("---------------------");
 
-        model.addAttribute("careReviewDTO", userService.reviewGetListAcc(userEmail));
-        model.addAttribute("accReviewDTO", userService.reviewGetListCare(userEmail));
+        model.addAttribute("careReviewDTO", userService.reviewGetListCare(userEmail));
+        model.addAttribute("accReviewDTO", userService.reviewGetListAcc(userEmail));
 
         /*model.addAttribute("accReviewDTO", new AccReviewDTO(userService.reviewGetListAcc()));
         model.addAttribute("careReviewDTO", new CareReviewDTO(userService.reviewGetListCare()));*/
