@@ -12,14 +12,6 @@ import java.util.List;
 public class AccReservationDAO {
     private final AccReservationMapper accReservationMapper;
 
-     //    동행서비스 예약리스트에 해당 번호 존재하는지 확인
-    public boolean AccGetList(Long accReservationNum){
-        return accReservationMapper.AccGetList(accReservationNum)==1 ;
-    }
-    //    동행서비스 예약자 1명 정보
-    public AccReservationVO AccGet(Long accReservationNum){
-        return accReservationMapper.AccGet(accReservationNum)  ;
-    }
 
 
     //    동행서비스 예약하기
@@ -32,34 +24,49 @@ public class AccReservationDAO {
     }
 
 
-    // 동행서비스 매니저 배정 수락 user_userdetails페이지
-    public AccReservationVO accmanager(Long accReservationNum){
-        return accReservationMapper.Accupdate(accReservationNum) ;
-    }
-    // 동행서비스 매니저 배정 거절 user_userdetails페이지
-    public boolean accRefuseupdate(AccReservationVO accReservationVO){
-        return accReservationMapper.AccRefuseupdate(accReservationVO) == 1;
-    }
-    // 동행서비스 매니저가  예약 거절 manager페이지
-    public boolean accManagerRefuse(AccReservationVO accReservationVO){
-        return accReservationMapper.AccManagerRefuse(accReservationVO) == 1;
-    }
-
-    // 동행서비스고객이 예약취소,user_userdetails2 페이지의 동행예약 취소
-    public boolean accDelte(Long accReservationNum){
-        return accReservationMapper.delete(accReservationNum) == 1;
-    }
 
 
 
-    //매니저 이메일 인서트
-    public void insertmanagerEmail(String accReservationVO){
-        accReservationMapper.insertmanagerEmail(accReservationVO);
-    }
 
     // accreservation review list
     public List<AccReviewDTO> reviewGetListAcc(String userEmail) {
         return accReservationMapper.reviewGetListAcc(userEmail);
+    }
+
+
+
+    // 동행서비스 매니저 배정 수락 user_userdetails페이지
+    public void AccManagerY(Long accReservationNum){
+        accReservationMapper.AccManagerY(accReservationNum) ;
+    }
+    // 동행서비스 매니저 배정 거절 user_userdetails페이지
+    public void AccManagerN(Long accReservationNum){
+        accReservationMapper.AccManagerN(accReservationNum);
+    }
+
+    // 동행서비스고객이 예약취소,user_userdetails2 페이지의 동행예약 취소
+    public void Accdelete(Long accReservationNum){
+        accReservationMapper.Accdelete(accReservationNum);
+    }
+
+
+    //    동행서비스 예약자 1명 정보
+    public AccReservationVO AccGet(Long accReservationNum){
+        return accReservationMapper.AccGet(accReservationNum)  ;
+    }
+
+
+    public int accgetTotal1(Long accReservationNum){
+        return accReservationMapper.accgetTotal1(accReservationNum);
+    }
+    public int accgetTotal2(Long accReservationNum){
+        return accReservationMapper.accgetTotal2(accReservationNum);
+    }
+    public int accgetTotal3(Long accReservationNum){
+        return accReservationMapper.accgetTotal3(accReservationNum);
+    }
+    public int accgetTotal4(Long accReservationNum){
+        return accReservationMapper.accgetTotal4(accReservationNum);
     }
 
 }

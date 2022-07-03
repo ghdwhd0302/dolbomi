@@ -2,50 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.project.dolbomi.mapper.AccReservationMapper">
 
-        <!--      동행서비스 예약리스트에 해당 번호 존재하는지 확인 -->
-    <select id="AccGetList" resultType="accreservationVO">
-        SELECT ACC_RESERVATION_NAME, ACC_RESERVATION_AGE, ACC_RESERVATION_PHONE_NUM, ACC_RESERVATION_GENDER,ACC_RESERVATION_ADD_PHONE_NUM,ACC_RESERVATION_DATE,ACC_RESERVATION_TIME,ACC_RESERVATION_START_ADDRESS,ACC_RESERVATION_END_ADDRESS,ACC_RESERVATION_PRICE,b.USER_EMAIL,a.ACC_RESERVATION_STATUS,ACC_RESERVATION_NUM,MANAGER_EMAIL
-        FROM TBL_ACC_RESERVATION a,TBL_USER b
-        WHERE a.USER_EMAIL = b.USER_EMAIL AND a.ACC_RESERVATION_NUM=#{accReservationNum}
-    </select>
-    <!--동행서비스 예약자 1명정보 가져오기 .user_userdetails 페이지의 동행예약목록 -->
-    <select id="AccGet" resultType="accreservationVO">
-        SELECT ACC_RESERVATION_NAME, ACC_RESERVATION_AGE, ACC_RESERVATION_PHONE_NUM, ACC_RESERVATION_GENDER,ACC_RESERVATION_ADD_PHONE_NUM,ACC_RESERVATION_DATE,ACC_RESERVATION_TIME,ACC_RESERVATION_START_ADDRESS,ACC_RESERVATION_END_ADDRESS,ACC_RESERVATION_PRICE,b.USER_EMAIL,a.ACC_RESERVATION_STATUS,ACC_RESERVATION_NUM,MANAGER_EMAIL
-        FROM TBL_ACC_RESERVATION a,TBL_USER b
-        WHERE a.USER_EMAIL = b.USER_EMAIL AND a.ACC_RESERVATION_NUM=#{accReservationNum}
-    </select>
-    
-    <select id="AccResult" resultType="accreservationVO">
-         SELECT a.ACC_RESERVATION_NAME,a.ACC_RESERVATION_DATE,a.ACC_RESERVATION_TIME,a.ACC_RESERVATION_START_ADDRESS,a.ACC_RESERVATION_END_ADDRESS,a.ACC_RESERVATION_PRICE,a.USER_EMAIL,a.ACC_RESERVATION_STATUS,a.ACC_RESERVATION_NUM,a.MANAGER_EMAIL
-         FROM TBL_ACC_RESERVATION a,TBL_USER b
-         WHERE a.USER_EMAIL = b.USER_EMAIL AND b.USER_NAME=a.ACC_RESERVATION_NAME
 
-      </select>
-     <!--동행서비스고객이 매니저 배정수락,user_userdetails 페이지의 동행예약목록 -->
-    <update id="Accupdate">
-        UPDATE  TBL_ACC_RESERVATION
-        SET ACC_RESERVATION_STATUS = '2'
-        WHERE  ACC_RESERVATION_NUM=#{accReservationNum} ;
-    </update>
-
-    <!--동행서비스고객이 매니저 배정거절,user_userdetails 페이지의 동행예약목록 -->
-    <select id="Refuseupdate" resultType="accreservationVO">
-        SELECT ACC_RESERVATION_NAME,ACC_RESERVATION_DATE,ACC_RESERVATION_TIME,ACC_RESERVATION_START_ADDRESS,ACC_RESERVATION_END_ADDRESS,ACC_RESERVATION_PRICE,b.USER_EMAIL,a.ACC_RESERVATION_STATUS,ACC_RESERVATION_NUM
-        FROM TBL_ACC_RESERVATION a,TBL_USER b
-        WHERE a.USER_EMAIL = b.USER_EMAIL AND ACC_RESERVATION_NUM=#{accReservationNum, jdbcType=VARCHAR}
-    </select>
-    <!--동행서비스고객이 예약취소,user_userdetails 페이지의 동행예약 취소 -->
-    <delete id="delete">
-        DELETE FROM TBL_ACC_RESERVATION
-        WHERE ACC_RESERVATION_NUM = #{accreservationNum}
-    </delete>
-
-    <!--동행서비스 매니저가 예약거절,manager 페이지의 동행예약 거절 -->
-    <update id="AccManagerRefuse">
-        UPDATE TBL_ACC_RESERVATION a,TBL_USER b
-        SET a.ACC_RESERVATION_STATUS = '1',a.MANAGER_EMAIL=' '
-        WHERE a.USER_EMAIL = b.USER_EMAIL AND ACC_RESERVATION_NUM=#{accReservationNum, jdbcType=VARCHAR}
-    </update>
 
     <insert id="insert">
         INSERT INTO TBL_ACC_RESERVATION (ACC_RESERVATION_NUM,ACC_RESERVATION_NAME,ACC_RESERVATION_TYPE ,ACC_RESERVATION_AGE, ACC_RESERVATION_PHONE_NUM, ACC_RESERVATION_GENDER,ACC_RESERVATION_ADD_PHONE_NUM,ACC_RESERVATION_RELATION,ACC_RESERVATION_END_ADDRESS,ACC_RESERVATION_START_ADDRESS,ACC_RESERVATION_HOPE_GENDER,ACC_RESERVATION_DATE,ACC_RESERVATION_TIME,ACC_RESERVATION_ADD_REQUIRE,ACC_RESERVATION_PRICE,USER_EMAIL,MANAGER_EMAIL)
@@ -59,10 +16,7 @@
         WHERE ACC_RESERVATION_NUM = #{accreservationNum}
     </select>
 
-    <insert id="insertmanagerEmail">
-        INSERT INTO TBL_ACC_RESERVATION (MANAGER_EMAIL)
-        VALUES  (SELECT MANAGER_EMAIL FROM TBL_MANAGER  WHERE MANAGER_EMAIL = #{managerEmail, jdbcType=VARCHAR})
-    </insert>
+
 
     <!--동행 리스트 게시판에 가져오기-->
     <select id="reviewGetListAcc" resultType="accReviewDTO">
@@ -72,6 +26,53 @@
         WHERE a.USER_EMAIL = b.USER_EMAIL  AND a.USER_EMAIL = #{userEmail}
     </select>
 
+
+    <!--동행서비스 예약자 1명정보 가져오기 .user_userdetails 페이지의 동행예약목록 -->
+    <select id="AccGet" resultType="accreservationVO">
+        SELECT ACC_RESERVATION_NAME, ACC_RESERVATION_AGE, ACC_RESERVATION_PHONE_NUM, ACC_RESERVATION_GENDER,ACC_RESERVATION_ADD_PHONE_NUM,ACC_RESERVATION_DATE,ACC_RESERVATION_TIME,ACC_RESERVATION_START_ADDRESS,ACC_RESERVATION_END_ADDRESS,ACC_RESERVATION_PRICE,b.USER_EMAIL,a.ACC_RESERVATION_STATUS,ACC_RESERVATION_NUM,MANAGER_EMAIL
+        FROM TBL_ACC_RESERVATION a,TBL_USER b
+        WHERE a.USER_EMAIL = b.USER_EMAIL AND a.ACC_RESERVATION_NUM=#{accReservationNum}
+    </select>
+
+    <!--동행서비스고객이 매니저 배정수락,user_userdetails 페이지의 동행예약목록 -->
+    <update id="AccManagerY">
+        UPDATE  TBL_ACC_RESERVATION
+        SET ACC_RESERVATION_STATUS = '2'
+        WHERE  ACC_RESERVATION_NUM=#{accReservationNum}
+    </update>
+
+    <!--동행서비스고객이 매니저 배정거절,user_userdetails 페이지의 동행예약목록 -->
+    <update id="AccManagerN">
+        UPDATE  TBL_ACC_RESERVATION
+        SET MANAGER_EMAIL= ''
+        WHERE  ACC_RESERVATION_NUM=#{accReservationNum}
+    </update>
+    <!--동행서비스고객이 예약 취소,user_userdetails2 페이지의 동행예약목록 -->
+    <delete id="Accdelete">
+        DELETE FROM TBL_ACC_RESERVATION
+        WHERE ACC_RESERVATION_NUM = #{accreservationNum}
+    </delete>
+
+
+    <!-- user_userdetails의 카운트 횟수.  ACC_RESERVATION_STATUS 에 따라 변경-->
+    <select id="accgetTotal1" resultType="_int">
+        SELECT COUNT(ACC_RESERVATION_STATUS) FROM TBL_ACC_RESERVATION WHERE ACC_RESERVATION_NUM=#{accReservationNum}  AND ACC_RESERVATION_STATUS='0'
+    </select>
+
+    <!-- user_userdetails2의 카운트 횟수.  ACC_RESERVATION_STATUS 에 따라 변경-->
+    <select id="accgetTotal2" resultType="_int">
+        SELECT COUNT(ACC_RESERVATION_STATUS) FROM TBL_ACC_RESERVATION WHERE ACC_RESERVATION_NUM=#{accReservationNum}  AND ACC_RESERVATION_STATUS='2'
+    </select>
+
+    <!-- user_userdetails3의 카운트 횟수.  ACC_RESERVATION_STATUS 에 따라 변경-->
+    <select id="accgetTotal3" resultType="_int">
+        SELECT COUNT(ACC_RESERVATION_STATUS) FROM TBL_ACC_RESERVATION WHERE ACC_RESERVATION_NUM=#{accReservationNum}  AND ACC_RESERVATION_STATUS='6'
+    </select>
+
+    <!-- user_userdetails4의 카운트 횟수.  ACC_RESERVATION_STATUS 에 따라 변경-->
+    <select id="accgetTotal4" resultType="_int">
+        SELECT COUNT(ACC_RESERVATION_PHONE_NUM) FROM TBL_ACC_RESERVATION WHERE ACC_RESERVATION_ADD_PHONE_NUM=#{accReservationPhoneNum} AND ACC_RESERVATION_NUM=#{accReservationNum}  AND ACC_RESERVATION_STATUS='7'
+    </select>
 
 </mapper>
 
