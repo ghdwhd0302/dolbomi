@@ -3,30 +3,33 @@
 <mapper namespace="com.project.dolbomi.mapper.UserMapper">
 
     <insert id="insert">
+
+        
         INSERT INTO TBL_USER (USER_NAME, USER_GENDER, USER_BIRTH, USER_EMAIL,USER_PHONE_NUM,USER_PW)
         VALUES (#{userName}, #{userGender},#{userBirth},#{userEmail},#{userPhoneNum},#{userPw})
+
     </insert>
     <select id="selectprofile" resultType="userVO">
         SELECT USER_NAME, USER_BIRTH, USER_EMAIL, USER_PHONE_NUM, USER_ADDRESS
         FROM TBL_USER
-        WHERE USER_EMAIL = #{userEmail}
+        WHERE USER_EMAIL = #{userEmail, jdbcType=VARCHAR}
     </select>
 
     <select id="select" resultType="reviewVO">
         SELECT REVIEW_NUM, REVIEW_TITLE, REVIEW_CONTENT, REVIEW_WRITER, REVIEW_SCORE,REVIEW_DATE, REVIEW_UPDATE_DATE
         FROM TBL_REVIEW
-        WHERE REVIEW_NUM = #{reviewNum}
+        WHERE REVIEW_NUM = #{reviewNum, jdbcType=VARCHAR}
     </select>
 
     <update id="update">
         UPDATE TBL_USER
-        SET USER_NAME = #{userName}
-        WHERE REVIEW_NUM = #{reviewNum}
+        SET USER_NAME = #{userName, jdbcType=VARCHAR}
+        WHERE REVIEW_NUM = #{reviewNum, jdbcType=VARCHAR}
     </update>
 
     <delete id="delete">
         DELETE FROM TBL_USER
-        WHERE USER_EMAIL = #{userEmail}
+        WHERE USER_EMAIL = #{userEmail, jdbcType=VARCHAR}
     </delete>
 
     <select id="getTotal" resultType="_int">
@@ -36,7 +39,7 @@
     <update id="updateProfile">
         UPDATE TBL_USER
         SET USER_NAME= #{userName}, USER_BIRTH= #{userBirth},USER_PW= #{userPw}
-        WHERE USER_EMAIL = #{userEmail}
+        WHERE USER_EMAIL = #{userEmail, jdbcType=VARCHAR}
     </update>
 
     <select id="selectProfile" resultType="userVO">
