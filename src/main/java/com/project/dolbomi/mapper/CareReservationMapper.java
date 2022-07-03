@@ -34,7 +34,12 @@ public interface CareReservationMapper {
     public void CareManagerN(Long careReservationNum);
     // 고객이 예약취소,user_userdetails2 페이지의 돌봄예약 취소
     public int Caredelete(Long careReservationNum);
-
+    //돌봄서비스 매니저의 업무 시작,manager 페이지의 돌봄예약목록
+    public void CareManagerStart(Long careReservationNum);
+    //돌봄서비스 매니저의 업무 종료,manager 페이지의 돌봄예약목록
+    public void CareManagerEnd(Long careReservationNum);
+    //돌봄서비스 매니저가 업무 취소,manager 페이지의 돌봄예약목록
+    public int CareManagerCancel(Long careReservationNum);
     //user_userdetails의 카운트 횟수.  CARE_RESERVATION_STATUS 에 따라 변경
     public int caregetTotal5(Long careReservationNum);
     public int caregetTotal6(Long careReservationNum);

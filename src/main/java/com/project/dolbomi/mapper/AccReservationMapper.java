@@ -43,7 +43,12 @@ public interface AccReservationMapper {
     public void AccManagerN(Long accReservationNum);
     // 고객이 예약취소,user_userdetails2 페이지의 동행예약 취소
     public int Accdelete(Long accReservationNum);
-
+    //동행서비스 매니저의 업무 시작,manager 페이지의 동행예약목록
+    public void AccManagerStart(Long accReservationNum);
+    //동행서비스 매니저의 업무 종료,manager 페이지의 동행예약목록
+    public void AccManagerEnd(Long accReservationNum);
+    //동행서비스 매니저가 업무 취소,manager 페이지의 동행예약목록
+    public int AccManagerCancel(Long accReservationNum);
     //user_userdetails의 카운트 횟수.  ACC_RESERVATION_STATUS 에 따라 변경
     public int accgetTotal1(Long accReservationNum);
     public int accgetTotal2(Long accReservationNum);

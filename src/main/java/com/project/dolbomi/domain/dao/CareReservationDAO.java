@@ -34,21 +34,33 @@ public class CareReservationDAO {
 
 
 
-    // 동행서비스 매니저 배정 수락 user_userdetails페이지
+    // 돌봄서비스 매니저 배정 수락 user_userdetails페이지
     public void CareManagerY(Long careReservationNum){
         careReservationMapper.CareManagerY(careReservationNum) ;
     }
-    // 동행서비스 매니저 배정 거절 user_userdetails페이지
+    // 돌봄서비스 매니저 배정 거절 user_userdetails페이지
     public void CareManagerN(Long careReservationNum){
         careReservationMapper.CareManagerN(careReservationNum);
     }
 
-    // 동행서비스고객이 예약취소,user_userdetails2 페이지의 동행예약 취소
+    // 돌봄서비스고객이 예약취소,user_userdetails2 페이지의 동행예약 취소
     public void Caredelete(Long careReservationNum){
         careReservationMapper.Caredelete(careReservationNum);
     }
 
+    //돌봄서비스 매니저의 업무 시작,manager 페이지의 동행예약목록
+    public void CareManagerStart(Long accReservationNum){
+        careReservationMapper.CareManagerStart(accReservationNum) ;
+    }
+    //돌봄서비스 매니저의 업무 종료,manager 페이지의 동행예약목록
+    public void CareManagerEnd(Long accReservationNum){
+        careReservationMapper.CareManagerEnd(accReservationNum);
+    }
 
+    //돌봄서비스 매니저가 업무 취소,manager 페이지의 동행예약목록
+    public void CareManagerCancel(Long accReservationNum){
+        careReservationMapper.CareManagerCancel(accReservationNum);
+    }
     //    동행서비스 예약자 1명 정보
     public CareReservationVO CareGet(Long careReservationNum){
         return careReservationMapper.CareGet(careReservationNum)  ;

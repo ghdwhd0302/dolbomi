@@ -69,6 +69,26 @@
         SELECT COUNT(CARE_RESERVATION_PHONE_NUM) FROM TBL_CARE_RESERVATION WHERE CARE_RESERVATION_NUM=#{careReservationNum} AND CARE_RESERVATION_NUM=#{careReservationNum}  AND CARE_RESERVATION_STATUS='7'
     </select>
 
+    <!--돌봄서비스 매니저의 업무 시작,manager 페이지의 돌봄예약목록 -->
+    <update id="CareManagerStart">
+        UPDATE  TBL_CARE_RESERVATION
+        SET CARE_RESERVATION_STATUS = '6'
+        WHERE  CARE_RESERVATION_NUM=#{careReservationNum}
+    </update>
+
+    <!--돌봄서비스 매니저의 업무 종료,manager 페이지의 돌봄예약목록 -->
+    <update id="CareManagerEnd">
+        UPDATE  TBL_CARE_RESERVATION
+        SET CARE_RESERVATION_STATUS = '7'
+        WHERE  CARE_RESERVATION_NUM=#{careReservationNum}
+    </update>
+
+    <!--돌봄서비스 매니저가 업무 취소,manager 페이지의 돌봄예약목록 -->
+    <update id="CareManagerCancel">
+        UPDATE  TBL_CARE_RESERVATION
+        SET MANAGER_EMAIL = '',CARE_RESERVATION_STATUS='0'
+        WHERE  CARE_RESERVATION_NUM=#{careReservationNum}
+    </update>
 
 
 

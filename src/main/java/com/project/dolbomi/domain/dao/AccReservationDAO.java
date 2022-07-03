@@ -48,7 +48,19 @@ public class AccReservationDAO {
     public void Accdelete(Long accReservationNum){
         accReservationMapper.Accdelete(accReservationNum);
     }
+    //동행서비스 매니저의 업무 시작,manager 페이지의 동행예약목록
+    public void AccManagerStart(Long accReservationNum){
+        accReservationMapper.AccManagerStart(accReservationNum) ;
+    }
+    //동행서비스 매니저의 업무 종료,manager 페이지의 동행예약목록
+    public void AccManagerEnd(Long accReservationNum){
+        accReservationMapper.AccManagerEnd(accReservationNum);
+    }
 
+    //동행서비스 매니저가 업무 취소,manager 페이지의 동행예약목록
+    public void AccManagerCancel(Long accReservationNum){
+        accReservationMapper.AccManagerCancel(accReservationNum);
+    }
 
     //    동행서비스 예약자 1명 정보
     public AccReservationVO AccGet(Long accReservationNum){

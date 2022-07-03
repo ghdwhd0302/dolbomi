@@ -74,6 +74,26 @@
         SELECT COUNT(ACC_RESERVATION_PHONE_NUM) FROM TBL_ACC_RESERVATION WHERE ACC_RESERVATION_PHONE_NUM=#{accReservationPhoneNum} AND ACC_RESERVATION_NUM=#{accReservationNum}  AND ACC_RESERVATION_STATUS='7'
     </select>
 
+    <!--동행서비스 매니저의 업무 시작,manager 페이지의 동행예약목록 -->
+    <update id="AccManagerStart">
+        UPDATE  TBL_ACC_RESERVATION
+        SET ACC_RESERVATION_STATUS = '6'
+        WHERE  ACC_RESERVATION_NUM=#{accReservationNum}
+    </update>
+
+    <!--동행서비스 매니저의 업무 종료,manager 페이지의 동행예약목록 -->
+    <update id="AccManagerEnd">
+        UPDATE  TBL_ACC_RESERVATION
+        SET ACC_RESERVATION_STATUS = '7'
+        WHERE  ACC_RESERVATION_NUM=#{accReservationNum}
+    </update>
+
+    <!--동행서비스 매니저가 업무 취소,manager 페이지의 동행예약목록 -->
+    <update id="AccManagerCancel">
+        UPDATE  TBL_ACC_RESERVATION
+        SET MANAGER_EMAIL = '',ACC_RESERVATION_STATUS='0'
+        WHERE  ACC_RESERVATION_NUM=#{accReservationNum}
+    </update>
 </mapper>
 
 

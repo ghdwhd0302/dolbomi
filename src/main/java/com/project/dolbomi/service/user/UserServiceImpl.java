@@ -52,6 +52,7 @@ public class UserServiceImpl implements UserService {
     public int accgetTotal4(Long accReservationNum) {
         return accReservationDAO.accgetTotal4(accReservationNum);
     }
+
     // 동행서비스 매니저 배정 수락 user_userdetails페이지
     @Override
     public void AccManagerY(Long accReservationNum) {
@@ -66,6 +67,22 @@ public class UserServiceImpl implements UserService {
     @Override
     public void Accdelete(Long accReservationNum) {
         accReservationDAO.Accdelete(accReservationNum);
+    }
+
+    //동행서비스 매니저의 업무 시작,manager 페이지의 동행예약목록
+    @Override
+    public void AccManagerStart(Long accReservationNum) {
+        accReservationDAO.AccManagerStart(accReservationNum);
+    }
+    //동행서비스 매니저의 업무 종료,manager 페이지의 동행예약목록
+    @Override
+    public void AccManagerEnd(Long accReservationNum) {
+        accReservationDAO.AccManagerEnd(accReservationNum);
+    }
+    //동행서비스 매니저가 업무 취소,manager 페이지의 동행예약목록
+    @Override
+    public void AccManagerCancel(Long accReservationNum) {
+        accReservationDAO.AccManagerCancel(accReservationNum);
     }
 
 
@@ -106,6 +123,22 @@ public class UserServiceImpl implements UserService {
     public void Caredelete(Long careReservationNum) {
         careReservationDAO.Caredelete(careReservationNum);
     }
+    //동행서비스 매니저의 업무 시작,manager 페이지의 동행예약목록
+    @Override
+    public void CareManagerStart(Long careReservationNum) {
+        careReservationDAO.CareManagerStart(careReservationNum);
+    }
+    //동행서비스 매니저의 업무 종료,manager 페이지의 동행예약목록
+    @Override
+    public void CareManagerEnd(Long careReservationNum) {
+        careReservationDAO.CareManagerEnd(careReservationNum);
+    }
+    //동행서비스 매니저가 업무 취소,manager 페이지의 동행예약목록
+    @Override
+    public void CareManagerCancel(Long careReservationNum) {
+        careReservationDAO.CareManagerCancel(careReservationNum);
+    }
+
 
     @Override
     public List<AccReservationVO> AccResult(String accReservationName) {
