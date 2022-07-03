@@ -8,6 +8,27 @@ import java.util.List;
 @Service
 public interface UserService {
 
+<<<<<<< HEAD
+    // 돌봄서비스 매니저 배정 수락
+    public boolean careApprove(CareReservationVO careReservationVO);
+
+    // 돌봄서비스 매니저 배정 거절 user_userdetails페이지
+    public boolean careRefuse(CareReservationVO careReservationVO);
+
+    // 돌봄서비스고객이 예약취소,user_userdetails2 페이지의 동행예약 취소
+    public boolean careDelte(Long careReservationNum);
+
+    // 돌봄서비스 매니저가  예약 거절 manager페이지
+    public boolean careManagerRefuse(CareReservationVO careReservationV);
+<<<<<<< HEAD
+=======
+    
+     public boolean AccGetList(Long careReservationNum);
+
+    //    동행서비스 예약자 1명 정보
+    public AccReservationVO accSelect(Long accReservationNum);
+>>>>>>> dolbomi/master
+=======
     //    동행서비스 예약자 1명 정보
     public AccReservationVO AccGet(Long accReservationNum);
     // user_userdetails의 카운트 횟수.  ACC_RESERVATION_STATUS 에 따라 변경
@@ -15,6 +36,7 @@ public interface UserService {
     public int accgetTotal2(Long accReservationNum);
     public int accgetTotal3(Long accReservationNum);
     public int accgetTotal4(Long accReservationNum);
+>>>>>>> 9f09cd0a78dd3b187d14a0b595d58e6be5358e0b
 
     // 동행서비스 매니저 배정 수락 user_userdetails페이지
     public void AccManagerY(Long accReservationNum);
@@ -77,6 +99,9 @@ public interface UserService {
 
     //이메일 중복체크
     public int emailCheck(String userEmail);
+
+    //아이디 찾기
+    public String findId(String userName, String userPhoneNum, String userBirth);
 
     //휴대폰 인증번호
     public void phoneCerti(String userPhoneNum, int randomNum);

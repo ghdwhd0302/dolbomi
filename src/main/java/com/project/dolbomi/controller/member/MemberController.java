@@ -9,9 +9,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 
@@ -28,14 +26,11 @@ public class MemberController {
     private final ManagerService managerService;
 
 //    일반 아이디 찾기
-//    @GetMapping("userIdF")
-//    public void idFind(){
-//
-//    }
-
     @PostMapping("userIdF")
-    public String idFind(){
-        return "/member/userIdF";
+    @ResponseBody
+    public String idFind(@RequestParam("userName") String userName, @RequestParam("userPhoneNum") String userPhoneNum, @RequestParam("userBirth") String userBirth){
+       String result = userService.findId(userName, userPhoneNum, userBirth);
+        return result;
     }
 
 //    일반 비밀번호 찾기

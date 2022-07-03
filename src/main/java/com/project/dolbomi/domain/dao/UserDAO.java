@@ -46,6 +46,12 @@ public class UserDAO {
         int cnt = userMapper.emailCheck(userEmail);
         return cnt;
     }
+
+    //아이디 찾기
+    public String findId(String userName, String userPhoneNum, String userBirth){
+        return userMapper.findId(userName, userPhoneNum, userBirth);
+    }
+
     //회원 탈퇴
     public boolean withdrawal(String userEmail){
         return userMapper.delete(userEmail).equals(1) ;

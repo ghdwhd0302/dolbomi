@@ -168,6 +168,21 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public String findId(String userName, String userPhoneNum, String userBirth) {
+        String result = "";
+
+        try {
+            result= userDAO.findId(userName, userPhoneNum, userBirth);
+
+        } catch(Exception e) {
+
+            e.printStackTrace();
+        }
+
+        return result ;
+    }
+
+    @Override
     public void phoneCerti(String userPhoneNum, int randomNum) {
         String api_key = "NCSXDCGPLMOHCTXM";
         String api_secret = "QE2G9LQD0VVEUY44E4XSCQH4ABZGOIQC";

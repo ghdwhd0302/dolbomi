@@ -52,7 +52,7 @@ public class UserController {
         log.info("---------------------------------------");
 
         userService.join(userVO);
-        return "/member/mainpage";
+        return "/member/userlogin";
     }
 
 //    휴대폰 인증번호 발송
@@ -65,8 +65,6 @@ public class UserController {
     public String phoneCerti(){
         return "/user/sendcode";
     }
-
-
 //    동행 서비스 예약
 //    @GetMapping("reservAcc")
 //    public void accReservation(){
