@@ -3,6 +3,8 @@ package com.project.dolbomi.mapper;
 
 import com.project.dolbomi.domain.vo.UserVO;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 
 @Mapper
 public interface UserMapper {
@@ -32,5 +34,11 @@ public interface UserMapper {
 
     public UserVO updateProfile(UserVO userVO);
 
+    //아이디 찾기
+    @Select("SELECT NVL(USER_EMAIL, 0) FROM TBL_USER WHERE USER_NAME=#{userName} and USER_PHONE_NUM=#{userPhoneNum} and USER_BIRTH=#{userBirth}")
+    public String findId(@Param("userName") String userName, @Param("userPhoneNum") String userPhoneNum, @Param("userBirth")String userBirth);
+
 
 }
+
+

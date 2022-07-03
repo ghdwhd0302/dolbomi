@@ -278,3 +278,18 @@ textarea {
     color:#e30606;
     display: inline-block;
 }
+
+.email_ok{
+    color:#008000;
+    display: none;
+}
+
+.email_already{
+    color:#e30606;
+    display: none;
+}
+
+.email_not{
+    color:#e30606;
+    display: none;
+}

@@ -28,7 +28,7 @@
 
         <div class="main-area">
             <div class="sc-bYTsla bDUjTg">
-                <form action="manager/manageregi" mehod="post" id="managereApplication" name="managereApplication">
+                <form action="/manager/manageregi" mehod="post" id="managerApplication" name="managerApplication">
                     <div class="sc-dlyikq lknGZg">
                         <p class="sc-glUWqk uvQxd" style="color: rgb(22, 22, 22); margin-bottom: 20px;">매니저 지원하기</p>
                         <div class="sc-fFTYTi bkIEuU">
@@ -59,15 +59,20 @@
                         </div>
                         <div class="sc-fFTYTi bkIEuU">
                             <div class="sc-bTiqRo cOGJco">생년월일을 입력해주세요</div>
-                            <textarea name="managerBirth"
+                            <textarea name="managerBirth" id="managerBirth"
                                     placeholder="만 19세 이상의 성인만 매니저 활동이 가능합니다. ex) 19960405"
                                     class="ant-input sc-bEufUU bBQEgI"></textarea>
+                            <div class="check_font" id="birth_check"></div>
                         </div>
                         <div class="sc-fFTYTi bkIEuU">
                             <div class="sc-bTiqRo cOGJco">개인 이메일 주소를 입력해주세요</div>
-                            <textarea name="managerEmail"
+                            <textarea name="managerEmail" id="emailCheck"
                                     placeholder="기입해주신 이메일로 프리랜서 근로 계약 문서가 전송되고 온라인 계약 체결이 진행됩니다.                             로그인 시 아이디에 사용됩니다."
-                                    class="ant-input sc-bEufUU bBQEgI"></textarea>
+                                    class="ant-input sc-bEufUU bBQEgI" oninput="check_email()"></textarea>
+                            <!--email 중복체크-->
+                            <span class="email_ok">사용 가능한 이메일입니다.</span>
+                            <span class="email_already">이미 가입한 이메일입니다.</span>
+                            <span class="email_not">올바른 이메일 형식이 아닙니다.</span>
                         </div>
                         <div class="sc-fFTYTi bkIEuU">
                             <label style="display: block;font-size: 14px;">비밀번호 입력</label><input name="managerPw" password="true" type="password"
@@ -139,7 +144,7 @@
                             <input type="file"
                                    accept="image/x-png,image/gif,image/jpeg">
                         </div>
-                        <div style="text-align: center;" onclick="managerApplication()"><span class="sc-gFXMyG kfNMrX">지원하기</span></div>
+                        <div style="text-align: center;" onclick="managerConfirm()"><span class="sc-gFXMyG kfNMrX">지원하기</span></div>
                     </div>
                 </form>
             </div>
@@ -154,6 +159,7 @@
 <script>
     let $managerPw = $("input[name='managerPw']");
     let $managerPwCheck = $("input[name='managerPwCheck']");
+    let $managerApplication = $(managerApplication);
 
     $("#btnLogin").click(function () {
         if (!$(this).attr('class').match('on')) {
@@ -198,9 +204,8 @@
         });
     });
 
-    /*유효성 검사*/
-    function managerApplication() {
-        var passRule = /^[A-Za-z0-9]{6,12}$/;//숫자와 문자 포함 형태의 6~12자리 이내의 암호 정규식 
+    function managerConfirm() {
+        /*유효성 검사*/
         let $managerName = $("textarea[name='managerName']");
         let $managerBirth = $("textarea[name='managerBirth']");
         let $managerEmail = $("textarea[name='managerEmail']");
@@ -210,6 +215,7 @@
         let $managerCareer = $("textarea[name='managerCareer']");
         let $managerPhoneNum = $("textarea[name='managerPhoneNum']");
         let $managerRegion = $("textarea[name='managerRegion']");
+        let regPhone = /^((01[1|6|7|8|9])[1-9]+[0-9]{6,7})|(010[1-9][0-9]{7})$/;
 
         if(!$managerName.val()){
             alert("성함을 입력해주세요")
@@ -221,6 +227,7 @@
             $managerBirth.focus();
             return false;
         }
+
         if(!$managerEmail.val()){
             alert("이메일 주소를 입력해주세요")
             $managerEmail.focus();
@@ -261,17 +268,116 @@
             managerPhoneNum.focus();
             return false;
         }
+        if (!regPhone.test($managerPhoneNum.val())) {
+            alert('올바른 휴대폰 번호가 아닙니다.');
+            managerPhoneNum.focus();
+            return false;
+        }
         if(!$managerRegion.val()){
             alert("활동 가능 지역을 입력해주세요")
             managerRegion.focus();
             return false;
         }
         //비밀번호 암호화
-        $userPw.val(btoa($userPw.val()));
-        console.log($userPw.val());
-        $joinForm2.submit();
+        $managerPw.val(btoa($managerPw.val()));
+        console.log($managerPw.val());
+        $managerApplication.submit();
 
     }
+
+    /*이메일 중복검사*/
+    function check_email() {
+        var email = $('#emailCheck').val();
+        var emailRule = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;//이메일 정규식
+
+        $.ajax({
+            url:'/manager/emailcheck/',
+            type:'post',
+            data:{managerEmail:email},
+            success:function (cnt) {
+                if(cnt == 0){
+                    if(!emailRule.test(email)) {
+                        //경고
+                        $('.email_not').css("display", "inline-block");
+                        $('.email_ok').css("display", "none");
+                        $('.email_already').css("display", "none");
+                    }else{
+                        $('.email_not').css("display", "none");
+                        $('.email_ok').css("display", "inline-block");
+                        $('.email_already').css("display", "none");
+                    }
+
+                }else{
+                    $('.email_already').css("display", "inline-block");
+                    $('.email_ok').css("display","none");
+                    $('.email_not').css("display", "none");
+                }
+            },
+            error:function () {
+            }
+        });
+    };
+
+    // 생일 유효성 검사
+    var birthJ = false;
+
+    // 생년월일	birthJ 유효성 검사
+    $('#managerBirth').blur(function(){
+        var dateStr = $(this).val();
+        var year = Number(dateStr.substr(0,4)); // 입력한 값의 0~4자리까지 (연)
+        var month = Number(dateStr.substr(4,2)); // 입력한 값의 4번째 자리부터 2자리 숫자 (월)
+        var day = Number(dateStr.substr(6,2)); // 입력한 값 6번째 자리부터 2자리 숫자 (일)
+        var today = new Date(); // 날짜 변수 선언
+        var yearNow = today.getFullYear(); // 올해 연도 가져옴
+
+        if (dateStr.length <=8) {
+            // 연도의 경우 1900 보다 작거나 yearNow 보다 크다면 false를 반환합니다.
+            if (1900 > year || year > yearNow){
+
+                $('#birth_check').text('생년월일을 확인해주세요 :)');
+                $('#birth_check').css('color', 'red');
+
+            }else if (month < 1 || month > 12) {
+
+                $('#birth_check').text('생년월일을 확인해주세요 :)');
+                $('#birth_check').css('color', 'red');
+
+            }else if (day < 1 || day > 31) {
+
+                $('#birth_check').text('생년월일을 확인해주세요 :)');
+                $('#birth_check').css('color', 'red');
+
+            }else if ((month==4 || month==6 || month==9 || month==11) && day==31) {
+
+                $('#birth_check').text('생년월일을 확인해주세요 :)');
+                $('#birth_check').css('color', 'red');
+
+            }else if (month == 2) {
+
+                var isleap = (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0));
+
+                if (day>29 || (day==29 && !isleap)) {
+
+                    $('#birth_check').text('생년월일을 확인해주세요 :)');
+                    $('#birth_check').css('color', 'red');
+
+                }else{
+                    $('#birth_check').text('');
+                    birthJ = true;
+                }//end of if (day>29 || (day==29 && !isleap))
+
+            }else{
+
+                $('#birth_check').text('');
+                birthJ = true;
+            }//end of if
+
+        }else{
+            //1.입력된 생년월일이 8자 초과할때 :  auth:false
+            $('#birth_check').text('생년월일을 확인해주세요 :)');
+            $('#birth_check').css('color', 'red');
+        }
+    }); //End of method /*
 
 </script>
 

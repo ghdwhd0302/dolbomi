@@ -8,9 +8,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @Slf4j
@@ -71,13 +69,21 @@ public class ManagerController {
 
 //    매니저 회원가입
     @PostMapping("manageregi")
-    public String managerJoin(ManagerVO managerVO, Model model){
+    public String managerJoin(ManagerVO managerVO){
         log.info("---------------------------------------");
         log.info("managerJoin............. : " + managerVO);
         log.info("---------------------------------------");
 
-        model.addAttribute("managerVO", managerVO);
+        managerService.join(managerVO);
         return "/member/managerlogin";
+    }
+
+    //    이메일 중복검사
+    @PostMapping("emailcheck")
+    @ResponseBody
+    public int emailCheck(@RequestParam("managerEmail") String managerEmail){
+        int cnt = managerService.emailCheck(managerEmail);
+        return cnt;
     }
 
     //  페이지 이동

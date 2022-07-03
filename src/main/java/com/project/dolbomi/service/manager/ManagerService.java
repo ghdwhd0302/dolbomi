@@ -34,6 +34,9 @@ public interface ManagerService {
     //매니저 회원가입
     public void join(ManagerVO managerVO);
 
+    //이메일 중복체크
+    public int emailCheck(String managerEmail);
+
     //매니저 로그인
     public boolean managerLogIn(String managerEmail, String managerPw);
 
