@@ -19,9 +19,17 @@ public interface UserService {
 
     // 돌봄서비스 매니저가  예약 거절 manager페이지
     public boolean careManagerRefuse(CareReservationVO careReservationV);
+<<<<<<< HEAD
+=======
+    
+     public boolean AccGetList(Long careReservationNum);
+
+    //    동행서비스 예약자 1명 정보
+    public AccReservationVO accSelect(Long accReservationNum);
+>>>>>>> dolbomi/master
 
     // 동행서비스 매니저 배정 수락 user_userdetails페이지
-    public boolean accApprove(AccReservationVO accReservationVO);
+    public AccReservationVO accApprove(Long accReservationNum);
 
     // 동행서비스 매니저 배정 거절 user_userdetails페이지
     public boolean accRefuse(AccReservationVO accReservationVO);
@@ -31,6 +39,12 @@ public interface UserService {
 
     // 동행서비스 매니저가  예약 거절 manager페이지
     public boolean accManagerRefuse(AccReservationVO accReservationVO);
+
+    // 동행 vo 매니저 이메일 인서트
+    public void insertmanagerEmail(String managerEmail);
+
+    //    동행서비스 예약리스트
+    public List<AccReservationVO> AccResult(String accReservationName);
 
     // 회원 가입
     public void join(UserVO userVO);

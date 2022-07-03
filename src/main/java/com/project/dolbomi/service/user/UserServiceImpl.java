@@ -28,6 +28,12 @@ public class UserServiceImpl implements UserService {
     private final UserReviewDTO userReviewDTO;
 
 
+     //    돌봄서비스 예약자 1명 정보
+    @Override
+    public CareReservationVO careSelect(Long accReservationNum) {
+        return careReservationDAO.CareGet(accReservationNum);
+    }
+
     // 돌봄서비스 매니저 배정 수락
     @Override
     public boolean careApprove(CareReservationVO careReservationVO ) {
@@ -50,11 +56,26 @@ public class UserServiceImpl implements UserService {
         return  careReservationDAO.CareManagerRefuse(careReservationVO);
     }
 
+    @Override
+    public boolean AccGetList(Long careReservationNum) {
+        return true;
+    }
+
+
+
+
+    //    동행서비스 예약자 1명 정보
+    @Override
+    public AccReservationVO accSelect(Long accReservationNum) {
+        return accReservationDAO.AccGet(accReservationNum);
+    }
+
 
     // 동행서비스 매니저 배정 수락 user_userdetails페이지
     @Override
-    public boolean accApprove(AccReservationVO accReservationVO) {
-        return accReservationDAO.accmanager(accReservationVO);
+    @Transactional(rollbackFor = Exception.class)
+    public AccReservationVO accApprove(Long accReservationNum) {
+        return accReservationDAO.accmanager(accReservationNum);
     }
 
     // 동행서비스 매니저 배정 거절 user_userdetails페이지
@@ -73,6 +94,17 @@ public class UserServiceImpl implements UserService {
     public boolean accManagerRefuse(AccReservationVO accReservationVO) {
         return  accReservationDAO.accManagerRefuse(accReservationVO);
     }
+
+    @Override
+    public void insertmanagerEmail(String managerEmail) {
+        accReservationDAO.insertmanagerEmail(managerEmail);
+    }
+
+    @Override
+    public List<AccReservationVO> AccResult(String accReservationName ) {
+        return accReservationDAO.AccResult(accReservationName);
+    }
+
 
 
     @Override
