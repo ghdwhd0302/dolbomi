@@ -71,7 +71,7 @@
 
     <!-- user_userdetails4의 카운트 횟수.  ACC_RESERVATION_STATUS 에 따라 변경-->
     <select id="accgetTotal4" resultType="_int">
-        SELECT COUNT(ACC_RESERVATION_PHONE_NUM) FROM TBL_ACC_RESERVATION WHERE ACC_RESERVATION_ADD_PHONE_NUM=#{accReservationPhoneNum} AND ACC_RESERVATION_NUM=#{accReservationNum}  AND ACC_RESERVATION_STATUS='7'
+        SELECT COUNT(ACC_RESERVATION_PHONE_NUM) FROM TBL_ACC_RESERVATION WHERE ACC_RESERVATION_PHONE_NUM=#{accReservationPhoneNum} AND ACC_RESERVATION_NUM=#{accReservationNum}  AND ACC_RESERVATION_STATUS='7'
     </select>
 
 </mapper>
