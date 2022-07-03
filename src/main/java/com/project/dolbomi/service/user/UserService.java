@@ -8,6 +8,7 @@ import java.util.List;
 @Service
 public interface UserService {
 
+<<<<<<< HEAD
     // 돌봄서비스 매니저 배정 수락
     public boolean careApprove(CareReservationVO careReservationVO);
 
@@ -27,24 +28,65 @@ public interface UserService {
     //    동행서비스 예약자 1명 정보
     public AccReservationVO accSelect(Long accReservationNum);
 >>>>>>> dolbomi/master
+=======
+    //    동행서비스 예약자 1명 정보
+    public AccReservationVO AccGet(Long accReservationNum);
+    // user_userdetails의 카운트 횟수.  ACC_RESERVATION_STATUS 에 따라 변경
+    public int accgetTotal1(Long accReservationNum);
+    public int accgetTotal2(Long accReservationNum);
+    public int accgetTotal3(Long accReservationNum);
+    public int accgetTotal4(Long accReservationNum);
+>>>>>>> 9f09cd0a78dd3b187d14a0b595d58e6be5358e0b
 
     // 동행서비스 매니저 배정 수락 user_userdetails페이지
-    public AccReservationVO accApprove(Long accReservationNum);
+    public void AccManagerY(Long accReservationNum);
 
     // 동행서비스 매니저 배정 거절 user_userdetails페이지
-    public boolean accRefuse(AccReservationVO accReservationVO);
+    public void AccManagerN(Long accReservationNum);
 
     // 동행서비스고객이 예약취소,user_userdetails2 페이지의 동행예약 취소
-    public boolean accDelete(Long accReservationNum);
+    public void Accdelete(Long accReservationNum);
 
-    // 동행서비스 매니저가  예약 거절 manager페이지
-    public boolean accManagerRefuse(AccReservationVO accReservationVO);
+    //동행서비스 매니저의 업무 시작,manager 페이지의 동행예약목록
+    public void AccManagerStart(Long accReservationNum);
 
-    // 동행 vo 매니저 이메일 인서트
-    public void insertmanagerEmail(String managerEmail);
+    //동행서비스 매니저의 업무 종료,manager 페이지의 동행예약목록
+    public void AccManagerEnd(Long accReservationNum);
+
+    //동행서비스 매니저가 업무 취소,manager 페이지의 동행예약목록
+    public void AccManagerCancel(Long accReservationNum);
+
+    //    돌봄서비스 예약자 1명 정보
+    public CareReservationVO CareGet(Long careReservationNum);
+    // user_userdetails의 카운트 횟수.  CARE_RESERVATION_STATUS 에 따라 변경
+    public int caregetTotal5(Long careReservationNum);
+    public int caregetTotal6(Long careReservationNum);
+    public int caregetTotal7(Long careReservationNum);
+    public int caregetTotal8(Long careReservationNum);
+
+    // 돌봄서비스 매니저 배정 수락 user_userdetails페이지
+    public void CareManagerY(Long careReservationNum);
+
+    // 돌봄서비스 매니저 배정 거절 user_userdetails페이지
+    public void CareManagerN(Long careReservationNum);
+
+    // 돌봄서비스고객이 예약취소,user_userdetails2 페이지의 돌봄예약 취소
+    public void Caredelete(Long careReservationNum);
+
+    //돌봄서비스 매니저의 업무 시작,manager 페이지의 동행예약목록
+    public void CareManagerStart(Long careReservationNum);
+
+    //돌봄서비스 매니저의 업무 종료,manager 페이지의 동행예약목록
+    public void CareManagerEnd(Long careReservationNum);
+
+    //돌봄서비스 매니저가 업무 취소,manager 페이지의 동행예약목록
+    public void CareManagerCancel(Long careReservationNum);
+
+
 
     //    동행서비스 예약리스트
     public List<AccReservationVO> AccResult(String accReservationName);
+
 
     // 회원 가입
     public void join(UserVO userVO);

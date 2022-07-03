@@ -14,7 +14,7 @@
 
     <delete id="delete">
         DELETE FROM TBL_MANAGER
-        WHERE MANAGER_EMAIL = #{managerEmail}
+        WHERE MANAGER_EMAIL = #{managerEmail, jdbcType=VARCHAR}
     </delete>
 
     <select id="getTotal" resultType="_int">

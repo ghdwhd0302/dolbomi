@@ -26,9 +26,9 @@
     <!-- sub_title_wrap -->
     <div class="sub_title_wrap title_only">
 
-        <div class="sub_title">
+        <div class="sub_title" th:object="${accreservationlist}">
             <p>서비스 이용 내역</p>
-            <p>이름입력님의 서비스 이용 내역입니다.</p>
+            <p th:text="*{accReservationName}+'님의 서비스 이용 내역입니다.'"></p>
         </div>
 
     </div>
@@ -37,12 +37,12 @@
         <div class="form_sub_tab column">
             <ul class="tab">
                 <!-- <li id="all" >전체</li> -->
-                <li id="match" onclick="location.href='/user/user_userdetails'"><span>배정요청</span><em>1</em></li>
-                <li id="reserv" onclick="location.href='/user/user_userdetails2'"><span>예약</span><em>0</em></li>
-                <li id="proc" onclick="location.href='/user/user_userdetails3'"><span>서비스중</span><em>0</em></li>
+                <li id="match" onclick="location.href='/user/user_userdetails'"><span>배정요청</span><em th:text="*{totallist1}+*{totallist5}"></em></li>
+                <li id="reserv" onclick="location.href='/user/user_userdetails2'"><span>예약</span><em th:text="*{totallist2}+*{totallist6}" ></em></li>
+                <li id="proc" onclick="location.href='/user/user_userdetails3'"><span>서비스중</span><em th:text="*{totallist3}+*{totallist7}"></em></li>
                 <!--<li id="end" class="current" onclick="location.href='/user/user_userdetails4'"><span>종료</span><em>0</em></li>
                 -->
-                <li id="end" class="current"><span>종료</span><em>0</em></li>
+                <li id="end" class="current"><span>종료</span><em th:text="*{totallist4}+*{totallist8}"></em></li>
 
             </ul>
         </div>
@@ -50,124 +50,60 @@
         <div class="com_accordion serviceEnd">
             <ul>
                 <li class="history">
-                    <div class="ac_title">
-                        <input type="hidden" name="hManagerSysId" value="">
-                        <input type="hidden" name="hMemberSysId" value="U_202206120006">
-                        <input type="hidden" name="hUserSysId" value="R_202206150003">
-                        <input type="hidden" name="hUserGenderCd" value="M">
-                        <input type="hidden" name="hServiceNm" value="동행서비스">
-                        <input type="hidden" name="hServiceCd" value="SV10">
-                        <input type="hidden" name="hServiceSeq" value="1">
-                        <input type="hidden" name="hMatchSeq" value="1">
-                        <input type="hidden" name="hServiceStartDate" value="2022-06-27">
-                        <input type="hidden" name="hServiceStartTime" value="13:00">
-                        <input type="hidden" name="hDepartAdmCd" value="4127310200">
-                        <input type="hidden" name="hDestAdmCd" value="4127310100">
-                        <input type="hidden" name="hServiceCarYn" value="">
+                    <div class="ac_title" th:object="${accreservationlist}" th:if="${totallist4}">
+
                         <p class="service_a">동행서비스</p>
                         <div class="left_con">
                             <p>
                                 <span class="title">이용자</span>
-                                <span>이름입력</span>
+                                <span th:text="*{accReservationName}"></span>
                             </p>
                             <p>
                                 <span class="title">이용일시</span>
-                                <span>2022-06-27</span>
-                                <span>13:00 ~ 15:00</span>
+                                <span th:text="*{accReservationDate}"></span>
+                                <span th:text="*{accReservationTime}"></span>
                             </p>
                         </div>
                         <p class="photo">
                         </p>
-                        <div class="left_con endmanager">
+                        <div class="left_con endmanager" th:object="${accmanagerInfo}">
                             <p>
                                 <span class="title">매니저 이름</span>
-                                <span>이름입력</span>
+                                <span th:text="*{managerName}"></span>
                             </p>
                             <p>
                                 <span class="title">연락처</span>
-                                <span>010-1234-1234<br></span>
+                                <span th:text="*{managerPhoneNum}"><br></span>
                             </p>
                         </div>
                     </div>
                 </li>
+
                 <li class="history">
-                    <div class="ac_title">
-                        <input type="hidden" name="hManagerSysId" value="">
-                        <input type="hidden" name="hMemberSysId" value="U_202206120006">
-                        <input type="hidden" name="hUserSysId" value="R_202206150003">
-                        <input type="hidden" name="hUserGenderCd" value="M">
-                        <input type="hidden" name="hServiceNm" value="동행서비스">
-                        <input type="hidden" name="hServiceCd" value="SV10">
-                        <input type="hidden" name="hServiceSeq" value="1">
-                        <input type="hidden" name="hMatchSeq" value="1">
-                        <input type="hidden" name="hServiceStartDate" value="2022-06-27">
-                        <input type="hidden" name="hServiceStartTime" value="13:00">
-                        <input type="hidden" name="hDepartAdmCd" value="4127310200">
-                        <input type="hidden" name="hDestAdmCd" value="4127310100">
-                        <input type="hidden" name="hServiceCarYn" value="">
-                        <p class="service_a">동행서비스</p>
-                        <div class="left_con">
-                            <p>
-                                <span class="title">이용자</span>
-                                <span>이름입력</span>
-                            </p>
-                            <p>
-                                <span class="title">이용일시</span>
-                                <span>2022-06-27</span>
-                                <span>13:00 ~ 15:00</span>
-                            </p>
-                        </div>
-                        <p class="photo">
-                        </p>
-                        <div class="left_con endmanager">
-                            <p>
-                                <span class="title">매니저 이름</span>
-                                <span>이름입력</span>
-                            </p>
-                            <p>
-                                <span class="title">연락처</span>
-                                <span>010-1234-1234<br></span>
-                            </p>
-                        </div>
-                    </div>
-                </li>
-                <li class="history">
-                    <div class="ac_title">
-                        <input type="hidden" name="hManagerSysId" value="">
-                        <input type="hidden" name="hMemberSysId" value="U_202206120006">
-                        <input type="hidden" name="hUserSysId" value="R_202206150003">
-                        <input type="hidden" name="hUserGenderCd" value="M">
-                        <input type="hidden" name="hServiceNm" value="돌봄서비스">
-                        <input type="hidden" name="hServiceCd" value="SV10">
-                        <input type="hidden" name="hServiceSeq" value="1">
-                        <input type="hidden" name="hMatchSeq" value="1">
-                        <input type="hidden" name="hServiceStartDate" value="2022-06-27">
-                        <input type="hidden" name="hServiceStartTime" value="13:00">
-                        <input type="hidden" name="hDepartAdmCd" value="4127310200">
-                        <input type="hidden" name="hDestAdmCd" value="4127310100">
-                        <input type="hidden" name="hServiceCarYn" value="">
+                    <div class="ac_title" th:object="${carereservationlist}" th:if="${totallist6}">
+
                         <p class="service_b">돌봄서비스</p>
                         <div class="left_con">
                             <p>
                                 <span class="title">이용자</span>
-                                <span>이름입력</span>
+                                <span th:text="*{careReservationName}"></span>
                             </p>
                             <p>
                                 <span class="title">이용일시</span>
-                                <span>2022-06-27</span>
-                                <span>13:00 ~ 15:00</span>
+                                <span th:text="*{careReservationDate}"></span>
+                                <span th:text="*{careReservationTime}"></span>
                             </p>
                         </div>
                         <p class="photo">
                         </p>
-                        <div class="left_con endmanager">
+                        <div class="left_con endmanager" th:object="${caremanagerInfo}">
                             <p>
                                 <span class="title">매니저 이름</span>
-                                <span>이름입력</span>
+                                <span th:text="*{managerName}"></span>
                             </p>
                             <p>
                                 <span class="title">연락처</span>
-                                <span>010-1234-1234<br></span>
+                                <span th:text="*{managerPhoneNum}"><br></span>
                             </p>
                         </div>
                     </div>

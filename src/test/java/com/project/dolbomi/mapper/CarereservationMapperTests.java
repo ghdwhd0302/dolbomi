@@ -49,10 +49,10 @@ public class CarereservationMapperTests {
         log.info(careReservationMapper.CareGetList(7L).toString());
     }
 */
-    @Test
-    public void delete(){
-        log.info(String.valueOf(careReservationMapper.delete(3L)));
-    }
+//    @Test
+//    public void delete(){
+//        log.info(String.valueOf(careReservationMapper.delete(3L)));
+//    }
 
 
 

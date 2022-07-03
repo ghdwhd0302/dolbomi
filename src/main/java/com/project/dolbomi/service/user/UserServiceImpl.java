@@ -28,83 +28,122 @@ public class UserServiceImpl implements UserService {
     private final UserReviewDTO userReviewDTO;
 
 
-     //    돌봄서비스 예약자 1명 정보
-    @Override
-    public CareReservationVO careSelect(Long accReservationNum) {
-        return careReservationDAO.CareGet(accReservationNum);
-    }
-
-    // 돌봄서비스 매니저 배정 수락
-    @Override
-    public boolean careApprove(CareReservationVO careReservationVO ) {
-        return careReservationDAO.caremanager(careReservationVO);
-    }
-    // 돌봄서비스 매니저 배정 거절 user_userdetails페이지
-    @Override
-    public boolean careRefuse(CareReservationVO careReservationVO) {
-        return careReservationDAO.careRefuseupdate(careReservationVO);
-    }
-    // 돌봄서비스고객이 예약취소,user_userdetails2 페이지의 동행예약 취소
-    @Override
-    public boolean careDelte(Long careReservationNum) {
-        return careReservationDAO.careDelte(careReservationNum);
-    }
-
-    // 돌봄서비스 매니저가  예약 거절 manager페이지
-    @Override
-    public boolean careManagerRefuse(CareReservationVO careReservationVO) {
-        return  careReservationDAO.CareManagerRefuse(careReservationVO);
-    }
-
-    @Override
-    public boolean AccGetList(Long careReservationNum) {
-        return true;
-    }
-
-
 
 
     //    동행서비스 예약자 1명 정보
     @Override
-    public AccReservationVO accSelect(Long accReservationNum) {
+    public AccReservationVO AccGet(Long accReservationNum) {
         return accReservationDAO.AccGet(accReservationNum);
     }
 
+    @Override
+    public int accgetTotal1(Long accReservationNum) {
+        return accReservationDAO.accgetTotal1(accReservationNum);
+    }
+    @Override
+    public int accgetTotal2(Long accReservationNum) {
+        return accReservationDAO.accgetTotal2(accReservationNum);
+    }
+    @Override
+    public int accgetTotal3(Long accReservationNum) {
+        return accReservationDAO.accgetTotal3(accReservationNum);
+    }
+    @Override
+    public int accgetTotal4(Long accReservationNum) {
+        return accReservationDAO.accgetTotal4(accReservationNum);
+    }
 
     // 동행서비스 매니저 배정 수락 user_userdetails페이지
     @Override
-    @Transactional(rollbackFor = Exception.class)
-    public AccReservationVO accApprove(Long accReservationNum) {
-        return accReservationDAO.accmanager(accReservationNum);
+    public void AccManagerY(Long accReservationNum) {
+        accReservationDAO.AccManagerY(accReservationNum);
     }
-
     // 동행서비스 매니저 배정 거절 user_userdetails페이지
     @Override
-    public boolean accRefuse(AccReservationVO accReservationVO) {
-        return accReservationDAO.accRefuseupdate(accReservationVO);
+    public void AccManagerN(Long accReservationNum) {
+        accReservationDAO.AccManagerN(accReservationNum);
     }
     // 동행서비스고객이 예약취소,user_userdetails2 페이지의 동행예약 취소
     @Override
-    public boolean accDelete(Long accReservationNum) {
-        return accReservationDAO.accDelte(accReservationNum);
+    public void Accdelete(Long accReservationNum) {
+        accReservationDAO.Accdelete(accReservationNum);
     }
 
-    // 동행서비스 매니저가  예약 거절 manager페이지
+    //동행서비스 매니저의 업무 시작,manager 페이지의 동행예약목록
     @Override
-    public boolean accManagerRefuse(AccReservationVO accReservationVO) {
-        return  accReservationDAO.accManagerRefuse(accReservationVO);
+    public void AccManagerStart(Long accReservationNum) {
+        accReservationDAO.AccManagerStart(accReservationNum);
+    }
+    //동행서비스 매니저의 업무 종료,manager 페이지의 동행예약목록
+    @Override
+    public void AccManagerEnd(Long accReservationNum) {
+        accReservationDAO.AccManagerEnd(accReservationNum);
+    }
+    //동행서비스 매니저가 업무 취소,manager 페이지의 동행예약목록
+    @Override
+    public void AccManagerCancel(Long accReservationNum) {
+        accReservationDAO.AccManagerCancel(accReservationNum);
+    }
+
+
+    //    돌봄서비스 예약자 1명 정보
+    @Override
+    public CareReservationVO CareGet(Long careReservationNum) {
+        return careReservationDAO.CareGet(careReservationNum);
     }
 
     @Override
-    public void insertmanagerEmail(String managerEmail) {
-        accReservationDAO.insertmanagerEmail(managerEmail);
+    public int caregetTotal5(Long careReservationNum) {
+        return careReservationDAO.caregetTotal5(careReservationNum);
     }
+    @Override
+    public int caregetTotal6(Long careReservationNum) {
+        return careReservationDAO.caregetTotal6(careReservationNum);
+    }
+    @Override
+    public int caregetTotal7(Long careReservationNum) {
+        return careReservationDAO.caregetTotal7(careReservationNum);
+    }
+    @Override
+    public int caregetTotal8(Long careReservationNum) {
+        return careReservationDAO.caregetTotal8(careReservationNum);
+    }
+    // 돌봄서비스 매니저 배정 수락 user_userdetails페이지
+    @Override
+    public void CareManagerY(Long careReservationNum) {
+        careReservationDAO.CareManagerY(careReservationNum);
+    }
+    // 돌봄서비스 매니저 배정 거절 user_userdetails페이지
+    @Override
+    public void CareManagerN(Long careReservationNum) {
+        careReservationDAO.CareManagerN(careReservationNum);
+    }
+    // 돌봄서비스고객이 예약취소,user_userdetails2 페이지의 돌봄예약 취소
+    @Override
+    public void Caredelete(Long careReservationNum) {
+        careReservationDAO.Caredelete(careReservationNum);
+    }
+    //동행서비스 매니저의 업무 시작,manager 페이지의 동행예약목록
+    @Override
+    public void CareManagerStart(Long careReservationNum) {
+        careReservationDAO.CareManagerStart(careReservationNum);
+    }
+    //동행서비스 매니저의 업무 종료,manager 페이지의 동행예약목록
+    @Override
+    public void CareManagerEnd(Long careReservationNum) {
+        careReservationDAO.CareManagerEnd(careReservationNum);
+    }
+    //동행서비스 매니저가 업무 취소,manager 페이지의 동행예약목록
+    @Override
+    public void CareManagerCancel(Long careReservationNum) {
+        careReservationDAO.CareManagerCancel(careReservationNum);
+    }
+
 
     @Override
-    public List<AccReservationVO> AccResult(String accReservationName ) {
-        return accReservationDAO.AccResult(accReservationName);
+    public List<AccReservationVO> AccResult(String accReservationName) {
+        return null;
     }
-
 
 
     @Override
