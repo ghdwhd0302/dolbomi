@@ -89,7 +89,7 @@
                     </th:block>
                     <a class="changePage" th:if="${pageDTO.next}" th:href="${pageDTO.endPage + 1}"><code>&gt;</code></a>
                 </div>
-                <form action="/user/review" th:object="${criteria}" name="pageForm">
+                <form action="/user/myReview" th:object="${criteria}" name="pageForm">
                     <input type="hidden" th:field="*{pageNum}">
                     <input type="hidden" th:field="*{amount}">
                 </form>
@@ -107,17 +107,11 @@
 let reviewNum = [[${reviewNum}]];
 let $pageForm = $(pageForm);
 
-if (reviewNum != null) {
-    alert(reviewNum + "번 게시글이 등록되었습니다.");
-}
-
 $("a.changePage").on("click", function (e) {
     e.preventDefault();
     $pageForm.find("input[name='pageNum']").val($(this).attr("href"));
     $pageForm.submit();
 });
-
-
 </script>
 <script>
     $('.B').click(function () {

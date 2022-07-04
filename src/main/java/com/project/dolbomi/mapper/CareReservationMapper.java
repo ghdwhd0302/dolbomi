@@ -1,10 +1,7 @@
 package com.project.dolbomi.mapper;
 
 
-import com.project.dolbomi.domain.vo.AccReservationVO;
-import com.project.dolbomi.domain.vo.AccReviewDTO;
-import com.project.dolbomi.domain.vo.CareReservationVO;
-import com.project.dolbomi.domain.vo.CareReviewDTO;
+import com.project.dolbomi.domain.vo.*;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.beans.PropertyValues;
 
@@ -23,7 +20,10 @@ public interface CareReservationMapper {
     //carereservation review list
     public List<CareReviewDTO> reviewGetListCare(String userEmail);
 
+    // care reservation 게시글 한개 가져오기
+    public CareReservationVO selectCare(Long careReservationNum);
 
+    public List<CareReservationVO> getListCareReservation(Criteria criteria);
 
     // 돌봄서비스 예약자 1명 정보
     public CareReservationVO CareGet(Long careReservationNum);
@@ -45,4 +45,5 @@ public interface CareReservationMapper {
     public int caregetTotal6(Long careReservationNum);
     public int caregetTotal7(Long careReservationNum);
     public int caregetTotal8(Long careReservationNum);
+
 }

@@ -347,39 +347,11 @@ public class UserController {
 
         log.info("---------------------");
 
-
-
         model.addAttribute("UserReviewDTO", userService.reviewGetListUser(criteria, userEmail));
-        model.addAttribute("pageDTO", new PageDTO(criteria, userService.reviewGetTotal(criteria)));
+        model.addAttribute("pageDTO", new PageDTO(criteria, userService.myReviewGetTotal(criteria, userEmail)));
 
         return "/user/myReview";
     }
-
-    @GetMapping("review2")
-    public String review2(HttpServletRequest req, Model model) {
-
-
-        return "/user/review2";
-    }
-
-    @GetMapping("review1")
-    public String review1(Model model, @RequestParam String userEmail, @RequestParam String userName) {
-        log.info("---------------------");
-        log.info("review1--------");
-        log.info("myReview--------");
-        log.info("userEmail-------- " + userEmail);
-        log.info("userName--------" + userName);
-        log.info("---------------------");
-
-        model.addAttribute("careReviewDTO", userService.reviewGetListCare(userEmail));
-        model.addAttribute("accReviewDTO", userService.reviewGetListAcc(userEmail));
-
-        /*model.addAttribute("accReviewDTO", new AccReviewDTO(userService.reviewGetListAcc()));
-        model.addAttribute("careReviewDTO", new CareReviewDTO(userService.reviewGetListCare()));*/
-
-        return "/user/review1";
-    }
-
 
     @GetMapping("review")
     public String reviewGetList(Criteria criteria, Model model) {
@@ -419,11 +391,47 @@ public class UserController {
 
     //    게시글 상세보기
     @GetMapping({"readReview", "modifyReview"})
-    public void readReview(Long reviewNum, HttpServletRequest req, Model model) {
+    public String readReview(Long reviewNum, HttpServletRequest req, Model model) {
         log.info("----------------------------");
         log.info(req.getRequestURI() + "............. : " + reviewNum);
         log.info("----------------------------");
         model.addAttribute("review", userService.get(reviewNum));
+
+        return "/user/readReview";
+    }
+
+    @GetMapping("review2")
+    public String review2(HttpServletRequest req, Model model) {
+        String accType = req.getParameter("accReservationType");
+        String careType = req.getParameter("careReservationType");
+        log.info("careType---------------" + careType);
+        log.info("accType---------------" + accType);
+        if(accType.isEmpty() && !careType.isEmpty()){
+            log.info("careType---------------" + careType);
+            model.addAttribute("careReservationType", careType);
+        }else{
+            log.info("accType---------------" + accType);
+            model.addAttribute("accReservationType", accType);
+        }
+        return "/user/review2";
+    }
+
+    @GetMapping("review1")
+    public String review1(Model model, @RequestParam String userEmail, @RequestParam String userName) {
+        log.info("---------------------");
+        log.info("review1--------");
+        log.info("myReview--------");
+        log.info("userEmail-------- " + userEmail);
+        log.info("userName--------" + userName);
+        log.info("---------------------");
+
+        model.addAttribute("careReviewDTO", userService.reviewGetListCare(userEmail));
+        model.addAttribute("accReviewDTO", userService.reviewGetListAcc(userEmail));
+
+        /*model.addAttribute("accReviewDTO", new AccReviewDTO(userService.reviewGetListAcc()));
+        model.addAttribute("careReviewDTO", new CareReviewDTO(userService.reviewGetListCare()));*/
+
+        return "/user/review1";
     }
 
     // 수정

@@ -23,14 +23,20 @@ public class AccReservationDAO {
 
     }
 
-
-
-
-
-
     // accreservation review list
     public List<AccReviewDTO> reviewGetListAcc(String userEmail) {
         return accReservationMapper.reviewGetListAcc(userEmail);
+    }
+
+
+    // accreservation select one
+    public AccReservationVO selectAcc(Long AccReservationNum) {
+        return accReservationMapper.selectAcc(AccReservationNum);
+    }
+
+    //    동행서비스 리스트
+    public List<AccReservationVO> getListAccReservation(Criteria criteria) {
+        return accReservationMapper.getListAccReservation(criteria);
     }
 
 
@@ -82,3 +88,4 @@ public class AccReservationDAO {
     }
 
 }
+

@@ -8,7 +8,7 @@ import java.util.List;
 @Service
 public interface UserService {
 
-<<<<<<< HEAD
+
     // 돌봄서비스 매니저 배정 수락
     public boolean careApprove(CareReservationVO careReservationVO);
 
@@ -20,15 +20,13 @@ public interface UserService {
 
     // 돌봄서비스 매니저가  예약 거절 manager페이지
     public boolean careManagerRefuse(CareReservationVO careReservationV);
-<<<<<<< HEAD
-=======
+
     
      public boolean AccGetList(Long careReservationNum);
 
     //    동행서비스 예약자 1명 정보
     public AccReservationVO accSelect(Long accReservationNum);
->>>>>>> dolbomi/master
-=======
+
     //    동행서비스 예약자 1명 정보
     public AccReservationVO AccGet(Long accReservationNum);
     // user_userdetails의 카운트 횟수.  ACC_RESERVATION_STATUS 에 따라 변경
@@ -36,7 +34,7 @@ public interface UserService {
     public int accgetTotal2(Long accReservationNum);
     public int accgetTotal3(Long accReservationNum);
     public int accgetTotal4(Long accReservationNum);
->>>>>>> 9f09cd0a78dd3b187d14a0b595d58e6be5358e0b
+
 
     // 동행서비스 매니저 배정 수락 user_userdetails페이지
     public void AccManagerY(Long accReservationNum);
@@ -136,6 +134,9 @@ public interface UserService {
     //    게시글 전체 개수
     public int reviewGetTotal(Criteria criteria);
 
+    //  내 게시글 전체 개수
+    public int myReviewGetTotal(Criteria criteria, String userEmail);
+
     // 회원 게시글 목록
     public List<UserReviewDTO> reviewGetListUser(Criteria criteria, String userEmail);
 
@@ -145,5 +146,17 @@ public interface UserService {
     // care reservation 목록
     public List<CareReviewDTO> reviewGetListCare(String userEmail);
 
+    // acc reservation 한 개 자져오기
+    public AccReservationVO selectAcc(Long accReservationNum);
 
+
+    // care reservation 한 개 가져오기
+    public CareReservationVO selectCare(Long careReservationNum);
+
+    //    동행서비스 리스트
+    public List<AccReservationVO> getListAccReservation(Criteria criteria);
+
+    //    돌봄서비스 리스트
+    public List<CareReservationVO> getListCareReservation(Criteria criteria);
 }
+

@@ -3,6 +3,59 @@
 <mapper namespace="com.project.dolbomi.mapper.CareReservationMapper">
 
 
+    <select id="getList" resultType="carereservationVO">
+        SELECT CARE_RESERVATION_NAME,CARE_RESERVATION_TYPE,CARE_RESERVATION_ADDRESS
+        FROM TBL_CARE_RESERVATION a,TBL_USER b
+        WHERE a.USER_EMAIL = b.USER_EMAIL
+    </select>
+
+    <select id="getListCareReservation" resultType="careReservationVO">
+        SELECT CARE_RESERVATION_NUM,CARE_RESERVATION_TYPE,CARE_RESERVATION_NAME, CARE_RESERVATION_AGE, CARE_RESERVATION_PHONE_NUM, CARE_RESERVATION_GENDER, CARE_RESERVATION_ADD_PHONE_NUM, CARE_RESERVATION_RELATION, CARE_RESERVATION_ADDRESS, CARE_RESERVATION_HOPE_GENDER, CARE_RESERVATION_DATE, CARE_RESERVATION_TIME, CARE_RESERVATION_ADD_REQUIRE, CARE_RESERVATION_PRICE
+        FROM TBL_CARE_RESERVATION
+    </select>
+
+    <!--매니저 배정기다리는중,user_userdetails 페이지의 돌봄예약목록 -->
+    <select id="CareGetList" resultType="carereservationVO">
+        SELECT CARE_RESERVATION_NAME,CARE_RESERVATION_DATE,CARE_RESERVATION_TIME,CARE_RESERVATION_ADDRESS,CARE_RESERVATION_PRICE,b.USER_EMAIL,a.CARE_RESERVATION_STATUS,CARE_RESERVATION_NUM
+        FROM TBL_CARE_RESERVATION a,TBL_USER b
+        WHERE a.USER_EMAIL = b.USER_EMAIL AND a.CARE_RESERVATION_NUM=#{careReservationNum, jdbcType=VARCHAR}
+    </select>
+    <!--
+        <select id="CareGetList" resultType="carereservationVO">
+            SELECT CARE_RESERVATION_NAME,CARE_RESERVATION_DATE,CARE_RESERVATION_TIME,CARE_RESERVATION_ADDRESS,CARE_RESERVATION_PRICE,b.USER_EMAIL,a.CARE_RESERVATION_STATUS,c.MANAGER_REGION
+            FROM TBL_CARE_RESERVATION a,TBL_USER b, TBL_MANAGER c
+            WHERE a.USER_EMAIL = b.USER_EMAIL AND a.CARE_RESERVATION_ADDRESS = c.MANAGER_REGION
+        </select>
+        -->
+
+    <!--돌봄서비스매니저 배정수락,user_userdetails 페이지의 돌봄예약목록 -->
+    <update id="Careupdate">
+        UPDATE TBL_CARE_RESERVATION a,TBL_USER b
+        SET a.CARE_RESERVATION_STATUS = '2',a.MANAGER_EMAIL=#{managerEmail},b.USER_STATUS='2'
+        WHERE a.USER_EMAIL = b.USER_EMAIL AND CARE_RESERVATION_NUM=#{accReservationNum, jdbcType=VARCHAR}
+    </update>
+
+    <!--돌봄서비스매니저 배정거절,user_userdetails 페이지의 돌봄예약목록 -->
+    <select id="Refuseupdate" resultType="carereservationVO">
+        SELECT CARE_RESERVATION_NAME,CARE_RESERVATION_DATE,CARE_RESERVATION_TIME,CARE_RESERVATION_ADDRESS,CARE_RESERVATION_PRICE,b.USER_EMAIL,a.CARE_RESERVATION_STATUS,CARE_RESERVATION_NUM
+        FROM TBL_ACC_RESERVATION a,TBL_USER b
+        WHERE a.USER_EMAIL = b.USER_EMAIL AND CARE_RESERVATION_NUM=#{careReservationNum, jdbcType=VARCHAR}
+    </select>
+
+    <!--돌봄서비스고객이 예약취소,user_userdetails 페이지의 돌봄예약 취소 -->
+    <delete id="delete">
+        DELETE FROM TBL_CARE_RESERVATION
+        WHERE CARE_RESERVATION_NUM = #{carereservationNum}
+    </delete>
+
+
+    <!--돌봄서비스매니저가 예약거절,manager 페이지의 동행예약 거절 -->
+    <update id="CareManagerRefuse">
+        UPDATE TBL_CARE_RESERVATION a,TBL_USER b
+        SET a.CARE_RESERVATION_STATUS = '1',a.MANAGER_EMAIL=' ',b.USER_STATUS='1'
+        WHERE a.USER_EMAIL = b.USER_EMAIL AND CARE_RESERVATION_NUM=#{careReservationNum, jdbcType=VARCHAR}
+    </update>
+
     <insert id="insert">
         INSERT INTO TBL_CARE_RESERVATION (CARE_RESERVATION_NUM, CARE_RESERVATION_NAME,CARE_RESERVATION_TYPE ,CARE_RESERVATION_AGE, CARE_RESERVATION_PHONE_NUM, CARE_RESERVATION_GENDER,CARE_RESERVATION_ADD_PHONE_NUM,CARE_RESERVATION_RELATION,CARE_RESERVATION_ADDRESS,CARE_RESERVATION_HOPE_GENDER,CARE_RESERVATION_DATE,CARE_RESERVATION_TIME,CARE_RESERVATION_ADD_REQUIRE,CARE_RESERVATION_PRICE, USER_EMAIL)
         VALUES (SEQ_RESERVATION.NEXTVAL, #{careReservationName}, #{careReservationType},#{careReservationAge},#{careReservationPhoneNum},#{careReservationGender},#{careReservationAddPhoneNum},#{careReservationRelation},#{careReservationAddress},#{careReservationHopeGender},#{careReservationDate},#{careReservationTime},#{careReservationAddRequire},#{careReservationPrice}, #{userEmail})
@@ -20,6 +73,19 @@
         ROWNUM RN, a.CARE_RESERVATION_TYPE, a.CARE_RESERVATION_DATE, b.USER_NAME, a.USER_EMAIL, a.CARE_RESERVATION_NUM
         FROM TBL_CARE_RESERVATION a,TBL_USER b
         WHERE a.USER_EMAIL = b.USER_EMAIL AND a.USER_EMAIL = #{userEmail}
+    </select>
+
+
+    <select id="getCare" resultType="careReviewDTO">
+        ROWNUM RN, a.CARE_RESERVATION_TYPE, a.CARE_RESERVATION_DATE, b.USER_NAME, a.USER_EMAIL, a.CARE_RESERVATION_NUM
+        FROM TBL_CARE_RESERVATION a,TBL_USER b
+        WHERE a.USER_EMAIL = b.USER_EMAIL AND a.USER_EMAIL = #{userEmail} AND a.CARE_RESERVATION_NUM = #{careReservationNum}
+    </select>
+
+    <select id="selectCare" resultType="careReservationVO">
+        SELECT CARE_RESERVATION_NUM, CARE_RESERVATION_TYPE
+        FROM TBL_CARE_RESERVATION
+        WHERE CARE_RESERVATION_NUM = #{careReservationNum}
     </select>
 
     <!--돌봄서비스 예약자 1명정보 가져오기 .user_userdetails 페이지의 돌봄예약목록 -->
@@ -89,6 +155,7 @@
         SET MANAGER_EMAIL = '',CARE_RESERVATION_STATUS='0'
         WHERE  CARE_RESERVATION_NUM=#{careReservationNum}
     </update>
+
 
 
 

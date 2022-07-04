@@ -1,9 +1,6 @@
 package com.project.dolbomi.domain.dao;
 
-import com.project.dolbomi.domain.vo.AccReservationVO;
-import com.project.dolbomi.domain.vo.AccReviewDTO;
-import com.project.dolbomi.domain.vo.CareReservationVO;
-import com.project.dolbomi.domain.vo.CareReviewDTO;
+import com.project.dolbomi.domain.vo.*;
 import com.project.dolbomi.mapper.CareReservationMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
@@ -32,6 +29,19 @@ public class CareReservationDAO {
         return careReservationMapper.reviewGetListCare(userEmail);
     }
 
+<<<<<<< HEAD
+    // carereservation select one
+    public CareReservationVO selectCare(Long careReservationNum) {
+        return careReservationMapper.selectCare(careReservationNum);
+    }
+
+    //    돌봄서비스 리스트
+    public List<CareReservationVO> getListCareReservation(Criteria criteria) {
+        return careReservationMapper.getListCareReservation(criteria);
+    }
+
+
+=======
 
 
     // 돌봄서비스 매니저 배정 수락 user_userdetails페이지
@@ -80,6 +90,7 @@ public class CareReservationDAO {
         return careReservationMapper.caregetTotal8(careReservationNum);
     }
 
+>>>>>>> 4a78b0b2ebb8372e5e95ca8a80f7588572576879
 }
 
 
