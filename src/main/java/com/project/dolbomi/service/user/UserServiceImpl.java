@@ -175,9 +175,15 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public int myReviewGetTotal(Criteria criteria, String userEmail) {
+        return reviewDAO.myReviewGetTotal(criteria, userEmail);
+    }
+
+    @Override
     public List<UserReviewDTO> reviewGetListUser(Criteria criteria, String userEmail) {
         return reviewDAO.reviewGetListUser(criteria, userEmail);
     }
+
 
     // acc reservation review list
     @Override
@@ -190,6 +196,26 @@ public class UserServiceImpl implements UserService {
     public List<CareReviewDTO> reviewGetListCare(String userEmail){
         return careReservationDAO.reviewGetListCare(userEmail);
     }
+
+    //care reservation select one
+    @Override
+    public CareReservationVO selectCare(Long careReservationNum) {
+        return careReservationDAO.selectCare(careReservationNum);
+    }
+
+    // acc reservation select one
+    @Override
+    public AccReservationVO selectAcc(Long accReservationNum) {
+        return accReservationDAO.selectAcc(accReservationNum);
+    }
+
+
+    @Override
+    public List<AccReservationVO> getListAccReservation(Criteria criteria) {return accReservationDAO.getListAccReservation(criteria);}
+
+    @Override
+    public List<CareReservationVO> getListCareReservation(Criteria criteria) {return careReservationDAO.getListCareReservation(criteria);}
+
 
 
 

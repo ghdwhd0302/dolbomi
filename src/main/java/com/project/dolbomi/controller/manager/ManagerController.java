@@ -1,8 +1,10 @@
 package com.project.dolbomi.controller.manager;
 
 import com.project.dolbomi.domain.vo.Criteria;
+import com.project.dolbomi.domain.vo.ManagerVO;
 import com.project.dolbomi.domain.vo.PageDTO;
 import com.project.dolbomi.service.manager.ManagerService;
+import com.project.dolbomi.service.user.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -11,12 +13,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 @Controller
 @Slf4j
 @RequiredArgsConstructor
 @RequestMapping("/manager/*")
 public class ManagerController {
     private final ManagerService managerService;
+    private final UserService userService;
 
     //    서비스 신청 목록
     @GetMapping("matchList")
@@ -35,7 +43,7 @@ public class ManagerController {
         return "/manager/manager";
     }
 
-//    예약 내역 조회
+    //    예약 내역 조회
     @GetMapping("managerdetails")
     public void reservationList(){
 
@@ -68,14 +76,15 @@ public class ManagerController {
         return "/manager/manager3";
     }
 
-//    매니저 회원가입
-//    @GetMapping("mjoin")
-//    public void managerJoin(){
-//    }
+    //    매니저 회원가입
+    @PostMapping("manageregi")
+    public String managerJoin(ManagerVO managerVO, Model model){
+        log.info("---------------------------------------");
+        log.info("managerJoin............. : " + managerVO);
+        log.info("---------------------------------------");
 
-    @PostMapping("mjoin")
-    public String managerJoin(){
-        return "/member/mainpage";
+        model.addAttribute("managerVO", managerVO);
+        return "/member/managerlogin";
     }
 
     //  페이지 이동
@@ -94,6 +103,30 @@ public class ManagerController {
 
     @GetMapping("manager_rev")
     public String manager_rev(Criteria criteria, Model model){
+
+//        model.addAttribute("applyList", managerService.getList(criteria));
+        model.addAttribute("getListAccReservation", userService.getListAccReservation(criteria));
+        model.addAttribute("getListCareReservation", userService.getListCareReservation(criteria));
+        model.addAttribute("pageDTO", new PageDTO(criteria, managerService.getTotal()));
+        return "/manager/manager_rev";
+    }
+
+    @PostMapping("manager_rev")
+    public String manager_rev(Criteria criteria, Model model, HttpServletRequest request){
+        String[] area = request.getParameterValues("area1[]");
+
+        log.info("area----------------------------");
+        for (String areas:area) {
+            log.info(areas);
+        }
+        log.info("----------------------------");
+
+        List<String> areaAr = new ArrayList();
+
+        Arrays.stream(area).filter(v -> !v.isEmpty()).forEach(v -> areaAr.add(v));
+
+        log.info("사이즈---------------" + areaAr.size());
+        areaAr.stream().forEach(log::info);
         model.addAttribute("applyList", managerService.getList(criteria));
         model.addAttribute("pageDTO", new PageDTO(criteria, managerService.getTotal()));
         return "/manager/manager_rev";

@@ -76,6 +76,9 @@ public interface UserService {
     //    게시글 전체 개수
     public int reviewGetTotal(Criteria criteria);
 
+    //  내 게시글 전체 개수
+    public int myReviewGetTotal(Criteria criteria, String userEmail);
+
     // 회원 게시글 목록
     public List<UserReviewDTO> reviewGetListUser(Criteria criteria, String userEmail);
 
@@ -85,5 +88,15 @@ public interface UserService {
     // care reservation 목록
     public List<CareReviewDTO> reviewGetListCare(String userEmail);
 
+    // acc reservation 한 개 자져오기
+    public AccReservationVO selectAcc(Long accReservationNum);
 
+    // care reservation 한 개 가져오기
+    public CareReservationVO selectCare(Long careReservationNum);
+
+    //    동행서비스 리스트
+    public List<AccReservationVO> getListAccReservation(Criteria criteria);
+
+    //    돌봄서비스 리스트
+    public List<CareReservationVO> getListCareReservation(Criteria criteria);
 }

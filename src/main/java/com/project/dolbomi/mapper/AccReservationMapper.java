@@ -1,9 +1,6 @@
 package com.project.dolbomi.mapper;
 
-import com.project.dolbomi.domain.vo.AccReservationVO;
-import com.project.dolbomi.domain.vo.AccReviewDTO;
-import com.project.dolbomi.domain.vo.Criteria;
-import com.project.dolbomi.domain.vo.UserReviewDTO;
+import com.project.dolbomi.domain.vo.*;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -31,4 +28,9 @@ public interface AccReservationMapper {
 
     // acc reservation 게시글 목록
     public List<AccReviewDTO> reviewGetListAcc(String userEmail);
+
+    // acc reservation 게시글 한개 가져오기
+    public AccReservationVO selectAcc(Long accReservationNum);
+
+    public List<AccReservationVO> getListAccReservation(Criteria criteria);
 }
