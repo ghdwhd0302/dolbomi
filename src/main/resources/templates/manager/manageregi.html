@@ -28,7 +28,7 @@
 
         <div class="main-area">
             <div class="sc-bYTsla bDUjTg">
-                <form action="" mehod="post">
+                <form action="/manager/manageregi" mehod="post" id="managerApplication" name="managerApplication">
                     <div class="sc-dlyikq lknGZg">
                         <p class="sc-glUWqk uvQxd" style="color: rgb(22, 22, 22); margin-bottom: 20px;">매니저 지원하기</p>
                         <div class="sc-fFTYTi bkIEuU">
@@ -54,40 +54,59 @@
                         </div>
                         <div class="sc-fFTYTi bkIEuU">
                             <div class="sc-bTiqRo cOGJco">성함을 입력해주세요</div>
-                            <textarea placeholder="ex) 홍길동"
+                            <textarea name="managerName" placeholder="ex) 홍길동"
                                       class="ant-input sc-bEufUU bBQEgI"></textarea>
                         </div>
                         <div class="sc-fFTYTi bkIEuU">
                             <div class="sc-bTiqRo cOGJco">생년월일을 입력해주세요</div>
-                            <textarea
+                            <textarea name="managerBirth" id="managerBirth"
                                     placeholder="만 19세 이상의 성인만 매니저 활동이 가능합니다. ex) 19960405"
                                     class="ant-input sc-bEufUU bBQEgI"></textarea>
+                            <div class="check_font" id="birth_check"></div>
                         </div>
                         <div class="sc-fFTYTi bkIEuU">
                             <div class="sc-bTiqRo cOGJco">개인 이메일 주소를 입력해주세요</div>
-                            <textarea
-                                    placeholder="기입해주신 이메일로 프리랜서 근로 계약 문서가 전송되고 온라인 계약 체결이 진행됩니다."
-                                    class="ant-input sc-bEufUU bBQEgI"></textarea>
+                            <textarea name="managerEmail" id="emailCheck"
+                                    placeholder="기입해주신 이메일로 프리랜서 근로 계약 문서가 전송되고 온라인 계약 체결이 진행됩니다.                             로그인 시 아이디에 사용됩니다."
+                                    class="ant-input sc-bEufUU bBQEgI" oninput="check_email()"></textarea>
+                            <!--email 중복체크-->
+                            <span class="email_ok">사용 가능한 이메일입니다.</span>
+                            <span class="email_already">이미 가입한 이메일입니다.</span>
+                            <span class="email_not">올바른 이메일 형식이 아닙니다.</span>
+                        </div>
+                        <div class="sc-fFTYTi bkIEuU">
+                            <label style="display: block;font-size: 14px;">비밀번호 입력</label><input name="managerPw" password="true" type="password"
+                                   placeholder="숫자와 문자 포함 6~12자리 이내" class="ant-input sc-jzJRlG iaafvp password">
+                            <!--비밀번호 정규식-->
+                            <span class="pw_style" style="color: #e30606" id="not-pass">올바른 비밀번호 형식이 아닙니다</span>
+                            <span class="pw_style" style="color: #008000" id="yes-pass">안전합니다(☆☆☆)</span>
+                        </div>
+                        <div class="sc-fFTYTi bkIEuU">
+                            <label style="display: block;font-size: 14px;">비밀번호 확인</label><input name="managerPwCheck" type="password" password="true" placeholder="비밀번호를 확인해주세요."
+                                   class="ant-input sc-jzJRlG iaafvp password">
+                            <!--비밀번호 확인-->
+                            <div class="alert alert-success" style="color: #008000" id="alert-success" >비밀번호가 일치합니다.</div>
+                            <div class="alert alert-danger" style="color: #e30606" id="alert-danger">비밀번호가 일치하지 않습니다.</div>
                         </div>
                         <div class="sc-fFTYTi bkIEuU">
                             <div class="sc-bTiqRo cOGJco">자택 주소를 입력해주세요</div>
-                            <textarea
+                            <textarea name="managerAddress"
                                     placeholder="ex) 서울특별시 송파구 방이동 (XX동 XXX호 등의 상세 주소 기입 불필요)"
                                     class="ant-input sc-bEufUU bBQEgI"></textarea>
                         </div>
                         <div class="sc-fFTYTi bkIEuU">
                             <div class="sc-bTiqRo cOGJco">성별을 알려주세요</div>
-                            <textarea placeholder="ex) 남자"
+                            <textarea name="managerGender" placeholder="ex) 남자/여자"
                                       class="ant-input sc-bEufUU bBQEgI"></textarea>
                         </div>
                         <div class="sc-fFTYTi bkIEuU">
                             <div class="sc-bTiqRo cOGJco">운전 가능 여부를 선택해주세요</div>
-                            <textarea
+                            <textarea name="managerDriveOk"
                                     placeholder="예/아니오로 대답해주세요" class="ant-input sc-bEufUU bBQEgI"></textarea>
                         </div>
                         <div class="sc-fFTYTi bkIEuU">
                             <div class="sc-bTiqRo cOGJco">개인의 간병 경력 사항을 입력해주세요 <span>(0/500)</span></div>
-                            <textarea
+                            <textarea name="managerCareer"
                                     placeholder="매니저 활동을 위해 도움이 되는 자신의 간병 경력을 500자 이내로 자유롭게 남겨주세요 (요양보호사 자격증 보유 &amp; XX요양병원 3년 근무 등 / 간병 이외의 경력도 기재 가능)"
                                     class="ant-input sc-bEufUU bBQEgI"></textarea>
                         </div>
@@ -111,12 +130,12 @@
                         </div>
                         <div class="sc-fFTYTi bkIEuU">
                             <div class="sc-bTiqRo cOGJco">개인 연락처를 입력해주세요(-를 제외하고 입력해주세요 &gt; 01011111111)</div>
-                            <textarea placeholder="기입해주신 연락처로 합격/불합격 여부 알려드립니다. 정확히 입력해주세요."
+                            <textarea name="managerPhoneNum" placeholder="기입해주신 연락처로 합격/불합격 여부 알려드립니다. 정확히 입력해주세요."
                                       class="ant-input sc-bEufUU bBQEgI"></textarea>
                         </div>
                         <div class="sc-fFTYTi bkIEuU">
                             <div class="sc-bTiqRo cOGJco">매니저 활동 가능 지역을 알려주세요</div>
-                            <textarea
+                            <textarea name="managerRegion"
                                     placeholder="본인이 선호 또는 활동 가능한 서비스 지역과 병원을 알려주세요 (마포구 일대, 종로구 일대, 세브란스 병원, 서울대 병원, 아산 병원 등)"
                                     class="ant-input sc-bEufUU bBQEgI"></textarea>
                         </div>
@@ -125,7 +144,7 @@
                             <input type="file"
                                    accept="image/x-png,image/gif,image/jpeg">
                         </div>
-                        <div style="text-align: center;" onclick="location.href='/manager/mjoin'"><span class="sc-gFXMyG kfNMrX">지원하기</span></div>
+                        <div style="text-align: center;" onclick="managerConfirm()"><span class="sc-gFXMyG kfNMrX">지원하기</span></div>
                     </div>
                 </form>
             </div>
@@ -138,6 +157,10 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <script>
+    let $managerPw = $("input[name='managerPw']");
+    let $managerPwCheck = $("input[name='managerPwCheck']");
+    let $managerApplication = $(managerApplication);
+
     $("#btnLogin").click(function () {
         if (!$(this).attr('class').match('on')) {
             $(this).addClass('on');
@@ -148,6 +171,213 @@
         }
     })
 
+    /*비밀번호 정규식*/
+    $(function(){
+        $("#alert-success").hide();
+        $("#alert-danger").hide();
+        $("#not-pass").hide();
+        $("#yes-pass").hide();
+
+        $managerPw.keyup(function () {
+            var passRule = /^[A-Za-z0-9]{6,12}$/;
+            if(!passRule.test($managerPw.val())) {
+                $("#not-pass").show();
+                $("#yes-pass").hide();
+            }else{
+                $("#not-pass").hide();
+                $("#yes-pass").show();
+            }
+        })
+
+        $("input[type='password']").keyup(function(){
+            var pwd1=$managerPw.val();
+            var pwd2=$managerPwCheck.val();
+            if(pwd1 != "" || pwd2 != ""){
+                if(pwd1 == pwd2){
+                    $("#alert-success").show();
+                    $("#alert-danger").hide();
+                }else{
+                    $("#alert-success").hide();
+                    $("#alert-danger").show();
+                }
+            }
+        });
+    });
+
+    function managerConfirm() {
+        /*유효성 검사*/
+        let $managerName = $("textarea[name='managerName']");
+        let $managerBirth = $("textarea[name='managerBirth']");
+        let $managerEmail = $("textarea[name='managerEmail']");
+        let $managerAddress = $("textarea[name='managerAddress']");
+        let $managerGender = $("textarea[name='managerGender']");
+        let $managerDriveOk = $("textarea[name='managerDriveOk']");
+        let $managerCareer = $("textarea[name='managerCareer']");
+        let $managerPhoneNum = $("textarea[name='managerPhoneNum']");
+        let $managerRegion = $("textarea[name='managerRegion']");
+        let regPhone = /^((01[1|6|7|8|9])[1-9]+[0-9]{6,7})|(010[1-9][0-9]{7})$/;
+
+        if(!$managerName.val()){
+            alert("성함을 입력해주세요")
+            $managerName.focus();
+            return false;
+        }
+        if(!$managerBirth.val()){
+            alert("생년월일을 입력해주세요")
+            $managerBirth.focus();
+            return false;
+        }
+
+        if(!$managerEmail.val()){
+            alert("이메일 주소를 입력해주세요")
+            $managerEmail.focus();
+            return false;
+        }
+        if(!$managerPw.val()){
+            alert("비밀번호를 입력해주세요")
+            managerPw.focus();
+            return false;
+        }
+        if(!$managerPwCheck.val()){
+            alert("비밀번호 확인을 입력해주세요")
+            managerPwCheck.focus();
+            return false;
+        }
+        if(!$managerAddress.val()){
+            alert("자택 주소를 입력해주세요")
+            managerAddress.focus();
+            return false;
+        }
+        if(!$managerGender.val()){
+            alert("성별을 입력해주세요")
+            managerGender.focus();
+            return false;
+        }
+        if(!$managerDriveOk.val()){
+            alert("운전 가능 여부를 입력해주세요")
+            managerDriveOk.focus();
+            return false;
+        }
+        if(!$managerCareer.val()){
+            alert("간병 경력 사항을 입력해주세요")
+            managerCareer.focus();
+            return false;
+        }
+        if(!$managerPhoneNum.val()){
+            alert("연락처를 입력해주세요")
+            managerPhoneNum.focus();
+            return false;
+        }
+        if (!regPhone.test($managerPhoneNum.val())) {
+            alert('올바른 휴대폰 번호가 아닙니다.');
+            managerPhoneNum.focus();
+            return false;
+        }
+        if(!$managerRegion.val()){
+            alert("활동 가능 지역을 입력해주세요")
+            managerRegion.focus();
+            return false;
+        }
+        //비밀번호 암호화
+        $managerPw.val(btoa($managerPw.val()));
+        console.log($managerPw.val());
+        $managerApplication.submit();
+
+    }
+
+    /*이메일 중복검사*/
+    function check_email() {
+        var email = $('#emailCheck').val();
+        var emailRule = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;//이메일 정규식
+
+        $.ajax({
+            url:'/manager/emailcheck/',
+            type:'post',
+            data:{managerEmail:email},
+            success:function (cnt) {
+                if(cnt == 0){
+                    if(!emailRule.test(email)) {
+                        //경고
+                        $('.email_not').css("display", "inline-block");
+                        $('.email_ok').css("display", "none");
+                        $('.email_already').css("display", "none");
+                    }else{
+                        $('.email_not').css("display", "none");
+                        $('.email_ok').css("display", "inline-block");
+                        $('.email_already').css("display", "none");
+                    }
+
+                }else{
+                    $('.email_already').css("display", "inline-block");
+                    $('.email_ok').css("display","none");
+                    $('.email_not').css("display", "none");
+                }
+            },
+            error:function () {
+            }
+        });
+    };
+
+    // 생일 유효성 검사
+    var birthJ = false;
+
+    // 생년월일	birthJ 유효성 검사
+    $('#managerBirth').blur(function(){
+        var dateStr = $(this).val();
+        var year = Number(dateStr.substr(0,4)); // 입력한 값의 0~4자리까지 (연)
+        var month = Number(dateStr.substr(4,2)); // 입력한 값의 4번째 자리부터 2자리 숫자 (월)
+        var day = Number(dateStr.substr(6,2)); // 입력한 값 6번째 자리부터 2자리 숫자 (일)
+        var today = new Date(); // 날짜 변수 선언
+        var yearNow = today.getFullYear(); // 올해 연도 가져옴
+
+        if (dateStr.length <=8) {
+            // 연도의 경우 1900 보다 작거나 yearNow 보다 크다면 false를 반환합니다.
+            if (1900 > year || year > yearNow){
+
+                $('#birth_check').text('생년월일을 확인해주세요 :)');
+                $('#birth_check').css('color', 'red');
+
+            }else if (month < 1 || month > 12) {
+
+                $('#birth_check').text('생년월일을 확인해주세요 :)');
+                $('#birth_check').css('color', 'red');
+
+            }else if (day < 1 || day > 31) {
+
+                $('#birth_check').text('생년월일을 확인해주세요 :)');
+                $('#birth_check').css('color', 'red');
+
+            }else if ((month==4 || month==6 || month==9 || month==11) && day==31) {
+
+                $('#birth_check').text('생년월일을 확인해주세요 :)');
+                $('#birth_check').css('color', 'red');
+
+            }else if (month == 2) {
+
+                var isleap = (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0));
+
+                if (day>29 || (day==29 && !isleap)) {
+
+                    $('#birth_check').text('생년월일을 확인해주세요 :)');
+                    $('#birth_check').css('color', 'red');
+
+                }else{
+                    $('#birth_check').text('');
+                    birthJ = true;
+                }//end of if (day>29 || (day==29 && !isleap))
+
+            }else{
+
+                $('#birth_check').text('');
+                birthJ = true;
+            }//end of if
+
+        }else{
+            //1.입력된 생년월일이 8자 초과할때 :  auth:false
+            $('#birth_check').text('생년월일을 확인해주세요 :)');
+            $('#birth_check').css('color', 'red');
+        }
+    }); //End of method /*
 
 </script>
 

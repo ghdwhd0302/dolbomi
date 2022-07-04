@@ -5,7 +5,7 @@
 
     <delete id="delete">
         DELETE FROM TBL_MANAGER
-        WHERE MANAGER_EMAIL = #{managerEmail}
+        WHERE MANAGER_EMAIL = #{managerEmail, jdbcType=VARCHAR}
     </delete>
 
     <select id="getTotal" resultType="_int">
@@ -20,6 +20,19 @@
 
     <select id="managerInfo" resultType="managerVO">
         SELECT MANAGER_NAME, MANAGER_BIRTH, MANAGER_EMAIL, MANAGER_GENDER, MANAGER_DRIVEOK, MANAGER_PHONE_NUM, MANAGER_REGION, MANAGER_ADDRESS, MANAGER_CAREER, MANAGER_PW, MANAGER_STATUS
+        FROM TBL_MANAGER
+        WHERE MANAGER_EMAIL = #{managerEmail}
+    </select>
+
+    <insert id="insert">
+        INSERT INTO TBL_MANAGER
+        (MANAGER_NAME, MANAGER_BIRTH, MANAGER_EMAIL, MANAGER_GENDER, MANAGER_DRIVEOK, MANAGER_PHONE_NUM, MANAGER_REGION, MANAGER_ADDRESS, MANAGER_CAREER, MANAGER_PW)
+        VALUES(#{managerName}, #{managerBirth}, #{managerEmail}, #{managerGender}, #{managerDriveOk}, #{managerPhoneNum}, #{managerRegion}, #{managerAddress}, #{managerCareer}, #{managerPw});
+
+    </insert>
+
+    <select id="emailCheck" parameterType="string" resultType="_int">
+        SELECT COUNT(MANAGER_EMAIL)
         FROM TBL_MANAGER
         WHERE MANAGER_EMAIL = #{managerEmail}
     </select>

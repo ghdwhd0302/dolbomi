@@ -1,5 +1,6 @@
 package com.project.dolbomi.controller.user;
 import com.project.dolbomi.domain.vo.*;
+import com.project.dolbomi.service.manager.ManagerService;
 import com.project.dolbomi.service.member.MemberService;
 
 import com.project.dolbomi.service.user.UserService;
@@ -21,6 +22,7 @@ import javax.servlet.http.HttpServletRequest;
 public class UserController {
     private final MemberService memberService;
     private final UserService userService;
+    private final ManagerService managerService;
 
 
     //    회원가입1
@@ -50,7 +52,7 @@ public class UserController {
         log.info("---------------------------------------");
 
         userService.join(userVO);
-        return "/member/mainpage";
+        return "/member/userlogin";
     }
 
 //    휴대폰 인증번호 발송
@@ -63,8 +65,6 @@ public class UserController {
     public String phoneCerti(){
         return "/user/sendcode";
     }
-
-
 //    동행 서비스 예약
 //    @GetMapping("reservAcc")
 //    public void accReservation(){
@@ -210,40 +210,129 @@ public class UserController {
     public void regi2(){}
 
     @GetMapping("user_userdetails")
-    public void user_userdetails(Long accReservationNum,Long careReservationNum,HttpServletRequest req, Model model){
-        log.info("----------------------------");
-        log.info(req.getRequestURI() + "............. : " + careReservationNum);
-        log.info(req.getRequestURI() + "............. : " + accReservationNum);
-        log.info("----------------------------");
+    public void user_userdetails(  Model model) {
 
-        model.addAttribute("carereservationlist", memberService.CareGetList(careReservationNum));
-        model.addAttribute("accreservationlist", memberService.AccGetList(accReservationNum));
+        Long accReservationNum = Long.valueOf(43);
+        Long careReservationNum = Long.valueOf(46);
+        String accManageremail = "매니저3@naver.com";
+        String careManageremail = "매니저3@naver.com";
+
+        model.addAttribute("accreservationlist", userService.AccGet(accReservationNum));
+        model.addAttribute("totallist1", userService.accgetTotal1(accReservationNum));
+        model.addAttribute("totallist2", userService.accgetTotal2(accReservationNum));
+        model.addAttribute("totallist3", userService.accgetTotal3(accReservationNum));
+        model.addAttribute("totallist4", userService.accgetTotal4(accReservationNum));
+
+        model.addAttribute("carereservationlist", userService.CareGet(careReservationNum));
+        model.addAttribute("totallist5", userService.caregetTotal5(careReservationNum));
+        model.addAttribute("totallist6", userService.caregetTotal6(careReservationNum));
+        model.addAttribute("totallist7", userService.caregetTotal7(careReservationNum));
+        model.addAttribute("totallist8", userService.caregetTotal8(careReservationNum));
+
+
+        model.addAttribute("accmanagerInfo", managerService.managerInfo(accManageremail));
+        model.addAttribute("caremanagerInfo", managerService.managerInfo(careManageremail));
+
+
     }
+
     /* user_userdetails 의  매니저 수락*/
-    @PostMapping("accet")
-    public void accet(){
-        log.info("----------------------------");
-        log.info("----------------------------");
+    @PostMapping("matchingAccept")
+    public String matchingAccept() {
 
+        Long accReservationNum = Long.valueOf(43);
+        Long careReservationNum = Long.valueOf(46);
+        userService.AccManagerY(accReservationNum);
+        userService.CareManagerY(careReservationNum);
 
+        return "user/user_userdetails2";
     }
+
     /* user_userdetails 의  매니저 거절*/
-    @PostMapping("managerrefuse")
-    public void managerrefuse(){
-        log.info("----------------------------");
-        log.info("----------------------------");
+    @PostMapping("matchingCancel")
+    public String matchingCancel() {
+        Long accReservationNum = Long.valueOf(43);
+        Long careReservationNum = Long.valueOf(46);
+        userService.AccManagerN(accReservationNum);
+        userService.CareManagerN(careReservationNum);
+        return "user/user_userdetails";
+    }
 
+    @GetMapping("user_userdetails2")
+    public void user_userdetails2(Model model) {
+        Long accReservationNum = Long.valueOf(43);
+        Long careReservationNum = Long.valueOf(46);
+        String accManageremail = "매니저3@naver.com";
+        String careManageremail = "매니저3@naver.com";
+
+        model.addAttribute("accreservationlist", userService.AccGet(accReservationNum));
+        model.addAttribute("totallist1", userService.accgetTotal1(accReservationNum));
+        model.addAttribute("totallist2", userService.accgetTotal2(accReservationNum));
+        model.addAttribute("totallist3", userService.accgetTotal3(accReservationNum));
+        model.addAttribute("totallist4", userService.accgetTotal4(accReservationNum));
+
+        model.addAttribute("carereservationlist", userService.CareGet(careReservationNum));
+        model.addAttribute("totallist5", userService.caregetTotal5(careReservationNum));
+        model.addAttribute("totallist6", userService.caregetTotal6(careReservationNum));
+        model.addAttribute("totallist7", userService.caregetTotal7(careReservationNum));
+        model.addAttribute("totallist8", userService.caregetTotal8(careReservationNum));
+
+
+        model.addAttribute("accmanagerInfo", managerService.managerInfo(accManageremail));
+        model.addAttribute("caremanagerInfo", managerService.managerInfo(careManageremail));
 
     }
-    @GetMapping("user_userdetails2")
-    public void user_userdetails2(){}
 
     @GetMapping("user_userdetails3")
-    public void user_userdetails3(){}
+    public void user_userdetails3( Model model) {
+        Long accReservationNum = Long.valueOf(43);
+        Long careReservationNum = Long.valueOf(46);
+        String accManageremail = "매니저3@naver.com";
+        String careManageremail = "매니저3@naver.com";
+
+        model.addAttribute("accreservationlist", userService.AccGet(accReservationNum));
+        model.addAttribute("totallist1", userService.accgetTotal1(accReservationNum));
+        model.addAttribute("totallist2", userService.accgetTotal2(accReservationNum));
+        model.addAttribute("totallist3", userService.accgetTotal3(accReservationNum));
+        model.addAttribute("totallist4", userService.accgetTotal4(accReservationNum));
+
+        model.addAttribute("carereservationlist", userService.CareGet(careReservationNum));
+        model.addAttribute("totallist5", userService.caregetTotal5(careReservationNum));
+        model.addAttribute("totallist6", userService.caregetTotal6(careReservationNum));
+        model.addAttribute("totallist7", userService.caregetTotal7(careReservationNum));
+        model.addAttribute("totallist8", userService.caregetTotal8(careReservationNum));
+
+
+        model.addAttribute("accmanagerInfo", managerService.managerInfo(accManageremail));
+        model.addAttribute("caremanagerInfo", managerService.managerInfo(careManageremail));
+
+    }
 
     @GetMapping("user_userdetails4")
-    public String user_userdetails4(Criteria criteria, Model model){
-        model.addAttribute("histoyryList", userService.getList(criteria));
+    public String user_userdetails4(Criteria criteria, Model model) {
+
+        Long accReservationNum = Long.valueOf(43);
+        Long careReservationNum = Long.valueOf(46);
+        String accManageremail = "매니저3@naver.com";
+        String careManageremail = "매니저3@naver.com";
+
+        model.addAttribute("accreservationlist", userService.AccGet(accReservationNum));
+        model.addAttribute("totallist1", userService.accgetTotal1(accReservationNum));
+        model.addAttribute("totallist2", userService.accgetTotal2(accReservationNum));
+        model.addAttribute("totallist3", userService.accgetTotal3(accReservationNum));
+        model.addAttribute("totallist4", userService.accgetTotal4(accReservationNum));
+
+        model.addAttribute("carereservationlist", userService.CareGet(careReservationNum));
+        model.addAttribute("totallist5", userService.caregetTotal5(careReservationNum));
+        model.addAttribute("totallist6", userService.caregetTotal6(careReservationNum));
+        model.addAttribute("totallist7", userService.caregetTotal7(careReservationNum));
+        model.addAttribute("totallist8", userService.caregetTotal8(careReservationNum));
+
+
+        model.addAttribute("accmanagerInfo", managerService.managerInfo(accManageremail));
+        model.addAttribute("caremanagerInfo", managerService.managerInfo(careManageremail));
+
+
         model.addAttribute("pageDTO", new PageDTO(criteria, userService.getTotal()));
         return "/user/user_userdetails4";
     }

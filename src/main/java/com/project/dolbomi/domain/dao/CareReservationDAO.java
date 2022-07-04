@@ -22,34 +22,14 @@ public class CareReservationDAO {
         careReservationMapper.insert(careReservationVO);
     }
 
-    //    돌봄서비스 예약정보
-    public void careReservationInfo(Long careReservationNum) {
-    }
 
-    // 돌봄서비스 매니저 배정 수락
-    public boolean caremanager(CareReservationVO careReservationVO){
-        return careReservationMapper.Careupdate(careReservationVO) == 1;
-    }
-
-    // 돌봄서비스 매니저 배정 거절 user_userdetails페이지
-    public boolean careRefuseupdate(CareReservationVO careReservationVO){
-        return careReservationMapper.careRefuseupdate(careReservationVO) == 1;
-    }
-
-    // 돌봄서비스 매니저가  예약 거절 manager페이지
-    public boolean CareManagerRefuse(CareReservationVO careReservationVO){
-        return careReservationMapper.CareManagerRefuse(careReservationVO) == 1;
-    }
-    // 돌봄서비스고객이 예약취소,user_userdetails2 페이지의 돌봄예약 취소
-    public boolean careDelte(Long careReservationNum){
-        return careReservationMapper.delete(careReservationNum) == 1;
-    }
 
     // carereservation review list
     public List<CareReviewDTO> reviewGetListCare(String userEmail) {
         return careReservationMapper.reviewGetListCare(userEmail);
     }
 
+<<<<<<< HEAD
     // carereservation select one
     public CareReservationVO selectCare(Long careReservationNum) {
         return careReservationMapper.selectCare(careReservationNum);
@@ -61,6 +41,56 @@ public class CareReservationDAO {
     }
 
 
+=======
+
+
+    // 돌봄서비스 매니저 배정 수락 user_userdetails페이지
+    public void CareManagerY(Long careReservationNum){
+        careReservationMapper.CareManagerY(careReservationNum) ;
+    }
+    // 돌봄서비스 매니저 배정 거절 user_userdetails페이지
+    public void CareManagerN(Long careReservationNum){
+        careReservationMapper.CareManagerN(careReservationNum);
+    }
+
+    // 돌봄서비스고객이 예약취소,user_userdetails2 페이지의 동행예약 취소
+    public void Caredelete(Long careReservationNum){
+        careReservationMapper.Caredelete(careReservationNum);
+    }
+
+    //돌봄서비스 매니저의 업무 시작,manager 페이지의 동행예약목록
+    public void CareManagerStart(Long accReservationNum){
+        careReservationMapper.CareManagerStart(accReservationNum) ;
+    }
+    //돌봄서비스 매니저의 업무 종료,manager 페이지의 동행예약목록
+    public void CareManagerEnd(Long accReservationNum){
+        careReservationMapper.CareManagerEnd(accReservationNum);
+    }
+
+    //돌봄서비스 매니저가 업무 취소,manager 페이지의 동행예약목록
+    public void CareManagerCancel(Long accReservationNum){
+        careReservationMapper.CareManagerCancel(accReservationNum);
+    }
+    //    동행서비스 예약자 1명 정보
+    public CareReservationVO CareGet(Long careReservationNum){
+        return careReservationMapper.CareGet(careReservationNum)  ;
+    }
+
+
+    public int caregetTotal5(Long careReservationNum){
+        return careReservationMapper.caregetTotal5(careReservationNum);
+    }
+    public int caregetTotal6(Long careReservationNum){
+        return careReservationMapper.caregetTotal6(careReservationNum);
+    }
+    public int caregetTotal7(Long careReservationNum){
+        return careReservationMapper.caregetTotal7(careReservationNum);
+    }
+    public int caregetTotal8(Long careReservationNum){
+        return careReservationMapper.caregetTotal8(careReservationNum);
+    }
+
+>>>>>>> 4a78b0b2ebb8372e5e95ca8a80f7588572576879
 }
 
 

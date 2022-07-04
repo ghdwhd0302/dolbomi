@@ -51,6 +51,7 @@
                                 <th class="careReservationDate">서비스신청날짜</th>
                                 <th class="boardUpdateDate"></th>
                             </tr>
+
                             </thead>
                             <th:block th:each="care:${careReviewDTO}">
                                 <tbody>
@@ -98,6 +99,48 @@
                         </table>
                     </form>
 
+                        </th:block>
+                        </tbody> -->
+                        <th:block th:each="care:${careReviewDTO}">
+                            <tbody>
+                            <tr class="tBody" th:object="${care}">
+                                <td class="careReservationNum" th:text="*{careReservationNum}"></td>
+                                <td class="careReservationType" th:text="*{careReservationType}"></td>
+                                <td class="userName" th:text="*{userName}"></td>
+                                <!--<td class="managerName" th:text="*{managerName}"></td>-->
+                                <td class="careReservationDate" th:text="*{#strings.substring(careReservationDate,0,10)}"></td>
+                                <td style="padding: 0.75rem 0.75rem; width: 7px;"><input onclick="selectreviewcare();" type="button" value="선택" style="    width: 55px;
+                                        text-align: center;
+                                        font-size: inherit;
+                                        border: 1px solid #1f6cd5;
+                                        background-color: #1f6cd5;
+                                        color: white;
+                                        font-weight: 700;
+                                        cursor: pointer;" ></td>
+                            </tr>
+                            </tbody>
+                        </th:block>
+                        <th:block th:each="acc:${accReviewDTO}">
+                            <tbody>
+                            <tr class="tBody" th:object="${acc}">
+                                <td class="accReservationNum" th:text="*{accReservationNum}"></td>
+                                <td class="accReservationType" th:text="*{accReservationType}"></td>
+                                <td class="userName" th:text="*{userName}"></td>
+                                <!--<td class="managerName" th:text="*{managerName}"></td>-->
+                                <td class="accReservationDate" th:text="*{#strings.substring(accReservationDate,0,10)}"></td>
+                                <td style="padding: 0.75rem 0.75rem; width: 7px;"><input type="button" value="선택" style="    width: 55px;
+                                        text-align: center;
+                                        font-size: inherit;
+                                        border: 1px solid #1f6cd5;
+                                        background-color: #1f6cd5;
+                                        color: white;
+                                        font-weight: 700;
+                                        cursor: pointer;" th:href="@{/user/review2(accReservationNum=*{accReservationNum})}"></td>
+                            </tr>
+                            </tbody>
+                        </th:block>
+                    </table>
+
                     <!-- <div class="sc-dPPMrM fCtKbG">
                          <img src="/assets/images/main_logo.png" alt="logo" class="sc-jWxkHr bLIbyr">
                         <span class="sc-imDfJI hpzllv">후기를 작성가능한 이용내역이 없습니다.</span>
@@ -110,6 +153,7 @@
 <footer th:replace="footer.html"></footer>
 </body>
 <script th:inline="javascript">
+<<<<<<< HEAD
     let $careReservationType = $("input[name='careReservationType']");
     let $accReservationType = $("input[name='accReservationType']");
     let careType = $("td.careReservationType");
@@ -130,5 +174,13 @@
         console.log($accReservationType.val());
         goReview2.submit();
     })
+
+
+
+    function selectreviewcare() {
+
+        location.href="/user/review2";
+    }
+
 </script>
 </html>

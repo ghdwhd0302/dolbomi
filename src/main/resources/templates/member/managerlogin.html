@@ -38,7 +38,7 @@
             </div>
 
             <!-- form_wrap -->
-            <div class="form_wrap">
+            <div class="form_wrap" id="login_form">
                 <span class="w_msg tc"></span>
                 <div class="dp_flex">
                     <input type="text" id="txtUserId" name="managerEmail" placeholder="아이디">
@@ -101,5 +101,12 @@
 
         $managerForm.submit();
     }
+
+    /*로그인 엔터*/
+    $("#login_form").keypress(function (e) {
+        if (e.keyCode === 13) {
+            loginCheck();
+        }
+    });
 </script>
 </html>

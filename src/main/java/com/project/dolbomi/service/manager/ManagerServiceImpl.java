@@ -57,6 +57,17 @@ public class ManagerServiceImpl implements ManagerService {
     }
 
     @Override
+    public void join(ManagerVO managerVO) {
+        managerDAO.join(managerVO);
+    }
+
+    @Override
+    public int emailCheck(String managerEmail) {
+        int cnt = managerDAO.emailCheck(managerEmail);
+        return cnt;
+    }
+
+    @Override
     public boolean managerLogIn(String managerEmail, String managerPw) {
         return managerDAO.managerLogIn(managerEmail, managerPw);
     }
