@@ -24,7 +24,6 @@
         SELECT ACC_RESERVATION_NAME,ACC_RESERVATION_TYPE,ACC_RESERVATION_END_ADDRESS
         FROM TBL_ACC_RESERVATION
         WHERE a.USER_EMAIL = b.USER_EMAIL
->>>>>>> f674eb28c25b08823c8006b03ff94472b048fac5
     </select>
 
     <select id="getListAccReservation" resultType="accReservationVO">

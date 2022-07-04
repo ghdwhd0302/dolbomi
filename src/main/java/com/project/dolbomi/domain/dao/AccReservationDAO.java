@@ -1,11 +1,8 @@
 package com.project.dolbomi.domain.dao;
-import com.project.dolbomi.domain.vo.AccReservationVO;
-import com.project.dolbomi.domain.vo.CareReservationVO;
-import com.project.dolbomi.domain.vo.Criteria;
+
 import com.project.dolbomi.domain.vo.*;
 import com.project.dolbomi.mapper.AccReservationMapper;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -44,11 +41,12 @@ public class AccReservationDAO {
 
 
         // 동행서비스 매니저 배정 수락 user_userdetails페이지
-        public void AccManagerY(Long accReservationNum){
+        public void AccManagerY(Long ){
+            accReservationMapper.AccManagerY();
             accReservationMapper.AccManagerY(accReservationNum);
         }
         // 동행서비스 매니저 배정 거절 user_userdetails페이지
-        public void AccManagerN(Long accReservationNum){
+        public void AccManagerN(Long accReservation){
             accReservationMapper.AccManagerN(accReservationNum);
         }
 

@@ -24,9 +24,6 @@ public interface UserService {
     
      public boolean AccGetList(Long careReservationNum);
 
-    //    동행서비스 예약자 1명 정보
-    public AccReservationVO accSelect(Long accReservationNum);
-
     // 동행서비스 매니저 배정 수락 user_userdetails페이지
     public AccReservationVO accApprove(Long accReservationNum);
 
