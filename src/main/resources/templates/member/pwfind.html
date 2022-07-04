@@ -54,7 +54,7 @@
                                     <label>이메일</label><input type="email" name="userEmail"
                                                              placeholder="ex) korea@mail.com" class="ant-input"
                                                              value="">
-                                    <button type="button" class="ant-btn ant-btn-primary" onclick="idFind();"><span>확인하기</span></button>
+                                    <button type="button" class="ant-btn ant-btn-primary" onclick="pwFind();"><span>확인하기</span></button>
 
                                     <div class="link-wrapper"><span class="link" onclick="location.href='/member/userlogin'">로그인</span><span
                                             class="link" style="border-right: 1px solid rgb(230, 230, 230);
@@ -124,7 +124,7 @@
     let $userPhoneNum = $("input[name='userPhoneNum']");
     let $userEmail = $("input[name='userEmail']");
 
-    function idFind() {
+    function pwFind() {
         if(!$userName.val()){
             alert("이름을 입력해주세요");
             return false;

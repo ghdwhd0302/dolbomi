@@ -67,6 +67,9 @@ public class CarereservationMapperTests {
 
         log.info(careReservationMapper.getListCareReservation(new Criteria(), areaAr).toString());
     }
-
+//    @Test
+//    public void delete(){
+//        log.info(String.valueOf(careReservationMapper.delete(3L)));
+//    }
 
 }

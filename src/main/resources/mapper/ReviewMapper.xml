@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.project.dolbomi.mapper.ReviewMapper">
+
+    <select id="getList" resultType="reviewVO">
+        SELECT REVIEW_NUM,REVIEW_TYPE, REVIEW_TITLE, REVIEW_CONTENT, REVIEW_WRITER,REVIEW_SCORE, REVIEW_DATE, REVIEW_UPDATE_DATE
+        FROM TBL_REVIEW
+    </select>
+
     <!--  전체목록가져오기   -->
     <select id="reviewGetList" resultType="reviewVO">
         <![CDATA[
@@ -50,6 +56,9 @@
         SELECT COUNT(REVIEW_NUM) FROM TBL_REVIEW
     </select>
 
+
+
+
     <!--  회원목록가져오기   -->
     <select id="reviewGetListUser" resultType="userReviewDTO">
             <![CDATA[
@@ -65,6 +74,11 @@
            WHERE RN > (#{criteria.pageNum} - 1) * #{criteria.amount}
         ]]>
     </select>
+
+    <select id="myReviewGetTotal" resultType="_int">
+        	SELECT COUNT(REVIEW_NUM) FROM TBL_REVIEW
+        	WHERE USER_EMAIL = #{userEmail}
+	</select>
 
     <select id="myReviewGetTotal" resultType="_int">
         SELECT COUNT(REVIEW_NUM) FROM TBL_REVIEW

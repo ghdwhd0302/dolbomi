@@ -1,8 +1,11 @@
 package com.project.dolbomi.domain.dao;
-
+import com.project.dolbomi.domain.vo.AccReservationVO;
+import com.project.dolbomi.domain.vo.CareReservationVO;
+import com.project.dolbomi.domain.vo.Criteria;
 import com.project.dolbomi.domain.vo.*;
 import com.project.dolbomi.mapper.AccReservationMapper;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -12,15 +15,9 @@ import java.util.List;
 public class AccReservationDAO {
     private final AccReservationMapper accReservationMapper;
 
-     //    동행서비스 예약리스트에 해당 번호 존재하는지 확인
-    public boolean AccGetList(Long accReservationNum){
-        return accReservationMapper.AccGetList(accReservationNum)==1 ;
+    public List<AccReservationVO> AccResult(String accReservationName){
+        return accReservationMapper.AccResult(accReservationName);
     }
-    //    동행서비스 예약자 1명 정보
-    public AccReservationVO AccGet(Long accReservationNum){
-        return accReservationMapper.AccGet(accReservationNum)  ;
-    }
-
 
     //    동행서비스 예약하기
     public void accReservation(AccReservationVO accReservationVO){
@@ -31,32 +28,6 @@ public class AccReservationDAO {
 
     }
 
-
-    // 동행서비스 매니저 배정 수락 user_userdetails페이지
-    public AccReservationVO accmanager(Long accReservationNum){
-        return accReservationMapper.Accupdate(accReservationNum) ;
-    }
-    // 동행서비스 매니저 배정 거절 user_userdetails페이지
-    public boolean accRefuseupdate(AccReservationVO accReservationVO){
-        return accReservationMapper.AccRefuseupdate(accReservationVO) == 1;
-    }
-    // 동행서비스 매니저가  예약 거절 manager페이지
-    public boolean accManagerRefuse(AccReservationVO accReservationVO){
-        return accReservationMapper.AccManagerRefuse(accReservationVO) == 1;
-    }
-
-    // 동행서비스고객이 예약취소,user_userdetails2 페이지의 동행예약 취소
-    public boolean accDelte(Long accReservationNum){
-        return accReservationMapper.delete(accReservationNum) == 1;
-    }
-
-
-
-    //매니저 이메일 인서트
-    public void insertmanagerEmail(String accReservationVO){
-        accReservationMapper.insertmanagerEmail(accReservationVO);
-    }
-
     // accreservation review list
     public List<AccReviewDTO> reviewGetListAcc(String userEmail) {
         return accReservationMapper.reviewGetListAcc(userEmail);
@@ -65,6 +36,60 @@ public class AccReservationDAO {
     //    동행서비스 리스트
     public List<AccReservationVO> getListAccReservation(Criteria criteria, List<String> areaAr) {
         return accReservationMapper.getListAccReservation(criteria, areaAr);
+
+    // accreservation select one
+    public AccReservationVO selectAcc(Long accReservationNum){
+        return accReservationMapper.selectAcc(accReservationNum);
     }
 
-}
+
+        // 동행서비스 매니저 배정 수락 user_userdetails페이지
+        public void AccManagerY(Long accReservationNum){
+            accReservationMapper.AccManagerY(accReservationNum);
+        }
+        // 동행서비스 매니저 배정 거절 user_userdetails페이지
+        public void AccManagerN(Long accReservationNum){
+            accReservationMapper.AccManagerN(accReservationNum);
+        }
+
+        // 동행서비스고객이 예약취소,user_userdetails2 페이지의 동행예약 취소
+        public void Accdelete(Long accReservationNum){
+            accReservationMapper.Accdelete(accReservationNum);
+        }
+        //동행서비스 매니저의 업무 시작,manager 페이지의 동행예약목록
+        public void AccManagerStart(Long accReservationNum){
+            accReservationMapper.AccManagerStart(accReservationNum) ;
+        }
+        //동행서비스 매니저의 업무 종료,manager 페이지의 동행예약목록
+        public void AccManagerEnd(Long accReservationNum){
+            accReservationMapper.AccManagerEnd(accReservationNum);
+        }
+
+        //동행서비스 매니저가 업무 취소,manager 페이지의 동행예약목록
+        public void AccManagerCancel(Long accReservationNum){
+            accReservationMapper.AccManagerCancel(accReservationNum);
+        }
+
+
+        //    동행서비스 예약자 1명 정보
+        public AccReservationVO AccGet(Long accReservationNum){
+            return accReservationMapper.AccGet(accReservationNum)  ;
+        }
+
+
+        public int accgetTotal1(Long accReservationNum){
+            return accReservationMapper.accgetTotal1(accReservationNum);
+        }
+        public int accgetTotal2(Long accReservationNum){
+            return accReservationMapper.accgetTotal2(accReservationNum);
+        }
+        public int accgetTotal3(Long accReservationNum){
+            return accReservationMapper.accgetTotal3(accReservationNum);
+        }
+        public int accgetTotal4(Long accReservationNum){
+            return accReservationMapper.accgetTotal4(accReservationNum);
+        }
+
+
+    }
+

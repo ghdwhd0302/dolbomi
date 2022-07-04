@@ -13,11 +13,18 @@
         </trim>
     </sql>
 
+
     <select id="getList" resultType="carereservationVO">
         SELECT CARE_RESERVATION_NAME,CARE_RESERVATION_TYPE,CARE_RESERVATION_ADDRESS
         FROM TBL_CARE_RESERVATION a,TBL_USER b
         WHERE a.USER_EMAIL = b.USER_EMAIL
     </select>
+
+    <select id="getListCareReservation" resultType="careReservationVO">
+        SELECT CARE_RESERVATION_NUM,CARE_RESERVATION_TYPE,CARE_RESERVATION_NAME, CARE_RESERVATION_AGE, CARE_RESERVATION_PHONE_NUM, CARE_RESERVATION_GENDER, CARE_RESERVATION_ADD_PHONE_NUM, CARE_RESERVATION_RELATION, CARE_RESERVATION_ADDRESS, CARE_RESERVATION_HOPE_GENDER, CARE_RESERVATION_DATE, CARE_RESERVATION_TIME, CARE_RESERVATION_ADD_REQUIRE, CARE_RESERVATION_PRICE
+        FROM TBL_CARE_RESERVATION
+    </select>
+
     <!--매니저 배정기다리는중,user_userdetails 페이지의 돌봄예약목록 -->
     <select id="CareGetList" resultType="carereservationVO">
         SELECT CARE_RESERVATION_NAME,CARE_RESERVATION_DATE,CARE_RESERVATION_TIME,CARE_RESERVATION_ADDRESS,CARE_RESERVATION_PRICE,b.USER_EMAIL,a.CARE_RESERVATION_STATUS,CARE_RESERVATION_NUM
@@ -87,6 +94,88 @@
             <include refid="search"/>
         </where>
     </select>
+
+    <select id="getCare" resultType="careReviewDTO">
+        ROWNUM RN, a.CARE_RESERVATION_TYPE, a.CARE_RESERVATION_DATE, b.USER_NAME, a.USER_EMAIL, a.CARE_RESERVATION_NUM
+        FROM TBL_CARE_RESERVATION a,TBL_USER b
+        WHERE a.USER_EMAIL = b.USER_EMAIL AND a.USER_EMAIL = #{userEmail} AND a.CARE_RESERVATION_NUM = #{careReservationNum}
+    </select>
+
+    <select id="selectCare" resultType="careReservationVO">
+        SELECT CARE_RESERVATION_NUM, CARE_RESERVATION_TYPE
+        FROM TBL_CARE_RESERVATION
+        WHERE CARE_RESERVATION_NUM = #{careReservationNum}
+    </select>
+
+    <!--돌봄서비스 예약자 1명정보 가져오기 .user_userdetails 페이지의 돌봄예약목록 -->
+    <select id="CareGet" resultType="carereservationVO">
+        SELECT CARE_RESERVATION_NAME, CARE_RESERVATION_AGE, CARE_RESERVATION_PHONE_NUM, CARE_RESERVATION_GENDER,CARE_RESERVATION_ADD_PHONE_NUM,CARE_RESERVATION_DATE,CARE_RESERVATION_TIME,CARE_RESERVATION_ADDRESS,CARE_RESERVATION_PRICE,b.USER_EMAIL,a.CARE_RESERVATION_STATUS,CARE_RESERVATION_NUM,MANAGER_EMAIL
+        FROM TBL_CARE_RESERVATION a,TBL_USER b
+        WHERE a.USER_EMAIL = b.USER_EMAIL AND a.CARE_RESERVATION_NUM=#{careReservationNum}
+    </select>
+
+    <!--돌봄서비스고객이 매니저 배정수락,user_userdetails 페이지의 돌봄예약목록 -->
+    <update id="CareManagerY">
+        UPDATE  TBL_CARE_RESERVATION
+        SET CARE_RESERVATION_STATUS = '2'
+        WHERE  CARE_RESERVATION_NUM=#{careReservationNum}
+    </update>
+
+    <!--돌봄서비스고객이 매니저 배정거절,user_userdetails 페이지의 돌봄예약목록 -->
+    <update id="CareManagerN">
+        UPDATE  TBL_CARE_RESERVATION
+        SET MANAGER_EMAIL= ''
+        WHERE  CARE_RESERVATION_NUM=#{careReservationNum}
+    </update>
+    <!--돌봄서비스고객이 예약 취소,user_userdetails2 페이지의 돌봄예약목록 -->
+    <delete id="Caredelete">
+        DELETE FROM TBL_CARE_RESERVATION
+        WHERE CARE_RESERVATION_NUM = #{careReservationNum}
+    </delete>
+
+
+    <!-- user_userdetails의 카운트 횟수.  CARE_RESERVATION_STATUS 에 따라 변경-->
+    <select id="caregetTotal5" resultType="_int">
+        SELECT COUNT(CARE_RESERVATION_STATUS) FROM TBL_CARE_RESERVATION WHERE CARE_RESERVATION_NUM=#{careReservationNum}  AND CARE_RESERVATION_STATUS='0'
+    </select>
+
+    <!-- user_userdetails2의 카운트 횟수.  CARE_RESERVATION_STATUS 에 따라 변경-->
+    <select id="caregetTotal6" resultType="_int">
+        SELECT COUNT(CARE_RESERVATION_STATUS) FROM TBL_CARE_RESERVATION WHERE CARE_RESERVATION_NUM=#{careReservationNum}  AND CARE_RESERVATION_STATUS='2'
+    </select>
+
+    <!-- user_userdetails3의 카운트 횟수.  CARE_RESERVATION_STATUS 에 따라 변경-->
+    <select id="caregetTotal7" resultType="_int">
+        SELECT COUNT(CARE_RESERVATION_STATUS) FROM TBL_CARE_RESERVATION WHERE CARE_RESERVATION_NUM=#{careReservationNum}  AND CARE_RESERVATION_STATUS='6'
+    </select>
+
+    <!-- user_userdetails4의 카운트 횟수.  CARE_RESERVATION_STATUS 에 따라 변경-->
+    <select id="caregetTotal8" resultType="_int">
+        SELECT COUNT(CARE_RESERVATION_PHONE_NUM) FROM TBL_CARE_RESERVATION WHERE CARE_RESERVATION_NUM=#{careReservationNum} AND CARE_RESERVATION_NUM=#{careReservationNum}  AND CARE_RESERVATION_STATUS='7'
+    </select>
+
+    <!--돌봄서비스 매니저의 업무 시작,manager 페이지의 돌봄예약목록 -->
+    <update id="CareManagerStart">
+        UPDATE  TBL_CARE_RESERVATION
+        SET CARE_RESERVATION_STATUS = '6'
+        WHERE  CARE_RESERVATION_NUM=#{careReservationNum}
+    </update>
+
+    <!--돌봄서비스 매니저의 업무 종료,manager 페이지의 돌봄예약목록 -->
+    <update id="CareManagerEnd">
+        UPDATE  TBL_CARE_RESERVATION
+        SET CARE_RESERVATION_STATUS = '7'
+        WHERE  CARE_RESERVATION_NUM=#{careReservationNum}
+    </update>
+
+    <!--돌봄서비스 매니저가 업무 취소,manager 페이지의 돌봄예약목록 -->
+    <update id="CareManagerCancel">
+        UPDATE  TBL_CARE_RESERVATION
+        SET MANAGER_EMAIL = '',CARE_RESERVATION_STATUS='0'
+        WHERE  CARE_RESERVATION_NUM=#{careReservationNum}
+    </update>
+
+
 
 </mapper>
 

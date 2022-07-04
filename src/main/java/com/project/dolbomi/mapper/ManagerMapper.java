@@ -29,8 +29,13 @@ public interface ManagerMapper {
     //매니저 회원가입
     public void insert(ManagerVO managerVO);
 
+    //이메일 중복체크
+    public int emailCheck(String managerEmail);
+
     //매니저 로그인
     public int managerLogIn(String managerEmail, String managerPw);
+
+
 
     public ManagerVO managerInfo(String managerEmail);
 }

@@ -5,7 +5,6 @@ import com.project.dolbomi.domain.vo.ReviewVO;
 import com.project.dolbomi.domain.vo.UserReviewDTO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
@@ -34,4 +33,5 @@ public interface ReviewMapper {
 
     // 회원 게시글 목록
     public List<UserReviewDTO> reviewGetListUser(@Param("criteria") Criteria criteria, @Param("userEmail") String userEmail);
+
 }

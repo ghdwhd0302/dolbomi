@@ -219,15 +219,12 @@
     /*휴대폰 번호 인증*/
     var code2 = "";
     $("#phoneChk").click(function(){
-        var userPhoneNum = document.getElementById('userPhoneNum').value;
-        console.log(userPhoneNum);
+        console.log($userPhoneNum);
         var regPhone = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/;
-        if (!regPhone.test(userPhoneNum)) {
+        if (!regPhone.test($userPhoneNum.val())) {
             alert('올바른 휴대폰 번호가 아닙니다.');
-
             return false;
         }
-
 
         alert("인증번호 발송이 완료되었습니다.\n휴대폰에서 인증번호 확인을 해주십시오.");
         var phone = $("#userPhoneNum").val();

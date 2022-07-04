@@ -37,6 +37,12 @@ public class ManagerDAO {
     // 매니저 로그인
     public boolean managerLogIn(String managerEmail, String managerPw){return managerMapper.managerLogIn(managerEmail, managerPw) == 1;}
 
+    //이메일 중복체크
+    public int emailCheck(String managerEmail){
+        int cnt = managerMapper.emailCheck(managerEmail);
+        return cnt;
+    }
+
     //    매니저 탈퇴
     public void withdrawal(String userEmail){
 

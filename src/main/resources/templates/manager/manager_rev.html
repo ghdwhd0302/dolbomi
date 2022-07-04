@@ -2288,34 +2288,34 @@
     </div>
 </th:block>
 
-    <div style="text-align: center">
-        <a class="changePage" th:if="${pageDTO.prev}" th:href="${pageDTO.startPage - 1}"><code>&lt;</code></a>
-        <th:block th:each="num:${#numbers.sequence(pageDTO.startPage, pageDTO.endPage)}">
-            <code th:text="${num}" th:if="${pageDTO.criteria.pageNum == num}"></code>
-            <a class="changePage" th:unless="${pageDTO.criteria.pageNum == num}" th:href="${num}"><code th:text="${num}"></code></a>
-        </th:block>
-        <a class="changePage" th:if="${pageDTO.next}" th:href="${pageDTO.endPage + 1}"><code>&gt;</code></a>
-    </div>
-    <form action="/manager/manager3" th:object="${criteria}" name="pageForm">
-        <input type="hidden" th:field="*{pageNum}">
-        <input type="hidden" th:field="*{amount}">
-    </form>
+<div style="text-align: center">
+    <a class="changePage" th:if="${pageDTO.prev}" th:href="${pageDTO.startPage - 1}"><code>&lt;</code></a>
+    <th:block th:each="num:${#numbers.sequence(pageDTO.startPage, pageDTO.endPage)}">
+        <code th:text="${num}" th:if="${pageDTO.criteria.pageNum == num}"></code>
+        <a class="changePage" th:unless="${pageDTO.criteria.pageNum == num}" th:href="${num}"><code th:text="${num}"></code></a>
+    </th:block>
+    <a class="changePage" th:if="${pageDTO.next}" th:href="${pageDTO.endPage + 1}"><code>&gt;</code></a>
+</div>
+<form action="/manager/manager3" th:object="${criteria}" name="pageForm">
+    <input type="hidden" th:field="*{pageNum}">
+    <input type="hidden" th:field="*{amount}">
+</form>
 
 
-    <div id="popup01">
-        <div class="close">닫기</div>
-        <div style="font-size: 32px;
+<div id="popup01">
+    <div class="close">닫기</div>
+    <div style="font-size: 32px;
     text-align: center;
     margin-top: 110px;
     margin-bottom: 110px;
     color: #767070;">매칭하시겠습니까?
-        </div>
-        <button class="confirm">매칭 확정</button>
     </div>
-    <th:block th:each="areas:${areaAr}">
-        <input type="hidden" name="areas" th:class="${areas}" th:value="${areas}">
-    </th:block>
-    <footer th:replace="footer.html"></footer>
+    <button class="confirm">매칭 확정</button>
+</div>
+<th:block th:each="areas:${areaAr}">
+    <input type="hidden" name="areas" th:class="${areas}" th:value="${areas}">
+</th:block>
+<footer th:replace="footer.html"></footer>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
@@ -2401,6 +2401,7 @@
             //$(".list_area_gugun > ul > li > input[type=button]").removeClass("on"); //2018-03-30 버튼 on 해제
 
             area1_len = $("form[name=revForm] > input[name='area1[]']").length;
+            console.log(area1_len);
             area1_chk = "";
             area_delete_chk = "";
             //중복체크해서 똑같은 데이터 있으면 다시 해제되도록 설정
@@ -2434,6 +2435,8 @@
                     $("form[name=revForm] > input[name='area1[]']").eq(i).val(val1 + " " +val2);
                     $("form[name=revForm] > input[name='area2[]']").eq(i).val(val2);
                     $("form[name=revForm] > input[name='area2[]']").eq(i).data("val", code);
+
+
                     area1_chk = "y";
                     break;
                 }
@@ -2627,9 +2630,8 @@
     });
 
 
-
     function search_area_view(code, name, flag) {
-         $(".td_sido").removeClass("on");
+        $(".td_sido").removeClass("on");
 
         if (code) {
             $("#area1_" + code).addClass("on");
@@ -2719,7 +2721,6 @@
            }
        }
    })
-
 
     function searchArea() {
 
