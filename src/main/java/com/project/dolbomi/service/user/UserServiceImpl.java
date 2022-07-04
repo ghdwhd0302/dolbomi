@@ -231,4 +231,10 @@ public class UserServiceImpl implements UserService {
     public int myReviewGetTotal(Criteria criteria, String userEmail) {
         return reviewDAO.myReviewGetTotal(criteria, userEmail);
     }
+
+    @Override
+    public List<AccReservationVO> getListAccReservation(Criteria criteria, List<String> areaAr) {return accReservationDAO.getListAccReservation(criteria, areaAr);}
+
+    @Override
+    public List<CareReservationVO> getListCareReservation(Criteria criteria, List<String> areaAr) {return careReservationDAO.getListCareReservation(criteria, areaAr);}
 }

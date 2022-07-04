@@ -10,7 +10,6 @@
         <typeAlias type="com.project.dolbomi.domain.vo.AccReviewDTO" alias="accReviewDTO"/>
         <typeAlias type="com.project.dolbomi.domain.vo.CareReviewDTO" alias="careReviewDTO"/>
         <typeAlias type="com.project.dolbomi.domain.vo.UserReviewDTO" alias="userReviewDTO"/>
-        <typeAlias type="com.project.dolbomi.domain.vo.Criteria" alias="criteria"/>
 
     </typeAliases>
 

@@ -1,9 +1,13 @@
 package com.project.dolbomi.mapper;
 
+import com.project.dolbomi.domain.vo.Criteria;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @SpringBootTest
 @Slf4j
@@ -47,6 +51,12 @@ public class AccreservationMapperTests {
         log.info(accReservationMapper.AccGetList(9L).toString());
     }
 */
-
+    @Test
+    public void listTest(){
+        List<String> areaAr = new ArrayList<>();
+        areaAr.add("서울 강남구");
+        areaAr.add("부산 사하구");
+        log.info(accReservationMapper.getListAccReservation(new Criteria(), areaAr).toString());
+    }
 
 }

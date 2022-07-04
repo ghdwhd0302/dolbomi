@@ -1,9 +1,6 @@
 package com.project.dolbomi.domain.dao;
 
-import com.project.dolbomi.domain.vo.AccReservationVO;
-import com.project.dolbomi.domain.vo.AccReviewDTO;
-import com.project.dolbomi.domain.vo.CareReservationVO;
-import com.project.dolbomi.domain.vo.CareReviewDTO;
+import com.project.dolbomi.domain.vo.*;
 import com.project.dolbomi.mapper.CareReservationMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
@@ -51,6 +48,11 @@ public class CareReservationDAO {
     // carereservation review list
     public List<CareReviewDTO> reviewGetListCare(String userEmail) {
         return careReservationMapper.reviewGetListCare(userEmail);
+    }
+
+    //    돌봄서비스 리스트
+    public List<CareReservationVO> getListCareReservation(Criteria criteria, List<String> areaAr) {
+        return careReservationMapper.getListCareReservation(criteria, areaAr);
     }
 }
 

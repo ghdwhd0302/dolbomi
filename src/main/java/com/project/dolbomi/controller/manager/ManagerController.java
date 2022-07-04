@@ -4,6 +4,7 @@ import com.project.dolbomi.domain.vo.Criteria;
 import com.project.dolbomi.domain.vo.ManagerVO;
 import com.project.dolbomi.domain.vo.PageDTO;
 import com.project.dolbomi.service.manager.ManagerService;
+import com.project.dolbomi.service.user.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -23,6 +24,7 @@ import java.util.List;
 @RequestMapping("/manager/*")
 public class ManagerController {
     private final ManagerService managerService;
+    private final UserService userService;
 
     //    서비스 신청 목록
     @GetMapping("matchList")
@@ -101,8 +103,10 @@ public class ManagerController {
 
     @GetMapping("manager_rev")
     public String manager_rev(Criteria criteria, Model model){
-
-        model.addAttribute("applyList", managerService.getList(criteria));
+    List<String> areaAr = new ArrayList<>();
+//        model.addAttribute("applyList", managerService.getList(criteria));
+        model.addAttribute("getListAccReservation", userService.getListAccReservation(criteria, areaAr));
+        model.addAttribute("getListCareReservation", userService.getListCareReservation(criteria, areaAr));
         model.addAttribute("pageDTO", new PageDTO(criteria, managerService.getTotal()));
         return "/manager/manager_rev";
     }
@@ -119,11 +123,13 @@ public class ManagerController {
 
         List<String> areaAr = new ArrayList();
 
-        Arrays.stream(area).filter(v -> !v.isEmpty()).forEach(v -> areaAr.add(v));
+        Arrays.stream(area).filter(v -> !v.isEmpty()).map(v -> v.replace(" 전체", "")).forEach(v -> areaAr.add(v));
 
         log.info("사이즈---------------" + areaAr.size());
         areaAr.stream().forEach(log::info);
-        model.addAttribute("applyList", managerService.getList(criteria));
+        model.addAttribute("areaAr", areaAr);
+        model.addAttribute("getListAccReservation", userService.getListAccReservation(criteria, areaAr));
+        model.addAttribute("getListCareReservation", userService.getListCareReservation(criteria, areaAr));
         model.addAttribute("pageDTO", new PageDTO(criteria, managerService.getTotal()));
         return "/manager/manager_rev";
     }

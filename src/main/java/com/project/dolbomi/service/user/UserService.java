@@ -102,5 +102,9 @@ public interface UserService {
     //  내 게시글 전체 개수
     public int myReviewGetTotal(Criteria criteria, String userEmail);
 
+    //    돌봄서비스 리스트
+    public List<CareReservationVO> getListCareReservation(Criteria criteria, List<String> areaAr);
 
+    //    동행서비스 리스트
+    public List<AccReservationVO> getListAccReservation(Criteria criteria, List<String> areaAr);
 }

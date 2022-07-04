@@ -62,4 +62,9 @@ public class AccReservationDAO {
         return accReservationMapper.reviewGetListAcc(userEmail);
     }
 
+    //    동행서비스 리스트
+    public List<AccReservationVO> getListAccReservation(Criteria criteria, List<String> areaAr) {
+        return accReservationMapper.getListAccReservation(criteria, areaAr);
+    }
+
 }

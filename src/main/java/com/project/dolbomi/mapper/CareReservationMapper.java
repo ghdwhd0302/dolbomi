@@ -1,10 +1,7 @@
 package com.project.dolbomi.mapper;
 
 
-import com.project.dolbomi.domain.vo.AccReservationVO;
-import com.project.dolbomi.domain.vo.AccReviewDTO;
-import com.project.dolbomi.domain.vo.CareReservationVO;
-import com.project.dolbomi.domain.vo.CareReviewDTO;
+import com.project.dolbomi.domain.vo.*;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.beans.PropertyValues;
 
@@ -33,4 +30,7 @@ public interface CareReservationMapper {
 
     //carereservation review list
     public List<CareReviewDTO> reviewGetListCare(String userEmail);
+
+    //돌봄서비스 예약목록
+    public List<CareReservationVO> getListCareReservation(Criteria criteria, List<String> areaAr);
 }

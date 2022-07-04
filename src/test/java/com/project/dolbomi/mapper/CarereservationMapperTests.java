@@ -3,10 +3,14 @@ package com.project.dolbomi.mapper;
 
 
 
+import com.project.dolbomi.domain.vo.Criteria;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @SpringBootTest
 @Slf4j
@@ -49,11 +53,20 @@ public class CarereservationMapperTests {
         log.info(careReservationMapper.CareGetList(7L).toString());
     }
 */
+/*
     @Test
     public void delete(){
         log.info(String.valueOf(careReservationMapper.delete(3L)));
     }
+*/
+    @Test
+    public void listTest(){
+        List<String> areaAr = new ArrayList<>();
+        areaAr.add("경기 안산시");
+        areaAr.add("충북 청주시");
 
+        log.info(careReservationMapper.getListCareReservation(new Criteria(), areaAr).toString());
+    }
 
 
 }

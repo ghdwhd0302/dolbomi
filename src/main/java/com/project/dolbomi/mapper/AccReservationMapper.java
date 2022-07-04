@@ -5,6 +5,7 @@ import com.project.dolbomi.domain.vo.AccReviewDTO;
 import com.project.dolbomi.domain.vo.Criteria;
 import com.project.dolbomi.domain.vo.UserReviewDTO;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -39,4 +40,7 @@ public interface AccReservationMapper {
 
     // acc reservation 게시글 목록
     public List<AccReviewDTO> reviewGetListAcc(String userEmail);
+
+    //동행서비스 예약 목록
+    public List<AccReservationVO> getListAccReservation(@Param("criteria") Criteria criteria, @Param("areaAr") List<String> areaAr);
 }
