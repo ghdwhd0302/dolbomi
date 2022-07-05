@@ -25,42 +25,36 @@ public class UserServiceImpl implements UserService {
     private final ReviewDAO reviewDAO;
     private final AccReservationDAO accReservationDAO;
     private final CareReservationDAO careReservationDAO;
-    private final UserReviewDTO userReviewDTO;
 
 
-
-     //    돌봄서비스 예약자 1명 정보
     @Override
-    public CareReservationVO careSelect(Long accReservationNum) {
-        return careReservationDAO.CareGet(accReservationNum);
+    public boolean careApprove(CareReservationVO careReservationVO) {
+        return false;
     }
 
-
-    // 돌봄서비스 매니저 배정 수락
-    @Override
-    public boolean careApprove(CareReservationVO careReservationVO ) {
-        return careReservationDAO.caremanager(careReservationVO);
-    }
-    // 돌봄서비스 매니저 배정 거절 user_userdetails페이지
     @Override
     public boolean careRefuse(CareReservationVO careReservationVO) {
-        return careReservationDAO.careRefuseupdate(careReservationVO);
-    }
-    // 돌봄서비스고객이 예약취소,user_userdetails2 페이지의 동행예약 취소
-    @Override
-    public boolean careDelte(Long careReservationNum) {
-        return careReservationDAO.careDelte(careReservationNum);
+        return false;
     }
 
-    // 돌봄서비스 매니저가  예약 거절 manager페이지
     @Override
-    public boolean careManagerRefuse(CareReservationVO careReservationVO) {
-        return  careReservationDAO.CareManagerRefuse(careReservationVO);
+    public boolean careDelte(Long careReservationNum) {
+        return false;
+    }
+
+    @Override
+    public boolean careManagerRefuse(CareReservationVO careReservationV) {
+        return false;
     }
 
     @Override
     public boolean AccGetList(Long careReservationNum) {
-        return true;
+        return false;
+    }
+
+    @Override
+    public AccReservationVO accSelect(Long accReservationNum) {
+        return null;
     }
 
     //    동행서비스 예약자 1명 정보
@@ -86,13 +80,8 @@ public class UserServiceImpl implements UserService {
         return accReservationDAO.accgetTotal4(accReservationNum);
     }
 
-   // 동행서비스 매니저 배정 수락 user_userdetails페이지
+    // 동행서비스 매니저 배정 수락 user_userdetails페이지
     @Override
-    @Transactional(rollbackFor = Exception.class)
-    public AccReservationVO accApprove(Long accReservationNum) {
-        return accReservationDAO.accmanager(accReservationNum);
-    }
-
     public void AccManagerY(Long accReservationNum) {
         accReservationDAO.AccManagerY(accReservationNum);
     }
@@ -178,12 +167,10 @@ public class UserServiceImpl implements UserService {
     }
 
 
-
     @Override
     public List<AccReservationVO> AccResult(String accReservationName) {
         return null;
     }
-
 
 
     @Override
@@ -301,6 +288,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public int myReviewGetTotal(Criteria criteria, String userEmail) {
+        return reviewDAO.myReviewGetTotal(criteria, userEmail);
+    }
+
+    @Override
     public List<UserReviewDTO> reviewGetListUser(Criteria criteria, String userEmail) {
         return reviewDAO.reviewGetListUser(criteria, userEmail);
     }
@@ -318,10 +310,6 @@ public class UserServiceImpl implements UserService {
         return careReservationDAO.reviewGetListCare(userEmail);
     }
 
-    @Override
-    public int myReviewGetTotal(Criteria criteria, String userEmail) {
-        return reviewDAO.myReviewGetTotal(criteria, userEmail);
-    }
     //care reservation select one
     @Override
     public CareReservationVO selectCare(Long careReservationNum) {
@@ -334,9 +322,32 @@ public class UserServiceImpl implements UserService {
         return accReservationDAO.selectAcc(accReservationNum);
     }
 
+
     @Override
     public List<AccReservationVO> getListAccReservation(Criteria criteria, List<String> areaAr) {return accReservationDAO.getListAccReservation(criteria, areaAr);}
 
     @Override
     public List<CareReservationVO> getListCareReservation(Criteria criteria, List<String> areaAr) {return careReservationDAO.getListCareReservation(criteria, areaAr);}
+
+    @Override
+    public void AccReservationUpdate(Long accReservationNum, String managerEmail) {
+        accReservationDAO.AccReservationUpdate(accReservationNum, managerEmail);
+    }
+
+    @Override
+    public void CareReservationUpdate(Long careReservationNum, String managerEmail) {
+        careReservationDAO.CareReservationUpdate(careReservationNum, managerEmail);
+    }
+
+    @Override
+    public List<User4CareDTO> careServiceEndList(String userEmail) {
+        return careReservationDAO.careServiceEndList(userEmail);
+    }
+
+    @Override
+    public List<User4AccDTO> accServiceEndList(String userEmail) {
+        return accReservationDAO.accServiceEndList(userEmail);
+    }
+
+
 }

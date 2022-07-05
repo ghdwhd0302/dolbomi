@@ -3,6 +3,7 @@ package com.project.dolbomi.mapper;
 
 import com.project.dolbomi.domain.vo.*;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.PropertyValues;
 
 import java.util.List;
@@ -47,4 +48,8 @@ public interface CareReservationMapper {
     public int caregetTotal7(Long careReservationNum);
     public int caregetTotal8(Long careReservationNum);
 
+    public void CareReservationUpdate(@Param("careReservationNum") Long careReservationNum, @Param("managerEmail") String managerEmail);
+
+    //user_details4 서비스 종료 리스트
+    public List<User4CareDTO> careServiceEndList(String userEmail);
 }

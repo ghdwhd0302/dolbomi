@@ -86,7 +86,12 @@ public class CareReservationDAO {
     public int caregetTotal8(Long careReservationNum){
         return careReservationMapper.caregetTotal8(careReservationNum);
     }
+    public void CareReservationUpdate(Long careReservationNum, String managerEmail){
+        careReservationMapper.CareReservationUpdate(careReservationNum, managerEmail);
+    }
 
+    //돌봄 서비스 종료 리스트
+    public List<User4CareDTO> careServiceEndList(String userEmail){return careReservationMapper.careServiceEndList(userEmail);}
 }
 
 

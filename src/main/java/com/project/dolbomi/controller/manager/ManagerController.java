@@ -131,6 +131,28 @@ public class ManagerController {
 
     }
 
+    @PostMapping("manager")
+    public String manager(@RequestParam String managerEmail, HttpServletRequest req){
+        String accNum = req.getParameter("accReservationNum");
+        String careNum = req.getParameter("careReservationNum");
+
+        log.info("------accNum" + accNum);
+        log.info("------managerEmail" + managerEmail);
+        log.info("------careNum" + careNum);
+
+        if (accNum==null) {
+            Long careReservationNum = Long.parseLong(careNum);
+            log.info("-----" + Long.parseLong(careNum));
+            userService.CareReservationUpdate(careReservationNum, managerEmail);
+            return "/manager/manager";
+        }
+
+        Long accReservationNum = Long.parseLong(accNum);
+        userService.AccReservationUpdate(accReservationNum, managerEmail);
+
+        return "/manager/manager";
+    }
+
     @GetMapping("manager2")
     public void manager2(Model model){
         Long careReservationNum=Long.valueOf(46);
@@ -157,7 +179,7 @@ public class ManagerController {
     @GetMapping("manager3")
     public String manager3(Criteria criteria, Model model){
 
-        Long careReservationNum=Long.valueOf(46);
+        Long careReservationNum=Long.valueOf(6);
         Long accReservationNum=Long.valueOf(43);
         String accManageremail = "매니저3@naver.com";
         String careManageremail = "매니저3@naver.com";

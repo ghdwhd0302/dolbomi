@@ -45,7 +45,6 @@ public class AccreservationMapperTests {
     }*/
 
 
-<<<<<<< HEAD
 /*
     @Test
     public void select() {
@@ -59,12 +58,10 @@ public class AccreservationMapperTests {
         areaAr.add("부산 사하구");
         log.info(accReservationMapper.getListAccReservation(new Criteria(), areaAr).toString());
     }
-=======
 //    @Test
 //    public void select() {
 //        log.info(accReservationMapper.AccGetList(9L).toString());
 //    }
 
->>>>>>> f674eb28c25b08823c8006b03ff94472b048fac5
 
 }

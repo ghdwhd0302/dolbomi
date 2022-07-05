@@ -55,13 +55,6 @@ public class UserServiceTests {
     public void reviewListTests(){
            userService.reviewGetListUser(new Criteria(), "APPLE").stream().map(UserReviewDTO::toString).forEach(log::info);
         }
-<<<<<<< HEAD
-
-    }
-=======
->>>>>>> f674eb28c25b08823c8006b03ff94472b048fac5
-
-
 
 
 

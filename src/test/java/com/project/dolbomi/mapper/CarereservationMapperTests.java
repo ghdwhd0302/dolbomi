@@ -62,8 +62,6 @@ public class CarereservationMapperTests {
     @Test
     public void listTest(){
         List<String> areaAr = new ArrayList<>();
-        areaAr.add("경기 안산시");
-        areaAr.add("충북 청주시");
 
         log.info(careReservationMapper.getListCareReservation(new Criteria(), areaAr).toString());
     }
@@ -72,4 +70,8 @@ public class CarereservationMapperTests {
 //        log.info(String.valueOf(careReservationMapper.delete(3L)));
 //    }
 
+    @Test
+    public void endListTests(){
+        log.info(careReservationMapper.careServiceEndList("APPLE").toString());
+    }
 }

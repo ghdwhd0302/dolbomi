@@ -59,5 +59,10 @@ public interface AccReservationMapper {
     public int accgetTotal2(Long accReservationNum);
     public int accgetTotal3(Long accReservationNum);
     public int accgetTotal4(Long accReservationNum);
+
+    public void AccReservationUpdate(@Param("accReservationNum") Long accReservationNum, @Param("managerEmail") String managerEmail);
+
+    //user_details4 서비스 종료 리스트
+    public List<User4AccDTO> accServiceEndList(String userEmail);
 }
 

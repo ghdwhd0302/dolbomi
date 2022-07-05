@@ -792,7 +792,14 @@ footer{
 }
 
 .common_search .search_area .list_area_gugun ul li input[type=button].list_area_all {
+    font-size: 15px;
+    width: 94%;
+    padding: 7px 0 7px 0;
+    border-radius: 3px;
     background-color: #f4f4f4;
+    height: 36px;
+    outline: none;
+    border-color: #f4eded;
     color: #2fb8e7;
 }
 

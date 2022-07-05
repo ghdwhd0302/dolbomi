@@ -21,11 +21,11 @@ public interface UserService {
     // 돌봄서비스 매니저가  예약 거절 manager페이지
     public boolean careManagerRefuse(CareReservationVO careReservationV);
 
-    
-     public boolean AccGetList(Long careReservationNum);
 
-    // 동행서비스 매니저 배정 수락 user_userdetails페이지
-    public AccReservationVO accApprove(Long accReservationNum);
+    public boolean AccGetList(Long careReservationNum);
+
+    //    동행서비스 예약자 1명 정보
+    public AccReservationVO accSelect(Long accReservationNum);
 
     //    동행서비스 예약자 1명 정보
     public AccReservationVO AccGet(Long accReservationNum);
@@ -82,10 +82,8 @@ public interface UserService {
 
 
 
-
     //    동행서비스 예약리스트
     public List<AccReservationVO> AccResult(String accReservationName);
-
 
 
     // 회원 가입
@@ -148,12 +146,6 @@ public interface UserService {
     // care reservation 목록
     public List<CareReviewDTO> reviewGetListCare(String userEmail);
 
-    //    돌봄서비스 리스트
-    public List<CareReservationVO> getListCareReservation(Criteria criteria, List<String> areaAr);
-
-    //    동행서비스 리스트
-    public List<AccReservationVO> getListAccReservation(Criteria criteria, List<String> areaAr);
-
     // acc reservation 한 개 자져오기
     public AccReservationVO selectAcc(Long accReservationNum);
 
@@ -161,5 +153,19 @@ public interface UserService {
     // care reservation 한 개 가져오기
     public CareReservationVO selectCare(Long careReservationNum);
 
-}
+    //    돌봄서비스 리스트
+    public List<CareReservationVO> getListCareReservation(Criteria criteria, List<String> areaAr);
 
+    //    동행서비스 리스트
+    public List<AccReservationVO> getListAccReservation(Criteria criteria, List<String> areaAr);
+
+    public void AccReservationUpdate(Long accReservationNum, String managerEmail);
+
+    public void CareReservationUpdate(Long careReservationNum, String managerEmail);
+
+    // 돌봄 서비스 종료 리스트
+    public List<User4CareDTO> careServiceEndList(String userEmail);
+
+    // 동행 서비스 종료 리스트
+    public List<User4AccDTO> accServiceEndList(String userEmail);
+}
