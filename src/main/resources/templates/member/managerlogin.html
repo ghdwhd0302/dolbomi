@@ -98,7 +98,7 @@
             alert("비밀번호를 입력해주세요.");
             return;
         }
-
+        $managerPw.val(btoa($managerPw.val()));
         $managerForm.submit();
     }
 

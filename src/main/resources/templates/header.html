@@ -16,7 +16,7 @@
     <div class="header_wrap">
         <h1 class="logo" onclick="location.href='/member/mainpage'"></h1>
         <nav class="nav">
-            <ul class="nav_list" th:if="${session.userVO != null}">
+            <ul class="nav_list" th:if="${session.userVO != null && session.managerVO == null}">
                 <li class="nav_item menu01">
                     <a href="/member/introduce" id="btnIntroduce" class="nav_item_link">돌보미 소개</a>
                 </li>
@@ -33,7 +33,7 @@
                     <a href="/user/review" id="btnReview" class="nav_item_link">이용후기</a>
                 </li>
             </ul>
-            <ul class="nav_list" th:if="${session.managerVO != null}">
+            <ul class="nav_list" th:if="${session.managerVO != null && session.userVO == null}">
                 <li class="nav_item menu01">
                     <a href="/member/introduce" id="btnIntroduce" class="nav_item_link">돌보미 소개</a>
                 </li>

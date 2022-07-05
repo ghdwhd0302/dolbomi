@@ -57,8 +57,6 @@
     </select>
 
 
-
-
     <!--  회원목록가져오기   -->
     <select id="reviewGetListUser" resultType="userReviewDTO">
             <![CDATA[

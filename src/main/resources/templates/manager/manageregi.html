@@ -28,16 +28,17 @@
 
         <div class="main-area">
             <div class="sc-bYTsla bDUjTg">
-                <form action="/manager/manageregi" mehod="post" id="managerApplication" name="managerApplication" >
-                        <input type="hidden" name="managerName" >
-                        <input type="hidden" name="managerBirth" >
-                        <input type="hidden" name="managerEmail" >
-                        <input type="hidden" name="managerAddress" >
-                        <input type="hidden" name="managerGender" >
-                        <input type="hidden" name="managerDriveOk" >
-                        <input type="hidden" name="managerCareer" >
-                        <input type="hidden" name="managerPhoneNum" >
-                        <input type="hidden" name="managerRegion" >
+                <form action="/manager/manageregi" method="post" id="managerApplication" name="managerApplication" >
+
+                        <input type="hidden" name="managerName" value="">
+                        <input type="hidden" name="managerBirth" value="">
+                        <input type="hidden" name="managerEmail" value="">
+                        <input type="hidden" name="managerAddress" value="">
+                        <input type="hidden" name="managerGender" value="">
+                        <input type="hidden" name="managerDriveOk" value="">
+                        <input type="hidden" name="managerCareer" value="">
+                        <input type="hidden" name="managerPhoneNum" value="">
+                        <input type="hidden" name="managerRegion" value="">
                     <div class="sc-dlyikq lknGZg">
                         <p class="sc-glUWqk uvQxd" style="color: rgb(22, 22, 22); margin-bottom: 20px;">매니저 지원하기</p>
                         <div class="sc-fFTYTi bkIEuU">
@@ -226,15 +227,15 @@
         let $managerregion = $("textarea[name='managerregion']");
         let regPhone = /^((01[1|6|7|8|9])[1-9]+[0-9]{6,7})|(010[1-9][0-9]{7})$/;
 
-        $("input[name=managerName]").val($managername.val());
-        $("input[name=managerBirth]").val($managerbirth.val());
-        $("input[name=managerEmail]").val($manageremail.val());
-        $("input[name=managerAddress]").val($manageraddress.val());
-        $("input[name=managerGender]").val($managergender.val());
-        $("input[name=managerDriveOk]").val($managerdriveok.val());
-        $("input[name=managerCareer]").val($managercareer.val());
-        $("input[name=managerPhoneNum]").val($managerphonenum.val());
-        $("input[name=managerRegion]").val($managerregion.val());
+        $("input[name='managerName']").val($managername.val());
+        $("input[name='managerBirth']").val($managerbirth.val());
+        $("input[name='managerEmail']").val($manageremail.val());
+        $("input[name='managerAddress']").val($manageraddress.val());
+        $("input[name='managerGender']").val($managergender.val());
+        $("input[name='managerDriveOk']").val($managerdriveok.val());
+        $("input[name='managerCareer']").val($managercareer.val());
+        $("input[name='managerPhoneNum']").val($managerphonenum.val());
+        $("input[name='managerRegion']").val($managerregion.val());
 
         // console.log($managername.val());
         // console.log($managerbirth.val());
@@ -245,6 +246,19 @@
         // console.log($managerCareer.val());
         // console.log($managerPhoneNum.val());
         // console.log($managerRegion.val());
+
+        if($("input[name='managerGender']").val() == "남자"){
+            $("input[name='managerGender']").val("M");
+        }else if($("input[name='managerGender']").val() == "여자"){
+            $("input[name='managerGender']").val("W");
+        }
+
+        if($("input[name='managerDriveOk']").val() == "예"){
+            $("input[name='managerDriveOk']").val("Y");
+        }else if($("input[name='managerDriveOk']").val() == "아니오"){
+           $("input[name='managerDriveOk']").val("N");
+        }
+
 
         if(!$managername.val()){
             alert("성함을 입력해주세요")
@@ -310,7 +324,7 @@
         //비밀번호 암호화
         $managerPw.val(btoa($managerPw.val()));
         console.log($managerPw.val());
-        $managerApplication.submit();
+        managerApplication.submit();
 
     }
 
