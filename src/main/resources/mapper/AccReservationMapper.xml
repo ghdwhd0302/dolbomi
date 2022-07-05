@@ -26,8 +26,6 @@
         WHERE a.USER_EMAIL = b.USER_EMAIL
     </select>
 
-
-
     <update id="AccReservationUpdate">
         UPDATE TBL_ACC_RESERVATION
         SET MANAGER_EMAIL = #{managerEmail}
@@ -179,9 +177,6 @@
         SET MANAGER_EMAIL = '',ACC_RESERVATION_STATUS='0'
         WHERE  ACC_RESERVATION_NUM=#{accReservationNum}
     </update>
-
-
-
 
     <!--서비스 종료 리스트-->
     <select id="accServiceEndList" resultType="user4AccDTO">

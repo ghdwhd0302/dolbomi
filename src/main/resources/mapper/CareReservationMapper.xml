@@ -13,14 +13,11 @@
         </trim>
     </sql>
 
-
     <select id="getList" resultType="carereservationVO">
         SELECT CARE_RESERVATION_NAME,CARE_RESERVATION_TYPE,CARE_RESERVATION_ADDRESS
         FROM TBL_CARE_RESERVATION a,TBL_USER b
         WHERE a.USER_EMAIL = b.USER_EMAIL
     </select>
-
-
 
     <!--매니저 배정기다리는중,user_userdetails 페이지의 돌봄예약목록 -->
     <select id="CareGetList" resultType="carereservationVO">
@@ -28,7 +25,6 @@
         FROM TBL_CARE_RESERVATION a,TBL_USER b
         WHERE a.USER_EMAIL = b.USER_EMAIL AND a.CARE_RESERVATION_NUM=#{careReservationNum, jdbcType=VARCHAR}
     </select>
-
 
     <!--돌봄서비스매니저 배정수락,user_userdetails 페이지의 돌봄예약목록 -->
     <update id="Careupdate">
