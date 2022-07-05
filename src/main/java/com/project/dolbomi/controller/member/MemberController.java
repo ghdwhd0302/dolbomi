@@ -104,6 +104,8 @@ public class MemberController {
         if(check){//로그인 성공
             HttpSession httpSession = request.getSession();
             httpSession.setAttribute("userVO", userService.profile(userEmail));
+            httpSession.setAttribute("userEmail", userEmail);
+
             log.info("로그인 들어옴");
             return "/member/mainpage";
         }
@@ -146,6 +148,7 @@ public class MemberController {
         if(check){//로그인 성공
             HttpSession httpSession = request.getSession();
             httpSession.setAttribute("managerVO", managerService.managerInfo(managerEmail));
+            httpSession.setAttribute("managerEmail", managerEmail);
 
             return "/member/mainpage";
         }

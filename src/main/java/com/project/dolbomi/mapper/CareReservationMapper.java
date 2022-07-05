@@ -21,10 +21,11 @@ public interface CareReservationMapper {
     //carereservation review list
     public List<CareReviewDTO> reviewGetListCare(String userEmail);
 
+    //돌봄서비스 예약목록
+    public List<CareReservationVO> getListCareReservation(Criteria criteria, List<String> areaAr);
+
     // care reservation 게시글 한개 가져오기
     public CareReservationVO selectCare(Long careReservationNum);
-
-    public List<CareReservationVO> getListCareReservation(Criteria criteria);
 
     // 돌봄서비스 예약자 1명 정보
     public CareReservationVO CareGet(Long careReservationNum);
@@ -49,5 +50,7 @@ public interface CareReservationMapper {
 
     public void CareReservationUpdate(@Param("careReservationNum") Long careReservationNum, @Param("managerEmail") String managerEmail);
 
+    //user_details4 서비스 종료 리스트
+    public List<User4CareDTO> careServiceEndList(String userEmail);
 
 }

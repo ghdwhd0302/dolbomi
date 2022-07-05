@@ -3,10 +3,14 @@ package com.project.dolbomi.mapper;
 
 
 
+import com.project.dolbomi.domain.vo.Criteria;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @SpringBootTest
 @Slf4j
@@ -49,19 +53,30 @@ public class CarereservationMapperTests {
         log.info(careReservationMapper.CareGetList(7L).toString());
     }
 */
+/*
+    @Test
+    public void delete(){
+        log.info(String.valueOf(careReservationMapper.delete(3L)));
+    }
+*/
+    @Test
+    public void listTest(){
+        List<String> areaAr = new ArrayList<>();
+
+        log.info(careReservationMapper.getListCareReservation(new Criteria(), areaAr).toString());
+    }
 //    @Test
 //    public void delete(){
 //        log.info(String.valueOf(careReservationMapper.delete(3L)));
 //    }
 
+    @Test
+    public void endListTests(){
+        log.info(careReservationMapper.careServiceEndList("APPLE").toString());
+    }
 //    @Test
 //    public void CareReservationUpdate(){
 //        careReservationMapper.CareReservationUpdate(26L, "APPLE");
 //    }
-
-    @Test
-    public void CareReservationUpdate(){
-        careReservationMapper.CareReservationUpdate(26L, "APPLE");
-    }
 
 }

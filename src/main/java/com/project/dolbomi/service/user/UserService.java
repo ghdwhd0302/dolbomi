@@ -20,7 +20,8 @@ public interface UserService {
     // 돌봄서비스 매니저가  예약 거절 manager페이지
     public boolean careManagerRefuse(CareReservationVO careReservationV);
 
-     public boolean AccGetList(Long careReservationNum);
+
+    public boolean AccGetList(Long careReservationNum);
 
     //    동행서비스 예약자 1명 정보
     public AccReservationVO accSelect(Long accReservationNum);
@@ -163,5 +164,10 @@ public interface UserService {
     public void AccReservationUpdate(Long accReservationNum, String managerEmail);
 
     public void CareReservationUpdate(Long careReservationNum, String managerEmail);
-}
 
+    // 돌봄 서비스 종료 리스트
+    public List<User4CareDTO> careServiceEndList(String userEmail);
+
+    // 동행 서비스 종료 리스트
+    public List<User4AccDTO> accServiceEndList(String userEmail);
+}

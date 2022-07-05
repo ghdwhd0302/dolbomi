@@ -62,6 +62,10 @@ function search_form_submit(ty, val1, val2, code) {
                 $("form[name=search_box] > input[name='area1[]']").eq(i).val(val1);
                 $("form[name=search_box] > input[name='area2[]']").eq(i).val(val2);
                 $("form[name=search_box] > input[name='area2[]']").eq(i).data("val", code);
+
+                $searchArea.eq(i).val(val1 + " " +val2);
+
+                console.log($searchArea.eq(i).val());
                 area1_chk = "y";
                 break;
             }

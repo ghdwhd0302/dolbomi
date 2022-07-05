@@ -53,10 +53,8 @@ public class UserServiceTests {
 
         @Test
     public void reviewListTests(){
-           userService.reviewGetListUser(new Criteria(1,10), "APPLE").stream().map(UserReviewDTO::toString).forEach(log::info);
+           userService.reviewGetListUser(new Criteria(), "APPLE").stream().map(UserReviewDTO::toString).forEach(log::info);
         }
-
-
 
 
 

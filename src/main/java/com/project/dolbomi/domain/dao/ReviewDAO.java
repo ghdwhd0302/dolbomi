@@ -44,12 +44,10 @@ public class ReviewDAO {
         return reviewMapper.reviewGetTotal(criteria);
     }
 
-
     //    회원 게시글 전체 개수
     public int myReviewGetTotal(Criteria criteria, String userEmail) {
         return reviewMapper.myReviewGetTotal(criteria, userEmail);
     }
-
 
     // 회원 게시글 목록
     public List<UserReviewDTO> reviewGetListUser(Criteria criteria, String userEmail) {

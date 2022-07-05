@@ -55,6 +55,22 @@ public class UserServiceImpl implements UserService {
         return false;
     }
 
+
+    @Override
+    public boolean careDelte(Long careReservationNum) {
+        return false;
+    }
+
+    @Override
+    public boolean careManagerRefuse(CareReservationVO careReservationV) {
+        return false;
+    }
+
+    @Override
+    public boolean AccGetList(Long careReservationNum) {
+        return false;
+    }
+
     @Override
     public AccReservationVO accSelect(Long accReservationNum) {
         return null;
@@ -408,6 +424,25 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<CareReservationVO> getListCareReservation(Criteria criteria, List<String> areaAr) {return careReservationDAO.getListCareReservation(criteria, areaAr);}
+
+    @Override
+    public void AccReservationUpdate(Long accReservationNum, String managerEmail) {
+        accReservationDAO.AccReservationUpdate(accReservationNum, managerEmail);
+    }
+
+    @Override
+    public void CareReservationUpdate(Long careReservationNum, String managerEmail) {
+        careReservationDAO.CareReservationUpdate(careReservationNum, managerEmail);
+    }
+
+    @Override
+    public List<User4CareDTO> careServiceEndList(String userEmail) {
+        return careReservationDAO.careServiceEndList(userEmail);
+    }
+
+    @Override
+    public List<User4AccDTO> accServiceEndList(String userEmail) {
+        return accReservationDAO.accServiceEndList(userEmail);
 
     @Override
     public void AccReservationUpdate(Long accReservationNum, String managerEmail) {

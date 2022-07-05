@@ -10,6 +10,9 @@
         <typeAlias type="com.project.dolbomi.domain.vo.AccReviewDTO" alias="accReviewDTO"/>
         <typeAlias type="com.project.dolbomi.domain.vo.CareReviewDTO" alias="careReviewDTO"/>
         <typeAlias type="com.project.dolbomi.domain.vo.UserReviewDTO" alias="userReviewDTO"/>
+        <typeAlias type="com.project.dolbomi.domain.vo.User4CareDTO" alias="user4CareDTO"/>
+        <typeAlias type="com.project.dolbomi.domain.vo.User4AccDTO" alias="user4AccDTO"/>
+
 
     </typeAliases>
 
