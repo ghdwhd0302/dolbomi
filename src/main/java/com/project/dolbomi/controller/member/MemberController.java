@@ -254,12 +254,14 @@ public class MemberController {
 
      }*/
     @GetMapping("profilechange")
-    public void profilechange( String userEmail, String managerEmail, HttpServletRequest req, Model model) {
-
+    public void profilechange( HttpServletRequest request, Model model) {
+        HttpSession httpSession = request.getSession();
+        httpSession.getAttribute("userEmail");
+        String email=String.valueOf(httpSession.getAttribute("userEmail"));
         log.info("----------------------------");
-        log.info(req.getRequestURI() + "............. : " + userEmail);
+        log.info(request.getRequestURI() + "............. : " + email);
         log.info("----------------------------");
-        model.addAttribute("profile1", userService.profile(userEmail));
+        model.addAttribute("profile1", userService.profile(email));
 
     }
 
