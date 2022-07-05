@@ -146,7 +146,6 @@
         WHERE USER_EMAIL=#{userEmail} AND CARE_RESERVATION_STATUS='7'
     </select>
 
-
     <!-- user_userdetails의 카운트 횟수.  CARE_RESERVATION_STATUS 에 따라 변경-->
     <select id="caregetTotal5" resultType="_int">
         SELECT COUNT(CARE_RESERVATION_STATUS) FROM TBL_CARE_RESERVATION WHERE USER_EMAIL=#{userEmail}  AND CARE_RESERVATION_STATUS='0'
