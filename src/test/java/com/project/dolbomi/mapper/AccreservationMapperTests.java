@@ -60,7 +60,6 @@ public class AccreservationMapperTests {
     public void listTest(){
         List<String> areaAr = new ArrayList<>();
         areaAr.add("서울 강남구");
-        areaAr.add("부산 사하구");
         log.info(accReservationMapper.getListAccReservation(new Criteria(), areaAr).toString());
     }
 //    @Test

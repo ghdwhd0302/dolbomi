@@ -29,15 +29,16 @@
         <div class="main-area">
             <div class="sc-bYTsla bDUjTg">
                 <form action="/manager/manageregi" method="post" id="managerApplication" name="managerApplication" >
-                        <input type="hidden" name="managerName" >
-                        <input type="hidden" name="managerBirth" >
-                        <input type="hidden" name="managerEmail" >
-                        <input type="hidden" name="managerAddress" >
-                        <input type="hidden" name="managerGender" >
-                        <input type="hidden" name="managerDriveOk" >
-                        <input type="hidden" name="managerCareer" >
-                        <input type="hidden" name="managerPhoneNum" >
-                        <input type="hidden" name="managerRegion" >
+
+                        <input type="hidden" name="managerName" value="">
+                        <input type="hidden" name="managerBirth" value="">
+                        <input type="hidden" name="managerEmail" value="">
+                        <input type="hidden" name="managerAddress" value="">
+                        <input type="hidden" name="managerGender" value="">
+                        <input type="hidden" name="managerDriveOk" value="">
+                        <input type="hidden" name="managerCareer" value="">
+                        <input type="hidden" name="managerPhoneNum" value="">
+                        <input type="hidden" name="managerRegion" value="">
                     <div class="sc-dlyikq lknGZg">
                         <p class="sc-glUWqk uvQxd" style="color: rgb(22, 22, 22); margin-bottom: 20px;">매니저 지원하기</p>
                         <div class="sc-fFTYTi bkIEuU">
@@ -245,6 +246,19 @@
         // console.log($managerCareer.val());
         // console.log($managerPhoneNum.val());
         // console.log($managerRegion.val());
+
+        if($("input[name='managerGender']").val() == "남자"){
+            $("input[name='managerGender']").val("M");
+        }else if($("input[name='managerGender']").val() == "여자"){
+            $("input[name='managerGender']").val("W");
+        }
+
+        if($("input[name='managerDriveOk']").val() == "예"){
+            $("input[name='managerDriveOk']").val("Y");
+        }else if($("input[name='managerDriveOk']").val() == "아니오"){
+           $("input[name='managerDriveOk']").val("N");
+        }
+
 
         if(!$managername.val()){
             alert("성함을 입력해주세요")

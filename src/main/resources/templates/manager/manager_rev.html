@@ -837,6 +837,7 @@
 
 
             </style>
+            <form name="revForm" method="post" action="/manager/manager_rev">
 
                 <input type="hidden" name="newname" value="">
                 <input type="hidden" name="shape" value="">
@@ -881,10 +882,10 @@
                         <h3 class="tit">지역</h3>
                         <div class="choice">
                             <div class="choice_text">
-                                <div class="none_choice" style="display: block;">※ 시/도를 선택 후 희망하시는 구/군을 최대 5개까지
+                                <div class="none_choice">※ 시/도를 선택 후 희망하시는 구/군을 최대 5개까지
                                     선택해주세요!
                                 </div>
-                                <ul></ul>
+                                <ul class="keyword"></ul>
                             </div>
                         </div>
                         <div class="contents">
@@ -2004,7 +2005,7 @@
                         <input type="hidden" name="hServiceCarYn" value="">
                         <p class="service_b">동행</p>
                         <div class="left_con" style="padding-right:37px" th:object="${accReservation}">
-                            <input type="hidden" name="accReservationNum" th:value="${accReservationNum}">
+                            <input type="hidden" name="accReservationNum">
                             <p>
                                 <span class="title">이용자</span>
                                 <span class="accReservationName" th:text="*{accReservationName}"></span>
@@ -2027,33 +2028,34 @@
                                 <span class="accReservationEndAddress" th:text="*{accReservationEndAddress}"><br></span>
                             </p>
                             <hr style="border : 0px; width: 100%;
-                    border-top: 2px solid #e8e6e7;
-                    width: 100%;
-                    margin: 20px 0 20px 0;"/>
+                        border-top: 2px solid #e8e6e7;
+                        width: 100%;
+                        margin: 20px 0 20px 0;"/>
                             <button id="test01" class="A1" style="color: #666666;
-                font-weight: 700;
-                cursor: pointer;
-                align-self: center;
-                margin-right: 115px;
-                background-color: white;
-                font-size: 18px;
-            ">상세보기
+                    font-weight: 700;
+                    cursor: pointer;
+                    align-self: center;
+                    margin-right: 115px;
+                    background-color: white;
+                    font-size: 18px;
+                ">상세보기
                             </button>
                         </div>
                         <div>
-                            <a class="test10 openPopup" id="accReservation" th:name="${accReservation.accReservationNum}" style="     background-color: #2fb8e7;
-    color: white;
-    padding: 11px 29px 11px 30px;
-    font-size: 18px;
-    font-weight: 700;
-    position: absolute;
-    right: 15px;
-    /* border-radius: 30px; */
-    margin-right: 20px;
-    border: none;
-    width: 94px;
-    cursor: pointer;
-">신청</a></div>
+                            <a href='javascript:void(0);' class="test10 openPopup" id="accReservation" th:name="${accReservation.accReservationNum}" style="     background-color: #2fb8e7;
+        color: white;
+        padding: 11px 29px 11px 30px;
+        font-size: 18px;
+        font-weight: 700;
+        position: absolute;
+        right: 15px;
+        /* border-radius: 30px; */
+        margin-right: 20px;
+        border: none;
+        width: 94px;
+        cursor: pointer;
+    ">신청</a></div>
+                    </div>
                     </div>
                 </li>
             </ul>
@@ -2119,32 +2121,19 @@
                                 <span class="title">총 이용요금</span>
                                 <span class="accReservationPrice" th:text="*{accReservationPrice}"></span>
                             </p>
-                                                <hr style="border : 0px; width: 100%;
-                                                border-top: 2px solid #e8e6e7;
-                                                width: 100%;
-                                                margin: 20px 0 20px 0;"/>
-                                                <button id="test03" class="A3" style="color: #666666;
-                                            font-weight: 700;
-                                            cursor: pointer;
-                                            align-self: center;
-                                            margin-right: 17px;
-                                            background-color: white;
-                                            font-size: 18px;
-                                        ">닫기
-                                                </button>
-                            <!--                    <hr style="border : 0px; width: 100%;-->
-                            <!--                    border-top: 2px solid #e8e6e7;-->
-                            <!--                    width: 100%;-->
-                            <!--                    margin: 20px 0 20px 0;"/>-->
-                            <!--                    <button id="test03" style="color: #666666;-->
-                            <!--                font-weight: 700;-->
-                            <!--                cursor: pointer;-->
-                            <!--                align-self: center;-->
-                            <!--                margin-right: 17px;-->
-                            <!--                background-color: white;-->
-                            <!--                font-size: 18px;-->
-                            <!--            ">닫기-->
-                            <!--                    </button>-->
+                            <hr style="border : 0px; width: 100%;
+                        border-top: 2px solid #e8e6e7;
+                        width: 100%;
+                        margin: 20px 0 20px 0;"/>
+                            <button id="test03" class="A3" style="color: #666666;
+                    font-weight: 700;
+                    cursor: pointer;
+                    align-self: center;
+                    margin-right: 17px;
+                    background-color: white;
+                    font-size: 18px;
+                ">닫기
+                            </button>
                         </div>
                     </div>
                 </li>
@@ -2197,39 +2186,38 @@
                                 <span class="careReservationAddress" th:text="*{careReservationAddress}"><br></span>
                             </p>
                             <hr style="border : 0px; width: 100%;
-                    border-top: 2px solid #e8e6e7;
-                    width: 100%;
-                    margin: 20px 0 20px 0;"/>
-                            <button id="test04" class="A4" style="color: #666666;
-                font-weight: 700;
-                cursor: pointer;
-                align-self: center;
-                margin-right: 115px;
-                background-color: white;
-                font-size: 18px;
-                margin-top: -11px;
-            ">상세보기
+                        border-top: 2px solid #e8e6e7;
+                        width: 100%;
+                        margin: 20px 0 20px 0;"/>
+                            <button id="test04" class="C4" style="color: #666666;
+                    font-weight: 700;
+                    cursor: pointer;
+                    align-self: center;
+                    margin-right: 115px;
+                    background-color: white;
+                    font-size: 18px;
+                ">상세보기
                             </button>
                         </div>
                         <div >
-                            <a class="test10 openPopup" id="careReservation" th:name="${careReservation.careReservationNum}" style="     background-color: #2fb8e7;
-    color: white;
-    padding: 11px 29px 11px 30px;
-    font-size: 18px;
-    font-weight: 700;
-    position: absolute;
-    right: 15px;
-    /* border-radius: 30px; */
-    margin-right: 20px;
-    border: none;
-    width: 94px;
-    cursor: pointer;
-">신청</a></div>
+                            <a href='javascript:void(0);' class="test10 openPopup" id="careReservation" th:name="${careReservation.careReservationNum}" style="     background-color: #2fb8e7;
+        color: white;
+        padding: 11px 29px 11px 30px;
+        font-size: 18px;
+        font-weight: 700;
+        position: absolute;
+        right: 15px;
+        /* border-radius: 30px; */
+        margin-right: 20px;
+        border: none;
+        width: 94px;
+        cursor: pointer;
+    ">신청</a></div>
                     </div>
                 </li>
             </ul>
         </div>
-        <div class="com_accordion A5" id="test05" style="display:none;" >
+        <div class="com_accordion C5" id="test05" style="display:none;" >
             <ul style="margin: 0% 10% 0% 10%;">
                 <li class="history">
                     <div class="ac_title">
@@ -2291,17 +2279,17 @@
                                 <span class="careReservationPrice" th:text="*{careReservationPrice}"></span>
                             </p>
                             <hr style="border : 0px; width: 100%;
-                            border-top: 2px solid #e8e6e7;
-                            width: 100%;
-                            margin: 20px 0 20px 0;"/>
-                            <button id="test06" class="A6" style="color: #666666;
-                        font-weight: 700;
-                        cursor: pointer;
-                        align-self: center;
-                        margin-right: 17px;
-                        background-color: white;
-                        font-size: 18px;
-                    ">닫기
+                        border-top: 2px solid #e8e6e7;
+                        width: 100%;
+                        margin: 20px 0 20px 0;"/>
+                            <button id="test06" class="C6" style="color: #666666;
+                    font-weight: 700;
+                    cursor: pointer;
+                    align-self: center;
+                    margin-right: 17px;
+                    background-color: white;
+                    font-size: 18px;
+                ">닫기
                             </button>
                         </div>
                     </div>
@@ -2310,7 +2298,6 @@
         </div>
     </th:block>
 </form>
-
 <div style="text-align: center">
     <a class="changePage" th:if="${pageDTO.prev}" th:href="${pageDTO.startPage - 1}"><code>&lt;</code></a>
     <th:block th:each="num:${#numbers.sequence(pageDTO.startPage, pageDTO.endPage)}">
@@ -2324,17 +2311,6 @@
     <input type="hidden" th:field="*{amount}">
 </form>
 
-
-<div id="popup01">
-    <div class="close">닫기</div>
-    <div style="font-size: 32px;
-    text-align: center;
-    margin-top: 110px;
-    margin-bottom: 110px;
-    color: #767070;">매칭하시겠습니까?
-    </div>
-    <button class="confirm">매칭 확정</button>
-</div>
 <th:block th:each="areas:${areaAr}">
     <input type="hidden" name="areas" th:class="${areas}" th:value="${areas}">
 </th:block>
@@ -2344,22 +2320,6 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
         crossorigin="anonymous"></script>
-<script th:inline="javascript">
-
-    $("#accReservation").click(function (e) {
-        e.preventDefault();
-        console.log($(this).attr("name"));
-        $("input[name='accReservationNum']").val($(this).attr("name"));
-        accForm.submit();
-    })
-
-    $("#careReservation").click(function (e) {
-        e.preventDefault();
-        console.log($(this).attr("name"));
-        $("input[name='careReservationNum']").val($(this).attr("name"));
-        careForm.submit();
-    })
-</script>
 <script>
     let checking = false;
     let naming = "";
@@ -2456,20 +2416,6 @@
         $(this).parent("div").parent("div").parent().parent().parent().hide();
     });
 
-    $(document).ready(function ($) {
-        $(".openPopup").on("click", function (event) {
-            window.scrollTo(0,0);
-            $("#popup01").show();
-            $("body").append('<div class="backon"></div>');
-        });
-
-        $("body").on("click", function (event) {
-            if (event.target.className == 'close' || event.target.className == 'backon') {
-                $("#popup01").hide();
-                $(".backon").hide();
-            }
-        });
-    });
     $(function () {
         //클릭시 이미지 변경 및 상세검색 추가
         var list = $(".detail_list");

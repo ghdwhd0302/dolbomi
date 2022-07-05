@@ -195,10 +195,7 @@
             buyer_tel: phoneNum
         }, function(rsp){ //callback함수
             if(rsp.success){
-                alert("완료 -> imp_uid : "+rsp.imp_uid+" / merchant_uid(orderKey) : " + rsp.merchant_uid);
-                $("a[id='"+ number +"']").css("background", "#1f6cd5");
-                $("a[id='"+ number +"']").css("color", "#ffffff");
-                $("a[id='"+ number +"']").text("결제 완료");
+                alert("결제 완료");
             }else{
                 alert("실패 : 코드("+rsp.error_code+") / 메세지("+rsp.error_msg +")");
             }
