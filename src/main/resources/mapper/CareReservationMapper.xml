@@ -13,7 +13,6 @@
         </trim>
     </sql>
 
-
     <select id="getList" resultType="carereservationVO">
         SELECT CARE_RESERVATION_NAME,CARE_RESERVATION_TYPE,CARE_RESERVATION_ADDRESS
         FROM TBL_CARE_RESERVATION a,TBL_USER b
@@ -146,7 +145,6 @@
         FROM TBL_CARE_RESERVATION
         WHERE USER_EMAIL=#{userEmail} AND CARE_RESERVATION_STATUS='7'
     </select>
-
 
     <!-- user_userdetails의 카운트 횟수.  CARE_RESERVATION_STATUS 에 따라 변경-->
     <select id="caregetTotal5" resultType="_int">

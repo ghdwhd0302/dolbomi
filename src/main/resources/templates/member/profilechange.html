@@ -29,7 +29,7 @@
     <!-- //sub_title_wrap -->
     <!-- form_wrap -->
 
-    <form id="frm" action="" method="post" enctype="">
+    <form id="frm" action="member/profileupdate" method="post" enctype="" th:object="${profile1}">
         <input type="hidden" name="memberSysId" id="memberSysId" value="">
         <input type="hidden" name="currUserId" id="currUserId" value="">
         <input type="hidden" name="currPhoneNo" id="currPhoneNo" value="">
@@ -38,25 +38,21 @@
                 <div class="dp_result">
                     <div class="column">
                         <div class="photo">
-
-
-                            <img id="viewImg" src="https://www.mosimi.co.kr/resource/images/common/ico_face.svg">
+                            <img src="https://www.mosimi.co.kr/resource/images/common/ico_face.svg" id="previewImg"
+                                 width="200" height="200"/>
 
                         </div>
-                        <div class="button_wrap">
-                            <a href="" id="addImage">사진첨부하기</a>
-                            <input style="display:none;" type="file" id="pictureAttachFile" name="pictureAttachFile"
-                                   accept="image/*">
-                            <input type="hidden" id="orgAttachFileId" name="orgAttachFileId" value="">
-                            <input type="hidden" id="delPictureAttachFileId" name="delPictureAttachFileId">
-                        </div>
+                        <p>프로필 이미지 변경</p>
+                        <input type="file" id="viewImg" name="viewImg" accept='image/*' style="margin-top: 30px; height: 29px;   padding-left: 44%;" />
+
                     </div>
                 </div>
                 <div class="dp_result">
                     <div class="column">
                         <p>아이디</p>
                         <div class="dp_flex">
-                            <input type="text" name="userId" id="userId" maxlength="30" placeholder="아이디" value="" disabled="disabled">
+                            <input type="text" name="userId" id="userId" maxlength="30" placeholder="아이디" th:value="*{userEmail}"
+                                   disabled="disabled">
                         </div>
                         <span id="userIdChkNotice"></span>
                     </div>
@@ -65,15 +61,15 @@
                     <div class="column">
                         <p>성함</p>
                         <div class="dp_flex">
-                            <input type="text" name="userName" id="userName" maxlength="10" placeholder="성함" value="">
+                            <input type="text" name="userName" id="userName" maxlength="10" placeholder="성함" th:value="*{userName}">
                         </div>
                         <span id="memberNmChkNotice"></span>
                     </div>
                     <div class="column">
-                        <p>생년월일</p>
+                        <p >생년월일</p>
                         <div class="dp_flex date" data-term="100">
-                            <select name="birthYear" id="birthYear" class="birth" data-default-option="년" data-unit="y">
-                                <option value="">년</option>
+                            <select name="birthYear" id="birthYear" class="birth" data-default-option="년" data-unit="y" >
+                                <option >년</option>
                                 <option value="2022">2022</option>
                                 <option value="2021">2021</option>
                                 <option value="2020">2020</option>
@@ -275,101 +271,77 @@
                         <span id="certNoChkNotice"></span>
                     </div>
                 </div>
-                <h4>결제수단</h4>
-                <div id="cardInfo"></div>
-                <div class="dp_result">
-                    <div class="column">
-                        <div class="button_wrap">
-                            <a  id="regCard" class="primary">카드등록</a>
-                        </div>
-                    </div>
-                </div>
+
             </div>
+        </div>
+        <div class="button_wrap form_wrap">
+            <!--매니저일 때 href="/member/exitM"-->
+            <!--회원일 때 href="/member/exitU"-->
+            <a id="withdraw" >회원탈퇴</a>
+            <a href="/member/mainpage">취소</a>
+            <a id="profilechange" class="primary" >저장</a>
         </div>
     </form>
     <!-- //form_wrap -->
     <!-- button_wrap -->
-    <div class="button_wrap form_wrap">
-        <!--매니저일 때 href="/member/exitM"-->
-        <!--회원일 때 href="/member/exitU"-->
-        <a href="?" id="withdraw">회원탈퇴</a>
-        <a href="/member/mainpage">취소</a>
 
-        <a href="/member/updateInfor" id="confirm" class="primary">저장</a>
-    </div>
     <!-- //button_wrap -->
 </div>
 <footer th:replace="footer.html"></footer>
-<div class="form_wrap">
-    <div id="card_info" class="popup_layer" style="display:none">
-        <div class="layer_wrap card_info">
-            <div class="layer_title">
-                <p>카드정보</p>
-                <a class="layer_close" href="#none" onclick="close_layer('card_info');"></a>
-            </div>
-            <div class="layer_contents">
-                <div class="form_wrap">
-                    <div class="dp_result full">
-                        <div class="column">
-                            <p>카드번호</p>
-                            <div class="dp_flex">
-                                <input type="number" id="cardNo1" maxlength="4" oninput="gfn_maxLengthCheck(this)" placeholder="0000">
-                                <label>-</label>
-                                <input type="number" id="cardNo2" maxlength="4" oninput="gfn_maxLengthCheck(this)" placeholder="0000">
-                                <label>-</label>
-                                <input type="password" id="cardNo3" maxlength="4" oninput="gfn_maxLengthCheck(this)" placeholder="****">
-                                <label>-</label>
-                                <input type="number" id="cardNo4" maxlength="4" oninput="gfn_maxLengthCheck(this)" placeholder="0000">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="dp_result full">
-                        <div class="column">
-                            <p>유효기간</p>
-                            <div class="dp_flex">
-                                <input type="number" id="cardExpMonth" maxlength="2" oninput="gfn_maxLengthCheck(this)" placeholder="MM">
-                                <label>/</label>
-                                <input type="number" id="cardExpYear" maxlength="2" oninput="gfn_maxLengthCheck(this)" placeholder="YY">
-                            </div>
-                        </div>
-                        <div class="column">
-                            <p>CVC</p>
-                            <div class="dp_flex">
-                                <input type="number" id="cardCvc" maxlength="3" oninput="gfn_maxLengthCheck(this)" placeholder="카드뒷면 3자리 숫자">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="dp_result full">
-                        <div class="column">
-                            <p>카드비밀번호</p>
-                            <div class="dp_flex">
-                                <input type="number" id="cardPw" maxlength="2" oninput="gfn_maxLengthCheck(this)" placeholder="비밀번호 앞 2자리 숫자">
-                            </div>
-                        </div>
-                    </div>
 
-                </div>
-                <!-- button_wrap -->
-                <div class="button_wrap">
-                    <a href="javascript:void(0);" id="regist-card" class="btn_page">등록</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 </body>
 <script>
 
-    $('#regCard').click(function (){
-        window.scrollTo(0,0);
+    $('#regCard').click(function () {
+        window.scrollTo(0, 0);
         $("body").css("overflow-y", "hidden");
         $(".popup_layer").css("display", "flex");
     });
 
 
-    $(".layer_close").on('click', function(){
+    $(".layer_close").on('click', function () {
         $("body").css("overflow-y", "visible");
         $(".popup_layer").css("display", "none");
     })
+
+
+    const fileInput = document.getElementById("viewImg");
+
+    const handleFiles = (e) => {
+        const selectedFile = [...fileInput.files];
+        const fileReader = new FileReader();
+
+        fileReader.readAsDataURL(selectedFile[0]);
+
+        fileReader.onload = function () {
+            document.getElementById("previewImg").src = fileReader.result;
+        };
+    };
+
+    fileInput.addEventListener("change", handleFiles);
+
+</script>
+<script>
+    let birth = document.getElementsByClassName("birth");
+
+</script>
+<script type="text/javascript" th:inline="javascript">
+    /*<![CDATA[*/
+
+    let userEmail = [[ ${session.userEmail} ]];
+
+    /*]]*/
+    $("a#withdraw").click(function(e){
+        e.preventDefault();
+        location.href = "/member/delete" ;
+    })
+
+    $("a#profilechange").click(function(e){
+        e.preventDefault();
+        location.href = "/member/profileupdate" ;
+    })
+
+
+
 </script>
 </html>
