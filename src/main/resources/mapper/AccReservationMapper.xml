@@ -2,11 +2,28 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.project.dolbomi.mapper.AccReservationMapper">
 
+    <select id="getList" resultType="accreservationVO">
+        SELECT ACC_RESERVATION_NAME,ACC_RESERVATION_TYPE,ACC_RESERVATION_END_ADDRESS
+        FROM TBL_ACC_RESERVATION
+        WHERE a.USER_EMAIL = b.USER_EMAIL
+    </select>
+
+    <select id="getListAccReservation" resultType="accReservationVO">
+        SELECT ACC_RESERVATION_NUM,ACC_RESERVATION_TYPE,ACC_RESERVATION_NAME, ACC_RESERVATION_AGE, ACC_RESERVATION_PHONE_NUM, ACC_RESERVATION_GENDER, ACC_RESERVATION_ADD_PHONE_NUM, ACC_RESERVATION_RELATION, ACC_RESERVATION_END_ADDRESS, ACC_RESERVATION_START_ADDRESS, ACC_RESERVATION_HOPE_GENDER, ACC_RESERVATION_DATE, ACC_RESERVATION_TIME, ACC_RESERVATION_ADD_REQUIRE, ACC_RESERVATION_PRICE
+        FROM TBL_ACC_RESERVATION
+        WHERE MANAGER_EMAIL IS NULL
+    </select>
+
+    <update id="AccReservationUpdate">
+        UPDATE TBL_ACC_RESERVATION
+        SET MANAGER_EMAIL = #{managerEmail}
+        WHERE ACC_RESERVATION_NUM = #{accReservationNum}
+    </update>
 
 
     <insert id="insert">
         INSERT INTO TBL_ACC_RESERVATION (ACC_RESERVATION_NUM,ACC_RESERVATION_NAME,ACC_RESERVATION_TYPE ,ACC_RESERVATION_AGE, ACC_RESERVATION_PHONE_NUM, ACC_RESERVATION_GENDER,ACC_RESERVATION_ADD_PHONE_NUM,ACC_RESERVATION_RELATION,ACC_RESERVATION_END_ADDRESS,ACC_RESERVATION_START_ADDRESS,ACC_RESERVATION_HOPE_GENDER,ACC_RESERVATION_DATE,ACC_RESERVATION_TIME,ACC_RESERVATION_ADD_REQUIRE,ACC_RESERVATION_PRICE,USER_EMAIL,MANAGER_EMAIL)
-        VALUES (SEQ_ACC_RESERVATION.NEXTVAL, #{accReservationName}, #{accReservationType}, #{accReservationAge}, #{accReservationPhoneNum}, #{accReservationGender}, #{accReservationAddPhoneNum}, #{accReservationRelation}, #{accReservationEndAddress}, #{accReservationStartAddress}, #{accReservationHopeGender}, #{accReservationDate}, #{accReservationTime}, #{accReservationAddRequire}, #{accReservationPrice}, #{userEmail},"")
+        VALUES (SEQ_RESERVATION.NEXTVAL, #{accReservationName}, #{accReservationType}, #{accReservationAge}, #{accReservationPhoneNum}, #{accReservationGender}, #{accReservationAddPhoneNum}, #{accReservationRelation}, #{accReservationEndAddress}, #{accReservationStartAddress}, #{accReservationHopeGender}, #{accReservationDate}, #{accReservationTime}, #{accReservationAddRequire}, #{accReservationPrice}, #{userEmail}, '')
     </insert>
 
 
@@ -24,6 +41,20 @@
         ROWNUM RN, a.ACC_RESERVATION_TYPE, a.ACC_RESERVATION_DATE, b.USER_NAME, a.USER_EMAIL, a.ACC_RESERVATION_NUM
         FROM TBL_ACC_RESERVATION a,TBL_USER b
         WHERE a.USER_EMAIL = b.USER_EMAIL  AND a.USER_EMAIL = #{userEmail}
+    </select>
+
+
+
+    <select id="getAcc" resultType="accReviewDTO">
+        ROWNUM RN, a.ACC_RESERVATION_TYPE, a.ACC_RESERVATION_DATE, b.USER_NAME, a.USER_EMAIL, a.ACC_RESERVATION_NUM
+        FROM TBL_ACC_RESERVATION a,TBL_USER b
+        WHERE a.USER_EMAIL = b.USER_EMAIL  AND a.USER_EMAIL = #{userEmail} AND a.ACC_RESERVATION_NUM = #{accReservationNum}
+    </select>
+
+    <select id="selectAcc" resultType="accReservationVO">
+        SELECT ACC_RESERVATION_NUM, ACC_RESERVATION_TYPE
+        FROM TBL_ACC_RESERVATION
+        WHERE ACC_RESERVATION_NUM = #{accReservationNum}
     </select>
 
 
@@ -94,6 +125,7 @@
         SET MANAGER_EMAIL = '',ACC_RESERVATION_STATUS='0'
         WHERE  ACC_RESERVATION_NUM=#{accReservationNum}
     </update>
+
 </mapper>
 
 

@@ -82,7 +82,8 @@
                                             </p>
                                         </th>
                                         <td colspan="6">
-                                            <input name="reviewType" class="bh_input_text5" id="input_title_bh" type="text" value="" style="width:90%; height: 32px; border: 0px" maxlength="100">
+                                            <input name="reviewType" class="bh_input_text5" id="input_title_bh" type="text" th:if="${careReservationType != null}" th:value="${careReservationType}" style="width:90%; height: 32px; border: 0px" maxlength="100">
+                                            <input name="reviewType" class="bh_input_text5" id="input_title_bh" type="text" th:if="${accReservationType != null}" th:value="${accReservationType}" style="width:90%; height: 32px; border: 0px" maxlength="100">
                                         </td>
                                     </tr>
                                     <tr>

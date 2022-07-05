@@ -56,13 +56,29 @@
         SELECT COUNT(REVIEW_NUM) FROM TBL_REVIEW
     </select>
 
+
+
+
     <!--  회원목록가져오기   -->
     <select id="reviewGetListUser" resultType="userReviewDTO">
-                SELECT
-                ROWNUM RN, a.REVIEW_NUM, a.REVIEW_TYPE, a.REVIEW_TITLE, a.REVIEW_CONTENT, a.REVIEW_DATE, a.REVIEW_UPDATE_DATE, b.USER_NAME, a.USER_EMAIL
-                FROM TBL_REVIEW a, TBL_USER b
-                WHERE a.USER_EMAIL = b.USER_EMAIL AND a.USER_EMAIL = #{userEmail}
-    </select>
+            	<![CDATA[
+            	SELECT RN, REVIEW_NUM,REVIEW_TYPE, REVIEW_TITLE, REVIEW_CONTENT, REVIEW_WRITER, REVIEW_DATE, REVIEW_UPDATE_DATE, USER_EMAIL, USER_NAME
+            	FROM
+            	(
+               	 SELECT /*+ INDEX_DESC(TBL_REVIEW PK_REVIEW) */
+                	ROWNUM RN, REVIEW_NUM, REVIEW_TYPE, REVIEW_TITLE, REVIEW_CONTENT, REVIEW_WRITER, REVIEW_DATE, REVIEW_UPDATE_DATE, B.USER_EMAIL, B.USER_NAME
+                	FROM TBL_REVIEW A JOIN TBL_USER B
+                	ON A.USER_EMAIL =  B.USER_EMAIL
+                	WHERE B.USER_EMAIL = #{userEmail} AND ROWNUM <= #{criteria.pageNum} * #{criteria.amount}
+            	)
+           	WHERE RN > (#{criteria.pageNum} - 1) * #{criteria.amount}
+        	]]>
+	</select>
+
+    <select id="myReviewGetTotal" resultType="_int">
+        	SELECT COUNT(REVIEW_NUM) FROM TBL_REVIEW
+        	WHERE USER_EMAIL = #{userEmail}
+	</select>
 
 
 </mapper>

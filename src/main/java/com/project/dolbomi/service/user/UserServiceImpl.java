@@ -28,7 +28,6 @@ public class UserServiceImpl implements UserService {
     private final ReviewDAO reviewDAO;
     private final AccReservationDAO accReservationDAO;
     private final CareReservationDAO careReservationDAO;
-    private final UserReviewDTO userReviewDTO;
 
 
     @Override
@@ -369,9 +368,15 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public int myReviewGetTotal(Criteria criteria, String userEmail) {
+        return reviewDAO.myReviewGetTotal(criteria, userEmail);
+    }
+
+    @Override
     public List<UserReviewDTO> reviewGetListUser(Criteria criteria, String userEmail) {
         return reviewDAO.reviewGetListUser(criteria, userEmail);
     }
+
 
     // acc reservation review list
     @Override
@@ -385,7 +390,34 @@ public class UserServiceImpl implements UserService {
         return careReservationDAO.reviewGetListCare(userEmail);
     }
 
+    //care reservation select one
+    @Override
+    public CareReservationVO selectCare(Long careReservationNum) {
+        return careReservationDAO.selectCare(careReservationNum);
+    }
 
+    // acc reservation select one
+    @Override
+    public AccReservationVO selectAcc(Long accReservationNum) {
+        return accReservationDAO.selectAcc(accReservationNum);
+    }
+
+
+    @Override
+    public List<AccReservationVO> getListAccReservation(Criteria criteria, List<String> areaAr) {return accReservationDAO.getListAccReservation(criteria, areaAr);}
+
+    @Override
+    public List<CareReservationVO> getListCareReservation(Criteria criteria, List<String> areaAr) {return careReservationDAO.getListCareReservation(criteria, areaAr);}
+
+    @Override
+    public void AccReservationUpdate(Long accReservationNum, String managerEmail) {
+        accReservationDAO.AccReservationUpdate(accReservationNum, managerEmail);
+    }
+
+    @Override
+    public void CareReservationUpdate(Long careReservationNum, String managerEmail) {
+        careReservationDAO.CareReservationUpdate(careReservationNum, managerEmail);
+    }
 
 
 }
