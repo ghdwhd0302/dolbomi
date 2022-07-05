@@ -20,9 +20,10 @@ public class ManagerMapperTests {
 //        ManagerMapper.caregetList().stream().map(ManagerVO::toString).forEach(log::info);
 //    }
 
-    @Test
-    public void managerloginTests(){
-        log.info(managerMapper.managerLogIn("apple", "1234")+"");
-    }
+//    @Test
+//    public void managerloginTests(){
+//        log.info(managerMapper.managerLogIn("apple", "1234")+"");
+//    }
+//
 
 }

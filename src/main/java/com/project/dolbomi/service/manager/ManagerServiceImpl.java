@@ -87,4 +87,16 @@ public class ManagerServiceImpl implements ManagerService {
     public ManagerVO managerInfo(String managerEmail) {
         return managerDAO.managerInfo(managerEmail);
     }
+
+
+    @Override
+    public ManagerVO managerInfoacc(String userEmail) {
+        return managerDAO.managerInfoacc(userEmail);
+    }
+
+
+    @Override
+    public ManagerVO managerInfocare(String userEmail) {
+        return managerDAO.managerInfocare(userEmail);
+    }
 }

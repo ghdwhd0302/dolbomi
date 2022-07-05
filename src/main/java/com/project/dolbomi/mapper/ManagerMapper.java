@@ -43,4 +43,6 @@ public interface ManagerMapper {
     public ManagerVO findPw(String managerName, String managerPhoneNum, String managerBirth, String managerEmail);
 
     public ManagerVO managerInfo(String managerEmail);
+    public ManagerVO managerInfoacc(String userEmail);
+    public ManagerVO managerInfocare(String userEmail);
 }

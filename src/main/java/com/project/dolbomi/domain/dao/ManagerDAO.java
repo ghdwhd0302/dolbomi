@@ -67,5 +67,7 @@ public class ManagerDAO {
 
     /*매니저 정보*/
     public ManagerVO managerInfo(String managerEmail) {return managerMapper.managerInfo(managerEmail);}
+    public ManagerVO managerInfoacc(String userEmail) {return managerMapper.managerInfoacc(userEmail);}
+    public ManagerVO managerInfocare(String userEmail) {return managerMapper.managerInfocare(userEmail);}
 }
 

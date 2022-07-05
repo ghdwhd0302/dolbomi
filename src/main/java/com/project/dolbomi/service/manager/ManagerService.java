@@ -47,4 +47,6 @@ public interface ManagerService {
     public boolean managerLogIn(String managerEmail, String managerPw);
 
     public ManagerVO managerInfo(String managerEmail);
+    public ManagerVO managerInfoacc(String userEmail);
+    public ManagerVO managerInfocare(String userEmail);
 }
