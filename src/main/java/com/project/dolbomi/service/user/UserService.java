@@ -3,12 +3,11 @@ package com.project.dolbomi.service.user;
 import com.project.dolbomi.domain.vo.*;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 @Service
 public interface UserService {
-
-
     // 돌봄서비스 매니저 배정 수락
     public boolean careApprove(CareReservationVO careReservationVO);
 
@@ -29,12 +28,12 @@ public interface UserService {
 
     //    동행서비스 예약자 1명 정보
     public AccReservationVO AccGet(Long accReservationNum);
+
     // user_userdetails의 카운트 횟수.  ACC_RESERVATION_STATUS 에 따라 변경
     public int accgetTotal1(Long accReservationNum);
     public int accgetTotal2(Long accReservationNum);
     public int accgetTotal3(Long accReservationNum);
     public int accgetTotal4(Long accReservationNum);
-
 
     // 동행서비스 매니저 배정 수락 user_userdetails페이지
     public void AccManagerY(Long accReservationNum);
@@ -80,11 +79,8 @@ public interface UserService {
     //돌봄서비스 매니저가 업무 취소,manager 페이지의 동행예약목록
     public void CareManagerCancel(Long careReservationNum);
 
-
-
     //    동행서비스 예약리스트
     public List<AccReservationVO> AccResult(String accReservationName);
-
 
     // 회원 가입
     public void join(UserVO userVO);
@@ -99,7 +95,13 @@ public interface UserService {
     public int emailCheck(String userEmail);
 
     //아이디 찾기
-    public String findId(String userName, String userPhoneNum, String userBirth);
+    public String findId(String userName, String userPhoneNum, String userBrith);
+
+    //이메일발송
+    public void sendEmail(UserVO userVO, String div) throws Exception;
+
+    //비밀번호찾기
+    public void findPw(HttpServletResponse resp, UserVO userVO) throws Exception;
 
     //휴대폰 인증번호
     public void phoneCerti(String userPhoneNum, int randomNum);

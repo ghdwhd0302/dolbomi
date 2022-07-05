@@ -52,4 +52,5 @@ public interface CareReservationMapper {
 
     //user_details4 서비스 종료 리스트
     public List<User4CareDTO> careServiceEndList(String userEmail);
+
 }

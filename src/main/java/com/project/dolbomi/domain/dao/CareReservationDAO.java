@@ -41,6 +41,11 @@ public class CareReservationDAO {
     public void careReservationInfo(Long careReservationNum) {
     }
 
+    //    돌봄서비스 리스트
+    public List<CareReservationVO> getListCareReservation(Criteria criteria, List<String> areaAr) {
+        return careReservationMapper.getListCareReservation(criteria);
+    }
+
     // 돌봄서비스 매니저 배정 수락 user_userdetails페이지
     public void CareManagerY(Long careReservationNum){
         careReservationMapper.CareManagerY(careReservationNum) ;
@@ -92,6 +97,10 @@ public class CareReservationDAO {
 
     //돌봄 서비스 종료 리스트
     public List<User4CareDTO> careServiceEndList(String userEmail){return careReservationMapper.careServiceEndList(userEmail);}
+    public void CareReservationUpdate(Long careReservationNum, String managerEmail){
+        careReservationMapper.CareReservationUpdate(careReservationNum, managerEmail);
+    }
+
 }
 
 

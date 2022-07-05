@@ -60,8 +60,8 @@ public class ManagerController {
     //    서비스 상태 변경(시작)
     @GetMapping("startService")
     public String serviceStart(){
-        Long careReservationNum=Long.valueOf(46);
-        Long accReservationNum=Long.valueOf(43);
+        Long careReservationNum=Long.valueOf(26);
+        Long accReservationNum=Long.valueOf(42);
         userService.CareManagerStart(careReservationNum);
         userService.AccManagerStart(accReservationNum);
         return "/manager/manager2";
@@ -70,8 +70,8 @@ public class ManagerController {
     //    서비스 상태 변경(취소)
     @GetMapping("cancelService")
     public String serviceCancel(){
-        Long careReservationNum=Long.valueOf(46);
-        Long accReservationNum=Long.valueOf(43);
+        Long careReservationNum=Long.valueOf(26);
+        Long accReservationNum=Long.valueOf(42);
         userService.CareManagerCancel(careReservationNum);
         userService.AccManagerCancel(accReservationNum);
         return "/member/mainpage";
@@ -80,8 +80,8 @@ public class ManagerController {
     //    서비스 상태 변경(종료)
     @GetMapping("endService")
     public String serviceEnd(){
-        Long careReservationNum=Long.valueOf(46);
-        Long accReservationNum=Long.valueOf(43);
+        Long careReservationNum=Long.valueOf(26);
+        Long accReservationNum=Long.valueOf(42);
         userService.CareManagerEnd(careReservationNum);
         userService.AccManagerEnd(accReservationNum);
         return "/manager/manager3";
@@ -109,11 +109,14 @@ public class ManagerController {
 
     //  페이지 이동
     @GetMapping("manager")
-    public void manager( Model model){
-        Long careReservationNum=Long.valueOf(46);
-        Long accReservationNum=Long.valueOf(43);
-        String accManageremail = "매니저3@naver.com";
-        String careManageremail = "매니저3@naver.com";
+    public String manager( Model model){
+        Long careReservationNum=Long.valueOf(26);
+        Long accReservationNum=Long.valueOf(42);
+        String accManageremail = "APPLE";
+        String careManageremail = "APPLE";
+
+        log.info("-----careManageremail" + managerService.managerInfo(careManageremail) );
+        log.info("-----careReservationNum" + userService.CareGet(careReservationNum) );
 
         model.addAttribute("totallist2", userService.accgetTotal2(accReservationNum));
         model.addAttribute("totallist3", userService.accgetTotal3(accReservationNum));
@@ -127,6 +130,8 @@ public class ManagerController {
 
         model.addAttribute("accmanagerInfo", managerService.managerInfo(accManageremail));
         model.addAttribute("caremanagerInfo", managerService.managerInfo(careManageremail));
+
+        return "/manager/manager";
 
 
     }
@@ -151,14 +156,32 @@ public class ManagerController {
         userService.AccReservationUpdate(accReservationNum, managerEmail);
 
         return "/manager/manager";
+        String careNum = req.getParameter("careReservationNum");
+        String accNum = req.getParameter("accReservationNum");
+
+        log.info("------managerEmail" + managerEmail);
+        log.info("------careNum" + careNum);
+        log.info("------accNum" + accNum);
+
+        if (accNum==null) {
+            Long careReservationNum = Long.parseLong(careNum);
+            log.info("-----careNum1" + Long.parseLong(careNum));
+            userService.CareReservationUpdate(careReservationNum, managerEmail);
+            return "/manager/manager";
+        } else {
+            Long accReservationNum = Long.parseLong(accNum);
+            log.info("-----accNum1" + Long.parseLong(accNum));
+            userService.AccReservationUpdate(accReservationNum, managerEmail);
+            return "/manager/manager";
+        }
     }
 
     @GetMapping("manager2")
-    public void manager2(Model model){
-        Long careReservationNum=Long.valueOf(46);
-        Long accReservationNum=Long.valueOf(43);
-        String accManageremail = "매니저3@naver.com";
-        String careManageremail = "매니저3@naver.com";
+    public String manager2(Model model){
+        Long careReservationNum=Long.valueOf(26);
+        Long accReservationNum=Long.valueOf(42);
+        String accManageremail = "APPLE";
+        String careManageremail = "APPLE";
 
         model.addAttribute("totallist2", userService.accgetTotal2(accReservationNum));
         model.addAttribute("totallist3", userService.accgetTotal3(accReservationNum));
@@ -173,16 +196,16 @@ public class ManagerController {
         model.addAttribute("accmanagerInfo", managerService.managerInfo(accManageremail));
         model.addAttribute("caremanagerInfo", managerService.managerInfo(careManageremail));
 
-
+        return "/manager/manager2";
     }
 
     @GetMapping("manager3")
     public String manager3(Criteria criteria, Model model){
 
-        Long careReservationNum=Long.valueOf(6);
-        Long accReservationNum=Long.valueOf(43);
-        String accManageremail = "매니저3@naver.com";
-        String careManageremail = "매니저3@naver.com";
+        Long careReservationNum=Long.valueOf(26);
+        Long accReservationNum=Long.valueOf(42);
+        String accManageremail = "APPLE";
+        String careManageremail = "APPLE";
 
         model.addAttribute("totallist2", userService.accgetTotal2(accReservationNum));
         model.addAttribute("totallist3", userService.accgetTotal3(accReservationNum));
@@ -204,7 +227,7 @@ public class ManagerController {
 
     @GetMapping("manager_rev")
     public String manager_rev(Criteria criteria, Model model){
-    List<String> areaAr = new ArrayList<>();
+        List<String> areaAr = new ArrayList<>();
 //        model.addAttribute("applyList", managerService.getList(criteria));
         model.addAttribute("getListAccReservation", userService.getListAccReservation(criteria, areaAr));
         model.addAttribute("getListCareReservation", userService.getListCareReservation(criteria, areaAr));

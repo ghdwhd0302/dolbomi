@@ -43,6 +43,15 @@ public class ManagerDAO {
         return cnt;
     }
 
+    //아이디 찾기
+    public ManagerVO findId(String managerName, String managerPhoneNum, String managerBirth) {
+        return managerMapper.findId(managerName, managerPhoneNum, managerBirth);
+    }
+    //비밀번호 찾기
+    public ManagerVO findPw(String managerName, String managerPhoneNum, String managerBirth, String managerEmail) {
+        return managerMapper.findPw(managerName, managerPhoneNum, managerBirth, managerEmail);
+    }
+
     //    매니저 탈퇴
     public void withdrawal(String userEmail){
 

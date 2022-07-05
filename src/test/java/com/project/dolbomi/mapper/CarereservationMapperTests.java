@@ -74,4 +74,9 @@ public class CarereservationMapperTests {
     public void endListTests(){
         log.info(careReservationMapper.careServiceEndList("APPLE").toString());
     }
+//    @Test
+//    public void CareReservationUpdate(){
+//        careReservationMapper.CareReservationUpdate(26L, "APPLE");
+//    }
+
 }

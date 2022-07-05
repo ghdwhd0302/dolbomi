@@ -63,5 +63,9 @@ public class AccreservationMapperTests {
 //        log.info(accReservationMapper.AccGetList(9L).toString());
 //    }
 
+    @Test
+    public void AccReservationUpdate(){
+        accReservationMapper.AccReservationUpdate(44L, "APPLE");
+    }
 
 }

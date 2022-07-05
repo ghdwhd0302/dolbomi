@@ -34,6 +34,22 @@ public class AccReservationDAO {
     public List<AccReservationVO> getListAccReservation(Criteria criteria, List<String> areaAr) {
         return accReservationMapper.getListAccReservation(criteria, areaAr);
     }
+
+
+
+    // 동행서비스 매니저 배정 수락 user_userdetails페이지
+    public void AccManagerY(Long accReservationNum){
+        accReservationMapper.AccManagerY(accReservationNum) ;
+    }
+    // 동행서비스 매니저 배정 거절 user_userdetails페이지
+    public void AccManagerN(Long accReservationNum){
+        accReservationMapper.AccManagerN(accReservationNum);
+    }
+
+    // 동행서비스고객이 예약취소,user_userdetails2 페이지의 동행예약 취소
+    public void Accdelete(Long accReservationNum){
+        accReservationMapper.Accdelete(accReservationNum);
+    }
     // accreservation select one
     public AccReservationVO selectAcc(Long accReservationNum){
         return accReservationMapper.selectAcc(accReservationNum);
@@ -94,4 +110,10 @@ public class AccReservationDAO {
         //동행 서비스 종료 리스트
         public List<User4AccDTO> accServiceEndList(String userEmail){return accReservationMapper.accServiceEndList(userEmail);}
     }
+
+
+    public void AccReservationUpdate(Long accReservationNum, String managerEmail){
+        accReservationMapper.AccReservationUpdate(accReservationNum, managerEmail);
+    }
+}
 

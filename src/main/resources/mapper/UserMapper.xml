@@ -3,8 +3,6 @@
 <mapper namespace="com.project.dolbomi.mapper.UserMapper">
 
     <insert id="insert">
-
-        
         INSERT INTO TBL_USER (USER_NAME, USER_GENDER, USER_BIRTH, USER_EMAIL,USER_PHONE_NUM,USER_PW)
         VALUES (#{userName}, #{userGender},#{userBirth},#{userEmail},#{userPhoneNum},#{userPw})
 
@@ -60,5 +58,16 @@
         WHERE USER_EMAIL = #{userEmail}
     </select>
 
+    <select id="findId" resultType="string">
+		SELECT NULLIF(USER_EMAIL, 0)
+		FROM TBL_USER
+		WHERE USER_NAME = #{userName} AND USER_PHONE_NUM = #{userPhoneNum} AND USER_BIRTH = #{userBirth}
+	</select>
+
+    <select id="findPw" resultType="userVO">
+		SELECT USER_PW
+		FROM TBL_USER
+		WHERE USER_NAME = #{userName} AND USER_PHONE_NUM = #{userPhoneNum} AND USER_BIRTH = #{userBirth} AND USER_EMAIL = #{userEmail}
+	</select>
 
 </mapper>
