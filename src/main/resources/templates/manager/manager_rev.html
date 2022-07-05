@@ -2324,17 +2324,6 @@
     <input type="hidden" th:field="*{amount}">
 </form>
 
-
-<div id="popup01">
-    <div class="close">닫기</div>
-    <div style="font-size: 32px;
-    text-align: center;
-    margin-top: 110px;
-    margin-bottom: 110px;
-    color: #767070;">매칭하시겠습니까?
-    </div>
-    <button class="confirm">매칭 확정</button>
-</div>
 <th:block th:each="areas:${areaAr}">
     <input type="hidden" name="areas" th:class="${areas}" th:value="${areas}">
 </th:block>
