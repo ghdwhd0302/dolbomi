@@ -2344,22 +2344,6 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
         crossorigin="anonymous"></script>
-<script th:inline="javascript">
-
-    $("#accReservation").click(function (e) {
-        e.preventDefault();
-        console.log($(this).attr("name"));
-        $("input[name='accReservationNum']").val($(this).attr("name"));
-        accForm.submit();
-    })
-
-    $("#careReservation").click(function (e) {
-        e.preventDefault();
-        console.log($(this).attr("name"));
-        $("input[name='careReservationNum']").val($(this).attr("name"));
-        careForm.submit();
-    })
-</script>
 <script>
     let checking = false;
     let naming = "";
