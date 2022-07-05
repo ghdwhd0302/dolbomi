@@ -16,4 +16,10 @@ public class ManagerServiceTests {
     public void managerloginTests(){
         log.info(managerService.managerLogIn("apple", "1234") + "");
     }
+    /*@Test
+    public void adaas(){
+
+        managerService.managerInfoacc("김동행@naver.com");
+
+    }*/
 }

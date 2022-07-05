@@ -25,10 +25,37 @@ public class UserServiceImpl implements UserService {
     private final ReviewDAO reviewDAO;
     private final AccReservationDAO accReservationDAO;
     private final CareReservationDAO careReservationDAO;
-    private final UserReviewDTO userReviewDTO;
 
 
+    @Override
+    public boolean careApprove(CareReservationVO careReservationVO) {
+        return false;
+    }
 
+    @Override
+    public boolean careRefuse(CareReservationVO careReservationVO) {
+        return false;
+    }
+
+    @Override
+    public boolean careDelte(Long careReservationNum) {
+        return false;
+    }
+
+    @Override
+    public boolean careManagerRefuse(CareReservationVO careReservationV) {
+        return false;
+    }
+
+    @Override
+    public boolean AccGetList(Long careReservationNum) {
+        return false;
+    }
+
+    @Override
+    public AccReservationVO accSelect(Long accReservationNum) {
+        return null;
+    }
 
     //    동행서비스 예약자 1명 정보
     @Override
@@ -37,31 +64,52 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public int accgetTotal1(Long accReservationNum) {
-        return accReservationDAO.accgetTotal1(accReservationNum);
+    public int accgetTotal1(String userEmail) {
+        return accReservationDAO.accgetTotal1(userEmail);
     }
     @Override
-    public int accgetTotal2(Long accReservationNum) {
-        return accReservationDAO.accgetTotal2(accReservationNum);
+    public int accgetTotal2(String userEmail) {
+        return accReservationDAO.accgetTotal2(userEmail);
     }
     @Override
-    public int accgetTotal3(Long accReservationNum) {
-        return accReservationDAO.accgetTotal3(accReservationNum);
+    public int accgetTotal3(String userEmail) {
+        return accReservationDAO.accgetTotal3(userEmail);
     }
     @Override
-    public int accgetTotal4(Long accReservationNum) {
-        return accReservationDAO.accgetTotal4(accReservationNum);
+    public int accgetTotal4(String userEmail) {
+        return accReservationDAO.accgetTotal4(userEmail);
     }
+
+    @Override
+    public AccReservationVO accgetNum1(String userEmail) {
+        return accReservationDAO.accgetNum1(userEmail);
+    }
+
+    @Override
+    public AccReservationVO accgetNum2(String userEmail) {
+        return accReservationDAO.accgetNum2(userEmail);
+    }
+
+    @Override
+    public AccReservationVO accgetNum3(String userEmail) {
+        return accReservationDAO.accgetNum3(userEmail);
+    }
+
+    @Override
+    public AccReservationVO accgetNum4(String userEmail) {
+        return accReservationDAO.accgetNum4(userEmail);
+    }
+
 
     // 동행서비스 매니저 배정 수락 user_userdetails페이지
     @Override
-    public void AccManagerY(Long accReservationNum) {
-        accReservationDAO.AccManagerY(accReservationNum);
+    public void AccManagerY(String userEmail) {
+        accReservationDAO.AccManagerY(userEmail);
     }
     // 동행서비스 매니저 배정 거절 user_userdetails페이지
     @Override
-    public void AccManagerN(Long accReservationNum) {
-        accReservationDAO.AccManagerN(accReservationNum);
+    public void AccManagerN(String userEmail) {
+        accReservationDAO.AccManagerN(userEmail);
     }
     // 동행서비스고객이 예약취소,user_userdetails2 페이지의 동행예약 취소
     @Override
@@ -85,7 +133,15 @@ public class UserServiceImpl implements UserService {
         accReservationDAO.AccManagerCancel(accReservationNum);
     }
 
+    @Override
+    public ManagerVO accgetManagerInfo(String userEmail) {
+      return accReservationDAO.accgetManagerInfo(userEmail);
+    }
 
+    @Override
+    public ManagerVO caregetManagerInfo(String userEmail) {
+        return careReservationDAO.caregetManagerInfo(userEmail);
+    }
     //    돌봄서비스 예약자 1명 정보
     @Override
     public CareReservationVO CareGet(Long careReservationNum) {
@@ -93,30 +149,50 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public int caregetTotal5(Long careReservationNum) {
-        return careReservationDAO.caregetTotal5(careReservationNum);
+    public CareReservationVO caregetNum1(String userEmail) {
+        return careReservationDAO.caregetNum1(userEmail);
+    }
+
+    @Override
+    public CareReservationVO caregetNum2(String userEmail) {
+        return careReservationDAO.caregetNum2(userEmail);
+    }
+
+    @Override
+    public CareReservationVO caregetNum3(String userEmail) {
+        return careReservationDAO.caregetNum3(userEmail);
+    }
+
+    @Override
+    public CareReservationVO caregetNum4(String userEmail) {
+        return careReservationDAO.caregetNum4(userEmail);
+    }
+
+    @Override
+    public int caregetTotal5(String userEmail) {
+        return careReservationDAO.caregetTotal5(userEmail);
     }
     @Override
-    public int caregetTotal6(Long careReservationNum) {
-        return careReservationDAO.caregetTotal6(careReservationNum);
+    public int caregetTotal6(String userEmail) {
+        return careReservationDAO.caregetTotal6(userEmail);
     }
     @Override
-    public int caregetTotal7(Long careReservationNum) {
-        return careReservationDAO.caregetTotal7(careReservationNum);
+    public int caregetTotal7(String userEmail) {
+        return careReservationDAO.caregetTotal7(userEmail);
     }
     @Override
-    public int caregetTotal8(Long careReservationNum) {
-        return careReservationDAO.caregetTotal8(careReservationNum);
+    public int caregetTotal8(String userEmail) {
+        return careReservationDAO.caregetTotal8(userEmail);
     }
     // 돌봄서비스 매니저 배정 수락 user_userdetails페이지
     @Override
-    public void CareManagerY(Long careReservationNum) {
-        careReservationDAO.CareManagerY(careReservationNum);
+    public void CareManagerY(String userEmail) {
+        careReservationDAO.CareManagerY(userEmail);
     }
     // 돌봄서비스 매니저 배정 거절 user_userdetails페이지
     @Override
-    public void CareManagerN(Long careReservationNum) {
-        careReservationDAO.CareManagerN(careReservationNum);
+    public void CareManagerN(String userEmail) {
+        careReservationDAO.CareManagerN(userEmail);
     }
     // 돌봄서비스고객이 예약취소,user_userdetails2 페이지의 돌봄예약 취소
     @Override
@@ -289,6 +365,8 @@ public class UserServiceImpl implements UserService {
         return careReservationDAO.selectCare(careReservationNum);
     }
 
+
+
     // acc reservation select one
     @Override
     public AccReservationVO selectAcc(Long accReservationNum) {
@@ -296,12 +374,16 @@ public class UserServiceImpl implements UserService {
     }
 
 
-    @Override
-    public List<AccReservationVO> getListAccReservation(Criteria criteria) {return accReservationDAO.getListAccReservation(criteria);}
 
     @Override
-    public List<CareReservationVO> getListCareReservation(Criteria criteria) {return careReservationDAO.getListCareReservation(criteria);}
+    public void AccReservationUpdate(Long accReservationNum, String managerEmail) {
 
+    }
+
+    @Override
+    public void CareReservationUpdate(Long careReservationNum, String managerEmail) {
+
+    }
 
 
 

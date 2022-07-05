@@ -38,4 +38,6 @@ public interface ManagerMapper {
 
 
     public ManagerVO managerInfo(String managerEmail);
+    public ManagerVO managerInfoacc(String userEmail);
+    public ManagerVO managerInfocare(String userEmail);
 }

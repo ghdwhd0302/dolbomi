@@ -39,7 +39,12 @@ public class AccreservationMapperTests {
 
         accReservationMapper.insert(accReservationVO);
     }*/
+    @Test
+    public void as(){
+        accReservationMapper.accgetManagerInfo("김동행@naver.com");
 
+
+    }
 
 //    @Test
 //    public void select() {

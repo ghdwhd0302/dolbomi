@@ -29,7 +29,7 @@ public class CareReservationDAO {
         return careReservationMapper.reviewGetListCare(userEmail);
     }
 
-<<<<<<< HEAD
+
     // carereservation select one
     public CareReservationVO selectCare(Long careReservationNum) {
         return careReservationMapper.selectCare(careReservationNum);
@@ -41,16 +41,16 @@ public class CareReservationDAO {
     }
 
 
-=======
+
 
 
     // 돌봄서비스 매니저 배정 수락 user_userdetails페이지
-    public void CareManagerY(Long careReservationNum){
-        careReservationMapper.CareManagerY(careReservationNum) ;
+    public void CareManagerY(String userEmail){
+        careReservationMapper.CareManagerY(userEmail) ;
     }
     // 돌봄서비스 매니저 배정 거절 user_userdetails페이지
-    public void CareManagerN(Long careReservationNum){
-        careReservationMapper.CareManagerN(careReservationNum);
+    public void CareManagerN(String userEmail){
+        careReservationMapper.CareManagerN(userEmail);
     }
 
     // 돌봄서비스고객이 예약취소,user_userdetails2 페이지의 동행예약 취소
@@ -76,21 +76,24 @@ public class CareReservationDAO {
         return careReservationMapper.CareGet(careReservationNum)  ;
     }
 
+    public CareReservationVO caregetNum1(String userEmail){ return careReservationMapper.caregetNum1(userEmail);}
+    public CareReservationVO caregetNum2(String userEmail){ return careReservationMapper.caregetNum2(userEmail);}
+    public CareReservationVO caregetNum3(String userEmail){ return careReservationMapper.caregetNum3(userEmail);}
+    public CareReservationVO caregetNum4(String userEmail){ return careReservationMapper.caregetNum4(userEmail);}
 
-    public int caregetTotal5(Long careReservationNum){
-        return careReservationMapper.caregetTotal5(careReservationNum);
+    public int caregetTotal5(String userEmail){return careReservationMapper.caregetTotal5(userEmail); }
+    public int caregetTotal6(String userEmail){
+        return careReservationMapper.caregetTotal6(userEmail);
     }
-    public int caregetTotal6(Long careReservationNum){
-        return careReservationMapper.caregetTotal6(careReservationNum);
+    public int caregetTotal7(String userEmail){
+        return careReservationMapper.caregetTotal7(userEmail);
     }
-    public int caregetTotal7(Long careReservationNum){
-        return careReservationMapper.caregetTotal7(careReservationNum);
+    public int caregetTotal8(String userEmail){
+        return careReservationMapper.caregetTotal8(userEmail);
     }
-    public int caregetTotal8(Long careReservationNum){
-        return careReservationMapper.caregetTotal8(careReservationNum);
-    }
+    //유저 이메일로 매니저 예약메일 통해 매니저정보얻기
+    public ManagerVO caregetManagerInfo(String userEmail){return careReservationMapper.caregetManagerInfo(userEmail);}
 
->>>>>>> 4a78b0b2ebb8372e5e95ca8a80f7588572576879
 }
 
 

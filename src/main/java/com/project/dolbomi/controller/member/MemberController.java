@@ -75,6 +75,7 @@ public class MemberController {
         if(check){//로그인 성공
             HttpSession httpSession = request.getSession();
             httpSession.setAttribute("userVO", userService.profile(userEmail));
+            httpSession.setAttribute("userEmail",userEmail);
 
             return "/member/mainpage";
         }
@@ -116,6 +117,7 @@ public class MemberController {
         if(check){//로그인 성공
             HttpSession httpSession = request.getSession();
             httpSession.setAttribute("managerVO", managerService.managerInfo(managerEmail));
+            httpSession.setAttribute("managerEmail",managerEmail);
 
             return "/member/mainpage";
         }
@@ -179,7 +181,18 @@ public class MemberController {
     public void idfind_manager(){}
 
     @GetMapping("mainpage")
-    public void mainpage(){}
+    public void mainpage(HttpServletRequest request){
+        HttpSession httpSession = request.getSession();
+
+        httpSession.getAttribute("userVO");
+        httpSession.getAttribute("userEmail");
+
+        String email=String.valueOf(httpSession.getAttribute("userVO"));
+        String email2=String.valueOf(httpSession.getAttribute("userEmail"));
+        userService.accgetTotal1(email2);
+        log.info("-----------------------"+email);
+        log.info("-----------------------"+userService.accgetTotal1(email2));
+    }
 
     @GetMapping("userlogin")
     public void userlogin(){}

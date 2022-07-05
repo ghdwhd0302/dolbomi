@@ -11,6 +11,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 @Controller
 @Slf4j
 @RequiredArgsConstructor
@@ -103,71 +106,68 @@ public class ManagerController {
 
     //  페이지 이동
     @GetMapping("manager")
-    public void manager( Model model){
-        Long careReservationNum=Long.valueOf(46);
-        Long accReservationNum=Long.valueOf(43);
-        String accManageremail = "매니저3@naver.com";
-        String careManageremail = "매니저3@naver.com";
+    public void manager(Model model, HttpServletRequest request){
 
-        model.addAttribute("totallist2", userService.accgetTotal2(accReservationNum));
-        model.addAttribute("totallist3", userService.accgetTotal3(accReservationNum));
-        model.addAttribute("totallist4", userService.accgetTotal4(accReservationNum));
-        model.addAttribute("totallist6", userService.caregetTotal6(careReservationNum));
-        model.addAttribute("totallist7", userService.caregetTotal7(careReservationNum));
-        model.addAttribute("totallist8", userService.caregetTotal8(careReservationNum));
+        HttpSession httpSession = request.getSession();
+        httpSession.getAttribute("userEmail");
+        String email=String.valueOf(httpSession.getAttribute("userEmail"));
 
-        model.addAttribute("accreservationlist", userService.AccGet(accReservationNum));
-        model.addAttribute("carereservationlist", userService.CareGet(careReservationNum));
+        model.addAttribute("totallist2", userService.accgetTotal2(email));
+        model.addAttribute("totallist3", userService.accgetTotal3(email));
+        model.addAttribute("totallist4", userService.accgetTotal4(email));
+        model.addAttribute("totallist6", userService.caregetTotal6(email));
+        model.addAttribute("totallist7", userService.caregetTotal7(email));
+        model.addAttribute("totallist8", userService.caregetTotal8(email));
 
-        model.addAttribute("accmanagerInfo", managerService.managerInfo(accManageremail));
-        model.addAttribute("caremanagerInfo", managerService.managerInfo(careManageremail));
+        model.addAttribute("accreservationlist", userService.accgetNum2(email));
+        model.addAttribute("carereservationlist",userService.caregetNum2(email));
+
+        model.addAttribute("accmanagerInfo", userService.accgetManagerInfo(email));
+        model.addAttribute("caremanagerInfo", userService.caregetManagerInfo(email));
 
 
     }
 
     @GetMapping("manager2")
-    public void manager2(Model model){
-        Long careReservationNum=Long.valueOf(46);
-        Long accReservationNum=Long.valueOf(43);
-        String accManageremail = "매니저3@naver.com";
-        String careManageremail = "매니저3@naver.com";
+    public void manager2(Model model,HttpServletRequest request){
+        HttpSession httpSession = request.getSession();
+        httpSession.getAttribute("userEmail");
+        String email=String.valueOf(httpSession.getAttribute("userEmail"));
 
-        model.addAttribute("totallist2", userService.accgetTotal2(accReservationNum));
-        model.addAttribute("totallist3", userService.accgetTotal3(accReservationNum));
-        model.addAttribute("totallist4", userService.accgetTotal4(accReservationNum));
-        model.addAttribute("totallist6", userService.caregetTotal6(careReservationNum));
-        model.addAttribute("totallist7", userService.caregetTotal7(careReservationNum));
-        model.addAttribute("totallist8", userService.caregetTotal8(careReservationNum));
+        model.addAttribute("totallist2", userService.accgetTotal2(email));
+        model.addAttribute("totallist3", userService.accgetTotal3(email));
+        model.addAttribute("totallist4", userService.accgetTotal4(email));
+        model.addAttribute("totallist6", userService.caregetTotal6(email));
+        model.addAttribute("totallist7", userService.caregetTotal7(email));
+        model.addAttribute("totallist8", userService.caregetTotal8(email));
 
-        model.addAttribute("accreservationlist", userService.AccGet(accReservationNum));
-        model.addAttribute("carereservationlist", userService.CareGet(careReservationNum));
+        model.addAttribute("accreservationlist", userService.accgetNum3(email));
+        model.addAttribute("carereservationlist",userService.caregetNum3(email));
 
-        model.addAttribute("accmanagerInfo", managerService.managerInfo(accManageremail));
-        model.addAttribute("caremanagerInfo", managerService.managerInfo(careManageremail));
+        model.addAttribute("accmanagerInfo", userService.accgetManagerInfo(email));
+        model.addAttribute("caremanagerInfo", userService.caregetManagerInfo(email));
 
 
     }
 
     @GetMapping("manager3")
-    public String manager3(Criteria criteria, Model model){
+    public String manager3(Criteria criteria, Model model,HttpServletRequest request){
+        HttpSession httpSession = request.getSession();
+        httpSession.getAttribute("userEmail");
+        String email=String.valueOf(httpSession.getAttribute("userEmail"));
 
-        Long careReservationNum=Long.valueOf(46);
-        Long accReservationNum=Long.valueOf(43);
-        String accManageremail = "매니저3@naver.com";
-        String careManageremail = "매니저3@naver.com";
+        model.addAttribute("totallist2", userService.accgetTotal2(email));
+        model.addAttribute("totallist3", userService.accgetTotal3(email));
+        model.addAttribute("totallist4", userService.accgetTotal4(email));
+        model.addAttribute("totallist6", userService.caregetTotal6(email));
+        model.addAttribute("totallist7", userService.caregetTotal7(email));
+        model.addAttribute("totallist8", userService.caregetTotal8(email));
 
-        model.addAttribute("totallist2", userService.accgetTotal2(accReservationNum));
-        model.addAttribute("totallist3", userService.accgetTotal3(accReservationNum));
-        model.addAttribute("totallist4", userService.accgetTotal4(accReservationNum));
-        model.addAttribute("totallist6", userService.caregetTotal6(careReservationNum));
-        model.addAttribute("totallist7", userService.caregetTotal7(careReservationNum));
-        model.addAttribute("totallist8", userService.caregetTotal8(careReservationNum));
+        model.addAttribute("accreservationlist", userService.accgetNum4(email));
+        model.addAttribute("carereservationlist",userService.caregetNum4(email));
 
-        model.addAttribute("accreservationlist", userService.AccGet(accReservationNum));
-        model.addAttribute("carereservationlist", userService.CareGet(careReservationNum));
-
-        model.addAttribute("accmanagerInfo", managerService.managerInfo(accManageremail));
-        model.addAttribute("caremanagerInfo", managerService.managerInfo(careManageremail));
+        model.addAttribute("accmanagerInfo", userService.accgetManagerInfo(email));
+        model.addAttribute("caremanagerInfo", userService.caregetManagerInfo(email));
 
         model.addAttribute("historyList", managerService.getList(criteria));
         model.addAttribute("pageDTO", new PageDTO(criteria, managerService.getTotal()));
