@@ -40,41 +40,6 @@ public class UserServiceImpl implements UserService {
         return false;
     }
 
-
-    @Override
-    public boolean careDelte(Long careReservationNum) {
-        return false;
-    }
-
-    @Override
-    public boolean careManagerRefuse(CareReservationVO careReservationV) {
-        return false;
-    }
-
-    @Override
-    public boolean AccGetList(Long careReservationNum) {
-        return false;
-    }
-
-    @Override
-
-
-    @Override
-    public boolean careDelte(Long careReservationNum) {
-        return false;
-    }
-
-    @Override
-    public boolean careManagerRefuse(CareReservationVO careReservationV) {
-        return false;
-    }
-
-    @Override
-    public boolean AccGetList(Long careReservationNum) {
-        return false;
-    }
-
-
     @Override
     public boolean careDelte(Long careReservationNum) {
         return false;
@@ -488,17 +453,6 @@ public class UserServiceImpl implements UserService {
         return accReservationDAO.selectAcc(accReservationNum);
     }
 
-
-
-    @Override
-    public void AccReservationUpdate(Long accReservationNum, String managerEmail) {
-
-    }
-
-    @Override
-    public void CareReservationUpdate(Long careReservationNum, String managerEmail) {
-
-    }
     @Override
     public List<AccReservationVO> getListAccReservation(Criteria criteria, List<String> areaAr) {return accReservationDAO.getListAccReservation(criteria, areaAr);}
 
@@ -524,16 +478,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User4AccDTO> accServiceEndList(String userEmail) {
         return accReservationDAO.accServiceEndList(userEmail);
-
-    @Override
-    public void AccReservationUpdate(Long accReservationNum, String managerEmail) {
-        accReservationDAO.AccReservationUpdate(accReservationNum, managerEmail);
     }
-
-    @Override
-    public void CareReservationUpdate(Long careReservationNum, String managerEmail) {
-        careReservationDAO.CareReservationUpdate(careReservationNum, managerEmail);
-    }
-
 
 }

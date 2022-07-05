@@ -189,10 +189,6 @@ public interface UserService {
 
     public void CareReservationUpdate(Long careReservationNum, String managerEmail);
 
-
-    public void AccReservationUpdate(Long accReservationNum, String managerEmail);
-
-    public void CareReservationUpdate(Long careReservationNum, String managerEmail);
     // 돌봄 서비스 종료 리스트
     public List<User4CareDTO> careServiceEndList(String userEmail);
 

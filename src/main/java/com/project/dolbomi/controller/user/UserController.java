@@ -277,12 +277,6 @@ public class UserController {
     @GetMapping("user_userdetails2")
     public void user_userdetails2(Model model,HttpServletRequest request) {
 
-    public void user_userdetails2(Model model) {
-        Long accReservationNum = Long.valueOf(45);
-        Long careReservationNum = Long.valueOf(46);
-        String accManageremail = "매니저2@naver.com";
-        String careManageremail = "매니저3@naver.com";
-
         HttpSession httpSession = request.getSession();
         httpSession.getAttribute("userEmail");
         String email=String.valueOf(httpSession.getAttribute("userEmail"));
@@ -330,52 +324,32 @@ public class UserController {
 
     }
 
-    @GetMapping("user_userdetails4")
-    public String user_userdetails4(Criteria criteria, Model model,HttpServletRequest request) {
-
-        HttpSession httpSession = request.getSession();
-        httpSession.getAttribute("userEmail");
-        String email=String.valueOf(httpSession.getAttribute("userEmail"));
-
-        model.addAttribute("accreservationlist", userService.accgetNum4(email));
-        model.addAttribute("totallist1", userService.accgetTotal1(email));
-        model.addAttribute("totallist2", userService.accgetTotal2(email));
-        model.addAttribute("totallist3", userService.accgetTotal3(email));
-        model.addAttribute("totallist4", userService.accgetTotal4(email));
-
-        model.addAttribute("carereservationlist", userService.caregetNum4(email));
-        model.addAttribute("totallist5", userService.caregetTotal5(email));
-        model.addAttribute("totallist6", userService.caregetTotal6(email));
-        model.addAttribute("totallist7", userService.caregetTotal7(email));
-        model.addAttribute("totallist8", userService.caregetTotal8(email));
-
-    public String user_userdetails4(Criteria criteria, Model model, HttpServletRequest request) {
-        HttpSession httpSession = request.getSession();
-        String userEmail = String.valueOf(httpSession.getAttribute("userEmail"));
+        @GetMapping("user_userdetails4")
+        public String user_userdetails4(Criteria criteria, Model model, HttpServletRequest request) {
+            HttpSession httpSession = request.getSession();
+            String userEmail = String.valueOf(httpSession.getAttribute("userEmail"));
 
 
-        Long accReservationNum = Long.valueOf(26);
-        Long careReservationNum = Long.valueOf(6);
+            Long accReservationNum = Long.valueOf(26);
+            Long careReservationNum = Long.valueOf(6);
 
-        model.addAttribute("totallist1", userService.accgetTotal1(accReservationNum));
-        model.addAttribute("totallist2", userService.accgetTotal2(accReservationNum));
-        model.addAttribute("totallist3", userService.accgetTotal3(accReservationNum));
-        model.addAttribute("totallist4", userService.accgetTotal4(accReservationNum));
+            model.addAttribute("totallist1", userService.accgetTotal1(userEmail));
+            model.addAttribute("totallist2", userService.accgetTotal2(userEmail));
+            model.addAttribute("totallist3", userService.accgetTotal3(userEmail));
+            model.addAttribute("totallist4", userService.accgetTotal4(userEmail));
 
-        model.addAttribute("totallist5", userService.caregetTotal5(careReservationNum));
-        model.addAttribute("totallist6", userService.caregetTotal6(careReservationNum));
-        model.addAttribute("totallist7", userService.caregetTotal7(careReservationNum));
-        model.addAttribute("totallist8", userService.caregetTotal8(careReservationNum));
+            model.addAttribute("totallist5", userService.caregetTotal5(userEmail));
+            model.addAttribute("totallist6", userService.caregetTotal6(userEmail));
+            model.addAttribute("totallist7", userService.caregetTotal7(userEmail));
+            model.addAttribute("totallist8", userService.caregetTotal8(userEmail));
 
-        model.addAttribute("careDTO", userService.careServiceEndList(userEmail));
-        model.addAttribute("accDTO", userService.accServiceEndList(userEmail));
+            model.addAttribute("careDTO", userService.careServiceEndList(userEmail));
+            model.addAttribute("accDTO", userService.accServiceEndList(userEmail));
 
-        model.addAttribute("accmanagerInfo", userService.accgetManagerInfo(email));
-        model.addAttribute("caremanagerInfo", userService.caregetManagerInfo(email));
 
-        model.addAttribute("pageDTO", new PageDTO(criteria, userService.getTotal()));
-        return "/user/user_userdetails4";
-    }
+            model.addAttribute("pageDTO", new PageDTO(criteria, userService.getTotal()));
+            return "/user/user_userdetails4";
+        }
 
     @GetMapping("myReview")
     public String myReview(Criteria criteria, Model model, @RequestParam String userEmail, @RequestParam String userName) {
