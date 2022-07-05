@@ -32,12 +32,6 @@ public interface AccReservationMapper {
     public AccReservationVO selectAcc(Long accReservationNum);
 
 
-
-
-
-
-
-
     // 동행서비스 예약자 1명 정보
     public AccReservationVO AccGet(Long accReservationNum);
 

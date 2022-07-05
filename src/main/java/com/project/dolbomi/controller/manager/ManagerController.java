@@ -114,16 +114,6 @@ public class ManagerController {
     //  페이지 이동
     @GetMapping("manager")
     public void manager(Model model, HttpServletRequest request){
-    }
-    public String manager( Model model){
-        Long careReservationNum=Long.valueOf(26);
-        Long accReservationNum=Long.valueOf(42);
-        String accManageremail = "APPLE";
-        String careManageremail = "APPLE";
-
-        log.info("-----careManageremail" + managerService.managerInfo(careManageremail) );
-        log.info("-----careReservationNum" + userService.CareGet(careReservationNum) );
-
 
         HttpSession httpSession = request.getSession();
         httpSession.getAttribute("userEmail");
@@ -142,31 +132,10 @@ public class ManagerController {
         model.addAttribute("accmanagerInfo", userService.accgetManagerInfo(email));
         model.addAttribute("caremanagerInfo", userService.caregetManagerInfo(email));
 
-        return "/manager/manager";
-
-
     }
 
     @PostMapping("manager")
     public String manager(@RequestParam String managerEmail, HttpServletRequest req){
-        String accNum = req.getParameter("accReservationNum");
-        String careNum = req.getParameter("careReservationNum");
-
-        log.info("------accNum" + accNum);
-        log.info("------managerEmail" + managerEmail);
-        log.info("------careNum" + careNum);
-
-        if (accNum==null) {
-            Long careReservationNum = Long.parseLong(careNum);
-            log.info("-----" + Long.parseLong(careNum));
-            userService.CareReservationUpdate(careReservationNum, managerEmail);
-            return "/manager/manager";
-        }
-
-        Long accReservationNum = Long.parseLong(accNum);
-        userService.AccReservationUpdate(accReservationNum, managerEmail);
-
-        return "/manager/manager";
         String careNum = req.getParameter("careReservationNum");
         String accNum = req.getParameter("accReservationNum");
 
@@ -192,13 +161,6 @@ public class ManagerController {
         HttpSession httpSession = request.getSession();
         httpSession.getAttribute("userEmail");
         String email=String.valueOf(httpSession.getAttribute("userEmail"));
-        }
-    public String manager2(Model model){
-        Long careReservationNum=Long.valueOf(26);
-        Long accReservationNum=Long.valueOf(42);
-        String accManageremail = "APPLE";
-        String careManageremail = "APPLE";
-        
 
         model.addAttribute("totallist2", userService.accgetTotal2(email));
         model.addAttribute("totallist3", userService.accgetTotal3(email));
@@ -213,7 +175,6 @@ public class ManagerController {
         model.addAttribute("accmanagerInfo", userService.accgetManagerInfo(email));
         model.addAttribute("caremanagerInfo", userService.caregetManagerInfo(email));
 
-        return "/manager/manager2";
     }
 
     @GetMapping("manager3")
@@ -234,31 +195,8 @@ public class ManagerController {
 
         model.addAttribute("accmanagerInfo", userService.accgetManagerInfo(email));
         model.addAttribute("caremanagerInfo", userService.caregetManagerInfo(email));
-    }
-    public String manager3(Criteria criteria, Model model){
 
-        Long careReservationNum=Long.valueOf(26);
-        Long accReservationNum=Long.valueOf(42);
-        String accManageremail = "APPLE";
-        String careManageremail = "APPLE";
-
-        model.addAttribute("totallist2", userService.accgetTotal2(accReservationNum));
-        model.addAttribute("totallist3", userService.accgetTotal3(accReservationNum));
-        model.addAttribute("totallist4", userService.accgetTotal4(accReservationNum));
-        model.addAttribute("totallist6", userService.caregetTotal6(careReservationNum));
-        model.addAttribute("totallist7", userService.caregetTotal7(careReservationNum));
-        model.addAttribute("totallist8", userService.caregetTotal8(careReservationNum));
-
-        model.addAttribute("accreservationlist", userService.AccGet(accReservationNum));
-        model.addAttribute("carereservationlist", userService.CareGet(careReservationNum));
-
-        model.addAttribute("accmanagerInfo", managerService.managerInfo(accManageremail));
-        model.addAttribute("caremanagerInfo", managerService.managerInfo(careManageremail));
-
-
-        model.addAttribute("historyList", managerService.getList(criteria));
-        model.addAttribute("pageDTO", new PageDTO(criteria, managerService.getTotal()));
-        return "/manager/manager3";
+        return "manager/manager3";
     }
 
     @GetMapping("manager_rev")
