@@ -28,11 +28,10 @@ public interface ReviewMapper {
     //    게시글 전체 개수
     public int reviewGetTotal(Criteria criteria);
 
-    // 회원 게시글 전체 개수
+    //    회원 게시글 전체 개수
     public int myReviewGetTotal(@Param("criteria") Criteria criteria, @Param("userEmail") String userEmail);
 
     // 회원 게시글 목록
     public List<UserReviewDTO> reviewGetListUser(@Param("criteria") Criteria criteria, @Param("userEmail") String userEmail);
-
 
 }

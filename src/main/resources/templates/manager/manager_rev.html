@@ -165,8 +165,14 @@
                 }
 
                 .common_search .search_area .list_area_gugun ul li input[type=button].list_area_all {
-                    background-color: #FFFFFF;
-                    border: 1px solid #2fb8e7;
+                    font-size: 15px;
+                    width: 94%;
+                    padding: 7px 0 7px 0;
+                    border-radius: 3px;
+                    background-color: #f4f4f4;
+                    height: 36px;
+                    outline: none;
+                    border-color: #f4eded;
                     color: #2fb8e7;
                 }
 
@@ -885,49 +891,49 @@
                             <table width="100%" cellpadding="0" cellspacing="0" border="0" class="table_sido">
                                 <tbody>
                                 <tr>
-                                    <td class="td_sido"><a href="javascript:search_area_view('', '', '');">전체</a></td>
-                                    <td class="td_sido on" id="area1_0101"><a
+                                    <td class="td_sido on" name="전체"><a href="javascript:search_area_view('', '', '');">전체</a></td>
+                                    <td class="td_sido" name="서울" id="area1_0101"><a
                                             href="javascript:search_area_view('0101', '서울', '');">서울</a></td>
-                                    <td class="td_sido" id="area1_0102"><a
+                                    <td class="td_sido" name="경기" id="area1_0102"><a
                                             href="javascript:search_area_view('0102', '경기', '');">경기</a></td>
-                                    <td class="td_sido" id="area1_0103"><a
+                                    <td class="td_sido" name="인천" id="area1_0103"><a
                                             href="javascript:search_area_view('0103', '인천', '');">인천</a></td>
-                                    <td class="td_sido" id="area1_0104"><a
+                                    <td class="td_sido" name="부산" id="area1_0104"><a
                                             href="javascript:search_area_view('0104', '부산', '');">부산</a></td>
-                                    <td class="td_sido" id="area1_0105"><a
+                                    <td class="td_sido" name="대구" id="area1_0105"><a
                                             href="javascript:search_area_view('0105', '대구', '');">대구</a></td>
-                                    <td class="td_sido" id="area1_0106"><a
+                                    <td class="td_sido" name="대전" id="area1_0106"><a
                                             href="javascript:search_area_view('0106', '대전', '');">대전</a></td>
-                                    <td class="td_sido" id="area1_0107"><a
+                                    <td class="td_sido" name="세종" id="area1_0107"><a
                                             href="javascript:search_area_view('0107', '세종', '');">세종</a></td>
-                                    <td class="td_sido" id="area1_0108"><a
+                                    <td class="td_sido" name="광주" id="area1_0108"><a
                                             href="javascript:search_area_view('0108', '광주', '');">광주</a></td>
-                                    <td class="td_sido" id="area1_0109"><a
+                                    <td class="td_sido" name="울산" id="area1_0109"><a
                                             href="javascript:search_area_view('0109', '울산', '');">울산</a></td>
-                                    <td class="td_sido" id="area1_010A"><a
+                                    <td class="td_sido" name="강원" id="area1_010A"><a
                                             href="javascript:search_area_view('010A', '강원', '');">강원</a></td>
-                                    <td class="td_sido" id="area1_010B"><a
+                                    <td class="td_sido" name="경남" id="area1_010B"><a
                                             href="javascript:search_area_view('010B', '경남', '');">경남</a></td>
-                                    <td class="td_sido" id="area1_010C"><a
+                                    <td class="td_sido" name="경북" id="area1_010C"><a
                                             href="javascript:search_area_view('010C', '경북', '');">경북</a></td>
-                                    <td class="td_sido" id="area1_010D"><a
+                                    <td class="td_sido" name="전남" id="area1_010D"><a
                                             href="javascript:search_area_view('010D', '전남', '');">전남</a></td>
-                                    <td class="td_sido" id="area1_010E"><a
+                                    <td class="td_sido" name="전북" id="area1_010E"><a
                                             href="javascript:search_area_view('010E', '전북', '');">전북</a></td>
-                                    <td class="td_sido" id="area1_010F"><a
+                                    <td class="td_sido" name="충남" id="area1_010F"><a
                                             href="javascript:search_area_view('010F', '충남', '');">충남</a></td>
-                                    <td class="td_sido" id="area1_0110"><a
+                                    <td class="td_sido" name="충북" id="area1_0110"><a
                                             href="javascript:search_area_view('0110', '충북', '');">충북</a></td>
-                                    <td class="td_sido" id="area1_0111"><a
+                                    <td class="td_sido" name="제주" id="area1_0111"><a
                                             href="javascript:search_area_view('0111', '제주', '');">제주</a></td>
-                                    <td class="td_sido" id="area1_0112"><a
+                                    <td class="td_sido" name="해외" id="area1_0112"><a
                                             href="javascript:search_area_view('0112', '해외', '');">해외</a></td>
                                 </tr>
                                 <tr>
                                     <td colspan="19" class="td_gugun">
                                         <div class="list_area_gugun" style="display: block;">
                                             <ul class="list_area_0101">
-                                                <li><input type="button" value="전체"
+                                                <li><input type="button" name="서울 전체" data-val="0101" value="전체" id="area2_0101"
                                                            onclick="search_form_submit('area', '서울', '전체', '0101');"
                                                            class="list_area_all"></li>
                                                 <li><input type="button" id="area2_010102" data-val="010102" value="강남구"
@@ -1010,7 +1016,7 @@
                                                 </li>
                                             </ul>
                                             <ul class="list_area_0102" style="display:none">
-                                                <li><input type="button" value="전체"
+                                                <li><input type="button" name="경기 전체" data-val="0102" value="전체" id="area2_0102"
                                                            onclick="search_form_submit('area', '경기', '전체', '0102');"
                                                            class="list_area_all"></li>
                                                 <li><input type="button" id="area2_010201" data-val="010201" value="가평군"
@@ -1161,7 +1167,7 @@
                                                 </li>
                                             </ul>
                                             <ul class="list_area_0103" style="display:none">
-                                                <li><input type="button" value="전체"
+                                                <li><input type="button" name="인천 전체" data-val="0103" value="전체" id="area2_0103"
                                                            onclick="search_form_submit('area', '인천', '전체', '0103');"
                                                            class="list_area_all"></li>
                                                 <li><input type="button" id="area2_010301" data-val="010301" value="강화군"
@@ -1197,7 +1203,7 @@
                                                 </li>
                                             </ul>
                                             <ul class="list_area_0104" style="display:none">
-                                                <li><input type="button" value="전체"
+                                                <li><input type="button" name="부산 전체" data-val="0104" value="전체" id="area2_0104"
                                                            onclick="search_form_submit('area', '부산', '전체', '0104');"
                                                            class="list_area_all"></li>
                                                 <li><input type="button" id="area2_010401" data-val="010401" value="강서구"
@@ -1252,7 +1258,7 @@
                                                 </li>
                                             </ul>
                                             <ul class="list_area_0105" style="display:none">
-                                                <li><input type="button" value="전체"
+                                                <li><input type="button" name="인천 전체" data-val="0105"  value="전체" id="area2_0105"
                                                            onclick="search_form_submit('area', '대구', '전체', '0105');"
                                                            class="list_area_all"></li>
                                                 <li><input type="button" id="area2_010501" data-val="010501" value="남구"
@@ -1281,7 +1287,7 @@
                                                 </li>
                                             </ul>
                                             <ul class="list_area_0106" style="display:none">
-                                                <li><input type="button" value="전체"
+                                                <li><input type="button" name="대전 전체" data-val="0106" value="전체" id="area2_0106"
                                                            onclick="search_form_submit('area', '대전', '전체', '0106');"
                                                            class="list_area_all"></li>
                                                 <li><input type="button" id="area2_010601" data-val="010601" value="대덕구"
@@ -1301,7 +1307,7 @@
                                                 </li>
                                             </ul>
                                             <ul class="list_area_0107" style="display:none">
-                                                <li><input type="button" value="전체"
+                                                <li><input type="button" name="세종 전체" data-val="0107" value="전체" id="area2_0107"
                                                            onclick="search_form_submit('area', '세종', '전체', '0107');"
                                                            class="list_area_all"></li>
                                                 <li><input type="button" id="area2_010701" data-val="010701" value="반곡동"
@@ -1391,7 +1397,7 @@
                                                 </li>
                                             </ul>
                                             <ul class="list_area_0108" style="display:none">
-                                                <li><input type="button" value="전체"
+                                                <li><input type="button" name="광주 전체" data-val="0108" value="전체" id="area2_0108"
                                                            onclick="search_form_submit('area', '광주', '전체', '0108');"
                                                            class="list_area_all"></li>
                                                 <li><input type="button" id="area2_010801" data-val="010801" value="광산구"
@@ -1411,7 +1417,7 @@
                                                 </li>
                                             </ul>
                                             <ul class="list_area_0109" style="display:none">
-                                                <li><input type="button" value="전체"
+                                                <li><input type="button" name="울산 전체" data-val="0109" value="전체" id="area2_0109"
                                                            onclick="search_form_submit('area', '울산', '전체', '0109');"
                                                            class="list_area_all"></li>
                                                 <li><input type="button" id="area2_010901" data-val="010901" value="남구"
@@ -1431,7 +1437,7 @@
                                                 </li>
                                             </ul>
                                             <ul class="list_area_010A" style="display:none">
-                                                <li><input type="button" value="전체"
+                                                <li><input type="button" name="강원 전체" data-val="010A" value="전체" id="area2_010A"
                                                            onclick="search_form_submit('area', '강원', '전체', '010A');"
                                                            class="list_area_all"></li>
                                                 <li><input type="button" id="area2_010A01" data-val="010A01" value="강릉시"
@@ -1490,7 +1496,7 @@
                                                 </li>
                                             </ul>
                                             <ul class="list_area_010B" style="display:none">
-                                                <li><input type="button" value="전체"
+                                                <li><input type="button" name="경남 전체" data-val="010B" value="전체" id="area2_010B"
                                                            onclick="search_form_submit('area', '경남', '전체', '010B');"
                                                            class="list_area_all"></li>
                                                 <li><input type="button" id="area2_010B01" data-val="010B01" value="거제시"
@@ -1566,7 +1572,7 @@
                                                 </li>
                                             </ul>
                                             <ul class="list_area_010C" style="display:none">
-                                                <li><input type="button" value="전체"
+                                                <li><input type="button" name="경북 전체" data-val="010C" value="전체" id="area2_010C"
                                                            onclick="search_form_submit('area', '경북', '전체', '010C');"
                                                            class="list_area_all"></li>
                                                 <li><input type="button" id="area2_010C01" data-val="010C01" value="경산시"
@@ -1645,7 +1651,7 @@
                                                 </li>
                                             </ul>
                                             <ul class="list_area_010D" style="display:none">
-                                                <li><input type="button" value="전체"
+                                                <li><input type="button" name="전남 전체" data-val="010D"  value="전체" id="area2_010D"
                                                            onclick="search_form_submit('area', '전남', '전체', '010D');"
                                                            class="list_area_all"></li>
                                                 <li><input type="button" id="area2_010D01" data-val="010D01" value="강진군"
@@ -1716,7 +1722,7 @@
                                                 </li>
                                             </ul>
                                             <ul class="list_area_010E" style="display:none">
-                                                <li><input type="button" value="전체"
+                                                <li><input type="button" name="전북 전체" data-val="010E" value="전체" id="area2_010E"
                                                            onclick="search_form_submit('area', '전북', '전체', '010E');"
                                                            class="list_area_all"></li>
                                                 <li><input type="button" id="area2_010E01" data-val="010E01" value="고창군"
@@ -1768,7 +1774,7 @@
                                                 </li>
                                             </ul>
                                             <ul class="list_area_010F" style="display:none">
-                                                <li><input type="button" value="전체"
+                                                <li><input type="button" name="충남 전체" data-val="010F" value="전체" id="area2_010F"
                                                            onclick="search_form_submit('area', '충남', '전체', '010F');"
                                                            class="list_area_all"></li>
                                                 <li><input type="button" id="area2_010F01" data-val="010F01" value="공주시"
@@ -1826,7 +1832,7 @@
                                                 </li>
                                             </ul>
                                             <ul class="list_area_0110" style="display:none">
-                                                <li><input type="button" value="전체"
+                                                <li><input type="button" name="충북 전체" data-val="0110" value="전체" id="area2_0110"
                                                            onclick="search_form_submit('area', '충북', '전체', '0110');"
                                                            class="list_area_all"></li>
                                                 <li><input type="button" id="area2_011001" data-val="011001" value="괴산군"
@@ -1877,7 +1883,7 @@
                                                 </li>
                                             </ul>
                                             <ul class="list_area_0111" style="display:none">
-                                                <li><input type="button" value="전체"
+                                                <li><input type="button" name="제주 전체" data-val="0111" value="전체" id="area2_0111"
                                                            onclick="search_form_submit('area', '제주', '전체', '0111');"
                                                            class="list_area_all"></li>
                                                 <li><input type="button" id="area2_011101" data-val="011101"
@@ -1897,7 +1903,7 @@
                                                 </li>
                                             </ul>
                                             <ul class="list_area_0112" style="display:none">
-                                                <li><input type="button" value="전체"
+                                                <li><input type="button" name="해외 전체" data-val="0112" value="전체" id="area2_0112"
                                                            onclick="search_form_submit('area', '해외', '전체', '0112');"
                                                            class="list_area_all"></li>
                                                 <li><input type="button" id="area2_011202" data-val="011202"
@@ -1938,7 +1944,7 @@
                                                 </li>
                                             </ul>
                                             <ul class="list_area_0113" style="display:none">
-                                                <li><input type="button" value="전체"
+                                                <li><input type="button" value="전체" id="area2_0113"
                                                            onclick="search_form_submit('area', '전국', '전체', '0113');"
                                                            class="list_area_all"></li>
                                                 <li><input type="button" id="area2_011301" data-val="011301"
@@ -2024,7 +2030,7 @@
                     border-top: 2px solid #e8e6e7;
                     width: 100%;
                     margin: 20px 0 20px 0;"/>
-                            <button id="test01" style="color: #666666;
+                            <button id="test01" class="A1" style="color: #666666;
                 font-weight: 700;
                 cursor: pointer;
                 align-self: center;
@@ -2052,7 +2058,7 @@
                 </li>
             </ul>
         </div>
-        <div class="com_accordion" id="test02" style="display:none;">
+        <div class="com_accordion A2" id="test02" style="display:none;">
             <ul style="margin: 0% 10% 0% 10%;">
                 <li class="history">
                     <div class="ac_title">
@@ -2113,6 +2119,19 @@
                                 <span class="title">총 이용요금</span>
                                 <span class="accReservationPrice" th:text="*{accReservationPrice}"></span>
                             </p>
+                                                <hr style="border : 0px; width: 100%;
+                                                border-top: 2px solid #e8e6e7;
+                                                width: 100%;
+                                                margin: 20px 0 20px 0;"/>
+                                                <button id="test03" class="A3" style="color: #666666;
+                                            font-weight: 700;
+                                            cursor: pointer;
+                                            align-self: center;
+                                            margin-right: 17px;
+                                            background-color: white;
+                                            font-size: 18px;
+                                        ">닫기
+                                                </button>
                             <!--                    <hr style="border : 0px; width: 100%;-->
                             <!--                    border-top: 2px solid #e8e6e7;-->
                             <!--                    width: 100%;-->
@@ -2181,7 +2200,7 @@
                     border-top: 2px solid #e8e6e7;
                     width: 100%;
                     margin: 20px 0 20px 0;"/>
-                            <button id="test04" style="color: #666666;
+                            <button id="test04" class="A4" style="color: #666666;
                 font-weight: 700;
                 cursor: pointer;
                 align-self: center;
@@ -2193,7 +2212,7 @@
                             </button>
                         </div>
                         <div >
-                            <a class=" openPopup" id="careReservation" th:name="${careReservation.careReservationNum}" style="     background-color: #2fb8e7;
+                            <a class="test10 openPopup" id="careReservation" th:name="${careReservation.careReservationNum}" style="     background-color: #2fb8e7;
     color: white;
     padding: 11px 29px 11px 30px;
     font-size: 18px;
@@ -2210,7 +2229,7 @@
                 </li>
             </ul>
         </div>
-        <div class="com_accordion" id="test05" style="display:none;" >
+        <div class="com_accordion A5" id="test05" style="display:none;" >
             <ul style="margin: 0% 10% 0% 10%;">
                 <li class="history">
                     <div class="ac_title">
@@ -2271,18 +2290,18 @@
                                 <span class="title">총 이용요금</span>
                                 <span class="careReservationPrice" th:text="*{careReservationPrice}"></span>
                             </p>
-                            <!--<hr style="border : 0px; width: 100%;
+                            <hr style="border : 0px; width: 100%;
                             border-top: 2px solid #e8e6e7;
                             width: 100%;
                             margin: 20px 0 20px 0;"/>
-                            <button id="test06" style="color: #666666;
+                            <button id="test06" class="A6" style="color: #666666;
                         font-weight: 700;
                         cursor: pointer;
                         align-self: center;
                         margin-right: 17px;
                         background-color: white;
                         font-size: 18px;
-                    ">닫기-->
+                    ">닫기
                             </button>
                         </div>
                     </div>
@@ -2306,6 +2325,16 @@
 </form>
 
 
+<div id="popup01">
+    <div class="close">닫기</div>
+    <div style="font-size: 32px;
+    text-align: center;
+    margin-top: 110px;
+    margin-bottom: 110px;
+    color: #767070;">매칭하시겠습니까?
+    </div>
+    <button class="confirm">매칭 확정</button>
+</div>
 <th:block th:each="areas:${areaAr}">
     <input type="hidden" name="areas" th:class="${areas}" th:value="${areas}">
 </th:block>
@@ -2315,6 +2344,61 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
         crossorigin="anonymous"></script>
+<script th:inline="javascript">
+
+    $("#accReservation").click(function (e) {
+        e.preventDefault();
+        console.log($(this).attr("name"));
+        $("input[name='accReservationNum']").val($(this).attr("name"));
+        accForm.submit();
+    })
+
+    $("#careReservation").click(function (e) {
+        e.preventDefault();
+        console.log($(this).attr("name"));
+        $("input[name='careReservationNum']").val($(this).attr("name"));
+        careForm.submit();
+    })
+</script>
+<script>
+    let checking = false;
+    let naming = "";
+    $(document).ready(function () {
+        if($("input[name='areas']").length != 0){
+            let areas = $("input[name='areas']");
+            let areaslen = areas.length;
+            let lastarea = areas[areaslen-1].className;
+            $(".none_choice").html("")
+
+            console.log(areaslen);
+            if(lastarea.length != 2){
+                $(".td_sido").removeClass("on");
+               /* $("td[name='"+lastarea.substring(0,2)+"']").addClass("on");*/
+                naming = lastarea.substring(0,2);
+            }else{
+                $(".td_sido").removeClass("on");
+                /*$("td[name='"+lastarea+"']").addClass("on");*/
+                naming = lastarea;
+            }
+            $(".none_choice").append("("+"&nbsp;&nbsp;");
+            for(n=0; n<areas.length; n++){
+                areaAr = areas.eq(n).val();
+                if(!areaAr.includes(" ")){
+                    areaAr = areaAr + " 전체";
+                    code = $("input[name='"+areaAr+"']").data("val");
+                }else{
+                    code = $("input[value='"+areaAr.substring(3)+"']").data("val");
+                    // $("input[data-val='"+code+"']").addClass("on");
+                }
+                $(".none_choice").append("<span style='color: #f7579f'>" + areaAr + "</span>&nbsp;&nbsp;")
+                $(".keyword").html("<li>" + areaAr + " " + "<a class='search_text_delete' href='javascript:search_form_delete(\"area\", \"" + n + "\", \"" + code + "\")' style='color:#FFF'><span class='delete'>X</span></a></li>");
+            }
+            $(".none_choice").append(")");
+            checking = true;
+        }
+    })
+
+</script>
 <script th:inline="javascript">
 
     $("#accReservation").click(function (e) {
@@ -2346,25 +2430,35 @@
 
 
     })*/
+/*
+    $(window).ready(function(){
 
-    $("#test01").click(function () {
-        $('#test02').toggle();
+    });*/
+
+
+    $(".A1").click(function(e) {
+        e.preventDefault();
+        $(this).parent("div").parent("div").parent().parent().parent().next().toggle();
     });
 
-    $("#test03").click(function () {
-        $('#test02').hide();
+    $(".A3").click(function (e) {
+        e.preventDefault();
+        $(this).parent("div").parent("div").parent().parent().parent().hide();
     });
 
-    $("#test04").click(function () {
-        $('#test05').toggle();
+    $(".C4").click(function (e) {
+        e.preventDefault();
+        $(this).parent("div").parent("div").parent().parent().parent().next().toggle();
     });
 
-    $("#test06").click(function () {
-        $('#test05').hide();
+    $(".C6").click(function (e) {
+        e.preventDefault();
+        $(this).parent("div").parent("div").parent().parent().parent().hide();
     });
 
     $(document).ready(function ($) {
         $(".openPopup").on("click", function (event) {
+            window.scrollTo(0,0);
             $("#popup01").show();
             $("body").append('<div class="backon"></div>');
         });
@@ -2407,7 +2501,6 @@
             //$(".list_area_gugun > ul > li > input[type=button]").removeClass("on"); //2018-03-30 버튼 on 해제
 
             area1_len = $("form[name=revForm] > input[name='area1[]']").length;
-            console.log(area1_len);
             area1_chk = "";
             area_delete_chk = "";
             //중복체크해서 똑같은 데이터 있으면 다시 해제되도록 설정
@@ -2441,8 +2534,6 @@
                     $("form[name=revForm] > input[name='area1[]']").eq(i).val(val1 + " " +val2);
                     $("form[name=revForm] > input[name='area2[]']").eq(i).val(val2);
                     $("form[name=revForm] > input[name='area2[]']").eq(i).data("val", code);
-
-
                     area1_chk = "y";
                     break;
                 }
@@ -2451,7 +2542,6 @@
 
 
             if (area1_chk == "") {
-                console.log('여기임')
                 alert('5개 이상은 선택되지 않습니다.');
                 return false;
             } else {
@@ -2605,7 +2695,7 @@
                     area1_val = $("form[name=revForm] > input[name='area1[]']").eq(k).val();
                     area2_val = $("form[name=revForm] > input[name='area2[]']").eq(k).val();
                     area2_code = $("form[name=revForm] > input[name='area2[]']").eq(k).data("val");
-                    $(".common_search > .search_area > .choice > .choice_text > ul").append("<li>" + area1_val + " " + area2_val + "<a class='search_text_delete' href='javascript:search_form_delete(\"area\", \"" + k + "\", \"" + area2_code + "\")' style='color:#FFF'><span class='delete'>X</span></a></li>");
+                    $(".common_search > .search_area > .choice > .choice_text > ul").append("<li>" + area1_val + " " + "<a class='search_text_delete' href='javascript:search_form_delete(\"area\", \"" + k + "\", \"" + area2_code + "\")' style='color:#FFF'><span class='delete'>X</span></a></li>");
                     area1_chk = "y";
                 }
             }
@@ -2637,6 +2727,7 @@
     });
 
 
+
     function search_area_view(code, name, flag) {
         $(".td_sido").removeClass("on");
 
@@ -2653,7 +2744,11 @@
             $("#detail_btn").addClass("off");
             $(".detail_list").show();
         } else {
-            $(".td_sido").eq(0).addClass("on");
+            if(!checking){
+                $(".td_sido").eq(0).addClass("on");
+            }
+            $("td[name='"+naming+"']").addClass("on");
+
             $(".list_area_gugun").hide();
             $(".list_area_gugun > ul").hide();
 
@@ -2671,6 +2766,13 @@
         }
 
     }
+
+    $(".td_sido").eq(0).click(function () {
+        console.log("yes")
+        $(".td_sido").removeClass("on")
+        $("td[name='"+naming+"']").removeClass("on");
+        $(".td_sido").eq(0).addClass("on");
+    });
 
     $(document).ready(function () {
         var first_chk = 1;
@@ -2695,11 +2797,9 @@
         vertical: true
     });
 
-
     $(".confirm").click(function(){
         location.href='/manager/reservOk';
     })
-
 
 
     function searchArea() {

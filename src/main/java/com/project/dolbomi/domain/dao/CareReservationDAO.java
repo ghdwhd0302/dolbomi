@@ -22,25 +22,29 @@ public class CareReservationDAO {
         careReservationMapper.insert(careReservationVO);
     }
 
-
-
     // carereservation review list
     public List<CareReviewDTO> reviewGetListCare(String userEmail) {
         return careReservationMapper.reviewGetListCare(userEmail);
     }
 
+    //    돌봄서비스 리스트
+    public List<CareReservationVO> getListCareReservation(Criteria criteria, List<String> areaAr) {
+        return careReservationMapper.getListCareReservation(criteria, areaAr);
+    }
 
     // carereservation select one
     public CareReservationVO selectCare(Long careReservationNum) {
         return careReservationMapper.selectCare(careReservationNum);
     }
 
+    //    돌봄서비스 예약정보
+    public void careReservationInfo(Long careReservationNum) {
+    }
+
     //    돌봄서비스 리스트
     public List<CareReservationVO> getListCareReservation(Criteria criteria, List<String> areaAr) {
         return careReservationMapper.getListCareReservation(criteria);
     }
-
-
 
     // 돌봄서비스 매니저 배정 수락 user_userdetails페이지
     public void CareManagerY(String userEmail){
@@ -91,7 +95,12 @@ public class CareReservationDAO {
     }
     //유저 이메일로 매니저 예약메일 통해 매니저정보얻기
     public ManagerVO caregetManagerInfo(String userEmail){return careReservationMapper.caregetManagerInfo(userEmail);}
+    public void CareReservationUpdate(Long careReservationNum, String managerEmail){
+        careReservationMapper.CareReservationUpdate(careReservationNum, managerEmail);
+    }
 
+    //돌봄 서비스 종료 리스트
+    public List<User4CareDTO> careServiceEndList(String userEmail){return careReservationMapper.careServiceEndList(userEmail);}
     public void CareReservationUpdate(Long careReservationNum, String managerEmail){
         careReservationMapper.CareReservationUpdate(careReservationNum, managerEmail);
     }

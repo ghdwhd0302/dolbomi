@@ -1,13 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.project.dolbomi.mapper.AccReservationMapper">
-
+    <sql id="search">
+        <trim suffix="AND" prefixOverrides="OR">
+            <foreach item="area" collection="areaAr">
+                <trim prefix="OR">
+                    <if test="area != null">
+                        (ACC_RESERVATION_START_ADDRESS LIKE '%'||#{area}||'%') OR (ACC_RESERVATION_END_ADDRESS LIKE '%'||#{area}||'%')
+                    </if>
+                </trim>
+            </foreach>
+        </trim>    
+    </sql>
+    
+    
+        <!--      동행서비스 예약리스트에 해당 번호 존재하는지 확인 -->
+    <select id="AccGetList" resultType="accreservationVO">
+        SELECT ACC_RESERVATION_NAME, ACC_RESERVATION_AGE, ACC_RESERVATION_PHONE_NUM, ACC_RESERVATION_GENDER,ACC_RESERVATION_ADD_PHONE_NUM,ACC_RESERVATION_DATE,ACC_RESERVATION_TIME,ACC_RESERVATION_START_ADDRESS,ACC_RESERVATION_END_ADDRESS,ACC_RESERVATION_PRICE,b.USER_EMAIL,a.ACC_RESERVATION_STATUS,ACC_RESERVATION_NUM,MANAGER_EMAIL
+        FROM TBL_ACC_RESERVATION a,TBL_USER b
+        WHERE a.USER_EMAIL = b.USER_EMAIL AND a.ACC_RESERVATION_NUM=#{accReservationNum}
+    </select>
     <select id="getList" resultType="accreservationVO">
         SELECT ACC_RESERVATION_NAME,ACC_RESERVATION_TYPE,ACC_RESERVATION_END_ADDRESS
         FROM TBL_ACC_RESERVATION
         WHERE a.USER_EMAIL = b.USER_EMAIL
     </select>
 
+    <!--<select id="getList" resultType="accreservationVO">
+        SELECT ACC_RESERVATION_NAME,ACC_RESERVATION_TYPE,ACC_RESERVATION_END_ADDRESS
+        FROM TBL_ACC_RESERVATION a,TBL_USER b
+        WHERE a.USER_EMAIL = b.USER_EMAIL
+    </select>-->
     <select id="getListAccReservation" resultType="accReservationVO">
         SELECT ACC_RESERVATION_NUM,ACC_RESERVATION_TYPE,ACC_RESERVATION_NAME, ACC_RESERVATION_AGE, ACC_RESERVATION_PHONE_NUM, ACC_RESERVATION_GENDER, ACC_RESERVATION_ADD_PHONE_NUM, ACC_RESERVATION_RELATION, ACC_RESERVATION_END_ADDRESS, ACC_RESERVATION_START_ADDRESS, ACC_RESERVATION_HOPE_GENDER, ACC_RESERVATION_DATE, ACC_RESERVATION_TIME, ACC_RESERVATION_ADD_REQUIRE, ACC_RESERVATION_PRICE
         FROM TBL_ACC_RESERVATION
@@ -44,6 +67,16 @@
         WHERE a.USER_EMAIL = b.USER_EMAIL  AND a.USER_EMAIL = #{userEmail}
     </select>
 
+    <!--accreservation 전체 리스트-->
+    <select id="getListAccReservation" resultType="accReservationVO">
+        SELECT ACC_RESERVATION_NUM,ACC_RESERVATION_TYPE,ACC_RESERVATION_NAME, ACC_RESERVATION_AGE, ACC_RESERVATION_PHONE_NUM, ACC_RESERVATION_GENDER, ACC_RESERVATION_ADD_PHONE_NUM, ACC_RESERVATION_RELATION, ACC_RESERVATION_END_ADDRESS, ACC_RESERVATION_START_ADDRESS, ACC_RESERVATION_HOPE_GENDER, ACC_RESERVATION_DATE, ACC_RESERVATION_TIME, ACC_RESERVATION_ADD_REQUIRE, ACC_RESERVATION_PRICE
+        FROM TBL_ACC_RESERVATION
+        <where>
+            <include refid="search"/>
+            MANAGER_EMAIL IS NULL
+        </where>
+
+    </select>
 
 
     <select id="getAcc" resultType="accReviewDTO">
@@ -157,7 +190,18 @@
     </update>
 
 
+    <update id="AccReservationUpdate">
+        UPDATE TBL_ACC_RESERVATION
+        SET MANAGER_EMAIL = #{managerEmail}
+        WHERE ACC_RESERVATION_NUM = #{accReservationNum}
+    </update>
 
+    <!--서비스 종료 리스트-->
+    <select id="accServiceEndList" resultType="user4AccDTO">
+        SELECT ACC_RESERVATION_NUM, ACC_RESERVATION_NAME, ACC_RESERVATION_DATE, ACC_RESERVATION_TIME, ACC_RESERVATION_PRICE, ACC_RESERVATION_TYPE, ACC_RESERVATION_PHONE_NUM, MANAGER_NAME, MANAGER_PHONE_NUM
+		FROM TBL_ACC_RESERVATION C, TBL_MANAGER M
+		WHERE C.MANAGER_EMAIL = M.MANAGER_EMAIL AND C.ACC_RESERVATION_STATUS = 7 AND C.USER_EMAIL = #{userEmail}
+    </select>
 </mapper>
 
 

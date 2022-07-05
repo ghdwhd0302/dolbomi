@@ -40,6 +40,8 @@
                 </div>
                 <div class="sc-jotlie fYfqmW">
                     <form action="/user/review2" method="get" name="goReview2">
+                        <input type="hidden" name="careReservationType" value="">
+                        <input type="hidden" name="accReservationType" value="">
                         <input type="hidden" name="accReservationType" value="">
                         <input type="hidden" name="careReservationType" value="">
                         <table>
@@ -79,7 +81,6 @@
                                 <tr class="tBody" th:object="${acc}">
                                     <td class="accReservationNum" th:text="*{accReservationNum}"></td>
                                     <td class="accReservationType" th:text="*{accReservationType}"></td>
-
                                     <td class="userName" th:text="*{userName}"></td>
                                     <!--<td class="managerName" th:text="*{managerName}"></td>-->
                                     <td class="accReservationDate" th:text="*{#strings.substring(accReservationDate,0,10)}"></td>
@@ -109,7 +110,6 @@
 <footer th:replace="footer.html"></footer>
 </body>
 <script th:inline="javascript">
-
     let $careReservationType = $("input[name='careReservationType']");
     let $accReservationType = $("input[name='accReservationType']");
     let careType = $("td.careReservationType");
@@ -119,8 +119,8 @@
     $("a#careReservation").on('click', function (e) {
         e.preventDefault();
         $careReservationType.val($(this).attr("href"));
-        console.log($accReservationType.val());
         console.log($careReservationType.val());
+        console.log($accReservationType.val());
         goReview2.submit();
     })
 
@@ -128,6 +128,7 @@
         e.preventDefault();
         $accReservationType.val($(this).attr("href"));
         console.log($accReservationType.val());
+        console.log($careReservationType.val());
         goReview2.submit();
     })
 

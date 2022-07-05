@@ -14,6 +14,7 @@ public class User4AccDTO {
     private String accReservationStartAddress;
     private String accReservationEndAddress;
     private String accReservationPrice;
+    private String accReservationPhoneNum;
     private String managerName;
     private String managerPhoneNum;
     private String managerGender;

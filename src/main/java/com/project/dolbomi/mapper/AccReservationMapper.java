@@ -18,7 +18,6 @@ public interface AccReservationMapper {
     public AccReservationVO select(Long accReservationNum);
 
 
-
     public List<AccReservationVO> AccResult(String accReservationName);
 
     public void insertmanagerEmail(String accReservationVO);
@@ -26,11 +25,12 @@ public interface AccReservationMapper {
     // acc reservation 게시글 목록
     public List<AccReviewDTO> reviewGetListAcc(String userEmail);
 
+    //동행서비스 예약 목록
+    public List<AccReservationVO> getListAccReservation(@Param("criteria") Criteria criteria, @Param("areaAr") List<String> areaAr);
 
     // acc reservation 게시글 한개 가져오기
     public AccReservationVO selectAcc(Long accReservationNum);
 
-    public List<AccReservationVO> getListAccReservation(Criteria criteria);
 
 
 
@@ -75,5 +75,7 @@ public interface AccReservationMapper {
 
     public void AccReservationUpdate(@Param("accReservationNum") Long accReservationNum, @Param("managerEmail") String managerEmail);
 
+    //user_details4 서비스 종료 리스트
+    public List<User4AccDTO> accServiceEndList(String userEmail);
 }
 

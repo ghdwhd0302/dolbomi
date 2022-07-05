@@ -1,5 +1,6 @@
 package com.project.dolbomi.controller.user;
 import com.project.dolbomi.domain.vo.*;
+import com.project.dolbomi.mapper.AccReservationMapper;
 import com.project.dolbomi.service.manager.ManagerService;
 import com.project.dolbomi.service.member.MemberService;
 
@@ -224,6 +225,10 @@ public class UserController {
         String email=String.valueOf(httpSession.getAttribute("userEmail"));
         userService.accgetTotal1(email);
         log.info("-----------------------"+email);
+        Long accReservationNum = Long.valueOf(45);
+        Long careReservationNum = Long.valueOf(46);
+        String accManageremail = "매니저2@naver.com";
+        String careManageremail = "매니저3@naver.com";
 
 
         model.addAttribute("accreservationlist", userService.accgetNum1(email));
@@ -269,10 +274,14 @@ public class UserController {
         userService.CareManagerN(email);
         return "user/user_userdetails";
     }
-
     @GetMapping("user_userdetails2")
     public void user_userdetails2(Model model,HttpServletRequest request) {
 
+    public void user_userdetails2(Model model) {
+        Long accReservationNum = Long.valueOf(45);
+        Long careReservationNum = Long.valueOf(46);
+        String accManageremail = "매니저2@naver.com";
+        String careManageremail = "매니저3@naver.com";
 
         HttpSession httpSession = request.getSession();
         httpSession.getAttribute("userEmail");
@@ -340,6 +349,26 @@ public class UserController {
         model.addAttribute("totallist7", userService.caregetTotal7(email));
         model.addAttribute("totallist8", userService.caregetTotal8(email));
 
+    public String user_userdetails4(Criteria criteria, Model model, HttpServletRequest request) {
+        HttpSession httpSession = request.getSession();
+        String userEmail = String.valueOf(httpSession.getAttribute("userEmail"));
+
+
+        Long accReservationNum = Long.valueOf(26);
+        Long careReservationNum = Long.valueOf(6);
+
+        model.addAttribute("totallist1", userService.accgetTotal1(accReservationNum));
+        model.addAttribute("totallist2", userService.accgetTotal2(accReservationNum));
+        model.addAttribute("totallist3", userService.accgetTotal3(accReservationNum));
+        model.addAttribute("totallist4", userService.accgetTotal4(accReservationNum));
+
+        model.addAttribute("totallist5", userService.caregetTotal5(careReservationNum));
+        model.addAttribute("totallist6", userService.caregetTotal6(careReservationNum));
+        model.addAttribute("totallist7", userService.caregetTotal7(careReservationNum));
+        model.addAttribute("totallist8", userService.caregetTotal8(careReservationNum));
+
+        model.addAttribute("careDTO", userService.careServiceEndList(userEmail));
+        model.addAttribute("accDTO", userService.accServiceEndList(userEmail));
 
         model.addAttribute("accmanagerInfo", userService.accgetManagerInfo(email));
         model.addAttribute("caremanagerInfo", userService.caregetManagerInfo(email));
@@ -368,6 +397,8 @@ public class UserController {
     public String reviewGetList(Criteria criteria, Model model) {
         log.info("---------------------");
         log.info("reviewGetList--------");
+        log.info("---------------------");
+        log.info("criteria-----" + criteria);
         log.info("---------------------");
 
         model.addAttribute("reviewList", userService.reviewGetList(criteria));

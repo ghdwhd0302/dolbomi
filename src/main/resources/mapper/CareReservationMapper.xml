@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.project.dolbomi.mapper.CareReservationMapper">
+    <sql id="search">
+        <trim suffix="AND" prefixOverrides="OR">
+            <foreach item="area" collection="areaAr">
+                <trim prefix="OR">
+                    <if test="area != null">
+                        (CARE_RESERVATION_ADDRESS LIKE '%'||#{area}||'%')
+                    </if>
+                </trim>
+            </foreach>
+        </trim>
+    </sql>
 
 
     <select id="getList" resultType="carereservationVO">
@@ -76,6 +87,15 @@
         WHERE a.USER_EMAIL = b.USER_EMAIL AND a.USER_EMAIL = #{userEmail}
     </select>
 
+    <!--carereservation 전체 리스트-->
+    <select id="getListCareReservation" resultType="careReservationVO">
+        SELECT CARE_RESERVATION_NUM,CARE_RESERVATION_TYPE,CARE_RESERVATION_NAME, CARE_RESERVATION_AGE, CARE_RESERVATION_PHONE_NUM, CARE_RESERVATION_GENDER, CARE_RESERVATION_ADD_PHONE_NUM, CARE_RESERVATION_RELATION, CARE_RESERVATION_ADDRESS, CARE_RESERVATION_HOPE_GENDER, CARE_RESERVATION_DATE, CARE_RESERVATION_TIME, CARE_RESERVATION_ADD_REQUIRE, CARE_RESERVATION_PRICE
+        FROM TBL_CARE_RESERVATION
+        <where>
+            <include refid="search"/>
+            MANAGER_EMAIL IS NULL
+        </where>
+    </select>
 
     <select id="getCare" resultType="careReviewDTO">
         ROWNUM RN, a.CARE_RESERVATION_TYPE, a.CARE_RESERVATION_DATE, b.USER_NAME, a.USER_EMAIL, a.CARE_RESERVATION_NUM
@@ -193,6 +213,12 @@
         WHERE CARE_RESERVATION_NUM = #{careReservationNum}
     </update>
 
+    <!--서비스 종료 리스트-->
+    <select id="careServiceEndList" resultType="user4CareDTO">
+        SELECT CARE_RESERVATION_NUM, CARE_RESERVATION_NAME, CARE_RESERVATION_DATE, CARE_RESERVATION_TIME, CARE_RESERVATION_PRICE, CARE_RESERVATION_TYPE, CARE_RESERVATION_PHONE_NUM, MANAGER_NAME, MANAGER_PHONE_NUM
+		FROM TBL_CARE_RESERVATION C, TBL_MANAGER M
+		WHERE C.MANAGER_EMAIL = M.MANAGER_EMAIL AND C.CARE_RESERVATION_STATUS = 7 AND C.USER_EMAIL = #{userEmail}
+    </select>
 
 </mapper>
 

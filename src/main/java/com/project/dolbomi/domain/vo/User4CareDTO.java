@@ -13,6 +13,7 @@ public class User4CareDTO {
     private String careReservationTime;
     private String careReservationAddress;
     private String careReservationPrice;
+    private String careReservationPhoneNum;
     private String managerName;
     private String managerPhoneNum;
     private String managerGender;

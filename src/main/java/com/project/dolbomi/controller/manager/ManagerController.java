@@ -27,6 +27,7 @@ import java.util.List;
 public class ManagerController {
     private final ManagerService managerService;
     private final UserService userService;
+
     //    서비스 신청 목록
     @GetMapping("matchList")
     public void serviceList(){
@@ -148,6 +149,24 @@ public class ManagerController {
 
     @PostMapping("manager")
     public String manager(@RequestParam String managerEmail, HttpServletRequest req){
+        String accNum = req.getParameter("accReservationNum");
+        String careNum = req.getParameter("careReservationNum");
+
+        log.info("------accNum" + accNum);
+        log.info("------managerEmail" + managerEmail);
+        log.info("------careNum" + careNum);
+
+        if (accNum==null) {
+            Long careReservationNum = Long.parseLong(careNum);
+            log.info("-----" + Long.parseLong(careNum));
+            userService.CareReservationUpdate(careReservationNum, managerEmail);
+            return "/manager/manager";
+        }
+
+        Long accReservationNum = Long.parseLong(accNum);
+        userService.AccReservationUpdate(accReservationNum, managerEmail);
+
+        return "/manager/manager";
         String careNum = req.getParameter("careReservationNum");
         String accNum = req.getParameter("accReservationNum");
 
