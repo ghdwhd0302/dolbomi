@@ -28,7 +28,16 @@
 
         <div class="main-area">
             <div class="sc-bYTsla bDUjTg">
-                <form action="/manager/manageregi" mehod="post" id="managerApplication" name="managerApplication">
+                <form action="/manager/manageregi" mehod="post" id="managerApplication" name="managerApplication" >
+                        <input type="hidden" name="managerName" >
+                        <input type="hidden" name="managerBirth" >
+                        <input type="hidden" name="managerEmail" >
+                        <input type="hidden" name="managerAddress" >
+                        <input type="hidden" name="managerGender" >
+                        <input type="hidden" name="managerDriveOk" >
+                        <input type="hidden" name="managerCareer" >
+                        <input type="hidden" name="managerPhoneNum" >
+                        <input type="hidden" name="managerRegion" >
                     <div class="sc-dlyikq lknGZg">
                         <p class="sc-glUWqk uvQxd" style="color: rgb(22, 22, 22); margin-bottom: 20px;">매니저 지원하기</p>
                         <div class="sc-fFTYTi bkIEuU">
@@ -54,19 +63,19 @@
                         </div>
                         <div class="sc-fFTYTi bkIEuU">
                             <div class="sc-bTiqRo cOGJco">성함을 입력해주세요</div>
-                            <textarea name="managerName" placeholder="ex) 홍길동"
+                            <textarea name="managername" placeholder="ex) 홍길동"
                                       class="ant-input sc-bEufUU bBQEgI"></textarea>
                         </div>
                         <div class="sc-fFTYTi bkIEuU">
                             <div class="sc-bTiqRo cOGJco">생년월일을 입력해주세요</div>
-                            <textarea name="managerBirth" id="managerBirth"
+                            <textarea name="managerbirth" id="managerbirth"
                                     placeholder="만 19세 이상의 성인만 매니저 활동이 가능합니다. ex) 19960405"
                                     class="ant-input sc-bEufUU bBQEgI"></textarea>
                             <div class="check_font" id="birth_check"></div>
                         </div>
                         <div class="sc-fFTYTi bkIEuU">
                             <div class="sc-bTiqRo cOGJco">개인 이메일 주소를 입력해주세요</div>
-                            <textarea name="managerEmail" id="emailCheck"
+                            <textarea name="manageremail" id="emailCheck"
                                     placeholder="기입해주신 이메일로 프리랜서 근로 계약 문서가 전송되고 온라인 계약 체결이 진행됩니다.                             로그인 시 아이디에 사용됩니다."
                                     class="ant-input sc-bEufUU bBQEgI" oninput="check_email()"></textarea>
                             <!--email 중복체크-->
@@ -90,23 +99,23 @@
                         </div>
                         <div class="sc-fFTYTi bkIEuU">
                             <div class="sc-bTiqRo cOGJco">자택 주소를 입력해주세요</div>
-                            <textarea name="managerAddress"
+                            <textarea name="manageraddress"
                                     placeholder="ex) 서울특별시 송파구 방이동 (XX동 XXX호 등의 상세 주소 기입 불필요)"
                                     class="ant-input sc-bEufUU bBQEgI"></textarea>
                         </div>
                         <div class="sc-fFTYTi bkIEuU">
                             <div class="sc-bTiqRo cOGJco">성별을 알려주세요</div>
-                            <textarea name="managerGender" placeholder="ex) 남자/여자"
+                            <textarea name="managergender" placeholder="ex) 남자/여자"
                                       class="ant-input sc-bEufUU bBQEgI"></textarea>
                         </div>
                         <div class="sc-fFTYTi bkIEuU">
                             <div class="sc-bTiqRo cOGJco">운전 가능 여부를 선택해주세요</div>
-                            <textarea name="managerDriveOk"
+                            <textarea name="managerdriveok"
                                     placeholder="예/아니오로 대답해주세요" class="ant-input sc-bEufUU bBQEgI"></textarea>
                         </div>
                         <div class="sc-fFTYTi bkIEuU">
                             <div class="sc-bTiqRo cOGJco">개인의 간병 경력 사항을 입력해주세요 <span>(0/500)</span></div>
-                            <textarea name="managerCareer"
+                            <textarea name="managercareer"
                                     placeholder="매니저 활동을 위해 도움이 되는 자신의 간병 경력을 500자 이내로 자유롭게 남겨주세요 (요양보호사 자격증 보유 &amp; XX요양병원 3년 근무 등 / 간병 이외의 경력도 기재 가능)"
                                     class="ant-input sc-bEufUU bBQEgI"></textarea>
                         </div>
@@ -130,12 +139,12 @@
                         </div>
                         <div class="sc-fFTYTi bkIEuU">
                             <div class="sc-bTiqRo cOGJco">개인 연락처를 입력해주세요(-를 제외하고 입력해주세요 &gt; 01011111111)</div>
-                            <textarea name="managerPhoneNum" placeholder="기입해주신 연락처로 합격/불합격 여부 알려드립니다. 정확히 입력해주세요."
+                            <textarea name="managerphonenum" placeholder="기입해주신 연락처로 합격/불합격 여부 알려드립니다. 정확히 입력해주세요."
                                       class="ant-input sc-bEufUU bBQEgI"></textarea>
                         </div>
                         <div class="sc-fFTYTi bkIEuU">
                             <div class="sc-bTiqRo cOGJco">매니저 활동 가능 지역을 알려주세요</div>
-                            <textarea name="managerRegion"
+                            <textarea name="managerregion"
                                     placeholder="본인이 선호 또는 활동 가능한 서비스 지역과 병원을 알려주세요 (마포구 일대, 종로구 일대, 세브란스 병원, 서울대 병원, 아산 병원 등)"
                                     class="ant-input sc-bEufUU bBQEgI"></textarea>
                         </div>
@@ -206,31 +215,51 @@
 
     function managerConfirm() {
         /*유효성 검사*/
-        let $managerName = $("textarea[name='managerName']");
-        let $managerBirth = $("textarea[name='managerBirth']");
-        let $managerEmail = $("textarea[name='managerEmail']");
-        let $managerAddress = $("textarea[name='managerAddress']");
-        let $managerGender = $("textarea[name='managerGender']");
-        let $managerDriveOk = $("textarea[name='managerDriveOk']");
-        let $managerCareer = $("textarea[name='managerCareer']");
-        let $managerPhoneNum = $("textarea[name='managerPhoneNum']");
-        let $managerRegion = $("textarea[name='managerRegion']");
+        let $managername = $("textarea[name='managername']");
+        let $managerbirth = $("textarea[name='managerbirth']");
+        let $manageremail = $("textarea[name='manageremail']");
+        let $manageraddress = $("textarea[name='manageraddress']");
+        let $managergender = $("textarea[name='managergender']");
+        let $managerdriveok = $("textarea[name='managerdriveok']");
+        let $managercareer = $("textarea[name='managercareer']");
+        let $managerphonenum = $("textarea[name='managerphonenum']");
+        let $managerregion = $("textarea[name='managerregion']");
         let regPhone = /^((01[1|6|7|8|9])[1-9]+[0-9]{6,7})|(010[1-9][0-9]{7})$/;
 
-        if(!$managerName.val()){
+        $("input[name=managerName]").val($managername.val());
+        $("input[name=$managerBirth]").val($managerbirth.val());
+        $("input[name=$managerEmail]").val($manageremail.val());
+        $("input[name=$managerAddress]").val($manageraddress.val());
+        $("input[name=$managerGender]").val($managergender.val());
+        $("input[name=$managerDriveOk]").val($managerdriveok.val());
+        $("input[name=$managerCareer]").val($managercareer.val());
+        $("input[name=$$managerPhoneNum]").val($managerphonenum.val());
+        $("input[name=$$managerRegion]").val($managerregion.val());
+
+        // console.log($managername.val());
+        // console.log($managerbirth.val());
+        // console.log($managerEmail.val());
+        // console.log($managerAddress.val());
+        // console.log($managerGender.val());
+        // console.log($managerDriveOk.val());
+        // console.log($managerCareer.val());
+        // console.log($managerPhoneNum.val());
+        // console.log($managerRegion.val());
+
+        if(!$managername.val()){
             alert("성함을 입력해주세요")
-            $managerName.focus();
+            $managername.focus();
             return false;
         }
-        if(!$managerBirth.val()){
+        if(!$managerbirth.val()){
             alert("생년월일을 입력해주세요")
-            $managerBirth.focus();
+            $managerbirth.focus();
             return false;
         }
 
-        if(!$managerEmail.val()){
+        if(!$manageremail.val()){
             alert("이메일 주소를 입력해주세요")
-            $managerEmail.focus();
+            $manageremail.focus();
             return false;
         }
         if(!$managerPw.val()){
@@ -243,39 +272,39 @@
             managerPwCheck.focus();
             return false;
         }
-        if(!$managerAddress.val()){
+        if(!$manageraddress.val()){
             alert("자택 주소를 입력해주세요")
-            managerAddress.focus();
+            manageraddress.focus();
             return false;
         }
-        if(!$managerGender.val()){
+        if(!$managergender.val()){
             alert("성별을 입력해주세요")
-            managerGender.focus();
+            managergender.focus();
             return false;
         }
-        if(!$managerDriveOk.val()){
+        if(!$managerdriveok.val()){
             alert("운전 가능 여부를 입력해주세요")
-            managerDriveOk.focus();
+            managerdriveok.focus();
             return false;
         }
-        if(!$managerCareer.val()){
+        if(!$managercareer.val()){
             alert("간병 경력 사항을 입력해주세요")
-            managerCareer.focus();
+            managercareer.focus();
             return false;
         }
-        if(!$managerPhoneNum.val()){
+        if(!$managerphonenum.val()){
             alert("연락처를 입력해주세요")
-            managerPhoneNum.focus();
+            managerphonenum.focus();
             return false;
         }
-        if (!regPhone.test($managerPhoneNum.val())) {
+        if (!regPhone.test($managerphonenum.val())) {
             alert('올바른 휴대폰 번호가 아닙니다.');
-            managerPhoneNum.focus();
+            managerphonenum.focus();
             return false;
         }
-        if(!$managerRegion.val()){
+        if(!$managerregion.val()){
             alert("활동 가능 지역을 입력해주세요")
-            managerRegion.focus();
+            managerregion.focus();
             return false;
         }
         //비밀번호 암호화

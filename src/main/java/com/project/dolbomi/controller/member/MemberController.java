@@ -48,10 +48,10 @@ public class MemberController {
 //    일반 비밀번호 찾기
 
     /* 비밀번호 찾기 */
-    @PostMapping("pwfind")
-    public void findPwUser(@ModelAttribute UserVO userVO, HttpServletResponse response) throws Exception{
-        userService.findPw(response, userVO);
-    }
+//    @PostMapping("pwfind")
+//    public void findPwUser(@ModelAttribute UserVO userVO, HttpServletResponse response) throws Exception{
+//        userService.findPw(response, userVO);
+//    }
 
 //    @PostMapping("pwfind")
 //    @ResponseBody
@@ -104,11 +104,12 @@ public class MemberController {
         if(check){//로그인 성공
             HttpSession httpSession = request.getSession();
             httpSession.setAttribute("userVO", userService.profile(userEmail));
-
+            log.info("로그인 들어옴");
             return "/member/mainpage";
         }
 
         //로그인 실패
+        log.info("로그인 실패");
         return "/member/userlogin";
     }
 
