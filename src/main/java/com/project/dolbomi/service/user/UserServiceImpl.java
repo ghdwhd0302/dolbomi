@@ -278,7 +278,7 @@ public class UserServiceImpl implements UserService {
             }
             userVO.setUserPw(pw);
             // 비밀번호 변경
-            userDAO.updatePw(userVO);
+//            userDAO.updatePw(userVO);
             // 비밀번호 변경 메일 발송
             sendEmail(userVO, "findPw");
 
