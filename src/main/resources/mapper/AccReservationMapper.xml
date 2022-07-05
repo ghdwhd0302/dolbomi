@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.project.dolbomi.mapper.AccReservationMapper">
     <sql id="search">
-        <trim suffix="AND" prefixOverrides="OR">
+        <trim prefix="AND" prefixOverrides="OR">
             <foreach item="area" collection="areaAr">
                 <trim prefix="OR">
                     <if test="area != null">
@@ -61,8 +61,8 @@
         SELECT ACC_RESERVATION_NUM,ACC_RESERVATION_TYPE,ACC_RESERVATION_NAME, ACC_RESERVATION_AGE, ACC_RESERVATION_PHONE_NUM, ACC_RESERVATION_GENDER, ACC_RESERVATION_ADD_PHONE_NUM, ACC_RESERVATION_RELATION, ACC_RESERVATION_END_ADDRESS, ACC_RESERVATION_START_ADDRESS, ACC_RESERVATION_HOPE_GENDER, ACC_RESERVATION_DATE, ACC_RESERVATION_TIME, ACC_RESERVATION_ADD_REQUIRE, ACC_RESERVATION_PRICE
         FROM TBL_ACC_RESERVATION
         <where>
+            MANAGER_EMAIL IS NULL AND ACC_RESERVATION_STATUS = 0
             <include refid="search"/>
-            MANAGER_EMAIL IS NULL
         </where>
 
     </select>

@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.project.dolbomi.mapper.CareReservationMapper">
     <sql id="search">
-        <trim suffix="AND" prefixOverrides="OR">
+        <trim prefix="AND" prefixOverrides="OR">
             <foreach item="area" collection="areaAr">
                 <trim prefix="OR">
                     <if test="area != null">
@@ -79,8 +79,8 @@
         SELECT CARE_RESERVATION_NUM,CARE_RESERVATION_TYPE,CARE_RESERVATION_NAME, CARE_RESERVATION_AGE, CARE_RESERVATION_PHONE_NUM, CARE_RESERVATION_GENDER, CARE_RESERVATION_ADD_PHONE_NUM, CARE_RESERVATION_RELATION, CARE_RESERVATION_ADDRESS, CARE_RESERVATION_HOPE_GENDER, CARE_RESERVATION_DATE, CARE_RESERVATION_TIME, CARE_RESERVATION_ADD_REQUIRE, CARE_RESERVATION_PRICE
         FROM TBL_CARE_RESERVATION
         <where>
+            MANAGER_EMAIL IS NULL AND CARE_RESERVATION_STATUS = 0
             <include refid="search"/>
-            MANAGER_EMAIL IS NULL
         </where>
     </select>
 
