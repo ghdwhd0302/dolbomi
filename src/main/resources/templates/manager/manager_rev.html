@@ -832,8 +832,6 @@
 
             </style>
 
-            <form name="revForm" method="post" action="/manager/manager_rev">
-
                 <input type="hidden" name="newname" value="">
                 <input type="hidden" name="shape" value="">
                 <input type="hidden" name="nationality" value="">
@@ -1978,52 +1976,55 @@
         </div>
     </div>
 </section>
-<th:block th:each="accReservation:${getListAccReservation}">
-<div class="com_accordion">
-    <ul style="margin: 0% 10% 0% 10%;">
-        <li class="history">
-            <div class="ac_title">
-                <input type="hidden" name="hManagerSysId" value="">
-                <input type="hidden" name="hMemberSysId" value="">
-                <input type="hidden" name="hUserSysId" value="">
-                <input type="hidden" name="hUserGenderCd" value="">
-                <input type="hidden" name="hServiceNm" value="">
-                <input type="hidden" name="hServiceCd" value="">
-                <input type="hidden" name="hServiceSeq" value="">
-                <input type="hidden" name="hMatchSeq" value="">
-                <input type="hidden" name="hServiceStartDate" value="">
-                <input type="hidden" name="hServiceStartTime" value="">
-                <input type="hidden" name="hDepartAdmCd" value="">
-                <input type="hidden" name="hDestAdmCd" value="">
-                <input type="hidden" name="hServiceCarYn" value="">
-                <p class="service_b">동행</p>
-                <div class="left_con" style="padding-right:37px" th:object="${accReservation}">
-                    <p>
-                        <span class="title">이용자</span>
-                        <span class="accReservationName" th:text="*{accReservationName}"></span>
-                    </p>
-                    <p>
-                        <span class="title">동행일정 및 방문시간</span>
-                        <span class="accReservationDate" th:text="*{#strings.substring(accReservationDate,0,10)}"></span>
-                        <span class="accReservationDate" th:text="*{#strings.substring(accReservationDate,11,16)}"></span>
-                    </p>
-                    <p>
-                        <span class="title">이용시간</span>
-                        <span class="accReservationTime" th:text="*{accReservationTime}"></span>
-                    </p>
-                    <p>
-                        <span class="title">출발지</span>
-                        <span class="accReservationStartAddress" th:text="*{accReservationStartAddress}"></span>
-                    </p>
-                    <p>
-                        <span class="title">목적지</span>
-                        <span class="accReservationEndAddress" th:text="*{accReservationEndAddress}"><br></span>
-                    </p>
-                    <hr style="border : 0px; width: 100%;
+<form action="/manager/manager" method="post" name="accForm">
+    <input type="hidden" name="managerEmail" th:value="${session.managerVO.managerEmail}">
+    <th:block th:each="accReservation:${getListAccReservation}">
+        <div class="com_accordion">
+            <ul style="margin: 0% 10% 0% 10%;">
+                <li class="history">
+                    <div class="ac_title">
+                        <input type="hidden" name="hManagerSysId" value="">
+                        <input type="hidden" name="hMemberSysId" value="">
+                        <input type="hidden" name="hUserSysId" value="">
+                        <input type="hidden" name="hUserGenderCd" value="">
+                        <input type="hidden" name="hServiceNm" value="">
+                        <input type="hidden" name="hServiceCd" value="">
+                        <input type="hidden" name="hServiceSeq" value="">
+                        <input type="hidden" name="hMatchSeq" value="">
+                        <input type="hidden" name="hServiceStartDate" value="">
+                        <input type="hidden" name="hServiceStartTime" value="">
+                        <input type="hidden" name="hDepartAdmCd" value="">
+                        <input type="hidden" name="hDestAdmCd" value="">
+                        <input type="hidden" name="hServiceCarYn" value="">
+                        <p class="service_b">동행</p>
+                        <div class="left_con" style="padding-right:37px" th:object="${accReservation}">
+                            <input type="hidden" name="accReservationNum" th:value="${accReservationNum}">
+                            <p>
+                                <span class="title">이용자</span>
+                                <span class="accReservationName" th:text="*{accReservationName}"></span>
+                            </p>
+                            <p>
+                                <span class="title">동행일정 및 방문시간</span>
+                                <span class="accReservationDate" th:text="*{#strings.substring(accReservationDate,0,10)}"></span>
+                                <span class="accReservationDate" th:text="*{#strings.substring(accReservationDate,11,16)}"></span>
+                            </p>
+                            <p>
+                                <span class="title">이용시간</span>
+                                <span class="accReservationTime" th:text="*{accReservationTime}"></span>
+                            </p>
+                            <p>
+                                <span class="title">출발지</span>
+                                <span class="accReservationStartAddress" th:text="*{accReservationStartAddress}"></span>
+                            </p>
+                            <p>
+                                <span class="title">목적지</span>
+                                <span class="accReservationEndAddress" th:text="*{accReservationEndAddress}"><br></span>
+                            </p>
+                            <hr style="border : 0px; width: 100%;
                     border-top: 2px solid #e8e6e7;
                     width: 100%;
                     margin: 20px 0 20px 0;"/>
-                    <button id="test01" style="color: #666666;
+                            <button id="test01" style="color: #666666;
                 font-weight: 700;
                 cursor: pointer;
                 align-self: center;
@@ -2031,256 +2032,265 @@
                 background-color: white;
                 font-size: 18px;
             ">상세보기
-                    </button>
-                </div>
-                <button class="openPopup" style=" background-color: #2fb8e7;
+                            </button>
+                        </div>
+                        <div>
+                            <a class="test10 openPopup" id="accReservation" th:name="${accReservation.accReservationNum}" style="     background-color: #2fb8e7;
     color: white;
-    padding: 16px 26px 16px 26px;
+    padding: 11px 29px 11px 30px;
     font-size: 18px;
     font-weight: 700;
     position: absolute;
     right: 15px;
-    border-radius: 30px;
+    /* border-radius: 30px; */
     margin-right: 20px;
-    bottom: 80px;
-">
-                    신청
-                </button>
-            </div>
-        </li>
-    </ul>
-</div>
-<div class="com_accordion" id="test02" style="display:none;">
-    <ul style="margin: 0% 10% 0% 10%;">
-        <li class="history">
-            <div class="ac_title">
-                <input type="hidden" name="hManagerSysId" value="">
-                <input type="hidden" name="hMemberSysId" value="">
-                <input type="hidden" name="hUserSysId" value="">
-                <input type="hidden" name="hUserGenderCd" value="">
-                <input type="hidden" name="hServiceNm" value="">
-                <input type="hidden" name="hServiceCd" value="">
-                <input type="hidden" name="hServiceSeq" value="">
-                <input type="hidden" name="hMatchSeq" value="">
-                <input type="hidden" name="hServiceStartDate" value="">
-                <input type="hidden" name="hServiceStartTime" value="">
-                <input type="hidden" name="hDepartAdmCd" value="">
-                <input type="hidden" name="hDestAdmCd" value="">
-                <input type="hidden" name="hServiceCarYn" value="">
-                <p class="service_a" style="display: none;">동행서비스</p>
-                <div class="left_con" style="margin-left: 30px; padding-right:37px;" th:object="${accReservation}">
-                    <p>
-                        <span class="title">동행서비스</span>
-                        <!-- 동행서비스종류나타냄 -->
-                        <span class="accReservationType" th:text="*{accReservationType}"></span>
-                    </p>
-                    <p>
-                        <span class="title">이용자</span>
-                        <span class="accReservationName" th:text="*{accReservationName}"></span>
-                    </p>
-                    <p>
-                        <span class="title">이용자 나이</span>
-                        <span class="accReservationAge" th:text="*{accReservationAge}"></span>
-                    </p>
-                    <p>
-                        <span class="title">이용자 성별</span>
-                        <span class="accReservationGender" th:text="*{accReservationGender}"></span>
-                    </p>
-                    <p>
-                        <span class="title">이용자 휴대폰</span>
-                        <span class="accReservationPhoneNum" th:text="*{accReservationPhoneNum}"></span>
-                    </p>
-                    <p>
-                        <span class="title">동행일정 및 방문시간</span>
-                        <span class="accReservationDate" th:text="*{#strings.substring(accReservationDate,0,10)}"></span>
-                        <span class="accReservationDate" th:text="*{#strings.substring(accReservationDate,11,16)}"></span>
-                    </p>
-                    <p>
-                        <span class="title">이용시간</span>
-                        <span class="accReservationTime" th:text="*{accReservationTime}"></span>
-                    </p>
-                    <p>
-                        <span class="title">출발지</span>
-                        <span class="accReservationStartAddress" th:text="*{accReservationStartAddress}"></span>
-                    </p>
-                    <p>
-                        <span class="title">목적지</span>
-                        <span class="accReservationEndAddress" th:text="*{accReservationEndAddress}"><br></span>
-                    </p>
-                    <p>
-                        <span class="title">총 이용요금</span>
-                        <span class="accReservationPrice" th:text="*{accReservationPrice}"></span>
-                    </p>
-                    <hr style="border : 0px; width: 100%;
+    border: none;
+    width: 94px;
+    cursor: pointer;
+">신청</a></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="com_accordion" id="test02" style="display:none;">
+            <ul style="margin: 0% 10% 0% 10%;">
+                <li class="history">
+                    <div class="ac_title">
+                        <input type="hidden" name="hManagerSysId" value="">
+                        <input type="hidden" name="hMemberSysId" value="">
+                        <input type="hidden" name="hUserSysId" value="">
+                        <input type="hidden" name="hUserGenderCd" value="">
+                        <input type="hidden" name="hServiceNm" value="">
+                        <input type="hidden" name="hServiceCd" value="">
+                        <input type="hidden" name="hServiceSeq" value="">
+                        <input type="hidden" name="hMatchSeq" value="">
+                        <input type="hidden" name="hServiceStartDate" value="">
+                        <input type="hidden" name="hServiceStartTime" value="">
+                        <input type="hidden" name="hDepartAdmCd" value="">
+                        <input type="hidden" name="hDestAdmCd" value="">
+                        <input type="hidden" name="hServiceCarYn" value="">
+                        <p class="service_a" style="display: none;">동행서비스</p>
+                        <div class="left_con" style="margin-left: 30px; padding-right:37px;" th:object="${accReservation}">
+                            <p>
+                                <span class="title">동행서비스</span>
+                                <!-- 동행서비스종류나타냄 -->
+                                <span class="accReservationType" th:text="*{accReservationType}"></span>
+                            </p>
+                            <p>
+                                <span class="title">이용자</span>
+                                <span class="accReservationName" th:text="*{accReservationName}"></span>
+                            </p>
+                            <p>
+                                <span class="title">이용자 나이</span>
+                                <span class="accReservationAge" th:text="*{accReservationAge}"></span>
+                            </p>
+                            <p>
+                                <span class="title">이용자 성별</span>
+                                <span class="accReservationGender" th:text="*{accReservationGender}"></span>
+                            </p>
+                            <p>
+                                <span class="title">이용자 휴대폰</span>
+                                <span class="accReservationPhoneNum" th:text="*{accReservationPhoneNum}"></span>
+                            </p>
+                            <p>
+                                <span class="title">동행일정 및 방문시간</span>
+                                <span class="accReservationDate" th:text="*{#strings.substring(accReservationDate,0,10)}"></span>
+                                <span class="accReservationDate" th:text="*{#strings.substring(accReservationDate,11,16)}"></span>
+                            </p>
+                            <p>
+                                <span class="title">이용시간</span>
+                                <span class="accReservationTime" th:text="*{accReservationTime}"></span>
+                            </p>
+                            <p>
+                                <span class="title">출발지</span>
+                                <span class="accReservationStartAddress" th:text="*{accReservationStartAddress}"></span>
+                            </p>
+                            <p>
+                                <span class="title">목적지</span>
+                                <span class="accReservationEndAddress" th:text="*{accReservationEndAddress}"><br></span>
+                            </p>
+                            <p>
+                                <span class="title">총 이용요금</span>
+                                <span class="accReservationPrice" th:text="*{accReservationPrice}"></span>
+                            </p>
+                            <!--                    <hr style="border : 0px; width: 100%;-->
+                            <!--                    border-top: 2px solid #e8e6e7;-->
+                            <!--                    width: 100%;-->
+                            <!--                    margin: 20px 0 20px 0;"/>-->
+                            <!--                    <button id="test03" style="color: #666666;-->
+                            <!--                font-weight: 700;-->
+                            <!--                cursor: pointer;-->
+                            <!--                align-self: center;-->
+                            <!--                margin-right: 17px;-->
+                            <!--                background-color: white;-->
+                            <!--                font-size: 18px;-->
+                            <!--            ">닫기-->
+                            <!--                    </button>-->
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </th:block>
+</form>
+<form action="/manager/manager" method="post" name="careForm">
+    <input type="hidden" name="managerEmail" th:value="${session.managerVO.managerEmail}">
+    <th:block th:each="careReservation:${getListCareReservation}">
+        <div class="com_accordion">
+            <ul style="margin: 0% 10% 0% 10%;">
+                <li class="history">
+                    <div class="ac_title">
+                        <input type="hidden" name="hManagerSysId" value="">
+                        <input type="hidden" name="hMemberSysId" value="">
+                        <input type="hidden" name="hUserSysId" value="">
+                        <input type="hidden" name="hUserGenderCd" value="">
+                        <input type="hidden" name="hServiceNm" value="">
+                        <input type="hidden" name="hServiceCd" value="">
+                        <input type="hidden" name="hServiceSeq" value="">
+                        <input type="hidden" name="hMatchSeq" value="">
+                        <input type="hidden" name="hServiceStartDate" value="">
+                        <input type="hidden" name="hServiceStartTime" value="">
+                        <input type="hidden" name="hDepartAdmCd" value="">
+                        <input type="hidden" name="hDestAdmCd" value="">
+                        <input type="hidden" name="hServiceCarYn" value="">
+                        <p class="service_a">돌봄</p>
+                        <div class="left_con" style="padding-right: 37px;" th:object="${careReservation}">
+                            <input type="hidden" name="careReservationNum">
+                            <p>
+                                <span class="title">이용자</span>
+                                <span class="careReservationName" th:text="*{careReservationName}"></span>
+                            </p>
+                            <p>
+                                <span class="title">돌봄일정 및 방문시간</span>
+                                <span class="careReservationDate" th:text="*{#strings.substring(careReservationDate,0,10)}"></span>
+                                <span class="careReservationDate" th:text="*{#strings.substring(careReservationDate,11,16)}"></span>
+                            </p>
+                            <p>
+                                <span class="title">이용시간</span>
+                                <span class="careReservationTime" th:text="*{careReservationTime}"></span>
+                            </p>
+                            <!-- <p>
+                            <span class="title">출발지</span>
+                            <span></span>
+                        </p>   -->
+                            <p>
+                                <span class="title">목적지</span>
+                                <span class="careReservationAddress" th:text="*{careReservationAddress}"><br></span>
+                            </p>
+                            <hr style="border : 0px; width: 100%;
                     border-top: 2px solid #e8e6e7;
                     width: 100%;
                     margin: 20px 0 20px 0;"/>
-                    <button id="test03" style="color: #666666;
-                font-weight: 700;
-                cursor: pointer;
-                align-self: center;
-                margin-right: 17px;
-                background-color: white;
-                font-size: 18px;
-            ">닫기
-                    </button>
-                </div>
-            </div>
-        </li>
-    </ul>
-</div>
-</th:block>
-<th:block th:each="careReservation:${getListCareReservation}">
-<div class="com_accordion">
-    <ul style="margin: 0% 10% 0% 10%;">
-        <li class="history">
-            <div class="ac_title">
-                <input type="hidden" name="hManagerSysId" value="">
-                <input type="hidden" name="hMemberSysId" value="">
-                <input type="hidden" name="hUserSysId" value="">
-                <input type="hidden" name="hUserGenderCd" value="">
-                <input type="hidden" name="hServiceNm" value="">
-                <input type="hidden" name="hServiceCd" value="">
-                <input type="hidden" name="hServiceSeq" value="">
-                <input type="hidden" name="hMatchSeq" value="">
-                <input type="hidden" name="hServiceStartDate" value="">
-                <input type="hidden" name="hServiceStartTime" value="">
-                <input type="hidden" name="hDepartAdmCd" value="">
-                <input type="hidden" name="hDestAdmCd" value="">
-                <input type="hidden" name="hServiceCarYn" value="">
-                <p class="service_a">돌봄</p>
-                <div class="left_con" style="padding-right: 37px;" th:object="${careReservation}">
-                    <p>
-                        <span class="title">이용자</span>
-                        <span class="careReservationName" th:text="*{careReservationName}"></span>
-                    </p>
-                    <p>
-                        <span class="title">돌봄일정 및 방문시간</span>
-                        <span class="careReservationDate" th:text="*{#strings.substring(careReservationDate,0,10)}"></span>
-                        <span class="careReservationDate" th:text="*{#strings.substring(careReservationDate,11,16)}"></span>
-                    </p>
-                    <p>
-                        <span class="title">이용시간</span>
-                        <span class="careReservationTime" th:text="*{careReservationTime}"></span>
-                    </p>
-                    <!-- <p>
-                    <span class="title">출발지</span>
-                    <span></span>
-                </p>   -->
-                    <p>
-                        <span class="title">목적지</span>
-                        <span class="careReservationAddress" th:text="*{careReservationAddress}"><br></span>
-                    </p>
-                    <hr style="border : 0px; width: 100%;
-                    border-top: 2px solid #e8e6e7;
-                    width: 100%;
-                    margin: 20px 0 20px 0;"/>
-                    <button id="test04" style="color: #666666;
+                            <button id="test04" style="color: #666666;
                 font-weight: 700;
                 cursor: pointer;
                 align-self: center;
                 margin-right: 115px;
                 background-color: white;
                 font-size: 18px;
+                margin-top: -11px;
             ">상세보기
-                    </button>
-                </div>
-                <button class="openPopup" style=" background-color: #2fb8e7;
+                            </button>
+                        </div>
+                        <div >
+                            <a class=" openPopup" id="careReservation" th:name="${careReservation.careReservationNum}" style="     background-color: #2fb8e7;
     color: white;
-    padding: 16px 26px 16px 26px;
+    padding: 11px 29px 11px 30px;
     font-size: 18px;
     font-weight: 700;
     position: absolute;
     right: 15px;
-    border-radius: 30px;
-    margin-right: 20px
-">
-                    신청
-                </button>
-            </div>
-        </li>
-    </ul>
-</div>
-<div class="com_accordion" id="test05" style="display:none;" >
-    <ul style="margin: 0% 10% 0% 10%;">
-        <li class="history">
-            <div class="ac_title">
-                <input type="hidden" name="hManagerSysId" value="">
-                <input type="hidden" name="hMemberSysId" value="">
-                <input type="hidden" name="hUserSysId" value="">
-                <input type="hidden" name="hUserGenderCd" value="">
-                <input type="hidden" name="hServiceNm" value="">
-                <input type="hidden" name="hServiceCd" value="">
-                <input type="hidden" name="hServiceSeq" value="">
-                <input type="hidden" name="hMatchSeq" value="">
-                <input type="hidden" name="hServiceStartDate" value="">
-                <input type="hidden" name="hServiceStartTime" value="">
-                <input type="hidden" name="hDepartAdmCd" value="">
-                <input type="hidden" name="hDestAdmCd" value="">
-                <input type="hidden" name="hServiceCarYn" value="">
-                <p class="service_a" style="display: none;">동행서비스</p>
-                <div class="left_con" style="margin-left: 30px; padding-right: 37px;" th:object="${careReservation}">
-                    <p>
-                        <span class="title">돌봄서비스</span>
-                        <!-- 동행서비스종류나타냄 -->
-                        <span class="careReservationType" th:text="*{careReservationType}"></span>
-                    </p>
-                    <p>
-                        <span class="title">이용자</span>
-                        <span class="careReservationName" th:text="*{careReservationName}"></span>
-                    </p>
-                    <p>
-                        <span class="title">이용자 나이</span>
-                        <span class="careReservationAge" th:text="*{careReservationAge}"></span>
-                    </p>
-                    <p>
-                        <span class="title">이용자 성별</span>
-                        <span class="careReservationGender" th:text="*{careReservationGender}"></span>
-                    </p>
-                    <p>
-                        <span class="title">이용자 휴대폰</span>
-                        <span class="careReservationPhoneNum" th:text="*{careReservationPhoneNum}"> </span>
-                    </p>
-                    <p>
-                        <span class="title">돌봄일정 및 방문시간</span>
-                        <span class="careReservationDate" th:text="*{#strings.substring(careReservationDate,0,10)}"></span>
-                        <span class="careReservationDate" th:text="*{#strings.substring(careReservationDate,11,16)}"></span>
-                    </p>
-                    <p>
-                        <span class="title">이용시간</span>
-                        <span class="careReservationTime" th:text="*{careReservationTime}"></span>
-                    </p>
-                    <!-- <p>
-                    <span class="title">출발지</span>
-                    <span></span>
-                </p>   -->
-                    <p>
-                        <span class="title">목적지</span>
-                        <span class="careReservationAddress" th:text="*{careReservationAddress}"><br></span>
-                    </p>
-                    <p>
-                        <span class="title">총 이용요금</span>
-                        <span class="careReservationPrice" th:text="*{careReservationPrice}"></span>
-                    </p>
-                    <hr style="border : 0px; width: 100%;
-                    border-top: 2px solid #e8e6e7;
-                    width: 100%;
-                    margin: 20px 0 20px 0;"/>
-                    <button id="test06" style="color: #666666;
-                font-weight: 700;
-                cursor: pointer;
-                align-self: center;
-                margin-right: 17px;
-                background-color: white;
-                font-size: 18px;
-            ">닫기
-                    </button>
-                </div>
-            </div>
-        </li>
-    </ul>
-</div>
-
+    /* border-radius: 30px; */
+    margin-right: 20px;
+    border: none;
+    width: 94px;
+    cursor: pointer;
+">신청</a></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="com_accordion" id="test05" style="display:none;" >
+            <ul style="margin: 0% 10% 0% 10%;">
+                <li class="history">
+                    <div class="ac_title">
+                        <input type="hidden" name="hManagerSysId" value="">
+                        <input type="hidden" name="hMemberSysId" value="">
+                        <input type="hidden" name="hUserSysId" value="">
+                        <input type="hidden" name="hUserGenderCd" value="">
+                        <input type="hidden" name="hServiceNm" value="">
+                        <input type="hidden" name="hServiceCd" value="">
+                        <input type="hidden" name="hServiceSeq" value="">
+                        <input type="hidden" name="hMatchSeq" value="">
+                        <input type="hidden" name="hServiceStartDate" value="">
+                        <input type="hidden" name="hServiceStartTime" value="">
+                        <input type="hidden" name="hDepartAdmCd" value="">
+                        <input type="hidden" name="hDestAdmCd" value="">
+                        <input type="hidden" name="hServiceCarYn" value="">
+                        <p class="service_a" style="display: none;">동행서비스</p>
+                        <div class="left_con" style="margin-left: 30px; padding-right: 37px;" th:object="${careReservation}">
+                            <p>
+                                <span class="title">돌봄서비스</span>
+                                <!-- 동행서비스종류나타냄 -->
+                                <span class="careReservationType" th:text="*{careReservationType}"></span>
+                            </p>
+                            <p>
+                                <span class="title">이용자</span>
+                                <span class="careReservationName" th:text="*{careReservationName}"></span>
+                            </p>
+                            <p>
+                                <span class="title">이용자 나이</span>
+                                <span class="careReservationAge" th:text="*{careReservationAge}"></span>
+                            </p>
+                            <p>
+                                <span class="title">이용자 성별</span>
+                                <span class="careReservationGender" th:text="*{careReservationGender}"></span>
+                            </p>
+                            <p>
+                                <span class="title">이용자 휴대폰</span>
+                                <span class="careReservationPhoneNum" th:text="*{careReservationPhoneNum}"> </span>
+                            </p>
+                            <p>
+                                <span class="title">돌봄일정 및 방문시간</span>
+                                <span class="careReservationDate" th:text="*{#strings.substring(careReservationDate,0,10)}"></span>
+                                <span class="careReservationDate" th:text="*{#strings.substring(careReservationDate,11,16)}"></span>
+                            </p>
+                            <p>
+                                <span class="title">이용시간</span>
+                                <span class="careReservationTime" th:text="*{careReservationTime}"></span>
+                            </p>
+                            <!-- <p>
+                            <span class="title">출발지</span>
+                            <span></span>
+                        </p>   -->
+                            <p>
+                                <span class="title">목적지</span>
+                                <span class="careReservationAddress" th:text="*{careReservationAddress}"><br></span>
+                            </p>
+                            <p>
+                                <span class="title">총 이용요금</span>
+                                <span class="careReservationPrice" th:text="*{careReservationPrice}"></span>
+                            </p>
+                            <!--<hr style="border : 0px; width: 100%;
+                            border-top: 2px solid #e8e6e7;
+                            width: 100%;
+                            margin: 20px 0 20px 0;"/>
+                            <button id="test06" style="color: #666666;
+                        font-weight: 700;
+                        cursor: pointer;
+                        align-self: center;
+                        margin-right: 17px;
+                        background-color: white;
+                        font-size: 18px;
+                    ">닫기-->
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </th:block>
+</form>
 
 <div style="text-align: center">
     <a class="changePage" th:if="${pageDTO.prev}" th:href="${pageDTO.startPage - 1}"><code>&lt;</code></a>
@@ -2296,21 +2306,31 @@
 </form>
 
 
-<div id="popup01">
-    <div class="close">닫기</div>
-    <div style="font-size: 32px;
-    text-align: center;
-    margin-top: 110px;
-    margin-bottom: 110px;
-    color: #767070;">매칭하시겠습니까?
-    </div>
-    <button class="confirm">매칭 확정</button>
-</div>
+<th:block th:each="areas:${areaAr}">
+    <input type="hidden" name="areas" th:class="${areas}" th:value="${areas}">
+</th:block>
 <footer th:replace="footer.html"></footer>
 </body>
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
         crossorigin="anonymous"></script>
+<script th:inline="javascript">
+
+    $("#accReservation").click(function (e) {
+        e.preventDefault();
+        console.log($(this).attr("name"));
+        $("input[name='accReservationNum']").val($(this).attr("name"));
+        accForm.submit();
+    })
+
+    $("#careReservation").click(function (e) {
+        e.preventDefault();
+        console.log($(this).attr("name"));
+        $("input[name='careReservationNum']").val($(this).attr("name"));
+        careForm.submit();
+    })
+</script>
 <script>
     /*$(document).ready(function () {
         //헤더 체크

@@ -35,7 +35,7 @@ public class AccReservationDAO {
     }
 
     //    동행서비스 리스트
-    public List<AccReservationVO> getListAccReservation(Criteria criteria) {
+    public List<AccReservationVO> getListAccReservation(Criteria criteria, List<String> areaAr) {
         return accReservationMapper.getListAccReservation(criteria);
     }
 
@@ -87,5 +87,9 @@ public class AccReservationDAO {
         return accReservationMapper.accgetTotal4(accReservationNum);
     }
 
+
+    public void AccReservationUpdate(Long accReservationNum, String managerEmail){
+        accReservationMapper.AccReservationUpdate(accReservationNum, managerEmail);
+    }
 }
 

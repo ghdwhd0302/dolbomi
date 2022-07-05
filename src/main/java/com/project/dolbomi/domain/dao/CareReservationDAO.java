@@ -29,19 +29,16 @@ public class CareReservationDAO {
         return careReservationMapper.reviewGetListCare(userEmail);
     }
 
-<<<<<<< HEAD
     // carereservation select one
     public CareReservationVO selectCare(Long careReservationNum) {
         return careReservationMapper.selectCare(careReservationNum);
     }
 
     //    돌봄서비스 리스트
-    public List<CareReservationVO> getListCareReservation(Criteria criteria) {
+    public List<CareReservationVO> getListCareReservation(Criteria criteria, List<String> areaAr) {
         return careReservationMapper.getListCareReservation(criteria);
     }
 
-
-=======
 
 
     // 돌봄서비스 매니저 배정 수락 user_userdetails페이지
@@ -90,7 +87,10 @@ public class CareReservationDAO {
         return careReservationMapper.caregetTotal8(careReservationNum);
     }
 
->>>>>>> 4a78b0b2ebb8372e5e95ca8a80f7588572576879
+    public void CareReservationUpdate(Long careReservationNum, String managerEmail){
+        careReservationMapper.CareReservationUpdate(careReservationNum, managerEmail);
+    }
+
 }
 
 
