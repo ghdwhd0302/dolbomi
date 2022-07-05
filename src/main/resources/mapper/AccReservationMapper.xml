@@ -26,16 +26,7 @@
         WHERE a.USER_EMAIL = b.USER_EMAIL
     </select>
 
-    <!--<select id="getList" resultType="accreservationVO">
-        SELECT ACC_RESERVATION_NAME,ACC_RESERVATION_TYPE,ACC_RESERVATION_END_ADDRESS
-        FROM TBL_ACC_RESERVATION a,TBL_USER b
-        WHERE a.USER_EMAIL = b.USER_EMAIL
-    </select>-->
-    <select id="getListAccReservation" resultType="accReservationVO">
-        SELECT ACC_RESERVATION_NUM,ACC_RESERVATION_TYPE,ACC_RESERVATION_NAME, ACC_RESERVATION_AGE, ACC_RESERVATION_PHONE_NUM, ACC_RESERVATION_GENDER, ACC_RESERVATION_ADD_PHONE_NUM, ACC_RESERVATION_RELATION, ACC_RESERVATION_END_ADDRESS, ACC_RESERVATION_START_ADDRESS, ACC_RESERVATION_HOPE_GENDER, ACC_RESERVATION_DATE, ACC_RESERVATION_TIME, ACC_RESERVATION_ADD_REQUIRE, ACC_RESERVATION_PRICE
-        FROM TBL_ACC_RESERVATION
-        WHERE MANAGER_EMAIL IS NULL
-    </select>
+
 
     <update id="AccReservationUpdate">
         UPDATE TBL_ACC_RESERVATION
@@ -190,11 +181,7 @@
     </update>
 
 
-    <update id="AccReservationUpdate">
-        UPDATE TBL_ACC_RESERVATION
-        SET MANAGER_EMAIL = #{managerEmail}
-        WHERE ACC_RESERVATION_NUM = #{accReservationNum}
-    </update>
+
 
     <!--서비스 종료 리스트-->
     <select id="accServiceEndList" resultType="user4AccDTO">
