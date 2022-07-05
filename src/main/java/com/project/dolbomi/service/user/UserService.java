@@ -3,12 +3,11 @@ package com.project.dolbomi.service.user;
 import com.project.dolbomi.domain.vo.*;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 @Service
 public interface UserService {
-
-
     // 돌봄서비스 매니저 배정 수락
     public boolean careApprove(CareReservationVO careReservationVO);
 
@@ -22,13 +21,18 @@ public interface UserService {
     public boolean careManagerRefuse(CareReservationVO careReservationV);
 
 
+
     public boolean AccGetList(Long careReservationNum);
+
+     public boolean AccGetList(Long careReservationNum);
+
 
     //    동행서비스 예약자 1명 정보
     public AccReservationVO accSelect(Long accReservationNum);
 
     //    동행서비스 예약자 1명 정보
     public AccReservationVO AccGet(Long accReservationNum);
+
     // user_userdetails의 카운트 횟수.  ACC_RESERVATION_STATUS 에 따라 변경
     public int accgetTotal1(String userEmail);
     public int accgetTotal2(String userEmail);
@@ -40,7 +44,6 @@ public interface UserService {
     public AccReservationVO accgetNum2(String userEmail);
     public AccReservationVO accgetNum3(String userEmail);
     public AccReservationVO accgetNum4(String userEmail);
-
 
 
     // 동행서비스 매니저 배정 수락 user_userdetails페이지
@@ -98,11 +101,8 @@ public interface UserService {
     //돌봄서비스 매니저가 업무 취소,manager 페이지의 동행예약목록
     public void CareManagerCancel(Long careReservationNum);
 
-
-
     //    동행서비스 예약리스트
     public List<AccReservationVO> AccResult(String accReservationName);
-
 
     // 회원 가입
     public void join(UserVO userVO);
@@ -117,7 +117,13 @@ public interface UserService {
     public int emailCheck(String userEmail);
 
     //아이디 찾기
-    public String findId(String userName, String userPhoneNum, String userBirth);
+    public String findId(String userName, String userPhoneNum, String userBrith);
+
+    //이메일발송
+    public void sendEmail(UserVO userVO, String div) throws Exception;
+
+    //비밀번호찾기
+    public void findPw(HttpServletResponse resp, UserVO userVO) throws Exception;
 
     //휴대폰 인증번호
     public void phoneCerti(String userPhoneNum, int randomNum);
@@ -171,6 +177,19 @@ public interface UserService {
     // care reservation 한 개 가져오기
     public CareReservationVO selectCare(Long careReservationNum);
 
+
+
+
+    //    돌봄서비스 리스트
+    public List<CareReservationVO> getListCareReservation(Criteria criteria, List<String> areaAr);
+
+    //    동행서비스 리스트
+    public List<AccReservationVO> getListAccReservation(Criteria criteria, List<String> areaAr);
+
+    public void AccReservationUpdate(Long accReservationNum, String managerEmail);
+
+    public void CareReservationUpdate(Long careReservationNum, String managerEmail);
+}
 
 
     public void AccReservationUpdate(Long accReservationNum, String managerEmail);

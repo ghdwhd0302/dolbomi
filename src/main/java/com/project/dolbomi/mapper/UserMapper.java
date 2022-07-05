@@ -35,9 +35,10 @@ public interface UserMapper {
     public UserVO updateProfile(UserVO userVO);
 
     //아이디 찾기
-    @Select("SELECT NVL(USER_EMAIL, 0) FROM TBL_USER WHERE USER_NAME=#{userName} and USER_PHONE_NUM=#{userPhoneNum} and USER_BIRTH=#{userBirth}")
-    public String findId(@Param("userName") String userName, @Param("userPhoneNum") String userPhoneNum, @Param("userBirth")String userBirth);
+    public String findId(String userName, String userPhoneNum, String userBirth);
 
+    //비밀번호 찾기
+    public UserVO findPw(UserVO userVO);
 
 }
 

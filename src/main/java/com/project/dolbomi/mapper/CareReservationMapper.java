@@ -3,6 +3,7 @@ package com.project.dolbomi.mapper;
 
 import com.project.dolbomi.domain.vo.*;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.PropertyValues;
 
 import java.util.List;
@@ -46,10 +47,20 @@ public interface CareReservationMapper {
     public CareReservationVO caregetNum3(String userEmail);
     public CareReservationVO caregetNum4(String userEmail);
     //user_userdetails의 카운트 횟수.  CARE_RESERVATION_STATUS 에 따라 변경
+
     public int caregetTotal5(String userEmail);
     public int caregetTotal6(String userEmail);
     public int caregetTotal7(String userEmail);
     public int caregetTotal8(String userEmail);
     //유저 이메일로 매니저 예약메일 통해 매니저정보얻기
     public ManagerVO caregetManagerInfo(String userEmail);
+
+    public int caregetTotal5(Long careReservationNum);
+    public int caregetTotal6(Long careReservationNum);
+    public int caregetTotal7(Long careReservationNum);
+    public int caregetTotal8(Long careReservationNum);
+
+    public void CareReservationUpdate(@Param("careReservationNum") Long careReservationNum, @Param("managerEmail") String managerEmail);
+
+
 }

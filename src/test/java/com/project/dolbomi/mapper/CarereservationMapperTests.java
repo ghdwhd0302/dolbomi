@@ -54,6 +54,14 @@ public class CarereservationMapperTests {
 //        log.info(String.valueOf(careReservationMapper.delete(3L)));
 //    }
 
+//    @Test
+//    public void CareReservationUpdate(){
+//        careReservationMapper.CareReservationUpdate(26L, "APPLE");
+//    }
 
+    @Test
+    public void CareReservationUpdate(){
+        careReservationMapper.CareReservationUpdate(26L, "APPLE");
+    }
 
 }

@@ -463,14 +463,12 @@ button {
 }
 
 .com_accordion ul li p span.title + span:before {
-    position: absolute;
-    top: 17;
-    left: 187px;
     content: ':';
     width: auto;
     height: auto;
     background: rgba(0, 0, 0, 0);
     font-weight: 300;
+    margin-right: 22px;
 }
 
 /* 팝업창 */

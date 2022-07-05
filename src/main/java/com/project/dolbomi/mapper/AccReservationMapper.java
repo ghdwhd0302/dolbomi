@@ -2,6 +2,7 @@ package com.project.dolbomi.mapper;
 
 import com.project.dolbomi.domain.vo.*;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -59,11 +60,20 @@ public interface AccReservationMapper {
     public AccReservationVO accgetNum3(String userEmail);
     public AccReservationVO accgetNum4(String userEmail);
     //user_userdetails의 카운트 횟수.  ACC_RESERVATION_STATUS 에 따라 변경
+
     public int accgetTotal1(String userEmail);
     public int accgetTotal2(String userEmail);
     public int accgetTotal3(String userEmail);
     public int accgetTotal4(String userEmail);
     //유저 이메일로 매니저 예약메일 통해 매니저정보얻기
     public ManagerVO accgetManagerInfo(String userEmail);
+
+    public int accgetTotal1(Long accReservationNum);
+    public int accgetTotal2(Long accReservationNum);
+    public int accgetTotal3(Long accReservationNum);
+    public int accgetTotal4(Long accReservationNum);
+
+    public void AccReservationUpdate(@Param("accReservationNum") Long accReservationNum, @Param("managerEmail") String managerEmail);
+
 }
 

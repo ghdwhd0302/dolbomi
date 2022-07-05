@@ -35,7 +35,7 @@ public class AccReservationDAO {
     }
 
     //    동행서비스 리스트
-    public List<AccReservationVO> getListAccReservation(Criteria criteria) {
+    public List<AccReservationVO> getListAccReservation(Criteria criteria, List<String> areaAr) {
         return accReservationMapper.getListAccReservation(criteria);
     }
 
@@ -93,6 +93,11 @@ public class AccReservationDAO {
 
     //유저 이메일로 매니저 예약메일 통해 매니저정보얻기
     public ManagerVO accgetManagerInfo(String userEmail){return accReservationMapper.accgetManagerInfo(userEmail);}
+
+
+    public void AccReservationUpdate(Long accReservationNum, String managerEmail){
+        accReservationMapper.AccReservationUpdate(accReservationNum, managerEmail);
+    }
 
 }
 

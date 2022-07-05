@@ -57,15 +57,21 @@ public class UserController {
     }
 
 //    휴대폰 인증번호 발송
-//    @GetMapping("sendcode")
-//    public void phoneCerti(){
-//
-//    }
+    @GetMapping("/phoneCheck")
+    @ResponseBody
+    public String sendSMS(@RequestParam("phone") String userPhoneNum){
+        int randomNum = (int)((Math.random() * (9999 - 1000 + 1)) + 1000);
+        userService.phoneCerti(userPhoneNum, randomNum);
+
+        return Integer.toString(randomNum);
+
+    }
 
     @PostMapping("sendcode")
     public String phoneCerti(){
         return "/user/sendcode";
     }
+
 //    동행 서비스 예약
 //    @GetMapping("reservAcc")
 //    public void accReservation(){

@@ -36,11 +36,9 @@ public class CareReservationDAO {
     }
 
     //    돌봄서비스 리스트
-    public List<CareReservationVO> getListCareReservation(Criteria criteria) {
+    public List<CareReservationVO> getListCareReservation(Criteria criteria, List<String> areaAr) {
         return careReservationMapper.getListCareReservation(criteria);
     }
-
-
 
 
 
@@ -93,6 +91,11 @@ public class CareReservationDAO {
     }
     //유저 이메일로 매니저 예약메일 통해 매니저정보얻기
     public ManagerVO caregetManagerInfo(String userEmail){return careReservationMapper.caregetManagerInfo(userEmail);}
+
+    public void CareReservationUpdate(Long careReservationNum, String managerEmail){
+        careReservationMapper.CareReservationUpdate(careReservationNum, managerEmail);
+    }
+
 
 }
 

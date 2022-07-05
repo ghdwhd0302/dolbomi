@@ -50,4 +50,16 @@
         FROM TBL_MANAGER
         WHERE MANAGER_EMAIL = #{managerEmail}
     </select>
+
+    <select id="findId" resultType="managerVO">
+		SELECT MANAGER_EMAIL
+		FROM TBL_MANAGER
+		WHERE MANAGER_NAME = #{managerName} AND MANAGER_PHONE_NUM = #{managerPhoneNum} AND MANAGER_BIRTH = #{managerBirth}
+	</select>
+
+    <select id="findPw" resultType="managerVO">
+		SELECT MANAGER_PW
+		FROM TBL_MANAGER
+		WHERE MANAGER_NAME = #{managerName} AND MANAGER_PHONE_NUM = #{managerPhoneNum} AND MANAGER_BIRTH = #{managerBirth} AND MANAGER_EMAIL = #{managerEmail}
+	</select>
 </mapper>
