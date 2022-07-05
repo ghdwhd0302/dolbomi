@@ -3,6 +3,7 @@ package com.project.dolbomi.service.manager;
 import com.project.dolbomi.domain.dao.ManagerDAO;
 import com.project.dolbomi.domain.vo.Criteria;
 import com.project.dolbomi.domain.vo.ManagerVO;
+import com.project.dolbomi.domain.vo.UserVO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Primary;
@@ -65,6 +66,16 @@ public class ManagerServiceImpl implements ManagerService {
     public int emailCheck(String managerEmail) {
         int cnt = managerDAO.emailCheck(managerEmail);
         return cnt;
+    }
+
+    @Override
+    public ManagerVO findId(String managerName, String managerPhoneNum, String managerBirth) {
+        return managerDAO.findId(managerName, managerPhoneNum, managerBirth);
+    }
+
+    @Override
+    public ManagerVO findPw(String managerName, String managerPhoneNum, String managerBirth, String managerEmail) {
+        return managerDAO.findPw(managerName, managerPhoneNum, managerBirth, managerEmail);
     }
 
     @Override

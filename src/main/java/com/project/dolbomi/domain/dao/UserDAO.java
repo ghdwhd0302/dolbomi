@@ -3,7 +3,11 @@ package com.project.dolbomi.domain.dao;
 import com.project.dolbomi.domain.vo.UserVO;
 import com.project.dolbomi.mapper.UserMapper;
 import lombok.RequiredArgsConstructor;
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
+import javax.servlet.http.HttpServletResponse;
 
 @Repository
 @RequiredArgsConstructor
@@ -48,9 +52,17 @@ public class UserDAO {
     }
 
     //아이디 찾기
-    public String findId(String userName, String userPhoneNum, String userBirth){
+    public String findId(String userName, String userPhoneNum, String userBirth) {
         return userMapper.findId(userName, userPhoneNum, userBirth);
     }
+    //비밀번호 찾기
+//    public void findPw(HttpServletResponse resp, UserVO userVO) {
+//        return userMapper.findPw(userVO, resp);
+//    }
+
+    //비밀번호 변경
+
+
 
     //회원 탈퇴
     public boolean withdrawal(String userEmail){

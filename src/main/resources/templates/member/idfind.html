@@ -44,11 +44,11 @@
                                     </div>
                                 </div>
                                 <div class="form">
-                                    <label>이름</label><input type="text"
+                                    <label for="userName">이름</label><input type="text"
                                                             placeholder="ex) 홍길동" class="ant-input" value="" name="userName" id="userName">
-                                    <label>휴대전화</label><input type="text"
+                                    <label for="userPhoneNum">휴대전화</label><input type="text"
                                                               placeholder="ex) 01012341111" class="ant-input" value="" name="userPhoneNum" id="userPhoneNum">
-                                    <label>생년월일</label><input type="text"
+                                    <label for="userBirth">생년월일</label><input type="text"
                                                               placeholder="ex) 20001022" class="ant-input" value="" name="userBirth" id="userBirth">
 
                                     <button type="button" class="ant-btn ant-btn-primary" onclick="idFind();"><span>확인하기</span></button>
@@ -85,7 +85,7 @@
                                         </dl>
 
                                         <dl>
-                                            <dd>APPLE</dd>
+                                            <dd id="id_value"></dd>
                                         </dl>
                                     </div>
                                 </div>
@@ -118,6 +118,7 @@
     let $userName = $("input[name='userName']");
     let $userBirth = $("input[name='userBirth']");
     let $userPhoneNum = $("input[name='userPhoneNum']");
+    let idV = "";
 
     function idFind() {
         if(!$userName.val()){
@@ -137,6 +138,28 @@
         $("body").css("overflow-y", "hidden");
         $(".popup_layer").css("display", "flex");
 
+            $.ajax({
+            type:"POST",
+            url:"/member/idfind",
+            data:{"userName":userName, "userPhoneNum": userPhoneNum, "userBirth":userBirth },
+            success:function(data){
+                if(data == 0){
+                    $('#id_value').text("회원 정보를 확인해주세요!");
+                    $('#userName').val('');
+                    $('#userPhoneNum').val('');
+                    $('#userBirth').val('');
+                } else {
+                    $('#id_value').text(data);
+                    // 아이디값 별도로 저장
+                    idV = data;
+                }
+            },
+                error:function () {
+                    alert("에러입니다.")
+                }
+        });
+
+
     }
 
     $(".layer_close").on('click', function(){
@@ -148,6 +171,28 @@
         $("body").css("overflow-y", "visible");
         $(".popup_layer").css("display", "none");
     })
+
+    // 아이디 값 받고 출력하는 ajax
+    var idFind = function(){
+        $.ajax({
+            type:"POST",
+            url:"${pageContext.request.contextPath}/user/userSearch?inputName_1="
+                +$('#inputName_1').val()+"&inputPhone_1="+$('#inputPhone_1').val(),
+            success:function(data){
+                if(data == 0){
+                    $('#id_value').text("회원 정보를 확인해주세요!");
+                } else {
+                    $('#id_value').text(data);
+                    // 아이디값 별도로 저장
+                    idV = data;
+                }
+            }
+        });
+    }
+
+
+
+
 
 </script>
 </html>

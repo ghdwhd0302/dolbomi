@@ -169,7 +169,7 @@
             $(this).removeClass('on');
             $(".fnc_user_wrap").removeClass('on');
         }
-    })
+    });
 
     /*비밀번호 정규식*/
     $(function(){
@@ -187,7 +187,7 @@
                 $("#not-pass").hide();
                 $("#yes-pass").show();
             }
-        })
+        });
 
         $("input[type='password']").keyup(function(){
             var pwd1=$managerPw.val();
@@ -316,7 +316,7 @@
             error:function () {
             }
         });
-    };
+    }
 
     // 생일 유효성 검사
     var birthJ = false;
