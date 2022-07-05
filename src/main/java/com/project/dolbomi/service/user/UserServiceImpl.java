@@ -8,11 +8,14 @@ import com.project.dolbomi.domain.vo.*;
 import lombok.RequiredArgsConstructor;
 import net.nurigo.java_sdk.api.Message;
 import net.nurigo.java_sdk.exceptions.CoolsmsException;
+import org.apache.commons.mail.HtmlEmail;
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.List;
 
@@ -28,7 +31,35 @@ public class UserServiceImpl implements UserService {
     private final UserReviewDTO userReviewDTO;
 
 
+    @Override
+    public boolean careApprove(CareReservationVO careReservationVO) {
+        return false;
+    }
 
+    @Override
+    public boolean careRefuse(CareReservationVO careReservationVO) {
+        return false;
+    }
+
+    @Override
+    public boolean careDelte(Long careReservationNum) {
+        return false;
+    }
+
+    @Override
+    public boolean careManagerRefuse(CareReservationVO careReservationV) {
+        return false;
+    }
+
+    @Override
+    public boolean AccGetList(Long careReservationNum) {
+        return false;
+    }
+
+    @Override
+    public AccReservationVO accSelect(Long accReservationNum) {
+        return null;
+    }
 
     //    동행서비스 예약자 1명 정보
     @Override
@@ -168,11 +199,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public String findId(String userName, String userPhoneNum, String userBirth) {
-        String result = "";
+    public String findId(String userName, String userPhoneNum, String userBrith) {
+
+        String result ="";
 
         try {
-            result= userDAO.findId(userName, userPhoneNum, userBirth);
+            result= userDAO.findId(userName, userPhoneNum, userBrith);
 
         } catch(Exception e) {
 
@@ -181,6 +213,82 @@ public class UserServiceImpl implements UserService {
 
         return result ;
     }
+
+    //  비밀번호 찾기 이메일 발송
+    @Override
+    public void sendEmail(UserVO userVO, String div) throws Exception {
+        // Mail Server 설정
+        String charSet = "utf-8";
+        String hostSMTP = "smtp.gmail.com"; //네이버 이용시 smtp.naver.com
+        String hostSMTPid = "spring.dolbomi@gmail.com";
+        String hostSMTPpwd = "google#2022";
+
+        // 보내는 사람 EMail, 제목, 내용
+        String fromEmail = "spring.dolbomi@gmail.com";
+        String fromName = "dolbomi";
+        String subject = "";
+        String msg = "";
+
+        if(div.equals("findpw")) {
+            subject = "돌보미 임시 비밀번호 입니다.";
+            msg += "<div align='center' style='border:1px solid black; font-family:verdana'>";
+            msg += "<h3 style='color: blue;'>";
+            msg += userVO.getUserName() + "님의 임시 비밀번호 입니다. 비밀번호를 변경하여 사용하세요.</h3>";
+            msg += "<p>임시 비밀번호 : ";
+            msg += userVO.getUserPw() + "</p></div>";
+        }
+
+        // 받는 사람 E-Mail 주소
+        String mail = userVO.getUserEmail();
+        try {
+            HtmlEmail email = new HtmlEmail();
+            email.setDebug(true);
+            email.setCharset(charSet);
+            email.setSSL(true);
+            email.setHostName(hostSMTP);
+            email.setSmtpPort(465); //네이버 이용시 587
+
+            email.setAuthentication(hostSMTPid, hostSMTPpwd);
+            email.setTLS(true);
+            email.addTo(mail, charSet);
+            email.setFrom(fromEmail, fromName, charSet);
+            email.setSubject(subject);
+            email.setHtmlMsg(msg);
+            email.send();
+        } catch (Exception e) {
+            System.out.println("메일발송 실패 : " + e);
+        }
+    }
+
+//    비밀번호 찾기
+    @Override
+    public void findPw(HttpServletResponse resp, UserVO userVO) throws Exception {
+        resp.setContentType("text/html;charset=utf-8");
+        UserVO ck = userDAO.selectProfile(userVO.getUserEmail());
+        PrintWriter out = resp.getWriter();
+
+        // 가입된 이메일이 아니면
+        if(!userVO.getUserEmail().equals(ck.getUserEmail())) {
+            out.print("등록되지 않은 이메일입니다.");
+            out.close();
+        }else {
+            // 임시 비밀번호 생성
+            String pw = "";
+            for (int i = 0; i < 12; i++) {
+                pw += (char) ((Math.random() * 26) + 97);
+            }
+            userVO.setUserPw(pw);
+            // 비밀번호 변경
+            userDAO.updatePw(userVO);
+            // 비밀번호 변경 메일 발송
+            sendEmail(userVO, "findPw");
+
+            out.print("이메일로 임시 비밀번호를 발송하였습니다.");
+            out.close();
+        }
+
+    }
+
 
     @Override
     public void phoneCerti(String userPhoneNum, int randomNum) {

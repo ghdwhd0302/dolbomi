@@ -14,6 +14,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 @Controller
@@ -26,23 +27,51 @@ public class MemberController {
     private final ManagerService managerService;
 
 //    일반 아이디 찾기
-    @PostMapping("userIdF")
+    @PostMapping("Idfind")
     @ResponseBody
-    public String idFind(@RequestParam("userName") String userName, @RequestParam("userPhoneNum") String userPhoneNum, @RequestParam("userBirth") String userBirth){
-       String result = userService.findId(userName, userPhoneNum, userBirth);
-        return result;
+    public String findIdUser(@RequestParam String userName,
+                             @RequestParam String userPhoneNum,
+                             @RequestParam String userBirth){
+
+        String result = userService.findId(userName, userPhoneNum, userBirth);
+
+//        if(user == null) {
+//            model.addAttribute("check", 1);
+//        } else {
+//            model.addAttribute("check", 0);
+//            model.addAttribute("id", user.getUserEmail());
+//        }
+
+       return result;
     }
 
 //    일반 비밀번호 찾기
-//    @GetMapping("userPwF")
-//    public void pwFind(){
-//
-//    }
 
-    @PostMapping("userPwF")
-    public String pwFind(){
-        return "/member/userPwF";
+    /* 비밀번호 찾기 */
+    @PostMapping("pwfind")
+    public void findPwUser(@ModelAttribute UserVO userVO, HttpServletResponse response) throws Exception{
+        userService.findPw(response, userVO);
     }
+
+//    @PostMapping("pwfind")
+//    @ResponseBody
+//    public String findPwUser(@RequestParam String userName,
+//                             @RequestParam String userPhoneNum,
+//                             @RequestParam String userBirth,
+//                             @RequestParam String userEmail,
+//                             HttpServletRequest request){
+
+//        userService.findPw(userName, userPhoneNum, userBirth, userEmail);
+
+//        if(user == null) {
+//            model.addAttribute("check", 1);
+//        } else {
+//            model.addAttribute("check", 0);
+//            model.addAttribute("pw", user.getUserPw());
+//        }
+
+//        return "/member/pwfind";
+//    }
 
 //    매니저 아이디 찾기
 //    @GetMapping("managerIdF")

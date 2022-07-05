@@ -3,6 +3,7 @@ package com.project.dolbomi.mapper;
 
 
 import com.project.dolbomi.domain.vo.ManagerVO;
+import com.project.dolbomi.domain.vo.UserVO;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -35,7 +36,11 @@ public interface ManagerMapper {
     //매니저 로그인
     public int managerLogIn(String managerEmail, String managerPw);
 
+    //아이디 찾기
+    public ManagerVO findId(String managerName, String managerPhoneNum, String managerBirth);
 
+    //비밀번호 찾기
+    public ManagerVO findPw(String managerName, String managerPhoneNum, String managerBirth, String managerEmail);
 
     public ManagerVO managerInfo(String managerEmail);
 }

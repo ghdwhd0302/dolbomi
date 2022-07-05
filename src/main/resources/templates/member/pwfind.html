@@ -45,13 +45,13 @@
                                     </div>
                                 </div>
                                 <div class="form">
-                                    <label>이름</label><input type="text" name="userName"
+                                    <label>이름</label><input type="text" name="userName" id="userName"
                                                             placeholder="ex) 홍길동" class="ant-input" value="">
-                                    <label>휴대전화</label><input type="text" name="userPhoneNum"
-                                                              placeholder="ex) 01012341111" class="ant-input" value="">
-                                    <label>생년월일</label><input type="text" name="userBirth"
-                                                              placeholder="ex) 20001022" class="ant-input" value="">
-                                    <label>이메일</label><input type="email" name="userEmail"
+<!--                                    <label>휴대전화</label><input type="text" name="userPhoneNum" id="userPhoneNum"-->
+<!--                                                              placeholder="ex) 01012341111" class="ant-input" value="">-->
+<!--                                    <label>생년월일</label><input type="text" name="userBirth" id="userBirth"-->
+<!--                                                              placeholder="ex) 20001022" class="ant-input" value="">-->
+                                    <label>이메일</label><input type="email" name="userEmail" id="userEmail"
                                                              placeholder="ex) korea@mail.com" class="ant-input"
                                                              value="">
                                     <button type="button" class="ant-btn ant-btn-primary" onclick="pwFind();"><span>확인하기</span></button>
@@ -147,6 +147,17 @@
         $("body").css("overflow-y", "hidden");
         $(".popup_layer").css("display", "flex");
 
+        $.ajax({
+            url : "/member/pwfind",
+            type : "POST",
+            data : {
+                $userName : userName,
+                $userEmail : userEmail
+            },
+            success : function(result) {
+                alert(result);
+            },
+        })
     }
 
     $(".layer_close").on('click', function(){
