@@ -25,10 +25,37 @@ public class UserServiceImpl implements UserService {
     private final ReviewDAO reviewDAO;
     private final AccReservationDAO accReservationDAO;
     private final CareReservationDAO careReservationDAO;
-    private final UserReviewDTO userReviewDTO;
 
 
+    @Override
+    public boolean careApprove(CareReservationVO careReservationVO) {
+        return false;
+    }
 
+    @Override
+    public boolean careRefuse(CareReservationVO careReservationVO) {
+        return false;
+    }
+
+    @Override
+    public boolean careDelte(Long careReservationNum) {
+        return false;
+    }
+
+    @Override
+    public boolean careManagerRefuse(CareReservationVO careReservationV) {
+        return false;
+    }
+
+    @Override
+    public boolean AccGetList(Long careReservationNum) {
+        return false;
+    }
+
+    @Override
+    public AccReservationVO accSelect(Long accReservationNum) {
+        return null;
+    }
 
     //    동행서비스 예약자 1명 정보
     @Override
@@ -297,13 +324,20 @@ public class UserServiceImpl implements UserService {
 
 
     @Override
-    public List<AccReservationVO> getListAccReservation(Criteria criteria) {return accReservationDAO.getListAccReservation(criteria);}
+    public List<AccReservationVO> getListAccReservation(Criteria criteria, List<String> areaAr) {return accReservationDAO.getListAccReservation(criteria, areaAr);}
 
     @Override
-    public List<CareReservationVO> getListCareReservation(Criteria criteria) {return careReservationDAO.getListCareReservation(criteria);}
+    public List<CareReservationVO> getListCareReservation(Criteria criteria, List<String> areaAr) {return careReservationDAO.getListCareReservation(criteria, areaAr);}
 
+    @Override
+    public void AccReservationUpdate(Long accReservationNum, String managerEmail) {
+        accReservationDAO.AccReservationUpdate(accReservationNum, managerEmail);
+    }
 
-
+    @Override
+    public void CareReservationUpdate(Long careReservationNum, String managerEmail) {
+        careReservationDAO.CareReservationUpdate(careReservationNum, managerEmail);
+    }
 
 
 }

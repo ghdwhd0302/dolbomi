@@ -51,21 +51,21 @@
                 <p class="service_a" style="background: #3d7ed8;">돌봄</p>
                 <div class="left_con" >
                     <p>
-                        <span class="title">이용자</span>
+                        <span class="title" style="margin-right: 89px">이용자</span>
                         <span th:text="*{careReservationName}"></span>
                     </p>
                     <p>
-                        <span class="title">돌봄일정 및 방문시간</span>
-                        <span th:text="*{careReservationDate}"></span>
-                        <span th:text="*{careReservationTime}"></span>
+                        <span class="title" >돌봄일정 및 방문시간</span>
+                        <span th:text="*{#strings.substring(careReservationDate,0,10)}"></span>
+                        <span th:text="*{#strings.substring(careReservationDate,11,16)}"></span>
                     </p>
                     <p>
-                        <span class="title">이용시간</span>
-                        <span th:text="*{careReservationTime}"></span>
+                        <span class="title" style="margin-right: 76px">이용시간</span>
+                        <span th:text="|*{careReservationTime}시간|"></span>
                     </p>
 
                     <p>
-                        <span class="title">목적지</span>
+                        <span class="title" style="margin-right: 90px">목적지</span>
                         <span th:text="*{careReservationAddress}"><br></span>
                     </p>
 
@@ -111,24 +111,24 @@
                 <p class="service_a">동행</p>
                 <div class="left_con" >
                     <p>
-                        <span class="title">이용자</span>
+                        <span class="title" style="margin-right: 89px">이용자</span>
                         <span th:text="*{accReservationName}"></span>
                     </p>
                     <p>
                         <span class="title">동행일정 및 방문시간</span>
-                        <span th:text="*{accReservationDate}"></span>
-
+                        <span th:text="*{#strings.substring(accReservationDate,0,10)}"></span>
+                        <span th:text="*{#strings.substring(accReservationDate,11,16)}"></span>
                     </p>
                     <p>
-                        <span class="title">이용시간</span>
-                        <span th:text="*{accReservationTime}"></span>
+                        <span class="title" style="margin-right: 76px">이용시간</span>
+                        <span th:text="|*{accReservationTime}시간|"></span>
                     </p>
                     <p>
-                        <span class="title">출발지</span>
+                        <span class="title" style="margin-right: 90px">출발지</span>
                         <span th:text="*{accReservationStartAddress}"></span>
                     </p>
                     <p>
-                        <span class="title">목적지</span>
+                        <span class="title" style="margin-right: 90px">목적지</span>
                         <span th:text="*{accReservationEndAddress}"><br></span>
                     </p>
                 </div>

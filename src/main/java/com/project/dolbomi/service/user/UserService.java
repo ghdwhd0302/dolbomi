@@ -153,10 +153,14 @@ public interface UserService {
     // care reservation 한 개 가져오기
     public CareReservationVO selectCare(Long careReservationNum);
 
-    //    동행서비스 리스트
-    public List<AccReservationVO> getListAccReservation(Criteria criteria);
-
     //    돌봄서비스 리스트
-    public List<CareReservationVO> getListCareReservation(Criteria criteria);
+    public List<CareReservationVO> getListCareReservation(Criteria criteria, List<String> areaAr);
+
+    //    동행서비스 리스트
+    public List<AccReservationVO> getListAccReservation(Criteria criteria, List<String> areaAr);
+
+    public void AccReservationUpdate(Long accReservationNum, String managerEmail);
+
+    public void CareReservationUpdate(Long careReservationNum, String managerEmail);
 }
 
